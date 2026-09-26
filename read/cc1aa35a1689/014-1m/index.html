@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 课程 11——体系结构层 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 课程 11——体系结构层 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 课程 11——体系结构层 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <p><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch-slides.html">查看幻灯片</a></p>
+<blockquote>
+<table><colgroup><col> <col></colgroup><tbody><tr><th>keywords:</th><td>Linux 内核, 体系结构, 引导, 内存管理, MMU, 线程管理, 时间管理, 中断, 异常, 系统调用, 平台驱动程序</td></tr></tbody></table>
+</blockquote>
+<p><a href="https://linux-kernel-labs-zh.github.io/so2/arch-slides.html">查看幻灯片</a></p>
+<h2 id="体系结构层概述">体系结构层概述<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/ditaa-ae895f3a8e26b92bf6c6ecbbd71e2c88912d5607.png"><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-ae895f3a8e26b92bf6c6ecbbd71e2c88912d5607.png" alt="../_images/ditaa-ae895f3a8e26b92bf6c6ecbbd71e2c88912d5607.png"></a></p>
+<h3 id="引导boot过程">引导（boot）过程<a href="#boot" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>第一个运行的内核代码</li>
+<li>通常在 MMU 禁用的情况下运行</li>
+<li>移动/重新定位内核代码</li>
+</ul>
+<h3 id="引导过程">引导过程<a href="#section-3" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>第一个运行的内核代码</li>
+<li>通常在 MMU 禁用的情况下运行</li>
+<li>复制引导加载程序（bootloader）参数并确定内核运行位置</li>
+<li>将内核代码移动/重新定位到最终位置</li>
+<li>初始 MMU 设置——映射内核</li>
+</ul>
+<h3 id="内存设置">内存设置<a href="#section-4" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>确定可用内存并设置引导内存分配器</li>
+<li>在页面分配器建立之前管理内存区域</li>
+<li>Bootmem——使用位图跟踪空闲块</li>
+<li>Memblock——取代 bootmem 并支持内存范围
+<ul>
+<li>同时支持物理地址和虚拟地址</li>
+<li>支持 NUMA 架构</li>
+</ul>
+</li>
+</ul>
+<h3 id="mmu-管理">MMU 管理<a href="#mmu" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>实现通用的页表操作 API：类型、访问器、标志</li>
+<li>实现 TLB 管理 API：刷新、使无效</li>
+</ul>
+<h3 id="线程管理">线程管理<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>定义线程类型（struct thread_info）并实现分配线程的函数（如果需要）</li>
+<li>实现 <code>copy_thread()</code> 和 <code>switch_context()</code></li>
+</ul>
+<h3 id="时间管理">时间管理<a href="#section-6" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>设置定时器节拍并提供时间源</li>
+<li>大部分转移到平台驱动程序
+<ul>
+<li>clock_event_device——用于调度定时器</li>
+<li>clocksource——用于读取时间</li>
+</ul>
+</li>
+</ul>
+<h3 id="中断和异常管理">中断和异常管理<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>定义中断和异常处理程序/入口点</li>
+<li>设置优先级</li>
+<li>为中断控制器提供平台驱动程序</li>
+</ul>
+<h3 id="系统调用">系统调用<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>定义系统调用入口点</li>
+<li>实现用户空间访问原语（例如，copy_to_user）</li>
+</ul>
+<h3 id="平台驱动程序">平台驱动程序<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>平台和体系结构特定的驱动程序</li>
+<li>与平台设备枚举方法绑定（例如，设备树或 ACPI）</li>
+</ul>
+<h3 id="机器特定代码">机器特定代码<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>一些体系结构使用“机器”/“平台”抽象</li>
+<li>在使用大量不同种类的嵌入式系统中很常见（例如，ARM、powerPC）</li>
+</ul>
+<h2 id="引导过程概述">引导过程概述<a href="#section-11" title="永久链接至标题">¶</a></h2> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">← SO2 课程 10——网络 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

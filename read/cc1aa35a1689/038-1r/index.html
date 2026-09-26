@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 中断 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 中断 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 中断 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="中断">中断<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<p><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts-slides.html">查看幻灯片</a></p>
+<h2 id="课堂目标">课堂目标<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>中断和异常（x86）</li>
+<li>中断和异常（Linux）</li>
+<li>可延迟的工作</li>
+<li>定时器</li>
+</ul>
+<h2 id="什么是中断">什么是中断？<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>中断是一种特殊的事件，它会打断程序的正常执行流程。中断可以由硬件设备甚至 CPU 自身触发。当发生中断时，当前程序的执行流程被暂停，然后运行中断处理程序。中断处理程序运行完毕后，之前程序的执行流程会被恢复。</p>
+<p>根据其来源，中断可以分为两类。根据是否可以推迟或临时禁用中断，中断也可以分为另外两类：</p>
+<ul>
+<li><strong>同步中断</strong>，由执行指令触发</li>
+<li><strong>异步中断</strong>，由外部事件触发</li>
+<li><strong>可屏蔽（maskable）中断</strong>
+<ul>
+<li>可以被忽略</li>
+<li>通过 INT 引脚（pin）发出信号</li>
+</ul>
+</li>
+<li><strong>非可屏蔽中断</strong>
+<ul>
+<li>无法被忽略</li>
+<li>通过 NMI 引脚发出信号</li>
+</ul>
+</li>
+</ul>
+<p>同步中断通常被称为异常（exceptions），用于处理处理器在执行指令过程中检测到的条件。除以零和系统调用都是异常的例子。</p>
+<p>异步中断通常被称为中断，是由输入/输出设备产生的外部事件。例如，网络卡会触发中断来通知有一个数据包到达。</p>
+<p>可屏蔽中断占了中断的大多数，它们允许我们暂时禁用中断，推迟中断处理程序的运行，直到我们重新开启中断。但是，也有一些重要的中断是不能被禁用或推迟的。</p>
+<h3 id="异常">异常<a href="#section-4" title="永久链接至标题">¶</a></h3>
+<p>异常有两种来源：</p>
+<ul>
+<li>处理器检测到的异常
+<ul>
+<li><strong>故障（fault）</strong></li>
+<li><strong>陷阱（trap）</strong></li>
+<li><strong>中止（abort）</strong></li>
+</ul>
+</li>
+<li>程序编程
+<ul>
+<li><strong>int n</strong></li>
+</ul>
+</li>
+</ul>
+<p>当执行指令时，如果检测到异常情况，就会引发处理器检测到的异常。</p>
+<p>故障是一种在指令执行之前报告的异常。故障通常可以被修正。保存的 EIP 是导致故障的指令的地址，因此在故障修正后，程序可以重新执行有问题的指令（例如页面故障）。</p>
+<p>陷阱是一种特殊类型的异常，它在计算机执行了产生异常的指令之后才被报告出来。所保存的 EIP（即指令指针寄存器）是引发陷阱的那条指令之后的那条指令的地址。举个例子，调试陷阱就是这样一种情况。</p>
+<h3 id="测验中断术语">测验：中断术语<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<p>对于左侧的每个术语，请从右侧选择最能描述它们的术语。</p>
+<table><tbody><tr><td><ul><li>看门狗</li><li>需求分页</li><li>零除错误</li><li>定时器</li><li>系统调用</li><li>断点</li></ul></td><td><ul><li>异常</li><li>中断</li><li>可屏蔽</li><li>不可屏蔽</li><li>陷阱</li><li>故障</li></ul></td></tr></tbody></table>
+<h2 id="硬件概念">硬件概念<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<h3 id="可编程中断控制器">可编程中断控制器<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-7463743488288f459aff2069728984374b5bba76.png" alt="../_images/ditaa-7463743488288f459aff2069728984374b5bba76.png"></p>
+<p>支持中断的设备具有用于发出中断请求（Interrupt ReQuest）的输出引脚。IRQ 引脚连接到名为可编程中断控制器（PIC）的设备上，而 PIC 则连接到 CPU 的 INTR 引脚。</p>
+<p>PIC 通常配备了一组端口，用于与 CPU 进行信息交换。当某一个连接到 PIC 的 IRQ 引脚所属的设备需要引起 CPU 的注意时，会启动以下流程：</p>
+<blockquote>
+<ul>
+<li>设备在相应的 IRQn 引脚上触发中断</li>
+<li>PIC 将 IRQ 转换为向量号（vector number），并将其写入 CPU 读取的端口</li>
+<li>PIC 在 CPU INTR 引脚上触发中断</li>
+<li>PIC 在触发另一个中断之前应等待 CPU 确认此中断</li>
+<li>CPU 确认中断后，开始处理中断</li>
+</ul>
+</blockquote>
+<p>稍后将了解 CPU 如何处理中断。请注意，按设计，PIC在CPU确认当前中断之前不会触发另一个中断。</p>
+<p>注解</p>
+<p>CPU 在确认中断后，不管之前的中断是否处理完毕，中断控制器都能发出新的中断请求。因此，根据操作系统如何控制 CPU，可能会出现嵌套中断的情况。</p>
+<p>中断控制器允许单独禁用某个 IRQ 线。这简化了设计，确保中断处理程序始终按顺序执行。</p>
+<h3 id="在-smp-系统中的中断控制器">在 SMP 系统中的中断控制器<a href="#smp" title="永久链接至标题">¶</a></h3>
+<p>在 SMP 系统中，可能会有多个中断控制器存在。</p>
+<p>例如，在 x86 架构中，每个核心（core）都有一个本地 APIC 用于处理来自本地连接设备（如定时器或温度传感器）的中断。此外，还有一个 I/O APIC 用于将来自外部设备的中断请求分发给 CPU 核心。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-9d23d02ebdff6eeb6bec8044480f055de9852ecc.png" alt="../_images/ditaa-9d23d02ebdff6eeb6bec8044480f055de9852ecc.png"></p>
+<h3 id="中断控制">中断控制<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p>为了在中断处理程序和其他可能的并发活动（如驱动程序初始化或驱动程序数据处理）之间同步对共享数据的访问，通常需要以受控的方式启用和禁用中断。</p>
+<p>这可以在几个级别上实现：</p>
+<ul>
+<li>在设备级别
+<ul>
+<li>通过编程设备控制寄存器</li>
+</ul>
+</li>
+<li>在 PIC（可编程中断控制器）级别
+<ul>
+<li>可以通过编程 PIC，来禁用给定的 IRQ（中断请求）线路</li>
+</ul>
+</li>
+<li>在 CPU 级别；例如，在 x86 架构上可以使用以下指令：</li>
+</ul>
+<blockquote>
+<ul>
+<li>cli（清除中断标志）</li>
+<li>sti（设置中断标志）</li>
+</ul>
+</blockquote>
+<h3 id="中断优先级">中断优先级<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<p>大多数体系结构还支持中断优先级。启用中断优先级机制后，只有比当前优先级高的中断才允许嵌套当前中断。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-8b00a68b494f72d54b5fad38c88f7265aadaaa0e.png" alt="../_images/ditaa-8b00a68b494f72d54b5fad38c88f7265aadaaa0e.png"></p>
+<p>中断优先级并不是所有架构都支持的功能。对于通用的操作系统来说，要设计一个通用的中断优先级方案非常困难，所以一些内核（比如 Linux）就没有采用中断优先级。但是，大多数实时操作系统（RTOS）都使用了中断优先级，因为它们的应用场景更加有限，中断优先级的定义也更加简单。</p>
+<h3 id="测验硬件概念">测验：硬件概念<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<p>下列哪些陈述是正确的？</p>
+<ul>
+<li>当前中断完成前，CPU 可以开始处理新的中断</li>
+<li>可以在设备级别上禁用中断</li>
+<li>低优先级中断不能抢占高优先级中断的处理程序</li>
+<li>可以在中断控制器级别上禁用中断</li>
+<li>在 SMP 系统中，相同的中断可以路由到不同的 CPU</li>
+<li>可以在 CPU 级别上禁用中断</li>
+</ul>
+<h2 id="x86-架构上的中断处理">x86 架构上的中断处理<a href="#x86" title="永久链接至标题">¶</a></h2>
+<p>本节将介绍 x86 架构上，CPU 如何处理中断。</p>
+<h3 id="中断描述符表">中断描述符表<a href="#section-11" title="永久链接至标题">¶</a></h3>
+<p>中断描述符表（IDT）将每个中断或异常标识符与处理相关事件的指令的描述符关联起来。我们将标识符称为向量号，并将相关指令称为中断/异常处理程序。</p>
+<p>IDT 具有以下特点：</p>
+<ul>
+<li>当触发给定向量时，CPU 将中断描述符表用作跳转表</li>
+<li>它是由 256 个 8 字节条目组成的数组</li>
+<li>可以位于物理内存中的任何位置</li>
+<li>处理器通过 IDTR 来定位 IDT</li>
+</ul>
+<p>下面是 Linux IRQ 向量布局。前 32 个条目保留用于异常，向量号 128 用于系统调用接口，其余大多用于硬件中断处理程序。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-5b3c93f6e612d0cc0e4d4837d92a443627405262.png" alt="../_images/ditaa-5b3c93f6e612d0cc0e4d4837d92a443627405262.png"></p>
+<p>在 x86 架构中，每个 IDT 条目占据 8 个字节，被称为“门（gate）”。IDT 条目可以分为三种类型的门：</p>
+<blockquote>
+<ul>
+<li>中断门（Interrupt Gate）：保存中断或异常处理程序的地址。跳转到处理程序时，会禁用可屏蔽中断（IF 标志被清除）</li>
+<li>陷阱门（Trap Gate）：与中断门类似，但在跳转到中断/异常处理程序时不会禁用可屏蔽中断</li>
+<li>任务门（Task Gate）：Linux 中不使用</li>
+</ul>
+</blockquote>
+<p>让我们看一下 IDT 条目的几个字段：</p>
+<blockquote>
+<ul>
+<li>段选择符（Segment Selector）：用于索引全局描述符表（GDT）或者本地描述符表（LDT），以找到中断处理程序所在的代码段的起始位置</li>
+<li>偏移量（Offset）：代码段内的偏移量</li>
+<li>T：表示门的类型</li>
+<li>DPL：使用段内容所需的最低特权级</li>
+</ul>
+</blockquote>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-eff5e0e3b58ce239d5310b22b89c0927be5853bd.png" alt="../_images/ditaa-eff5e0e3b58ce239d5310b22b89c0927be5853bd.png"></p>
+<h3 id="中断处理程序地址">中断处理程序地址<a href="#section-12" title="永久链接至标题">¶</a></h3>
+<p>要找到中断处理程序的地址，我们首先需要确定中断处理程序所在代码段的起始地址。我们可以通过使用段选择符来索引 GDT/LDT，以找到对应的段描述符。段描述符会提供存储在“base”字段中的起始地址。现在，结合基地址和偏移量，我们就可以定位到中断处理程序的起始位置。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-b2023fce22479e20bbe08fd76eed87e9a0527688.png" alt="../_images/ditaa-b2023fce22479e20bbe08fd76eed87e9a0527688.png"></p>
+<h3 id="中断处理程序的栈">中断处理程序的栈<a href="#section-13" title="永久链接至标题">¶</a></h3>
+<p>与控制转移到普通函数类似，控制转移到中断或异常处理程序也使用栈来存储返回到被中断代码所需的信息。</p>
+<p>如下图所示，中断在保存被中断指令的地址之前，会将 EFLAGS 寄存器压入栈中。某些类型的异常还会在栈上压入产生错误的代码，以帮助调试异常。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-85b69602726fa6143fc3ba0ffdb492454864aacf.png" alt="../_images/ditaa-85b69602726fa6143fc3ba0ffdb492454864aacf.png"></p>
+<h3 id="处理中断请求">处理中断请求<a href="#section-14" title="永久链接至标题">¶</a></h3>
+<p>在生成中断请求后，处理器会运行一系列事件，最终执行内核中断处理程序：</p>
+<p>处理中断请求的步骤如下：</p>
+<blockquote>
+<ul>
+<li>
+<p>CPU 检查当前特权级别</p>
+</li>
+<li>
+<p>如果需要更改特权级别</p>
+<blockquote>
+<ul>
+<li>使用与新特权级别相关联的堆栈</li>
+<li>在新堆栈上保存旧堆栈信息</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>在堆栈上保存 EFLAGS，CS，EIP</p>
+</li>
+<li>
+<p>在发生程序中止时，在堆栈上保存错误代码</p>
+</li>
+<li>
+<p>执行内核中断处理程序</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="从中断处理程序返回">从中断处理程序返回<a href="#section-15" title="永久链接至标题">¶</a></h3>
+<p>大多数体系架构都提供了特殊的指令，用来在执行中断处理程序后清理堆栈并恢复被中断程序执行。在 x86 架构中，使用 IRET 指令从中断处理程序返回。IRET 类似于 RET 指令，但 IRET 会将 ESP 增加额外的四个字节（因为堆栈上有标志位），并将保存的标志位移动到 EFLAGS 寄存器。</p>
+<p>在中断处理程序执行后恢复执行的过程如下（x86 架构）：</p>
+<blockquote>
+<ul>
+<li>弹出错误代码（如果发生中止）</li>
+<li>调用 IRET 指令
+<ul>
+<li>从堆栈弹出值并恢复以下寄存器的值：CS，EIP，EFLAGS</li>
+<li>如果特权级别发生了更改，则返回到旧堆栈和旧特权级别</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="测验x86-中断处理">测验：x86 中断处理<a href="#x86-2" title="永久链接至标题">¶</a></h3>
+<p>下面的 gdb 命令用于确定基于 int80 的系统调用异常的处理程序。请正确顺序以下命令以及命令的输出。</p>
+<p>(void *) 0xc15de780 &#x3C;entry_SYSENTER_32></p>
+<p>set $idtr_addr=($idtr_entry>>48&#x3C;&#x3C;16)|($idtr_entry&#x26;0xffff)</p>
+<p>print (void*)$idtr_addr</p>
+<p>set $idtr = 0xff800000</p>
+<p>(void *) 0xc15de874 &#x3C;entry_INT80_32></p>
+<p>set $idtr = 0xff801000</p>
+<p>set $idtr_entry = *(uint64_t*)($idtr + 8 * 128)</p>
+<p>monitor info registers</p>
+<p>在 Linux 中，中断处理分为三个阶段：关键阶段、立即阶段和延迟阶段。</p>
+<p>在第一阶段，内核将运行通用中断处理程序，确定中断号、处理该特定中断的中断处理程序以及中断控制器。此时还会执行任何时间紧迫的关键操作（例如，在中断控制器级别上确认中断）。在该阶段，本地处理器中断被禁用，并在下一个阶段继续禁用。</p>
+<p>在第二阶段，将执行与该中断相关联的所有设备驱动程序处理程序。在该阶段结束时，将调用中断控制器的“中断结束”方法，以允许中断控制器重新断开此中断。此时，对本地处理器中断的禁用将解除。</p>
+<p>注解</p>
+<p>一个中断可能与多个设备相关联，在这种情况下，该中断被称为共享中断。通常，在使用共享中断时，由设备驱动程序负责确定中断是否针对其设备。</p>
+<p>在中断处理的最后阶段，将运行中断上下文可延迟操作。我们有时也将其称为中断的“下半部分”（上半部分是在禁用中断的情况下运行的中断处理部分）。此时，可以进行本地处理器上的中断。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-da31e3d17a4d55e5c3dbc0bd5903306418a896ca.png" alt="../_images/ditaa-da31e3d17a4d55e5c3dbc0bd5903306418a896ca.png"></p>
+<h3 id="嵌套中断和异常">嵌套中断和异常<a href="#section-16" title="永久链接至标题">¶</a></h3>
+<p>Linux 曾经支持嵌套中断，但由于解决堆栈溢出问题的方案变得越来越复杂（例如，允许一级嵌套、允许多级嵌套，级数由内核堆栈深度决定等），这一功能在一段时间前被取消了。</p>
+<p>然而，在异常和中断之间仍然可以实现嵌套，但规则相当严格：</p>
+<ul>
+<li>异常（如页错误、系统调用）不能抢占中断；如果发生这种情况，则被视为漏洞（bug）</li>
+<li>中断可以抢占异常</li>
+<li>中断不能抢占另一个中断（以前是可能的）</li>
+</ul>
+<p>以下图表展示了嵌套的可能情景：</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-2e49ca6ac606dab4b2b53231cfbe85ff06312d36.png" alt="../_images/ditaa-2e49ca6ac606dab4b2b53231cfbe85ff06312d36.png"></p>
+<h3 id="中断上下文">中断上下文<a href="#section-17" title="永久链接至标题">¶</a></h3>
+<p>处理中断时（从 CPU 跳转到中断处理程序一直到中断处理程序返回（例如发出 IRET 指令）），这段时间内代码运行在“中断上下文”中。</p>
+<p>中断上下文中运行的代码具有以下特点：</p>
+<blockquote>
+<ul>
+<li>它是作为 IRQ 的结果而运行的（不是异常）</li>
+<li>没有明确定义的进程上下文与之关联</li>
+<li>不允许触发上下文切换（不能睡眠、调度或访问用户内存）</li>
+</ul>
+</blockquote>
+<h3 id="可延迟操作">可延迟操作<a href="#section-18" title="永久链接至标题">¶</a></h3>
+<p>可延迟操作用于稍后运行回调函数。如果从中断处理程序中调度可延迟操作，相关的回调函数将在中断处理程序完成后运行。</p>
+<p>可延迟操作分为两大类：在中断上下文中运行的操作和在进程上下文中运行的操作。</p>
+<p>之所以设计中断上下文可延迟操作，其目的是避免在中断处理程序函数中执行过多的工作。长时间禁用中断可能会产生不良影响，例如增加延迟或由于未及时处理其他中断而导致系统性能下降（例如因为 CPU 未及时从网络接口出列数据包而导致网络数据包丢失，因为网络卡缓冲区已满）。</p>
+<p>可延迟操作具有以下 API：<a href="#system-message-1">**</a>初始化**实例、<a href="#system-message-2">**</a>激活**或**调度**操作以及**屏蔽/禁用**和**取消屏蔽/启用**回调函数的执行。后者用于回调函数和其他上下文之间的同步目的。</p>
+<p>通常，设备驱动程序将在设备实例初始化期间初始化可延迟操作结构，并将从中断处理程序中激活/调度可延迟操作。</p>
+<h3 id="软中断soft-irq">软中断（Soft IRQ）<a href="#soft-irq" title="永久链接至标题">¶</a></h3>
+<p>软中断是一种在中断上下文中实现延迟处理中断处理程序工作的低级机制。</p>
+<p>软中断的 API 包括：</p>
+<blockquote>
+<ul>
+<li>初始化：<code>open_softirq()</code></li>
+<li>激活：<code>raise_softirq()</code></li>
+<li>屏蔽：<code>local_bh_disable()</code> 、<code>local_bh_enable()</code></li>
+</ul>
+</blockquote>
+<p>一旦被激活，回调函数 <code>do_softirq()</code> 会在以下情况下运行：</p>
+<blockquote>
+<ul>
+<li>在中断处理程序完成之后，或者</li>
+<li>从内核线程 <strong>ksoftirqd</strong> 中运行</li>
+</ul>
+</blockquote>
+<p>由于软中断可以重新调度自身并且其他中断可能会导致对它们重新调度，如果不进行检查，它们可能会导致（临时的）进程饥饿。目前，Linux 内核不允许运行超过 <code>MAX_SOFTIRQ_TIME</code> 数量的软中断，也不允许连续重新调度超过 <code>MAX_SOFTIRQ_RESTART</code> 次。</p>
+<p>一旦达到这些瓶颈，一个特殊的内核线程，<strong>ksoftirqd</strong> 会被唤醒，并且所有其他待处理的软中断将在该内核线程的上下文中运行。</p>
+<p>Linux 系统限制软中断的使用，其仅由少数具有低延迟要求和高频率的子系统使用：</p>
+<p>/* 请尽量避免分配新的软中断（softirqs），除非你确实需要非常高频率的线程作业调度。
+对于几乎所有的需求，任务（tasklets）其实已经足够了。例如，所有串行设备的底半部（BHs）等都应该转换为任务（tasklets），而不是软中断。
+*/</p>
+<p>enum
+{
+HI_SOFTIRQ=0,
+TIMER_SOFTIRQ,
+NET_TX_SOFTIRQ,
+NET_RX_SOFTIRQ,
+BLOCK_SOFTIRQ,
+IRQ_POLL_SOFTIRQ,
+TASKLET_SOFTIRQ,
+SCHED_SOFTIRQ,
+HRTIMER_SOFTIRQ,
+RCU_SOFTIRQ,    /* 最好将 RCU 设为最后一个软中断 */</p>
+<p>NR_SOFTIRQS
+};</p>
+<h3 id="网络包泛洪示例">网络包泛洪示例<a href="#section-19" title="永久链接至标题">¶</a></h3>
+<p>下面的屏幕录像将展示我们向系统发送大量数据包时会发生什么。由于数据包处理的一部分发生在软中断中，CPU 预计会花费大部分时间运行软中断，但其中大部分应该是在 ksoftirqd 线程的上下文中进行的。</p>
+<h3 id="任务tasklet">任务（tasklet）<a href="#tasklet" title="永久链接至标题">¶</a></h3>
+<p>任务是在中断上下文中运行的一种动态类型（不限于固定数量）的延迟工作。</p>
+<p>任务的 API：</p>
+<ul>
+<li>初始化：<code>tasklet_init()</code></li>
+<li>激活：<code>tasklet_schedule()</code></li>
+<li>屏蔽：<code>tasklet_disable()</code> 、<code>tasklet_enable()</code></li>
+</ul>
+<p>任务是基于两个专用软中断实现的：<code>TASKLET_SOFITIRQ</code> 和 <code>HI_SOFTIRQ</code>。</p>
+<p>任务也是串行化的，即同一个任务只能在一个处理器上执行。</p>
+<h3 id="工作队列">工作队列<a href="#section-20" title="永久链接至标题">¶</a></h3>
+<p>工作队列是一种在进程上下文中运行的延迟工作。</p>
+<p>它们是在内核线程的基础上实现的。</p>
+<p>工作队列 API:</p>
+<blockquote>
+<ul>
+<li>初始化：<code>INIT_WORK</code></li>
+<li>激活：<code>schedule_work()</code></li>
+</ul>
+</blockquote>
+<h3 id="定时器">定时器<a href="#section-21" title="永久链接至标题">¶</a></h3>
+<p>定时器是建立在:c:macro:<a href="#system-message-3">`</a>TIMER_SOFTIRQ`之上的。</p>
+<p>定时器 API:</p>
+<blockquote>
+<ul>
+<li>初始化：<code>setup_timer()</code></li>
+<li>激活：<code>mod_timer()</code></li>
+</ul>
+</blockquote>
+<h3 id="可延迟操作摘要">可延迟操作摘要<a href="#section-22" title="永久链接至标题">¶</a></h3>
+<p>以下是总结了 Linux 可延迟操作的速查表：</p>
+<blockquote>
+<ul>
+<li>软中断（softIRQ）
+<ul>
+<li>在中断上下文中运行</li>
+<li>静态分配</li>
+<li>同一个处理程序可以在多个核心上并行运行</li>
+</ul>
+</li>
+<li>任务（tasklet）
+<ul>
+<li>在中断上下文中运行</li>
+<li>可以动态分配</li>
+<li>同一个处理程序运行是串行化的</li>
+</ul>
+</li>
+<li>工作队列（workqueues）
+<ul>
+<li>在进程上下文中运行</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="测验linux-中断处理">测验：Linux 中断处理<a href="#linux-1" title="永久链接至标题">¶</a></h3>
+<p>以下哪个中断处理阶段在 CPU 级别上禁用了中断？</p>
+<ul>
+<li>临界（Critical）</li>
+<li>立即（Immediate）</li>
+<li>延迟（Deferred）</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">← 进程 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

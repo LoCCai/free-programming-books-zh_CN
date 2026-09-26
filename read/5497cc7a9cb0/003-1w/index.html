@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mac 开发配置手册 · XCode | Mac 开发配置手册 · 免费编程中文书籍</title><meta name="description" content="Mac 开发配置手册"><meta property="og:title" content="Mac 开发配置手册 · XCode | Mac 开发配置手册"><meta property="og:description" content="Mac 开发配置手册"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/5497cc7a9cb0">Mac 开发配置手册</a> <span> / XCode | Mac 开发配置手册</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Mac 开发配置手册</p> <a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/001-1g/">Introduction | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/002-28/">System Preferences | Mac 开发配置手册</a><a class="active" href="/free-programming-books-zh_CN/read/5497cc7a9cb0/003-1w/">XCode | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/004-1z/">Homebrew | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/005-1z/">Usage | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/006-1y/">Cask | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/007-1w/">iTerm2 | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/008-1u/">ZSH | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/009-1u/">Git | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/010-1y/">Git ignore | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/011-1w/">MySql | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/012-1y/">Node.js | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/013-1v/">Apps | Mac 开发配置手册</a> </aside> <article class="reader-panel prose"> <p>从 App store 或苹果开发者网站安装 <a href="https://developer.apple.com/xcode/">Xcode</a> 。</p>
+<p>紧接着，安装 Xcode command line tools，运行：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    xcode-select --install</span></span></code></pre>
+<p>运行命令后，按照指引，你将完成 Xcode command line tools 安装。</p>
+<hr>
+<p><code>译注</code>:</p>
+<p>如果你不是一名 iOS 或 OS X 开发者，可以跳过安装 XCode 的过程，直接安装 Xcode command line tools 。安装完成后，你将可以直接在 terminal 中使用主要的命令，比如：<code>make, GCC, clang, perl, svn, git, size, strip, strings, libtool, cpp</code>等等。</p>
+<p>如果你想了解 Xcode command line tools 包含多少可用的命令，可以到 <code>/Library/Developer/CommandLineTools/</code> 查看。以下为其中的命令列表：</p>
+<ul>
+<li>ar</li>
+<li>as</li>
+<li>asa</li>
+<li>bison</li>
+<li>BuildStrings</li>
+<li>c++</li>
+<li>c89</li>
+<li>c99</li>
+<li>cc</li>
+<li>clang</li>
+<li>clang++</li>
+<li>cmpdylib</li>
+<li>codesign_allocate</li>
+<li>CpMac</li>
+<li>cpp</li>
+<li>ctags</li>
+<li>ctf_insert</li>
+<li>DeRez</li>
+<li>dsymutil</li>
+<li>dwarfdump</li>
+<li>dyldinfo</li>
+<li>flex</li>
+<li>flex++</li>
+<li>g++</li>
+<li>gatherheaderdoc</li>
+<li>gcc</li>
+<li>gcov</li>
+<li>GetFileInfo</li>
+<li>git</li>
+<li>git-cvsserver</li>
+<li>git-receive-pack</li>
+<li>git-shell</li>
+<li>git-upload-archive</li>
+<li>git-upload-pack</li>
+<li>gm4</li>
+<li>gnumake</li>
+<li>gperf</li>
+<li>hdxml2manxml</li>
+<li>headerdoc2html</li>
+<li>indent</li>
+<li>install_name_tool</li>
+<li>ld</li>
+<li>lex</li>
+<li>libtool</li>
+<li>lipo</li>
+<li>lldb</li>
+<li>lorder</li>
+<li>m4</li>
+<li>make</li>
+<li>MergePef</li>
+<li>mig</li>
+<li>mkdep</li>
+<li>MvMac</li>
+<li>nasm</li>
+<li>ndisasm</li>
+<li>nm</li>
+<li>nmedit</li>
+<li>otool</li>
+<li>pagestuff</li>
+<li>projectInfo</li>
+<li>ranlib</li>
+<li>rebase</li>
+<li>redo_prebinding</li>
+<li>ResMerger</li>
+<li>resolveLinks</li>
+<li>Rez</li>
+<li>RezDet</li>
+<li>RezWack</li>
+<li>rpcgen</li>
+<li>segedit</li>
+<li>SetFile</li>
+<li>size</li>
+<li>SplitForks</li>
+<li>strings</li>
+<li>strip</li>
+<li>svn</li>
+<li>svnadmin</li>
+<li>svndumpfilter</li>
+<li>svnlook</li>
+<li>svnrdump</li>
+<li>svnserve</li>
+<li>svnsync</li>
+<li>svnversion</li>
+<li>unifdef</li>
+<li>unifdefall</li>
+<li>UnRezWack</li>
+<li>unwinddump</li>
+<li>what</li>
+<li>xml2man</li>
+<li>yacc</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/5497cc7a9cb0/002-28/">← System Preferences | Mac 开发配置手册</a></span> <span><a href="/free-programming-books-zh_CN/read/5497cc7a9cb0/004-1z/">Homebrew | Mac 开发配置手册 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

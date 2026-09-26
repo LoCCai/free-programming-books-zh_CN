@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 虚拟化 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 虚拟化 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 虚拟化 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="虚拟化">虚拟化<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<p><a href="https://linux-kernel-labs-zh.github.io/lectures/virt-slides.html">查看幻灯片</a></p>
+<h2 id="课程目标">课程目标：<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>模拟基础知识</li>
+<li>虚拟化基础知识</li>
+<li>半虚拟化基础知识</li>
+<li>对虚拟化的硬件支持</li>
+<li>Xen 虚拟机监视器（hypervisor）概述</li>
+<li>KVM 虚拟机监视器概述</li>
+</ul>
+<h2 id="模拟emulation基础知识">模拟（emulation）基础知识<a href="#emulation" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>指令被模拟（每次执行时都会模拟）</li>
+<li>其他系统组件也被模拟:
+<ul>
+<li>MMU</li>
+<li>物理内存访问</li>
+<li>外围设备</li>
+</ul>
+</li>
+<li>目标架构——被模拟的架构</li>
+<li>主机架构——模拟器运行所基于的架构</li>
+<li>如果是模拟，目标架构和主机架构可以不同</li>
+</ul>
+<h2 id="虚拟化virtualization基础知识">虚拟化（virtualization）基础知识<a href="#virtualization" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>由 Popek 和 Goldberg 在 1974 年的一篇论文中定义</li>
+<li>保真度</li>
+<li>性能</li>
+<li>安全性</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-91f08f7db4b54069e16694eab8d75c06400fc47b.png" alt="../_images/ditaa-91f08f7db4b54069e16694eab8d75c06400fc47b.png"></p>
+<h2 id="经典虚拟化">经典虚拟化<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>捕获（trap）和模拟</li>
+<li>主机和目标使用相同的架构</li>
+<li>大多数目标指令可以直接执行</li>
+<li>目标操作系统在主机上以非特权模式运行</li>
+<li>特权指令被捕获和模拟执行</li>
+<li>有两种机器状态：主机和客户机</li>
+</ul>
+<h2 id="软件虚拟化">软件虚拟化<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>并非所有架构都可以被虚拟化；例如 x86 架构：
+<ul>
+<li>CS 寄存器编码当前特权级（CPL）</li>
+<li>一些指令不会引发捕获（例如 popf 指令）</li>
+</ul>
+</li>
+<li>解决方案：使用二进制翻译来模拟指令</li>
+</ul>
+<h2 id="mmu-虚拟化">MMU 虚拟化<a href="#mmu" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>“虚假”的虚拟机物理地址由主机转换为实际的物理地址</li>
+<li>客户机虚拟地址 -> 客户机物理地址 -> 主机物理地址</li>
+<li>主机硬件不直接使用客户机页表</li>
+<li>虚拟机页表经过验证后，在主机上被翻译成一组新的页表（影子页表）</li>
+</ul>
+<h3 id="影子页表">影子页表<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-8632e22c6d89bd18f97c9cef127444486b5077df.png" alt="../_images/ditaa-8632e22c6d89bd18f97c9cef127444486b5077df.png"></p>
+<h3 id="延迟影子同步">延迟影子同步<a href="#section-6" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>客户机页表的更改通常通过批处理进行</li>
+<li>为了避免重复的捕获、检查和转换，将具有写访问权限的客户机页表条目进行映射</li>
+<li>在以下情况下更新影子页表：
+<ul>
+<li>刷新 TLB</li>
+<li>在主机页面故障（page fault）处理程序中</li>
+</ul>
+</li>
+</ul>
+<h2 id="io-仿真emulation">I/O 仿真（emulation）<a href="#i-o-emulation" title="永久链接至标题">¶</a></h2>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-bb69666d75b9670e542682753fb8cc9b77ff8894.png" alt="../_images/ditaa-bb69666d75b9670e542682753fb8cc9b77ff8894.png"></p>
+<p>/*
+* QEMU model of the UART on the SiFive E300 and U500 series SOCs.
+*
+* Copyright (c) 2016 Stefan O’Rear
+*
+* This program is free software; you can redistribute it and/or modify it
+* under the terms and conditions of the GNU General Public License,
+* version 2 or later, as published by the Free Software Foundation.
+*
+* This program is distributed in the hope it will be useful, but WITHOUT
+* ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+* FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+* more details.
+*
+* You should have received a copy of the GNU General Public License along with
+* this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+*/</p>
+<p>#include “qemu/osdep.h”
+#include “qapi/error.h”
+#include “qemu/log.h”
+#include “chardev/char.h”
+#include “chardev/char-fe.h”
+#include “hw/irq.h”
+#include “hw/char/sifive_uart.h”</p>
+<p>/*
+* Not yet implemented:
+*
+* Transmit FIFO using “qemu/fifo8.h”
+*/</p>
+<p>/* Returns the state of the IP (interrupt pending) register */
+static uint64_t uart_ip(SiFiveUARTState *s)
+{
+uint64_t ret = 0;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>uint64\_t txcnt \= SIFIVE\_UART\_GET\_TXCNT(s\->txctrl);</span></span>
+<span class="line"><span>uint64\_t rxcnt \= SIFIVE\_UART\_GET\_RXCNT(s\->rxctrl);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if (txcnt != 0) {</span></span>
+<span class="line"><span>    ret |= SIFIVE\_UART\_IP\_TXWM;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>if (s\->rx\_fifo\_len \> rxcnt) {</span></span>
+<span class="line"><span>    ret |= SIFIVE\_UART\_IP\_RXWM;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return ret;</span></span></code></pre>
+<p>}</p>
+<p>static void update_irq(SiFiveUARTState *s)
+{
+int cond = 0;
+if ((s->ie &#x26; SIFIVE_UART_IE_TXWM) ||
+((s->ie &#x26; SIFIVE_UART_IE_RXWM) &#x26;&#x26; s->rx_fifo_len)) {
+cond = 1;
+}
+if (cond) {
+qemu_irq_raise(s->irq);
+} else {
+qemu_irq_lower(s->irq);
+}
+}</p>
+<p>static uint64_t
+uart_read(void *opaque, hwaddr addr, unsigned int size)
+{
+SiFiveUARTState *s = opaque;
+unsigned char r;
+switch (addr) {
+case SIFIVE_UART_RXFIFO:
+if (s->rx_fifo_len) {
+r = s->rx_fifo[0];
+memmove(s->rx_fifo, s->rx_fifo + 1, s->rx_fifo_len - 1);
+s->rx_fifo_len—;
+qemu_chr_fe_accept_input(&#x26;s->chr);
+update_irq(s);
+return r;
+}
+return 0x80000000;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>case SIFIVE\_UART\_TXFIFO:</span></span>
+<span class="line"><span>    return 0; /\* Should check tx fifo \*/</span></span>
+<span class="line"><span>case SIFIVE\_UART\_IE:</span></span>
+<span class="line"><span>    return s\->ie;</span></span>
+<span class="line"><span>case SIFIVE\_UART\_IP:</span></span>
+<span class="line"><span>    return uart\_ip(s);</span></span>
+<span class="line"><span>case SIFIVE\_UART\_TXCTRL:</span></span>
+<span class="line"><span>    return s\->txctrl;</span></span>
+<span class="line"><span>case SIFIVE\_UART\_RXCTRL:</span></span>
+<span class="line"><span>    return s\->rxctrl;</span></span>
+<span class="line"><span>case SIFIVE\_UART\_DIV:</span></span>
+<span class="line"><span>    return s\->div;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>qemu\_log\_mask(LOG\_GUEST\_ERROR, "%s: bad read: addr=0x%x\\n",</span></span>
+<span class="line"><span>              \_\_func\_\_, (int)addr);</span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>static void
+uart_write(void *opaque, hwaddr addr,
+uint64_t val64, unsigned int size)
+{
+SiFiveUARTState *s = opaque;
+uint32_t value = val64;
+unsigned char ch = value;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>switch (addr) {</span></span>
+<span class="line"><span>case SIFIVE\_UART\_TXFIFO:</span></span>
+<span class="line"><span>    qemu\_chr\_fe\_write(&#x26;s\->chr, &#x26;ch, 1);</span></span>
+<span class="line"><span>    update\_irq(s);</span></span>
+<span class="line"><span>    return;</span></span>
+<span class="line"><span>case SIFIVE\_UART\_IE:</span></span>
+<span class="line"><span>    s\->ie \= val64;</span></span>
+<span class="line"><span>    update\_irq(s);</span></span>
+<span class="line"><span>    return;</span></span>
+<span class="line"><span>case SIFIVE\_UART\_TXCTRL:</span></span>
+<span class="line"><span>    s\->txctrl \= val64;</span></span>
+<span class="line"><span>    return;</span></span>
+<span class="line"><span>case SIFIVE\_UART\_RXCTRL:</span></span>
+<span class="line"><span>    s\->rxctrl \= val64;</span></span>
+<span class="line"><span>    return;</span></span>
+<span class="line"><span>case SIFIVE\_UART\_DIV:</span></span>
+<span class="line"><span>    s\->div \= val64;</span></span>
+<span class="line"><span>    return;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>qemu\_log\_mask(LOG\_GUEST\_ERROR, "%s: bad write: addr=0x%x v=0x%x\\n",</span></span>
+<span class="line"><span>              \_\_func\_\_, (int)addr, (int)value);</span></span></code></pre>
+<p>}</p>
+<p>static const MemoryRegionOps uart_ops = {
+.read = uart_read,
+.write = uart_write,
+.endianness = DEVICE_NATIVE_ENDIAN,
+.valid = {
+.min_access_size = 4,
+.max_access_size = 4
+}
+};</p>
+<p>static void uart_rx(void *opaque, const uint8_t *buf, int size)
+{
+SiFiveUARTState *s = opaque;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/\* Got a byte.  \*/</span></span>
+<span class="line"><span>if (s\->rx\_fifo\_len \>= sizeof(s\->rx\_fifo)) {</span></span>
+<span class="line"><span>    printf("WARNING: UART dropped char.\\n");</span></span>
+<span class="line"><span>    return;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>s\->rx\_fifo\[s\->rx\_fifo\_len++\] \= \*buf;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>update\_irq(s);</span></span></code></pre>
+<p>}</p>
+<p>static int uart_can_rx(void *opaque)
+{
+SiFiveUARTState *s = opaque;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>return s\->rx\_fifo\_len &#x3C; sizeof(s\->rx\_fifo);</span></span></code></pre>
+<p>}</p>
+<p>static void uart_event(void *opaque, QEMUChrEvent event)
+{
+}</p>
+<p>static int uart_be_change(void *opaque)
+{
+SiFiveUARTState *s = opaque;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>qemu\_chr\_fe\_set\_handlers(&#x26;s\->chr, uart\_can\_rx, uart\_rx, uart\_event,</span></span>
+<span class="line"><span>    uart\_be\_change, s, NULL, true);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>/*
+* Create UART device.
+*/
+SiFiveUARTState *sifive_uart_create(MemoryRegion *address_space, hwaddr base,
+Chardev *chr, qemu_irq irq)
+{
+SiFiveUARTState *s = g_malloc0(sizeof(SiFiveUARTState));
+s->irq = irq;
+qemu_chr_fe_init(&#x26;s->chr, chr, &#x26;error_abort);
+qemu_chr_fe_set_handlers(&#x26;s->chr, uart_can_rx, uart_rx, uart_event,
+uart_be_change, s, NULL, true);
+memory_region_init_io(&#x26;s->mmio, NULL, &#x26;uart_ops, s,
+TYPE_SIFIVE_UART, SIFIVE_UART_MAX);
+memory_region_add_subregion(address_space, base, &#x26;s->mmio);
+return s;
+}</p>
+<h2 id="部分虚拟化">部分虚拟化<a href="#section-7" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>修改客户机操作系统以与虚拟机监视器（VMM）合作
+<ul>
+<li>CPU 部分虚拟化</li>
+<li>MMU 部分虚拟化</li>
+<li>I/O 部分虚拟化</li>
+</ul>
+</li>
+<li>VMM 提供超级调用（hypercalls）用于：
+<ul>
+<li>激活/停用中断</li>
+<li>更改页表</li>
+<li>访问虚拟化外设</li>
+</ul>
+</li>
+<li>VMM 使用事件触发虚拟机中的中断</li>
+</ul>
+<h2 id="intel-vt-x">Intel VT-x<a href="#intel-vt-x" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>硬件扩展，将 x86 架构转换为可以进行经典虚拟化的状态</li>
+<li>新的执行模式：非根模式（non-root mode）</li>
+<li>每个非根模式实例使用虚拟机控制结构（VMCS）来存储其状态</li>
+<li>VMM 在根模式（root mode）下运行</li>
+<li>通过 VM-entry 和 VM-exit 在两种模式之间进行切换</li>
+</ul>
+<h3 id="虚拟机控制结构">虚拟机控制结构<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>客户机信息：虚拟 CPU 的状态</li>
+<li>主机信息：物理 CPU 的状态</li>
+<li>保存的信息：
+<ul>
+<li>可见状态：段寄存器、CR3、IDTR 等</li>
+<li>内部状态</li>
+</ul>
+</li>
+<li>不能直接访问 VMCS，但可以使用特殊指令访问某些信息</li>
+</ul>
+<h3 id="虚拟机进入和退出">虚拟机进入和退出<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>虚拟机进入——使用新指令将 CPU 切换到非根模式，并从 VMCS 加载虚拟机状态；主机状态保存在 VMCS 中</li>
+<li>允许在客户机中注入中断和异常</li>
+<li>根据 VMCS 的配置，虚拟机退出将自动触发</li>
+<li>当虚拟机退出时，主机状态从 VMCS 加载，客户机状态保存在 VMCS 中</li>
+</ul>
+<h3 id="虚拟机执行控制字段">虚拟机执行控制字段<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>选择触发虚拟机退出的条件；示例：
+<ul>
+<li>如果生成外部中断</li>
+<li>如果生成外部中断并且 EFLAGS.IF 被设置</li>
+<li>如果修改了 CR0-CR4 寄存器</li>
+</ul>
+</li>
+<li>异常位图——选择生成虚拟机退出的异常</li>
+<li>IO 位图——选择生成虚拟机退出的 I/O 地址（IN/OUT 访问）</li>
+<li>MSR 位图——选择生成虚拟机退出的 RDMSR 或 WRMSR 指令</li>
+</ul>
+<h2 id="扩展页表">扩展页表<a href="#section-11" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>减少 MMU 虚拟化的复杂性，提高性能</li>
+<li>不再需要通过虚拟机退出来访问 CR3、INVLPG 和页面故障</li>
+<li>EPT 页表由 VMM 控制</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-cc9a2e995be74ee99646ea4bf0e551d766fa92ef.png" alt="../_images/ditaa-cc9a2e995be74ee99646ea4bf0e551d766fa92ef.png"></p>
+<h3 id="vpid">VPID<a href="#vpid" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>虚拟机进入和退出会强制 TLB 刷新——丢失 VMM / VM 的转换信息</li>
+<li>为了避免这个问题，每个虚拟机（VPID 0 保留给 VMM）关联一个 VPID（虚拟处理器 ID）标签</li>
+<li>所有 TLB 条目都被标记</li>
+<li>在虚拟机进入和退出时，只刷新与标签相关的条目</li>
+<li>在搜索 TLB 时，只使用当前的 VPID</li>
+</ul>
+<h2 id="io-虚拟化">I/O 虚拟化<a href="#i-o" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<ul>
+<li>以受控的方式从虚拟机直接访问硬件
+<ul>
+<li>将主机的 MMIO 直接映射到客户机</li>
+<li>转发中断</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-3901edd823cdc7a6f429ebc37cbc541e650abc96.png" alt="../_images/ditaa-3901edd823cdc7a6f429ebc37cbc541e650abc96.png"></p>
+<p>相比于模拟设备时的陷阱 MMIO，我们可以通过映射到客户机的页表，允许客户机直接访问 MMIO。</p>
+<p>设备产生的中断由主机内核处理，并向 VMM 发送信号，VMM 将中断注入到客户机中，就像对于模拟设备一样。</p>
+<p>VT-d 使用 I/O MMU（DMA 重映射）来保护和转换虚拟机物理地址。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-d880751969de8642b2613caaca345d71acea4500.png" alt="../_images/ditaa-d880751969de8642b2613caaca345d71acea4500.png"></p>
+<ul>
+<li>消息传递中断（MSI）= DMA 写入 IRQ 控制器的主机地址范围（例如 0xFEExxxxx）</li>
+<li>地址的低位和数据指示要发送到哪个 CPU 的哪个中断向量</li>
+<li>中断重映射表指向应该接收中断的虚拟 CPU（VMCS）</li>
+<li>I/O MMU 将捕获 IRQ 控制器的写入并在中断重映射表中查找
+<ul>
+<li>如果该虚拟 CPU 当前正在运行，则直接接收中断</li>
+<li>否则，在一个表中设置一个位（发布的中断描述符表），下次运行该 vCPU 时将注入中断</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-2cb0eb0056bb775d1446843d62241fd660662c96.png" alt="../_images/ditaa-2cb0eb0056bb775d1446843d62241fd660662c96.png"></p>
+<ul>
+<li>单根——输入输出虚拟化</li>
+<li>具有多个以太网端口的物理设备将显示为 PCI 总线上的多个设备</li>
+<li>物理功能用于控制且能配置
+<ul>
+<li>呈现自身为新的 PCI 设备</li>
+<li>使用哪个 VLAN</li>
+</ul>
+</li>
+<li>新的虚拟功能在总线上枚举，并可以分配给特定的客户机</li>
+</ul>
+<h2 id="qemu">qemu<a href="#qemu" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>通过 Tiny Code Generator（TCG）使用二进制翻译进行高效的模拟</li>
+<li>支持不同的目标和主机体系结构（例如，在 x86 上运行 ARM 虚拟机）</li>
+<li>进程级和完全系统级的仿真</li>
+<li>MMU 仿真</li>
+<li>I/O 仿真</li>
+<li>可与 KVM 一起用于加速虚拟化</li>
+</ul>
+<h2 id="kvm">KVM<a href="#kvm" title="永久链接至标题">¶</a></h2>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-f8fcc760ef5dad50d1038ed3426d0fcce12fd3e6.png" alt="../_images/ditaa-f8fcc760ef5dad50d1038ed3426d0fcce12fd3e6.png"></p>
+<ul>
+<li>用于硬件虚拟化的 Linux 设备驱动程序（例如 Intel VT-x、SVM）</li>
+<li>基于 IOCTL 的接口，用于管理和运行虚拟 CPU</li>
+<li>VMM 组件在 Linux 内核中实现（例如中断控制器、定时器）</li>
+<li>如果存在，使用影子页表或 EPT</li>
+<li>使用 qemu 或 virtio 进行 I/O 虚拟化</li>
+</ul>
+<h2 id="类型-1-和类型-2-的-hypervisor">类型 1 和类型 2 的 Hypervisor<a href="#hypervisor" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>类型1 = 裸机 Hypervisor</li>
+<li>类型2 = 嵌入在现有内核/操作系统中的 Hypervisor</li>
+</ul>
+<h2 id="xen">Xen<a href="#xen" title="永久链接至标题">¶</a></h2>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/xen-overview.png" alt="../_images/xen-overview.png"></p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">← 体系结构层 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

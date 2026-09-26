@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 1.3 为什么要用 Docker · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 1.3 为什么要用 Docker"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 1.3 为什么要用 Docker</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="13-为什么要用-docker">1.3 为什么要用 Docker</h2>
+<p>在回答 “为什么用 Docker” 之前，笔者想先问一个问题：<strong>你有没有经历过这些场景？</strong></p>
+<h3 id="131-没有-docker-的世界">1.3.1 没有 Docker 的世界</h3>
+<p>在 Docker 出现之前，软件开发和运维面临着诸多棘手的问题。我们先来看看以下三个典型的痛点场景。</p>
+<h4 id="场景一在我电脑上明明能跑">场景一：“在我电脑上明明能跑”</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>周五下午 5:00</span></span>
+<span class="line"><span>├── 开发者：代码写完了，本地测试通过，提交！🎉</span></span>
+<span class="line"><span>├── 周一早上 9:00</span></span>
+<span class="line"><span>│   └── 测试："这个功能在测试环境跑不起来"</span></span>
+<span class="line"><span>└── 开发者："不可能，在我电脑上明明能跑啊……"</span></span></code></pre>
+<p>笔者统计过，这个问题通常由以下原因导致：</p>
+<ul>
+<li>Python/Node/Java 版本不一致</li>
+<li>依赖库版本不一致</li>
+<li>操作系统配置不一致</li>
+<li>某些环境变量没有设置</li>
+<li>“哦，忘了说我本地装了个 XXX”</li>
+</ul>
+<h4 id="场景二环境配置的噩梦">场景二：环境配置的噩梦</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">新同事入职</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> Day</span><span style="color:#9ECBFF"> 1：领电脑，配环境</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> Day</span><span style="color:#9ECBFF"> 2：继续配环境，遇到问题</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> Day</span><span style="color:#9ECBFF"> 3：换种方法配环境</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> Day</span><span style="color:#9ECBFF"> 4：问老同事怎么配的，他也忘了</span></span>
+<span class="line"><span style="color:#B392F0">└──</span><span style="color:#9ECBFF"> Day</span><span style="color:#9ECBFF"> 5：终于能跑起来了！但不知道为什么……</span></span></code></pre>
+<h4 id="场景三服务器迁移的恐惧">场景三：服务器迁移的恐惧</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">运维：</span><span style="color:#B392F0">"我们需要把服务迁移到新服务器"</span></span>
+<span class="line"><span style="color:#B392F0">开发：</span><span style="color:#B392F0">"旧服务器上的配置文档在哪？"</span></span>
+<span class="line"><span style="color:#B392F0">运维：</span><span style="color:#B392F0">"当时是一个已经离职的同事配的……"</span></span>
+<span class="line"><span style="color:#B392F0">所有人：😱</span></span></code></pre>
+<h3 id="132-docker-如何解决这些问题">1.3.2 Docker 如何解决这些问题</h3>
+<p>Docker 的出现为上述问题提供了完美的解决方案。它通过 “一次构建，到处运行” 的核心理念，从根本上改变了软件交付的方式。</p>
+<h4 id="核心理念一次构建到处运行">核心理念：一次构建，到处运行</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart LR</span></span>
+<span class="line"><span style="color:#E1E4E8">    dev["开发团队"] -->|创建| img["Docker 镜像"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    img -->|测试团队验证| test["测试团队"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    test -- "有问题&#x3C;br/>反馈修改和更新" --> dev</span></span>
+<span class="line"><span style="color:#E1E4E8">    test -- "没问题&#x3C;br/>发布" --> prod["生产环境"]</span></span></code></pre>
+<h3 id="133-docker-的核心优势">1.3.3 Docker 的核心优势</h3>
+<p>除了解决上述痛点，Docker 还拥有诸多显著的技术优势，包括环境一致性、秒级启动、高效的资源利用等。</p>
+<h4 id="1-环境一致性">1. 环境一致性</h4>
+<p>Docker 镜像包含了应用运行所需的大部分用户态依赖：代码、运行时、系统工具、库和默认配置。它不包含宿主机内核，也不能消除 CPU 架构、内核能力、外部服务、网络、卷和运行时配置差异。这意味着：</p>
+<ul>
+<li>✅ 开发环境和生产环境可以显著减少差异</li>
+<li>✅ 大幅降低 “在我机器上能跑” 的问题</li>
+<li>✅ 新人入职，一条命令就能启动开发环境</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 新同事入职第一天</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> git</span><span style="color:#9ECBFF"> clone</span><span style="color:#9ECBFF"> https://github.com/company/project.git</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 完整的开发环境就准备好了</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">...</span></span></code></pre>
+<h4 id="2-秒级启动">2. 秒级启动</h4>
+<p>传统虚拟机启动需要几分钟（引导操作系统），而 Docker 容器启动通常只需要 <strong>几秒甚至几百毫秒</strong>。</p>
+<p>笔者实测数据：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>启动内容</th><th>虚拟机</th><th>Docker 容器</th></tr></thead><tbody><tr><td>空系统</td><td>~60 秒</td><td>~0.5 秒</td></tr><tr><td>MySQL</td><td>~90 秒</td><td>~3 秒</td></tr><tr><td>完整 Web 应用</td><td>~120 秒</td><td>~5 秒</td></tr></tbody></table>
+<p>这个差异对以下场景尤为重要：</p>
+<ul>
+<li><strong>CI/CD 流水线</strong>：每次构建节省几分钟，一天累积下来就是几小时</li>
+<li><strong>弹性扩容</strong>：流量高峰时能快速启动更多实例</li>
+<li><strong>开发体验</strong>：快速重启服务进行调试</li>
+</ul>
+<h4 id="3-资源效率">3. 资源效率</h4>
+<p>Docker 容器共享宿主机内核，无需为每个应用运行完整的操作系统。以一台 64GB 内存的物理服务器为例：</p>
+<ul>
+<li><strong>传统虚拟机方案</strong>：每个虚拟机都需要运行完整的操作系统（每个额外占用如 2GB 内存），产生大量资源开销，实际可用于应用的内存可能只有约 18GB。</li>
+<li><strong>Docker 方案</strong>：容器直接共享宿主机系统，只需付出很少的基础开销（OS 及引擎约 4GB），即可将约 60GB 的内存全部用于实际应用。</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TD</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph VM ["传统虚拟机方案 ❌"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"><span style="color:#E1E4E8">        Server1["物理服务器 (64GB 内存)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph VMs ["可用应用内存: 约 18GB"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            direction LR</span></span>
+<span class="line"><span style="color:#E1E4E8">            VM1["VM 1: 应用 1&#x3C;br/>(含 2GB OS)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            VM2["VM 2: 应用 2&#x3C;br/>(含 2GB OS)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            VM3["VM 3: 应用 3&#x3C;br/>(含 2GB OS)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#E1E4E8">        Server1 --- VMs</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph Docker ["Docker 方案 ✅"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"><span style="color:#E1E4E8">        Server2["物理服务器 (64GB 内存)&#x3C;br/>含约 4GB OS及引擎配置"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph Containers ["可用应用内存: 约 60GB"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            direction LR</span></span>
+<span class="line"><span style="color:#E1E4E8">            C1["容器 1: 应用 1&#x3C;br/>(按需分配)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            C2["容器 2: 应用 2&#x3C;br/>(按需分配)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            C3["容器 3: 应用 3&#x3C;br/>(按需分配)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#E1E4E8">        Server2 --- Containers</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span></code></pre>
+<h4 id="4-持续交付和部署">4. 持续交付和部署</h4>
+<p>Docker 完美契合 DevOps 的工作流程：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart LR</span></span>
+<span class="line"><span style="color:#E1E4E8">    A["代码提交&#x3C;br/>(Git push)"] --> B["自动构建镜像&#x3C;br/>(docker build)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    B --> C["自动测试&#x3C;br/>(容器内运行测试)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    C --> D["自动部署&#x3C;br/>(容器滚动更新)"]</span></span></code></pre>
+<p>使用 <a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/04_image/4.5_build.md">Dockerfile</a> 定义镜像构建过程，使得：</p>
+<ul>
+<li>构建过程 <strong>可重复、可追溯</strong></li>
+<li>任何人都能从代码重建完全相同的镜像</li>
+<li>配合 <a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/21_case_devops/21.2_github_actions.md">GitHub Actions</a> 等 CI 系统实现自动化</li>
+</ul>
+<h4 id="5-轻松迁移">5. 轻松迁移</h4>
+<p>Docker 可以在几乎任何平台上运行：</p>
+<ul>
+<li>✅ 本地开发机 (macOS、Windows、Linux)</li>
+<li>✅ 公有云（AWS、Azure、GCP、阿里云、腾讯云）</li>
+<li>✅ 私有云和自建数据中心</li>
+<li>✅ 边缘设备和 IoT</li>
+</ul>
+<p><strong>同一个镜像，在任何地方运行结果都一致。</strong> 这让应用迁移变得前所未有的简单。</p>
+<h4 id="6-微服务架构的基石">6. 微服务架构的基石</h4>
+<p>现代微服务架构几乎都依赖容器技术。Docker 让你可以：</p>
+<ul>
+<li><strong>隔离服务</strong>：每个服务运行在独立容器中，互不干扰</li>
+<li><strong>独立扩展</strong>：哪个服务负载高，就单独扩展哪个</li>
+<li><strong>独立部署</strong>：更新一个服务不影响其他服务</li>
+<li><strong>技术多样</strong>：不同服务可以用不同语言和框架</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TD</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph Microservices ["微服务架构示例"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph AppLayer ["应用层"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            direction LR</span></span>
+<span class="line"><span style="color:#E1E4E8">            Frontend["前端容器&#x3C;br/>(Node.js)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            API["API 容器&#x3C;br/>(Python)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            Worker["Worker 容器&#x3C;br/>(Go)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#E1E4E8">        Redis["Redis 容器"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        DB["PostgreSQL 容器"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        Frontend --> API</span></span>
+<span class="line"><span style="color:#E1E4E8">        API --> Redis</span></span>
+<span class="line"><span style="color:#E1E4E8">        API --> DB</span></span>
+<span class="line"><span style="color:#E1E4E8">        Worker --> Redis</span></span>
+<span class="line"><span style="color:#E1E4E8">        Worker --> DB</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span></code></pre>
+<h3 id="134-docker-不适合的场景">1.3.4 Docker 不适合的场景</h3>
+<p>笔者认为，技术选型要客观。Docker 并非银弹，以下场景可能不太适合：</p>
+<ul>
+<li><strong>需要完全隔离的场景</strong>：容器共享宿主机内核，隔离性不如虚拟机。如果需要运行不受信任的代码，虚拟机可能更安全。</li>
+<li><strong>需要特殊内核的场景</strong>：容器使用宿主机内核。如果应用需要特定版本的内核或内核模块，可能需要虚拟机。</li>
+<li><strong>Windows 原生应用</strong>：虽然 Docker 支持 Windows 容器，但生态不如 Linux 容器成熟。传统 Windows 应用的容器化仍有挑战。</li>
+<li><strong>桌面应用</strong>：Docker 主要面向服务端应用。桌面 GUI 应用的容器化虽然可行，但通常得不偿失。</li>
+</ul>
+<h3 id="135-与传统虚拟机的对比总结">1.3.5 与传统虚拟机的对比总结</h3>
+<p>关于容器与虚拟机的详细特性对比，请参阅 <a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/01_introduction/1.2_what.md">1.2.3 Docker vs 虚拟机</a> 中的对比表。总结来说：</p>
+<ul>
+<li><strong>性能差异</strong>：虚拟机通常有 5-20% 的性能损耗，而容器接近原生性能。</li>
+<li><strong>最佳场景</strong>：Docker 容器适合微服务、CI/CD、开发环境；虚拟机适合多租户、高安全需求场景。</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">← 1.2 什么是 Docker</a></span> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

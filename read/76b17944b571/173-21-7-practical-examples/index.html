@@ -1,0 +1,787 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 21.7 实战案例：Go/Rust/数据库/微服务 · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 21.7 实战案例：Go/Rust/数据库/微服务"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 21.7 实战案例：Go/Rust/数据库/微服务</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="217-实战案例gorust数据库微服务">21.7 实战案例：Go/Rust/数据库/微服务</h2>
+<p>本节通过实际项目案例演示如何为不同类型的应用构建最优化的 Docker 镜像，以及如何使用 Docker Compose 构建完整的开发和生产环境。</p>
+<h3 id="2171-go-应用的最小化镜像构建">21.7.1 Go 应用的最小化镜像构建</h3>
+<p>Go 语言因其编译为静态二进制和快速启动而特别适合容器化。以下展示如何构建极小的 Go 应用镜像。</p>
+<h4 id="超小-go-web-服务">超小 Go Web 服务</h4>
+<p><strong>应用代码（main.go）：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#B392F0"> main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">fmt</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">log</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">net/http</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">os</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> healthHandler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">w</span><span style="color:#B392F0"> http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">ResponseWriter</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">r</span><span style="color:#F97583"> *</span><span style="color:#B392F0">http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Request</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">	w.</span><span style="color:#B392F0">Header</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">Set</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Content-Type"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"application/json"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">	fmt.</span><span style="color:#B392F0">Fprintf</span><span style="color:#E1E4E8">(w, </span><span style="color:#9ECBFF">`{"status":"healthy","version":"1.0.0"}`</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> helloHandler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">w</span><span style="color:#B392F0"> http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">ResponseWriter</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">r</span><span style="color:#F97583"> *</span><span style="color:#B392F0">http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Request</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">	hostname, _ </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> os.</span><span style="color:#B392F0">Hostname</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">	w.</span><span style="color:#B392F0">Header</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">Set</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Content-Type"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"application/json"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">	fmt.</span><span style="color:#B392F0">Fprintf</span><span style="color:#E1E4E8">(w, </span><span style="color:#9ECBFF">`{"message":"Hello from </span><span style="color:#79B8FF">%s</span><span style="color:#9ECBFF">","version":"1.0.0"}`</span><span style="color:#E1E4E8">, hostname)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">	http.</span><span style="color:#B392F0">HandleFunc</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/health"</span><span style="color:#E1E4E8">, healthHandler)</span></span>
+<span class="line"><span style="color:#E1E4E8">	http.</span><span style="color:#B392F0">HandleFunc</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/hello"</span><span style="color:#E1E4E8">, helloHandler)</span></span>
+<span class="line"><span style="color:#E1E4E8">	http.</span><span style="color:#B392F0">HandleFunc</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/"</span><span style="color:#E1E4E8">, helloHandler)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	port </span><span style="color:#F97583">:=</span><span style="color:#9ECBFF"> ":8080"</span></span>
+<span class="line"><span style="color:#E1E4E8">	log.</span><span style="color:#B392F0">Printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Server starting on </span><span style="color:#79B8FF">%s</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, port)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> http.</span><span style="color:#B392F0">ListenAndServe</span><span style="color:#E1E4E8">(port, </span><span style="color:#79B8FF">nil</span><span style="color:#E1E4E8">); err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">		log.</span><span style="color:#B392F0">Fatalf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Server failed: </span><span style="color:#79B8FF">%v</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, err)</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>多阶段 Dockerfile：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#6A737D"># Stage 1: 构建阶段</span></span>
+<span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> golang:1.26-alpine </span><span style="color:#F97583">AS</span><span style="color:#E1E4E8"> builder</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">WORKDIR</span><span style="color:#E1E4E8"> /build</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 安装构建依赖</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apk add --no-cache git ca-certificates tzdata</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制模块文件（利用缓存）</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> go.mod go.sum ./</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> go mod download</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制源代码</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> . .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 构建静态二进制</span></span>
+<span class="line"><span style="color:#6A737D"># -ldflags="-w -s" 去除调试符号减小体积</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \</span></span>
+<span class="line"><span style="color:#E1E4E8">    -a -installsuffix cgo \</span></span>
+<span class="line"><span style="color:#E1E4E8">    -ldflags=</span><span style="color:#9ECBFF">"-w -s -X main.Version=1.0.0 -X main.BuildTime=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"</span><span style="color:#E1E4E8"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">    -o app .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Stage 2: 运行阶段（scratch 镜像）</span></span>
+<span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> scratch</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制 CA 证书（用于 HTTPS）</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制时区数据（用于时间处理）</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> --from=builder /usr/share/zoneinfo /usr/share/zoneinfo</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制应用二进制</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> --from=builder /build/app /app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">EXPOSE</span><span style="color:#E1E4E8"> 8080</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 使用绝对路径作为 ENTRYPOINT</span></span>
+<span class="line"><span style="color:#F97583">ENTRYPOINT</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"/app"</span><span style="color:#E1E4E8">]</span></span></code></pre>
+<p><strong>构建和测试：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 构建镜像</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> -t</span><span style="color:#9ECBFF"> go-app:latest</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 检查镜像大小</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> images</span><span style="color:#9ECBFF"> go-app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 运行容器</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> 8080:8080</span><span style="color:#79B8FF"> --name</span><span style="color:#9ECBFF"> go-demo</span><span style="color:#9ECBFF"> go-app:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 测试应用</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://localhost:8080/health</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> jq</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 进入容器验证</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> go-demo</span><span style="color:#9ECBFF"> ls</span><span style="color:#79B8FF"> -la</span><span style="color:#9ECBFF"> /</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 只包含 /app 和系统必要文件</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 镜像大小通常 &#x3C; 10MB（相比 golang:1.26 基础镜像的 ~900MB）</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> history</span><span style="color:#9ECBFF"> go-app:latest</span></span></code></pre>
+<p><strong>go.mod 和 go.sum 示例：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>module github.com/example/go-app</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>go 1.26</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>require (</span></span>
+<span class="line"><span>    // 如果需要依赖</span></span>
+<span class="line"><span>)</span></span></code></pre>
+<h4 id="带依赖的-go-应用">带依赖的 Go 应用</h4>
+<p><strong>应用代码（使用 Gin 框架）：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#B392F0"> main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">github.com/gin-gonic/gin</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">log</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">	router </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> gin.</span><span style="color:#B392F0">Default</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	router.</span><span style="color:#B392F0">GET</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/health"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">func</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">c</span><span style="color:#F97583"> *</span><span style="color:#B392F0">gin</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">		c.</span><span style="color:#B392F0">JSON</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">gin</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">H</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">			"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ok"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">		})</span></span>
+<span class="line"><span style="color:#E1E4E8">	})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	router.</span><span style="color:#B392F0">GET</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/users"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">func</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">c</span><span style="color:#F97583"> *</span><span style="color:#B392F0">gin</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">		c.</span><span style="color:#B392F0">JSON</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">gin</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">H</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">			"users"</span><span style="color:#E1E4E8">: []</span><span style="color:#F97583">string</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">"alice"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"bob"</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#E1E4E8">		})</span></span>
+<span class="line"><span style="color:#E1E4E8">	})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	log.</span><span style="color:#B392F0">Fatal</span><span style="color:#E1E4E8">(router.</span><span style="color:#B392F0">Run</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">":8080"</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>优化的 Dockerfile：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> golang:1.26-alpine </span><span style="color:#F97583">AS</span><span style="color:#E1E4E8"> builder</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">WORKDIR</span><span style="color:#E1E4E8"> /src</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apk add --no-cache git ca-certificates tzdata</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> go.mod go.sum ./</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> go mod download</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> . .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \</span></span>
+<span class="line"><span style="color:#E1E4E8">    go build -a -installsuffix cgo \</span></span>
+<span class="line"><span style="color:#E1E4E8">    -ldflags=</span><span style="color:#9ECBFF">"-w -s"</span><span style="color:#E1E4E8"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">    -o app .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 最终镜像</span></span>
+<span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> alpine:3.21</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apk add --no-cache ca-certificates tzdata</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">WORKDIR</span><span style="color:#E1E4E8"> /root/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> --from=builder /src/app .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">EXPOSE</span><span style="color:#E1E4E8"> 8080</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">CMD</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"./app"</span><span style="color:#E1E4E8">]</span></span></code></pre>
+<h3 id="2172-rust-应用的最小化镜像构建">21.7.2 Rust 应用的最小化镜像构建</h3>
+<p>Rust 因其性能和安全性在系统级应用中备受青睐。</p>
+<p><strong>应用代码（main.rs）：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="rust"><code><span class="line"><span style="color:#F97583">use</span><span style="color:#B392F0"> actix_web</span><span style="color:#F97583">::</span><span style="color:#E1E4E8">{web, </span><span style="color:#B392F0">App</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">HttpServer</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">HttpResponse</span><span style="color:#E1E4E8">};</span></span>
+<span class="line"><span style="color:#F97583">use</span><span style="color:#B392F0"> std</span><span style="color:#F97583">::</span><span style="color:#B392F0">sync</span><span style="color:#F97583">::</span><span style="color:#B392F0">Mutex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">#[actix_web</span><span style="color:#F97583">::</span><span style="color:#E1E4E8">main]</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> fn</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-></span><span style="color:#B392F0"> std</span><span style="color:#F97583">::</span><span style="color:#B392F0">io</span><span style="color:#F97583">::</span><span style="color:#B392F0">Result</span><span style="color:#E1E4E8">&#x3C;()> {</span></span>
+<span class="line"><span style="color:#B392F0">    println!</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Starting server on 0.0.0.0:8080"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    HttpServer</span><span style="color:#F97583">::</span><span style="color:#B392F0">new</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        App</span><span style="color:#F97583">::</span><span style="color:#B392F0">new</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">            .</span><span style="color:#B392F0">route</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/health"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">web</span><span style="color:#F97583">::</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">.</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">(health))</span></span>
+<span class="line"><span style="color:#F97583">            .</span><span style="color:#B392F0">route</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/hello"</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">web</span><span style="color:#F97583">::</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">.</span><span style="color:#B392F0">to</span><span style="color:#E1E4E8">(hello))</span></span>
+<span class="line"><span style="color:#E1E4E8">    })</span></span>
+<span class="line"><span style="color:#F97583">    .</span><span style="color:#B392F0">bind</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"0.0.0.0:8080"</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">?</span></span>
+<span class="line"><span style="color:#F97583">    .</span><span style="color:#B392F0">run</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#F97583">    .await</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> fn</span><span style="color:#B392F0"> health</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-></span><span style="color:#B392F0"> HttpResponse</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    HttpResponse</span><span style="color:#F97583">::</span><span style="color:#B392F0">Ok</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">serde_json</span><span style="color:#F97583">::</span><span style="color:#B392F0">json!</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#9ECBFF">        "status"</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> "healthy"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }))</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> fn</span><span style="color:#B392F0"> hello</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-></span><span style="color:#B392F0"> HttpResponse</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    HttpResponse</span><span style="color:#F97583">::</span><span style="color:#B392F0">Ok</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">serde_json</span><span style="color:#F97583">::</span><span style="color:#B392F0">json!</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#9ECBFF">        "message"</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> "Hello from Rust"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }))</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Cargo.toml：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">package</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">name = </span><span style="color:#9ECBFF">"rust-app"</span></span>
+<span class="line"><span style="color:#E1E4E8">version = </span><span style="color:#9ECBFF">"0.1.0"</span></span>
+<span class="line"><span style="color:#E1E4E8">edition = </span><span style="color:#9ECBFF">"2021"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[[</span><span style="color:#B392F0">bin</span><span style="color:#E1E4E8">]]</span></span>
+<span class="line"><span style="color:#E1E4E8">name = </span><span style="color:#9ECBFF">"rust-app"</span></span>
+<span class="line"><span style="color:#E1E4E8">path = </span><span style="color:#9ECBFF">"src/main.rs"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">dependencies</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">actix-web = </span><span style="color:#9ECBFF">"4.13"</span></span>
+<span class="line"><span style="color:#E1E4E8">tokio = { version = </span><span style="color:#9ECBFF">"1.35"</span><span style="color:#E1E4E8">, features = [</span><span style="color:#9ECBFF">"full"</span><span style="color:#E1E4E8">] }</span></span>
+<span class="line"><span style="color:#E1E4E8">serde = { version = </span><span style="color:#9ECBFF">"1.0"</span><span style="color:#E1E4E8">, features = [</span><span style="color:#9ECBFF">"derive"</span><span style="color:#E1E4E8">] }</span></span>
+<span class="line"><span style="color:#E1E4E8">serde_json = </span><span style="color:#9ECBFF">"1.0"</span></span></code></pre>
+<p><strong>多阶段构建 Dockerfile：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#6A737D"># Stage 1: 编译</span></span>
+<span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> rust:1.95-alpine </span><span style="color:#F97583">AS</span><span style="color:#E1E4E8"> builder</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apk add --no-cache musl-dev</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">WORKDIR</span><span style="color:#E1E4E8"> /src</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> Cargo.* ./</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> src ./src</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 构建优化的发布版本</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> cargo build --release</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Stage 2: 运行镜像</span></span>
+<span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> alpine:3.21</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apk add --no-cache ca-certificates</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> --from=builder /src/target/release/rust-app /app</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">EXPOSE</span><span style="color:#E1E4E8"> 8080</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">CMD</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"/app"</span><span style="color:#E1E4E8">]</span></span></code></pre>
+<p><strong>构建和验证：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> -t</span><span style="color:#9ECBFF"> rust-app:latest</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> 8080:8080</span><span style="color:#9ECBFF"> rust-app:latest</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://localhost:8080/health</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> jq</span><span style="color:#9ECBFF"> .</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Rust 应用通常比 Go 更小：5-20MB（取决于依赖）</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> images</span><span style="color:#9ECBFF"> rust-app</span></span></code></pre>
+<h3 id="2173-数据库容器化最佳实践">21.7.3 数据库容器化最佳实践</h3>
+<h4 id="postgresql-生产部署">PostgreSQL 生产部署</h4>
+<p><strong>自定义 PostgreSQL 镜像：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> postgres:16-alpine</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 安装额外工具</span></span>
+<span class="line"><span style="color:#6A737D">## Alpine 只提供带主版本号的 contrib 包（postgresql16-contrib 等），</span></span>
+<span class="line"><span style="color:#6A737D">## 不存在 postgresql-contrib；pg-stat-monitor 也未打进 Alpine 仓库，需要另行编译</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apk add --no-cache \</span></span>
+<span class="line"><span style="color:#E1E4E8">    postgresql16-contrib \</span></span>
+<span class="line"><span style="color:#E1E4E8">    curl</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制初始化脚本（.sh 形式可从环境变量读取密码，避免在 SQL 中写明文）</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> init-db.sh /docker-entrypoint-initdb.d/</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> health-check.sh /</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> chmod +x /health-check.sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">HEALTHCHECK</span><span style="color:#E1E4E8"> --interval=10s --timeout=5s --start-period=40s --retries=3 \</span></span>
+<span class="line"><span style="color:#F97583">    CMD</span><span style="color:#E1E4E8"> /health-check.sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">EXPOSE</span><span style="color:#E1E4E8"> 5432</span></span></code></pre>
+<p><strong>初始化脚本（init-db.sh）：</strong></p>
+<p>官方镜像会执行 <code>/docker-entrypoint-initdb.d/</code> 下的 <code>.sh</code> 脚本，因此应用用户的密码可以从环境变量注入，而不必写进 SQL；数据库 <code>myappdb</code> 已由入口脚本按 <code>POSTGRES_DB</code> 创建，初始化脚本中不要重复 <code>CREATE DATABASE</code>（否则首次初始化会因冲突而中止）。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#79B8FF"> -e</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">psql</span><span style="color:#79B8FF"> -v</span><span style="color:#9ECBFF"> ON_ERROR_STOP=</span><span style="color:#79B8FF">1</span><span style="color:#79B8FF"> -U</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$POSTGRES_USER</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$POSTGRES_DB</span><span style="color:#9ECBFF">"</span><span style="color:#F97583"> &#x3C;&#x3C;-</span><span style="color:#9ECBFF">EOSQL</span></span>
+<span class="line"><span style="color:#9ECBFF">    -- 创建应用用户（密码来自环境变量 APP_DB_PASSWORD）</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE USER appuser WITH PASSWORD '</span><span style="color:#E1E4E8">$APP_DB_PASSWORD</span><span style="color:#9ECBFF">';</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    -- 创建扩展</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE EXTENSION IF NOT EXISTS "uuid-ossp";</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE EXTENSION IF NOT EXISTS hstore;</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE EXTENSION IF NOT EXISTS pg_trgm;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    -- 创建表</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE TABLE users (</span></span>
+<span class="line"><span style="color:#9ECBFF">        id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),</span></span>
+<span class="line"><span style="color:#9ECBFF">        username VARCHAR(255) NOT NULL UNIQUE,</span></span>
+<span class="line"><span style="color:#9ECBFF">        email VARCHAR(255) NOT NULL UNIQUE,</span></span>
+<span class="line"><span style="color:#9ECBFF">        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,</span></span>
+<span class="line"><span style="color:#9ECBFF">        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span></span>
+<span class="line"><span style="color:#9ECBFF">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    -- 创建索引</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE INDEX idx_users_username ON users (username);</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE INDEX idx_users_email ON users (email);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    -- 授予权限</span></span>
+<span class="line"><span style="color:#9ECBFF">    GRANT CONNECT ON DATABASE </span><span style="color:#E1E4E8">$POSTGRES_DB</span><span style="color:#9ECBFF"> TO appuser;</span></span>
+<span class="line"><span style="color:#9ECBFF">    GRANT USAGE ON SCHEMA public TO appuser;</span></span>
+<span class="line"><span style="color:#9ECBFF">    GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO appuser;</span></span>
+<span class="line"><span style="color:#9ECBFF">    GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO appuser;</span></span>
+<span class="line"><span style="color:#9ECBFF">EOSQL</span></span></code></pre>
+<p><strong>健康检查脚本（health-check.sh）：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">PGPASSWORD</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">$POSTGRES_PASSWORD </span><span style="color:#B392F0">pg_isready</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -h</span><span style="color:#9ECBFF"> localhost</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -U</span><span style="color:#E1E4E8"> $POSTGRES_USER </span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#79B8FF">  -d</span><span style="color:#E1E4E8"> $POSTGRES_DB </span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#79B8FF">  -p</span><span style="color:#79B8FF"> 5432</span><span style="color:#F97583"> ></span><span style="color:#9ECBFF"> /dev/null</span><span style="color:#F97583"> 2>&#x26;1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">exit</span><span style="color:#79B8FF"> $?</span></span></code></pre>
+<p><strong>Docker Compose 配置：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  postgres</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    build</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      context</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span></span>
+<span class="line"><span style="color:#85E89D">      dockerfile</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Dockerfile.postgres</span></span>
+<span class="line"><span style="color:#85E89D">    container_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres-db</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_DB</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myappdb</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_USER</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}</span></span>
+<span class="line"><span style="color:#85E89D">      APP_DB_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${APP_DB_PASSWORD:?set APP_DB_PASSWORD in .env}</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_INITDB_ARGS</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"--encoding=UTF8 --locale=en_US.UTF-8"</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">postgres_data:/var/lib/postgresql/data</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./backups:/backups</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">      # 只暴露给本机调试；生产环境优先不发布数据库端口</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"127.0.0.1:5432:5432"</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">backend</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="color:#85E89D">    logging</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"json-file"</span></span>
+<span class="line"><span style="color:#85E89D">      options</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        max-size</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"10m"</span></span>
+<span class="line"><span style="color:#85E89D">        max-file</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"3"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  # 备份服务</span></span>
+<span class="line"><span style="color:#85E89D">  backup</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres:16-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">postgres</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      PGPASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./backups:/backups</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">      sh -c 'while true; do</span></span>
+<span class="line"><span style="color:#9ECBFF">        pg_dump -h postgres -U postgres -d myappdb > /backups/backup_$$(date +%Y%m%d_%H%M%S).sql</span></span>
+<span class="line"><span style="color:#9ECBFF">        echo "Backup completed at $$(date)"</span></span>
+<span class="line"><span style="color:#9ECBFF">        sleep 86400</span></span>
+<span class="line"><span style="color:#9ECBFF">      done'</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">backend</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  postgres_data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">local</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  backend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">bridge</span></span></code></pre>
+<p><strong>性能优化配置：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  postgres</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres:16-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_DB</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myappdb</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"postgres"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"max_connections=200"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"shared_buffers=256MB"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"effective_cache_size=1GB"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"maintenance_work_mem=64MB"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"checkpoint_completion_target=0.9"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"wal_buffers=16MB"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"default_statistics_target=100"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"random_page_cost=1.1"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"effective_io_concurrency=200"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"work_mem=1310kB"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"min_wal_size=1GB"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"max_wal_size=4GB"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"max_worker_processes=4"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"max_parallel_workers_per_gather=2"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"max_parallel_workers=4"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"-c"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"max_parallel_maintenance_workers=2"</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">postgres_data:/var/lib/postgresql/data</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"5432:5432"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  postgres_data</span><span style="color:#E1E4E8">:</span></span></code></pre>
+<h4 id="mysqlmariadb-部署">MySQL/MariaDB 部署</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> mariadb:11</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制自定义配置</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> my.cnf /etc/mysql/conf.d/custom.cnf</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 初始化脚本</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> init.sql /docker-entrypoint-initdb.d/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">EXPOSE</span><span style="color:#E1E4E8"> 3306</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">HEALTHCHECK</span><span style="color:#E1E4E8"> --interval=30s --timeout=10s --retries=3 \</span></span>
+<span class="line"><span style="color:#F97583">    CMD</span><span style="color:#E1E4E8"> mariadb-admin ping -h localhost || exit 1</span></span></code></pre>
+<p><strong>自定义 my.cnf：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#B392F0">[mysqld]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 性能优化</span></span>
+<span class="line"><span style="color:#F97583">max_connections</span><span style="color:#E1E4E8"> = 200</span></span>
+<span class="line"><span style="color:#F97583">default_storage_engine</span><span style="color:#E1E4E8"> = InnoDB</span></span>
+<span class="line"><span style="color:#F97583">innodb_buffer_pool_size</span><span style="color:#E1E4E8"> = 1GB</span></span>
+<span class="line"><span style="color:#F97583">innodb_log_file_size</span><span style="color:#E1E4E8"> = 256MB</span></span>
+<span class="line"><span style="color:#F97583">query_cache_type</span><span style="color:#E1E4E8"> = 0</span></span>
+<span class="line"><span style="color:#F97583">query_cache_size</span><span style="color:#E1E4E8"> = 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 日志配置</span></span>
+<span class="line"><span style="color:#F97583">log_error</span><span style="color:#E1E4E8"> = /var/log/mysql/error.log</span></span>
+<span class="line"><span style="color:#F97583">slow_query_log</span><span style="color:#E1E4E8"> = 1</span></span>
+<span class="line"><span style="color:#F97583">slow_query_log_file</span><span style="color:#E1E4E8"> = /var/log/mysql/slow.log</span></span>
+<span class="line"><span style="color:#F97583">long_query_time</span><span style="color:#E1E4E8"> = 2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制配置</span></span>
+<span class="line"><span style="color:#F97583">server_id</span><span style="color:#E1E4E8"> = 1</span></span>
+<span class="line"><span style="color:#F97583">log_bin</span><span style="color:#E1E4E8"> = mysql-bin</span></span>
+<span class="line"><span style="color:#F97583">binlog_format</span><span style="color:#E1E4E8"> = ROW</span></span></code></pre>
+<h4 id="redis-缓存部署">Redis 缓存部署</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> redis:8-alpine</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 复制 Redis 配置</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> redis.conf /usr/local/etc/redis/redis.conf</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 使用配置文件启动</span></span>
+<span class="line"><span style="color:#F97583">CMD</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"redis-server"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"/usr/local/etc/redis/redis.conf"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">EXPOSE</span><span style="color:#E1E4E8"> 6379</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># redis.conf 启用了 requirepass，健康检查必须带认证，否则只会收到 NOAUTH 错误</span></span>
+<span class="line"><span style="color:#6A737D"># REDISCLI_AUTH 可避免把密码出现在进程参数中</span></span>
+<span class="line"><span style="color:#F97583">HEALTHCHECK</span><span style="color:#E1E4E8"> --interval=5s --timeout=3s --retries=5 \</span></span>
+<span class="line"><span style="color:#F97583">    CMD</span><span style="color:#E1E4E8"> sh -c </span><span style="color:#9ECBFF">'REDISCLI_AUTH="$(awk "/^requirepass /{print </span><span style="color:#79B8FF">\$</span><span style="color:#9ECBFF">2}" /usr/local/etc/redis/redis.conf)" redis-cli ping | grep -q PONG'</span></span></code></pre>
+<p><strong>redis.conf 配置：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span># 绑定地址</span></span>
+<span class="line"><span>bind 0.0.0.0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 端口</span></span>
+<span class="line"><span>port 6379</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 密码保护（示例占位值，部署时应替换并避免提交到版本库）</span></span>
+<span class="line"><span>requirepass your_secure_password</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 内存管理</span></span>
+<span class="line"><span>maxmemory 512mb</span></span>
+<span class="line"><span>maxmemory-policy allkeys-lru</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 持久化</span></span>
+<span class="line"><span>save 900 1</span></span>
+<span class="line"><span>save 300 10</span></span>
+<span class="line"><span>save 60 10000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># AOF 持久化</span></span>
+<span class="line"><span>appendonly yes</span></span>
+<span class="line"><span>appendfsync everysec</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 日志</span></span>
+<span class="line"><span>loglevel notice</span></span>
+<span class="line"><span>logfile ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 客户端输出缓冲限制</span></span>
+<span class="line"><span>client-output-buffer-limit normal 0 0 0</span></span>
+<span class="line"><span>client-output-buffer-limit replica 256mb 64mb 60</span></span>
+<span class="line"><span>client-output-buffer-limit pubsub 32mb 8mb 60</span></span></code></pre>
+<h3 id="2174-微服务架构的-docker-compose-编排">21.7.4 微服务架构的 Docker Compose 编排</h3>
+<p><strong>三层微服务架构示例：</strong></p>
+<blockquote>
+<p>下面示例聚焦服务拓扑、网络、健康检查和资源限制。为便于阅读，密码仍通过环境变量串接；生产环境应改用 Compose secrets、外部密钥系统或云厂商密钥服务，并避免把敏感值写入 <code>DATABASE_URL</code> / <code>REDIS_URL</code>。</p>
+</blockquote>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">  # 前端服务</span></span>
+<span class="line"><span style="color:#85E89D">  frontend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    build</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      context</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">./frontend</span></span>
+<span class="line"><span style="color:#85E89D">      dockerfile</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Dockerfile</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"3000:3000"</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      REACT_APP_API_URL</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http://localhost:8000</span></span>
+<span class="line"><span style="color:#85E89D">      NODE_ENV</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">production</span></span>
+<span class="line"><span style="color:#85E89D">    depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">api</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">frontend-network</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="color:#85E89D">    healthcheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      test</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CMD"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"curl"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"-f"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"http://localhost:3000"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">      interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">30s</span></span>
+<span class="line"><span style="color:#85E89D">      timeout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10s</span></span>
+<span class="line"><span style="color:#85E89D">      retries</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  # API 服务</span></span>
+<span class="line"><span style="color:#85E89D">  api</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    build</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      context</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">./api</span></span>
+<span class="line"><span style="color:#85E89D">      dockerfile</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Dockerfile</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"8000:8000"</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      DATABASE_URL</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgresql://appuser:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}@postgres:5432/myappdb</span></span>
+<span class="line"><span style="color:#85E89D">      REDIS_URL</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis://:${REDIS_PASSWORD:?set REDIS_PASSWORD}@redis:6379</span></span>
+<span class="line"><span style="color:#85E89D">      LOG_LEVEL</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">info</span></span>
+<span class="line"><span style="color:#85E89D">    depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      postgres</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">service_healthy</span></span>
+<span class="line"><span style="color:#85E89D">      redis</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">service_healthy</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">frontend-network</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">backend-network</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="color:#85E89D">    healthcheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      test</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CMD"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"curl"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"-f"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"http://localhost:8000/health"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">      interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">30s</span></span>
+<span class="line"><span style="color:#85E89D">      timeout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10s</span></span>
+<span class="line"><span style="color:#85E89D">      retries</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"><span style="color:#85E89D">    deploy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        limits</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          cpus</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'1'</span></span>
+<span class="line"><span style="color:#85E89D">          memory</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">512M</span></span>
+<span class="line"><span style="color:#85E89D">        reservations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          cpus</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'0.5'</span></span>
+<span class="line"><span style="color:#85E89D">          memory</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">256M</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  # PostgreSQL 数据库</span></span>
+<span class="line"><span style="color:#85E89D">  postgres</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres:16-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_DB</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myappdb</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_USER</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">appuser</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">postgres_data:/var/lib/postgresql/data</span></span>
+<span class="line"><span style="color:#6A737D">      # 此处的 init.sql 只放建表/索引等 schema 语句；</span></span>
+<span class="line"><span style="color:#6A737D">      # 用户与数据库已由 POSTGRES_USER/POSTGRES_DB 创建，脚本中不要重复 CREATE USER/DATABASE</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./db/init.sql:/docker-entrypoint-initdb.d/init.sql</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">backend-network</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="color:#85E89D">    healthcheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      test</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CMD-SHELL"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"pg_isready -U appuser -d myappdb"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">      interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10s</span></span>
+<span class="line"><span style="color:#85E89D">      timeout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5s</span></span>
+<span class="line"><span style="color:#85E89D">      retries</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  # Redis 缓存</span></span>
+<span class="line"><span style="color:#85E89D">  redis</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis:8-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"sh"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"-c"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"redis-server --appendonly yes --requirepass </span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">$$REDIS_PASSWORD</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      REDIS_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${REDIS_PASSWORD:?set REDIS_PASSWORD}</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">redis_data:/data</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">backend-network</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="color:#85E89D">    healthcheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      test</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CMD-SHELL"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"redis-cli -a </span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">$$REDIS_PASSWORD</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF"> ping | grep -q PONG"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">      interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10s</span></span>
+<span class="line"><span style="color:#85E89D">      timeout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5s</span></span>
+<span class="line"><span style="color:#85E89D">      retries</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  # Nginx 反向代理</span></span>
+<span class="line"><span style="color:#85E89D">  nginx</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx:alpine</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"80:80"</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"443:443"</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./nginx/nginx.conf:/etc/nginx/nginx.conf:ro</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./nginx/conf.d:/etc/nginx/conf.d:ro</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./ssl:/etc/nginx/ssl:ro</span></span>
+<span class="line"><span style="color:#85E89D">    depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">frontend</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">api</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">frontend-network</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="color:#85E89D">    healthcheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      test</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CMD"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"wget"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"--quiet"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"--tries=1"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"--spider"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"http://localhost/health"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">      interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">30s</span></span>
+<span class="line"><span style="color:#85E89D">      timeout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10s</span></span>
+<span class="line"><span style="color:#85E89D">      retries</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  postgres_data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">local</span></span>
+<span class="line"><span style="color:#85E89D">  redis_data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">local</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  frontend-network</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">bridge</span></span>
+<span class="line"><span style="color:#85E89D">  backend-network</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">bridge</span></span></code></pre>
+<p><strong>nginx.conf 配置：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#F97583">upstream</span><span style="color:#B392F0"> frontend </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    server</span><span style="color:#E1E4E8"> frontend:3000;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">upstream</span><span style="color:#B392F0"> api </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    server</span><span style="color:#E1E4E8"> api:8000;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">server</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    listen </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    server_name </span><span style="color:#E1E4E8">localhost;</span></span>
+<span class="line"><span style="color:#F97583">    client_max_body_size </span><span style="color:#79B8FF">100M</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # 健康检查端点</span></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#B392F0"> /health </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        access_log </span><span style="color:#79B8FF">off</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> 200</span><span style="color:#9ECBFF"> "OK</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#E1E4E8">Content-Type text/plain;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # 前端应用</span></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#B392F0"> / </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        proxy_pass </span><span style="color:#E1E4E8">http://frontend;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-For $proxy_add_x_forwarded_for;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Proto $scheme;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # API 接口</span></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#B392F0"> /api/ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        proxy_pass </span><span style="color:#E1E4E8">http://api/;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-For $proxy_add_x_forwarded_for;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Proto $scheme;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_redirect </span><span style="color:#79B8FF">off</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        # WebSocket 支持</span></span>
+<span class="line"><span style="color:#F97583">        proxy_http_version </span><span style="color:#79B8FF">1.1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Upgrade $http_upgrade;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Connection </span><span style="color:#9ECBFF">"upgrade"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # 静态资源缓存</span></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#F97583"> ~*</span><span style="color:#DBEDFF"> ^.+\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        proxy_pass </span><span style="color:#E1E4E8">http://frontend;</span></span>
+<span class="line"><span style="color:#F97583">        expires </span><span style="color:#79B8FF">30d</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#E1E4E8">Cache-Control </span><span style="color:#9ECBFF">"public, immutable"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="2175-使用-vs-code-dev-containers">21.7.5 使用 VS Code Dev Containers</h3>
+<p>Dev Containers 让整个开发环境容器化，提升团队一致性。</p>
+<p><strong>.devcontainer/devcontainer.json：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Python Dev Environment"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "image"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"mcr.microsoft.com/devcontainers/python:3.14"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">  "features"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "ghcr.io/devcontainers/features/docker-in-docker:2"</span><span style="color:#E1E4E8">: {},</span></span>
+<span class="line"><span style="color:#79B8FF">    "ghcr.io/devcontainers/features/git:1"</span><span style="color:#E1E4E8">: {}</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">  "customizations"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "vscode"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">      "extensions"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">        "ms-python.python"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "ms-python.vscode-pylance"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "ms-python.pylint"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "charliermarsh.ruff"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "ms-vscode-remote.remote-containers"</span></span>
+<span class="line"><span style="color:#E1E4E8">      ],</span></span>
+<span class="line"><span style="color:#79B8FF">      "settings"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "python.linting.enabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "python.linting.pylintEnabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "python.formatting.provider"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"black"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "[python]"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">          "editor.formatOnSave"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">          "editor.defaultFormatter"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ms-python.python"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">  "postCreateCommand"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"pip install -r requirements.txt &#x26;&#x26; pip install pytest black pylint"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">  "forwardPorts"</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">5432</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">6379</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">  "portsAttributes"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "8000"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">      "label"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Application"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "onAutoForward"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"notify"</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "5432"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">      "label"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PostgreSQL"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "onAutoForward"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ignore"</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#79B8FF">    "6379"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">      "label"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Redis"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "onAutoForward"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ignore"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">  "mounts"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,readonly"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">  "remoteUser"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"vscode"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>.devcontainer/Dockerfile：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> mcr.microsoft.com/devcontainers/python:3.14</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 安装额外工具</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apt-get update &#x26;&#x26; apt-get install -y \</span></span>
+<span class="line"><span style="color:#E1E4E8">    postgresql-client \</span></span>
+<span class="line"><span style="color:#E1E4E8">    redis-tools \</span></span>
+<span class="line"><span style="color:#E1E4E8">    curl \</span></span>
+<span class="line"><span style="color:#E1E4E8">    git \</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;&#x26; rm -rf /var/lib/apt/lists/*</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 创建虚拟环境</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> python -m venv /opt/venv</span></span>
+<span class="line"><span style="color:#F97583">ENV</span><span style="color:#E1E4E8"> PATH=</span><span style="color:#9ECBFF">"/opt/venv/bin:$PATH"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">WORKDIR</span><span style="color:#E1E4E8"> /workspace</span></span></code></pre>
+<p><strong>Docker Compose 用于 Dev Containers：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># .devcontainer/docker-compose.yml</span></span>
+<span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  app</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    build</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      context</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span></span>
+<span class="line"><span style="color:#85E89D">      dockerfile</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Dockerfile</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      DATABASE_URL</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgresql://dev:dev@postgres:5432/myapp</span></span>
+<span class="line"><span style="color:#85E89D">      REDIS_URL</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis://redis:6379</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">..:/workspace:cached</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"8000:8000"</span></span>
+<span class="line"><span style="color:#85E89D">    depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">postgres</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">redis</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  postgres</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres:16-alpine</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">      # 仅限本机 Dev Container 的一次性开发凭证，不要在任何共享/联网环境复用</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_USER</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">dev</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">dev</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_DB</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">postgres_data:/var/lib/postgresql/data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  redis</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">redis:8-alpine</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  postgres_data</span><span style="color:#E1E4E8">:</span></span></code></pre> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">← 21.6 VS Code</a></span> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

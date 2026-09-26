@@ -1,0 +1,768 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 实验 10——网络 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 实验 10——网络 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 实验 10——网络 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<ul>
+<li>理解 Linux 内核网络架构</li>
+<li>掌握使用数据包（packet）过滤器或防火墙进行 IP 数据包管理</li>
+<li>熟悉在 Linux 内核级别使用套接字的方法</li>
+</ul>
+</blockquote>
+<h2 id="概述">概述<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>互联网的发展导致网络应用程序呈指数增长，因此操作系统的网络子系统对速度和生产力的要求也在不断增加。网络子系统并非操作系统内核的必需组件（Linux 内核可以选择在编译时不包含网络支持）。然而，由于对连接的需要，计算机系统（甚至嵌入式设备）很少会使用不支持网络的操作系统。现代操作系统使用 <a href="https://zh.wikipedia.org/zh-cn/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F">TCP/IP 协议栈</a>。它们的内核实现了传输层以下的协议，而应用层协议通常在用户空间实现（如 HTTP、FTP 以及 SSH 等）。</p>
+<h3 id="用户空间中的网络编程">用户空间中的网络编程<a href="#section-3" title="永久链接至标题">¶</a></h3>
+<p>套接字（socket）是在用户空间中，对于网络通信的抽象。套接字抽象了通信通道，也是基于内核的 TCP/IP 栈交互接口。IP 套接字与 IP 地址、所使用的传输层协议（如 TCP、UDP 等）和端口相关联。常用的使用套接字的函数调用有：创建 (<code>socket</code>)、初始化 (<code>bind</code>)、连接 (<code>connect</code>)、等待连接 (<code>listen</code>, <code>accept</code>) 以及关闭套接字 (<code>close</code>)。</p>
+<p>我们通过 <code>read</code>/<code>write</code> 或 <code>recv</code>/<code>send</code> 调用实现 TCP 套接字的网络通信，通过 <code>recvfrom</code>/<code>sendto</code> 调用实现 UDP 套接字的网络通信。传输和接收操作对应用程序来说是透明的，封装和网络传输由内核自行决定。然而，也可以使用原始套接字（创建套接字时使用 <code>PF_PACKET</code> 选项）在用户空间中实现 TCP/IP 栈，或者在内核中实现应用层协议（例如 <a href="https://zh.wikipedia.org/zh-cn/TUX_Web%E6%9C%8D%E5%8A%A1%E5%99%A8">TUX web 服务器</a>）。</p>
+<p>有关使用套接字进行用户空间编程的更多详细信息，请参阅 <a href="https://www.beej.us/guide/bgnet/">Beej 的网络套接字编程指南</a>。</p>
+<h2 id="linux-网络编程">Linux 网络编程<a href="#linux" title="永久链接至标题">¶</a></h2>
+<p>Linux 内核提供了三种基本的用于处理网络数据包的结构：<code>struct socket</code>、<code>struct sock</code> 和 <code>struct sk_buff</code>。</p>
+<p>前两者是对套接字的抽象：</p>
+<blockquote>
+<ul>
+<li><code>struct socket</code> 是非常接近用户空间的抽象，即用于编写网络应用程序的 <a href="http://zh.wikipedia.org/zh-cn/Berkeley%E5%A5%97%E6%8E%A5%E5%AD%97">BSD 套接字</a>；</li>
+<li><code>struct sock</code> 或 Linux 术语中的 <em>INET 套接字</em> 是套接字的网络表示。</li>
+</ul>
+</blockquote>
+<p>这两个结构有关联: <code>struct socket</code> 包含 INET 套接字字段，而每个 <code>struct sock</code> 都有一个 BSD 套接字持有它。</p>
+<p><code>struct sk_buff</code> 结构是网络数据包及其状态的表示。当从用户空间或网络接口接收到内核数据包时，该结构被创建。</p>
+<h3 id="struct-socket-结构"><code>struct socket</code> 结构<a href="#struct-socket" title="永久链接至标题">¶</a></h3>
+<p><code>struct socket</code> 结构是 BSD 套接字的内核表示，可以执行在它上面执行的操作类似于内核提供的操作（通过系统调用）。使用套接字的常见操作（创建、初始化/绑定、关闭等）会导致特定的系统调用；它们与 <code>struct socket</code> 结构一起工作。</p>
+<p><code>struct socket</code> 的操作在 <code>net/socket.c</code> 中进行描述，且与协议类型无关。因此, <code>struct socket</code> 结构是特定网络操作实现的通用接口。通常，这些操作的名称以 <code>sock_</code> 前缀开头。</p>
+<h4 id="对-socket-结构的操作">对 socket 结构的操作<a href="#socket" title="永久链接至标题">¶</a></h4>
+<p>socket 相关操作包括：</p>
+<h5 id="创建">创建<a href="#section-4" title="永久链接至标题">¶</a></h5>
+<p>创建类似于在用户空间调用 <code>socket()</code> 函数，但创建的 <code>struct socket</code> 将存储在 <code>res</code> 参数中：</p>
+<blockquote>
+<ul>
+<li><code>int sock_create(int family, int type, int protocol, struct socket **res)</code>：在 <code>socket()</code> 系统调用之后创建 socket；</li>
+<li><code>int sock_create_kern(struct net *net, int family, int type, int protocol, struct socket **res)</code>：创建内核 socket；</li>
+<li><code>int sock_create_lite(int family, int type, int protocol, struct socket **res)</code>：创建内核 socket, 不经过参数完整性检查。</li>
+</ul>
+</blockquote>
+<p>这些调用的参数如下：</p>
+<blockquote>
+<ul>
+<li><code>net</code> (如果存在) 用作对所使用的网络命名空间的引用；通常我们会使用 <code>init_net</code> 进行初始化；</li>
+<li><code>family</code> 表示在信息传输中使用的协议族；它们通常以 <code>PF_</code> (协议族) 字符串开头；表示所使用的协议族的常量可以在 <code>linux/socket.h</code> 中找到，其中最常用的是 <code>PF_INET</code>, 用于 TCP/IP 协议；</li>
+<li><code>type</code> 是 socket 的类型；用于此参数的常量可以在 <code>linux/net.h</code> 中找到，其中最常用的是 <code>SOCK_STREAM</code> (用于基于连接的源到目的地通信) 以及 <code>SOCK_DGRAM</code> (用于无连接通信)；</li>
+<li><code>protocol</code> 表示使用的协议，与 <code>type</code> 参数密切相关；用于此参数的常量可以在 <code>linux/in.h</code> 中找到，其中最常用的是 <code>IPPROTO_TCP</code> (用于 TCP)， <code>IPPROTO_UDP</code> (用于 UDP)。</li>
+</ul>
+</blockquote>
+<p>要在内核空间中创建 TCP socket，你需要调用：</p>
+<p>struct socket *sock;
+int err;</p>
+<p>err = sock_create_kern(&#x26;init_net, PF_INET, SOCK_STREAM, IPPROTO_TCP, &#x26;sock);
+if (err &#x3C; 0) {
+/* 处理错误 */
+}</p>
+<p>要在内核空间中创建 UDP socket，你需要调用：</p>
+<p>struct socket *sock;
+int err;</p>
+<p>err = sock_create_kern(&#x26;init_net, PF_INET, SOCK_DGRAM, IPPROTO_UDP, &#x26;sock);
+if (err &#x3C; 0) {
+/* 处理错误 */
+}</p>
+<p>一个使用示例是 <code>sys_socket()</code> 系统调用处理程序的一部分：</p>
+<p>SYSCALL_DEFINE3(socket, int, family, int, type, int, protocol)
+{
+int retval;
+struct socket *sock;
+int flags;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  /\* 检查 SOCK\_\* 常量是否一致。 \*/</span></span>
+<span class="line"><span>  BUILD\_BUG\_ON(SOCK\_CLOEXEC != O\_CLOEXEC);</span></span>
+<span class="line"><span>  BUILD\_BUG\_ON((SOCK\_MAX | SOCK\_TYPE\_MASK) != SOCK\_TYPE\_MASK);</span></span>
+<span class="line"><span>  BUILD\_BUG\_ON(SOCK\_CLOEXEC &#x26; SOCK\_TYPE\_MASK);</span></span>
+<span class="line"><span>  BUILD\_BUG\_ON(SOCK\_NONBLOCK &#x26; SOCK\_TYPE\_MASK);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  flags \= type &#x26; ~SOCK\_TYPE\_MASK;</span></span>
+<span class="line"><span>  if (flags &#x26; ~(SOCK\_CLOEXEC | SOCK\_NONBLOCK))</span></span>
+<span class="line"><span>          return \-EINVAL;</span></span>
+<span class="line"><span>  type &#x26;= SOCK\_TYPE\_MASK;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (SOCK\_NONBLOCK != O\_NONBLOCK &#x26;&#x26; (flags &#x26; SOCK\_NONBLOCK))</span></span>
+<span class="line"><span>          flags \= (flags &#x26; ~SOCK\_NONBLOCK) | O\_NONBLOCK;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  retval \= sock\_create(family, type, protocol, &#x26;sock);</span></span>
+<span class="line"><span>  if (retval &#x3C; 0)</span></span>
+<span class="line"><span>          goto out;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return sock\_map\_fd(sock, flags &#x26; (O\_CLOEXEC | O\_NONBLOCK));</span></span></code></pre>
+<p>}</p>
+<h5 id="关闭连接">关闭连接<a href="#section-5" title="永久链接至标题">¶</a></h5>
+<p>关闭连接（对于使用连接的 socket）并释放相关资源：</p>
+<blockquote>
+<ul>
+<li><code>void sock_release(struct socket *sock)</code> 调用 socket 结构 <code>ops</code> 字段中的 <code>release</code> 函数：</li>
+</ul>
+</blockquote>
+<p>void sock_release(struct socket *sock)
+{
+if (sock->ops) {
+struct module *owner = sock->ops->owner;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>          sock\->ops\->release(sock);</span></span>
+<span class="line"><span>          sock\->ops \= NULL;</span></span>
+<span class="line"><span>          module\_put(owner);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  //...</span></span></code></pre>
+<p>}</p>
+<h5 id="发送接收消息">发送/接收消息<a href="#section-6" title="永久链接至标题">¶</a></h5>
+<p>使用以下函数来发送/接收消息：</p>
+<blockquote>
+<ul>
+<li><code>int sock_recvmsg(struct socket *sock, struct msghdr *msg, int flags);</code></li>
+<li><code>int kernel_recvmsg(struct socket *sock, struct msghdr *msg, struct kvec *vec, size_t num, size_t size, int flags);</code></li>
+<li><code>int sock_sendmsg(struct socket *sock, struct msghdr *msg);</code></li>
+<li><code>int kernel_sendmsg(struct socket *sock, struct msghdr *msg, struct kvec *vec, size_t num, size_t size);</code></li>
+</ul>
+</blockquote>
+<p>消息的发送/接收函数将调用 socket <code>ops</code> 字段中的 <code>sendmsg</code>/<code>recvmsg</code> 函数。当 socket 在内核中使用时，应使用以 <code>kernel_</code> 为前缀的函数。</p>
+<p>参数包括：</p>
+<blockquote>
+<ul>
+<li><code>msg</code>, <code>struct msghdr</code> 结构，包含要发送/接收的消息。该结构的重要组成部分包括 <code>msg_name</code> 和 <code>msg_namelen</code>，对于 UDP 套接字，必须使用目标地址填充 (<code>struct sockaddr_in</code>)；</li>
+<li><code>vec</code>, <code>struct kvec</code> 结构，其中有一个指针指向缓冲区，缓冲区内包含该 <code>struct kvec</code> 结构的数据和大小；正如所见，它的结构类似于 <code>struct iovec</code> 结构 (<code>struct iovec</code> 结构对应用户空间数据，而 <code>struct kvec</code> 结构对应内核空间数据)。</li>
+</ul>
+</blockquote>
+<p>可以在 <code>sys_sendto()</code> 系统调用处理程序中看到用法示例：</p>
+<p>SYSCALL_DEFINE6(sendto, int, fd, void __user *, buff, size_t, len,
+unsigned int, flags, struct sockaddr __user *, addr,
+int, addr_len)
+{
+struct socket *sock;
+struct sockaddr_storage address;
+int err;
+struct msghdr msg;
+struct iovec iov;
+int fput_needed;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  err \= import\_single\_range(WRITE, buff, len, &#x26;iov, &#x26;msg.msg\_iter);</span></span>
+<span class="line"><span>  if (unlikely(err))</span></span>
+<span class="line"><span>          return err;</span></span>
+<span class="line"><span>  sock \= sockfd\_lookup\_light(fd, &#x26;err, &#x26;fput\_needed);</span></span>
+<span class="line"><span>  if (!sock)</span></span>
+<span class="line"><span>          goto out;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  msg.msg\_name \= NULL;</span></span>
+<span class="line"><span>  msg.msg\_control \= NULL;</span></span>
+<span class="line"><span>  msg.msg\_controllen \= 0;</span></span>
+<span class="line"><span>  msg.msg\_namelen \= 0;</span></span>
+<span class="line"><span>  if (addr) {</span></span>
+<span class="line"><span>          err \= move\_addr\_to\_kernel(addr, addr\_len, &#x26;address);</span></span>
+<span class="line"><span>          if (err &#x3C; 0)</span></span>
+<span class="line"><span>                  goto out\_put;</span></span>
+<span class="line"><span>          msg.msg\_name \= (struct sockaddr \*)&#x26;address;</span></span>
+<span class="line"><span>          msg.msg\_namelen \= addr\_len;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  if (sock\->file\->f\_flags &#x26; O\_NONBLOCK)</span></span>
+<span class="line"><span>          flags |= MSG\_DONTWAIT;</span></span>
+<span class="line"><span>  msg.msg\_flags \= flags;</span></span>
+<span class="line"><span>  err \= sock\_sendmsg(sock, &#x26;msg);</span></span></code></pre>
+<p>out_put:
+fput_light(sock->file, fput_needed);
+out:
+return err;
+}</p>
+<h4 id="struct-socket-字段"><code>struct socket</code> 字段<a href="#struct-socket-1" title="永久链接至标题">¶</a></h4>
+<p>/**
+*  struct socket——通用的 BSD socket
+*  @state: socket 状态（%SS_CONNECTED 等）
+*  @type: socket 类型（%SOCK_STREAM 等）
+*  @flags: socket 标志（%SOCK_NOSPACE 等）
+*  @ops: 协议特定的 socket 操作
+*  @file: 反向指向 file 的指针，用于垃圾回收
+*  @sk: 内部的网络协议无关 socket 表示
+*  @wq: 有多种用途的等待队列
+*/
+struct socket {
+socket_state            state;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  short                   type;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  unsigned long           flags;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  struct socket\_wq \_\_rcu  \*wq;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  struct file             \*file;</span></span>
+<span class="line"><span>  struct sock             \*sk;</span></span>
+<span class="line"><span>  const struct proto\_ops  \*ops;</span></span></code></pre>
+<p>};</p>
+<p>值得注意的字段包括：</p>
+<blockquote>
+<ul>
+<li><code>ops</code>——该结构内部有指针，指针指向协议特定函数；</li>
+<li><code>sk</code>——与之关联的 <code>INET socket</code>。</li>
+</ul>
+</blockquote>
+<h5 id="struct-proto_ops-结构"><code>struct proto_ops</code> 结构<a href="#struct-proto-ops" title="永久链接至标题">¶</a></h5>
+<p><code>struct proto_ops</code> 结构体包含了特定操作（TCP、UDP 等）的实现；这些函数将通过通用函数(如 <code>sock_release()</code>, <code>sock_sendmsg()</code> 等)使用 <code>struct socket</code> 为参数来调用。</p>
+<p>因此, <code>struct proto_ops</code> 结构体包含了一些特定协议实现的函数指针：</p>
+<p>struct proto_ops {
+int             family;
+struct module   *owner;
+int             (*release)   (struct socket *sock);
+int             (*bind)      (struct socket *sock,
+struct sockaddr *myaddr,
+int sockaddr_len);
+int             (*connect)   (struct socket *sock,
+struct sockaddr *vaddr,
+int sockaddr_len, int flags);
+int             (*socketpair)(struct socket *sock1,
+struct socket *sock2);
+int             (*accept)    (struct socket *sock,
+struct socket *newsock, int flags, bool kern);
+int             (*getname)   (struct socket *sock,
+struct sockaddr *addr,
+int peer);
+//…
+}</p>
+<p><code>struct socket</code> 结构体的 <code>ops</code> 字段的初始化是在 <code>__sock_create()</code> 函数中完成的，该函数通过调用针对每个协议的 <code>create()</code> 函数来实现；等效调用是 <code>__sock_create()</code> 函数的实现：</p>
+<p>//…
+err = pf->create(net, sock, protocol, kern);
+if (err &#x3C; 0)
+goto out_module_put;
+//…</p>
+<p>这将使用与 socket 关联的协议类型特定的调用来实例化函数指针。 <code>sock_register()</code> 和 <code>sock_unregister()</code> 调用用于填充 <code>net_families</code> 向量。</p>
+<p>对于 socket 结构的其余操作（除了在 <a href="#socket">对 socket 结构的操作</a> 部分中描述的创建、关闭和发送/接收消息之外），将调用通过这个结构中的指针传递的函数。例如，对于 <code>bind</code> 操作（它将一个 socket 与一个本地机器上的 socket 关联）有以下代码：</p>
+<p>#define MY_PORT 60000</p>
+<p>struct sockaddr_in addr = {
+.sin_family = AF_INET,
+.sin_port = htons (MY_PORT),
+.sin_addr = { htonl (INADDR_LOOPBACK) }
+};</p>
+<p>//…
+err = sock->ops->bind (sock, (struct sockaddr *) &#x26;addr, sizeof(addr));
+if (err &#x3C; 0) {
+/* 处理错误 */
+}
+//…</p>
+<p>在以上代码中，用于传输与 socket 关联的地址和端口信息的是 <code>struct sockaddr_in</code> 结构体。</p>
+<h3 id="struct-sock-结构"><code>struct sock</code> 结构<a href="#struct-sock" title="永久链接至标题">¶</a></h3>
+<p><code>struct sock</code> 结构描述了 <code>INET</code> 套接字。这样的结构与用户空间的 socket 相关联，并且与 <code>struct socket</code> 结构相关联，其中与 <code>struct socket</code> 结构的关联是隐式的。该结构用于存储关于连接状态的信息。结构体的字段和相关操作通常以 <code>sk_</code> 字符串开头。以下列出了一些字段：</p>
+<p>struct sock {
+//…
+unsigned int            sk_padding : 1,
+sk_no_check_tx : 1,
+sk_no_check_rx : 1,
+sk_userlocks : 4,
+sk_protocol  : 8,
+sk_type      : 16;
+//…
+struct socket           *sk_socket;
+//…
+struct sk_buff          *sk_send_head;
+//…
+void                    (*sk_state_change)(struct sock *sk);
+void                    (*sk_data_ready)(struct sock *sk);
+void                    (*sk_write_space)(struct sock *sk);
+void                    (*sk_error_report)(struct sock *sk);
+int                     (*sk_backlog_rcv)(struct sock *sk,
+struct sk_buff *skb);
+void                    (*sk_destruct)(struct sock *sk);
+};</p>
+<blockquote>
+<ul>
+<li><code>sk_protocol</code> 是套接字使用的协议类型；</li>
+<li><code>sk_type</code> 是套接字类型 (<code>SOCK_STREAM</code>, <code>SOCK_DGRAM</code> 等)；</li>
+<li><code>sk_socket</code> 是持有该套接字的 BSD 套接字；</li>
+<li><code>sk_send_head</code> 是用于传输的 <code>struct sk_buff</code> 结构列表；</li>
+<li>最后的函数指针是用于不同情况的回调函数。</li>
+</ul>
+</blockquote>
+<p>使用从 <code>net_families</code> 创建的回调函数(称为 <code>__sock_create()</code>) 来初始化 <code>struct sock</code> 并将其附加到 BSD 套接字。以下是在 <code>inet_create()</code> 函数中初始化 IP 协议的 <code>struct sock</code> 结构体的方法：</p>
+<p>/*
+*   创建 inet 套接字。
+*/</p>
+<p>static int inet_create(struct net *net, struct socket *sock, int protocol,
+int kern)
+{</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  struct sock \*sk;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  //...</span></span>
+<span class="line"><span>  err \= \-ENOBUFS;</span></span>
+<span class="line"><span>  sk \= sk\_alloc(net, PF\_INET, GFP\_KERNEL, answer\_prot, kern);</span></span>
+<span class="line"><span>  if (!sk)</span></span>
+<span class="line"><span>          goto out;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  err \= 0;</span></span>
+<span class="line"><span>  if (INET\_PROTOSW\_REUSE &#x26; answer\_flags)</span></span>
+<span class="line"><span>          sk\->sk\_reuse \= SK\_CAN\_REUSE;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  //...</span></span>
+<span class="line"><span>  sock\_init\_data(sock, sk);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  sk\->sk\_destruct    \= inet\_sock\_destruct;</span></span>
+<span class="line"><span>  sk\->sk\_protocol    \= protocol;</span></span>
+<span class="line"><span>  sk\->sk\_backlog\_rcv \= sk\->sk\_prot\->backlog\_rcv;</span></span>
+<span class="line"><span>  //...</span></span></code></pre>
+<p>}</p>
+<h3 id="struct-sk_buff-结构体"><code>struct sk_buff</code> 结构体<a href="#struct-sk-buff" title="永久链接至标题">¶</a></h3>
+<p><code>struct sk_buff</code> (套接字缓冲区)描述了一个网络数据包。该结构的字段包含有关报头和数据包内容、使用的协议、使用的网络设备以及指向其他 <code>struct sk_buff</code> 的指针的信息。下面是该结构体的内容的概要描述：</p>
+<p>struct sk_buff {
+union {
+struct {
+/* 这两个成员必须放在最前面。 */
+struct sk_buff *next;
+struct sk_buff *prev;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  union {</span></span>
+<span class="line"><span>    struct net\_device \*dev;</span></span>
+<span class="line"><span>    /\* 一些协议可能会使用此空间来存储信息，此种情形下设备指针为 NULL。</span></span>
+<span class="line"><span>     \* UDP 接收路径就是其中之一。</span></span>
+<span class="line"><span>     \*/</span></span>
+<span class="line"><span>    unsigned long dev\_scratch;</span></span>
+<span class="line"><span>  };</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>struct rb\_node rbnode; /\* 在 netem 和 tcp 栈中使用 \*/</span></span></code></pre>
+<p>};
+struct sock *sk;</p>
+<p>union {
+ktime_t tstamp;
+u64 skb_mstamp;
+};</p>
+<p>/*
+* 这是控制缓冲区。每一层都可以自由使用它。
+* 请将你的私有变量放在这里。如果要在多个层之间保留这些变量，首先必须进行 skb_clone()。
+* 此缓冲区由当前此 skb 的队列的所有者拥有。
+*/
+char cb[48] __aligned(8);</p>
+<p>unsigned long _skb_refdst;
+void (*destructor)(struct sk_buff *skb);
+union {
+struct {
+unsigned long _skb_refdst;
+void (*destructor)(struct sk_buff *skb);
+};
+struct list_head tcp_tsorted_anchor;
+};
+/* … */</p>
+<p>unsigned int len,
+data_len;
+__u16 mac_len,
+hdr_len;</p>
+<p>/* … */</p>
+<p>__be16 protocol;
+__u16 transport_header;
+__u16 network_header;
+__u16 mac_header;</p>
+<p>/* 私有：*/
+__u32 headers_end[0];
+/* 公有：*/</p>
+<p>/* 这些元素必须放在最后。有关详细信息，请参阅 alloc_skb()。*/
+sk_buff_data_t tail;
+sk_buff_data_t end;
+unsigned char *head,
+*data;
+unsigned int truesize;
+refcount_t users;
+};</p>
+<p>其中：</p>
+<blockquote>
+<ul>
+<li><code>next</code> 和 <code>prev</code> 是指向缓冲区列表中下一个和前一个元素的指针；</li>
+<li><code>dev</code> 是发送或接收缓冲区内容的设备；</li>
+<li><code>sk</code> 是与缓冲区相关联的套接字；</li>
+<li><code>destructor</code> 是负责释放缓冲区的回调函数；</li>
+<li><code>transport_header</code>, <code>network_header</code> 和 <code>mac_header</code> 是数据包起始位置和各个头部起始位置之间的偏移量。它们由数据包经过的各个处理层内部维护。要获取指向头部的指针，请使用以下函数之一: <code>tcp_hdr()</code>, <code>udp_hdr()</code> 以及 <code>ip_hdr()</code> 等。原则上，每个协议都对应一个函数。这些函数用于在接收到的数据包中，获取对该协议的头部的引用。请注意，当数据包到达网络层时, <code>network_header</code> 字段才被设置；而当数据包到达传输层时, <code>transport_header</code> 字段才被设置。</li>
+</ul>
+</blockquote>
+<p><a href="https://zh.wikipedia.org/zh-cn/IPv4#%E9%A6%96%E9%83%A8">IP 头部</a> 的结构 (<code>struct iphdr</code>) 包含以下字段：</p>
+<p>struct iphdr {
+#if defined(__LITTLE_ENDIAN_BITFIELD)
+__u8    ihl:4,
+version:4;
+#elif defined (__BIG_ENDIAN_BITFIELD)
+__u8    version:4,
+ihl:4;
+#else
+#error        “Please fix &#x3C;asm/byteorder.h>”
+#endif
+__u8    tos;
+__be16  tot_len;
+__be16  id;
+__be16  frag_off;
+__u8    ttl;
+__u8    protocol;
+__sum16 check;
+__be32  saddr;
+__be32  daddr;
+/* 可选项由此开始 */
+};</p>
+<p>其中：</p>
+<blockquote>
+<ul>
+<li><code>protocol</code> 是使用的传输层协议；</li>
+<li><code>saddr</code> 是源 IP 地址；</li>
+<li><code>daddr</code> 是目标 IP 地址。</li>
+</ul>
+</blockquote>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE#%E5%B0%81%E5%8C%85%E7%B5%90%E6%A7%8B">TCP 头部</a> 的结构 (<code>struct tcphdr</code>) 具有以下字段：</p>
+<p>struct tcphdr {
+__be16  source;
+__be16  dest;
+__be32  seq;
+__be32  ack_seq;
+#if defined(__LITTLE_ENDIAN_BITFIELD)
+__u16   res1:4,
+doff:4,
+fin:1,
+syn:1,
+rst:1,
+psh:1,
+ack:1,
+urg:1,
+ece:1,
+cwr:1;
+#elif defined(__BIG_ENDIAN_BITFIELD)
+__u16   doff:4,
+res1:4,
+cwr:1,
+ece:1,
+urg:1,
+ack:1,
+psh:1,
+rst:1,
+syn:1,
+fin:1;
+#else
+#error        “Adjust your &#x3C;asm/byteorder.h> defines”
+#endif
+__be16  window;
+__sum16 check;
+__be16  urg_ptr;
+};</p>
+<p>其中：</p>
+<blockquote>
+<ul>
+<li><code>source</code> 是源端口；</li>
+<li><code>dest</code> 是目标端口；</li>
+<li>常使用的 TCP 标志包括 <code>syn</code>, <code>ack</code> 以及 <code>fin</code>；要想对其有更详细地了解，请参见此 <a href="http://www.eventhelix.com/Realtimemantra/Networking/Tcp.pdf">图表</a>。</li>
+</ul>
+</blockquote>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%8D%8F%E8%AE%AE#UDP%E7%9A%84%E5%88%86%E7%BB%84%E7%BB%93%E6%9E%84">UDP 头部</a> 的结构（<code>struct udphdr</code>）具有以下字段：</p>
+<p>struct udphdr {
+__be16  source;
+__be16  dest;
+__be16  len;
+__sum16 check;
+};</p>
+<p>其中：</p>
+<blockquote>
+<ul>
+<li><code>source</code> 是源端口；</li>
+<li><code>dest</code> 是目标端口。</li>
+</ul>
+</blockquote>
+<p>访问网络数据包头部中的信息的示例如下：</p>
+<p>struct sk_buff *skb;</p>
+<p>struct iphdr *iph = ip_hdr(skb);                 /* IP 头部 */
+/* iph->saddr  - 源 IP 地址 */
+/* iph->daddr  - 目标 IP 地址 */
+if (iph->protocol == IPPROTO_TCP) {              /* TCP 协议 */
+struct tcphdr *tcph = tcp_hdr(skb);      /* TCP 头部 */
+/* tcph->source —— 源 TCP 端口 */
+/* tcph->dest   —— 目标 TCP 端口 */
+} else if (iph->protocol == IPPROTO_UDP) {       /* UDP 协议 */
+struct udphdr *udph = udp_hdr(skb);      /* UDP 头部 */
+/* udph->source —— 源 UDP 端口 */
+/* udph->dest   —— 目标 UDP 端口 */
+}</p>
+<h2 id="转换">转换<a href="#section-7" title="永久链接至标题">¶</a></h2>
+<p>不同系统的字，有多种字节的顺序方式 (<a href="http://zh.wikipedia.org/zh-cn/%E5%AD%97%E8%8A%82%E5%BA%8F">字节序</a>)，包括: <a href="http://zh.wikipedia.org/zh-cn/%E5%AD%97%E8%8A%82%E5%BA%8F#%E5%A4%A7%E7%AB%AF%E5%BA%8F">大端序</a> (最高位字节在前) 和 <a href="http://zh.wikipedia.org/zh-cn/%E5%AD%97%E8%8A%82%E5%BA%8F#%E5%B0%8F%E7%AB%AF%E5%BA%8F">小端序</a> (最低位字节在前)。由于网络连接了具有不同平台的系统，因此互联网对于数值数据的存储已经强加了一种标准序列，称为 <a href="http://zh.wikipedia.org/zh-cn/%E5%AD%97%E8%8A%82%E5%BA%8F#%E7%BD%91%E7%BB%9C%E5%BA%8F">网络字节序</a>。相反，主机计算机上，表示数值数据的字节序列称为主机字节序。从网络接收/发送的数据采用网络字节序格式，并且应该在该格式和主机字节序之间进行转换。</p>
+<p>为了进行转换，我们使用以下宏：</p>
+<blockquote>
+<ul>
+<li><code>u16 htons(u16 x)</code> 将 16 位整数从主机字节序转换为网络字节序（主机到网络短整数）；</li>
+<li><code>u32 htonl(u32 x)</code> 将 32 位整数从主机字节序转换为网络字节序（主机到网络长整数）；</li>
+<li><code>u16 ntohs(u16 x)</code> 将 16 位整数从网络字节序转换为主机字节序（网络到主机短整数）；</li>
+<li><code>u32 ntohl(u32 x)</code> 将 32 位整数从网络字节序转换为主机字节序（网络到主机长整数）。</li>
+</ul>
+</blockquote>
+<h2 id="netfilter">netfilter<a href="#netfilter-1" title="永久链接至标题">¶</a></h2>
+<p>Netfilter 是一个内核接口，用于捕获网络数据包以对其进行修改/分析（用于过滤、NAT 等）。在用户空间中，由 <a href="http://www.frozentux.net/documents/iptables-tutorial/">iptables</a> 使用 <a href="http://www.netfilter.org/">netfilter</a> 接口。</p>
+<p>在 Linux 内核中，使用 netfilter 进行数据包捕获是通过附加钩子（hook）来实现的。钩子可以在内核网络数据包所经过的路径的不同位置指定，你可以根据需要进行配置。你可以在 <a href="http://linux-ip.net/nf/nfk-traversal.png">这里</a> 找到一张组织图，组织图上显示数据包所经过的路径以及钩子可能出现的区域。</p>
+<p>使用 netfilter 时包含的头文件是 <code>linux/netfilter.h</code>。</p>
+<p>钩子通过 <code>struct nf_hook_ops</code> 结构体进行定义：</p>
+<p>struct nf_hook_ops {
+/* 用户从这里开始填写。*/
+nf_hookfn               *hook;
+struct net_device       *dev;
+void                    *priv;
+u_int8_t                pf;
+unsigned int            hooknum;
+/* 钩子按优先级升序排列。*/
+int                     priority;
+};</p>
+<p>其中：</p>
+<blockquote>
+<ul>
+<li><code>pf</code> 是数据包类型 (<code>PF_INET</code> 等)；</li>
+<li><code>priority</code> 是优先级；优先级在 <code>uapi/linux/netfilter_ipv4.h</code> 中定义如下：</li>
+</ul>
+</blockquote>
+<p>enum nf_ip_hook_priorities {
+NF_IP_PRI_FIRST = INT_MIN,
+NF_IP_PRI_CONNTRACK_DEFRAG = -400,
+NF_IP_PRI_RAW = -300,
+NF_IP_PRI_SELINUX_FIRST = -225,
+NF_IP_PRI_CONNTRACK = -200,
+NF_IP_PRI_MANGLE = -150,
+NF_IP_PRI_NAT_DST = -100,
+NF_IP_PRI_FILTER = 0,
+NF_IP_PRI_SECURITY = 50,
+NF_IP_PRI_NAT_SRC = 100,
+NF_IP_PRI_SELINUX_LAST = 225,
+NF_IP_PRI_CONNTRACK_HELPER = 300,
+NF_IP_PRI_CONNTRACK_CONFIRM = INT_MAX,
+NF_IP_PRI_LAST = INT_MAX,
+};</p>
+<blockquote>
+<ul>
+<li><code>dev</code> 是捕获操作针对的设备（网络接口）；</li>
+<li><code>hooknum</code> 是我们使用的钩子类型。当捕获到数据包时，处理模式由 <code>hooknum</code> 和 <code>hook</code> 字段定义。对于 IP，钩子类型在 <code>linux/netfilter.h</code> 中定义：</li>
+</ul>
+</blockquote>
+<p>enum nf_inet_hooks {
+NF_INET_PRE_ROUTING,
+NF_INET_LOCAL_IN,
+NF_INET_FORWARD,
+NF_INET_LOCAL_OUT,
+NF_INET_POST_ROUTING,
+NF_INET_NUMHOOKS
+};</p>
+<blockquote>
+<ul>
+<li><code>hook</code> 是在捕获网络数据包时调用的处理程序（数据包以 <code>struct sk_buff</code> 结构体形式发送）。 <code>private</code> 字段是传递给处理程序的私有信息。捕获处理程序的原型由 <code>nf_hookfn</code> 类型定义：</li>
+</ul>
+</blockquote>
+<p>struct nf_hook_state {
+unsigned int hook;
+u_int8_t pf;
+struct net_device *in;
+struct net_device *out;
+struct sock *sk;
+struct net *net;
+int (*okfn)(struct net *, struct sock *, struct sk_buff *);
+};</p>
+<p>typedef unsigned int nf_hookfn(void *priv,
+struct sk_buff *skb,
+const struct nf_hook_state *state);</p>
+<p>捕获函数 <code>nf_hookfn()</code> 中, <code>priv</code> 参数是 <code>struct nf_hook_ops</code> 初始化时传递的私有信息。 <code>skb</code> 是指向捕获的网络数据包的指针。根据 <code>skb</code> 的信息，可以进行数据包过滤决策。函数的 <code>state</code> 参数是与数据包捕获相关的状态信息，包括输入接口、输出接口、优先级和钩子号。优先级和钩子号可使同一个函数被多个钩子调用。</p>
+<p>捕获处理程序可以返回以下常量之一 (<code>NF_*</code>)：</p>
+<p>/* hook 函数的响应结果 */
+#define NF_DROP 0
+#define NF_ACCEPT 1
+#define NF_STOLEN 2
+#define NF_QUEUE 3
+#define NF_REPEAT 4
+#define NF_STOP 5
+#define NF_MAX_VERDICT NF_STOP</p>
+<p><code>NF_DROP</code> 用于过滤（忽略）数据包, <code>NF_ACCEPT</code> 用于接受数据包并将其转发。</p>
+<p>通过使用在 <code>linux/netfilter.h</code> 中定义的函数来注册/注销一个 hook：</p>
+<p>/* 注册/注销 hook 点的函数 */
+int nf_register_net_hook(struct net *net, const struct nf_hook_ops *ops);
+void nf_unregister_net_hook(struct net *net, const struct nf_hook_ops *ops);
+int nf_register_net_hooks(struct net *net, const struct nf_hook_ops *reg,
+unsigned int n);
+void nf_unregister_net_hooks(struct net *net, const struct nf_hook_ops *reg,
+unsigned int n);</p>
+<p>注意</p>
+<p>在 Linux 内核 3.11-rc2 版本之前，作为 netfilter 钩子参数的 <code>struct sk_buff</code> 结构，内部的头部提取函数有一些限制。虽然每次都可以使用 <code>ip_hdr()</code> 获取 IP 头部，但是用于获取 TCP 和 UDP 头部的 <code>tcp_hdr()</code> 和 <code>udp_hdr()</code> 函数，却只能对从系统内部，而非外部接收的数据包使用。对于后者的情况，需要手动计算数据包中的头部偏移量：</p>
+<p>// TCP 数据包 (iph->protocol == IPPROTO_TCP)
+tcph = (struct tcphdr*)((__u32*)iph + iph->ihl);
+// UDP 数据包 (iph->protocol == IPPROTO_UDP)
+udph = (struct udphdr*)((__u32*)iph + iph->ihl);</p>
+<p>这段代码适用于所有过滤场景，因此建议使用它来替代头部访问函数。</p>
+<p>下面是一个 netfilter hook 的使用示例：</p>
+<p>#include &#x3C;linux/netfilter.h>
+#include &#x3C;linux/netfilter_ipv4.h>
+#include &#x3C;linux/net.h>
+#include &#x3C;linux/in.h>
+#include &#x3C;linux/skbuff.h>
+#include &#x3C;linux/ip.h>
+#include &#x3C;linux/tcp.h></p>
+<p>static unsigned int my_nf_hookfn(void *priv,
+struct sk_buff *skb,
+const struct nf_hook_state *state)
+{
+/* 处理数据包 */
+//…</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  return NF\_ACCEPT;</span></span></code></pre>
+<p>}</p>
+<p>static struct nf_hook_ops my_nfho = {
+.hook        = my_nf_hookfn,
+.hooknum     = NF_INET_LOCAL_OUT,
+.pf          = PF_INET,
+.priority    = NF_IP_PRI_FIRST
+};</p>
+<p>int __init my_hook_init(void)
+{
+return nf_register_net_hook(&#x26;init_net, &#x26;my_nfho);
+}</p>
+<p>void __exit my_hook_exit(void)
+{
+nf_unregister_net_hook(&#x26;init_net, &#x26;my_nfho);
+}</p>
+<p>module_init(my_hook_init);
+module_exit(my_hook_exit);</p>
+<h2 id="netcat">netcat<a href="#netcat" title="永久链接至标题">¶</a></h2>
+<p>在开发包含网络编程的应用程序时，常用的工具包括 netcat。它也被昵称为“TCP/IP 的瑞士军刀”。它可以用于以下功能：</p>
+<blockquote>
+<ul>
+<li>发起 TCP 连接；</li>
+<li>等待 TCP 连接；</li>
+<li>发送和接收 UDP 数据包；</li>
+<li>以十六进制转储（hexdump）格式显示流量；</li>
+<li>在建立连接后运行程序（例如，一个 shell）；</li>
+<li>在发送的数据包中设置特殊选项。</li>
+</ul>
+</blockquote>
+<p>发起 TCP 连接：</p>
+<p>nc 主机名 端口号</p>
+<p>监听 TCP 端口：</p>
+<p>nc -l -p 端口号</p>
+<p>发送和接收 UDP 数据包，需要添加 <code>-u</code> 命令行选项。</p>
+<p>注解</p>
+<p>命令是 <strong>nc</strong>；通常 <strong>netcat</strong> 是此命令的别名。还有其他实现 netcat 命令的版本，其中一些与经典实现参数略有不同。运行 <strong>man nc</strong> 或 <strong>nc -h</strong> 以查看如何使用它。</p>
+<p>有关 netcat 的更多信息，请参阅以下 <a href="https://www.win.tue.nl/~aeb/linux/hh/netcat_tutorial.pdf">教程</a>。</p>
+<h2 id="进一步阅读">进一步阅读<a href="#section-8" title="永久链接至标题">¶</a></h2>
+<ol>
+<li>了解 Linux 网络内部</li>
+<li><a href="http://www.cs.unh.edu/cnrg/gherrin/">Linux IP 网络</a></li>
+<li><a href="#system-message-1">`TUX Web 服务器`_</a></li>
+<li><a href="https://www.beej.us/guide/bgnet/">Beej 的互联网套接字网络编程指南</a></li>
+<li><a href="http://www.linuxjournal.com/article/7660">内核中的网络编程——Kernel Korner</a></li>
+<li><a href="http://phrack.org/issues/61/13.html">深入 Linux 内核网络堆栈</a></li>
+<li><a href="http://www.netfilter.org/">netfilter.org 项目</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture">深入了解 Iptables 和 Netfilter 架构</a></li>
+<li><a href="http://www.linuxfoundation.org/en/Net:Main_Page">Linux 基金会网络页面</a></li>
+</ol>
+<h2 id="练习">练习<a href="#section-9" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 networking。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/networking/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-9">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<p>重要</p>
+<p>你需要确保内核支持 <code>netfilter</code>。可以通过 <code>CONFIG_NETFILTER</code> 来启用它。要激活它，请在 <code>linux</code> 目录中运行 <strong>make menuconfig</strong>，并在 <code>Networking support -> Networking options</code> 中勾选 <code>Network packet filtering framework (Netfilter)</code> 选项。如果它未启用，请启用它（作为内置功能，而不是外部模块——必须带有 <code>*</code> 标记）。</p>
+<h3 id="1-在内核空间中显示数据包">1. 在内核空间中显示数据包<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<p>编写一个内核模块，显示发起出站连接的 TCP 数据包的源地址和端口。从 <code>1-2-netfilter</code> 中的代码开始，并填写标有 <code>TODO 1</code> 的区域，同时考虑下面的注释。</p>
+<p>你需要注册一个类型为 <code>NF_INET_LOCAL_OUT</code> 的 netfilter 钩子，如 <a href="#system-message-2">`netfilter`_</a> 部分所述。</p>
+<p>借助 <a href="#system-message-3">`struct sk_buff 结构`_</a>, 你可以使用特定的函数访问数据包头部。<code>ip_hdr()</code> 函数以返回指向 <code>struct iphdr</code> 结构的指针的形式，返回 IP 头部。<code>tcp_hdr()</code> 函数以返回指向 <code>struct tcphdr</code> 结构的指针的形式，返回 TCP 头部。</p>
+<p><a href="http://www.eventhelix.com/Realtimemantra/Networking/Tcp.pdf">图表</a> 解释了如何建立 TCP 连接。连接初始化数据包在 TCP 头部中设置了 <code>SYN</code> 标志，并清除了 <code>ACK</code> 标志。</p>
+<p>注解</p>
+<p>要显示源 IP 地址，请使用 printk 函数的 <code>%pI4</code> 格式。详细信息可以在 <a href="https://www.kernel.org/doc/Documentation/printk-formats.txt">内核文档</a> (<code>IPv4 addresses</code> 部分)中找到。以下是使用 <code>%pI4</code> 的示例代码片段：</p>
+<p>printk(“IP address is %pI4\n”, &#x26;iph->saddr);</p>
+<p>在使用 <code>%pI4</code> 格式时，printk 的实参是指针。因此，构造应为 <code>&#x26;iph->saddr</code> （带有 &#x26; 运算符）而不是 <code>iph->saddr</code>。</p>
+<p>在 TCP 头部中，源 TCP 端口以 <a href="http://zh.wikipedia.org/zh-cn/%E5%AD%97%E8%8A%82%E5%BA%8F#%E7%BD%91%E7%BB%9C%E5%BA%8F">网络字节序</a> 格式表示。请阅读 转换 部分。使用 <code>ntohs()</code> 进行转换。</p>
+<p>为了进行测试，请使用 <code>1-2-netfilter/user/test-1.sh</code> 文件。该测试创建一个到本地主机的连接，然后由内核模块拦截和显示该连接。 <strong>make copy</strong> 命令仅会在该脚本标记为可执行的情况下，才会将该脚本复制到虚拟机上。该脚本使用静态编译得到的 <strong>netcat</strong> 工具，该工具的路径是 <code>skels/networking/netcat</code>；此程序必须具有执行权限。</p>
+<p>运行检查器后，输出应类似于下面的示例：</p>
+<p># ./test-1.sh
+[  229.783512] TCP connection initiated from 127.0.0.1:44716
+Should show up in filter.
+Check dmesg output.</p>
+<h3 id="2-按目标地址进行过滤">2. 按目标地址进行过滤<a href="#section-11" title="永久链接至标题">¶</a></h3>
+<p>扩展练习 1 中的模块，以便你可以通过 <code>MY_IOCTL_FILTER_ADDRESS</code> ioctl 调用指定目标地址。注意只显示包含指定目标地址的数据包。为了解决这个任务，填写标有 <code>TODO 2</code> 的区域，并按照以下规范进行操作。</p>
+<p>要实现 ioctl 例程，你必须填写 <code>my_ioctl</code> 函数。请查看 <a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#ioctl">ioctl</a> 部分的内容。从用户空间发送的地址使用 <a href="http://zh.wikipedia.org/zh-cn/%E5%AD%97%E8%8A%82%E5%BA%8F#%E7%BD%91%E7%BB%9C%E5%BA%8F">网络字节序</a>, 因此 <strong>无需</strong> 进行转换。</p>
+<p>注解</p>
+<p>通过 <code>ioctl</code> 发送的 IP 地址是通过地址发送的，而不是通过值发送的。地址必须存储在 <code>ioctl_set_addr</code> 变量中。可以使用 <code>copy_from_user()</code> 进行复制。</p>
+<p>要比较地址，请填写 <code>test_daddr</code> 函数。这里我们无需转换地址，即可将（使用网络字节序的）地址进行比较（如果从左到右相等，则反转后也相等）。</p>
+<p>如果要显示按目标地址过滤出的连接初始化数据包（这些过滤出的数据包，其目标地址与我们通过 ioctl 例程发送的地址相符），那么 <code>test_daddr</code> 函数必须在 netfilter 钩子中调用。连接初始化数据包在 TCP 头部中设置了 <code>SYN</code> 标志，并清除了 <code>ACK</code> 标志。你需要检查两件事情：</p>
+<blockquote>
+<ul>
+<li>TCP 标志；</li>
+<li>数据包的目标地址（使用 <code>test_addr</code>）。</li>
+</ul>
+</blockquote>
+<p>为了进行测试，请使用 <code>1-2-netfilter/user/test-2.sh</code> 脚本。此脚本需要编译 <code>1-2-netfilter/user/test.c</code> 文件以生成测试可执行文件。在物理系统上运行 <strong>make build</strong> 命令时，会自动进行编译。只有标记为可执行，该测试脚本才会复制到虚拟机上。该脚本使用静态编译的 <strong>netcat</strong> 工具（在 <code>skels/networking/netcat</code> 中）；该可执行文件必须具有执行权限。</p>
+<p>运行检查器后，输出应类似于下面的示例：</p>
+<h1 id="test-2sh">./test-2.sh</h1>
+<p>[  797.673535] TCP connection initiated from 127.0.0.1:44721
+Should show up in filter.
+Should NOT show up in filter.
+Check dmesg output.</p>
+<p>测试首先要求对 <code>127.0.0.1</code> IP 地址进行数据包过滤，然后对 <code>127.0.0.2</code> IP 地址进行过滤。第一个连接初始化数据包（到 <code>127.0.0.1</code>）被过滤器拦截并显示，而第二个数据包（到 <code>127.0.0.2</code>）则未被拦截。</p>
+<h3 id="3-监听-tcp-socket">3. 监听 TCP socket<a href="#tcp-socket" title="永久链接至标题">¶</a></h3>
+<p>编写一个内核模块，在回环接口（loopback interface）（在 <code>init_module</code> 中）上创建监听连接的 TCP 套接字，监听端口为 <code>60000</code>。从 <code>3-4-tcp-sock</code> 中的代码开始，填写标有 <code>TODO 1</code> 的区域，同时考虑以下观察结果。</p>
+<p>请阅读 <a href="#socket">对 socket 结构的操作</a> 和 <a href="#struct-proto-ops">struct proto_ops 结构</a> 部分。</p>
+<p><code>sock</code> socket 是 <code>服务器套接字</code>，因此必须处于监听状态。也就是说，必须对该 socket 执行 <code>bind</code> 和 <code>listen</code> 操作。在内核空间中，要执行类似于 <code>bind</code> 和 <code>listen</code> 的操作，你需要调用类似 <code>sock->ops->...;</code> 的函数。你可以调用的示例函数包括 <code>sock->ops->bind</code>, <code>sock->ops->listen</code> 等。</p>
+<p>注解</p>
+<p>例如，调用 <code>sock->ops->bind</code> 或 <code>sock->ops->listen</code> 函数，查看在 <code>sys_bind()</code> 和 <code>sys_listen()</code> 系统调用处理程序中调用它们的方式。</p>
+<p>在 Linux 内核源代码树的 <code>net/socket.c</code> 文件中，查找系统调用处理程序。</p>
+<p>注解</p>
+<p>对于 <code>listen</code> 的第二个参数（backlog），请使用 <code>LISTEN_BACKLOG</code>。</p>
+<p>在模块的退出函数和标有错误标签的区域中记得释放 socket；可以使用 <code>sock_release()</code> 来释放。</p>
+<p>要进行测试，请运行 <strong>3-4-tcp_sock/test-3.sh</strong> 脚本。只有在标记为可执行时，该脚本才会通过 <strong>make copy</strong> 复制到虚拟机上。</p>
+<p>运行测试后，将显示一个 TCP 套接字，通过监听端口 <code>60000</code> 进行连接。</p>
+<h3 id="4-在内核空间接受连接">4. 在内核空间接受连接<a href="#section-12" title="永久链接至标题">¶</a></h3>
+<p>扩展上一个练习中的模块，以允许外部连接（无需发送任何消息，只需接受新连接）。填写标有 <code>TODO 2</code> 的区域。</p>
+<p>请阅读 <a href="#socket">对 socket 结构的操作</a> 和 <a href="#struct-proto-ops">struct proto_ops 结构</a> 部分。</p>
+<p>对于内核空间的 <code>accept</code> 等效操作，请参阅 <code>sys_accept4()</code> 系统调用处理程序。请查看 <a href="https://elixir.bootlin.com/linux/v4.17/source/drivers/staging/lustre/lnet/lnet/lib-socket.c#L511">lnet_sock_accept</a> 实现，以及如何使用 <code>sock->ops->accept</code> 调用。将倒数第二个参数 (<code>flags</code>) 的值设为 <code>0</code>，将最后一个参数 (<code>kern</code>) 的值设为 <code>true</code>。</p>
+<p>注解</p>
+<p>在 Linux 内核源代码树的 <code>net/socket.c</code> 文件中查找系统调用处理程序。</p>
+<p>注解</p>
+<p>必须使用 <code>sock_create_lite()</code> 函数创建新套接字 (<code>new_sock</code>)，然后使用以下方式配置其操作：</p>
+<p>newsock->ops = sock->ops;</p>
+<p>打印目标 socket 的地址和端口。要查找 socket 的对等名称（即地址），请参考 <code>sys_getpeername()</code> 系统调用处理程序。</p>
+<p>注解</p>
+<p><code>sock->ops->getname</code> 函数的第一个参数是连接套接字，即通过 <code>accept</code> 调用初始化的 <code>new_sock</code>。</p>
+<p><code>sock->ops->getname</code> 函数的最后一个参数是 <code>1</code>，表示我们想要了解有关端点或对等点 (<em>远程端</em> 或 <em>对等点</em>) 的信息。</p>
+<p>使用文件中定义的 <code>print_sock_address</code> 宏显示对等地址（由 <code>raddr</code> 变量指示）。</p>
+<p>在模块的退出函数中，以及在错误标签之后，释放新创建的套接字（接受连接后）。在将 <code>accept</code> 代码添加到模块初始化函数之后，<strong>insmod</strong> 操作将会阻塞，直到建立连接。你可以使用 <strong>netcat</strong> 在该端口上解锁。因此，上一个练习中的测试脚本将无法工作。</p>
+<p>要进行测试，请运行 <code>3-4-tcp_sock/test-4.sh</code> 脚本。只有在标记为可执行时，该脚本才会通过 <strong>make copy</strong> 复制到虚拟机上。</p>
+<p>不会显示任何特殊内容（在内核缓冲区中）。测试的成功将由连接的建立来确定。然后使用 <code>Ctrl+c</code> 停止测试脚本，然后可以移除内核模块。</p>
+<h3 id="5-udp-套接字发送方">5. UDP 套接字发送方<a href="#udp-1" title="永久链接至标题">¶</a></h3>
+<p>编写一个内核模块，其创建一个 UDP socket，并将来自 socket 的 <code>MY_TEST_MESSAGE</code> 宏的消息发送到回环地址的端口 <code>60001</code>。</p>
+<p>从 <code>5-udp-sock</code> 中的代码开始。</p>
+<p>请阅读 <a href="#socket">对 socket 结构的操作</a> 和 <a href="#struct-proto-ops">struct proto_ops 结构</a> 部分。</p>
+<p>要了解如何在内核空间中发送消息，请参阅 <code>sys_send()</code> 系统调用处理程序或 <a href="#section-6">发送/接收消息</a>。</p>
+<p>提示</p>
+<p><code>struct msghdr</code> 结构的 <code>msg_name</code> 字段必须初始化为目标地址（指向 <code>struct sockaddr</code> 的指针）, <code>msg_namelen</code> 字段必须初始化为地址大小。</p>
+<p>将 <code>struct msghdr</code> 结构的 <code>msg_flags</code> 字段初始化为 <code>0</code>。</p>
+<p>将 <code>struct msghdr</code> 结构的 <code>msg_control</code> 和 <code>msg_controllen</code> 字段分别初始化为 <code>NULL</code> 和 <code>0</code>。</p>
+<p>要发送消息，请使用 <code>kernel_sendmsg()</code>。</p>
+<p>消息传输参数从内核空间中检索。在 <code>kernel_sendmsg()</code> 调用中，将 <code>struct iovec</code> 结构指针转换为 <code>struct kvec</code> 指针。</p>
+<p>提示</p>
+<p><code>kernel_sendmsg()</code> 的最后两个参数分别为 <code>1</code> (I/O 向量的数量) 和 <code>len</code> (消息大小)。</p>
+<p>要进行测试，请使用 <code>test-5.sh</code> 脚本。只有在标记为可执行时，该脚本才会通过 <strong>make copy</strong> 复制到虚拟机上。该脚本使用存储在 <code>skels/networking/netcat</code> 中的静态编译的 <code>netcat</code> 工具；该可执行文件必须具有执行权限。</p>
+<p>如果正确实现，运行 <code>test-5.sh</code> 脚本后，将显示类似下面的输出中的 <code>kernelsocket</code> 消息：</p>
+<p>/root # ./test-5.sh
++ pid=1059
++ sleep 1
++ nc -l -u -p 60001
++ insmod udp_sock.ko
+kernelsocket
++ rmmod udp_sock
++ kill 1059</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">← SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

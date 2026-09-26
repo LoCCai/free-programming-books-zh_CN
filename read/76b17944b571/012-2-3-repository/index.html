@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 2.3 仓库 · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 2.3 仓库"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 2.3 仓库</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="23-仓库">2.3 仓库</h2>
+<blockquote>
+<p><strong>版本说明</strong>：本节示例基于 Docker v29.x 和常见镜像版本编写。示例中的版本号（如 <code>nginx:1.28</code>、<code>mysql:8.4</code>、<code>mysql:5.7</code> 等）为演示用途。实际使用时请访问 <a href="https://hub.docker.com">Docker Hub 官方页面</a> 或相应镜像的发布页确认最新可用版本和标签。</p>
+</blockquote>
+<p>Docker Registry 是镜像分发和管理的核心组件。本节将介绍 Registry 的基本概念、公共和私有服务的选择，以及镜像的安全管理。</p>
+<h3 id="231-一句话理解-registry">2.3.1 一句话理解 Registry</h3>
+<blockquote>
+<p><strong>Docker Registry 是存储和分发 Docker 镜像的服务，类似于代码的 GitHub 或包管理的 npm。</strong></p>
+</blockquote>
+<p>镜像构建完成后，可以在当前机器上运行。但如果需要在其他服务器上使用这个镜像，就需要一个集中的存储和分发服务——这就是 Docker Registry。</p>
+<h3 id="232-核心概念">2.3.2 核心概念</h3>
+<p>要熟练使用 Docker Registry，首先需要理清它与仓库 (Repository)、标签 (Tag) 之间的关系。</p>
+<h4 id="registry仓库标签的关系">Registry、仓库、标签的关系</h4>
+<p>Docker Registry 中可以包含多个 Repository，每个 Repository 可以包含多个 Tag。如图 2-2 所示，它们之间具有清晰的层级关系。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TB</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph Registry ["Docker Registry（如 Docker Hub）"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph RepoNginx ["Repository（仓库）: nginx"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            direction LR</span></span>
+<span class="line"><span style="color:#E1E4E8">            N1(":latest (tag)")</span></span>
+<span class="line"><span style="color:#E1E4E8">            N2(":1.28 (tag)")</span></span>
+<span class="line"><span style="color:#E1E4E8">            N3(":1.26 (tag)")</span></span>
+<span class="line"><span style="color:#E1E4E8">            N4(":alpine (tag)")</span></span>
+<span class="line"><span style="color:#E1E4E8">            N5("...")</span></span>
+<span class="line"><span style="color:#E1E4E8">            N1 ~~~ N2 ~~~ N3 ~~~ N4 ~~~ N5</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph RepoMysql ["Repository（仓库）: mysql"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            direction LR</span></span>
+<span class="line"><span style="color:#E1E4E8">            M1(":latest")</span></span>
+<span class="line"><span style="color:#E1E4E8">            M2(":8.0")</span></span>
+<span class="line"><span style="color:#E1E4E8">            M3(":5.7")</span></span>
+<span class="line"><span style="color:#E1E4E8">            M4("...")</span></span>
+<span class="line"><span style="color:#E1E4E8">            M1 ~~~ M2 ~~~ M3 ~~~ M4</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"><span style="color:#E1E4E8">        RepoNginx ~~~ RepoMysql</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span></code></pre>
+<p>图 2-2：Registry、Repository 与 Tag 的层级关系</p>
+<p>相关基本概念具体如下：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>概念</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><strong>Registry</strong></td><td>存储镜像的服务</td><td>Docker Hub、ghcr.io</td></tr><tr><td><strong>Repository（仓库）</strong></td><td>同一软件的镜像集合</td><td><code>nginx</code>、<code>mysql</code>、<code>mycompany/myapp</code></td></tr><tr><td><strong>Tag（标签）</strong></td><td>仓库内的版本标识</td><td><code>latest</code>、<code>1.28</code>、<code>alpine</code></td></tr></tbody></table>
+<h4 id="镜像的完整名称">镜像的完整名称</h4>
+<p>一个完整的 Docker 镜像名称由 Registry 地址、用户名/组织名、仓库名和标签组成。了解其结构有助于我们更准确地定位镜像。基本格式如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#E1E4E8">[registry 地址/][用户名/]仓库名[:标签]</span></span></code></pre>
+<p>示例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 完整格式</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">registry.example.com/mycompany/myapp:v1.2.3</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">                    │</span><span style="color:#9ECBFF">         │</span><span style="color:#9ECBFF">     │</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">                    │</span><span style="color:#9ECBFF">         │</span><span style="color:#9ECBFF">     └──</span><span style="color:#9ECBFF"> 标签</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">                    │</span><span style="color:#9ECBFF">         └──</span><span style="color:#9ECBFF"> 仓库名</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">                    └──</span><span style="color:#9ECBFF"> 用户名/组织名</span></span>
+<span class="line"><span style="color:#B392F0">└──</span><span style="color:#9ECBFF"> Registry</span><span style="color:#9ECBFF"> 地址</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## Docker Hub 官方镜像（省略 registry 和用户名）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">nginx:1.28</span></span>
+<span class="line"><span style="color:#B392F0">ubuntu:24.04</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## Docker Hub 用户镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">jwilder/nginx-proxy:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 其他 Registry</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">ghcr.io/username/myapp:v1.0</span></span>
+<span class="line"><span style="color:#B392F0">us-west1-docker.pkg.dev/my-project/my-repo/myapp:v1.0</span></span></code></pre>
+<blockquote>
+<p>💡 <strong>笔者提示</strong>：如果不指定 Registry 地址，默认使用 Docker Hub。如果不指定标签，默认使用 <code>latest</code>。</p>
+</blockquote>
+<h3 id="233-公共-registry-服务">2.3.3 公共 Registry 服务</h3>
+<p>公共 Registry 服务为开发者提供了便捷的镜像获取途径。其中最著名的是 Docker Hub。</p>
+<h4 id="默认的-docker-hub">默认的 Docker Hub</h4>
+<p><a href="https://hub.docker.com/">Docker Hub</a> 是最大的公共 Registry，也是 Docker 的默认 Registry。</p>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>拥有大量<a href="https://hub.docker.com/search?q=&#x26;type=image&#x26;image_filter=official">官方镜像</a>（nginx、mysql、redis 等）</li>
+<li>免费账户可以创建公开仓库</li>
+<li>免费个人账户可创建 1 个私有仓库；更高套餐支持更多私有仓库</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 从 Docker Hub 拉取镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> nginx</span><span style="color:#6A737D">              # 官方镜像</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> bitnami/redis</span><span style="color:#6A737D">      # 第三方镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 推送镜像到 Docker Hub</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> login</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> username/myapp:v1.0</span></span></code></pre>
+<h4 id="其他公共-registry">其他公共 Registry</h4>
+<p>除了 Docker Hub，还有以下几个常见的公共 Registry：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Registry</th><th>地址</th><th>说明</th></tr></thead><tbody><tr><td><strong>GitHub Container Registry</strong></td><td>ghcr.io</td><td>GitHub 提供，与 GitHub Actions 集成好</td></tr><tr><td><strong>Google Artifact Registry</strong></td><td>LOCATION-docker.pkg.dev</td><td>Google Cloud 当前推荐；也支持迁移后的 <code>gcr.io</code> 兼容域名</td></tr><tr><td><strong>Quay.io</strong></td><td>quay.io</td><td>Red Hat 提供</td></tr><tr><td><strong>阿里云容器镜像服务</strong></td><td>registry.cn-*.aliyuncs.com</td><td>国内访问快</td></tr><tr><td><strong>腾讯云容器镜像服务</strong></td><td>ccr.ccs.tencentyun.com</td><td>国内访问快</td></tr></tbody></table>
+<p>Google 的 Container Registry 已废弃并完成下线，当前应优先使用 Artifact Registry；如果已经完成迁移，部分 <code>gcr.io</code> 域名请求会被兼容到 Artifact Registry。</p>
+<h3 id="234-镜像加速器">2.3.4 镜像加速器</h3>
+<p>由于网络原因，在国内直接访问 Docker Hub 可能会很慢。可以配置 <strong>镜像加速器</strong> (Registry Mirror) 来加速下载。配置示例如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsonc"><code><span class="line"><span style="color:#6A737D">// /etc/docker/daemon.json</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "registry-mirrors"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://your-accelerator-url"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>详细配置方法请参考<a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md">镜像加速器</a>章节。</p>
+<blockquote>
+<p>⚠️ <strong>笔者提醒</strong>：镜像加速器的可用性经常变化，使用前建议先测试是否可用。</p>
+</blockquote>
+<h3 id="235-私有-registry">2.3.5 私有 Registry</h3>
+<p>出于安全和隐私的考虑，企业往往需要搭建自己的私有 Registry。以下是几种常见的搭建方案。</p>
+<h4 id="官方-registry-镜像">官方 Registry 镜像</h4>
+<p>Docker 官方提供了 <a href="https://hub.docker.com/_/registry/">registry</a> 镜像，可以快速搭建私有 Registry：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 启动一个本地 Registry</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> 5000:5000</span><span style="color:#79B8FF"> --name</span><span style="color:#9ECBFF"> registry</span><span style="color:#9ECBFF"> registry:2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 推送镜像到本地 Registry</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> tag</span><span style="color:#9ECBFF"> myapp:v1.0</span><span style="color:#9ECBFF"> localhost:5000/myapp:v1.0</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> localhost:5000/myapp:v1.0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 从本地 Registry 拉取</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> localhost:5000/myapp:v1.0</span></span></code></pre>
+<h4 id="企业级解决方案">企业级解决方案</h4>
+<p>官方 Registry 功能较为基础，企业环境常用以下方案：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方案</th><th>特点</th></tr></thead><tbody><tr><td><strong><a href="https://goharbor.io/">Harbor</a></strong></td><td>CNCF 项目，功能全面（用户管理、漏洞扫描、镜像签名）</td></tr><tr><td><strong><a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.4_nexus3_registry.md">Nexus Repository</a></strong></td><td>支持多种制品类型（Docker、Maven、npm 等）</td></tr><tr><td><strong>云厂商服务</strong></td><td>阿里云 ACR、腾讯云 TCR、AWS ECR 等</td></tr></tbody></table>
+<p>笔者建议：</p>
+<ul>
+<li>小团队：可以先用官方 Registry，够用即可</li>
+<li>中大型团队：推荐 Harbor，功能完善且开源免费</li>
+<li>已使用云服务：直接用云厂商的 Registry 服务更省心</li>
+</ul>
+<h3 id="236-镜像的推送和拉取">2.3.6 镜像的推送和拉取</h3>
+<p>掌握镜像的推送 (Push) 和拉取 (Pull) 是使用 Docker Registry 的基本功。</p>
+<h4 id="完整工作流程">完整工作流程</h4>
+<p>如图 2-3 所示，镜像从开发环境构建后推送到 Registry，再由生产环境拉取并运行。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">开发者机器</span><span style="color:#9ECBFF">                    Registry</span><span style="color:#9ECBFF">                    生产服务器</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">                             │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">  docker</span><span style="color:#9ECBFF"> build</span><span style="color:#9ECBFF">             │</span><span style="color:#9ECBFF">                             │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">  构建镜像</span><span style="color:#9ECBFF">                  │</span><span style="color:#9ECBFF">                             │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">                             │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">  docker</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> ─────────────▶</span><span style="color:#9ECBFF">                             │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">  推送镜像</span><span style="color:#9ECBFF">                  │</span><span style="color:#9ECBFF">  存储镜像</span><span style="color:#9ECBFF">                   │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">                             │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">  ◀─────────────</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">                  拉取镜像</span><span style="color:#9ECBFF">    │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">                             │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">                  docker</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> │</span></span>
+<span class="line"><span style="color:#B392F0">     │</span><span style="color:#9ECBFF">                           │</span><span style="color:#9ECBFF">                  运行容器</span><span style="color:#9ECBFF">    │</span></span></code></pre>
+<p>图 2-3：镜像构建、推送与拉取流程</p>
+<h4 id="常用命令">常用命令</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 登录 Registry</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> login</span><span style="color:#6A737D">                      # 登录 Docker Hub</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> login</span><span style="color:#9ECBFF"> registry.example.com</span><span style="color:#6A737D"> # 登录其他 Registry</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 拉取镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> nginx:1.28</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 标记镜像（准备推送）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> tag</span><span style="color:#9ECBFF"> myapp:latest</span><span style="color:#9ECBFF"> registry.example.com/myteam/myapp:v1.0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 推送镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> registry.example.com/myteam/myapp:v1.0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 登出</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> logout</span></span></code></pre>
+<h3 id="237-镜像的安全性">2.3.7 镜像的安全性</h3>
+<p>在使用公共镜像或维护私有镜像时，安全性是不容忽视的重要环节。</p>
+<h4 id="使用官方镜像">使用官方镜像</h4>
+<p>Docker Hub 的<a href="https://hub.docker.com/search?q=&#x26;type=image&#x26;image_filter=official">官方镜像</a>（标有 “Official Image” 标识）经过 Docker 团队审核，相对更安全。示例如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 官方镜像示例</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">nginx</span><span style="color:#6A737D">          # ✅ 官方</span></span>
+<span class="line"><span style="color:#B392F0">mysql</span><span style="color:#6A737D">          # ✅ 官方</span></span>
+<span class="line"><span style="color:#B392F0">redis</span><span style="color:#6A737D">          # ✅ 官方</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 第三方镜像（需要自行评估可信度）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">bitnami/redis</span><span style="color:#6A737D">  # ⚠️ 需要评估</span></span>
+<span class="line"><span style="color:#B392F0">someuser/myapp</span><span style="color:#6A737D"> # ⚠️ 需要评估</span></span></code></pre>
+<h4 id="镜像签名">镜像签名</h4>
+<p>当前更推荐使用 Sigstore / Notation 体系进行镜像签名与验证。<code>Docker Content Trust (DCT)</code> 已被正式退役：自 Docker Engine 29.0 起 DCT 已从 Docker CLI 中移除（<code>docker trust</code> 子命令不再随 CLI 发布，仅能作为独立插件自行构建；<code>docker push</code>、<code>docker pull</code>、<code>docker build</code>、<code>docker run</code> 等命令上的 <code>--disable-content-trust</code> 选项虽仍可解析，但已标记为废弃且不再有实际作用），Docker 官方的 Notary v1 服务 <code>notary.docker.io</code> 也将于 2026 年 12 月 8 日完全关闭；最早一批 DCT 签名证书自 2025 年 8 月 8 日起已开始过期，Docker 建议镜像发布者迁移到 Sigstore、Notation 等方案。不建议把 DCT 作为新项目方案。</p>
+<blockquote>
+<p>注意：Cosign 默认会把签名推送回镜像所在仓库，请使用你有推送权限的镜像地址。</p>
+</blockquote>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 准备一个你有写权限的镜像地址</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> export</span><span style="color:#9ECBFF"> IMAGE=</span><span style="color:#F97583">&#x3C;</span><span style="color:#9ECBFF">你的仓库</span><span style="color:#E1E4E8">名</span><span style="color:#F97583">></span><span style="color:#9ECBFF">/nginx:1.28</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> nginx:1.28</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> tag</span><span style="color:#9ECBFF"> nginx:1.28</span><span style="color:#E1E4E8"> $IMAGE</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> push</span><span style="color:#E1E4E8"> $IMAGE</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 生成签名密钥（会生成 cosign.key / cosign.pub）</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cosign</span><span style="color:#9ECBFF"> generate-key-pair</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 使用 Cosign 签名与验证</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cosign</span><span style="color:#9ECBFF"> sign</span><span style="color:#79B8FF"> --key</span><span style="color:#9ECBFF"> cosign.key</span><span style="color:#E1E4E8"> $IMAGE</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cosign</span><span style="color:#9ECBFF"> verify</span><span style="color:#79B8FF"> --key</span><span style="color:#9ECBFF"> cosign.pub</span><span style="color:#E1E4E8"> $IMAGE</span></span></code></pre>
+<h4 id="漏洞扫描">漏洞扫描</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 使用 Docker Scout 扫描镜像漏洞</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> scout</span><span style="color:#9ECBFF"> cves</span><span style="color:#9ECBFF"> nginx:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 使用 Trivy（开源工具）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> trivy</span><span style="color:#9ECBFF"> image</span><span style="color:#9ECBFF"> nginx:latest</span></span></code></pre> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">← 2.2 容器</a></span> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

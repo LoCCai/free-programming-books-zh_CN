@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 13.2 基本概念 · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 13.2 基本概念"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 13.2 基本概念</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="132-基本概念">13.2 基本概念</h2>
+<p>如图 13-2 所示，Kubernetes 由控制平面与工作节点构成。</p>
+<p><img src="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/13_kubernetes_concepts/_images/kubernetes_design.jpg" alt="Kubernetes 基本概念示意图"></p>
+<p>图 13-2：Kubernetes 基本概念示意图</p>
+<ul>
+<li>节点 (<code>Node</code>)：一个节点是一个运行 Kubernetes 中的主机。</li>
+<li>容器组 (<code>Pod</code>)：Kubernetes 中最小的可部署和调度单元；一个 Pod 包含一个或多个紧密协作的容器，共享网络身份，并可共享一个或多个卷 (volume)。</li>
+<li>容器组生命周期 (<code>pod-states</code>)：包含所有容器状态集合，包括容器组状态类型，容器组生命周期，事件，重启策略。</li>
+<li>服务 (<code>services</code>)：一个 Kubernetes 服务是容器组逻辑的高级抽象，同时也对外提供访问容器组的策略。</li>
+<li>卷 (<code>volumes</code>)：一个卷就是一个目录，容器对其有访问权限。</li>
+<li>标签 (<code>labels</code>)：标签是用来连接一组对象的，比如容器组。标签可以被用来组织和选择子对象。</li>
+<li>接口权限 (<code>accessing_the_api</code>)：端口，IP 地址和代理的防火墙规则。</li>
+<li>web 界面 (<code>ux</code>)：用户可以通过 Headlamp 等仍在维护的 web 界面观察和操作 Kubernetes；历史 Dashboard 已停止维护。</li>
+<li>命令行操作 (<code>cli</code>)：<code>kubectl</code> 命令。</li>
+</ul>
+<h3 id="1321-节点">13.2.1 节点</h3>
+<p>在 <code>Kubernetes</code> 中，节点是实际工作的点，节点可以是虚拟机或者物理机器，依赖于一个集群环境。每个节点都有一些必要的组件以运行容器组，并且它们都可以通过控制平面来管理。必要组件包括 kubelet、容器运行时（如 containerd 或 CRI-O）和 kube-proxy；Docker 不再是 Kubernetes 节点的默认基线运行时。</p>
+<h4 id="容器状态">容器状态</h4>
+<p>容器状态用来描述节点的当前状态。现在，其中包含三个信息：</p>
+<h5 id="主机-ip">主机 IP</h5>
+<p>主机 IP 需要云平台来查询，<code>Kubernetes</code> 把它作为状态的一部分来保存。如果 <code>Kubernetes</code> 没有运行在云平台上，节点 ID 就是必需的。IP 地址可以变化，并且可以包含多种类型的 IP 地址，如公共 IP，私有 IP，动态 IP，ipv6 等等。</p>
+<h5 id="节点状态">节点状态</h5>
+<p>注：<code>Pending</code> / <code>Running</code> / <code>Succeeded</code> / <code>Failed</code> / <code>Unknown</code> 是 <strong>Pod 的生命周期阶段</strong>（<code>pod.status.phase</code>），不是节点状态。节点本身没有 <code>Terminated</code> 状态。</p>
+<p>节点的状态通过一组条件（Conditions）来描述。主要条件包括 <code>Ready</code>（kubelet 健康且可以接收 Pod）、<code>MemoryPressure</code>（内存不足）、<code>DiskPressure</code>（磁盘不足）和 <code>PIDPressure</code>（进程数过多）等。其中 <code>Ready</code> 条件最为关键：值为 <code>True</code> 表示节点健康可调度，<code>False</code> 表示节点异常，<code>Unknown</code> 表示节点控制器超过一定时间未收到心跳。被标记为 <code>Unknown</code> 较长时间的节点，其上的 Pod 会被驱逐重新调度到其他节点。</p>
+<h4 id="节点管理">节点管理</h4>
+<p>节点并非 Kubernetes 创建，而是由云平台创建，或者就是物理机器、虚拟机。在 Kubernetes 中，节点仅仅是一条记录，节点创建之后，Kubernetes 会检查其是否可用。可以通过 <code>kubectl</code> 查看节点信息：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> nodes</span></span>
+<span class="line"><span style="color:#B392F0">NAME</span><span style="color:#9ECBFF">           STATUS</span><span style="color:#9ECBFF">   ROLES</span><span style="color:#9ECBFF">           AGE</span><span style="color:#9ECBFF">   VERSION</span></span>
+<span class="line"><span style="color:#B392F0">control-plane</span><span style="color:#9ECBFF">  Ready</span><span style="color:#9ECBFF">    control-plane</span><span style="color:#9ECBFF">   10d</span><span style="color:#9ECBFF">   v1.36.0</span></span>
+<span class="line"><span style="color:#B392F0">worker-1</span><span style="color:#9ECBFF">       Ready</span><span style="color:#F97583">    &#x3C;</span><span style="color:#9ECBFF">non</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#9ECBFF">          10d</span><span style="color:#9ECBFF">   v1.36.0</span></span>
+<span class="line"><span style="color:#B392F0">worker-2</span><span style="color:#9ECBFF">       Ready</span><span style="color:#F97583">    &#x3C;</span><span style="color:#9ECBFF">non</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#9ECBFF">          10d</span><span style="color:#9ECBFF">   v1.36.0</span></span></code></pre>
+<p>每个节点的详细信息以如下结构保存：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Node</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">worker-1</span></span>
+<span class="line"><span style="color:#85E89D">  labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    kubernetes.io/os</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">linux</span></span>
+<span class="line"><span style="color:#85E89D">status</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  capacity</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    cpu</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"4"</span></span>
+<span class="line"><span style="color:#85E89D">    memory</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">8Gi</span></span>
+<span class="line"><span style="color:#85E89D">  conditions</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Ready</span></span>
+<span class="line"><span style="color:#85E89D">      status</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"True"</span></span></code></pre>
+<h4 id="节点控制器">节点控制器</h4>
+<p>在 Kubernetes 控制平面中，节点控制器 (Node Controller) 负责管理节点的生命周期，主要包含：</p>
+<ul>
+<li>集群范围内节点状态同步</li>
+<li>单节点生命周期管理</li>
+</ul>
+<p>节点控制器会持续监控节点的健康状态。当节点变为不可达时，控制器会等待一个超时期限，然后将该节点上的 Pod 标记为失败，并触发重新调度。可以使用 <code>kubectl</code> 来管理节点，例如标记节点为不可调度或排空节点上的工作负载：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 标记节点为不可调度</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> cordon</span><span style="color:#9ECBFF"> worker-1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 排空节点上的 Pod</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> drain</span><span style="color:#9ECBFF"> worker-1</span><span style="color:#79B8FF"> --ignore-daemonsets</span></span></code></pre>
+<h3 id="1322-容器组">13.2.2 容器组</h3>
+<p>在 Kubernetes 中，使用的最小调度单位是容器组 (Pod)，它是创建、调度、管理的最小单位。一个 Pod 包含一个或多个紧密协作的容器，它们共享网络命名空间，并可共享一个或多个存储卷。</p>
+<p>Pod 通常不会被直接创建，而是通过 Deployment 等控制器来管理。当节点发生故障时，控制器会在其他可用节点上重新创建 Pod。</p>
+<h4 id="容器组设计的初衷">容器组设计的初衷</h4>
+<p>容器组 (Pod) 的设计主要是为了解决应用间的紧密协作和资源共享问题。</p>
+<h4 id="资源共享和通信">资源共享和通信</h4>
+<p>容器组主要是为了数据共享和它们之间的通信。</p>
+<p>在一个容器组中，容器都使用相同的网络地址和端口，可以通过本地网络来相互通信。每个容器组都有独立的 IP，可以通过网络来和其他物理主机或者容器通信。</p>
+<p>容器组可以挂载一组存储卷（挂载点）。卷不只用于持久化，也可用于 <code>emptyDir</code> 临时交换、ConfigMap/Secret 投射、日志旁路收集等场景。真正需要跨 Pod 生命周期保留的数据，应使用 PersistentVolume / PersistentVolumeClaim 等持久化机制。</p>
+<h4 id="容器组管理">容器组管理</h4>
+<p>容器组是一个应用管理和部署的高层次抽象，同时也是一组容器的接口。容器组是部署、水平放缩的最小单位。</p>
+<h4 id="容器组的使用">容器组的使用</h4>
+<p>容器组可以通过组合来构建复杂的应用，典型的使用模式包含：</p>
+<ul>
+<li>内容管理，文件和数据加载以及本地缓存管理等。</li>
+<li>日志和检查点备份，压缩，快照等。</li>
+<li>监听数据变化，跟踪日志，日志和监控代理，消息发布等。</li>
+<li>代理，网桥</li>
+<li>控制器，管理，配置以及更新</li>
+</ul>
+<h4 id="为什么不在一个容器里运行多个程序">为什么不在一个容器里运行多个程序</h4>
+<ol>
+<li><strong>透明化</strong>：为了使容器组中的容器保持一致的基础设施和服务，比如进程管理和资源监控。</li>
+<li><strong>解耦依赖</strong>：每个容器都可能独立地重新构建和发布。</li>
+<li><strong>方便使用</strong>：用户不必运行独立的程序管理，也不用担心每个应用程序的退出状态。</li>
+<li><strong>高效</strong>：考虑到基础设施有更多的职责，容器必须要轻量化。</li>
+</ol>
+<h4 id="容器组的生命状态">容器组的生命状态</h4>
+<p>Pod phase 包括若干状态值：<code>Pending</code>、<code>Running</code>、<code>Succeeded</code>、<code>Failed</code>、<code>Unknown</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>状态</th><th>说明</th></tr></thead><tbody><tr><td><strong>Pending</strong></td><td>Pod 已被集群接受，但有一个或多个容器还没有运行起来（可能在拉取镜像）。</td></tr><tr><td><strong>Running</strong></td><td>Pod 已被调度到节点，并且所有容器都已启动。至少有一个容器处于运行状态。</td></tr><tr><td><strong>Succeeded</strong></td><td>Pod 中的所有容器都正常退出，且不会被重启。</td></tr><tr><td><strong>Failed</strong></td><td>Pod 中的所有容器都已终止，且至少有一个容器以失败状态退出。</td></tr><tr><td><strong>Unknown</strong></td><td>集群无法获取 Pod 状态，常见原因是节点失联。</td></tr></tbody></table>
+<h4 id="容器组生命周期与重启策略">容器组生命周期与重启策略</h4>
+<p>Pod 的重启策略 (<code>restartPolicy</code>) 决定了容器退出后的行为：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>重启策略</th><th>容器正常退出</th><th>容器异常退出</th></tr></thead><tbody><tr><td><strong>Always</strong>（默认）</td><td>重启容器</td><td>重启容器</td></tr><tr><td><strong>OnFailure</strong></td><td>不重启</td><td>重启容器</td></tr><tr><td><strong>Never</strong></td><td>不重启</td><td>不重启</td></tr></tbody></table>
+<p>当节点故障或不可达时，Pod 可能先表现为 <code>Unknown</code>，之后根据控制器、驱逐策略和垃圾回收机制转为 <code>Failed</code> 或被重新创建。如果这些 Pod 由 Deployment 等控制器管理，控制器会自动在其他节点上重新创建。</p>
+<h3 id="1323-deployment-与-replicaset">13.2.3 Deployment 与 ReplicaSet</h3>
+<p>Deployment 是管理无状态应用的推荐方式，它通过 ReplicaSet 来确保指定数量的 Pod 副本始终在运行。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">apps/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Deployment</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx-deployment</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  replicas</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx</span></span>
+<span class="line"><span style="color:#85E89D">  template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx</span></span>
+<span class="line"><span style="color:#85E89D">          image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx:1.28</span></span>
+<span class="line"><span style="color:#85E89D">          ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            - </span><span style="color:#85E89D">containerPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span></code></pre>
+<p>Deployment 的核心能力包括：</p>
+<ul>
+<li><strong>副本管理</strong>：确保始终有指定数量的 Pod 在运行</li>
+<li><strong>滚动更新</strong>：逐步替换旧版本 Pod，实现零停机部署</li>
+<li><strong>回滚</strong>：如果新版本出现问题，可以快速回滚到之前的版本</li>
+</ul>
+<blockquote>
+<p>早期 Kubernetes 使用 Replication Controller (RC) 来管理副本，现已被 ReplicaSet/Deployment 取代。</p>
+</blockquote>
+<h3 id="1324-statefulset">13.2.4 StatefulSet</h3>
+<p>Deployment 适合无状态应用，而 <strong>StatefulSet</strong> 用于管理有状态应用（如数据库、消息队列）。与 Deployment 不同，StatefulSet 为每个 Pod 提供稳定的网络标识和持久化存储。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">apps/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">StatefulSet</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mysql</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  serviceName</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mysql</span></span>
+<span class="line"><span style="color:#85E89D">  replicas</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mysql</span></span>
+<span class="line"><span style="color:#85E89D">  template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mysql</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mysql</span></span>
+<span class="line"><span style="color:#85E89D">          image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mysql:8.4</span></span>
+<span class="line"><span style="color:#85E89D">          volumeMounts</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">data</span></span>
+<span class="line"><span style="color:#85E89D">              mountPath</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/var/lib/mysql</span></span>
+<span class="line"><span style="color:#85E89D">  volumeClaimTemplates</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">data</span></span>
+<span class="line"><span style="color:#85E89D">      spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        accessModes</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"ReadWriteOnce"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">        resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          requests</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            storage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10Gi</span></span></code></pre>
+<p>StatefulSet 的核心特性：</p>
+<ul>
+<li><strong>稳定的网络标识</strong>：Pod 名称按顺序编号（mysql-0, mysql-1, mysql-2），配合 Headless Service 提供可预测的 DNS 名称</li>
+<li><strong>有序部署与删除</strong>：Pod 按序号顺序创建，逆序删除</li>
+<li><strong>持久化存储</strong>：通过 <code>volumeClaimTemplates</code> 为每个 Pod 自动创建独立的 PVC</li>
+</ul>
+<h3 id="1325-daemonset">13.2.5 DaemonSet</h3>
+<p><strong>DaemonSet</strong> 确保在集群的每个节点（或指定节点）上运行一个 Pod 副本。典型用途包括日志收集、监控代理和网络插件。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">apps/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">DaemonSet</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">fluentd</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">fluentd</span></span>
+<span class="line"><span style="color:#85E89D">  template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">fluentd</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">fluentd</span></span>
+<span class="line"><span style="color:#85E89D">          image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">fluent/fluentd:v1.17</span></span>
+<span class="line"><span style="color:#85E89D">          volumeMounts</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">varlog</span></span>
+<span class="line"><span style="color:#85E89D">              mountPath</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/var/log</span></span>
+<span class="line"><span style="color:#85E89D">      volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">varlog</span></span>
+<span class="line"><span style="color:#85E89D">          hostPath</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/var/log</span></span></code></pre>
+<p>当新节点加入集群时，DaemonSet 会自动在该节点上创建 Pod；当节点被移除时，对应的 Pod 也会被回收。</p>
+<h3 id="1326-job-与-cronjob">13.2.6 Job 与 CronJob</h3>
+<p><strong>Job</strong> 用于运行一次性任务，确保指定数量的 Pod 成功完成后自动退出。<strong>CronJob</strong> 则按照 cron 表达式周期性地创建 Job。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">batch/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Job</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">data-migration</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  completions</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span></span>
+<span class="line"><span style="color:#85E89D">  template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">migrate</span></span>
+<span class="line"><span style="color:#85E89D">          image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp/migrate:latest</span></span>
+<span class="line"><span style="color:#85E89D">          command</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"python"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"migrate.py"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">      restartPolicy</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Never</span></span>
+<span class="line"><span style="color:#85E89D">  backoffLimit</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">batch/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">CronJob</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">daily-backup</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  schedule</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"0 2 * * *"</span></span>
+<span class="line"><span style="color:#85E89D">  jobTemplate</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">            - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">backup</span></span>
+<span class="line"><span style="color:#85E89D">              image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp/backup:latest</span></span>
+<span class="line"><span style="color:#85E89D">          restartPolicy</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">OnFailure</span></span></code></pre>
+<p>Job 的 <code>backoffLimit</code> 控制失败重试次数，<code>completions</code> 指定需要成功完成的 Pod 数量。CronJob 适用于定时备份、报表生成等场景。</p>
+<h3 id="1327-服务">13.2.7 服务</h3>
+<p>服务 (Service) 定义了一组 Pod 的逻辑集合和访问策略。由于 Pod 的 IP 地址是动态分配的，Service 提供了一个稳定的访问入口。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Service</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx-service</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx</span></span>
+<span class="line"><span style="color:#85E89D">  ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span>
+<span class="line"><span style="color:#85E89D">      targetPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span>
+<span class="line"><span style="color:#85E89D">  type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ClusterIP</span></span></code></pre>
+<p>常见的 Service 类型：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><strong>ClusterIP</strong></td><td>默认类型，仅集群内部可访问</td></tr><tr><td><strong>NodePort</strong></td><td>在每个节点上开放固定端口，集群外部可通过 <code>节点IP:端口</code> 访问</td></tr><tr><td><strong>LoadBalancer</strong></td><td>通过云平台的负载均衡器暴露服务</td></tr></tbody></table>
+<h3 id="1328-卷">13.2.8 卷</h3>
+<p>卷 (Volume) 为 Pod 中的容器提供持久化存储。Kubernetes 支持多种卷类型：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>卷类型</th><th>说明</th></tr></thead><tbody><tr><td><strong>emptyDir</strong></td><td>临时存储，Pod 删除后数据丢失</td></tr><tr><td><strong>hostPath</strong></td><td>挂载节点上的文件或目录</td></tr><tr><td><strong>PersistentVolumeClaim</strong></td><td>使用持久卷声明，与底层存储解耦</td></tr><tr><td><strong>configMap / secret</strong></td><td>将配置或敏感数据挂载为文件</td></tr></tbody></table>
+<p>生产环境中，推荐使用 PersistentVolume (PV) 和 PersistentVolumeClaim (PVC) 来管理存储，实现存储资源与使用者的解耦。</p>
+<h3 id="1329-标签">13.2.9 标签</h3>
+<p>标签 (Label) 是附加到 Kubernetes 对象上的键值对，用于组织和选择对象子集。标签是 Kubernetes 中实现松耦合的关键机制。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 为 Pod 添加标签</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> label</span><span style="color:#9ECBFF"> pod</span><span style="color:#9ECBFF"> my-pod</span><span style="color:#9ECBFF"> env=production</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 通过标签选择器查询</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> -l</span><span style="color:#9ECBFF"> env=production</span></span></code></pre>
+<p>Service、Deployment 等资源都通过标签选择器 (<code>selector</code>) 来关联目标 Pod。</p>
+<h3 id="13210-api-访问控制">13.2.10 API 访问控制</h3>
+<p>Kubernetes API 的访问通过三个阶段进行控制：</p>
+<ol>
+<li><strong>认证 (Authentication)</strong>：验证请求者的身份（如证书、Token、OIDC）</li>
+<li><strong>授权 (Authorization)</strong>：判断请求者是否有权限执行操作（通常使用 RBAC）</li>
+<li><strong>准入控制 (Admission Control)</strong>：在请求被持久化之前对其进行校验或修改</li>
+</ol>
+<h3 id="13211-dashboard">13.2.11 Dashboard</h3>
+<p>Kubernetes Dashboard 是一个基于 Web 的用户界面，用于部署容器化应用、监控集群资源和排查问题。Dashboard 的部署方法详见<a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/14_kubernetes_setup/14.7_dashboard.md">部署 Dashboard</a> 章节。</p>
+<h3 id="13212-命令行工具-kubectl">13.2.12 命令行工具 kubectl</h3>
+<p><code>kubectl</code> 是 Kubernetes 的命令行工具，用于与集群进行交互。常用命令如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 查看集群中的资源</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> pods,deployments,services,nodes</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 创建资源</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> apply</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> deployment.yaml</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 查看 Pod 日志</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#9ECBFF"> my-pod</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 进入 Pod 执行命令</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> exec</span><span style="color:#79B8FF"> -it</span><span style="color:#9ECBFF"> my-pod</span><span style="color:#79B8FF"> --</span><span style="color:#9ECBFF"> /bin/sh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 查看资源详情</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> kubectl</span><span style="color:#9ECBFF"> describe</span><span style="color:#9ECBFF"> pod</span><span style="color:#9ECBFF"> my-pod</span></span></code></pre>
+<p>更多 kubectl 操作详见<a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/14_kubernetes_setup/14.8_kubectl.md">kubectl 命令行</a>章节。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">← 13.1 简介</a></span> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

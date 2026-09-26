@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 构建指南 · Linux From Scratch · 免费编程中文书籍</title><meta name="description" content="Linux 构建指南"><meta property="og:title" content="Linux 构建指南 · Linux From Scratch"><meta property="og:description" content="Linux 构建指南"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/6136c2c5c78c">Linux 构建指南</a> <span> / Linux From Scratch</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 构建指南</p> <a class="active" href="/free-programming-books-zh_CN/read/6136c2c5c78c/001-19/">Linux From Scratch</a> </aside> <article class="reader-panel prose"> <h2 id="版本-62">版本 6.2</h2>
+<hr>
+<p>谨以本书献给 <a href="http://www.linuxsir.org/">LinuxSir.org</a> 以及所有热爱 Linux 的人们。<br>
+译者： <a href="https://www.jinbuguo.com/">金步国</a>(0-5章) ipconfigme(6-7章) bobkey(8-9章)<br>
+发布日期：2008年3月1日 [最终正式版]</p>
+<p>［致谢］感谢之前的 LFS 5.0 和 6.0 翻译小组，没有他们之前辛勤工作积累的资料单靠我们3个人是不可能完成这项工作的。同样也要感谢所有指出预览版中错误的朋友以及对中译本提出建议与期望的朋友(随机顺序)：fisow Robot5 tonytop cnhnln youbest leiv d00m3d asdmusic crandyworld juwen_zhong 晨想 alexlee1216 sonic_yq kikiwarm shooter x_crdjn ilptt linlin911911 ，是你们让中文版更加完美。</p>
+<p>［版权声明］本手册译者皆是开源理念的坚定支持者，所以本手册虽然不是软件，但是遵照开源的精神发布。</p>
+<ul>
+<li>无担保：本文译者不保证作品内容准确无误，亦不承担任何由于使用此文档所导致的损失。</li>
+<li>自由使用：任何人都可以自由的阅读/链接/打印此文档，无需任何附加条件。</li>
+<li>名誉权：任何人都可以自由的转载/引用/再分发此文档，但必须保留译者署名并注明出处。</li>
+</ul>
+<hr>
+<p>［题外话］大部分 LFSer 都认为学习 LFS 需要有熟练使用 Linux 的基础，并且大部分听说过 LFS 的人都有一个印象：那是高手的玩具，不是我等菜鸟玩得了的……我不完全赞同，我认为<strong>基础如何并非关键，契而不舍的精神和强烈的求知欲才更加重要</strong>。想想自己接触 Linux 一个月左右的时候就有了和 Gerard 一样的想法，因为在学习 RedHat / Fedora / Debian 甚至是 Gentoo 的时候，我感觉到自己并不是在学习 Linux 而是在学习这些发行版各自的专有特性，他们把 Linux 本来的面貌层层包裹起来，让我不能深入理解背后的机制。并且这些版本各自有自己的优点和缺点，不能完全满足我的要求。其实那时候我的 Linux 水平仅仅限于会在控制台上敲几个 ls 之类的命令，从未编译过软件，连 make 都没听说过呢。但是我迫切想知道如何定制一个完全适合自己的 Linux 系统，问了好多 Linuxer ，把 Google 搜了个底朝天，也未能得到完整性的答案，唯一让我印象深刻的就是能够容纳在一张软盘上的 babyLinux ，但是它显然太简单，不能满足我的要求。一直郁闷了很久，好不容易机缘巧合，Qoo 兄弟叫我来 LinuxSir.Org 论坛的 LFS 版看看，当时论坛上只有一份不完整的 LFS 6.0 中文版，看完序言后，我激动的跳了起来，欢呼不已！这就是我梦寐以求的东西啊！于是在尚未安装过 LFS 的情况下，静下心来花了十多天时间先完整的翻译了 LFS 6.1 ，又花了5-6天时间，一行命令一行命令地完成了 LFS 的全过程。在学习 LFS 的20天里，我对 Linux 的理解发生了质的飞跃。大约没有人赞同学习 Linux 可以从 LFS 开始，这确实有一定的道理，但是 LFS 教给你的都是真正的 Linux “基础知识”，并且这些知识可以为将来的进一步学习打下绝对扎实的基础。所以我要用自己的亲身经历鼓励那些刚刚接触 Linux 的新生牛犊勇敢的从 LFS 开始：没有基础不要紧，缺什么补什么！当你把 LFS 做完了，也就脱离”菜鸟”的行列了，用 LFS 给你的强大翅膀，勇敢地继续飞翔吧！</p>
+<hr>
+<p>译者十分愿意与他人共享劳动成果，如果你对我的其他翻译作品或者技术文章有兴趣，可以在如下位置查看现有作品的集：</p>
+<ul>
+<li><a href="https://www.jinbuguo.com/">金步国作品集</a> [ <a href="https://www.jinbuguo.com/">https://www.jinbuguo.com/</a> ]</li>
+</ul>
+<h3 id="目录">目录</h3>
+<ul>
+<li>
+<h4 id="序言">序言</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/prologue/preface.html#pre-foreword">前言</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/prologue/audience.html">目标读者</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/prologue/prerequisites.html">先决条件</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/prologue/hostreqs.html">对宿主系统的要求</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/prologue/typography.html">排版约定</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/prologue/organization.html">本书的组织结构</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/prologue/errata.html">勘误表</a></li>
+</ul>
+</li>
+<li>
+<h3 id="i-简介">I. 简介</h3>
+<ul>
+<li>
+<h4 id="1-简介">1. 简介</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter01/chapter01.html#ch-intro-how">如何构建一个 LFS 系统?</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter01/whatsnew.html">与上一版本有何不同?</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter01/changelog.html">更新日志</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter01/resources.html">资源</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter01/askforhelp.html">帮助</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="ii-构建前的准备工作">II. 构建前的准备工作</h3>
+<ul>
+<li>
+<h4 id="2-准备一个新分区">2. 准备一个新分区</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter02/chapter02.html#space-introduction">简介</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter02/creatingpartition.html">创建一个新分区</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter02/creatingfilesystem.html">在新分区上创建文件系统</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter02/mounting.html">挂载新分区</a></li>
+</ul>
+</li>
+<li>
+<h4 id="3-软件包和补丁">3. 软件包和补丁</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter03/chapter03.html#materials-introduction">简介</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter03/packages.html">全部软件包</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter03/patches.html">需要的补丁</a></li>
+</ul>
+</li>
+<li>
+<h4 id="4-最后的准备工作">4. 最后的准备工作</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter04/chapter04.html#prepare-aboutlfs">关于环境变量 $LFS</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter04/creatingtoolsdir.html">创建 $LFS/tools 目录</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter04/addinguser.html">添加 LFS 用户</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter04/settingenvironment.html">设置工作环境</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter04/aboutsbus.html">关于 SBU</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter04/abouttestsuites.html">关于软件包测试套件</a></li>
+</ul>
+</li>
+<li>
+<h4 id="5-构建临时编译环境">5. 构建临时编译环境</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/chapter05.html#ch-tools-introduction">简介</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/toolchaintechnotes.html">工具链技术说明</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/binutils-pass1.html">Binutils-2.16.1 - 第一遍</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/gcc-pass1.html">GCC-4.0.3 - 第一遍</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/linux-libc-headers.html">Linux-Libc-Headers-2.6.12.0</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/glibc.html">Glibc-2.3.6</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/adjusting.html">调整工具链</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/tcl.html">Tcl-8.4.13</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/expect.html">Expect-5.43.0</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/dejagnu.html">DejaGNU-1.4.4</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/gcc-pass2.html">GCC-4.0.3 - 第二遍</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/binutils-pass2.html">Binutils-2.16.1 - 第二遍</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/ncurses.html">Ncurses-5.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/bash.html">Bash-3.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/bzip2.html">Bzip2-1.0.3</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/coreutils.html">Coreutils-5.96</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/diffutils.html">Diffutils-2.8.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/findutils.html">Findutils-4.2.27</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/gawk.html">Gawk-3.1.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/gettext.html">Gettext-0.14.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/grep.html">Grep-2.5.1a</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/gzip.html">Gzip-1.3.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/m4.html">M4-1.4.4</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/make.html">Make-3.80</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/patch.html">Patch-2.5.4</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/perl.html">Perl-5.8.8</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/sed.html">Sed-4.1.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/tar.html">Tar-1.15.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/texinfo.html">Texinfo-4.8</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/util-linux.html">Util-linux-2.12r</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/stripping.html">清理系统</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter05/changingowner.html">改变所有者</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="iii-构建-lfs-系统">III. 构建 LFS 系统</h3>
+<ul>
+<li>
+<h4 id="第六章-安装系统基础软件">第六章 安装系统基础软件</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/chapter06.html#ch-system-introduction">简介</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/kernfs.html">挂载虚拟内核文件系统</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/pkgmgt.html">包管理</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/chroot.html">进入 Chroot 环境</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/creatingdirs.html">创建系统目录结构</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/createfiles.html">创建必需的文件与符号连接</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/linux-libc-headers.html">Linux-Libc-Headers-2.6.12.0</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/man-pages.html">Man-pages-2.34</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/glibc.html">Glibc-2.3.6</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/readjusting.html">再次调整工具链</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/binutils.html">Binutils-2.16.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/gcc.html">GCC-4.0.3</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/db.html">Berkeley DB-4.4.20</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/coreutils.html">Coreutils-5.96</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/iana-etc.html">Iana-Etc-2.10</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/m4.html">M4-1.4.4</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/bison.html">Bison-2.2</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/ncurses.html">Ncurses-5.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/procps.html">Procps-3.2.6</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/sed.html">Sed-4.1.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/libtool.html">Libtool-1.5.22</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/perl.html">Perl-5.8.8</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/readline.html">Readline-5.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/zlib.html">Zlib-1.2.3</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/autoconf.html">Autoconf-2.59</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/automake.html">Automake-1.9.6</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/bash.html">Bash-3.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/bzip2.html">Bzip2-1.0.3</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/diffutils.html">Diffutils-2.8.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/e2fsprogs.html">E2fsprogs-1.39</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/file.html">File-4.17</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/findutils.html">Findutils-4.2.27</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/flex.html">Flex-2.5.33</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/grub.html">GRUB-0.97</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/gawk.html">Gawk-3.1.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/gettext.html">Gettext-0.14.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/grep.html">Grep-2.5.1a</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/groff.html">Groff-1.18.1.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/gzip.html">Gzip-1.3.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/inetutils.html">Inetutils-1.4.2</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/iproute2.html">IPRoute2-2.6.16-060323</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/kbd.html">Kbd-1.12</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/less.html">Less-394</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/make.html">Make-3.80</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/man-db.html">Man-DB-2.4.3</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/mktemp.html">Mktemp-1.5</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/module-init-tools.html">Module-Init-Tools-3.2.2</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/patch.html">Patch-2.5.4</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/psmisc.html">Psmisc-22.2</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/shadow.html">Shadow-4.0.15</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/sysklogd.html">Sysklogd-1.4.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/sysvinit.html">Sysvinit-2.86</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/tar.html">Tar-1.15.1</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/texinfo.html">Texinfo-4.8</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/udev.html">Udev-096</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/util-linux.html">Util-linux-2.12r</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/vim.html">Vim-7.0</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/aboutdebug.html">关于调试符号</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/strippingagain.html">再次清理系统</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter06/revisedchroot.html">最终的清理</a></li>
+</ul>
+</li>
+<li>
+<h4 id="7-配置系统启动脚本">7. 配置系统启动脚本</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/chapter07.html#ch-scripts-introduction">简介</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/bootscripts.html">LFS-Bootscripts-6.2</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/usage.html">启动脚本是如何工作的?</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/udev.html">LFS 系统的设备和模块处理</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/setclock.html">配置 setclock 脚本</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/console.html">配置 Linux 控制台</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/sysklogd.html">配置 sysklogd 脚本</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/inputrc.html">创建 /etc/inputrc 文件</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/profile.html">Bash Shell 启动文件</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/hostname.html">配置 localnet 脚本</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/hosts.html">定制 /etc/hosts 文件</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/symlinks.html">为设备创建惯用符号连接</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter07/network.html">配置网络脚本</a></li>
+</ul>
+</li>
+<li>
+<h4 id="8-使-lfs-系统能够启动">8. 使 LFS 系统能够启动</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter08/chapter08.html#ch-bootable-introduction">简介</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter08/fstab.html">创建 /etc/fstab 文件</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter08/kernel.html">Linux-2.6.16.27</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter08/grub.html">使 LFS 系统能够启动</a></li>
+</ul>
+</li>
+<li>
+<h4 id="9-结束">9. 结束</h4>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter09/chapter09.html#ch-finish-theend">结束</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter09/getcounted.html">看看你是第几个?</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter09/reboot.html">重启系统</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/chapter09/whatnow.html">现在做什么?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="iv-附录">IV. 附录</h3>
+<ul>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/appendices/acronymlist.html">A. 缩写和名词</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/appendices/acknowledgements.html">B. 致谢</a></li>
+<li><a href="https://www.jinbuguo.com/lfs/lfs62/appendices/dependencies.html">C. 依赖关系</a></li>
+</ul>
+</li>
+<li>
+<h3 id="长索引"><a href="https://www.jinbuguo.com/lfs/lfs62/longindex.html">长索引</a></h3>
+</li>
+</ul> <nav class="pager"> <span></span> <span></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

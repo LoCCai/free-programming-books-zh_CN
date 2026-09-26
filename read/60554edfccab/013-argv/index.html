@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>理解Linux进程 · 进程参数 · 免费编程中文书籍</title><meta name="description" content="理解Linux进程"><meta property="og:title" content="理解Linux进程 · 进程参数"><meta property="og:description" content="理解Linux进程"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/60554edfccab">理解Linux进程</a> <span> / 进程参数</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">理解Linux进程</p> <a class href="/free-programming-books-zh_CN/read/60554edfccab/001-readme/">前言</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/002-thanks/">致谢</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/003-overview/">概述</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/004-use-code/">使用代码</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/005-use-docker/">使用Docker</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/006-readme/">进程基础</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/007-what-is-process/">进程是什么</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/008-hello-world/">Hello World</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/009-pid/">PID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/010-ppid/">PPID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/011-use-pid/">使用PID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/012-process-name/">进程名字</a><a class="active" href="/free-programming-books-zh_CN/read/60554edfccab/013-argv/">进程参数</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/014-input-and-output/">输入与输出</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/015-concurrent-and-parallel/">并发与并行</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/016-the-more-the-better/">进程越多越好</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/017-status/">进程状态</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/018-exit-code/">退出码</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/019-process-resource/">进程资源</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/020-deadlock/">死锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/021-livelock/">活锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/022-posix/">POSIX</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/023-nohup/">Nohup</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/024-run-process/">运行进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/025-readme/">Go编程实例</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/026-spawn/">衍生新进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/027-exec/">执行外部程序</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/028-fork/">复制进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/029-readme/">进程进阶</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/030-file-lock/">文件锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/031-orphan-process/">孤儿进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/032-zombie-process/">僵尸进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/033-daemon-process/">守护进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/034-ipc/">进程间通信</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/035-signal/">信号</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/036-system-call/">Linux系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/037-fd/">文件描述符</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/038-epoll/">Epoll</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/039-share-memory/">共享内存</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/040-copy-on-write/">Copy On Write</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/041-cgroups/">Cgroups</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/042-namespaces/">Namespaces</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/043-readme/">项目实例Run</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/044-architecture/">项目架构</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/045-implement/">代码实现</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/046-readme/">注意事项</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/047-mkdir/">创建目录权限</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/048-sigkill/">捕获SIGKILL</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/049-sendfile/">Sendfile系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/050-readme/">后记</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/051-book/">参考书籍</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/052-project/">项目学习</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/053-thanks-again/">再次感谢</a> </aside> <article class="reader-panel prose"> <h2 id="进程参数">进程参数</h2>
+<p>任何进程启动时都可以赋予一个字符串数组作为参数，一般名为ARGV或ARGS。</p>
+<p>通过解析这些参数可以让你的程序更加通用，例如<code>cp</code>命令通过给定两个参数就可以复制任意的文件，当然如果需要的参数太多最好还是使用配置文件。</p>
+<h2 id="获得进程argument">获得进程Argument</h2>
+<p>进程参数一般可分为两类，一是Argument，也就是作为进程运行的实体参数。例如<code>cp config.yml config.yml.bak</code>的这两个参数。</p>
+<p>设计Go程序时可以轻易地获得这些参数，argument.go代码如下，代码来自<a href="https://gobyexample.com/command-line-arguments">https://gobyexample.com/command-line-arguments</a>。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>package main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import "os"</span></span>
+<span class="line"><span>import "fmt"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func main() {</span></span>
+<span class="line"><span>  argsWithProg := os.Args</span></span>
+<span class="line"><span>  argsWithoutProg := os.Args[1:]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  arg := os.Args[3]</span></span>
+<span class="line"><span>  fmt.Println(argsWithProg)</span></span>
+<span class="line"><span>  fmt.Println(argsWithoutProg)</span></span>
+<span class="line"><span>  fmt.Println(arg)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>运行效果如下。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ go build command-line-arguments.go</span></span>
+<span class="line"><span>$ ./command-line-arguments a b c d</span></span>
+<span class="line"><span>[./command-line-arguments a b c d]</span></span>
+<span class="line"><span>[a b c d]</span></span>
+<span class="line"><span>c</span></span></code></pre>
+<p>可以看出通过<code>os.Args</code>，不管是不是实体参数都可以获得，但是对于类似开关的辅助参数，Go提供了另一种更好的方法。</p>
+<h2 id="获得进程flag">获得进程Flag</h2>
+<p>使用Flag可以更容易得将命令行参数转化成我们需要的数据类型，其中flag.go代码如下，代码来自<a href="https://gobyexample.com/command-line-flags">https://gobyexample.com/command-line-flags</a>。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>package main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import "flag"</span></span>
+<span class="line"><span>import "fmt"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func main() {</span></span>
+<span class="line"><span>  wordPtr := flag.String("word", "foo", "a string")</span></span>
+<span class="line"><span>  numbPtr := flag.Int("numb", 42, "an int")</span></span>
+<span class="line"><span>  boolPtr := flag.Bool("fork", false, "a bool")</span></span>
+<span class="line"><span>  var svar string</span></span>
+<span class="line"><span>  flag.StringVar(&#x26;svar, "svar", "bar", "a string var")</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  flag.Parse()</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  fmt.Println("word:", *wordPtr)</span></span>
+<span class="line"><span>  fmt.Println("numb:", *numbPtr)</span></span>
+<span class="line"><span>  fmt.Println("fork:", *boolPtr)</span></span>
+<span class="line"><span>  fmt.Println("svar:", svar)</span></span>
+<span class="line"><span>  fmt.Println("tail:", flag.Args())</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>运行结果如下，相比直接使用<code>os.Args</code>代码也简洁了不少。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>root@87096bf68cb2:/go/src# ./flag -word=opt -numb=7 -fork -svar=flag</span></span>
+<span class="line"><span>word: opt</span></span>
+<span class="line"><span>numb: 7</span></span>
+<span class="line"><span>fork: true</span></span>
+<span class="line"><span>svar: flag</span></span>
+<span class="line"><span>tail: []</span></span>
+<span class="line"><span>root@87096bf68cb2:/go/src# ./flag -h</span></span>
+<span class="line"><span>Usage of ./flag:</span></span>
+<span class="line"><span>  -fork=false: a bool</span></span>
+<span class="line"><span>  -numb=42: an int</span></span>
+<span class="line"><span>  -svar="bar": a string var</span></span>
+<span class="line"><span>  -word="foo": a string</span></span></code></pre>
+<p>使用Go获取进程参数是很简单的，不过一旦参数太多，最佳实践还是使用配置文件。</p>
+<p>进程参数只有在启动进程时才能赋值，如果需要在程序运行时进行交互，就需要了解进程的输入与输出了。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/012-process-name/">← 进程名字</a></span> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/014-input-and-output/">输入与输出 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

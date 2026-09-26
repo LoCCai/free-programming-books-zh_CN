@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>FreeBSD 使用手册 · FreeBSD 使用手册 · 免费编程中文书籍</title><meta name="description" content="FreeBSD 使用手册"><meta property="og:title" content="FreeBSD 使用手册 · FreeBSD 使用手册"><meta property="og:description" content="FreeBSD 使用手册"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/9410be42c318">FreeBSD 使用手册</a> <span> / FreeBSD 使用手册</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">FreeBSD 使用手册</p> <a class="active" href="/free-programming-books-zh_CN/read/9410be42c318/001-1n/">FreeBSD 使用手册</a> </aside> <article class="reader-panel prose"> <p>trademarks</p>
+<p>FreeBSD 是 FreeBSD 基金会的注册商标</p>
+<p>IBM、 AIX、 OS/2、 PowerPC、 PS/2、 S/390 以及 ThinkPad 是国际商用机器公司在美国和其他国家的注册商标或商标。</p>
+<p>IEEE, POSIX, 和 802 是 Institute of Electrical and Electronics Engineers, Inc. 在美国的注册商标。</p>
+<p>Red Hat, RPM, 是 Red Hat, Inc. 在美国和其他国家的注册商标。</p>
+<p>3Com 和 HomeConnect 是 3Com Corporation 的注册商标。</p>
+<p>Adobe、 Acrobat、 Acrobat Reader、 Flash， 以及 PostScript 是 Adobe Systems Incorporated 在美国和/或其他国家的商标或注册商标。</p>
+<p>Apple, AirPort, FireWire, iMac, iPhone, iPad, Mac, Macintosh, Mac OS, Quicktime, 以及 TrueType 是 Apple Inc. 在美国以及其他国家的注册商标。</p>
+<p>Intel, Celeron, Centrino, Core, EtherExpress, i386, i486, Itanium, Pentium, 和 Xeon 是 Intel Corporation 及其分支机构在美国和其他国家的商标或注册商标。</p>
+<p>Linux 是 Linus Torvalds 的注册商标。</p>
+<p>Microsoft, IntelliMouse, MS-DOS, Outlook, Windows, Windows Media, 和 Windows NT 是 Microsoft Corporation 在美国和/或其他国家的商标或注册商标。</p>
+<p>Motif, OSF/1, 和 UNIX 是 The Open Group 在美国和其他国家的注册商标； IT DialTone 和 The Open Group 是其商标。</p>
+<p>Sun、 Sun Microsystems、 Java、 Java Virtual Machine、 JDK、 JRE、 JSP、 JVM、 Netra、 OpenJDK、 Solaris、 StarOffice、 SunOS 以及 VirtualBox 是 Sun Microsystems, Inc. 在美国和其他国家的商标或注册商标。</p>
+<p>RealNetworks, RealPlayer, 和 RealAudio 是 RealNetworks, Inc. 的注册商标。</p>
+<p>Oracle 是 Oracle Corporation 的注册商标。</p>
+<p>3ware 是 3ware Inc 的注册商标。</p>
+<p>ARM 是 ARM Limited. 的注册商标。</p>
+<p>Adaptec 是 Adaptec, Inc. 的注册商标。</p>
+<p>Heidelberg、 Helvetica、 Palatino 以及 Times Roman 是 Heidelberger Druckmaschinen AG 在美国和其他国家的商标或注册商标。</p>
+<p>Intuit 和 Quicken 是 Intuit Inc., 或其子公司在美国和其他国家的商标或注册商标。</p>
+<p>LSI Logic, AcceleRAID, eXtremeRAID, MegaRAID 和 Mylex 是 LSI Logic Corp 的商标或注册商标。</p>
+<p>MATLAB 是 The MathWorks, Inc. 的注册商标。</p>
+<p>SpeedTouch 是 Thomson 的商标。</p>
+<p>VMware 是 VMware, Inc. 的商标</p>
+<p>Mathematica 是 Wolfram Research, Inc 的注册商标。</p>
+<p>Ogg Vorbis 和 Xiph.Org 是 Xiph.Org 的商标。</p>
+<p>XFree86 是 The XFree86 Project, Inc 的商标。.</p>
+<p>许多制造商和经销商使用一些称为商标的图案或文字设计来彰显自己的产品。 本文档中出现的， 为 FreeBSD Project 所知晓的商标，后面将以 “™” 或 “®” 符号来标注。</p> <nav class="pager"> <span></span> <span></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

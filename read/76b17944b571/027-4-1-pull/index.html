@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 4.1 获取镜像 · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 4.1 获取镜像"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 4.1 获取镜像</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="41-获取镜像">4.1 获取镜像</h2>
+<p>从 Docker 镜像仓库获取镜像可谓是 Docker 运作的第一步。本节将介绍如何使用 <code>docker pull</code> 命令下载镜像，以及如何理解下载过程。</p>
+<blockquote>
+<p><strong>版本号最佳实践</strong></p>
+<ul>
+<li><strong>永远指定版本号</strong>：避免使用 <code>latest</code> 标签，应指定具体的版本（如 <code>ubuntu:24.04</code>、<code>nginx:1.28</code>），以确保镜像内容稳定一致。</li>
+<li><strong>在生产环境使用摘要</strong>：优先使用镜像摘要（SHA256）而非标签，如 <code>nginx@sha256:abc123...</code>，因为摘要不可变。</li>
+<li><strong>定期评估依赖</strong>：即使指定了版本号，仍应定期检查依赖的基础镜像是否有安全更新。</li>
+</ul>
+</blockquote>
+<h3 id="411-docker-pull-命令">4.1.1 docker pull 命令</h3>
+<p>从镜像仓库获取镜像的命令是 <code>docker pull</code>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#E1E4E8"> [选项] [Registry地址/]仓库名[:标签]</span></span></code></pre>
+<h4 id="镜像名称格式">镜像名称格式</h4>
+<p>Docker 镜像名称由 Registry 地址、用户名、仓库名和标签组成。其标准格式如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker.io</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> library</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> ubuntu</span><span style="color:#9ECBFF"> :</span><span style="color:#79B8FF"> 24.04</span></span>
+<span class="line"><span style="color:#B392F0">────┬────</span><span style="color:#9ECBFF">   ───┬───</span><span style="color:#9ECBFF">   ──┬───</span><span style="color:#9ECBFF">   ──┬──</span></span>
+<span class="line"><span style="color:#B392F0">    │</span><span style="color:#9ECBFF">         │</span><span style="color:#9ECBFF">        │</span><span style="color:#9ECBFF">        │</span></span>
+<span class="line"><span style="color:#B392F0">Registry地址</span><span style="color:#9ECBFF">  用户名</span><span style="color:#9ECBFF">    仓库名</span><span style="color:#9ECBFF">    标签</span></span>
+<span class="line"><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">可省略</span><span style="color:#E1E4E8">)    (</span><span style="color:#B392F0">可省略</span><span style="color:#E1E4E8">)</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>组成部分</th><th>说明</th><th>默认值</th></tr></thead><tbody><tr><td>Registry 地址</td><td>镜像仓库地址</td><td><code>docker.io</code> (Docker Hub)</td></tr><tr><td>用户名</td><td>镜像所属用户/组织</td><td><code>library</code>（官方镜像）</td></tr><tr><td>仓库名</td><td>镜像名称</td><td>必须指定</td></tr><tr><td>标签</td><td>版本标识</td><td><code>latest</code></td></tr></tbody></table>
+<h4 id="示例">示例</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 完整格式</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> docker.io/library/ubuntu:24.04</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 省略 Registry（默认 Docker Hub）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> library/ubuntu:24.04</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 省略 library（官方镜像）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> ubuntu:24.04</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 省略标签（默认 latest）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> ubuntu</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 拉取第三方镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> bitnami/redis:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 从其他 Registry 拉取</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> ghcr.io/username/myapp:v1.0</span></span></code></pre>
+<hr>
+<h3 id="412-下载过程解析">4.1.2 下载过程解析</h3>
+<p>当我们执行 <code>docker pull</code> 命令时，Docker 会输出详细的下载进度。让我们以 <code>ubuntu:24.04</code> 为例来解析这些信息。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> ubuntu:24.04</span></span>
+<span class="line"><span style="color:#B392F0">24.04:</span><span style="color:#9ECBFF"> Pulling</span><span style="color:#9ECBFF"> from</span><span style="color:#9ECBFF"> library/ubuntu</span></span>
+<span class="line"><span style="color:#B392F0">92dc2a97ff99:</span><span style="color:#9ECBFF"> Pull</span><span style="color:#9ECBFF"> complete</span></span>
+<span class="line"><span style="color:#B392F0">be13a9d27eb8:</span><span style="color:#9ECBFF"> Pull</span><span style="color:#9ECBFF"> complete</span></span>
+<span class="line"><span style="color:#B392F0">c8299583700a:</span><span style="color:#9ECBFF"> Pull</span><span style="color:#9ECBFF"> complete</span></span>
+<span class="line"><span style="color:#B392F0">Digest:</span><span style="color:#9ECBFF"> sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span></span>
+<span class="line"><span style="color:#B392F0">Status:</span><span style="color:#9ECBFF"> Downloaded</span><span style="color:#9ECBFF"> newer</span><span style="color:#9ECBFF"> image</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> ubuntu:24.04</span></span>
+<span class="line"><span style="color:#B392F0">docker.io/library/ubuntu:24.04</span></span></code></pre>
+<h4 id="输出解读">输出解读</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>输出内容</th><th>说明</th></tr></thead><tbody><tr><td><code>Pulling from library/ubuntu</code></td><td>正在从官方 ubuntu 仓库拉取</td></tr><tr><td><code>92dc2a97ff99: Pull complete</code></td><td>各层的下载状态（显示层 ID 前 12 位）</td></tr><tr><td><code>Digest: sha256:...</code></td><td>镜像内容的唯一摘要</td></tr><tr><td><code>docker.io/library/ubuntu:24.04</code></td><td>镜像的完整名称</td></tr></tbody></table>
+<h4 id="分层下载">分层下载</h4>
+<p>从输出可以看到，镜像是 <strong>分层下载</strong> 的：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TD</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph Image ["ubuntu:24.04 镜像"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction TB</span></span>
+<span class="line"><span style="color:#E1E4E8">        L3["第3层 c8299583700a&#x3C;br/>(已存在，跳过下载)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        L2["第2层 be13a9d27eb8&#x3C;br/>(下载中... 完成)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        L1["第1层 92dc2a97ff99&#x3C;br/>(下载中... 完成)"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        L3 --- L2 --- L1</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span></code></pre>
+<p>如果本地已有相同的层，Docker 会跳过下载，节省带宽和时间。</p>
+<hr>
+<h3 id="413-常用选项">4.1.3 常用选项</h3>
+<p><code>docker pull</code> 命令支持多种选项来满足不同的下载需求，例如下载所有标签、指定平台架构等。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>选项</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><code>--all-tags, -a</code></td><td>拉取所有标签</td><td><code>docker pull -a ubuntu</code></td></tr><tr><td><code>--platform</code></td><td>指定平台架构</td><td><code>docker pull --platform linux/arm64 nginx</code></td></tr><tr><td><code>--quiet, -q</code></td><td>静默模式</td><td><code>docker pull -q nginx</code></td></tr></tbody></table>
+<h4 id="指定平台">指定平台</h4>
+<p>在 Apple Silicon Mac 上拉取 x86 镜像：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#79B8FF"> --platform</span><span style="color:#9ECBFF"> linux/amd64</span><span style="color:#9ECBFF"> nginx</span></span></code></pre>
+<hr>
+<h3 id="414-拉取后运行">4.1.4 拉取后运行</h3>
+<p>拉取镜像后，可以基于它启动容器：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 拉取镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> ubuntu:24.04</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 运行容器</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -it</span><span style="color:#79B8FF"> --rm</span><span style="color:#9ECBFF"> ubuntu:24.04</span><span style="color:#9ECBFF"> bash</span></span>
+<span class="line"><span style="color:#B392F0">root@e7009c6ce357:/#</span><span style="color:#9ECBFF"> cat</span><span style="color:#9ECBFF"> /etc/os-release</span></span>
+<span class="line"><span style="color:#E1E4E8">PRETTY_NAME</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Ubuntu 24.04 LTS"</span></span>
+<span class="line"><span style="color:#79B8FF">...</span></span>
+<span class="line"><span style="color:#B392F0">root@e7009c6ce357:/#</span><span style="color:#9ECBFF"> exit</span></span></code></pre>
+<blockquote>
+<p>本例使用 <code>ubuntu:24.04</code> 这样的具体版本标签是最佳实践。若无特殊需求，避免使用 <code>docker pull ubuntu</code> 或 <code>ubuntu:latest</code>，因为镜像内容可能在某个时刻发生变化。</p>
+</blockquote>
+<p><strong>参数说明</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td><code>-it</code></td><td>交互式终端模式</td></tr><tr><td><code>--rm</code></td><td>退出后自动删除容器</td></tr><tr><td><code>bash</code></td><td>启动命令</td></tr></tbody></table>
+<blockquote>
+<p>💡 <code>docker run</code> 在需要时会自动 <code>pull</code> 镜像，因此通常不需要单独执行 <code>docker pull</code>。</p>
+</blockquote>
+<hr>
+<h3 id="415-镜像加速">4.1.5 镜像加速</h3>
+<p>从 Docker Hub 下载可能较慢。可以配置镜像加速器：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsonc"><code><span class="line"><span style="color:#6A737D">// /etc/docker/daemon.json (Linux)</span></span>
+<span class="line"><span style="color:#6A737D">// ~/.docker/daemon.json (Docker Desktop)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "registry-mirrors"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">    "https://your-accelerator-url"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>配置后重启 Docker：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> sudo</span><span style="color:#9ECBFF"> systemctl</span><span style="color:#9ECBFF"> restart</span><span style="color:#9ECBFF"> docker</span><span style="color:#6A737D">  # Linux</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 或在 Docker Desktop 中重启</span></span></code></pre>
+<p>详见<a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md">镜像加速器</a>章节。</p>
+<hr>
+<h3 id="416-验证镜像完整性">4.1.6 验证镜像完整性</h3>
+<p>为了确保下载的镜像没有被篡改且内容一致，我们可以校验镜像的摘要 (Digest)。</p>
+<h4 id="查看镜像摘要">查看镜像摘要</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> images</span><span style="color:#79B8FF"> --digests</span><span style="color:#9ECBFF"> ubuntu</span></span>
+<span class="line"><span style="color:#B392F0">REPOSITORY</span><span style="color:#9ECBFF">   TAG</span><span style="color:#9ECBFF">     DIGEST</span><span style="color:#9ECBFF">                                                                    IMAGE</span><span style="color:#9ECBFF"> ID</span></span>
+<span class="line"><span style="color:#B392F0">ubuntu</span><span style="color:#79B8FF">       24.04</span><span style="color:#9ECBFF">   sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span><span style="color:#9ECBFF">   ca2b0f26964c</span></span></code></pre>
+<h4 id="使用摘要拉取">使用摘要拉取</h4>
+<p>用摘要拉取可确保获取完全相同的镜像：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> ubuntu@sha256:4bc3ae6596938cb0d9e5ac51a1152ec9dcac2a1c50829c74abd9c4361e321b26</span></span></code></pre>
+<blockquote>
+<p>笔者建议：生产环境使用摘要而非标签，因为标签可能被覆盖，摘要则是不可变的。</p>
+</blockquote>
+<hr>
+<h3 id="417-常见问题">4.1.7 常见问题</h3>
+<p>在使用 <code>docker pull</code> 过程中，可能会遇到下载速度慢、镜像不存在或磁盘空间不足等问题。以下是一些常见问题的排查思路。</p>
+<h4 id="q下载速度很慢">Q：下载速度很慢</h4>
+<ol>
+<li>配置镜像加速器</li>
+<li>检查网络连接</li>
+<li>尝试拉取更小的镜像版本（如 <code>alpine</code> 变体）</li>
+</ol>
+<h4 id="q提示镜像不存在">Q：提示镜像不存在</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">Error:</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> access</span><span style="color:#9ECBFF"> denied,</span><span style="color:#9ECBFF"> repository</span><span style="color:#9ECBFF"> does</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> exist</span></span></code></pre>
+<p>可能原因：</p>
+<ul>
+<li>镜像名拼写错误</li>
+<li>私有镜像未登录（需要 <code>docker login</code>）</li>
+<li>镜像确实不存在</li>
+</ul>
+<h4 id="q磁盘空间不足">Q：磁盘空间不足</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 清理未使用的镜像</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> image</span><span style="color:#9ECBFF"> prune</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 清理所有未使用资源</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> system</span><span style="color:#9ECBFF"> prune</span></span></code></pre>
+<hr> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">← 第四章 使用镜像</a></span> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

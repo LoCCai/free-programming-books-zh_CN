@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>理解Linux进程 · 文件锁 · 免费编程中文书籍</title><meta name="description" content="理解Linux进程"><meta property="og:title" content="理解Linux进程 · 文件锁"><meta property="og:description" content="理解Linux进程"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/60554edfccab">理解Linux进程</a> <span> / 文件锁</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">理解Linux进程</p> <a class href="/free-programming-books-zh_CN/read/60554edfccab/001-readme/">前言</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/002-thanks/">致谢</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/003-overview/">概述</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/004-use-code/">使用代码</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/005-use-docker/">使用Docker</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/006-readme/">进程基础</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/007-what-is-process/">进程是什么</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/008-hello-world/">Hello World</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/009-pid/">PID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/010-ppid/">PPID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/011-use-pid/">使用PID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/012-process-name/">进程名字</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/013-argv/">进程参数</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/014-input-and-output/">输入与输出</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/015-concurrent-and-parallel/">并发与并行</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/016-the-more-the-better/">进程越多越好</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/017-status/">进程状态</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/018-exit-code/">退出码</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/019-process-resource/">进程资源</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/020-deadlock/">死锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/021-livelock/">活锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/022-posix/">POSIX</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/023-nohup/">Nohup</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/024-run-process/">运行进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/025-readme/">Go编程实例</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/026-spawn/">衍生新进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/027-exec/">执行外部程序</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/028-fork/">复制进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/029-readme/">进程进阶</a><a class="active" href="/free-programming-books-zh_CN/read/60554edfccab/030-file-lock/">文件锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/031-orphan-process/">孤儿进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/032-zombie-process/">僵尸进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/033-daemon-process/">守护进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/034-ipc/">进程间通信</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/035-signal/">信号</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/036-system-call/">Linux系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/037-fd/">文件描述符</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/038-epoll/">Epoll</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/039-share-memory/">共享内存</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/040-copy-on-write/">Copy On Write</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/041-cgroups/">Cgroups</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/042-namespaces/">Namespaces</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/043-readme/">项目实例Run</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/044-architecture/">项目架构</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/045-implement/">代码实现</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/046-readme/">注意事项</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/047-mkdir/">创建目录权限</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/048-sigkill/">捕获SIGKILL</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/049-sendfile/">Sendfile系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/050-readme/">后记</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/051-book/">参考书籍</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/052-project/">项目学习</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/053-thanks-again/">再次感谢</a> </aside> <article class="reader-panel prose"> <h2 id="进程锁">进程锁</h2>
+<p>这里的进程锁与线程锁、互斥量、读写锁和自旋锁不同，它是通过记录一个PID文件，避免两个进程同时运行的文件锁。</p>
+<p>进程锁的作用之一就是可以协调进程的运行，例如<a href="http://www.live-in.org/archives/1036.html">crontab使用进程锁解决冲突</a>提到，使用crontab限定每一分钟执行一个任务，但这个进程运行时间可能超过一分钟，如果不用进程锁解决冲突的话两个进程一起执行就会有问题。后面提到的项目实例Run也有类似的问题，通过进程锁可以解决进程间同步的问题。</p>
+<p>使用PID文件锁还有一个好处，方便进程向自己发停止或者重启信号。Nginx编译时可指定参数<code>--pid-path=/var/run/nginx.pid</code>，进程起来后就会把当前的PID写入这个文件，当然如果这个文件已经存在了，也就是前一个进程还没有退出，那么Nginx就不会重新启动。进程管理工具Supervisord也是通过记录进程的PID来停止或者拉起它监控的进程的。</p>
+<h2 id="使用进程锁">使用进程锁</h2>
+<p>进程锁在特定场景是非常适用的，而操作系统默认不会为每个程序创建进程锁，那我们该如何使用呢？</p>
+<p>其实要实现一个进程锁很简单，通过文件就可以实现了。例如程序开始运行时去检查一个PID文件，如果文件存在就直接退出，如果文件不存在就创建一个，并把当前进程的PID写入文件中。这样我们很容易可以实现读锁，但是所有流程都需要自己控制。</p>
+<p>当然根据DRY(Don’t Repeat Yourself)原则，Linux已经为我们提供了<code>flock</code>接口。</p>
+<h2 id="使用flock">使用Flock</h2>
+<p>Flock提供的是advisory lock，也就是建议性的锁，其他进程实际上也可以读写这个锁文件。Linux上可以直接使用<code>flock</code>命令，使用C可以调用原生的<code>flock</code>接口，这里详细介绍Go 1.3引入的<code>FcntlFlock()</code>。</p>
+<p>我们封装了简单的接口。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Control the lock of file.</span></span>
+<span class="line"><span>func fcntlFlock(lockType int16, path ...string) error {</span></span>
+<span class="line"><span>  var err error</span></span>
+<span class="line"><span>  if lockType != syscall.F_UNLCK {</span></span>
+<span class="line"><span>    mode := syscall.O_CREAT | syscall.O_WRONLY</span></span>
+<span class="line"><span>    lockFile, err = os.OpenFile(path[0], mode, 0666)</span></span>
+<span class="line"><span>    if err != nil {</span></span>
+<span class="line"><span>      return err</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  lock := syscall.Flock_t{</span></span>
+<span class="line"><span>    Start:  0,</span></span>
+<span class="line"><span>    Len:    1,</span></span>
+<span class="line"><span>    Type:   lockType,</span></span>
+<span class="line"><span>    Whence: int16(os.SEEK_SET),</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  return syscall.FcntlFlock(lockFile.Fd(), syscall.F_SETLK, &#x26;lock)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>这样对进程加锁。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Lock the file.</span></span>
+<span class="line"><span>func Flock(path string) error {</span></span>
+<span class="line"><span>  return fcntlFlock(syscall.F_WRLCK, path)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>这样对进程解锁。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Unlock the file.</span></span>
+<span class="line"><span>func Funlock(path string) error {</span></span>
+<span class="line"><span>  err := fcntlFlock(syscall.F_UNLCK)</span></span>
+<span class="line"><span>  if err != nil {</span></span>
+<span class="line"><span>    return err</span></span>
+<span class="line"><span>  } else {</span></span>
+<span class="line"><span>    return lockFile.Close()</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>学习完进程锁，我们开始了解各种进程，如孤儿进程、僵尸进程。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/029-readme/">← 进程进阶</a></span> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/031-orphan-process/">孤儿进程 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

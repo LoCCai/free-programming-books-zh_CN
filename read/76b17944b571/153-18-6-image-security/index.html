@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 18.6 容器镜像安全扫描与供应链安全 · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 18.6 容器镜像安全扫描与供应链安全"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 18.6 容器镜像安全扫描与供应链安全</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="186-容器镜像安全扫描与供应链安全">18.6 容器镜像安全扫描与供应链安全</h2>
+<p>在 DevOps 流程中，容器镜像安全已经成为不容忽视的关键环节。从开发、构建、存储到部署，镜像的整个生命周期都需要安全防护。本节深入讨论镜像漏洞扫描、软件物料清单（SBOM）、镜像签名验证等供应链安全实践。</p>
+<h3 id="1861-容器镜像漏洞扫描工具对比">18.6.1 容器镜像漏洞扫描工具对比</h3>
+<h4 id="trivy---轻量级通用扫描器">Trivy - 轻量级通用扫描器</h4>
+<p>Trivy 是由 Aqua Security 开发的开源漏洞扫描器，以其轻量级、快速、准确而闻名，已成为业界标准。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>零依赖，单个二进制文件</li>
+<li>扫描速度快（秒级）</li>
+<li>支持镜像、文件系统、Git 仓库多种扫描源</li>
+<li>数据库每日自动更新</li>
+<li>支持多种输出格式（JSON、表格、SBOM 等）</li>
+</ul>
+<p><strong>安装与基本使用：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 安装 Trivy</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -sfL</span><span style="color:#9ECBFF"> https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> install-trivy.sh</span></span>
+<span class="line"><span style="color:#B392F0">less</span><span style="color:#9ECBFF"> install-trivy.sh</span><span style="color:#6A737D">  # 先审阅脚本内容</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> sh</span><span style="color:#9ECBFF"> install-trivy.sh</span><span style="color:#79B8FF"> -b</span><span style="color:#9ECBFF"> /usr/local/bin</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 扫描本地镜像</span></span>
+<span class="line"><span style="color:#B392F0">trivy</span><span style="color:#9ECBFF"> image</span><span style="color:#9ECBFF"> nginx:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 生成 JSON 格式报告</span></span>
+<span class="line"><span style="color:#B392F0">trivy</span><span style="color:#9ECBFF"> image</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> json</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> report.json</span><span style="color:#9ECBFF"> nginx:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 扫描文件系统</span></span>
+<span class="line"><span style="color:#B392F0">trivy</span><span style="color:#9ECBFF"> fs</span><span style="color:#9ECBFF"> /path/to/project</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 扫描 Git 仓库</span></span>
+<span class="line"><span style="color:#B392F0">trivy</span><span style="color:#9ECBFF"> repo</span><span style="color:#9ECBFF"> https://github.com/aquasecurity/trivy</span></span></code></pre>
+<p><strong>在 CI/CD 中集成：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 设置严重程度过滤</span></span>
+<span class="line"><span style="color:#B392F0">trivy</span><span style="color:#9ECBFF"> image</span><span style="color:#79B8FF"> --severity</span><span style="color:#9ECBFF"> HIGH,CRITICAL</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --exit-code</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  myregistry.com/myapp:v1.0.0</span></span></code></pre>
+<h4 id="grype---支持多种软件包的扫描器">Grype - 支持多种软件包的扫描器</h4>
+<p>Grype 由 Anchore 开发，支持更广泛的软件包管理器和语言。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>支持 Java、Python、Go、Ruby、JavaScript 等多种语言的依赖检测</li>
+<li>与 Syft（SBOM 生成器）配合效果好</li>
+<li>可自定义漏洞数据库源</li>
+<li>支持离线扫描模式</li>
+</ul>
+<p><strong>安装与使用：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 安装 Grype</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -sSfL</span><span style="color:#9ECBFF"> https://raw.githubusercontent.com/anchore/grype/main/install.sh</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> install-grype.sh</span></span>
+<span class="line"><span style="color:#B392F0">less</span><span style="color:#9ECBFF"> install-grype.sh</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> sh</span><span style="color:#9ECBFF"> install-grype.sh</span><span style="color:#79B8FF"> -b</span><span style="color:#9ECBFF"> /usr/local/bin</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 扫描镜像</span></span>
+<span class="line"><span style="color:#B392F0">grype</span><span style="color:#9ECBFF"> docker:nginx:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 与 Syft 配合生成 SBOM</span></span>
+<span class="line"><span style="color:#B392F0">syft</span><span style="color:#9ECBFF"> docker:nginx:latest</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> json</span><span style="color:#F97583"> ></span><span style="color:#9ECBFF"> sbom.json</span></span>
+<span class="line"><span style="color:#B392F0">grype</span><span style="color:#9ECBFF"> sbom:sbom.json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 扫描特定目录</span></span>
+<span class="line"><span style="color:#B392F0">grype</span><span style="color:#9ECBFF"> dir:/path/to/app</span></span></code></pre>
+<h4 id="snyk---完整的安全平台">Snyk - 完整的安全平台</h4>
+<p>Snyk 提供了商业级的安全扫描服务，特别适合企业环境。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>支持开源漏洞、许可证扫描和修复建议</li>
+<li>与多个 Git 平台深度集成（GitHub、GitLab、Bitbucket）</li>
+<li>提供修复建议和自动化修复 PR</li>
+<li>支持 Kubernetes 部署后安全监控</li>
+</ul>
+<p><strong>基本使用：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 安装 Snyk CLI</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -g</span><span style="color:#9ECBFF"> snyk</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 认证</span></span>
+<span class="line"><span style="color:#B392F0">snyk</span><span style="color:#9ECBFF"> auth</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 扫描镜像</span></span>
+<span class="line"><span style="color:#B392F0">snyk</span><span style="color:#9ECBFF"> container</span><span style="color:#9ECBFF"> test</span><span style="color:#9ECBFF"> docker-archive://image.tar</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 监控仓库</span></span>
+<span class="line"><span style="color:#B392F0">snyk</span><span style="color:#9ECBFF"> monitor</span><span style="color:#79B8FF"> --docker</span></span></code></pre>
+<p>此外，Docker 官方提供的 <strong>Docker Scout</strong>（<code>docker scout</code> CLI）可以直接在 Docker Desktop 或命令行中对镜像进行漏洞扫描和依赖分析，适合日常开发流程中快速检查：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 扫描本地镜像</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> scout</span><span style="color:#9ECBFF"> cves</span><span style="color:#9ECBFF"> myapp:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 查看镜像的依赖和漏洞摘要</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> scout</span><span style="color:#9ECBFF"> quickview</span><span style="color:#9ECBFF"> myapp:latest</span></span></code></pre>
+<p><strong>工具对比表：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特性</th><th>Docker Scout</th><th>Trivy</th><th>Grype</th><th>Snyk</th></tr></thead><tbody><tr><td>Docker 集成</td><td>✓（原生）</td><td>需安装</td><td>需安装</td><td>需安装</td></tr><tr><td>零依赖</td><td>✗</td><td>✓</td><td>✗</td><td>✗</td></tr><tr><td>离线模式</td><td>✗</td><td>✓</td><td>✓</td><td>✗</td></tr><tr><td>许可证扫描</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>自动修复建议</td><td>✓</td><td>✗</td><td>✗</td><td>✓</td></tr><tr><td>开源免费</td><td>部分</td><td>✓</td><td>✓</td><td>部分</td></tr><tr><td>IDE 集成</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr></tbody></table>
+<h3 id="1862-sbom软件物料清单生成与管理">18.6.2 SBOM（软件物料清单）生成与管理</h3>
+<p>SBOM（Software Bill of Materials）是一份详细列表，记录了软件中使用的所有组件、依赖库及其版本信息。SBOM 在供应链安全中至关重要，特别是在发现新的安全漏洞时，能快速定位受影响的应用。</p>
+<h4 id="syft---sbom-生成工具">Syft - SBOM 生成工具</h4>
+<p>Syft 是 Anchore 推出的专业 SBOM 生成工具。</p>
+<p><strong>安装：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -sSfL</span><span style="color:#9ECBFF"> https://raw.githubusercontent.com/anchore/syft/main/install.sh</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> install-syft.sh</span></span>
+<span class="line"><span style="color:#B392F0">less</span><span style="color:#9ECBFF"> install-syft.sh</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> sh</span><span style="color:#9ECBFF"> install-syft.sh</span><span style="color:#79B8FF"> -b</span><span style="color:#9ECBFF"> /usr/local/bin</span></span></code></pre>
+<p><strong>生成 SBOM：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 从镜像生成 SBOM（多种格式）</span></span>
+<span class="line"><span style="color:#B392F0">syft</span><span style="color:#9ECBFF"> docker:nginx:latest</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> json</span><span style="color:#F97583"> ></span><span style="color:#9ECBFF"> sbom.json</span></span>
+<span class="line"><span style="color:#B392F0">syft</span><span style="color:#9ECBFF"> docker:nginx:latest</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> spdx</span><span style="color:#F97583"> ></span><span style="color:#9ECBFF"> sbom.spdx</span></span>
+<span class="line"><span style="color:#B392F0">syft</span><span style="color:#9ECBFF"> docker:nginx:latest</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> cyclonedx</span><span style="color:#F97583"> ></span><span style="color:#9ECBFF"> sbom.xml</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 从本地文件系统生成</span></span>
+<span class="line"><span style="color:#B392F0">syft</span><span style="color:#9ECBFF"> dir:/path/to/app</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> json</span><span style="color:#F97583"> ></span><span style="color:#9ECBFF"> sbom.json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 从 OCI 镜像档案生成</span></span>
+<span class="line"><span style="color:#B392F0">syft</span><span style="color:#9ECBFF"> oci-archive:image.tar</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> json</span><span style="color:#F97583"> ></span><span style="color:#9ECBFF"> sbom.json</span></span></code></pre>
+<h4 id="cyclonedx-与-spdx-格式">CycloneDX 与 SPDX 格式</h4>
+<p>两种主流的 SBOM 格式：</p>
+<p><strong>CycloneDX 格式示例：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#E1E4E8">&#x3C;?</span><span style="color:#85E89D">xml</span><span style="color:#B392F0"> version</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1.0"</span><span style="color:#B392F0"> encoding</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"UTF-8"</span><span style="color:#E1E4E8">?></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">bom</span><span style="color:#B392F0"> xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://cyclonedx.org/schema/bom/1.4"</span><span style="color:#B392F0"> version</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">components</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">component</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"library"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">>openssl&#x3C;/</span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">>1.1.1k&#x3C;/</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">purl</span><span style="color:#E1E4E8">>pkg:deb/debian/openssl@1.1.1k-1+deb11u5&#x3C;/</span><span style="color:#85E89D">purl</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">component</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">component</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"library"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">>curl&#x3C;/</span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">>7.74.0-1.3+deb11u1&#x3C;/</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">purl</span><span style="color:#E1E4E8">>pkg:deb/debian/curl@7.74.0-1.3+deb11u1&#x3C;/</span><span style="color:#85E89D">purl</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">component</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">components</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">bom</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p><strong>SPDX 格式示例：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "SPDXID"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"SPDXRef-DOCUMENT"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "spdxVersion"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"SPDX-2.2"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "creationInfo"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "created"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2024-03-01T12:00:00Z"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "creators"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"Tool: syft"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#79B8FF">  "packages"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#79B8FF">      "SPDXID"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"SPDXRef-Package-openssl"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"openssl"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "versionInfo"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"1.1.1k"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">      "downloadLocation"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"NOASSERTION"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="sbom-的应用场景">SBOM 的应用场景</h4>
+<p><strong>漏洞关联：</strong></p>
+<p>当新的 CVE 被发现时，可快速查询受影响的应用：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 使用 Grype 针对 SBOM 进行漏洞扫描</span></span>
+<span class="line"><span style="color:#B392F0">grype</span><span style="color:#9ECBFF"> sbom:sbom.json</span><span style="color:#79B8FF"> --add-cpes-if-none</span></span></code></pre>
+<p><strong>合规性报告：</strong></p>
+<p>将 SBOM 保存为构建产物，用于审计和合规性检查。</p>
+<p><strong>依赖升级决策：</strong></p>
+<p>通过分析 SBOM 中的依赖版本，制定安全升级计划。</p>
+<h3 id="1863-镜像签名与验证">18.6.3 镜像签名与验证</h3>
+<p>镜像签名确保镜像的来源可信且未被篡改。新项目通常优先评估 Cosign (Sigstore) 或 Notary Project 的 Notation；Docker Content Trust / Notary v1 属于历史路径。</p>
+<h4 id="cosign---现代签名解决方案">Cosign - 现代签名解决方案</h4>
+<p>Cosign 是 Sigstore 项目的核心工具，支持无密钥签名，适合现代 CI/CD 流程。</p>
+<p><strong>安装：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">wget</span><span style="color:#9ECBFF"> https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64</span></span>
+<span class="line"><span style="color:#B392F0">chmod</span><span style="color:#9ECBFF"> +x</span><span style="color:#9ECBFF"> cosign-linux-amd64</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> mv</span><span style="color:#9ECBFF"> cosign-linux-amd64</span><span style="color:#9ECBFF"> /usr/local/bin/cosign</span></span></code></pre>
+<p><strong>生成密钥对（传统方式）：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">cosign</span><span style="color:#9ECBFF"> generate-key-pair</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 生成 cosign.key 和 cosign.pub</span></span></code></pre>
+<p><strong>签名镜像：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 先推送镜像，再使用不可变 digest 签名</span></span>
+<span class="line"><span style="color:#E1E4E8">IMAGE_DIGEST</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"myregistry.com/myapp@sha256:&#x3C;digest>"</span></span>
+<span class="line"><span style="color:#B392F0">cosign</span><span style="color:#9ECBFF"> sign</span><span style="color:#79B8FF"> --key</span><span style="color:#9ECBFF"> cosign.key</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$IMAGE_DIGEST</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 系统会提示输入私钥密码</span></span></code></pre>
+<p><strong>验证签名：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 使用公钥验证</span></span>
+<span class="line"><span style="color:#B392F0">cosign</span><span style="color:#9ECBFF"> verify</span><span style="color:#79B8FF"> --key</span><span style="color:#9ECBFF"> cosign.pub</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$IMAGE_DIGEST</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 输出结果示例</span></span>
+<span class="line"><span style="color:#6A737D"># Verification successful!</span></span>
+<span class="line"><span style="color:#6A737D"># {</span></span>
+<span class="line"><span style="color:#6A737D">#   "critical": {</span></span>
+<span class="line"><span style="color:#6A737D">#     "identity": {...},</span></span>
+<span class="line"><span style="color:#6A737D">#     "image": {...},</span></span>
+<span class="line"><span style="color:#6A737D">#     "type": "cosign container image signature"</span></span>
+<span class="line"><span style="color:#6A737D">#   },</span></span>
+<span class="line"><span style="color:#6A737D">#   "optional": {...}</span></span>
+<span class="line"><span style="color:#6A737D"># }</span></span></code></pre>
+<p><strong>Keyless 签名（推荐用于 CI/CD）：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 在 GitHub Actions 等 CI 中无需存储密钥</span></span>
+<span class="line"><span style="color:#B392F0">cosign</span><span style="color:#9ECBFF"> sign</span><span style="color:#79B8FF"> --yes</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$IMAGE_DIGEST</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 验证时检查签名证书中的 OIDC 身份声明是否匹配预期 workflow 与 issuer</span></span>
+<span class="line"><span style="color:#B392F0">cosign</span><span style="color:#9ECBFF"> verify</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$IMAGE_DIGEST</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --certificate-identity</span><span style="color:#9ECBFF"> https://github.com/myorg/myrepo/.github/workflows/build.yml@refs/heads/main</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --certificate-oidc-issuer</span><span style="color:#9ECBFF"> https://token.actions.githubusercontent.com</span></span></code></pre>
+<h4 id="notary-project--notation">Notary Project / Notation</h4>
+<p>Notation 是 Notary Project 的 OCI 签名工具，适合希望采用 CNCF Notary Project 规范、或使用 registry/云厂商原生集成的团队。与 Cosign 类似，生产环境应围绕不可变 digest 做签名和策略校验。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 签名已推送的镜像 digest</span></span>
+<span class="line"><span style="color:#B392F0">notation</span><span style="color:#9ECBFF"> sign</span><span style="color:#9ECBFF"> myregistry.com/myapp@sha256:</span><span style="color:#F97583">&#x3C;</span><span style="color:#9ECBFF">diges</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 验证签名</span></span>
+<span class="line"><span style="color:#B392F0">notation</span><span style="color:#9ECBFF"> verify</span><span style="color:#9ECBFF"> myregistry.com/myapp@sha256:</span><span style="color:#F97583">&#x3C;</span><span style="color:#9ECBFF">diges</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">></span></span></code></pre>
+<h4 id="docker-content-trust-与-notary-v1">Docker Content Trust 与 Notary v1</h4>
+<blockquote>
+<p><strong>注意：DCT 退役时间线</strong></p>
+<p>Docker 已宣布<a href="https://www.docker.com/blog/retiring-docker-content-trust/">退役 Content Trust</a>，Docker Official Images 的部分 DCT 签名证书自 2025 年 8 月起已陆续过期；根据 <a href="https://docs.docker.com/retired/">Docker 官方退役说明</a>，Notary v1 服务 <code>notary.docker.io</code> 在 2026 年 7 月、8 月安排若干次 brownout（短时停服演练）之后，于 2026 年 12 月 8 日完全关闭。registry 服务商的具体节奏以其自身文档为准，不要把云厂商特定日期直接当作 Docker 全局时间线。</p>
+<p>新项目应优先使用上文介绍的 <strong>Cosign (Sigstore)</strong> 或 registry 原生签名/证明能力；现有 DCT 用户应先盘点依赖、验证替代方案，再制定迁移计划。</p>
+</blockquote>
+<p>Docker Content Trust 使用 Notary v1 实现镜像签名，是 Docker 官方的传统签名解决方案，不建议新项目采用。<strong>自 Docker Engine 29.0 起，Docker Content Trust 已从 Docker CLI 中移除</strong>：<code>docker trust</code> 子命令不再内置（官方仅保留为可单独构建的插件），<code>DOCKER_CONTENT_TRUST</code> 环境变量不再生效，<code>docker push --disable-content-trust</code> 也仅作为已废弃选项保留、不再有实际作用。下面的示例仅适用于 Docker Engine 28.x 及更早版本。</p>
+<p><strong>历史用法示例（不建议新项目采用）：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 在环境中启用 DCT</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> DOCKER_CONTENT_TRUST</span><span style="color:#F97583">=</span><span style="color:#79B8FF">1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 此后所有 docker push/pull 都需要签名</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> myregistry.com/myapp:v1.0.0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 如果镜像未签名，操作会被拒绝</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 禁用 DCT（仅用于特定操作）</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> push</span><span style="color:#79B8FF"> --disable-content-trust</span><span style="color:#9ECBFF"> myregistry.com/myapp:v1.0.0</span></span></code></pre>
+<p><strong>签名密钥管理：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 首次推送时会提示创建 Delegation Key</span></span>
+<span class="line"><span style="color:#6A737D"># 密钥存储在 ~/.docker/trust/private/root_keys/ 和 ~/.docker/trust/private/tuf_keys/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 查看 DCT/Notary 信任数据；RepoDigests 只是内容摘要，不等于签名验证</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> trust</span><span style="color:#9ECBFF"> inspect</span><span style="color:#79B8FF"> --pretty</span><span style="color:#9ECBFF"> myregistry.com/myapp:v1.0.0</span></span></code></pre>
+<h3 id="1864-供应链安全最佳实践">18.6.4 供应链安全最佳实践</h3>
+<h4 id="1-基础镜像安全">1. 基础镜像安全</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#6A737D"># ❌ 不推荐：使用 latest 标签</span></span>
+<span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> ubuntu:latest</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apt-get update &#x26;&#x26; apt-get install -y curl</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ✓ 推荐：固定基础镜像版本和摘要</span></span>
+<span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> ubuntu:22.04@sha256:a6d2b38300ce017add71440577d5b0a90460d0e6e0e14...（完整 64 位哈希）</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> apt-get update &#x26;&#x26; apt-get install -y --no-install-recommends curl \</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;&#x26; rm -rf /var/lib/apt/lists/*</span></span></code></pre>
+<h4 id="2-构建时扫描">2. 构建时扫描</h4>
+<p>在 CI/CD 构建阶段集成安全扫描，避免在 Dockerfile 里从分支 URL 下载并执行远程安装脚本：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> --rm</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -v</span><span style="color:#9ECBFF"> "</span><span style="color:#E1E4E8">$PWD</span><span style="color:#9ECBFF">:/work"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -w</span><span style="color:#9ECBFF"> /work</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  aquasec/trivy:latest</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  fs</span><span style="color:#9ECBFF"> .</span><span style="color:#79B8FF"> --exit-code</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> --severity</span><span style="color:#9ECBFF"> HIGH,CRITICAL</span></span></code></pre>
+<h4 id="3-运行时镜像扫描策略">3. 运行时镜像扫描策略</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 镜像构建完成后立即扫描</span></span>
+<span class="line"><span style="color:#B392F0">trivy</span><span style="color:#9ECBFF"> image</span><span style="color:#79B8FF"> --severity</span><span style="color:#9ECBFF"> HIGH,CRITICAL</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --exit-code</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --timeout</span><span style="color:#9ECBFF"> 30m</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">  $IMAGE_NAME</span><span style="color:#9ECBFF">:</span><span style="color:#E1E4E8">$IMAGE_TAG</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 定期扫描已部署的镜像</span></span>
+<span class="line"><span style="color:#B392F0">trivy</span><span style="color:#9ECBFF"> image</span><span style="color:#79B8FF"> --scanners</span><span style="color:#9ECBFF"> vuln,misconfig</span><span style="color:#9ECBFF"> registry:5000/myapp:latest</span></span></code></pre>
+<h4 id="4-镜像仓库安全配置">4. 镜像仓库安全配置</h4>
+<p><strong>Harbor（私有镜像仓库）的安全扫描：</strong></p>
+<p>Harbor 的扫描器应在管理界面的 <strong>Interrogation Services / Scanner</strong> 中配置；推送自动扫描通常在项目级 <strong>Configuration</strong> 中启用。不要把扫描策略误写成通用 <code>harbor.yml</code> 顶层字段。实际部署时应按所用 Harbor 版本文档配置 scanner、项目策略和漏洞阻断阈值。</p>
+<h4 id="5-政策执行">5. 政策执行</h4>
+<p>在 Kubernetes 环境中使用 Admission Webhook 强制镜像签名和扫描：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">admissionregistration.k8s.io/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ValidatingWebhookConfiguration</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">image-security-policy</span></span>
+<span class="line"><span style="color:#85E89D">webhooks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">image-security.example.com</span></span>
+<span class="line"><span style="color:#85E89D">  clientConfig</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    service</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">image-security-webhook</span></span>
+<span class="line"><span style="color:#85E89D">      namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">security</span></span>
+<span class="line"><span style="color:#85E89D">      path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"/validate"</span></span>
+<span class="line"><span style="color:#85E89D">  rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">operations</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CREATE"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"UPDATE"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">    apiGroups</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">    apiVersions</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"v1"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">    resources</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"pods"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">  admissionReviewVersions</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"v1"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">  sideEffects</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">None</span></span></code></pre>
+<h3 id="1865-cicd-中集成安全扫描">18.6.5 CI/CD 中集成安全扫描</h3>
+<h4 id="github-actions-工作流示例">GitHub Actions 工作流示例</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Build and Scan Image</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  push</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    branches</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">main</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">develop</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">  pull_request</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    branches</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">main</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">env</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  REGISTRY</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ghcr.io</span></span>
+<span class="line"><span style="color:#85E89D">  IMAGE_NAME</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ github.repository }}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">jobs</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  build-scan</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    runs-on</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ubuntu-latest</span></span>
+<span class="line"><span style="color:#85E89D">    permissions</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      contents</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">read</span></span>
+<span class="line"><span style="color:#85E89D">      packages</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">write</span></span>
+<span class="line"><span style="color:#85E89D">      security-events</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">write</span></span>
+<span class="line"><span style="color:#85E89D">      id-token</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">write</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # 注意：本示例其余 action 为便于阅读使用了可变标签（@v7 等），这与下面 Trivy 那条</span></span>
+<span class="line"><span style="color:#6A737D">    # 注释里「务必使用不可变 commit SHA」的要求并不一致——真正部署时**每一条 uses 都应</span></span>
+<span class="line"><span style="color:#6A737D">    # 钉死 40 位 commit SHA**，尤其是持有凭据的 docker/login-action 与能推镜像的</span></span>
+<span class="line"><span style="color:#6A737D">    # docker/build-push-action：标签一旦被劫持，攻击者拿到的就是本 job 的</span></span>
+<span class="line"><span style="color:#6A737D">    # packages: write 与 id-token: write 权限，可以推送恶意镜像并为其签名。</span></span>
+<span class="line"><span style="color:#6A737D">    # 本书仓库自己的 .github/workflows/ 即全部按 SHA 钉死，可作为参照。</span></span>
+<span class="line"><span style="color:#85E89D">    steps</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Checkout code</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">actions/checkout@v7</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Set up Docker Buildx</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker/setup-buildx-action@v4</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Install Cosign</span></span>
+<span class="line"><span style="color:#85E89D">      if</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">github.event_name == 'push'</span></span>
+<span class="line"><span style="color:#6A737D">      # cosign-installer 没有发布可移动的 v4 大版本标签，只能引用完整版本号；</span></span>
+<span class="line"><span style="color:#6A737D">      # 安装 Cosign v3+ 必须使用 v4 及以后的 installer，v3 系列只能安装 Cosign 2.x。</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">sigstore/cosign-installer@v4.1.2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Login to Registry</span></span>
+<span class="line"><span style="color:#85E89D">      if</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">github.event_name == 'push'</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker/login-action@v4</span></span>
+<span class="line"><span style="color:#85E89D">      with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        registry</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ env.REGISTRY }}</span></span>
+<span class="line"><span style="color:#85E89D">        username</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ github.actor }}</span></span>
+<span class="line"><span style="color:#85E89D">        password</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ secrets.GITHUB_TOKEN }}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Build and push Docker image</span></span>
+<span class="line"><span style="color:#85E89D">      if</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">github.event_name == 'push'</span></span>
+<span class="line"><span style="color:#85E89D">      id</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">build-push</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker/build-push-action@v7</span></span>
+<span class="line"><span style="color:#85E89D">      with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        context</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span></span>
+<span class="line"><span style="color:#85E89D">        push</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">        tags</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}</span></span>
+<span class="line"><span style="color:#85E89D">        provenance</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">mode=max</span></span>
+<span class="line"><span style="color:#85E89D">        sbom</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Build Docker image for pull request scan</span></span>
+<span class="line"><span style="color:#85E89D">      if</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">github.event_name == 'pull_request'</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker/build-push-action@v7</span></span>
+<span class="line"><span style="color:#85E89D">      with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        context</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span></span>
+<span class="line"><span style="color:#85E89D">        push</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#85E89D">        load</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">        tags</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">local/${{ env.IMAGE_NAME }}:pr</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Run Trivy vulnerability scan</span></span>
+<span class="line"><span style="color:#6A737D">      # 安全提醒：2026 年 3 月 19 日 Trivy GitHub Actions 遭受供应链攻击，</span></span>
+<span class="line"><span style="color:#6A737D">      # 76 个版本标签被劫持。务必使用不可变的 commit SHA 引用，而非可变标签。</span></span>
+<span class="line"><span style="color:#6A737D">      # 使用前请到 https://github.com/aquasecurity/trivy-action/releases 核实 SHA 对应正确版本。</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">aquasecurity/trivy-action@57a97c7e7821a5776cebc9bb87c984fa69cba8f1</span><span style="color:#6A737D"> # v0.35.0</span></span>
+<span class="line"><span style="color:#85E89D">      with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        image-ref</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ github.event_name == 'push' &#x26;&#x26; format('{0}/{1}@{2}', env.REGISTRY, env.IMAGE_NAME, steps.build-push.outputs.digest) || format('local/{0}:pr', env.IMAGE_NAME) }}</span></span>
+<span class="line"><span style="color:#85E89D">        format</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'sarif'</span></span>
+<span class="line"><span style="color:#85E89D">        output</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'trivy-results.sarif'</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'HIGH,CRITICAL'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Upload Trivy results to GitHub Security tab</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">github/codeql-action/upload-sarif@v3</span></span>
+<span class="line"><span style="color:#85E89D">      with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        sarif_file</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'trivy-results.sarif'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Generate SBOM</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">anchore/sbom-action@v0</span></span>
+<span class="line"><span style="color:#85E89D">      with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ github.event_name == 'push' &#x26;&#x26; format('{0}/{1}@{2}', env.REGISTRY, env.IMAGE_NAME, steps.build-push.outputs.digest) || format('local/{0}:pr', env.IMAGE_NAME) }}</span></span>
+<span class="line"><span style="color:#85E89D">        format</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">cyclonedx-json</span></span>
+<span class="line"><span style="color:#85E89D">        output-file</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">sbom-cyclonedx.json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Upload SBOM</span></span>
+<span class="line"><span style="color:#85E89D">      uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">actions/upload-artifact@v7</span></span>
+<span class="line"><span style="color:#85E89D">      with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">sbom</span></span>
+<span class="line"><span style="color:#85E89D">        path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">sbom-cyclonedx.json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Sign image with Cosign</span></span>
+<span class="line"><span style="color:#85E89D">      if</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">github.event_name == 'push'</span></span>
+<span class="line"><span style="color:#85E89D">      run</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">        cosign sign --yes ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build-push.outputs.digest }}</span></span></code></pre>
+<h4 id="gitlab-ci-工作流示例">GitLab CI 工作流示例</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">stages</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">build</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">scan</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">push</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#9ECBFF">sign</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">variables</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  REGISTRY</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">registry.gitlab.com</span></span>
+<span class="line"><span style="color:#85E89D">  IMAGE_NAME</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">$REGISTRY/$CI_PROJECT_PATH</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">build</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  stage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">build</span></span>
+<span class="line"><span style="color:#85E89D">  image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker:&#x3C;version>-cli@sha256:&#x3C;docker-cli-digest></span></span>
+<span class="line"><span style="color:#85E89D">  services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker:&#x3C;version>-dind@sha256:&#x3C;docker-dind-digest></span></span>
+<span class="line"><span style="color:#85E89D">  script</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">docker build -t $IMAGE_NAME:$CI_COMMIT_SHA .</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">docker save $IMAGE_NAME:$CI_COMMIT_SHA > image.tar</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">scan:trivy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  stage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">scan</span></span>
+<span class="line"><span style="color:#85E89D">  image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">aquasec/trivy:&#x3C;version>@sha256:&#x3C;trivy-digest></span></span>
+<span class="line"><span style="color:#85E89D">  script</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">trivy image --severity HIGH,CRITICAL --exit-code 1 docker-archive://image.tar</span></span>
+<span class="line"><span style="color:#85E89D">  allow_failure</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">scan:grype</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  stage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">scan</span></span>
+<span class="line"><span style="color:#85E89D">  image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">anchore/grype:&#x3C;version>@sha256:&#x3C;grype-digest></span></span>
+<span class="line"><span style="color:#85E89D">  script</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">grype docker-archive://image.tar</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">generate:sbom</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  stage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">scan</span></span>
+<span class="line"><span style="color:#85E89D">  image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">anchore/syft:&#x3C;version>@sha256:&#x3C;syft-digest></span></span>
+<span class="line"><span style="color:#85E89D">  script</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">syft docker-archive://image.tar -o cyclonedx > sbom.xml</span></span>
+<span class="line"><span style="color:#85E89D">  artifacts</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    reports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      cyclonedx</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">sbom.xml</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 如需让 GitLab 安全面板摄取容器扫描结果，应输出 GitLab 兼容的 container_scanning 报告。</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">push</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  stage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">push</span></span>
+<span class="line"><span style="color:#85E89D">  image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker:&#x3C;version>-cli@sha256:&#x3C;docker-cli-digest></span></span>
+<span class="line"><span style="color:#85E89D">  services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker:&#x3C;version>-dind@sha256:&#x3C;docker-dind-digest></span></span>
+<span class="line"><span style="color:#85E89D">  script</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">docker load &#x3C; image.tar</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">echo "$REGISTRY_PASSWORD" | docker login --username "$REGISTRY_USER" --password-stdin "$REGISTRY"</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">docker push $IMAGE_NAME:$CI_COMMIT_SHA</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">DIGEST=$(docker buildx imagetools inspect "$IMAGE_NAME:$CI_COMMIT_SHA" --format '{{.Manifest.Digest}}')</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">echo "$IMAGE_NAME@$DIGEST" > image-digest.txt</span></span>
+<span class="line"><span style="color:#85E89D">  artifacts</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    paths</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">image-digest.txt</span></span>
+<span class="line"><span style="color:#85E89D">  only</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">sign</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  stage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">sign</span></span>
+<span class="line"><span style="color:#85E89D">  image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">gcr.io/projectsigstore/cosign:&#x3C;version>@sha256:&#x3C;cosign-digest></span></span>
+<span class="line"><span style="color:#85E89D">  script</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">cosign sign --key $COSIGN_KEY "$(cat image-digest.txt)"</span></span>
+<span class="line"><span style="color:#85E89D">  only</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">main</span></span></code></pre>
+<h3 id="1866-常见问题与最佳实践">18.6.6 常见问题与最佳实践</h3>
+<p><strong>Q: 扫描报告中有过时的 CVE，如何处理？</strong></p>
+<p>A: 某些 CVE 可能已经被修复但数据库未更新，可以：</p>
+<ul>
+<li>手动验证安全补丁是否已应用</li>
+<li>使用工具的忽略列表功能（如 Trivy 的 <code>.trivyignore</code>）</li>
+<li>定期更新扫描工具和漏洞数据库</li>
+</ul>
+<p><strong>Q: 如何平衡镜像大小和安全性？</strong></p>
+<p>A:</p>
+<ul>
+<li>使用多阶段构建减少最终镜像大小</li>
+<li>使用精简基础镜像（Alpine、Distroless）</li>
+<li>定期更新依赖而不是一味求小</li>
+<li>优先安全性，体积次之</li>
+</ul>
+<p><strong>Q: 如何管理和轮换签名密钥？</strong></p>
+<p>A:</p>
+<ul>
+<li>在密钥管理系统（如 HashiCorp Vault）中存储密钥</li>
+<li>定期轮换密钥（建议每 90 天）</li>
+<li>使用 Keyless 签名消除密钥管理复杂性</li>
+<li>保留密钥轮换的审计日志</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">← 18.5 其他安全特性</a></span> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

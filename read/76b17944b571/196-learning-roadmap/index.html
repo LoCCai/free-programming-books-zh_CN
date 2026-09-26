@@ -1,0 +1,837 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 附录八：Docker 学习路线图与知识体系 · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 附录八：Docker 学习路线图与知识体系"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 附录八：Docker 学习路线图与知识体系</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="附录八docker-学习路线图与知识体系">附录八：Docker 学习路线图与知识体系</h2>
+<p>本附录为学习者提供清晰的学习路线、知识点依赖关系、认证指南和常见面试题，帮助快速成长为 Docker 和 DevOps 专家。</p>
+<h3 id="学习阶段划分">学习阶段划分</h3>
+<p>Docker 学习可分为四个递进阶段，每个阶段都有明确的学习目标和时间投入。</p>
+<h4 id="第一阶段基础入门0-2-周">第一阶段：基础入门（0-2 周）</h4>
+<p><strong>学习目标：</strong></p>
+<ul>
+<li>理解容器化的基本概念</li>
+<li>能够运行、管理基本的容器</li>
+<li>了解镜像和仓库的基本操作</li>
+</ul>
+<p><strong>核心内容：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Docker 简介</span></span>
+<span class="line"><span>├── 为什么需要 Docker</span></span>
+<span class="line"><span>├── 容器 vs 虚拟机 vs 云计算</span></span>
+<span class="line"><span>└── Docker 的三大核心概念</span></span>
+<span class="line"><span>    ├── 镜像（Image）</span></span>
+<span class="line"><span>    ├── 容器（Container）</span></span>
+<span class="line"><span>    └── 仓库（Repository）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>基础命令</span></span>
+<span class="line"><span>├── docker run / create / start / stop / rm</span></span>
+<span class="line"><span>├── docker ps / logs / exec / inspect</span></span>
+<span class="line"><span>├── docker pull / push / tag</span></span>
+<span class="line"><span>└── docker build -t</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Docker 安装配置</span></span>
+<span class="line"><span>├── Linux 平台安装</span></span>
+<span class="line"><span>├── macOS 和 Windows 安装</span></span>
+<span class="line"><span>├── 镜像加速器配置</span></span>
+<span class="line"><span>└── 权限和用户配置</span></span></code></pre>
+<p><strong>学习资源：</strong></p>
+<ul>
+<li><a href="https://docs.docker.com/get-started/">官方教程</a></li>
+<li>本书第 1-3 章：入门篇基础概念</li>
+<li><a href="https://docs.docker.com/reference/cli/docker/">Docker CLI 参考</a></li>
+</ul>
+<p><strong>时间投入：</strong></p>
+<ul>
+<li>理论学习：3-4 小时</li>
+<li>实操练习：8-10 小时</li>
+<li>总计：2 周</li>
+</ul>
+<p><strong>验证学习成果：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 完成以下任务说明基础入门完成</span></span>
+<span class="line"><span style="color:#B392F0">1.</span><span style="color:#9ECBFF"> 运行官方</span><span style="color:#9ECBFF"> nginx</span><span style="color:#9ECBFF"> 镜像，访问</span><span style="color:#9ECBFF"> http://localhost</span></span>
+<span class="line"><span style="color:#B392F0">2.</span><span style="color:#9ECBFF"> 使用</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> 进入容器修改首页</span></span>
+<span class="line"><span style="color:#B392F0">3.</span><span style="color:#9ECBFF"> 提交修改为新镜像</span></span>
+<span class="line"><span style="color:#B392F0">4.</span><span style="color:#9ECBFF"> 推送镜像到</span><span style="color:#9ECBFF"> Docker</span><span style="color:#9ECBFF"> Hub（需创建账户）</span></span></code></pre>
+<h4 id="第二阶段核心开发2-6-周">第二阶段：核心开发（2-6 周）</h4>
+<p><strong>学习目标：</strong></p>
+<ul>
+<li>掌握 Dockerfile 编写</li>
+<li>能够构建自己的应用镜像</li>
+<li>理解数据管理和网络配置</li>
+<li>熟悉 Docker Compose 编排</li>
+</ul>
+<p><strong>核心内容：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Dockerfile 指令详解</span></span>
+<span class="line"><span>├── FROM / RUN / COPY / ADD</span></span>
+<span class="line"><span>├── WORKDIR / ENV / ARG</span></span>
+<span class="line"><span>├── EXPOSE / CMD / ENTRYPOINT</span></span>
+<span class="line"><span>├── VOLUME / USER / HEALTHCHECK</span></span>
+<span class="line"><span>└── 最佳实践和性能优化</span></span>
+<span class="line"><span>    ├── 分层缓存机制</span></span>
+<span class="line"><span>    ├── 减少镜像体积</span></span>
+<span class="line"><span>    ├── 多阶段构建</span></span>
+<span class="line"><span>    └── 安全最佳实践</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>容器数据管理</span></span>
+<span class="line"><span>├── 数据卷（Volume）</span></span>
+<span class="line"><span>│   ├── 命名卷</span></span>
+<span class="line"><span>│   ├── 匿名卷</span></span>
+<span class="line"><span>│   └── 卷挂载最佳实践</span></span>
+<span class="line"><span>├── 绑定挂载（Bind Mount）</span></span>
+<span class="line"><span>│   ├── 宿主机路径映射</span></span>
+<span class="line"><span>│   └── 权限和隔离</span></span>
+<span class="line"><span>└── tmpfs 挂载</span></span>
+<span class="line"><span>    └── 临时文件系统</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>容器网络</span></span>
+<span class="line"><span>├── 网络类型</span></span>
+<span class="line"><span>│   ├── bridge（默认）</span></span>
+<span class="line"><span>│   ├── host</span></span>
+<span class="line"><span>│   ├── overlay</span></span>
+<span class="line"><span>│   └── macvlan</span></span>
+<span class="line"><span>├── 端口映射</span></span>
+<span class="line"><span>├── 容器互联</span></span>
+<span class="line"><span>├── DNS 配置</span></span>
+<span class="line"><span>└── 自定义网络</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Docker Compose</span></span>
+<span class="line"><span>├── compose.yml/docker-compose.yml 编写</span></span>
+<span class="line"><span>├── services 定义</span></span>
+<span class="line"><span>├── volumes 配置</span></span>
+<span class="line"><span>├── networks 配置</span></span>
+<span class="line"><span>├── 依赖关系</span></span>
+<span class="line"><span>├── 环境变量</span></span>
+<span class="line"><span>└── 命令操作</span></span>
+<span class="line"><span>    ├── up / down / ps / logs</span></span>
+<span class="line"><span>    ├── exec / run</span></span>
+<span class="line"><span>    └── build / push</span></span></code></pre>
+<p><strong>学习资源：</strong></p>
+<ul>
+<li>本书第 4-11 章：进阶篇</li>
+<li><a href="https://docs.docker.com/build/building/best-practices/">Docker 官方最佳实践</a></li>
+<li><a href="https://docs.docker.com/reference/dockerfile/">Dockerfile 参考</a></li>
+</ul>
+<p><strong>时间投入：</strong></p>
+<ul>
+<li>理论学习：8-10 小时</li>
+<li>实操练习：30-40 小时（多个实战项目）</li>
+<li>总计：4-6 周</li>
+</ul>
+<p><strong>项目实战：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>项目 1: Python Web 应用（Flask/Django）</span></span>
+<span class="line"><span>- 编写多阶段 Dockerfile</span></span>
+<span class="line"><span>- 使用 Compose 配置数据库</span></span>
+<span class="line"><span>- 实现热重载开发环境</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>项目 2: Node.js 微服务</span></span>
+<span class="line"><span>- 优化镜像大小</span></span>
+<span class="line"><span>- 配置 Compose 多个服务</span></span>
+<span class="line"><span>- 设置网络和环境变量</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>项目 3: 数据库容器化</span></span>
+<span class="line"><span>- PostgreSQL/MySQL 配置</span></span>
+<span class="line"><span>- 数据持久化</span></span>
+<span class="line"><span>- 备份恢复策略</span></span></code></pre>
+<h4 id="第三阶段生产优化6-12-周">第三阶段：生产优化（6-12 周）</h4>
+<p><strong>学习目标：</strong></p>
+<ul>
+<li>掌握容器安全最佳实践</li>
+<li>理解性能监控和优化</li>
+<li>学会容器编排（Kubernetes 基础）</li>
+<li>熟悉 CI/CD 集成</li>
+</ul>
+<p><strong>核心内容：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>容器安全</span></span>
+<span class="line"><span>├── 镜像安全</span></span>
+<span class="line"><span>│   ├── 漏洞扫描（Trivy/Grype/Snyk）</span></span>
+<span class="line"><span>│   ├── 镜像签名和验证（Cosign）</span></span>
+<span class="line"><span>│   ├── SBOM 生成和管理</span></span>
+<span class="line"><span>│   └── 供应链安全</span></span>
+<span class="line"><span>├── 运行时安全</span></span>
+<span class="line"><span>│   ├── 用户和权限</span></span>
+<span class="line"><span>│   ├── Linux 能力机制</span></span>
+<span class="line"><span>│   ├── AppArmor 和 SELinux</span></span>
+<span class="line"><span>│   ├── Rootless 容器</span></span>
+<span class="line"><span>│   └── 安全的 Docker socket 访问</span></span>
+<span class="line"><span>└── 宿主机安全</span></span>
+<span class="line"><span>    ├── API 访问控制</span></span>
+<span class="line"><span>    ├── TLS 认证</span></span>
+<span class="line"><span>    └── 审计日志</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>性能监控和优化</span></span>
+<span class="line"><span>├── 监控指标体系</span></span>
+<span class="line"><span>│   ├── CPU / 内存 / 网络 / I/O</span></span>
+<span class="line"><span>│   └── 应用级指标</span></span>
+<span class="line"><span>├── 监控工具</span></span>
+<span class="line"><span>│   ├── docker stats</span></span>
+<span class="line"><span>│   ├── cAdvisor</span></span>
+<span class="line"><span>│   ├── Prometheus</span></span>
+<span class="line"><span>│   └── Grafana</span></span>
+<span class="line"><span>├── 性能优化</span></span>
+<span class="line"><span>│   ├── 镜像大小优化</span></span>
+<span class="line"><span>│   ├── 内存和 CPU 限制</span></span>
+<span class="line"><span>│   ├── OOM 诊断和处理</span></span>
+<span class="line"><span>│   └── 网络性能优化</span></span>
+<span class="line"><span>└── 日志管理</span></span>
+<span class="line"><span>    ├── 日志驱动配置</span></span>
+<span class="line"><span>    ├── ELK Stack</span></span>
+<span class="line"><span>    └── 日志聚合</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>容器编排基础</span></span>
+<span class="line"><span>├── Kubernetes 核心概念</span></span>
+<span class="line"><span>│   ├── Pod / Deployment / Service</span></span>
+<span class="line"><span>│   ├── ConfigMap / Secret</span></span>
+<span class="line"><span>│   └── 健康检查和自动恢复</span></span>
+<span class="line"><span>├── 容器执行环境</span></span>
+<span class="line"><span>│   ├── containerd</span></span>
+<span class="line"><span>│   ├── CRI-O</span></span>
+<span class="line"><span>│   └── Docker</span></span>
+<span class="line"><span>├── 网络插件</span></span>
+<span class="line"><span>│   ├── CNI 标准</span></span>
+<span class="line"><span>│   ├── Calico / Flannel / Cilium</span></span>
+<span class="line"><span>│   └── 网络策略</span></span>
+<span class="line"><span>└── 存储和有状态应用</span></span>
+<span class="line"><span>    ├── PV / PVC</span></span>
+<span class="line"><span>    ├── StorageClass</span></span>
+<span class="line"><span>    └── StatefulSet</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>CI/CD 集成</span></span>
+<span class="line"><span>├── GitHub Actions</span></span>
+<span class="line"><span>│   ├── 镜像构建和推送</span></span>
+<span class="line"><span>│   ├── 安全扫描</span></span>
+<span class="line"><span>│   └── 自动化测试</span></span>
+<span class="line"><span>├── GitLab CI</span></span>
+<span class="line"><span>├── Jenkins Docker 集成</span></span>
+<span class="line"><span>└── Drone</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>生态工具</span></span>
+<span class="line"><span>├── Buildx（多架构构建）</span></span>
+<span class="line"><span>├── Skopeo（镜像管理）</span></span>
+<span class="line"><span>├── Podman（替代方案）</span></span>
+<span class="line"><span>└── Buildah（镜像构建）</span></span></code></pre>
+<p><strong>学习资源：</strong></p>
+<ul>
+<li>本书第 12-21 章：深入篇和实战篇</li>
+<li><a href="https://kubernetes.io/docs/">Kubernetes 官方文档</a></li>
+<li><a href="https://landscape.cncf.io/">CNCF 学习路线</a></li>
+</ul>
+<p><strong>时间投入：</strong></p>
+<ul>
+<li>理论学习：15-20 小时</li>
+<li>实操练习：60-80 小时（多个生产级项目）</li>
+<li>总计：6-12 周</li>
+</ul>
+<p><strong>项目实战：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>项目 1: 安全镜像构建流程</span></span>
+<span class="line"><span>- 集成 Trivy 扫描</span></span>
+<span class="line"><span>- 镜像签名和验证</span></span>
+<span class="line"><span>- 生成 SBOM 文档</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>项目 2: 完整监控栈</span></span>
+<span class="line"><span>- 搭建 Prometheus + Grafana</span></span>
+<span class="line"><span>- 配置告警规则</span></span>
+<span class="line"><span>- 性能数据采集和分析</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>项目 3: CI/CD 流程</span></span>
+<span class="line"><span>- GitHub Actions 或 GitLab CI 配置</span></span>
+<span class="line"><span>- 自动化镜像构建</span></span>
+<span class="line"><span>- 安全扫描和合规检查</span></span>
+<span class="line"><span>- 自动化部署到 Kubernetes</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>项目 4: Kubernetes 集群部署</span></span>
+<span class="line"><span>- 本地 K3s/Kind 集群</span></span>
+<span class="line"><span>- 部署有状态应用</span></span>
+<span class="line"><span>- 配置持久化存储</span></span></code></pre>
+<h4 id="第四阶段专家深造12-周">第四阶段：专家深造（12+ 周）</h4>
+<p><strong>学习目标：</strong></p>
+<ul>
+<li>掌握 Kubernetes 高级特性</li>
+<li>理解容器运行时底层实现</li>
+<li>能够设计和优化大规模容器平台</li>
+<li>贡献开源社区</li>
+</ul>
+<p><strong>核心内容：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Kubernetes 高级特性</span></span>
+<span class="line"><span>├── 集群管理</span></span>
+<span class="line"><span>│   ├── 节点管理和驱逐</span></span>
+<span class="line"><span>│   ├── 集群自动扩缩容</span></span>
+<span class="line"><span>│   └── 节点亲和性和污点容忍</span></span>
+<span class="line"><span>├── 存储编排</span></span>
+<span class="line"><span>│   ├── 动态存储配置</span></span>
+<span class="line"><span>│   ├── 有状态应用管理（StatefulSet）</span></span>
+<span class="line"><span>│   └── 备份和灾难恢复</span></span>
+<span class="line"><span>├── 服务网格（Service Mesh）</span></span>
+<span class="line"><span>│   ├── Istio / Linkerd / Cilium</span></span>
+<span class="line"><span>│   ├── 流量管理</span></span>
+<span class="line"><span>│   └── 可观测性增强</span></span>
+<span class="line"><span>├── 安全和多租户</span></span>
+<span class="line"><span>│   ├── RBAC（角色访问控制）</span></span>
+<span class="line"><span>│   ├── Network Policy 深入</span></span>
+<span class="line"><span>│   ├── Pod Security Policy</span></span>
+<span class="line"><span>│   └── 准入控制器（Admission Controller）</span></span>
+<span class="line"><span>└── 性能和扩展性</span></span>
+<span class="line"><span>    ├── 大规模集群优化</span></span>
+<span class="line"><span>    ├── 自定义 Operator</span></span>
+<span class="line"><span>    └── 集群联邦</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>容器运行时底层</span></span>
+<span class="line"><span>├── Linux 内核机制</span></span>
+<span class="line"><span>│   ├── Namespace 详解</span></span>
+<span class="line"><span>│   ├── Cgroup v1 和 v2</span></span>
+<span class="line"><span>│   ├── OverlayFS 和 UnionFS</span></span>
+<span class="line"><span>│   └── SELinux 和 AppArmor</span></span>
+<span class="line"><span>├── 容器运行时</span></span>
+<span class="line"><span>│   ├── containerd 源码阅读</span></span>
+<span class="line"><span>│   ├── runc 实现</span></span>
+<span class="line"><span>│   ├── gVisor 和 Kata</span></span>
+<span class="line"><span>│   └── Firecracker</span></span>
+<span class="line"><span>└── OCI 标准</span></span>
+<span class="line"><span>    ├── Image Spec</span></span>
+<span class="line"><span>    └── Runtime Spec</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>DevOps 工程化</span></span>
+<span class="line"><span>├── 大规模集群管理</span></span>
+<span class="line"><span>│   ├── Helm / Kustomize</span></span>
+<span class="line"><span>│   ├── GitOps（Flux / ArgoCD）</span></span>
+<span class="line"><span>│   └── 配置管理</span></span>
+<span class="line"><span>├── 灾难恢复和高可用</span></span>
+<span class="line"><span>│   ├── 多集群部署</span></span>
+<span class="line"><span>│   ├── 故障转移</span></span>
+<span class="line"><span>│   └── 备份策略</span></span>
+<span class="line"><span>├── 成本优化</span></span>
+<span class="line"><span>│   ├── 资源申请和限制</span></span>
+<span class="line"><span>│   ├── 自动扩缩容</span></span>
+<span class="line"><span>│   └── 成本监控</span></span>
+<span class="line"><span>└── 团队协作</span></span>
+<span class="line"><span>    ├── GitFlow 工作流</span></span>
+<span class="line"><span>    ├── 代码审查</span></span>
+<span class="line"><span>    └── 文档和最佳实践传播</span></span></code></pre>
+<p><strong>贡献机会：</strong></p>
+<ul>
+<li><a href="https://github.com/kubernetes/kubernetes">Kubernetes</a></li>
+<li><a href="https://github.com/cilium/cilium">Cilium</a></li>
+<li><a href="https://github.com/prometheus/prometheus">Prometheus</a></li>
+<li><a href="https://github.com/moby/moby">Docker/Moby</a></li>
+</ul>
+<h3 id="知识点依赖关系">知识点依赖关系</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>基础概念 (Week 0-2)</span></span>
+<span class="line"><span>├── 容器 vs 虚拟机</span></span>
+<span class="line"><span>├── Docker 三大概念</span></span>
+<span class="line"><span>└── 基础命令</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>Dockerfile 和镜像构建 (Week 2-4)</span></span>
+<span class="line"><span>├── Dockerfile 指令</span></span>
+<span class="line"><span>├── 多阶段构建</span></span>
+<span class="line"><span>└── 镜像优化</span></span>
+<span class="line"><span>    ↓ ↓ ↓</span></span>
+<span class="line"><span>数据管理 ← 网络配置 ← Docker Compose (Week 4-6)</span></span>
+<span class="line"><span>├── Volume    ├── Bridge    ├── YAML 编写</span></span>
+<span class="line"><span>├── Bind Mount├── Overlay   ├── 多容器编排</span></span>
+<span class="line"><span>└── tmpfs     └── 自定义网络└── 开发工作流</span></span>
+<span class="line"><span>    ↓            ↓            ↓</span></span>
+<span class="line"><span>    └─────────────────────────┘</span></span>
+<span class="line"><span>          实战项目开发 (Week 6-10)</span></span>
+<span class="line"><span>          ├── Web 应用容器化</span></span>
+<span class="line"><span>          ├── 数据库容器化</span></span>
+<span class="line"><span>          ├── 微服务架构</span></span>
+<span class="line"><span>          └── 本地开发环境</span></span>
+<span class="line"><span>              ↓</span></span>
+<span class="line"><span>容器安全 ← 性能优化 ← 监控和日志 (Week 10-14)</span></span>
+<span class="line"><span>├── 镜像扫描  ├── 大小优化  ├── Prometheus</span></span>
+<span class="line"><span>├── 漏洞管理  ├── 内存优化  ├── Grafana</span></span>
+<span class="line"><span>├── 镜像签名  ├── CPU 优化  └── ELK Stack</span></span>
+<span class="line"><span>└── SBOM    └── 诊断工具</span></span>
+<span class="line"><span>    ↓          ↓          ↓</span></span>
+<span class="line"><span>    └─────────────────────┘</span></span>
+<span class="line"><span>          安全生产环境 (Week 14-18)</span></span>
+<span class="line"><span>          ├── CI/CD 流程</span></span>
+<span class="line"><span>          ├── 镜像仓库</span></span>
+<span class="line"><span>          ├── 日志集中</span></span>
+<span class="line"><span>          └── 告警系统</span></span>
+<span class="line"><span>              ↓</span></span>
+<span class="line"><span>Kubernetes 基础 (Week 18-24)</span></span>
+<span class="line"><span>├── Pod / Service / Deployment</span></span>
+<span class="line"><span>├── 资源管理</span></span>
+<span class="line"><span>├── 存储管理</span></span>
+<span class="line"><span>└── 网络策略</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>Kubernetes 进阶 (Week 24-36)</span></span>
+<span class="line"><span>├── StatefulSet / DaemonSet</span></span>
+<span class="line"><span>├── Operator 开发</span></span>
+<span class="line"><span>├── 集群管理</span></span>
+<span class="line"><span>└── 服务网格</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>企业级平台设计 (Week 36+)</span></span>
+<span class="line"><span>├── 多集群管理</span></span>
+<span class="line"><span>├── GitOps 工作流</span></span>
+<span class="line"><span>├── 成本优化</span></span>
+<span class="line"><span>└── 开源贡献</span></span></code></pre>
+<h3 id="推荐学习资源">推荐学习资源</h3>
+<h4 id="官方文档">官方文档</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>资源</th><th>URL</th><th>推荐程度</th></tr></thead><tbody><tr><td>Docker 官方文档</td><td><a href="https://docs.docker.com">docs.docker.com</a></td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>Docker Hub</td><td><a href="https://hub.docker.com">hub.docker.com</a></td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>Kubernetes 官方</td><td><a href="https://kubernetes.io/docs">kubernetes.io/docs</a></td><td>⭐⭐⭐⭐⭐</td></tr><tr><td>CNCF 景观</td><td><a href="https://landscape.cncf.io">landscape.cncf.io</a></td><td>⭐⭐⭐⭐</td></tr></tbody></table>
+<h4 id="在线课程">在线课程</h4>
+<ul>
+<li><strong>Udemy</strong>：Docker 和 Kubernetes 完整课程（70-100 小时）</li>
+<li><strong>Linux Academy</strong>：Linux 和容器管理</li>
+<li><strong>A Cloud Guru</strong>：AWS/Azure 容器服务</li>
+<li><strong>Pluralsight</strong>：Docker 和容器生态系统</li>
+</ul>
+<h4 id="书籍推荐">书籍推荐</h4>
+<ul>
+<li>《Docker 深入浅出》- 本书的原版</li>
+<li>《Kubernetes 权威指南》- 深入 Kubernetes 的必读书</li>
+<li>《容器技术核心技术与应用》- 理解底层实现</li>
+<li>《SRE Google 运维之道》- 生产环境最佳实践</li>
+</ul>
+<h4 id="博客和社区">博客和社区</h4>
+<ul>
+<li><a href="https://www.docker.com/blog/">Docker 官方博客</a></li>
+<li><a href="https://kubernetes.io/blog/">Kubernetes 官方博客</a></li>
+<li><a href="https://www.cncf.io/blog/">CNCF 博客</a></li>
+<li><a href="https://dzone.com/cloud-architecture">DZone Cloud Architecture</a></li>
+</ul>
+<h3 id="认证指南">认证指南</h3>
+<h4 id="docker-认证">Docker 认证</h4>
+<p><strong>Docker Certified Associate (DCA)</strong></p>
+<p>考试信息：</p>
+<ul>
+<li>题目数：55 道</li>
+<li>时间限制：90 分钟</li>
+<li>及格分数：73%（约 41 道题）</li>
+<li>费用：$199 USD</li>
+<li>有效期：2 年</li>
+</ul>
+<p>考试内容比例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>镜像和仓库（20%）</span></span>
+<span class="line"><span>- 镜像构建和管理</span></span>
+<span class="line"><span>- 镜像层和缓存</span></span>
+<span class="line"><span>- 私有仓库配置</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>容器运行（15%）</span></span>
+<span class="line"><span>- 容器生命周期</span></span>
+<span class="line"><span>- 资源限制</span></span>
+<span class="line"><span>- 容器隔离</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>网络（15%）</span></span>
+<span class="line"><span>- 网络驱动</span></span>
+<span class="line"><span>- 容器通信</span></span>
+<span class="line"><span>- 端口映射</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>存储（10%）</span></span>
+<span class="line"><span>- Volume 管理</span></span>
+<span class="line"><span>- 数据持久化</span></span>
+<span class="line"><span>- 绑定挂载</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>编排（20%）</span></span>
+<span class="line"><span>- Docker Compose</span></span>
+<span class="line"><span>- Docker Swarm 基础</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>安全（15%）</span></span>
+<span class="line"><span>- 用户和权限</span></span>
+<span class="line"><span>- 密钥管理</span></span>
+<span class="line"><span>- 镜像安全</span></span>
+<span class="line"><span>- 守护进程安全</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>和日志（5%）</span></span>
+<span class="line"><span>- Logging drivers</span></span>
+<span class="line"><span>- 事件处理</span></span></code></pre>
+<p>准备建议：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 1. 学习本书第 1-11 章（基础到中级）</span></span>
+<span class="line"><span style="color:#6A737D"># 2. 完成 20+ 个实战项目</span></span>
+<span class="line"><span style="color:#6A737D"># 3. 参考官方学习指南</span></span>
+<span class="line"><span style="color:#6A737D"># 参考 Docker 官方学习入口：https://www.docker.com/resources/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 4. 模拟考试</span></span>
+<span class="line"><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> Linux</span><span style="color:#9ECBFF"> Academy</span><span style="color:#9ECBFF"> DCA</span><span style="color:#9ECBFF"> 练习题</span></span>
+<span class="line"><span style="color:#B392F0">-</span><span style="color:#9ECBFF"> Whizlabs</span><span style="color:#9ECBFF"> DCA</span><span style="color:#9ECBFF"> 模拟考试</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 5. 重点掌握的命令</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> build</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> tag</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> logs</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> inspect</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> ps</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> volume</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> network</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> service</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> down</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> logs</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> ps</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> stats</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> events</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> inspect</span></span></code></pre>
+<h4 id="kubernetes-认证">Kubernetes 认证</h4>
+<p><strong>认证路径：</strong></p>
+<ol>
+<li>
+<p><strong>CKA - Certified Kubernetes Administrator</strong></p>
+<ul>
+<li>难度：高</li>
+<li>时间：3 小时（实操）</li>
+<li>费用：$395</li>
+<li>内容：集群安装、管理、故障排查</li>
+</ul>
+</li>
+<li>
+<p><strong>CKAD - Certified Kubernetes Application Developer</strong></p>
+<ul>
+<li>难度：中</li>
+<li>时间：2 小时（实操）</li>
+<li>费用：$395</li>
+<li>内容：应用开发和部署</li>
+</ul>
+</li>
+<li>
+<p><strong>CKS - Certified Kubernetes Security Specialist</strong></p>
+<ul>
+<li>难度：很高</li>
+<li>时间：2 小时（实操）</li>
+<li>费用：$395</li>
+<li>内容：安全最佳实践</li>
+</ul>
+</li>
+</ol>
+<h3 id="常见面试题与答案要点">常见面试题与答案要点</h3>
+<h4 id="基础概念面试题">基础概念面试题</h4>
+<p><strong>Q1: Docker 容器和虚拟机有什么区别？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>虚拟机：</span></span>
+<span class="line"><span>- 完整的操作系统环境（GB 级）</span></span>
+<span class="line"><span>- 启动时间：分钟级</span></span>
+<span class="line"><span>- 隔离级别：完全硬件隔离</span></span>
+<span class="line"><span>- 性能开销：高（5-20%）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>容器：</span></span>
+<span class="line"><span>- 共享内核，包含应用和依赖（MB 级）</span></span>
+<span class="line"><span>- 启动时间：秒级</span></span>
+<span class="line"><span>- 隔离级别：进程级隔离（Namespace/Cgroup）</span></span>
+<span class="line"><span>- 性能开销：低（1-5%）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>总结：容器更轻量、更快、密度更高</span></span></code></pre>
+<p><strong>Q2: 什么是 Docker 镜像？它如何存储的？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>镜像本质：</span></span>
+<span class="line"><span>- 只读的文件系统快照</span></span>
+<span class="line"><span>- 分层存储结构</span></span>
+<span class="line"><span>- 每一层是前一层的增量</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>存储方式：</span></span>
+<span class="line"><span>- Union FS：多个只读层 + 一个可写层</span></span>
+<span class="line"><span>- 每个 RUN/COPY/ADD 指令创建一层</span></span>
+<span class="line"><span>- 层之间通过 diff 增量存储，节省空间</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>优点：</span></span>
+<span class="line"><span>- 共享基础层减少存储</span></span>
+<span class="line"><span>- 层级缓存加快构建</span></span>
+<span class="line"><span>- 支持高效分发</span></span></code></pre>
+<p><strong>Q3: 容器如何实现隔离？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>技术手段：</span></span>
+<span class="line"><span>1. Namespace（资源隔离）：</span></span>
+<span class="line"><span>   - PID Namespace：进程隔离</span></span>
+<span class="line"><span>   - Network Namespace：网络隔离</span></span>
+<span class="line"><span>   - Mount Namespace：文件系统隔离</span></span>
+<span class="line"><span>   - UTS Namespace：主机名隔离</span></span>
+<span class="line"><span>   - IPC Namespace：进程间通信隔离</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. Cgroup（资源限制）：</span></span>
+<span class="line"><span>   - 限制 CPU 使用</span></span>
+<span class="line"><span>   - 限制内存使用</span></span>
+<span class="line"><span>   - 限制磁盘 I/O</span></span>
+<span class="line"><span>   - 限制网络带宽</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. Linux 能力机制（权限控制）：</span></span>
+<span class="line"><span>   - 削减不必要的 root 权限</span></span>
+<span class="line"><span>   - 限制容器能力</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. SELinux / AppArmor（强制访问控制）</span></span></code></pre>
+<h4 id="dockerfile-面试题">Dockerfile 面试题</h4>
+<p><strong>Q4: 如何优化 Docker 镜像大小？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>1. 选择合适的基础镜像：</span></span>
+<span class="line"><span>   scratch &#x3C; alpine:3.21 &#x3C; python:3.14-slim &#x3C; python:3.14</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 多阶段构建：</span></span>
+<span class="line"><span>   - 构建阶段只保留编译工具</span></span>
+<span class="line"><span>   - 运行阶段只包含最终二进制</span></span>
+<span class="line"><span>   - 典型场景：Go、Node.js、Java</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 清理包管理器缓存：</span></span>
+<span class="line"><span>   apt-get clean &#x26;&#x26; rm -rf /var/lib/apt/lists/*</span></span>
+<span class="line"><span>   yum clean all &#x26;&#x26; rm -rf /var/cache/yum</span></span>
+<span class="line"><span>   pip install --no-cache-dir</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 合并 RUN 指令：</span></span>
+<span class="line"><span>   减少镜像层数</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>5. 使用 .dockerignore：</span></span>
+<span class="line"><span>   排除不必要的构建上下文</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>6. 去除调试符号：</span></span>
+<span class="line"><span>   Go: -ldflags="-w -s"</span></span>
+<span class="line"><span>   C/C++: strip binary</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>7. 压缩资源：</span></span>
+<span class="line"><span>   gzip 静态文件，压缩图片</span></span></code></pre>
+<p><strong>Q5: CMD 和 ENTRYPOINT 有什么区别？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>CMD：</span></span>
+<span class="line"><span>- 定义容器默认命令</span></span>
+<span class="line"><span>- 容器运行时可被覆盖：docker run image_name custom_cmd</span></span>
+<span class="line"><span>- 可以有多个 CMD，只有最后一个生效</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ENTRYPOINT：</span></span>
+<span class="line"><span>- 定义容器的可执行程序</span></span>
+<span class="line"><span>- 容器运行时参数追加而非覆盖</span></span>
+<span class="line"><span>- 与 CMD 配合使用</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>推荐用法：</span></span>
+<span class="line"><span>ENTRYPOINT ["python", "app.py"]</span></span>
+<span class="line"><span>CMD ["--port", "8000"]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 运行 docker run image --debug 会执行：</span></span>
+<span class="line"><span># python app.py --debug</span></span></code></pre>
+<h4 id="网络和存储面试题">网络和存储面试题</h4>
+<p><strong>Q6: Docker 网络驱动的区别？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Bridge（默认）：</span></span>
+<span class="line"><span>- 虚拟网桥，容器间通过网桥通信</span></span>
+<span class="line"><span>- 支持端口映射</span></span>
+<span class="line"><span>- 隔离性好，性能适中</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Host：</span></span>
+<span class="line"><span>- 使用宿主机网络栈</span></span>
+<span class="line"><span>- 性能最优，隔离性最差</span></span>
+<span class="line"><span>- 容器端口直接映射到宿主机</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Overlay：</span></span>
+<span class="line"><span>- 跨主机通信，基于 VXLAN</span></span>
+<span class="line"><span>- Docker overlay 网络默认使用 UDP 4789 传输数据</span></span>
+<span class="line"><span>- Swarm 标准；Kubernetes 通常由 CNI 插件实现跨主机网络</span></span>
+<span class="line"><span>- 性能略低，支持分布式</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>macvlan：</span></span>
+<span class="line"><span>- 容器获得 MAC 地址</span></span>
+<span class="line"><span>- 表现为物理机，性能好</span></span>
+<span class="line"><span>- 用于物理网络集成</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>None：</span></span>
+<span class="line"><span>- 无网络，完全隔离</span></span></code></pre>
+<p><strong>Q7: Volume 和 Bind Mount 有什么区别？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Volume：</span></span>
+<span class="line"><span>- Docker 管理，存储位置：/var/lib/docker/volumes/</span></span>
+<span class="line"><span>- 跨平台兼容，隔离性好</span></span>
+<span class="line"><span>- 支持驱动，可扩展</span></span>
+<span class="line"><span>- 推荐在生产环境使用</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Bind Mount：</span></span>
+<span class="line"><span>- 宿主机管理，任意位置</span></span>
+<span class="line"><span>- 跨平台兼容性一般</span></span>
+<span class="line"><span>- 性能好，用于开发环境</span></span>
+<span class="line"><span>- 权限管理复杂</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>tmpfs：</span></span>
+<span class="line"><span>- 内存文件系统，不持久化</span></span>
+<span class="line"><span>- 用于临时文件、敏感数据</span></span>
+<span class="line"><span>- 性能最好，重启丢失</span></span></code></pre>
+<h4 id="安全和生产面试题">安全和生产面试题</h4>
+<p><strong>Q8: 如何提高 Docker 安全性？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>镜像安全：</span></span>
+<span class="line"><span>- 使用官方镜像或可信镜像源</span></span>
+<span class="line"><span>- 定期扫描漏洞（Trivy/Grype）</span></span>
+<span class="line"><span>- 镜像签名验证（Cosign）</span></span>
+<span class="line"><span>- 生成和管理 SBOM</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>容器运行：</span></span>
+<span class="line"><span>- 以非 root 用户运行</span></span>
+<span class="line"><span>- 使用 read-only 文件系统</span></span>
+<span class="line"><span>- 限制 Linux 能力</span></span>
+<span class="line"><span>- 使用 AppArmor 或 SELinux</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>宿主机安全：</span></span>
+<span class="line"><span>- 启用 TLS 认证 API</span></span>
+<span class="line"><span>- 不暴露 /var/run/docker.sock</span></span>
+<span class="line"><span>- 使用 Rootless 容器</span></span>
+<span class="line"><span>- 定期更新 Docker</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>网络安全：</span></span>
+<span class="line"><span>- 使用自定义网络隔离</span></span>
+<span class="line"><span>- 配置网络策略</span></span>
+<span class="line"><span>- 限制出入站流量</span></span></code></pre>
+<p><strong>Q9: 容器被 OOM 杀死，如何诊断和解决？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>诊断：</span></span>
+<span class="line"><span>1. 检查容器是否被 OOM 杀死：</span></span>
+<span class="line"><span>   docker inspect &#x3C;container> | grep OOMKilled</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 查看宿主机日志：</span></span>
+<span class="line"><span>   dmesg | grep -i oom</span></span>
+<span class="line"><span>   journalctl -u docker | grep -i oom</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 监控内存使用：</span></span>
+<span class="line"><span>   docker stats &#x3C;container></span></span>
+<span class="line"><span>   docker exec &#x3C;container> ps aux --sort=-%mem</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>解决：</span></span>
+<span class="line"><span>1. 增加内存限制：</span></span>
+<span class="line"><span>   docker update -m 2g &#x3C;container></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. 检查内存泄漏：</span></span>
+<span class="line"><span>   使用内存分析工具（heapdump、pprof）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 优化应用：</span></span>
+<span class="line"><span>   - 增加垃圾回收频率</span></span>
+<span class="line"><span>   - 减少缓存大小</span></span>
+<span class="line"><span>   - 使用对象池模式</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. 使用内存交换（最后手段）：</span></span>
+<span class="line"><span>   docker run -m 512m --memory-swap 1g</span></span></code></pre>
+<p><strong>Q10: 如何在 CI/CD 中集成 Docker？</strong></p>
+<p>A（要点）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>构建阶段：</span></span>
+<span class="line"><span>- 触发器：Push / PR 事件</span></span>
+<span class="line"><span>- 构建镜像：docker build</span></span>
+<span class="line"><span>- 标记：git sha、版本号</span></span>
+<span class="line"><span>- 扫描：Trivy 漏洞扫描</span></span>
+<span class="line"><span>- 签名：Cosign 镜像签名</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>存储阶段：</span></span>
+<span class="line"><span>- 推送到镜像仓库：docker push</span></span>
+<span class="line"><span>- 记录 SBOM 和扫描报告</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>部署阶段：</span></span>
+<span class="line"><span>- 验证镜像签名</span></span>
+<span class="line"><span>- 获取镜像摘要</span></span>
+<span class="line"><span>- 更新部署配置</span></span>
+<span class="line"><span>- 触发 GitOps 工作流</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>监控阶段：</span></span>
+<span class="line"><span>- 收集应用日志</span></span>
+<span class="line"><span>- 监控性能指标</span></span>
+<span class="line"><span>- 告警异常情况</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>示例工作流：</span></span>
+<span class="line"><span>1. GitHub Actions / GitLab CI 监听 push</span></span>
+<span class="line"><span>2. 运行单元测试</span></span>
+<span class="line"><span>3. 构建 Docker 镜像</span></span>
+<span class="line"><span>4. 推送到 Docker Hub / ECR</span></span>
+<span class="line"><span>5. 触发 ArgoCD / Flux 自动部署</span></span>
+<span class="line"><span>6. 监控部署状态</span></span></code></pre>
+<h3 id="学习进度跟踪模板">学习进度跟踪模板</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Docker 学习进度跟踪</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 第一阶段：基础入门（目标：2 周）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 学完第 1-3 章（6 小时）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 完成基础命令练习（10 小时）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 运行官方镜像</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 创建和推送第一个镜像到 Docker Hub</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 完成度：___%</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 第二阶段：核心开发（目标：4-6 周）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 学完第 4-11 章（15 小时）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 完成 3 个 Dockerfile 最佳实践项目</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 掌握 Docker Compose（5 个项目）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 学习数据管理和网络（8 小时）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 完成度：___%</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 第三阶段：生产优化（目标：6-12 周）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 学完第 12-21 章（25 小时）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 镜像安全扫描和签名</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 搭建完整监控栈</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 配置 CI/CD 流程</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] Kubernetes 基础（30 小时）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 完成度：___%</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 第四阶段：专家深造（目标：12+ 周）</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] Kubernetes 高级特性</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 服务网格学习</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 底层实现研究</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 贡献开源项目</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 完成度：___%</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 证书目标</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] Docker DCA 认证</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] CKA 认证</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] CKAD 认证</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## 实战项目清单</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] Python Web 应用容器化</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] Node.js 微服务</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 数据库容器化</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 完整微服务架构</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] 监控和日志系统</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> [ ] CI/CD 流程实现</span></span></code></pre>
+<h3 id="快速参考速查表">快速参考速查表</h3>
+<p><strong>常用命令速查：</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 镜像管理</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> build</span><span style="color:#79B8FF"> -t</span><span style="color:#9ECBFF"> image:tag</span><span style="color:#9ECBFF"> .</span><span style="color:#6A737D">              # 构建镜像</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> images</span><span style="color:#6A737D">                             # 列出镜像</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> rmi</span><span style="color:#9ECBFF"> image:tag</span><span style="color:#6A737D">                      # 删除镜像</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> tag</span><span style="color:#9ECBFF"> source:tag</span><span style="color:#9ECBFF"> target:tag</span><span style="color:#6A737D">          # 标记镜像</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> registry/image:tag</span><span style="color:#6A737D">            # 推送镜像</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> image:tag</span><span style="color:#6A737D">                     # 拉取镜像</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> history</span><span style="color:#9ECBFF"> image:tag</span><span style="color:#6A737D">                  # 查看镜像历史</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> inspect</span><span style="color:#9ECBFF"> image:tag</span><span style="color:#6A737D">                  # 查看镜像详情</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 容器管理</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#E1E4E8"> [OPTIONS] image                </span><span style="color:#6A737D"># 运行容器</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> ps</span><span style="color:#E1E4E8"> [-a]                            </span><span style="color:#6A737D"># 列出容器</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> stop/start/restart</span><span style="color:#9ECBFF"> container</span><span style="color:#6A737D">       # 容器生命周期</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> rm</span><span style="color:#9ECBFF"> container</span><span style="color:#6A737D">                       # 删除容器</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> logs</span><span style="color:#E1E4E8"> [-f] container                </span><span style="color:#6A737D"># 查看日志</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> exec</span><span style="color:#79B8FF"> -it</span><span style="color:#9ECBFF"> container</span><span style="color:#9ECBFF"> cmd</span><span style="color:#6A737D">             # 进入容器</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> inspect</span><span style="color:#9ECBFF"> container</span><span style="color:#6A737D">                  # 查看容器详情</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> stats</span><span style="color:#E1E4E8"> [container]                  </span><span style="color:#6A737D"># 查看资源使用</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 网络管理</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> network</span><span style="color:#9ECBFF"> ls</span><span style="color:#6A737D">                         # 列出网络</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> network</span><span style="color:#9ECBFF"> create</span><span style="color:#9ECBFF"> name</span><span style="color:#6A737D">                # 创建网络</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> network</span><span style="color:#9ECBFF"> connect/disconnect</span><span style="color:#6A737D">         # 连接/断开网络</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> network</span><span style="color:#9ECBFF"> inspect</span><span style="color:#9ECBFF"> name</span><span style="color:#6A737D">               # 查看网络详情</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 卷管理</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> volume</span><span style="color:#9ECBFF"> ls</span><span style="color:#6A737D">                          # 列出卷</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> volume</span><span style="color:#9ECBFF"> create</span><span style="color:#9ECBFF"> name</span><span style="color:#6A737D">                 # 创建卷</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> volume</span><span style="color:#9ECBFF"> rm</span><span style="color:#9ECBFF"> name</span><span style="color:#6A737D">                     # 删除卷</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> volume</span><span style="color:#9ECBFF"> inspect</span><span style="color:#9ECBFF"> name</span><span style="color:#6A737D">                # 查看卷详情</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Docker Compose</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span><span style="color:#E1E4E8"> [-d]                    </span><span style="color:#6A737D"># 启动服务</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> down</span><span style="color:#6A737D">                       # 停止服务</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> ps</span><span style="color:#6A737D">                         # 列出服务</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> logs</span><span style="color:#E1E4E8"> [-f] [service]        </span><span style="color:#6A737D"># 查看日志</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> service</span><span style="color:#9ECBFF"> cmd</span><span style="color:#6A737D">           # 在服务中执行命令</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> build</span><span style="color:#6A737D">                      # 构建服务镜像</span></span></code></pre> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">← 附录七：术语表</a></span> <span></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

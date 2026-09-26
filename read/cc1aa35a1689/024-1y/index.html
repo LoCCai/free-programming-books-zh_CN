@@ -1,0 +1,698 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<ul>
+<li>提高对 inode、file 和 dentry 的了解。</li>
+<li>了解如何在 VFS（虚拟文件系统）中添加对常规文件和目录的支持。</li>
+<li>了解文件系统的内部实现。</li>
+</ul>
+</blockquote>
+<h2 id="inode">Inode<a href="#inode" title="永久链接至标题">¶</a></h2>
+<p>inode 是 UNIX 文件系统的重要组成部分，同时也是 VFS 的重要组成部分。inode 是元数据（它包含信息的信息）。inode 是磁盘上文件的唯一标识，并保存文件的信息（uid、gid、访问权限、访问时间以及指向数据块的指针等）。重要的一点是，inode 不保存文件名信息（文件名由相关的 <code>struct dentry</code> 结构保存）。</p>
+<p>inode 用于引用磁盘上的文件。要引用打开的文件（与进程内的文件描述符相关联），需要使用 <code>struct file</code> 结构。一个 inode 可以关联任意数量的（零个或多个） <code>file</code> 结构（多个进程可以打开同一个文件，或者一个进程可以多次打开同一个文件）。</p>
+<p>inode 既存在于 VFS 中（内存中），也存在于磁盘中（对于 UNIX、HFS 以及 NTFS 等）。VFS 中的 inode 由 <code>struct inode</code> 结构表示。和 VFS 中的其他结构一样, <code>struct inode</code> 是通用结构，涵盖了所有支持的文件类型的选项，甚至包括那些没有关联磁盘实体的文件类型（比如 FAT 文件系统）。</p>
+<h3 id="inode-结构">inode 结构<a href="#inode-1" title="永久链接至标题">¶</a></h3>
+<p>inode 结构在所有文件系统中都是相同的。一般情况下，文件系统还有私有信息，这些信息通过结构的 <code>i_private</code> 字段引用。按照惯例，保存特定信息的结构被称为 <code>&#x3C;fsname>_inode_info</code>，其中 <code>fsname</code> 表示文件系统名称。例如，minix 和 ext4 文件系统将特定信息保存在 <code>struct minix_inode_info</code> 或 <code>struct ext4_inode_info</code> 结构中。</p>
+<p><code>struct inode</code> 的一些重要字段包括：</p>
+<blockquote>
+<ul>
+<li><code>i_sb</code>：inode 所属的文件系统的超级块结构。</li>
+<li><code>i_rdev</code>：挂载的文件系统所在的设备</li>
+<li><code>i_ino</code>：inode 的编号（在文件系统内唯一标识 inode）</li>
+<li><code>i_blkbits</code>：块大小使用的比特数 == log2(块大小)</li>
+<li><code>i_mode</code>, <code>i_uid</code> 以及 <code>i_gid</code>：访问权限、uid 以及 gid</li>
+<li><code>i_size</code>：文件/目录等的大小（以字节为单位）</li>
+<li><code>i_mtime</code>, <code>i_atime</code> 以及 <code>i_ctime</code>：修改、访问和创建时间</li>
+<li><code>i_nlink</code>：使用此 inode 的名称条目（dentry）的数量；对于没有链接（既没有硬链接也没有符号链接）的文件系统，这个值总是设置为 1</li>
+<li><code>i_blocks</code>：文件使用的块数（所有块，不仅仅是数据块）；这仅由配额子系统使用</li>
+<li><code>i_op</code>, <code>i_fop</code>：指向操作结构的指针：<code>struct inode_operations</code> 和 <code>struct file_operations</code>; <code>i_mapping->a_ops</code> 包含指向 <code>struct address_space_operations</code> 的指针。</li>
+<li><code>i_count</code>：inode 计数器，指示有多少内核组件在使用它。</li>
+</ul>
+</blockquote>
+<p>一些可用于处理 inode 的函数包括：</p>
+<blockquote>
+<ul>
+<li>
+<p><code>new_inode()</code>：创建新的 inode，将 <code>i_nlink</code> 字段设置为 1，并初始化 <code>i_blkbits</code>, <code>i_sb</code> 和 <code>i_dev</code>；</p>
+</li>
+<li>
+<p><code>insert_inode_hash()</code>：将 inode 添加到 inode 哈希表中；这个调用的一个有趣的效果是，如果 inode 被标记为脏，它将被写入磁盘；</p>
+<p>警告</p>
+<p>使用 <code>new_inode()</code> 创建的 inode 不在哈希表中，除非你有充分的理由，否则你必须将其加入哈希表；</p>
+</li>
+<li>
+<p><code>mark_inode_dirty()</code>：将 inode 标记为脏；稍后它将被写入磁盘；</p>
+</li>
+<li>
+<p><code>iget_locked()</code>：从磁盘加载具有给定编号的 inode，如果它尚未加载。</p>
+</li>
+<li>
+<p><code>unlock_new_inode()</code>：与 <code>iget_locked()</code> 一起使用，释放对 inode 的锁定；</p>
+</li>
+<li>
+<p><code>iput()</code>：告诉内核对 inode 的操作已经完成；如果没有其他进程在使用它，它将被销毁（如果被标记为脏，那么写入磁盘后再销毁）；</p>
+</li>
+<li>
+<p><code>make_bad_inode()</code>：告诉内核该 inode 无法使用；通常在从磁盘读取 inode 时发现无法读取的情况下使用，表示该 inode 无效。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="inode-操作">Inode 操作<a href="#inode-2" title="永久链接至标题">¶</a></h3>
+<h4 id="获取-inode">获取 inode<a href="#inode-3" title="永久链接至标题">¶</a></h4>
+<p>获取 inode（在 VFS 中的 <code>struct inode</code>）是主要的 inode 操作之一。在 Linux 内核版本 <code>2.6.24</code> 之前，开发者定义了 <code>read_inode</code> 函数。从版本 <code>2.6.25</code> 开始，开发者必须定义 <code>&#x3C;fsname>_iget</code> 函数，其中 <code>&#x3C;fsname></code> 是文件系统的名称。这个函数负责查找 VFS 中的 inode，如果存在则获取该 inode，否则创建一个新的 inode，并用磁盘中的信息填充它。</p>
+<p>一般情况下，这个函数会调用 <code>iget_locked()</code> 从 VFS 中获取 inode 结构。如果 inode 是新创建的，则需要从磁盘中读取 inode（使用 <code>sb_bread()</code>），并填充有用的信息。</p>
+<p>一个示例函数是 <code>minix_iget()</code>：</p>
+<p>static struct inode *V1_minix_iget(struct inode *inode)
+{
+struct buffer_head * bh;
+struct minix_inode * raw_inode;
+struct minix_inode_info *minix_inode = minix_i(inode);
+int i;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  raw\_inode \= minix\_V1\_raw\_inode(inode\->i\_sb, inode\->i\_ino, &#x26;bh);</span></span>
+<span class="line"><span>  if (!raw\_inode) {</span></span>
+<span class="line"><span>          iget\_failed(inode);</span></span>
+<span class="line"><span>          return ERR\_PTR(\-EIO);</span></span>
+<span class="line"><span>  ...</span></span></code></pre>
+<p>}</p>
+<p>struct inode *minix_iget(struct super_block *sb, unsigned long ino)
+{
+struct inode *inode;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  inode \= iget\_locked(sb, ino);</span></span>
+<span class="line"><span>  if (!inode)</span></span>
+<span class="line"><span>          return ERR\_PTR(\-ENOMEM);</span></span>
+<span class="line"><span>  if (!(inode\->i\_state &#x26; I\_NEW))</span></span>
+<span class="line"><span>          return inode;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (INODE\_VERSION(inode) \== MINIX\_V1)</span></span>
+<span class="line"><span>          return V1\_minix\_iget(inode);</span></span>
+<span class="line"><span>...</span></span></code></pre>
+<p>}</p>
+<p>minix_iget 函数使用 <code>iget_locked()</code> 函数获取 VFS inode。如果该 inode 已经存在（非新建，即 <code>I_NEW</code> 标志未设置），则函数返回。否则，函数调用 <code>V1_minix_iget()</code> 函数，该函数将使用 <code>minix_V1_raw_inode()</code> 从磁盘读取 inode，然后使用读取的信息完成 VFS inode 的初始化。</p>
+<h4 id="超级块操作">超级块操作<a href="#section-2" title="永久链接至标题">¶</a></h4>
+<p>许多超级块使用的超级块操作（<code>struct super_operations</code> 结构的组成部分）在处理 inode 时使用。下面描述了这些操作：</p>
+<blockquote>
+<ul>
+<li><code>alloc_inode</code>: 分配 inode。通常，此函数会分配一个 <code>struct &#x3C;fsname>_inode_info</code> 结构，并执行基本的 VFS inode 初始化（使用 <code>inode_init_once()</code>）；minix 使用 <code>kmem_cache_alloc()</code> 函数进行分配，该函数与 SLAB 子系统交互。对于每个分配，都会调用缓存构造函数，在 minix 的情况下是 <code>init_once()</code> 函数。或者，也可以使用 <code>kmalloc()</code>，在这种情况下，应调用 <code>inode_init_once()</code> 函数。<code>alloc_inode()</code> 函数将由 <code>new_inode()</code> 和 <code>iget_locked()</code> 函数调用。</li>
+<li><code>write_inode</code>：将作为参数接收的 inode 保存/更新到磁盘；要更新 inode，尽管效率不高，但对于初学者来说，建议使用以下操作：
+<ul>
+<li>使用 <code>sb_bread()</code> 函数从磁盘加载 inode；</li>
+<li>根据保存的 inode 修改缓冲区；</li>
+<li>使用 <code>mark_buffer_dirty()</code> 将缓冲区标记为脏；内核将处理其在磁盘上的写入；</li>
+<li>一个示例是 <code>minix</code> 文件系统中的 <code>minix_write_inode()</code> 函数。</li>
+</ul>
+</li>
+<li><code>evict_inode</code>：从磁盘和内存中移除通过 <code>i_ino</code> 字段接收的 inode 的任何信息（包括磁盘上的 inode 和相关的数据块）。这涉及执行以下操作：
+<ul>
+<li>从磁盘中删除 inode；</li>
+<li>更新磁盘位图（如果有）；</li>
+<li>通过调用 <code>truncate_inode_pages()</code> 从 page cache 中删除 inode；</li>
+<li>通过调用 <code>clear_inode()</code> 从内存中删除 inode；</li>
+<li>一个示例是 minix 文件系统中的 <code>minix_evict_inode()</code> 函数。</li>
+</ul>
+</li>
+<li><code>destroy_inode</code> 释放 inode 占用的内存</li>
+</ul>
+</blockquote>
+<h4 id="inode_operations">inode_operations<a href="#inode-operations" title="永久链接至标题">¶</a></h4>
+<p>索引节点操作由 <code>struct inode_operations</code> 结构描述。</p>
+<p>索引节点分为多种类型：文件、目录、特殊文件（管道、FIFO）、块设备、字符设备以及链接等。因此，每种类型的索引节点需要实现的操作都不同。下面详细介绍了对 <a href="#fileinodes">文件类型的索引节点</a> 和 <a href="#directoryinodes">目录类型的索引节点</a> 的操作。</p>
+<p>对索引节点的操作通过 <code>struct inode</code> 结构中的 <code>i_op</code> 字段进行初始化和访问。</p>
+<h2 id="file-结构">file 结构<a href="#file" title="永久链接至标题">¶</a></h2>
+<p><code>file</code> 结构对应于由进程打开的文件，仅存在于内存中，并与索引节点关联。它是最接近用户空间的 VFS 实体；结构字段包含用户空间文件的熟悉信息（访问模式、文件位置等），与之相关的操作由已知的系统调用 (<code>read</code>, <code>write</code> 等)执行。</p>
+<p>文件操作由 <code>struct file_operations</code> 结构描述。</p>
+<p>文件系统的文件操作使用 <code>struct inode</code> 结构中的 <code>i_fop</code> 字段进行初始化。在打开文件时，VFS 使用 <code>inode->i_fop</code> 的地址初始化 <code>struct file</code> 结构的 <code>f_op</code> 字段，因此后续的系统调用使用存储在 <code>file->f_op</code> 中的值。</p>
+<h2 id="常规文件索引节点">常规文件索引节点<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>要使用索引节点，必须填充索引节点结构的 <code>i_op</code> 和 <code>i_fop</code> 字段。索引节点的类型决定了它需要实现的操作。</p>
+<h3 id="常规文件索引节点操作">常规文件索引节点操作<a href="#section-4" title="永久链接至标题">¶</a></h3>
+<p><code>minix</code> 文件系统为索引节点操作定义了 <code>minix_file_inode_operations</code> 结构，而对于文件操作，则定义了 <code>minix_file_operations</code> 结构：</p>
+<p>const struct file_operations minix_file_operations = {
+.llseek         = generic_file_llseek,
+.read_iter      = generic_file_read_iter,
+//…
+.write_iter     = generic_file_write_iter,
+//…
+.mmap           = generic_file_mmap,
+//…
+};</p>
+<p>const struct inode_operations minix_file_inode_operations = {
+.setattr        = minix_setattr,
+.getattr        = minix_getattr,
+};</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    //...</span></span>
+<span class="line"><span>    if (S\_ISREG(inode\->i\_mode)) {</span></span>
+<span class="line"><span>            inode\->i\_op \= &#x26;minix\_file\_inode\_operations;</span></span>
+<span class="line"><span>            inode\->i\_fop \= &#x26;minix\_file\_operations;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>    //...</span></span></code></pre>
+<p>内核中实现了 <code>generic_file_llseek()</code>, <code>generic_file_mmap()</code>, <code>generic_file_read_iter()</code> 和 <code>generic_file_write_iter()</code> 函数。</p>
+<p>对于简单的文件系统，只需要实现截断操作 (<code>truncate</code> 系统调用)。尽管最初有一个专用的操作，但从 3.14 版本开始，该操作已嵌入到 <code>setattr</code> 中：如果粘贴大小与索引节点的当前大小不同，则必须执行截断操作。在 <code>minix_setattr()</code> 函数中，有实现此验证的示例：</p>
+<p>static int minix_setattr(struct dentry *dentry, struct iattr *attr)
+{
+struct inode *inode = d_inode(dentry);
+int error;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    error \= setattr\_prepare(dentry, attr);</span></span>
+<span class="line"><span>    if (error)</span></span>
+<span class="line"><span>            return error;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    if ((attr\->ia\_valid &#x26; ATTR\_SIZE) &#x26;&#x26;</span></span>
+<span class="line"><span>        attr\->ia\_size != i\_size\_read(inode)) {</span></span>
+<span class="line"><span>            error \= inode\_newsize\_ok(inode, attr\->ia\_size);</span></span>
+<span class="line"><span>            if (error)</span></span>
+<span class="line"><span>                    return error;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>            truncate\_setsize(inode, attr\->ia\_size);</span></span>
+<span class="line"><span>            minix\_truncate(inode);</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    setattr\_copy(inode, attr);</span></span>
+<span class="line"><span>    mark\_inode\_dirty(inode);</span></span>
+<span class="line"><span>    return 0;</span></span></code></pre>
+<p>}</p>
+<p>截断操作涉及以下内容：</p>
+<blockquote>
+<ul>
+<li>释放磁盘上多余的数据块（如果新尺寸小于旧尺寸），或者分配新的数据块（当新尺寸较大时）；</li>
+<li>更新磁盘位图（如果使用）；</li>
+<li>更新索引节点；</li>
+<li>使用 <code>block_truncate_page()</code> 函数，将上一个块中未使用的空间填充为零。</li>
+</ul>
+</blockquote>
+<p>在 <code>minix</code> 文件系统中，有一个实现截断操作的示例是 <code>minix_truncate()</code> 函数。</p>
+<h3 id="地址空间操作">地址空间操作<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<p>进程的地址空间与文件之间有着密切的联系：程序的执行几乎完全是通过将文件映射到进程的地址空间中进行的。由于这种方法非常有效且相当通用，因此也可以用于常规的系统调用，如 <code>read</code> 和 <code>write</code>。</p>
+<p>描述地址空间的结构是 <code>struct address_space</code>，与之相关的操作由结构 <code>struct address_space_operations</code> 描述。要初始化地址空间操作，请填充文件类型索引节点的 <code>inode->i_mapping->a_ops</code>。</p>
+<p>一个示例是 minix 文件系统中的 <code>minix_aops</code> 结构：</p>
+<p>static const struct address_space_operations minix_aops = {
+.readpage = minix_readpage,
+.writepage = minix_writepage,
+.write_begin = minix_write_begin,
+.write_end = generic_write_end,
+.bmap = minix_bmap
+};</p>
+<p>//…
+if (S_ISREG(inode->i_mode)) {
+inode->i_mapping->a_ops = &#x26;minix_aops;
+}
+//…</p>
+<p><code>generic_write_end()</code> 函数已经实现。大多数特定函数非常容易实现，如下所示：</p>
+<p>static int minix_writepage(struct page *page, struct writeback_control *wbc)
+{
+return block_write_full_page(page, minix_get_block, wbc);
+}</p>
+<p>static int minix_readpage(struct file *file, struct page *page)
+{
+return block_read_full_page(page, minix_get_block);
+}</p>
+<p>static void minix_write_failed(struct address_space *mapping, loff_t to)
+{
+struct inode *inode = mapping->host;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    if (to \> inode\->i\_size) {</span></span>
+<span class="line"><span>            truncate\_pagecache(inode, inode\->i\_size);</span></span>
+<span class="line"><span>            minix\_truncate(inode);</span></span>
+<span class="line"><span>    }</span></span></code></pre>
+<p>}</p>
+<p>static int minix_write_begin(struct file *file, struct address_space *mapping,
+loff_t pos, unsigned len, unsigned flags,
+struct page **pagep, void **fsdata)
+{
+int ret;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    ret \= block\_write\_begin(mapping, pos, len, flags, pagep,</span></span>
+<span class="line"><span>                            minix\_get\_block);</span></span>
+<span class="line"><span>    if (unlikely(ret))</span></span>
+<span class="line"><span>            minix\_write\_failed(mapping, pos + len);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return ret;</span></span></code></pre>
+<p>}</p>
+<p>static sector_t minix_bmap(struct address_space *mapping, sector_t block)
+{
+return generic_block_bmap(mapping, block, minix_get_block);
+}</p>
+<p>只需实现 <code>minix_get_block</code> 函数，该函数将文件的一个数据块转换为设备上的一个数据块。如果接收到的 <code>create</code> 标志被设置，那么必须分配一个新的数据块。在创建新的数据块时，必须相应地更新位图。为了通知内核不要从磁盘中读取该数据块，必须使用 <code>set_buffer_new()</code> 函数标记 <code>bh</code>。通过 <code>map_bh()</code> 函数，将缓冲区与数据块关联起来。</p>
+<h2 id="dentry-结构体">Dentry 结构体<a href="#dentry" title="永久链接至标题">¶</a></h2>
+<p>目录操作使用 <code>struct dentry</code> 结构体。它的主要任务是在索引节点和文件名之间建立链接。该结构体的重要字段如下所示：</p>
+<p>struct dentry {
+//…
+struct inode             *d_inode;     /* 关联的索引节点 */
+//…
+struct dentry            *d_parent;    /* 父目录的 dentry 对象 */
+struct qstr              d_name;       /* dentry 名称 */
+//…</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    struct dentry\_operations \*d\_op;        /\* dentry 操作表 \*/</span></span>
+<span class="line"><span>    struct super\_block       \*d\_sb;        /\* 文件的超级块 \*/</span></span>
+<span class="line"><span>    void                     \*d\_fsdata;    /\* 文件系统特定的数据 \*/</span></span>
+<span class="line"><span>    //...</span></span></code></pre>
+<p>};</p>
+<p>字段含义：</p>
+<blockquote>
+<ul>
+<li><code>d_inode</code>：由该 dentry 引用的索引节点；</li>
+<li><code>d_parent</code>：与父目录相关联的 dentry；</li>
+<li><code>d_name</code>：<code>struct qstr</code> 结构，包含字段 <code>name</code> 和 <a href="#system-message-1">“</a>len“（名称和名称的长度）。</li>
+<li><code>d_op</code>：与 dentry 相关的操作，由 <code>struct dentry_operations</code> 结构表示。内核实现了默认操作，因此无需（重新）实现它们。某些文件系统可以根据 dentry 的特定结构进行优化。</li>
+<li><code>d_fsdata</code>：保留给实现 dentry 操作的文件系统特定的字段；</li>
+</ul>
+</blockquote>
+<h3 id="dentry-操作">Dentry 操作<a href="#dentry-1" title="永久链接至标题">¶</a></h3>
+<p>应用于 dentry 的最常见操作包括：</p>
+<blockquote>
+<ul>
+<li><code>d_make_root</code>：分配根 dentry。通常在读取超级块的函数 (<code>fill_super</code>) 中使用，该函数必须初始化根目录。因此，我们从超级块获取根索引节点，并将其作为实参传递给此函数，以填充 <code>struct super_block</code> 结构的 <code>s_root</code> 字段。</li>
+<li><code>d_add</code>：将 dentry 与索引节点关联起来；在上述讨论中，作为参数传递的 dentry 表示需要创建的条目（名称、长度）。在创建/加载尚未与任何 dentry 关联并尚未添加到索引节点哈希表中的新索引节点时，将使用此函数（在 <code>lookup</code> 中）。</li>
+<li><code>d_instantiate</code>：上述调用的轻量级版本，其中 dentry 先前已添加到哈希表中。</li>
+</ul>
+</blockquote>
+<p>警告</p>
+<p><code>d_instantiate</code> 必须用于实现创建调用 (<code>mkdir</code>, <code>mknod</code>, <code>rename</code> 以及 <code>symlink</code>)，而不是 <code>d_add</code>。</p>
+<h2 id="目录索引节点操作">目录索引节点操作<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<p>目录类型的索引节点相关的操作比文件类型的索引节点操作复杂得多。开发人员必须定义索引节点的操作和文件的操作。在 <code>minix</code> 中，这些操作定义在 <code>minix_dir_inode_operations</code> 和 <code>minix_dir_operations</code> 中：</p>
+<p>struct inode_operations minix_dir_inode_operations = {
+.create = minix_create,
+.lookup = minix_lookup,
+.link = minix_link,
+.unlink = minix_unlink,
+.symlink = minix_symlink,
+.mkdir = minix_mkdir,
+.rmdir = minix_rmdir,
+.mknod = minix_mknod,
+//…
+};</p>
+<p>struct file_operations minix_dir_operations = {
+.llseek = generic_file_llseek,
+.read = generic_read_dir,
+.iterate = minix_readdir,
+//…
+};</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    //...</span></span>
+<span class="line"><span>  if (S\_ISDIR(inode\->i\_mode)) {</span></span>
+<span class="line"><span>          inode\->i\_op \= &#x26;minix\_dir\_inode\_operations;</span></span>
+<span class="line"><span>          inode\->i\_fop \= &#x26;minix\_dir\_operations;</span></span>
+<span class="line"><span>          inode\->i\_mapping\->a\_ops \= &#x26;minix\_aops;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>   //...</span></span></code></pre>
+<p>我们唯一已经实现的函数是 <code>generic_read_dir()</code>。</p>
+<p>实现目录索引节点操作的函数如下所述。</p>
+<h3 id="创建索引节点">创建索引节点<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p>索引节点创建函数由 <code>inode_operations</code> 结构体中的 <code>create</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_create()</code>。此函数由 <code>open</code> 和 <code>creat</code> 系统调用调用。该函数执行以下操作：</p>
+<blockquote>
+<ol>
+<li>在磁盘上的物理结构中引入新条目；不要忘记更新磁盘上的位图。</li>
+<li>使用传入函数的访问权限配置访问权限。</li>
+<li>使用 <code>mark_inode_dirty()</code> 函数将索引节点标记为脏。</li>
+<li>使用 <code>d_instantiate</code> 函数实例化目录条目 (<code>dentry</code>)。</li>
+</ol>
+</blockquote>
+<h3 id="创建目录">创建目录<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p>目录创建函数由 <code>inode_operations</code> 结构体中的 <code>mkdir</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_mkdir()</code>。此函数由 <code>mkdir</code> 系统调用调用。该函数执行以下操作：</p>
+<blockquote>
+<ol>
+<li>调用 <code>minix_create()</code>。</li>
+<li>为目录分配一个数据块。</li>
+<li>创建 <code>"."</code> 和 <code>".."</code> 条目。</li>
+</ol>
+</blockquote>
+<h3 id="创建链接">创建链接<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<p>链接创建函数（硬链接）由 <code>inode_operations</code> 结构体中的 <code>link</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_link()</code>。此函数由 <code>link</code> 系统调用调用。该函数执行以下操作：</p>
+<blockquote>
+<ul>
+<li>将新的 dentry 绑定到索引节点。</li>
+<li>递增索引节点的 <code>i_nlink</code> 字段。</li>
+<li>使用 <code>mark_inode_dirty()</code> 函数将索引节点标记为脏。</li>
+</ul>
+</blockquote>
+<h3 id="创建符号链接">创建符号链接<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<p>符号链接创建函数由 <code>inode_operations</code> 结构体中的 <code>symlink</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_symlink()</code>。要执行的操作与 <code>minix_link</code> 类似，区别在于创建了一个符号链接。</p>
+<h3 id="删除链接">删除链接<a href="#section-11" title="永久链接至标题">¶</a></h3>
+<p>链接删除函数（硬链接）由 <code>inode_operations</code> 结构体中的 <code>unlink</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_unlink()</code>。此函数由 <code>unlink</code> 系统调用调用。该函数执行以下操作：</p>
+<blockquote>
+<ol>
+<li>从物理磁盘结构中删除作为参数给出的 dentry</li>
+<li>将条目指向的索引节点的 <code>i_nlink</code> 计数器减一（否则该索引节点将永远不会被删除）</li>
+</ol>
+</blockquote>
+<h3 id="删除目录">删除目录<a href="#section-12" title="永久链接至标题">¶</a></h3>
+<p>目录删除函数由 <code>inode_operations</code> 结构体中的 <code>rmdir</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_rmdir()</code>。此函数由 <code>rmdir</code> 系统调用调用。该函数执行以下操作：</p>
+<blockquote>
+<ol>
+<li>执行 <code>minix_unlink</code> 完成的操作</li>
+<li>确保目录为空；否则，返回 <code>ENOTEMPTY</code></li>
+<li>还删除数据块</li>
+</ol>
+</blockquote>
+<h3 id="在目录中搜索索引节点">在目录中搜索索引节点<a href="#section-13" title="永久链接至标题">¶</a></h3>
+<p>在目录中搜索条目并提取索引节点的函数由 <code>inode_operations</code> 结构体中的 <code>lookup</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_lookup</code>。当需要有关与目录中条目关联的索引节点的信息时，会间接调用此函数。该函数执行以下操作：</p>
+<blockquote>
+<ol>
+<li>在由 <code>dir</code> 指示的目录中搜索具有名称 <code>dentry->d_name.name</code> 的条目</li>
+<li>如果找到条目，则返回 <code>NULL</code> 并使用 <code>d_add()</code> 函数将索引节点与名称关联</li>
+<li>否则，返回 <code>ERR_PTR</code></li>
+</ol>
+</blockquote>
+<h3 id="遍历目录中的条目">遍历目录中的条目<a href="#section-14" title="永久链接至标题">¶</a></h3>
+<p>在目录中遍历条目（列出目录内容）的函数由 <code>struct file_operations</code> 结构体中的 <code>iterate</code> 字段指示。在 minix 的例子中，该函数是 <code>minix_readdir</code>。此函数由 <code>readdir</code> 系统调用调用。</p>
+<p>该函数返回目录中的所有条目，或者当为其分配的缓冲区不可用时，仅返回部分条目。此函数的调用可能返回：</p>
+<blockquote>
+<ul>
+<li>如果对应的用户空间缓冲区有足够的空间，则返回与现有条目数相等的数字；</li>
+<li>小于实际条目数的数字，对应的用户空间缓冲区中有多少空间，就返回多少；</li>
+<li><code>0</code>，表示没有更多条目可读取。</li>
+</ul>
+</blockquote>
+<p>该函数将连续调用，直到读取完所有可用的条目。该函数至少会被调用两次。</p>
+<blockquote>
+<ul>
+<li>在以下情况下仅调用两次：
+<ul>
+<li>第一次调用读取所有条目并返回它们的数量；</li>
+<li>第二次调用返回 0，表示没有其他条目可读取。</li>
+</ul>
+</li>
+<li>如果第一次调用未返回总条目数，则会多次调用该函数。</li>
+</ul>
+</blockquote>
+<p>该函数执行以下操作：</p>
+<blockquote>
+<ol>
+<li>遍历当前目录中的条目（dentry）。</li>
+<li>对于找到的每个 dentry，递增 <code>ctx->pos</code>。</li>
+<li>对于每个有效的 dentry（例如，除了 <code>0</code> 之外的索引节点），调用 <code>dir_emit()</code> 函数。</li>
+<li>如果 <code>dir_emit()</code> 函数返回非零值，表示用户空间的缓冲区已满，函数将返回。</li>
+</ol>
+</blockquote>
+<p><code>dir_emit</code> 函数的参数包括：</p>
+<blockquote>
+<ul>
+<li><code>ctx</code> 是目录遍历上下文，其作为参数传递给 <code>iterate</code> 函数；</li>
+<li><code>name</code> 是条目的名称（字符串）；</li>
+<li><code>name_len</code> 是条目名称的长度；</li>
+<li><code>ino</code> 是与条目关联的索引节点号；</li>
+<li><code>type</code> 标识条目类型: <code>DT_REG``（文件）, ``DT_DIR``（目录）, ``DT_UNKNOWN</code> 等。当条目类型未知时，可以使用 <code>DT_UNKNOWN</code>。</li>
+</ul>
+</blockquote>
+<h2 id="位图操作">位图操作<a href="#section-15" title="永久链接至标题">¶</a></h2>
+<p>在处理文件系统时，管理信息（哪个块是空闲的或忙碌的，哪个索引节点是空闲的或忙碌的）使用位图存储。为此，我们经常需要使用位操作。这些操作包括：</p>
+<blockquote>
+<ul>
+<li>搜索第一个为 0 的位：表示一个空闲的块或索引节点</li>
+<li>将位标记为 1：标记忙碌的块或索引节点</li>
+</ul>
+</blockquote>
+<p>位图操作可以在 <code>include/asm-generic/bitops</code> 目录下的头文件中找到，特别是在 <code>find.h</code> 和 <code>atomic.h</code> 中。常见的函数（它们的名称指示其作用）包括：</p>
+<blockquote>
+<ul>
+<li><code>find_first_zero_bit()</code></li>
+<li><code>find_first_bit()</code></li>
+<li><code>set_bit()</code></li>
+<li><code>clear_bit()</code></li>
+<li><code>test_and_set_bit()</code></li>
+<li><code>test_and_clear_bit()</code></li>
+</ul>
+</blockquote>
+<p>这些函数通常接收位图的地址，可能还有其大小（以字节为单位），如果需要，还要指定需要激活（设置）或停用（清除）的位的索引。</p>
+<p>下面列出了一些使用示例：</p>
+<p>unsigned int map;
+unsigned char array_map[NUM_BYTES];
+size_t idx;
+int changed;</p>
+<p>/* 在 32 位整数中找到第一个为 0 的位。 */
+idx = find_first_zero_bit(&#x26;map, 32);
+printk (KERN_ALERT “第 %zu 位是第一个为 0 的位。\n”, idx);</p>
+<p>/* 在 NUM_BYTES 字节的数组中找到第一个为 1 的位。 */
+idx = find_first_bit(array_map, NUM_BYTES * 8);
+printk (KERN_ALERT “第 %zu 位是第一个为 1 的位。\n”, idx);</p>
+<p>/*
+* 清除整数中的第 idx 位。
+* 假设 idx 小于整数的位数。
+*/
+clear_bit(idx, &#x26;map);</p>
+<p>/*
+* 测试并设置数组中的第 idx 位。
+* 假设 idx 小于数组的位数。
+*/
+changed = __test_and_set_bit(idx, &#x26;sbi->imap);
+if (changed)
+printk(KERN_ALERT “%zu 位已更改\n”, idx);</p>
+<h2 id="进一步阅读">进一步阅读<a href="#section-16" title="永久链接至标题">¶</a></h2>
+<ol>
+<li>Robert Love《Linux 内核开发》，第二版——第 12 章 虚拟文件系统</li>
+<li>了解 Linux 内核，第 3 版——第 12 章 虚拟文件系统</li>
+<li><a href="http://www.coda.cs.cmu.edu/doc/talks/linuxvfs/">Linux 虚拟文件系统（演示）</a></li>
+<li><a href="http://www.cyberciti.biz/tips/understanding-unixlinux-file-system-part-i.html">理解 Unix/Linux 文件系统</a></li>
+<li><a href="http://lwn.net/Articles/57369/">创建 Linux 虚拟文件系统</a></li>
+<li><a href="http://www.tldp.org/LDP/tlk/fs/filesystem.html">Linux 文档项目——VFS</a></li>
+<li><a href="http://www.linux.it/~rubini/docs/vfs/vfs.html">Linux 中的“虚拟文件系统”</a></li>
+<li><a href="http://inglorion.net/documents/tutorials/tutorfs/">Linux 文件系统教程</a></li>
+<li><a href="http://www.win.tue.nl/~aeb/linux/lk/lk-8.html">Linux 虚拟文件系统</a></li>
+<li><a href="http://lxr.free-electrons.com/source/Documentation/filesystems/vfs.txt">Documentation/filesystems/vfs.txt</a></li>
+<li><a href="http://lxr.free-electrons.com/source/fs/">文件系统源代码</a></li>
+</ol>
+<h2 id="练习">练习<a href="#section-17" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 filesystems。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/filesystems/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-17">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<p>重要</p>
+<p>在本实验中，我们将继续实现之前实验中的文件系统。为此，我们将使用以下命令生成实验的框架：</p>
+<p>TODO=5 LABS=filesystems make skels</p>
+<p>之后，我们将从 <code>TODO 5</code> 开始实现。</p>
+<h3 id="myfs">myfs<a href="#myfs" title="永久链接至标题">¶</a></h3>
+<p>在下面的练习中，我们将使用 <code>myfs</code> 文件系统，这是我们在上一个实验中开始实现的。我们之前挂载了文件系统，现在我们将继续进行常规文件和目录的操作。在完成这些练习之后，我们将能够创建、修改和删除常规目录和文件。</p>
+<p>我们将主要使用 <code>inode</code> 和 <code>dentry</code> VFS 结构。 <code>inode</code> 结构定义了文件（可以是任何类型：常规文件、目录、链接），而 <code>dentry</code> 结构定义了名称，即目录中的条目。</p>
+<p>为此，我们将访问实验框架中的 <code>myfs</code> 目录。之前生成的框架包含了上一个实验的解决方案；我们将从这里开始。与前一个实验一样，我们将使用 <code>ramfs</code> 文件系统作为起点。</p>
+<h4 id="1-目录操作">1. 目录操作<a href="#section-18" title="永久链接至标题">¶</a></h4>
+<p>首先，我们将实现用于处理目录的操作。创建文件或删除文件的操作也是目录操作；这些操作会导致添加或删除目录条目 (<em>dentry</em>)。</p>
+<p>到本练习结束时，我们将能够在文件系统中创建和删除条目。我们还不能读取和写入常规文件；我们将在下一个练习中进行常规文件的读取和写入。</p>
+<p>按照标有 <code>TODO 5</code> 的指示进行操作，这将指导你完成所需的步骤。</p>
+<p>你需要指定以下目录操作：</p>
+<blockquote>
+<ul>
+<li>创建文件 (<code>create</code> 函数)</li>
+<li>搜索 (<code>lookup</code> 函数)</li>
+<li>链接 (<code>link</code> 函数)</li>
+<li>创建目录 (<code>mkdir</code> 函数)</li>
+<li>删除 (<code>rmdir</code> 和 <code>unlink</code> 函数)</li>
+<li>创建节点 (<code>mknod</code>)</li>
+<li>重命名 (<code>rename</code> 函数)</li>
+</ul>
+</blockquote>
+<p>为此，请在标有 <code>TODO 5</code> 的位置的代码中定义 <code>myfs_dir_inode_operations</code> 结构。首先，只需定义 <code>myfs_dir_inode_operations</code> 结构；你将在下一个练习中定义 <code>myfs_file_operations</code>, <code>myfs_file_inode_operations</code> 和 <code>myfs_aops</code> 结构。</p>
+<p>小技巧</p>
+<p>请阅读 <a href="#directoryinodes">目录索引节点操作</a> 部分。</p>
+<p>作为参考，你可以查看 <code>ramfs_dir_inode_operations</code> 结构。</p>
+<p>在 <code>myfs_mkdir</code>, <code>myfs_mknod</code> 和 <code>myfs_create</code> 中实现 <code>mkdir</code>, <code>mknod</code> 和 <code>create</code> 操作。这些操作将允许你在文件系统中创建目录和文件。</p>
+<p>小技巧</p>
+<p>我们建议使用 <code>mknod</code> 函数使代码模块化，你也可以在下一个练习中使用它。对于 inode 的读取和分配，请使用已经实现的 <code>myfs_get_inode</code> 函数。</p>
+<p>请按规范，按照文件系统 <code>ramfs</code> 中已实现的下列函数操作：</p>
+<blockquote>
+<ul>
+<li><code>ramfs_mknod()</code></li>
+<li><code>ramfs_mkdir()</code></li>
+<li><code>ramfs_create()</code></li>
+</ul>
+</blockquote>
+<p>对于其他函数，请使用已在 VFS 中定义的通用调用 (<code>simple_*</code>)。</p>
+<p>在 <code>myfs_get_inode</code> 函数中，初始化目录 inode 的操作字段：</p>
+<ul>
+<li><code>i_op</code> 必须初始化为结构体 <code>myfs_dir_inode_operations</code> 的地址；</li>
+<li><code>i_fop</code> 必须初始化为在 VFS 中定义的结构体 <code>simple_dir_operations</code> 的地址。</li>
+</ul>
+<p>注解</p>
+<p><code>i_op</code> 是指向类型为 <code>struct inode_operations</code> 的结构体指针，其中包含与 inode 相关的操作，对于目录来说，包括创建新条目、列出条目以及删除条目等。</p>
+<p><code>i_fop</code> 是指向类型为 <code>struct file_operations</code> 的结构体指针，其中包含和与 inode 关联的 <code>file</code> 结构有关的操作，例如 <code>read</code>, <code>write</code> 和 <code>lseek</code>。</p>
+<h5 id="测试">测试<a href="#section-19" title="永久链接至标题">¶</a></h5>
+<p>完成模块后，我们可以测试文件和目录的创建。为此，我们编译内核模块（使用 <code>make build</code>），并将生成的文件 (<code>myfs.ko</code>) 和测试脚本 (<code>test-myfs-{1,2}.sh</code>) 复制到虚拟机目录中（使用 <code>make copy</code>）。</p>
+<p>注解</p>
+<p>只有当测试脚本可执行时，它们才会被 <code>make copy</code> 复制到虚拟机中：</p>
+<p>student@workstation:~/linux/tools/labs$ chmod +x skels/filesystems/myfs/test-myfs-*.sh</p>
+<p>启动虚拟机后，插入模块，创建挂载点并挂载文件系统：</p>
+<h1 id="insmod-myfsko">insmod myfs.ko</h1>
+<h1 id="mkdir--p-mntmyfs">mkdir -p /mnt/myfs</h1>
+<h1 id="mount--t-myfs-none-mntmyfs">mount -t myfs none /mnt/myfs</h1>
+<p>现在我们可以在挂载的目录 (<code>/mnt/myfs</code>) 中创建文件层次结构和子目录。我们可以使用以下类似的命令：</p>
+<h1 id="touch-mntmyfspeanutstxt">touch /mnt/myfs/peanuts.txt</h1>
+<h1 id="mkdir--p-mntmyfsmountainforest">mkdir -p /mnt/myfs/mountain/forest</h1>
+<h1 id="touch-mntmyfsmountainforesttreetxt">touch /mnt/myfs/mountain/forest/tree.txt</h1>
+<h1 id="rm-mntmyfsmountainforesttreetxt">rm /mnt/myfs/mountain/forest/tree.txt</h1>
+<h1 id="rmdir-mntmyfsmountainforest">rmdir /mnt/myfs/mountain/forest</h1>
+<p>此时，我们无法读取或写入文件。当运行以下类似的命令时，我们将收到错误消息。</p>
+<h1 id="echo-chocolate--mntmyfspeanutstxt">echo “chocolate” > /mnt/myfs/peanuts.txt</h1>
+<h1 id="cat-mntmyfspeanutstxt">cat /mnt/myfs/peanuts.txt</h1>
+<p>这是因为我们尚未实现用于处理文件的操作；我们将在后续实现。</p>
+<p>要卸载内核模块，请使用以下命令：</p>
+<p>umount /mnt/myfs
+rmmod myfs</p>
+<p>要测试内核模块提供的功能，可以使用专用脚本 <code>test-myfs-1.sh</code>。如果实现正确，将不会显示任何错误消息。</p>
+<h4 id="2-文件操作">2. 文件操作<a href="#section-20" title="永久链接至标题">¶</a></h4>
+<p>我们想要实现用于处理文件的操作，这些操作用于访问文件的内容：读取、写入以及截断等。为此，你需要指定在结构体 <code>struct inode_operations</code>、<code>struct file_operations</code> 和 <code>struct address_space_operations</code> 中描述的操作。</p>
+<p>按照标记为 <code>TODO</code> 6 的指示进行操作，这将引导你完成所需的步骤。</p>
+<p>首先定义 <code>myfs_file_inode_operations</code> 和 <code>myfs_file_operations</code>。</p>
+<p>小技巧</p>
+<p>请阅读 <a href="#fileoperations">常规文件索引节点操作</a> 部分。</p>
+<p>使用 VFS 提供的通用函数。</p>
+<p><code>ramfs</code> 文件系统是一个实现示例。请参考 <code>ramfs_file_inode_operations</code> 和 <code>ramfs_file_operations</code> 的实现。</p>
+<p>在函数 <code>myfs_get_inode</code> 中，为常规文件 inode 初始化操作字段：</p>
+<blockquote>
+<ul>
+<li><code>i_op</code> 必须初始化为 <code>myfs_file_inode_operations</code>；</li>
+<li><code>i_fop</code> 必须初始化为 <code>myfs_file_operations</code>。</li>
+</ul>
+</blockquote>
+<p>接下来定义 <code>myfs_aops</code> 结构体。</p>
+<p>小技巧</p>
+<p>请阅读 <a href="#addressspaceoperations">地址空间操作</a> 部分。</p>
+<p>使用 VFS 提供的通用函数。</p>
+<p><code>ramfs</code> 文件系统是一个实现示例: <code>ramfs_aops</code> 结构体。</p>
+<p>你不需要定义 <code>set_page_dirty</code> 类型的函数。</p>
+<p>将 inode 结构体的 <code>i_mapping->a_ops</code> 字段初始化为 <code>myfs_aops</code>。</p>
+<h5 id="测试-1">测试<a href="#section-21" title="永久链接至标题">¶</a></h5>
+<p>为了测试，我们使用前面练习中描述的步骤。除了那些步骤之外，我们现在可以使用类似以下的命令来读取、写入和修改文件：</p>
+<h1 id="echo-chocolate--mntmyfspeanutstxt-1">echo “chocolate” > /mnt/myfs/peanuts.txt</h1>
+<h1 id="cat-mntmyfspeanutstxt-1">cat /mnt/myfs/peanuts.txt</h1>
+<p>要测试模块提供的功能，可以使用专用脚本：</p>
+<h1 id="test-myfs-2sh">./test-myfs-2.sh</h1>
+<p>如果实现正确，在运行上述脚本时将不会显示任何错误消息。</p>
+<h3 id="minfs">minfs<a href="#minfs" title="永久链接至标题">¶</a></h3>
+<p>在下面的练习中，我们将使用在上一个实验中开始开发的 minfs 文件系统。这是带有磁盘支持的文件系统。我们之前在挂载文件系统后止住脚步，现在我们将继续进行常规文件和目录的操作。在完成这些练习后，我们将能够在文件系统中创建和删除条目。</p>
+<p>我们将主要使用 <code>inode</code> 和 <code>dentry</code> VFS 结构。inode 结构定义了文件（可以是任何类型：常规文件、目录、链接），而 dentry 结构定义了名称，即目录条目。</p>
+<p>为此，我们将访问实验框架中的 <code>minfs/kernel</code> 目录。生成的实验框架包含了上一个实验的最终结果；我们将从这里开始。与上一个实验一样，我们将 <code>minix</code> 文件系统作为起点。</p>
+<p>我们将使用 <code>minfs/user</code> 目录中的格式化工具 <code>mkfs.minfs</code>，该工具通过运行 <code>make build</code> 来自动编译并通过 <code>make copy</code> 将其复制到虚拟机中的目录中。</p>
+<p>格式化工具使用类似下面的命令来准备虚拟机磁盘：</p>
+<h1 id="mkfsminfs-devvdb">./mkfs.minfs /dev/vdb</h1>
+<p>格式化后，磁盘的结构如下图所示：</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/minfs_arch1.png" alt="../_images/minfs_arch1.png"></p>
+<p>如图所示, <code>minfs</code> 是极简的文件系统。 <code>minfs</code> 包含最多 32 个 inode，每个 inode 有一个数据块（文件大小限制为块大小）。超级块包含 32 位的位图 (<code>imap</code>)，每位表示一个 inode 的使用情况。</p>
+<p>注解</p>
+<p>在开始工作之前，请仔细阅读 <code>minfs/kernel/minfs.h</code> 头文件。此文件包含了这些练习中将使用的结构体和宏。这些结构体和宏定义了上面图表中描述的文件系统。</p>
+<h4 id="1-迭代操作">1. 迭代操作<a href="#section-22" title="永久链接至标题">¶</a></h4>
+<p>首先，我们希望能够列出根目录的内容。为此，我们必须能够读取根目录中的条目，这意味着要实现 <code>iterate</code> 操作。 <code>iterate</code> 操作是 <code>minfs_dir_operations</code> 结构体（类型为 <code>file_operations</code>）中的一个字段，由函数 <code>minfs_readdir</code> 实现。我们需要实现这个函数。</p>
+<p>按照标记为 <code>TODO 5</code> 的位置进行操作，这将引导你完成所需的步骤。</p>
+<p>小技巧</p>
+<p>请阅读 <a href="#directoryinodes">目录索引节点操作</a> 部分。</p>
+<p>作为起点，请参考 <code>minix_readdir()</code> 函数。该函数相当复杂，但它可以帮助你了解需要执行的步骤。</p>
+<p>接下来，在 <code>minfs.c</code> 和 <code>minfs.h</code> 中，查看结构体 <code>struct minfs_inode_info</code>, <code>struct minfs_inode</code> 和 <code>struct minfs_dir_entry</code> 的定义。你将在 <code>minfs_readdir</code> 实现中使用它们。</p>
+<p>获取与目录关联的 inode 和结构体 <code>struct minfs_inode_info</code>。结构体 <code>struct minfs_inode_info</code> 可以帮助我们查找目录的数据块。从这个结构体中，你可以获取 <code>data_block</code> 字段，表示磁盘上的数据块索引。</p>
+<p>小技巧</p>
+<p>要获取结构体 <code>struct minfs_inode_info</code>，请使用 <code>list_entry()</code> 或 <code>container_of()</code>。</p>
+<p>使用 <code>sb_bread()</code> 读取目录的数据块。</p>
+<p>小技巧</p>
+<p>目录的数据块由与目录对应的结构体 <code>struct minfs_inode_info</code> 的 <code>data_block</code> 字段指示。</p>
+<p>块中的数据由 <code>buffer_head</code> 结构体的 <code>b_data</code> 字段引用（通常的代码将是 <code>bh->b_data</code>）。该块（作为目录的数据块）包含一个数组，该数组具有最多 <code>MINFS_NUM_ENTRIES</code> 个条目，类型为 <code>struct minfs_dir_entry</code> (<code>minfs</code> 特定的目录条目)。可以通过强制转换为 <code>struct minfs_dir_entry *</code> 来处理块中的数据。</p>
+<p>在数据块中迭代所有条目，并在 <code>for</code> 循环中填充用户空间缓冲区。</p>
+<p>小技巧</p>
+<p>对于每个索引，通过在 <code>bh->b_data</code> 字段上进行指针运算，获取相应的 <code>struct minfs_dir_entry</code> 条目。请忽略 <code>ino</code> 字段等于 0 的目录条目。这样的目录条目是目录条目列表中的空槽。</p>
+<p>对于每个有效的条目，都用适当参数调用了 <code>dir_emit()</code>。这个调用将把 dentry 发送给调用者（然后发送到用户空间）。</p>
+<p>在 <code>qnx6_readdir()</code> 和 <code>minix_readdir()</code> 中查看调用示例。</p>
+<h5 id="测试-2">测试<a href="#section-23" title="永久链接至标题">¶</a></h5>
+<p>完成模块后，我们可以测试列出根目录内容的功能。为此，我们编译内核模块 (<code>make build</code>)，将结果与测试脚本 (<code>minfs/user/test-minfs-{0,1}.sh</code>) 和格式化工具 (<code>minfs/user/mkfs.minfs</code>) 一起复制到虚拟机中（使用 <code>make copy</code> 命令），然后启动虚拟机。</p>
+<p>注解</p>
+<p>只有当测试脚本具有可执行权限时，它们才会被复制到虚拟机中：</p>
+<p>student@eg106:~/src/linux/tools/labs$ chmod +x skels/filesystems/minfs/user/test-minfs*.sh</p>
+<p>启动虚拟机后，我们格式化 <code>/dev/vdb</code> 磁盘，创建挂载点并挂载文件系统：</p>
+<h1 id="mkfsminfs-devvdb-1">./mkfs.minfs /dev/vdb</h1>
+<h1 id="mkdir--p-mntminfs">mkdir -p /mnt/minfs</h1>
+<h1 id="mount--t-minfs-devvdb-mntminfs">mount -t minfs /dev/vdb /mnt/minfs</h1>
+<p>现在，我们可以列出根目录的内容：</p>
+<h1 id="ls--l-mntminfs">ls -l /mnt/minfs</h1>
+<p>我们注意到已经有一个文件 (<code>a.txt</code>)；它是由格式化工具创建的。</p>
+<p>我们还注意到，我们不能使用 <code>ls</code> 命令显示文件的信息。这是因为我们还没有实现 <code>lookup</code> 函数。我们将在下一个练习中实现它。</p>
+<p>为了测试模块提供的功能，我们可以使用专用脚本：</p>
+<h1 id="test-minfs-0sh">./test-minfs-0.sh</h1>
+<h1 id="test-minfs-1sh">./test-minfs-1.sh</h1>
+<h4 id="2-查找操作">2. 查找操作<a href="#section-24" title="永久链接至标题">¶</a></h4>
+<p>为了正确列出目录的内容，我们需要实现搜索功能，即 <code>lookup</code> 操作。 <code>lookup</code> 操作是 <code>minfs_dir_inode_operations</code> 结构体（类型为 <code>inode_operations</code>）中的字段，由 <code>minfs_lookup</code> 函数实现。我们需要实现函数 <code>minfs_lookup</code>。实际上，我们需要实现 <code>minfs_lookup</code> 函数调用的 <code>minfs_find_entry</code> 函数。</p>
+<p>按照标记为 <code>TODO 6</code> 的位置提示的步骤进行操作。</p>
+<p>小技巧</p>
+<p>请阅读 <a href="#directoryinodes">目录索引节点操作</a> 部分。</p>
+<p>作为起点，请阅读函数 <code>qnx6_find_entry()</code> 和 <code>minix_find_entry()</code>。</p>
+<p>在 <code>minfs_find_entry</code> 函数中，迭代包含目标 dentry 的目录： <code>dentry->d_parent->d_inode</code>。迭代意味着遍历目录数据块（类型为 <code>struct minfs_dir_entry</code>）中的条目，并定位（如果存在）所请求的条目。</p>
+<p>小技巧</p>
+<p>从与目录对应的类型为 <code>struct minfs_inode_info</code> 的结构体中，找出数据块索引并读取它 (<code>sb_read</code>)。你需要使用 <code>bh->b_data</code> 访问块内容。目录数据块包含一个条目数组，该数组最多包含 <code>MINFS_NUM_ENTRIES</code> 个类型为 <code>struct minfs_dir_entry</code> 的条目。使用指针运算从数据块 (<code>bh->b_data</code>) 中获取类型为 <code>struct minfs_dir_entry</code> 的条目。</p>
+<p>检查目录中是否存在指定名称（存储在局部变量 <code>name</code> 中）的条目（数据块中存在一个名称等于给定名称的条目）。使用 <code>strcmp()</code> 进行验证。</p>
+<p>忽略 <code>ino</code> 字段等于 <code>0</code> 的目录条目。这些目录条目是目录条目列表中的空槽。</p>
+<p>将找到的 dentry 存储在变量 <code>final_de</code> 中。如果没有找到任何 dentry，则变量 <code>final_de</code> 的值将为 <code>NULL</code>，即其初始化值。</p>
+<p>在 <code>minfs_lookup</code> 函数中注释掉 <code>simple_lookup</code> 调用，以调用 <code>minfs_readdir</code> 的实现。</p>
+<h5 id="测试-3">测试<a href="#section-25" title="永久链接至标题">¶</a></h5>
+<p>为了进行测试，我们使用前面练习中描述的步骤。列出目录（根目录）的长文件列表 (<code>ls -l</code>) 将显示权限和其他文件特定信息：</p>
+<h1 id="ls--l-mntminfs-1">ls -l /mnt/minfs</h1>
+<p>为了测试模块提供的功能，我们可以使用专用脚本：</p>
+<h1 id="test-minfs-0sh-1">./test-minfs-0.sh</h1>
+<h1 id="test-minfs-1sh-1">./test-minfs-1.sh</h1>
+<p>如果实现正确，运行上面的脚本时将不会显示任何错误消息。</p>
+<p>注解</p>
+<p>在使用以下命令挂载文件系统后：</p>
+<h1 id="mount--t-minfs-devvdb-mntminfs-1">mount -t minfs /dev/vdb /mnt/minfs</h1>
+<p>我们尝试使用以下命令创建一个文件：</p>
+<h1 id="touch-mntminfspeanutstxt">touch /mnt/minfs/peanuts.txt</h1>
+<p>这时我们遇到了错误，因为我们还没有实现创建文件的目录操作。我们将在下一个练习中实现这个功能。</p>
+<h4 id="3-创建操作">3. 创建操作<a href="#section-26" title="永久链接至标题">¶</a></h4>
+<p>为了能够在目录中创建文件，我们必须实现 <code>create</code> 操作。 <code>create</code> 操作是 <code>minfs_dir_inode_operations</code> 结构体（类型为 <code>inode_operations</code>）中的字段，由 <code>minfs_create</code> 函数实现。我们需要实现这个函数。实际上，我们将实现 <a href="#system-message-2">“</a>minfs_new_inode“（创建和初始化 inode）和 <a href="#system-message-3">“</a>minfs_add_link“（为创建的 inode 添加一个链接、名称或 <em>dentry</em>）函数。</p>
+<p>按照标记为 <code>TODO 7</code> 的指示进行操作。</p>
+<p>小技巧</p>
+<p>请阅读 <a href="#directoryinodes">目录索引节点操作</a> 部分。</p>
+<p>查看 <code>minfs_create</code> 函数的代码和 <code>minfs_new_inode</code>, <code>minfs_add_link</code> 函数的骨架。</p>
+<p>实现函数 <code>minfs_new_inode</code>。在这个函数中，你将使用 <code>new_inode()</code> 函数创建并初始化 inode。初始化是使用磁盘上的数据完成的。</p>
+<p>小技巧</p>
+<p>以函数 <code>minix_new_inode()</code> 为模型。在 imap (<code>sbi->imap</code>) 中找到第一个空闲的 inode。使用位操作 (<code>find_first_zero_bit</code> 和 <code>set_bit</code>)。请阅读 <a href="#bitmapoperations">位图操作</a> 部分。</p>
+<p>将超级块的缓冲区 (<code>sbi->sbh</code>) 标记为脏。</p>
+<p>你必须像 <code>myfs</code> 文件系统中做的那样初始化常规字段。在调用 <code>inode_init_owner</code> 时，将 <code>i_mode</code> 字段初始化为 <code>0</code>。稍后在调用者中进行初始化。</p>
+<p>实现函数 <code>minfs_add_link</code>。该函数将新的 dentry (<code>struct minfs_dir_entry</code>) 添加到父目录数据块 (<code>dentry->d_parent->d_inode</code>) 中。</p>
+<p>小技巧</p>
+<p>以函数 <code>minix_add_link</code> 为模型。</p>
+<p>在 <code>minfs_add_link</code> 中，我们希望找到 dentry 的第一个空闲位置。为此，你需要迭代目录数据块，并找到第一个空闲条目。空闲的 dentry 的 <code>ino</code> 字段等于 <code>0</code>。</p>
+<p>小技巧</p>
+<p>为了处理目录，获取与父目录对应的类型为 <code>struct minfs_inode_info</code> 的 inode（即 <strong>dir</strong> inode）。不要使用变量 <code>inode</code> 来获取 <code>struct minfs_inode_info</code>；该 inode 属于文件，而不是你想要向其中添加链接/目录项的父目录。要获取 <code>struct minfs_inode_info</code> 结构体，请使用 <code>container_of()</code>。</p>
+<p>结构体 <code>struct minfs_inode_info</code> 对于查找目录数据块（由 <code>dentry->d_parent->d_inode</code> 指示的块，即 <code>dir</code> 变量）非常有用。从这个结构体中获取 <code>data_block</code> 字段，表示磁盘上的数据块的索引。该块包含目录中的条目。使用 <code>sb_bread()</code> 读取块，然后使用 <code>bh->b_data</code> 引用数据。该块最多包含 <code>MINFS_NUM_ENTRIES</code> 个类型为 <code>struct minfs_dir_entry</code> 的条目。</p>
+<p>如果所有条目都被占用，则返回 <code>-ENOSPC</code>。</p>
+<p>使用变量 <code>de</code> 迭代数据块中的条目，并提取第一个空闲条目 (<code>ino</code> 字段为 <code>0</code>)。</p>
+<p>当找到空闲位置时，填充相应的条目：</p>
+<blockquote>
+<ul>
+<li>将 <code>inode->i_ino</code> 字段填写到 <code>de->ino</code></li>
+<li>将 <code>dentry->d_name.name</code> 字段填写到 <code>de->name</code></li>
+</ul>
+</blockquote>
+<p>然后将缓冲区标记为脏。</p>
+<h5 id="测试-4">测试<a href="#section-27" title="永久链接至标题">¶</a></h5>
+<p>为了进行测试，我们使用前面练习中描述的步骤。现在我们可以在文件系统中创建文件：</p>
+<h1 id="touch-mntminfspeanutstxt-1">touch /mnt/minfs/peanuts.txt</h1>
+<p>为了测试模块提供的功能，我们可以使用专用脚本：</p>
+<h1 id="test-minfs-2sh">./test-minfs-2.sh</h1>
+<p>如果实现正确，运行上面的脚本时将不会显示任何错误消息。</p>
+<p>注解</p>
+<p>目前的 <code>minfs</code> 文件系统的实现还不完整。要完善实现，还需要添加删除文件的功能、创建和删除目录的功能、重命名条目的功能以及修改文件内容的功能。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">← SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 内核模块 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 内核模块 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 内核模块 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="内核模块">内核模块<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<h2 id="实验目标">实验目标<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>创建简单的模块</li>
+<li>描述内核模块编译的过程</li>
+<li>展示如何在内核中使用模块</li>
+<li>简单的内核调试方法</li>
+</ul>
+<h2 id="内核模块概述">内核模块概述<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>虽然单体内核的运行速度比微内核更快，但它在模块化和可扩展性方面存在不足。在现代的单体内核设计中，这个问题已经通过使用内核模块得到了解决。内核模块（或称为可加载内核模块）是一种包含代码的目标文件（object file），它可以在运行时根据需要加载，以扩展内核的功能；而当这些模块不再需要时，也可以将其卸载。大部分设备驱动程序都是以内核模块的形式实现的。</p>
+<p>要想开发 Linux 设备驱动程序，建议下载内核源代码，配置和编译它们，然后将编译后的版本安装在测试/开发工具机上。</p>
+<h2 id="内核模块示例">内核模块示例<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>以下是一个非常简单的内核模块示例。当加载到内核中时，它会生成消息 <code>"Hi"</code>。当卸载这个内核模块时，将生成消息 <code>"Bye"</code>。</p>
+<p>#include &#x3C;linux/kernel.h>
+#include &#x3C;linux/init.h>
+#include &#x3C;linux/module.h></p>
+<p>MODULE_DESCRIPTION(“My kernel module”);
+MODULE_AUTHOR(“Me”);
+MODULE_LICENSE(“GPL”);</p>
+<p>static int dummy_init(void)
+{
+pr_debug(“Hi\n”);
+return 0;
+}</p>
+<p>static void dummy_exit(void)
+{
+pr_debug(“Bye\n”);
+}</p>
+<p>module_init(dummy_init);
+module_exit(dummy_exit);</p>
+<p>生成的消息不会显示在控制台上，而是保存在专门预留的内存区域中，由日志守护程序（syslog）负责将其提取出来。要显示内核消息，你可以使用 <strong>dmesg</strong> 命令或检查日志文件。</p>
+<p># cat /var/log/syslog | tail -2
+Feb 20 13:57:38 asgard kernel: Hi
+Feb 20 13:57:43 asgard kernel: Bye</p>
+<p># dmesg | tail -2
+Hi
+Bye</p>
+<h2 id="编译内核模块">编译内核模块<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<p>编译内核模块与编译用户程序不同。首先，需要使用不同的头文件。此外，模块不应链接到库。最后，模块必须使用与加载模块的内核相同的选项进行编译。出于这些原因，有一种标准的编译方法（kbuild）。该方法需要使用两个文件： <code>Makefile</code> 文件和 <code>Kbuild</code> 文件。</p>
+<p>以下是 <code>Makefile</code> 文件的示例：</p>
+<p>KDIR = /lib/modules/`uname -r`/build</p>
+<p>kbuild:
+make -C $(KDIR) M=`pwd`</p>
+<p>clean:
+make -C $(KDIR) M=`pwd` clean</p>
+<p>以下是用于编译模块的 <code>Kbuild</code> 文件示例：</p>
+<p>EXTRA_CFLAGS = -Wall -g</p>
+<p>obj-m        = modul.o</p>
+<p>正如你所见，在示例中调用 <strong>make</strong> 命令对 <code>Makefile</code> 文件进行编译时，会在内核源代码目录 (<code>/lib/modules/`uname -r`/build</code>) 中执行 <strong>make</strong> 命令，并引用当前目录 (<code>M = `pwd</code>)。这个过程最终会读取当前目录中的 <code>Kbuild</code> 文件，并按照其中的指示编译模块。</p>
+<p>注解</p>
+<p>对于实验，我们将根据虚拟机的规格，配置不同的 <strong>KDIR</strong>：</p>
+<p>KDIR = /home/student/src/linux
+[…]</p>
+<p><code>Kbuild</code> 文件包含了一系列指令，这些指令用于编译内核模块。其中一个最基本的指令例子是 <code>obj-m = module.o</code>。遵循这个指令，系统会基于 <code>module.o</code> 文件开始构建一个内核模块（也称为 <code>ko</code>，即内核对象）。<code>module.o</code> 文件是基于 <code>module.c</code> 或 <code>module.S</code> 生成的。所有这些文件都应该存放在包含 <code>Kbuild</code> 的同一目录下。</p>
+<p>下面是一个使用多个子模块的 <code>Kbuild</code> 文件示例：</p>
+<p>EXTRA_CFLAGS = -Wall -g</p>
+<p>obj-m        = supermodule.o
+supermodule-y = module-a.o module-b.o</p>
+<p>对于上面的示例，编译步骤如下：</p>
+<blockquote>
+<ul>
+<li>编译 <code>module-a.c</code> 和 <code>module-b.c</code> 源文件，生成 module-a.o 和 module-b.o 对象文件（object）</li>
+<li>然后将 <code>module-a.o</code> 和 <code>module-b.o</code> 链接到 <code>supermodule.o</code></li>
+<li>基于 <code>supermodule.o</code> 创建 <code>supermodule.ko</code> 模块</li>
+</ul>
+</blockquote>
+<p><code>Kbuild</code> 中目标（target）的后缀决定了它们的用途，如下所示：</p>
+<blockquote>
+<ul>
+<li>M（modules）标示目标为可加载内核模块</li>
+<li>Y（yes）标示目标是编译对象文件然后将其链接到模块（<code>$(模块名称)-y</code>）或内核（<code>obj-y</code>）</li>
+<li>其他任何目标后缀都将被 <code>Kbuild</code> 忽略，不会被编译</li>
+</ul>
+</blockquote>
+<p>注解</p>
+<p>借助这些后缀，开发者可以通过运行 <strong>make menuconfig</strong> 命令或直接编辑 <code>.config</code> 文件来轻松配置内核。该文件设置了一系列变量，这些变量决定了在构建过程中哪些特性会被添加到内核中。例如，当使用 <strong>make menuconfig</strong> 命令添加 BTRFS 支持时，<code>.config</code> 文件中会增加 <code>CONFIG_BTRFS_FS = y</code> 这一行。BTRFS 的 kbuild 包含了一行 <code>obj-$(CONFIG_BTRFS_FS):= btrfs.o</code>，如果设置了相应的变量，这行代码会变成 <code>obj-y:= btrfs.o</code>。这将导致系统编译 <code>btrfs.o</code> 对象，并将其链接到内核中。如果没有设置该变量，这行代码则会变成 <code>obj:= btrfs.o</code> 并被忽略，结果是内核构建时不会包含 BTRFS 支持。</p>
+<p>要了解更多详细信息，请参阅内核源代码中的 <code>Documentation/kbuild/makefiles.txt</code> 和 <code>Documentation/kbuild/modules.txt</code> 文件。</p>
+<h2 id="加载卸载内核模块">加载/卸载内核模块<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<p>要加载内核模块，请使用 <strong>insmod</strong> 程序。该程序接收用于编译和链接模块的 <code>*.ko</code> 文件的路径作为参数。要从内核中卸载模块请使用 <strong>rmmod</strong> 命令，该命令接收模块名称作为参数。</p>
+<p>$ insmod module.ko
+$ rmmod module.ko</p>
+<p>加载内核模块时，将执行 <code>module_init</code> 宏参数指定的例程。同样，当卸载模块时，将执行 <code>module_exit</code> 宏参数指定的例程。</p>
+<p>下面是一个完整的编译、加载和卸载内核模块的示例：</p>
+<p>faust:~/lab-01/modul-lin# ls
+Kbuild  Makefile  modul.c</p>
+<p>faust:~/lab-01/modul-lin# make
+make -C /lib/modules/`uname -r`/build M=`pwd`
+make[1]: Entering directory `/usr/src/linux-2.6.28.4’
+LD      /root/lab-01/modul-lin/built-in.o
+CC [M]  /root/lab-01/modul-lin/modul.o
+Building modules, stage 2.
+MODPOST 1 modules
+CC      /root/lab-01/modul-lin/modul.mod.o
+LD [M]  /root/lab-01/modul-lin/modul.ko
+make[1]: Leaving directory `/usr/src/linux-2.6.28.4’</p>
+<p>faust:~/lab-01/modul-lin# ls
+built-in.o  Kbuild  Makefile  modul.c  Module.markers
+modules.order  Module.symvers  modul.ko  modul.mod.c
+modul.mod.o  modul.o</p>
+<p>faust:~/lab-01/modul-lin# insmod modul.ko</p>
+<p>faust:~/lab-01/modul-lin# dmesg | tail -1
+Hi</p>
+<p>faust:~/lab-01/modul-lin# rmmod modul</p>
+<p>faust:~/lab-01/modul-lin# dmesg | tail -2
+Hi
+Bye</p>
+<p>可以使用 <strong>lsmod</strong> 命令或查看 <code>/proc/modules</code> 、 <code>/sys/module</code> 目录来获取有关加载到内核中的模块的信息。</p>
+<h2 id="内核模块调试">内核模块调试<a href="#section-7" title="永久链接至标题">¶</a></h2>
+<p>与调试常规程序相比，调试内核模块要复杂得多。首先，内核模块中的错误可能导致整个系统阻塞。因此，故障排查的速度会大大降低。为了避免重新启动，建议使用虚拟机（qemu、virtualbox 或者 vmware）。</p>
+<p>当插入包含错误的模块到内核中时，它最终会生成一个 <a href="https://zh.wikipedia.org/wiki/Oops_(Linux%E5%86%85%E6%A0%B8)">内核 oops</a> 。内核 oops 是内核检测到的无效操作，只可能由内核生成。对于稳定的内核版本，这几乎可以肯定意味着模块含有错误。在 oops 出现后，内核仍将继续工作。</p>
+<p>出现内核 oops 时，保存生成的消息非常重要。如上所述，内核生成的消息保存在日志中，并可使用 <strong>dmesg</strong> 命令显示。为了确保不丢失任何内核消息，建议直接从控制台插入/测试内核，或定期检查内核消息。值得注意的是，oops 不止可能是由于编程错误，也有可能是硬件错误引起的。</p>
+<p>如果发生致命错误，系统无法恢复到稳定状态，将造成 <a href="https://zh.wikipedia.org/wiki/%E5%86%85%E6%A0%B8%E9%94%99%E8%AF%AF">内核错误（kernel panic）</a> 。</p>
+<p>以下是一个包含错误并会造成 oops 的内核模块示例：</p>
+<p>/*
+* 造成 oops 的内核模块
+*/</p>
+<p>#include &#x3C;linux/kernel.h>
+#include &#x3C;linux/module.h>
+#include &#x3C;linux/init.h></p>
+<p>MODULE_DESCRIPTION (“Oops”);
+MODULE_LICENSE (“GPL”);
+MODULE_AUTHOR (“PSO”);</p>
+<p>#define OP_READ         0
+#define OP_WRITE        1
+#define OP_OOPS         OP_WRITE</p>
+<p>static int my_oops_init (void)
+{
+int *a;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    a \= (int \*) 0x00001234;</span></span></code></pre>
+<p>#if OP_OOPS == OP_WRITE
+*a = 3;
+#elif OP_OOPS == OP_READ
+printk (KERN_ALERT “value = %d\n”, *a);
+#else
+#error “Unknown op for oops!”
+#endif</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    return 0;</span></span></code></pre>
+<p>}</p>
+<p>static void my_oops_exit (void)
+{
+}</p>
+<p>module_init (my_oops_init);
+module_exit (my_oops_exit);</p>
+<p>将此模块插入内核将造成 oops：</p>
+<p>faust:~/lab-01/modul-oops# insmod oops.ko
+[…]</p>
+<p>faust:~/lab-01/modul-oops# dmesg | tail -32
+BUG: unable to handle kernel paging request at 00001234
+IP: [<c89d4005>] my_oops_init+0x5/0x20 [oops]
+*de = 00000000
+Oops: 0002 [#1] PREEMPT DEBUG_PAGEALLOC
+last sysfs file: /sys/devices/virtual/net/lo/operstate
+Modules linked in: oops(+) netconsole ide_cd_mod pcnet32 crc32 cdrom [last unloaded: modul]</c89d4005></p>
+<p>Pid: 4157, comm: insmod Not tainted (2.6.28.4 #2) VMware Virtual Platform
+EIP: 0060:[<c89d4005>] EFLAGS: 00010246 CPU: 0
+EIP is at my_oops_init+0x5/0x20 [oops]
+EAX: 00000000 EBX: fffffffc ECX: c89d4300 EDX: 00000001
+ESI: c89d4000 EDI: 00000000 EBP: c5799e24 ESP: c5799e24
+DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 0068
+Process insmod (pid: 4157, ti=c5799000 task=c665c780 task.ti=c5799000)
+Stack:
+c5799f8c c010102d c72b51d8 0000000c c5799e58 c01708e4 00000124 00000000
+c89d4300 c5799e58 c724f448 00000001 c89d4300 c5799e60 c0170981 c5799f8c
+c014b698 00000000 00000000 c5799f78 c5799f20 00000500 c665cb00 c89d4300
+Call Trace:
+[<c010102d>] ? _stext+0x2d/0x170
+[<c01708e4>] ? __vunmap+0xa4/0xf0
+[<c0170981>] ? vfree+0x21/0x30
+[<c014b698>] ? load_module+0x19b8/0x1a40
+[<c035e965>] ? __mutex_unlock_slowpath+0xd5/0x140
+[<c0140da6>] ? trace_hardirqs_on_caller+0x106/0x150
+[<c014b7aa>] ? sys_init_module+0x8a/0x1b0
+[<c0140da6>] ? trace_hardirqs_on_caller+0x106/0x150
+[<c0240a08>] ? trace_hardirqs_on_thunk+0xc/0x10
+[<c0103407>] ? sysenter_do_call+0x12/0x43
+Code: <c7> 05 34 12 00 00 03 00 00 00 5d c3 eb 0d 90 90 90 90 90 90 90 90
+EIP: [<c89d4005>] my_oops_init+0x5/0x20 [oops] SS:ESP 0068:c5799e24
+---[ end trace 2981ce73ae801363 ]---</c89d4005></c7></c0103407></c0240a08></c0140da6></c014b7aa></c0140da6></c035e965></c014b698></c0170981></c01708e4></c010102d></c89d4005></p>
+<p>虽然相对晦涩，但内核在出现 oops 时提供了有关错误的宝贵信息。第一行：</p>
+<p>BUG: unable to handle kernel paging request at 00001234
+EIP: [<c89d4005>] my_oops_init + 0x5 / 0x20 [oops]</c89d4005></p>
+<p>告诉我们错误的原因和造成错误的指令的地址。在我们的例子中，这是对内存的无效访问。</p>
+<p>接下来的一行是：</p>
+<blockquote>
+<p><code>Oops: 0002 [# 1] PREEMPT DEBUG_PAGEALLOC</code></p>
+</blockquote>
+<p>告诉我们这是第一个 oops（#1）。在这个上下文中，这很重要，因为一个 oops 可能会导致其他 oops。通常只有第一个 oops 是相关的。此外，oops 代码（<code>0002</code>）提供了有关错误类型的信息（参见 <code>arch/x86/include/asm/trap_pf.h</code> ）：</p>
+<blockquote>
+<ul>
+<li>第 0 位 == 0 表示找不到页面，1 表示保护故障</li>
+<li>第 1 位 == 0 表示读取，1 表示写入</li>
+<li>第 2 位 == 0 表示内核模式，1 表示用户模式</li>
+</ul>
+</blockquote>
+<p>在这种情况下，我们有一个写入访问导致了 oops（第 1 位为 1）。</p>
+<p>下面是寄存器的转储（dump）。它解码了指令指针 (<code>EIP</code>) 的值，并指出错误出现在 <code>my_oops_init</code> 函数中，偏移为 5 个字节（<code>EIP: [&#x3C;c89d4005>] my_oops_init+0x5</code>）。该消息还显示了堆栈内容和到目前为止的调用回溯。</p>
+<p>如果发生了无效的读取调用 (<code>#define OP_OOPS OP_READ</code>)，消息将是相同的，但是 oops 代码将不同，现在将是 <code>0000</code>:</p>
+<p>faust:~/lab-01/modul-oops# dmesg | tail -33
+BUG: unable to handle kernel paging request at 00001234
+IP: [<c89c3016>] my_oops_init+0x6/0x20 [oops]
+*de = 00000000
+Oops: 0000 [#1] PREEMPT DEBUG_PAGEALLOC
+last sysfs file: /sys/devices/virtual/net/lo/operstate
+Modules linked in: oops(+) netconsole pcnet32 crc32 ide_cd_mod cdrom</c89c3016></p>
+<p>Pid: 2754, comm: insmod Not tainted (2.6.28.4 #2) VMware Virtual Platform
+EIP: 0060:[<c89c3016>] EFLAGS: 00010292 CPU: 0
+EIP is at my_oops_init+0x6/0x20 [oops]
+EAX: 00000000 EBX: fffffffc ECX: c89c3380 EDX: 00000001
+ESI: c89c3010 EDI: 00000000 EBP: c57cbe24 ESP: c57cbe1c
+DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 0068
+Process insmod (pid: 2754, ti=c57cb000 task=c66ec780 task.ti=c57cb000)
+Stack:
+c57cbe34 00000282 c57cbf8c c010102d c57b9280 0000000c c57cbe58 c01708e4
+00000124 00000000 c89c3380 c57cbe58 c5db1d38 00000001 c89c3380 c57cbe60
+c0170981 c57cbf8c c014b698 00000000 00000000 c57cbf78 c57cbf20 00000580
+Call Trace:
+[<c010102d>] ? _stext+0x2d/0x170
+[<c01708e4>] ? __vunmap+0xa4/0xf0
+[<c0170981>] ? vfree+0x21/0x30
+[<c014b698>] ? load_module+0x19b8/0x1a40
+[<c035d083>] ? printk+0x0/0x1a
+[<c035e965>] ? __mutex_unlock_slowpath+0xd5/0x140
+[<c0140da6>] ? trace_hardirqs_on_caller+0x106/0x150
+[<c014b7aa>] ? sys_init_module+0x8a/0x1b0
+[<c0140da6>] ? trace_hardirqs_on_caller+0x106/0x150
+[<c0240a08>] ? trace_hardirqs_on_thunk+0xc/0x10
+[<c0103407>] ? sysenter_do_call+0x12/0x43
+Code: <a1> 34 12 00 00 c7 04 24 54 30 9c c8 89 44 24 04 e8 58 a0 99 f7 31
+EIP: [<c89c3016>] my_oops_init+0x6/0x20 [oops] SS:ESP 0068:c57cbe1c
+---[ end trace 45eeb3d6ea8ff1ed ]---</c89c3016></a1></c0103407></c0240a08></c0140da6></c014b7aa></c0140da6></c035e965></c035d083></c014b698></c0170981></c01708e4></c010102d></c89c3016></p>
+<h3 id="objdump">objdump<a href="#objdump" title="永久链接至标题">¶</a></h3>
+<p>可以使用 <strong>objdump</strong> 程序找到造成 oops 的指令（instruction）的详细信息。常用的选项有 <strong>-d</strong> 用于反汇编代码， <strong>-S</strong> 用于将 C 代码与汇编语言代码交错显示。然而，为了进行高效的解码，我们需要找到内核模块被加载到的地址。这可以在 <code>/proc/modules</code> 中找到。</p>
+<p>以下是在上述模块上使用 <strong>objdump</strong> 的示例，以确定造成 oops 的指令：</p>
+<p>faust:~/lab-01/modul-oops# cat /proc/modules
+oops 1280 1 - Loading 0xc89d4000
+netconsole 8352 0 - Live 0xc89ad000
+pcnet32 33412 0 - Live 0xc895a000
+ide_cd_mod 34952 0 - Live 0xc8903000
+crc32 4224 1 pcnet32, Live 0xc888a000
+cdrom 34848 1 ide_cd_mod, Live 0xc886d000</p>
+<p>faust:~/lab-01/modul-oops# objdump -dS —adjust-vma=0xc89d4000 oops.ko</p>
+<p>oops.ko:     file format elf32-i386</p>
+<p>Disassembly of section .text:</p>
+<p>c89d4000 &#x3C;init_module>:
+#define OP_READ         0
+#define OP_WRITE        1
+#define OP_OOPS         OP_WRITE</p>
+<p>static int my_oops_init (void)
+{
+c89d4000:       55                      push   %ebp
+#else
+#error “Unknown op for oops!”
+#endif</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    return 0;</span></span></code></pre>
+<p>}
+c89d4001:       31 c0                   xor    %eax,%eax
+#define OP_READ         0
+#define OP_WRITE        1
+#define OP_OOPS         OP_WRITE</p>
+<p>static int my_oops_init (void)
+{
+c89d4003:       89 e5                   mov    %esp,%ebp
+int *a;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    a \= (int \*) 0x00001234;</span></span></code></pre>
+<p>#if OP_OOPS == OP_WRITE
+*a = 3;
+c89d4005:       c7 05 34 12 00 00 03    movl   $0x3,0x1234
+c89d400c:       00 00 00
+#else
+#error “Unknown op for oops!”
+#endif</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    return 0;</span></span></code></pre>
+<p>}
+c89d400f:       5d                      pop    %ebp
+c89d4010:       c3                      ret
+c89d4011:       eb 0d                   jmp    c89c3020 &#x3C;cleanup_module>
+c89d4013:       90                      nop
+c89d4014:       90                      nop
+c89d4015:       90                      nop
+c89d4016:       90                      nop
+c89d4017:       90                      nop
+c89d4018:       90                      nop
+c89d4019:       90                      nop
+c89d401a:       90                      nop
+c89d401b:       90                      nop
+c89d401c:       90                      nop
+c89d401d:       90                      nop
+c89d401e:       90                      nop
+c89d401f:       90                      nop</p>
+<p>c89d4020 &#x3C;cleanup_module>:</p>
+<p>static void my_oops_exit (void)
+{
+c89d4020:       55                      push   %ebp
+c89d4021:       89 e5                   mov    %esp,%ebp
+}
+c89d4023:       5d                      pop    %ebp
+c89d4024:       c3                      ret
+c89d4025:       90                      nop
+c89d4026:       90                      nop
+c89d4027:       90                      nop</p>
+<p>请注意，生成 oops 的指令（先前确定为 <code>c89d4005</code>）是：</p>
+<blockquote>
+<p><code>C89d4005: c7 05 34 12 00 00 03 movl $ 0x3,0x1234</code></p>
+</blockquote>
+<p>这正是预期的结果——将值 3 存储在地址 0x0001234 上。</p>
+<p><code>/proc/modules</code> 用于查找加载的内核模块的地址。<strong>—adjust-vma</strong> 选项允许你相对于 <code>0xc89d4000</code> 位置显示指令。<strong>-l</strong> 选项将显示源代码中每行的编号，源代码与汇编语言代码交错显示。</p>
+<h3 id="addr2line">addr2line<a href="#addr2line" title="永久链接至标题">¶</a></h3>
+<p>寻找造成 oops 的代码的一种更简单的方法是使用 <strong>addr2line</strong> 实用程序：</p>
+<p>faust:~/lab-01/modul-oops# addr2line -e oops.o 0x5
+/root/lab-01/modul-oops/oops.c:23</p>
+<p>其中 <code>0x5</code> 是生成 oops 的程序计数器的值（<code>EIP = c89d4005</code>），减去根据 <code>/proc/modules</code> 的信息得出的模块的基地址（<code>0xc89d4000</code>）。</p>
+<h3 id="minicom">minicom<a href="#minicom" title="永久链接至标题">¶</a></h3>
+<p><strong>Minicom</strong> (或其他等效程序，例如 <strong>picocom</strong> 以及 <strong>screen</strong>) 是一种用于与串行端口（serial port）连接和交互的程序。串行端口是在开发阶段分析内核消息（kernel message）或与嵌入式系统进行交互的基本方法。有两种常见的连接方式：</p>
+<ul>
+<li>使用串行端口，设备路径为 <code>/dev/ttyS0</code></li>
+<li>使用串行 USB 端口（FTDI），在这种情况下，设备路径为 <code>/dev/ttyUSB</code></li>
+</ul>
+<p>对于实验中使用的虚拟机，在虚拟机启动后，我们需要使用的设备路径将显示在屏幕上：</p>
+<p>char device redirected to /dev/pts/20 (label virtiocon0)</p>
+<p>使用 Minicom：</p>
+<p># 使用 COM1 连接，速率为 115,200 字符/秒
+minicom -b 115200 -D /dev/ttyS0</p>
+<p># 使用 USB 串行端口连接
+minicom -D /dev/ttyUSB0</p>
+<p># 连接到虚拟机的串行端口
+minicom -D /dev/pts/20</p>
+<h3 id="netconsole">netconsole<a href="#netconsole" title="永久链接至标题">¶</a></h3>
+<p><strong>Netconsole</strong> 是允许通过网络记录内核调试消息的程序。当磁盘日志系统不起作用、串行端口不可用或终端不响应命令时，这非常有用。<strong>Netconsole</strong> 是内核模块。</p>
+<p>要想正常工作，它需要以下参数：</p>
+<blockquote>
+<ul>
+<li>调试站点的端口、IP 地址和源接口名称</li>
+<li>将调试消息发送到的机器的端口、MAC 地址和 IP 地址</li>
+</ul>
+</blockquote>
+<p>这些参数可以在将模块插入内核时进行配置，甚至在模块插入后也可以配置，如果模块在编译时配置了 <code>CONFIG_NETCONSOLE_DYNAMIC</code> 选项。</p>
+<p>插入 <strong>netconsole</strong> 内核模块时的示例配置如下：</p>
+<p>alice:~# modprobe netconsole netconsole=6666@192.168.191.130/eth0,6000@192.168.191.1/00:50:56:c0:00:08</p>
+<p>因此，在具有地址 <code>192.168.191.130</code> 的站点上，调试消息将被发送到 <code>eth0</code> 接口，源端口为 <code>6666</code>。消息将被发送到 <code>192.168.191.1</code>，使用 MAC 地址 <code>00:50:56:c0:00:08</code>，至端口 <code>6000</code> 上。</p>
+<p>可以在目标站点上使用 <strong>netcat</strong> 显示消息：</p>
+<p>bob:~ # nc -l -p 6000 -u</p>
+<p>或者，目标站点可以配置 <strong>syslogd</strong> 来拦截这些消息。更多信息可以在 <code>Documentation/networking/netconsole.txt</code> 中找到。</p>
+<h3 id="printk-调试">Printk 调试<a href="#printk" title="永久链接至标题">¶</a></h3>
+<p><code>最古老且最有用的两种调试辅助工具是你的大脑和 Printf</code>。</p>
+<p>在调试过程中，通常会使用一种原始但非常有效的方法：<code>printk</code> 调试。尽管也可以使用调试器，但通常并不是非常有用：简单的错误（未初始化的变量、内存管理问题等）可以通过控制消息和内核解码的 oops 消息轻松找到。</p>
+<p>对于更复杂的错误，即使是调试器也无法提供太多帮助，除非你对操作系统的结构非常熟悉。在调试内核模块时，其中存在许多未知因素：多个上下文（我们同时运行多个进程和线程）、中断以及虚拟内存等等。</p>
+<p>你可以使用 <code>printk</code> 将内核消息显示到用户空间。它类似于 <code>printf</code> 的功能；唯一的区别是传输的消息可以用 <code>"&#x3C;n>"</code> 字符串为前缀，其中 <code>n</code> 表示错误级别（日志级别），取值范围为 <code>0</code> 到 <code>7</code> 。除了 <code>"&#x3C;n>"</code>，级别也可以用符号常量编码：</p>
+<p>KERN_EMERG——n = 0
+KERN_ALERT——n = 1
+KERN_CRIT——n = 2
+KERN_ERR——n = 3
+KERN_WARNING——n = 4
+KERN_NOTICE——n = 5
+KERN_INFO——n = 6
+KERN_DEBUG——n = 7</p>
+<p>所有日志级别的定义都可以在 <code>linux/kern_levels.h</code> 中找到。基本上，系统凭借这些日志级别将消息发送到各种输出：控制台、位于 <code>/var/log</code> 中的日志文件等等。</p>
+<p>注解</p>
+<p>要在用户空间显示 <code>printk</code> 消息，<code>printk</code> 日志级别必须比 console_loglevel 变量的优先级高。可以从 <code>/proc/sys/kernel/printk</code> 配置默认的控制台日志级别。</p>
+<p>例如，以下命令：</p>
+<p>echo 8 > /proc/sys/kernel/printk</p>
+<p>将使所有内核日志消息在控制台上显示。也就是说，日志级别必须严格小于 <code>console_loglevel</code> 变量。例如，如果 <code>console_loglevel</code> 的值为 <code>5``（指定于 :code:`KERN_NOTICE`），只有比 ``5</code> 更严格的日志级别的消息（即 <code>KERN_EMERG</code> 、<code>KERN_ALERT</code> 、<code>KERN_CRIT</code> 、<code>KERN_ERR</code> 以及 <code>KERN_WARNING</code>）将显示。</p>
+<p>想要快速查看执行内核代码的效果的话，控制台重定向的消息可能对你很有帮助，但如果内核遇到不可修复的错误并且系统冻结，则不再那么有用。在这种情况下，必须查看系统的日志，因为它们保留从一次系统启动到下一次系统重新启动之间的信息。这些日志文件位于 <code>/var/log</code> 中，是由内核运行期间的 <code>syslogd</code> 和 <code>klogd</code> 填充的文本文件。<code>syslogd</code> 和 <code>klogd</code> 从挂载在 <code>/proc</code> 中的虚拟文件系统中获取信息。原则上，打开 <code>syslogd</code> 和 <code>klogd</code> 后，来自内核的所有消息都将发送到 <code>/var/log/kern.log</code>。</p>
+<p>调试的更简单的方法是使用 <code>/var/log/debug</code> 文件。它只包含具有 <code>KERN_DEBUG</code> 日志级别的内核的 <code>printk</code> 消息。</p>
+<p>给定一个生产内核（production kernel）（类似于我们可能正在运行的内核），其只包含发布代码，我们的模块是少数几个带有以 KERN_DEBUG 为前缀的消息的模块之一。通过查找与我们的模块的调试会话对应的消息，我们可以轻松浏览 <code>/var/log/debug</code> 中的信息。</p>
+<p>一个示例如下：</p>
+<p># 清除先前信息的调试文件（或可能是备份文件）
+$ echo “新调试会话” > /var/log/debug
+# 运行测试
+# 如果没有导致内核崩溃的关键错误，检查输出
+# 如果发生关键错误且机器只能通过重新启动来响应，请重新启动系统并检查 /var/log/debug。</p>
+<p>消息的格式显然必须包含所有相关信息，以便检测错误，但插入代码 <code>printk</code> 以提供详细信息可能会花费与编写代码解决问题一样多的时间。通常在使用 <code>printk</code> 显示的调试消息的完整性与将这些消息插入文本中所需的时间之间需要有权衡。</p>
+<p>一种非常简单、插入 <code>printk</code> 更省时并使我们能够分析测试指令流的方法是使用预定义的常量 <code>__FILE__</code> 、<code>__LINE__</code> 和 <code>__func__</code>：</p>
+<blockquote>
+<ul>
+<li><code>__FILE__</code> 会被编译器替换为当前正在编译的源文件的名称。</li>
+<li><code>__LINE__</code> 会被编译器替换为当前源文件中当前指令所在的行号。</li>
+<li><code>__func__</code> / <code>__FUNCTION__</code> 会被编译器替换为当前指令所在的函数的名称。</li>
+</ul>
+</blockquote>
+<p>注解</p>
+<p><code>__FILE__</code> 和 <code>__LINE__</code> 是 ANSI C 规范的一部分，<code>__func__</code> 是 C99 规范的一部分；<code>__FUNCTION__</code> 是 GNU 的一个 C 扩展，不具有可移植性；然而，由于我们编写的代码是针对 Linux 内核的，所以可以毫无问题地使用它们。</p>
+<p>可以在这种情况下使用以下宏定义：</p>
+<p>#define PRINT_DEBUG \
+printk (KERN_DEBUG ”[% s]: FUNC:% s: LINE:% d \ n”, __FILE__,
+__FUNCTION__, __LINE__)</p>
+<p>然后，在每个想要查看执行是否“到达”的位置，插入 PRINT_DEBUG；这是一种简单快捷的方法，通过仔细分析输出可以得出结果。</p>
+<p><strong>dmesg</strong> 命令用于查看在控制台上不显示，需要使用 <code>printk</code> 来打印的消息。</p>
+<p>要删除日志文件中的所有先前消息，请运行：</p>
+<p>cat /dev/null > /var/log/debug</p>
+<p>要删除 <strong>dmesg</strong> 命令显示的消息，请运行：</p>
+<p>dmesg -c</p>
+<h3 id="动态调试">动态调试<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p>动态调试（ <a href="https://www.kernel.org/doc/html/v4.15/admin-guide/dynamic-debug-howto.html">dyndbg</a> ）技术可以动态地激活/停用调试。与 <code>printk</code> 不同，它提供了更高级的 <code>printk</code> 选项，可以用于仅显示我们想要的消息；其对于复杂模块或故障排除子系统非常有用。这显著减少了显示的消息数量，只留下与调试上下文相关的消息。要启用 <code>dyndbg</code> ，内核必须编译时启用 <code>CONFIG_DYNAMIC_DEBUG</code> 选项。一旦配置了这个选项，就可以每次调用时动态启用 <code>pr_debug()</code> 、 <code>dev_dbg()</code> 和 <code>print_hex_dump_debug()</code> 、 <code>print_hex_dump_bytes()</code>。</p>
+<p>debugfs 中的 <code>/sys/kernel/debug/dynamic_debug/control</code> 文件可以用于过滤消息或查看现有过滤器。</p>
+<p>mount -t debugfs none /debug</p>
+<p><a href="http://opensourceforu.com/2010/10/debugging-linux-kernel-with-debugfs/">Debugfs</a> 是个简单的文件系统，用作内核空间接口和用户空间接口，以配置不同的调试选项。任何调试工具都可以在 debugfs 中创建和使用自己的文件/文件夹。</p>
+<p>例如，要显示 <code>dyndbg</code> 中的现有过滤器，可以使用以下命令：</p>
+<p>cat /debug/dynamic_debug/control</p>
+<p>要启用 <code>svcsock.c</code> 文件中第 <code>1603</code> 行的调试消息：</p>
+<p>echo ‘file svcsock.c line 1603 +p’ > /debug/dynamic_debug/control</p>
+<p><code>/debug/dynamic_debug/control</code> 文件不是普通文件。它显示了过滤器的 <code>dyndbg</code> 设置。使用 echo 在其中写入会更改这些设置（实际上不会进行写入）。请注意，该文件包含了 <code>dyndbg</code> 调试消息的设置。不要在该文件中进行日志记录。</p>
+<h4 id="dyndbg-选项">Dyndbg 选项<a href="#dyndbg-1" title="永久链接至标题">¶</a></h4>
+<ul>
+<li>
+<p><code>func</code> ——只显示与过滤器中定义的函数名称相同的函数的调试消息。</p>
+<p>echo ‘func svc_tcp_accept +p’ > /debug/dynamic_debug/control</p>
+</li>
+<li>
+<p><code>file</code> ——要显示调试消息的文件名。可以只是源文件名，也可以是绝对路径或内核树路径。</p>
+<p>file svcsock.c
+file kernel/freezer.c
+file /usr/src/packages/BUILD/sgi-enhancednfs-1.4/default/net/sunrpc/svcsock.c</p>
+</li>
+<li>
+<p><code>module</code> ——显示模块名称。</p>
+<p>module sunrpc</p>
+</li>
+<li>
+<p><code>format</code> ——只显示显示格式包含指定字符串的消息。</p>
+<p>format “nfsd: SETATTR”</p>
+</li>
+<li>
+<p><code>line</code> - 显示调试调用的行号或行号范围。</p>
+<p># 在 svcsock.c 文件的第 1603 行到第 1605 行之间触发调试消息
+$ echo ‘file svcsock.c line 1603-1605 +p’ > /sys/kernel/debug/dynamic_debug/control
+# 从文件开头到第 1605 行启用调试消息
+$ echo ‘file svcsock.c line -1605 +p’ > /sys/kernel/debug/dynamic_debug/control</p>
+</li>
+</ul>
+<p>除了上述选项外，还可以使用操作符 <code>+</code>、 <code>-</code> 或 <code>=</code> 来添加、删除或设置一系列标志：</p>
+<blockquote>
+<ul>
+<li><code>p</code> 激活 pr_debug()。</li>
+<li><code>f</code> 在打印的消息中包含函数名。</li>
+<li><code>l</code> 在打印的消息中包含行号。</li>
+<li><code>m</code> 在打印的消息中包含模块名称。</li>
+<li><code>t</code> 如果不是从中断上下文调用，则包括线程 ID。</li>
+<li><code>_</code> 不设置标志。</li>
+</ul>
+</blockquote>
+<h3 id="kdb内核调试器">KDB：内核调试器<a href="#kdb" title="永久链接至标题">¶</a></h3>
+<p>内核调试器已被证明在开发和调试过程中非常有用。其主要优势之一是可以进行实时调试。这使得我们能够实时监视对内存的访问，甚至在调试过程中修改内存。内核调试器从版本 2.6.26-rc1 开始，已集成到主线内核中。KDB 不是一个 <em>源代码调试器</em>，但在进行完整分析时，可以与 gdb 和符号文件并行使用——请参见 <a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#gdb-intro">GDB调试部分</a></p>
+<p>要使用 KDB，你有以下选项：</p>
+<blockquote>
+<ul>
+<li>非 USB 键盘 + VGA 文本控制台</li>
+<li>串口控制台</li>
+<li>USB EHCI 调试端口</li>
+</ul>
+</blockquote>
+<p>在实验中，我们将使用连接到主机的串口接口。以下命令将在串口上激活 GDB：</p>
+<p>echo hvc0 > /sys/module/kgdboc/parameters/kgdboc</p>
+<p>KDB 是一种 <em>停止模式调试器</em>，这意味着在其活动期间，所有其他进程都将停止。可以使用 <a href="http://zh.wikipedia.org/wiki/Magic_SysRq%E7%B5%84%E5%90%88%E9%8D%B5">SysRq</a> 命令强制内核在执行过程中进入 KDB</p>
+<p>echo g > /proc/sysrq-trigger</p>
+<p>或者在连接到串口的终端中使用键盘组合键 <code>Ctrl+O g</code> (例如使用 <strong>minicom</strong>)。</p>
+<p>KDB 具有各种命令来控制和定义被调试系统的上下文：</p>
+<blockquote>
+<ul>
+<li>lsmod, ps, kill, dmesg, env, bt（backtrace，回溯）</li>
+<li>转储跟踪日志</li>
+<li>硬件断点</li>
+<li>修改内存</li>
+</ul>
+</blockquote>
+<p>要获取有关可用命令的更详细描述，可以在 KDB shell 中使用 <code>help</code> 命令。在下一个示例中，你可以看到一个简单的 KDB 使用示例，它设置了一个硬件断点来监视 <code>mVar</code> 变量的更改。</p>
+<p># 触发 KDB
+echo g > /proc/sysrq-trigger
+# 或者如果我们连接到串口，使用以下命令
+Ctrl-O g
+# 在对 mVar 变量进行写访问时设置断点
+kdb> bph mVar dataw
+# 从KDB返回
+kdb> go</p>
+<h2 id="练习">练习<a href="#section-9" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 kernel_modules。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/kernel_modules/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-9">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<h3 id="0-引言">0. 引言<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<p>使用 <strong>cscope</strong> 或 <a href="http://elixir.free-electrons.com/linux/latest/source">LXR</a> 在 Linux 内核源代码中查找以下符号的定义：</p>
+<ul>
+<li><code>module_init()</code> 和 <code>module_exit()</code>
+<ul>
+<li>这两个宏的作用是什么？ <code>init_module</code> 和 <code>cleanup_module</code> 是什么？</li>
+</ul>
+</li>
+<li><code>ignore_loglevel</code>
+<ul>
+<li>这个变量用于什么？</li>
+</ul>
+</li>
+</ul>
+<p>警告</p>
+<p>如果使用 <strong>cscope</strong> 时遇到问题，可能是数据库没有生成。要生成数据库，请在内核目录中使用以下命令：</p>
+<p>make ARCH=x86 cscope</p>
+<p>注解</p>
+<p>在使用 <strong>cscope</strong> 搜索结构时，只使用结构名（不包括 <code>struct</code>）。所以，要搜索结构 <code>struct module</code>，可以使用以下命令：</p>
+<blockquote>
+<p>vim -t module</p>
+</blockquote>
+<p>或者在 <strong>vim</strong> 中使用命令：</p>
+<blockquote>
+<p>:cs f g module</p>
+</blockquote>
+<h3 id="1-内核模块">1. 内核模块<a href="#section-11" title="永久链接至标题">¶</a></h3>
+<p>为了使用内核模块，我们将按照 上述 步骤进行操作。</p>
+<p>在 <code>tools/labs</code> 目录下运行以下命令生成 <strong>1-2-test-mod</strong> 任务的骨架，然后构建模块。</p>
+<p>$ LABS=kernel_modules make skels
+$ make build</p>
+<p>这些命令将构建当前实验骨架中的所有模块。</p>
+<p>警告</p>
+<p>在解决练习 3 之前，编译 <code>3-error-mod</code> 时会出现编译错误。为了避免此问题，请删除 <code>skels/kernel_modules/3-error-mod/</code> 目录，并从 <code>skels/Kbuild</code> 中删除相应的行。</p>
+<p>使用 <strong>make console</strong> 启动虚拟机，并执行以下任务：</p>
+<ul>
+<li>加载内核模块。</li>
+<li>列出内核模块并检查当前模块是否存在。</li>
+<li>卸载内核模块。</li>
+<li>使用 <strong>dmesg</strong> 命令查看加载/卸载内核模块时显示的消息。</li>
+</ul>
+<p>注解</p>
+<p>请阅读 <a href="#section-6">加载/卸载内核模块</a> 部分。在卸载内核模块时，只需指定模块名称（不包括扩展名）。</p>
+<h3 id="2-printk">2. Printk<a href="#printk-1" title="永久链接至标题">¶</a></h3>
+<p>观察虚拟机控制台。为什么消息直接显示在虚拟机控制台上？</p>
+<p>配置系统，使消息不直接显示在串行控制台上，只能使用 <code>dmesg</code> 命令来查看。</p>
+<p>提示</p>
+<p>一种方法是通过将所需级别写入 <code>/proc/sys/kernel/printk</code> 来设置控制台日志级别。使用的值应小于模块源代码中用于打印消息的级别。</p>
+<p>重新加载/卸载该模块。消息不应该打印到虚拟机控制台上，但是在运行 <code>dmesg</code> 命令时应该可见。</p>
+<h3 id="3-错误">3. 错误<a href="#section-12" title="永久链接至标题">¶</a></h3>
+<p>生成名为 <strong>3-error-mod</strong> 的任务的框架。编译源代码并得到相应的内核模块。</p>
+<p>为什么会出现编译错误? <strong>提示:</strong> 这个模块与前一个模块有什么不同？</p>
+<p>修改该模块以解决这些错误的原因，然后编译和测试该模块。</p>
+<h3 id="4-子模块">4. 子模块<a href="#section-13" title="永久链接至标题">¶</a></h3>
+<p>查看 <code>4-multi-mod/</code> 目录中的 C 源代码文件 <code>mod1.c</code> 和 <code>mod2.c</code>。模块 2 仅包含模块 1 使用的函数的定义。</p>
+<p>修改 <code>Kbuild</code> 文件，从这两个 C 源文件创建 <code>multi_mod.ko</code> 模块。</p>
+<p>编译、复制、启动虚拟机、加载和卸载内核模块。确保消息在控制台上正确显示。</p>
+<h3 id="5-内核-oops">5. 内核 oops<a href="#oops-1" title="永久链接至标题">¶</a></h3>
+<p>进入任务目录 <strong>5-oops-mod</strong> 并检查 C 源代码文件。注意问题将在哪里发生。在 Kbuild 文件中添加编译标记 <code>-g</code>。</p>
+<p>编译相应的模块并将其加载到内核中。识别 oops 出现的内存地址。</p>
+<p>提示</p>
+<p>阅读实验中的 <a href="#system-message-1">`调试`_</a> 部分。要识别地址，请遵循 oops 消息并提取指令指针 (<code>EIP</code>) 寄存器的值。</p>
+<p>确定是哪条指令触发了 oops。</p>
+<p>提示</p>
+<p>使用 <code>proc/modules</code> 信息获取内核模块的加载地址。在物理机上使用 objdump 和/或 addr2line。Objdump 需要编译时开启调试支持！请阅读实验中的 <a href="#objdump">objdump</a> 和 <a href="#addr2line">addr2line</a> 部分。</p>
+<p>尝试卸载内核模块。请注意，该操作无法成功，因为自 oops 发生以来，内核模块内部仍然存在对内核的引用；在释放这些引用之前（在 oops 的情况下几乎不可能），模块无法卸载。</p>
+<h3 id="6-模块参数">6. 模块参数<a href="#section-14" title="永久链接至标题">¶</a></h3>
+<p>进入任务目录 <strong>6-cmd-mod</strong> 并检查 C 源代码文件 <code>cmd_mod.c</code>。编译并复制相关的模块，然后加载内核模块以查看 printk 消息。然后从内核中卸载该模块。</p>
+<p>在不修改源代码的情况下，加载内核模块以显示消息 <code>Early bird gets tired</code>。</p>
+<p>提示</p>
+<p>可以通过向模块传递参数来更改 str 变量。在 <a href="http://tldp.org/LDP/lkmpg/2.6/html/x323.html">这里</a> 找到更多相关信息。</p>
+<h3 id="7-进程信息">7. 进程信息<a href="#section-15" title="永久链接至标题">¶</a></h3>
+<p>检查名为 <strong>7-list-proc</strong> 的任务的框架。添加代码来显示当前进程的进程 ID（ <code>PID</code> ）和可执行文件名。</p>
+<p>按照标记为 <code>TODO</code> 的命令进行操作。在加载和卸载模块时，必须显示这些信息。</p>
+<p>注解</p>
+<ul>
+<li>在Linux内核中，进程由 <code>struct task_struct</code> 描述。使用 <a href="http://elixir.free-electrons.com/linux/latest/source">LXR</a> 或 <code>cscope</code> 来查找 <code>struct task_struct</code> 的定义。</li>
+<li>要找到包含可执行文件名的结构字段，请查找“executable”的注释。</li>
+<li>内核中给定时间运行的当前进程的结构指针由 <code>current</code> 变量（类型为 <code>struct task_struct*</code>）给出。</li>
+</ul>
+<p>提示</p>
+<p>要使用 <code>current</code>，你需要包含定义 <code>struct task_struct</code> 的头文件，即 <code>linux/sched.h</code>。</p>
+<p>编译、复制、启动虚拟机并加载模块。卸载内核模块。</p>
+<p>重复加载/卸载操作。注意显示的进程 PID 是不同的。这是因为在加载模块时，从可执行文件 <code>/sbin/insmod</code> 创建了一个进程，而在卸载模块时，从可执行文件 <code>/sbin/rmmod</code> 创建了一个进程。</p>
+<h2 id="额外练习">额外练习<a href="#section-16" title="永久链接至标题">¶</a></h2>
+<h3 id="1-kdb">1. KDB<a href="#kdb-1" title="永久链接至标题">¶</a></h3>
+<p>进入 <strong>8-kdb</strong> 目录。使用 <strong>SysRq</strong> 命令通过串口激活 KDB 并进入 KDB 模式。使用 <strong>minicom</strong> 连接到与 virtiocon0 相链接的伪终端，配置 KDB 使用 hvc0 串口：</p>
+<p>echo hvc0 > /sys/module/kgdboc/parameters/kgdboc</p>
+<p>然后使用 SysRq 命令启用 KDB (<strong>Ctrl + O g</strong>)。查看当前系统状态（使用 <strong>help</strong> 命令查看可用的 KDB 命令）。使用 <strong>go</strong> 命令继续内核执行。</p>
+<p>加载 <code>hello_kdb</code> 模块。该模块在写入 <code>/proc/hello_kdb_bug</code> 文件时会模拟一个错误。使用以下命令模拟错误：</p>
+<p>echo 1 > /proc/hello_kdb_bug</p>
+<p>运行上述命令后，每次出现 oops/内核崩溃 时，内核会停止执行并进入调试模式。</p>
+<p>分析堆栈跟踪并确定导致错误的代码。我们如何从 KDB 中找到模块加载的地址？</p>
+<p>同时，在一个新窗口中使用 GDB 并根据 KDB 提供的信息查看代码。</p>
+<p>提示</p>
+<p>加载符号文件。使用 <strong>info line</strong> 命令。</p>
+<p>当写入 <code>/proc/hello_kdb_break</code> 时，模块将递增 <code>kdb_write_address</code> 变量。进入 KDB 并设置每次对 <code>kdb_write_address</code> 变量进行写入访问的断点。返回内核以触发写入，使用以下命令：</p>
+<p>echo 1 > /proc/hello_kdb_break</p>
+<h3 id="2-ps模块">2. PS模块<a href="#ps" title="永久链接至标题">¶</a></h3>
+<p>更新在 proc-info 处创建的内核模块，以便在插入内核模块时显示有关系统中所有进程的信息，而不仅仅是当前进程的信息。然后，将获得的结果与 <strong>ps</strong> 命令的输出进行比较。</p>
+<p>提示</p>
+<ul>
+<li>系统中的进程以循环列表的形式组织。</li>
+<li><code>for_each_...</code> 宏（例如 <code>for_each_process</code>）在你希望遍历列表中的项目时非常有用。</li>
+<li>要了解如何使用某个功能或宏，请使用 <a href="http://elixir.free-electrons.com/linux/latest/source">LXR</a> 或 Vim 和 <strong>cscope</strong> 进行搜索并查找使用场景。</li>
+</ul>
+<h3 id="3-内存信息">3. 内存信息<a href="#section-17" title="永久链接至标题">¶</a></h3>
+<p>创建一个内核模块，显示当前进程的虚拟内存区域；对于每个内存区域，它将显示起始地址和结束地址。</p>
+<p>提示</p>
+<ul>
+<li>从现有的内核模块开始。</li>
+<li>研究结构 <code>struct task_struct</code>、<code>struct mm_struct</code> 和 <code>struct vm_area_struct</code>。内存区域由类型为 <code>struct vm_area_struct</code> 的结构表示。</li>
+<li>不要忘记包含定义必要结构的头文件。</li>
+</ul>
+<h3 id="4-动态调试">4. 动态调试<a href="#section-18" title="永久链接至标题">¶</a></h3>
+<p>进入 <strong>9-dyndbg</strong> 目录并编译 <code>dyndbg.ko</code> 模块。</p>
+<p>熟悉挂载在 <code>/debug</code> 中的 <code>debugfs</code> 文件系统，并分析文件 <code>/debug/dynamic_debug/control</code> 的内容。插入 <code>dyndbg.ko</code> 模块并注意 <code>dynamic_debug/control</code> 文件的新内容。</p>
+<p>在相应的文件中出现了什么额外内容？运行以下命令：</p>
+<p>grep dyndbg /debug/dynamic_debug/control</p>
+<p>配置 <strong>dyndbg</strong>，以便在卸载模块时仅显示来自 <code>my_debug_func()</code> 的标记为“Important”的消息，本练习仅过滤掉 <code>pr_debug()</code> 调用；始终显示 <code>printk()</code> 调用。</p>
+<p>请指定两种过滤方式。</p>
+<p>提示</p>
+<p>阅读 <a href="#section-8">动态调试</a> 部分并查看 <strong>dyndbg</strong> 的选项（例如 <strong>line</strong> 、<strong>format</strong>）。</p>
+<p>执行过滤操作并检查 <code>dynamic_debug/control</code> 文件。发生了什么变化？如何知道哪些调用被激活了？</p>
+<p>提示</p>
+<p>检查 <strong>dyndbg</strong> 标志。卸载内核模块并观察日志消息。</p>
+<h3 id="5-初始化期间的动态调试">5. 初始化期间的动态调试<a href="#section-19" title="永久链接至标题">¶</a></h3>
+<p>正如你注意到的那样，只有在插入模块后才能激活/过滤 <code>pr_debug()</code> 调用。在某些情况下，查看模块初始化期间的消息可能会很有帮助。可以通过使用一个名为 <strong>dyndbg</strong> 的默认（伪）参数作为初始化模块的参数来实现。使用此参数，你可以添加/删除 <strong>dyndbg</strong> 标志。</p>
+<p>提示</p>
+<p>阅读 <a href="#section-8">动态调试</a> 部分的最后一部分，查看可用的标志（例如： <strong>+/- p</strong>）。</p>
+<p>阅读 <a href="https://01.org/linuxgraphics/gfx-docs/drm/admin-guide/dynamic-debug-howto.html#debug-messages-at-module-initialization-time">模块初始化时的调试消息部分</a> ，并插入模块以便在初始化期间显示 <code>my_debug_func`（即 :c:func:`dyndbg_init()</code>）中的消息。</p>
+<p>警告</p>
+<p>在实验的虚拟机中，你需要使用 <strong>insmod</strong> 而不是 <strong>modprobe</strong>。</p>
+<p>在不卸载模块的情况下，停用 <code>pr_debug()</code> 调用。</p>
+<p>提示</p>
+<p>你可以删除设置的标志。卸载内核模块。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">← 介绍 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

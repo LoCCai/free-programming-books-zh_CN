@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 实验 12——内核分析 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 实验 12——内核分析 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 实验 12——内核分析 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<ul>
+<li>熟悉 Linux 内核分析的基础知识</li>
+<li>理解基本的分析工具</li>
+<li>学习分析方法和良好实践</li>
+</ul>
+</blockquote>
+<h2 id="概述">概述<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>到目前为止，我们已经学习了 Linux 内核不同组件的工作方式，以及如何编写与它们交互的驱动程序，以支持设备或协议。这帮助我们了解了 Linux 内核的工作原理，虽然大多数人并不会去编写内核驱动程序。</p>
+<p>尽管如此，所学的技能将帮助我们使应用程序更好地与整个操作系统集成。为了做到这一点，我们必须对用户空间和内核空间有全面的认知。</p>
+<p>本课程旨在将我们在内核空间的工作与实际应用场景相结合，我们在实际场景中不编写内核空间代码，而是使用分析工具查看内核，以便调试我们编写常规低级别应用程序时遇到的问题。</p>
+<p>本课程的另一个重点是学习一些通用的调试软件问题的方法论，并介绍一些工具，帮助我们从内核中获得应用程序运行信息。</p>
+<h2 id="分析工具">分析工具<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>我们主要关注的工具是 <code>perf</code>，它支持跟踪应用程序，并从一些通用层面检查系统。我们还将使用大多数人在日常生活中会用到的调试工具，如 <code>htop</code>, <code>ps</code> 以及 <code>lsof</code> 等。</p>
+<h3 id="perf">perf<a href="#perf" title="永久链接至标题">¶</a></h3>
+<p><code>perf</code> 是一个使用跟踪点、kprobes 和 uprobes 来对 CPU 进行插装的工具。该工具允许我们查看在给定点调用了哪些函数。这使我们能够了解内核在哪里花费了最多的时间，打印函数的调用栈，以及记录 CPU 正在运行的内容。</p>
+<p><code>perf</code> 集成了以下模块：</p>
+<blockquote>
+<ul>
+<li>静态跟踪</li>
+<li>动态跟踪</li>
+<li>资源监控</li>
+</ul>
+</blockquote>
+<p>perf 提供的跟踪接口可以通过 <code>perf</code> 命令及其子命令来使用。</p>
+<p>root@qemux86:~# ./skels/kernel_profiling/perf</p>
+<p>usage: perf [—version] [—help] [OPTIONS] COMMAND [ARGS]</p>
+<p>The most commonly used perf commands are:
+annotate        Read perf.data (created by perf record) and display annotated code
+archive         Create archive with object files with build-ids found in perf.data file
+bench           General framework for benchmark suites
+buildid-cache   Manage build-id cache.
+buildid-list    List the buildids in a perf.data file
+c2c             Shared Data C2C/HITM Analyzer.
+config          Get and set variables in a configuration file.
+data            Data file related processing
+diff            Read perf.data files and display the differential profile
+evlist          List the event names in a perf.data file
+ftrace          simple wrapper for kernel’s ftrace functionality
+inject          Filter to augment the events stream with additional information
+kallsyms        Searches running kernel for symbols
+kmem            Tool to trace/measure kernel memory properties
+kvm             Tool to trace/measure kvm guest os
+list            List all symbolic event types
+lock            Analyze lock events
+mem             Profile memory accesses
+record          Run a command and record its profile into perf.data
+report          Read perf.data (created by perf record) and display the profile
+sched           Tool to trace/measure scheduler properties (latencies)
+script          Read perf.data (created by perf record) and display trace output
+stat            Run a command and gather performance counter statistics
+test            Runs sanity tests.
+timechart       Tool to visualize total system behavior during a workload
+top             System profiling tool.
+version         display the version of perf binary
+probe           Define new dynamic tracepoints</p>
+<p>See ‘perf help COMMAND’ for more information on a specific command.</p>
+<p>在上述输出中，我们可以看到 perf 的所有子命令以及它们的功能描述，其中最重要的是：</p>
+<ul>
+<li><code>stat</code> ——显示统计信息，如上下文切换和缺页错误的次数；</li>
+<li><code>top</code> ——一个交互式界面，可以查看最频繁的函数调用及其调用者。通过这个界面，我们在进行分析时可以直接提供反馈；</li>
+<li><code>list</code> ——列出内核中可以插装的静态跟踪点。它可以帮助我们从内核内部获取信息；</li>
+<li><code>probe</code> ——添加动态跟踪点，插装函数调用，以便被 perf 记录；</li>
+<li><code>record</code> ——根据用户定义的跟踪点记录函数调用和堆栈跟踪。它还可以记录特定的函数调用及其堆栈跟踪。记录默认保存在一个名为 <code>perf.data</code> 的文件中；</li>
+<li><code>report</code> ——显示 perf 记录中保存的信息。</li>
+</ul>
+<p>另一种使用 perf 接口的方法是通过封装 perf 的脚本，这些脚本以更高级的方式查看事件或数据，而无需了解复杂的命令。其中一个例子是 <code>iosnoop.sh</code> 脚本，它显示正在进行的 I/O 传输。</p>
+<h3 id="ps">ps<a href="#ps" title="永久链接至标题">¶</a></h3>
+<p><code>ps</code> 是 Linux 上的工具，我们借此可以监视机器在给定时间运行的进程，包括内核线程。这个工具简单易用，可以一目了然地查看 CPU 上正在运行的进程以及它们的 CPU 和内存使用情况。</p>
+<p>为了列出所有正在运行的进程，我们使用 <code>ps aux</code> 命令，就像下面这样：</p>
+<p>TODO
+root@qemux86:<del>/skels/kernel_profiling/0-demo# cd
+root@qemux86:</del># ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.5   2004  1256 ?        Ss   12:06   0:12 init [5]
+root         2  0.0  0.0      0     0 ?        S    12:06   0:00 [kthreadd]
+[…]
+root       350  4.5  4.4  11132 10688 hvc0     T    12:07  17:21 ./io-app
+root      1358  0.0  0.0      0     0 ?        I    14:30   0:00 [kworker/u2:1-e
+root      2293  0.1  1.5   5516  3704 ?        Ss   18:18   0:00 sshd: root@pts/
+root      2295  0.0  1.3   3968  3232 pts/0    Ss+  18:19   0:00 -sh
+root      2307  0.0  0.0      0     0 ?        I    18:19   0:00 [kworker/u2:2-e
+root      2350  0.0  0.7   3032  1792 hvc0     R+   18:26   0:00 ps aux
+root      2392  2.6  0.0      0     0 ?        D    18:31   0:00 test-script</p>
+<p>一个需要注意的信息是，第 7 列表示进程的状态, <code>S</code> 表示挂起, <code>D</code> 表示因 I/O 而挂起, <code>R</code> 表示正在运行。</p>
+<h3 id="time">time<a href="#time" title="永久链接至标题">¶</a></h3>
+<p>我们可以通过 <code>time</code> 命令检查进程在 I/O、运行应用程序代码或运行内核空间代码上所花费的时间。这可以帮助我们找出应用程序问题的来源（是因为在内核空间中运行太多，因此在进行系统调用时有一些开销，还是问题出在用户代码中）。</p>
+<p>root@qemux86:~# time dd if=/dev/urandom of=./test-file bs=1K count=10
+10+0 records in
+10+0 records out
+10240 bytes (10 kB, 10 KiB) copied, 0.00299749 s, 3.4 MB/s</p>
+<p>real        0m0.020s
+user        0m0.001s
+sys 0m0.015s</p>
+<p>在上述输出中，我们测量了使用 <code>dd</code> 生成文件所用的时间。计时结果显示在输出的底部。工具输出的值如下：</p>
+<ul>
+<li><code>real</code> ——从应用程序启动到结束经过的时间；</li>
+<li><code>user</code> ——运行 <code>dd</code> 代码所花费的时间；</li>
+<li><code>sys</code> ——代表进程运行过程中内核代码所花费的时间。</li>
+</ul>
+<p>我们可以看到 <code>user</code> 和 <code>sys</code> 值的总和并不等于 <code>real</code> 值。这种情况可能发生在应用程序在多个核心上运行（总和可能较高），或者应用程序休眠（总和较低）的情况下。</p>
+<h3 id="top">top<a href="#top" title="永久链接至标题">¶</a></h3>
+<p><code>top</code> 是一个应用程序，在大多数系统中都可以找到，它实时列出正在系统上运行的应用程序。 <code>top</code> 以交互方式运行，并自动刷新其输出，这一点与 <code>ps</code> 不同。当我们需要进行高级别的持续监控时，我们可以使用该工具。</p>
+<h2 id="性能分析方法论">性能分析方法论<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>在进行性能分析时，我们的目标是找出问题的原因。通常，这个问题是在应用程序无法按预期工作时被观察到的。当我们说应用程序没有按预期工作时，对于不同的人来说可能意味着不同的事情。例如，一个人可能抱怨应用程序变慢了，而另一个人可能说应用程序在 CPU 上运行，但没有输出任何内容。</p>
+<p>在任何问题解决的环境中，第一步是了解我们要调试的应用程序的默认行为，并确保它目前没有在预期的参数范围内运行。</p>
+<h2 id="练习">练习<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 kernel_profiling。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/kernel_profiling/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-5">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<p>注解</p>
+<p>本任务中我们需要使用 <code>perf</code> 跟踪工具。当在我们的系统上本地运行时，我们需要使用包管理器安装 <code>linux-tools-&#x3C;version>-generic</code> 软件包才能运行它。由于我们的虚拟机没有访问包管理器的权限，我们需要从 <a href="http://swarm.cs.pub.ro/~sweisz/perf">这个</a> 链接下载 <code>perf</code> 二进制文件。将应用程序下载到 <code>skels/kernel_profiling</code> 目录，并授予执行权限。</p>
+<p>警告</p>
+<p>运行 <code>perf</code> 时，请确保运行的是下载的版本，而不是 <code>PATH</code> 变量中的版本。</p>
+<p>注解</p>
+<p>在完成本课程的练习时，我们将需要同时运行多个命令。为此，我们需要使用 SSH 连接到虚拟机。我们建议使用 <code>core-image-sato-sdk-qemu</code> 镜像，因为它具备我们所需的工具。要使用 <code>core-image-sato-sdk-qemu</code> 文件系统运行虚拟机，请取消 <code>qemu/Makefile</code> 文件中的第 16 行的注释。</p>
+<p>注解</p>
+<p>如果你希望运行我们在仓库中包含的基于 <code>perf-tools</code> 的脚本，例如 <code>iosnoop.sh</code>，你需要授予其执行权限，以便将其复制到虚拟机的文件系统中。</p>
+<p>注解</p>
+<p>你的意见对我们有很大帮助，可以帮助我们改进 SO2 课程的组成部分和开展方式。请填写 <a href="https://curs.upb.ro/2022/mod/feedbackadm/view.php?id=15292">curs.upb.ro 平台上的反馈表格</a>。</p>
+<p>该表格是匿名的，活动时间为 2023 年 5 月 22 日至 6 月 2 日。在所有成绩评定完成后，SO2 团队将能够查看结果。</p>
+<p>我们邀请你评估 SO2 团队的活动，并说明其优点和缺点，以及改进课程的建议。你的反馈对我们来说非常重要，我们借此可以提高未来几年的课程质量。</p>
+<p>我们特别关注以下问题：</p>
+<blockquote>
+<ul>
+<li>有哪些内容你不喜欢以及你认为做得不好的地方有哪些？</li>
+<li>为什么你不喜欢它，为什么你认为它做得不好？</li>
+<li>我们应该做些什么来改善情况？</li>
+</ul>
+</blockquote>
+<h2 id="0-演示io-问题的性能分析">0. 演示：I/O 问题的性能分析<a href="#i-o" title="永久链接至标题">¶</a></h2>
+<p>在处理 I/O 时，我们必须记住，与内存相比，I/O 是操作系统中速度最慢的系统之一，与之相比内存和进程调度（处理运行在 CPU 上的内容）的速度要快上一个数量级。</p>
+<p>因此，我们必须谨慎考虑 I/O 操作，因为如果系统忙于处理 I/O 请求的话，应用程序可能就无法正常运行。另一个可能遇到的问题是，如果应用程序需要等待 I/O 操作完成的话，I/O 可能因其速度慢而影响应用程序的响应性。</p>
+<p>让我们来看一个应用程序并调试其中的问题。</p>
+<p>我们将运行 <code>0-demo</code> 目录的 <code>io-app</code> 应用程序。</p>
+<p>为了检查运行在 CPU 上的内容，并查看进程的堆栈，我们可以使用 <code>perf record</code> 子命令，就像下面这样：</p>
+<p>root@qemux86:~# ./perf record -a -g
+Couldn’t synthesize bpf events.
+^C[ perf record: Woken up 7 times to write data ]
+[ perf record: Captured and wrote 1.724 MB perf.data (8376 samples) ]</p>
+<p>perf 将无限期记录值，但我们可以使用 <code>Ctrl+c</code> 快捷键关闭它。我们使用了 <code>-a</code> 选项来探测所有 CPU，并使用 <code>-g</code> 选项记录整个调用堆栈。</p>
+<p>为了可视化记录的信息，我们需要使用 <code>perf report</code> 命令，它将打开一个页面，显示在 CPU 上的最频繁的函数调用及其调用堆栈。</p>
+<p>root@qemux86:~# ./perf report —header -F overhead,comm,parent
+# Total Lost Samples: 0</p>
+<h1 id=""></h1>
+<p># Samples: 8K of event ‘cpu-clock:pppH’
+# Event count (approx.): 2094000000</p>
+<h1 id="-1"></h1>
+<p># Overhead  Command          Parent symbol
+# …  …  …</p>
+<h1 id="-2"></h1>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>58.63%  io-app           \[other\]</span></span>
+<span class="line"><span>        |</span></span>
+<span class="line"><span>         --58.62%--\_\_libc\_start\_main</span></span>
+<span class="line"><span>                   main</span></span>
+<span class="line"><span>                   \_\_kernel\_vsyscall</span></span>
+<span class="line"><span>                   |</span></span>
+<span class="line"><span>                    --58.61%--\_\_irqentry\_text\_end</span></span>
+<span class="line"><span>                              do\_SYSENTER\_32</span></span>
+<span class="line"><span>                              do\_fast\_syscall\_32</span></span>
+<span class="line"><span>                              \_\_noinstr\_text\_start</span></span>
+<span class="line"><span>                              \_\_ia32\_sys\_write</span></span>
+<span class="line"><span>                              ksys\_write</span></span>
+<span class="line"><span>                              vfs\_write</span></span>
+<span class="line"><span>                              |</span></span>
+<span class="line"><span>                               --58.60%--ext4\_file\_write\_iter</span></span>
+<span class="line"><span>                                         ext4\_buffered\_write\_iter</span></span></code></pre>
+<p>[…]</p>
+<p>我们使用 <code>--header</code> 选项打印表头，并使用 <code>-F overhead,comm,parent</code> 选项打印调用堆栈、命令和调用者的时间百分比。</p>
+<p>我们可以看到 <code>io-app</code> 命令在文件系统中进行了一些写操作，这在很大程度上增加了系统的负载。</p>
+<p>有了这些信息，我们知道了应用程序正在进行许多 I/O 调用。为了查看这些请求的大小，我们可以使用 <code>iosnoop.sh</code> 脚本。</p>
+<p>root@qemux86:~/skels/kernel_profiling# ./iosnoop.sh 1
+Tracing block I/O. Ctrl-C to end.
+COMM         PID    TYPE DEV      BLOCK        BYTES     LATms
+io-app       889    WS   254,0    4800512      1310720     2.10
+io-app       889    WS   254,0    4803072      1310720     2.04
+io-app       889    WS   254,0    4805632      1310720     2.03
+io-app       889    WS   254,0    4808192      1310720     2.43
+io-app       889    WS   254,0    4810752      1310720     3.48
+io-app       889    WS   254,0    4813312      1310720     3.46
+io-app       889    WS   254,0    4815872      524288     1.03
+io-app       889    WS   254,0    5029888      1310720     5.82
+io-app       889    WS   254,0    5032448      786432     5.80
+jbd2/vda-43  43     WS   254,0    2702392      8192       0.22
+kworker/0:1H 34     WS   254,0    2702408      4096       0.40
+io-app       889    WS   254,0    4800512      1310720     2.60
+io-app       889    WS   254,0    4803072      1310720     2.58
+[…]</p>
+<p>根据这个输出，我们可以看到 <code>io-app</code> 在进行循环读取，因为第一个块 <code>4800512</code> 重复出现，并且它进行了大块读取，因为它每次读取一兆字节。这个不断循环的过程增加了我们所经历的系统负载。</p>
+<h3 id="1-调查降低响应性的问题">1. 调查降低响应性的问题<a href="#section-6" title="永久链接至标题">¶</a></h3>
+<p><code>io.ko</code> 模块位于 <code>kernel_profiling/1-io</code> 目录中，在插入后会降低系统的响应性。我们注意到在输入命令时命令行会出现卡顿，但是在运行 <code>top</code> 命令时，我们发现系统的负载并不高，并且没有任何占用资源的进程。</p>
+<p>找出 <code>io.ko</code> 模块在做什么，以及为什么它会导致卡顿。</p>
+<p>提示</p>
+<p>跟踪所有被调用的函数，并检查 CPU 在哪里花费了大部分时间。为此，你可以运行 <code>perf record</code> 和 <code>perf report</code> 并查看输出，或者使用 <code>perf top</code> 命令。</p>
+<h3 id="2-启动新线程">2. 启动新线程<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p>我们希望以并行方式将同一个函数循环运行 100 次。我们在 <code>kernel_profiling/2-scheduling</code> 目录下的 <code>scheduling</code> 可执行文件中实现了两种解决方案。</p>
+<p>当执行 <code>scheduling</code> 可执行文件时，它会并行打印 100 个运行实例的消息。我们可以通过将第一个参数设为 <code>0</code> 或 <code>1</code> 来调整执行方式。</p>
+<p>找出哪种解决方案更好，以及原因是什么。</p>
+<h3 id="3-调整-cp">3. 调整 <code>cp</code><a href="#cp" title="永久链接至标题">¶</a></h3>
+<p>我们的目标是编写一个集成在 Linux 中的 <code>cp</code> 工具的副本，该工具已经由 <code>kernel_profiling/3-memory</code> 目录中的 <code>memory</code> 可执行文件实现。它对复制操作支持两种实现：</p>
+<ul>
+<li>使用 <code>read()</code> 系统调用将源文件的内容读入内存缓冲区，并使用 <code>write()</code> 系统调用将该缓冲区写入目标文件；</li>
+<li>使用 <code>mmap</code> 系统调用将源文件和目标文件映射到内存中，然后在内存中将源文件的内容复制到目标文件中。</li>
+</ul>
+<p>另一个我们可以使用的可调参数是复制操作的块大小，无论是通过读取/写入还是在内存中进行都支持这个参数。</p>
+<ol>
+<li>调查这两种复制机制中哪一种更快。在这一步中，你需要使用 1024 字节的块大小。</li>
+<li>一旦找到哪种复制机制更快，更改块大小参数，看看哪个值能给出最好的复制效果。为什么？</li>
+</ol>
+<h3 id="4-io-延迟">4. I/O 延迟<a href="#i-o-1" title="永久链接至标题">¶</a></h3>
+<p>我们编写了一个模块来读取磁盘的内容。插入位于 <code>4-bio</code> 目录中的 <code>bio.ko</code> 模块后，系统负载急剧上升（可以在 <code>top</code> 命令中看到），但我们发现系统仍然响应良好。</p>
+<p>调查是什么导致系统负载增加。是 I/O 问题还是调度问题？</p>
+<p>提示</p>
+<p>尝试使用 <code>perf</code> 跟踪I/O操作，或使用 <code>iosnoop.sh</code> 脚本来检查在特定时间点发生了哪些 I/O 操作。</p>
+<h3 id="5-错误的-elf-文件">5. 错误的 ELF 文件<a href="#elf" title="永久链接至标题">¶</a></h3>
+<p>注解</p>
+<p>这是一个额外的练习，已在原生 Linux 系统上进行了测试。它可以在 QEMU 虚拟机中运行，但在我们的测试中行为很奇怪。我们建议你使用原生（也可以是 VirtualBox 或者 VMware）的 Linux 系统。</p>
+<p>我们成功构建了一个 ELF文件（作为 <a href="https://github.com/unikraft/unikraft">Unikraft</a> 构建的一部分），在静态分析中该文件是有效的，但无法执行。该文件名为 <code>bad_elf</code>，位于 <code>5-bad-elf/</code> 文件夹中。</p>
+<p>运行它会触发“段错误（segmentation fault）”消息。如果使用 <code>strace</code> 运行它则会显示 <code>execve()</code> 出现错误。</p>
+<p>… skels/kernel_profiling/5-bad-elf$ ./bad_elf
+Segmentation fault</p>
+<p>… skels/kernel_profiling/5-bad-elf$ strace ./bad_elf
+execve(”./bad_elf”, [”./bad_elf”], 0x7ffc3349ba50 /* 70 vars \*/) = -1 EINVAL (Invalid argument)
+--- SIGSEGV {si_signo=SIGSEGV, si_code=SI_KERNEL, si_addr=NULL} ---
++++ killed by SIGSEGV +++
+Segmentation fault (core dumped)</p>
+<p>ELF 文件本身是有效的：</p>
+<p>… skels/kernel_profiling/5-bad-elf$ readelf -a bad_elf</p>
+<p>问题可以在内核中检测到。</p>
+<p>使用 <code>perf</code> 或更好的 <a href="https://jvns.ca/blog/2017/03/19/getting-started-with-ftrace/">ftrace</a> 来检查程序调用的内核函数。确定发送 <code>SIGSEGV</code> 信号的函数调用。找出问题的原因。在 <a href="https://linux.die.net/man/5/elf">elf(5)手册页</a> 中找到该原因。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">← SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

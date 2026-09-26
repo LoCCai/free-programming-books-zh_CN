@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mac 开发配置手册 · Homebrew | Mac 开发配置手册 · 免费编程中文书籍</title><meta name="description" content="Mac 开发配置手册"><meta property="og:title" content="Mac 开发配置手册 · Homebrew | Mac 开发配置手册"><meta property="og:description" content="Mac 开发配置手册"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/5497cc7a9cb0">Mac 开发配置手册</a> <span> / Homebrew | Mac 开发配置手册</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Mac 开发配置手册</p> <a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/001-1g/">Introduction | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/002-28/">System Preferences | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/003-1w/">XCode | Mac 开发配置手册</a><a class="active" href="/free-programming-books-zh_CN/read/5497cc7a9cb0/004-1z/">Homebrew | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/005-1z/">Usage | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/006-1y/">Cask | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/007-1w/">iTerm2 | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/008-1u/">ZSH | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/009-1u/">Git | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/010-1y/">Git ignore | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/011-1w/">MySql | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/012-1y/">Node.js | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/013-1v/">Apps | Mac 开发配置手册</a> </aside> <article class="reader-panel prose"> <p>包管理工具可以让你安装和更新程序变得更方便，目前在 OS X 系统中最受欢迎的包管理工具是 <a href="http://brew.sh/">Homebrew</a>.</p>
+<h3 id="安装">安装</h3>
+<p>在安装 Homebrew 之前，需要将 <strong>Xcode Command Line Tools</strong> 安装完成，这样你就可以使用基于 Xcode Command Line Tools 编译的 Homebrew。</p>
+<p>在 terminal 中复制以下命令（不包括 <code>$</code>），跟随指引，将完成 Hombrew 安装。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></span></code></pre>
+<p>紧接着，我们需要做一件事让通过 Homebrew 安装的程序的启动链接 (在 <code>/usr/local/bin</code>中）可以直接运行，无需将完整路径写出。通过以下命令将 <code>/usr/local/bin</code> 添加至 <code>$PATH</code> 环境变量中:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile</span></span></code></pre>
+<p><strong>Cmd+T</strong> 打开一个新的 terminal 标签页，运行以下命令，确保 brew 运行正常。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>$ brew doctor</span></span></code></pre>
+<hr>
+<p><code>译注：</code></p>
+<p>安装完成后，Homebrew 会将本地 <code>/usr/local</code> 初始化为 git 的工作树，并将目录所有者变更为当前所操作的用户，将来 <code>brew</code> 的相关操作不需要 sudo 。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/5497cc7a9cb0/003-1w/">← XCode | Mac 开发配置手册</a></span> <span><a href="/free-programming-books-zh_CN/read/5497cc7a9cb0/005-1z/">Usage | Mac 开发配置手册 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

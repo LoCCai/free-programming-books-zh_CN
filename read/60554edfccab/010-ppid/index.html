@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>理解Linux进程 · PPID · 免费编程中文书籍</title><meta name="description" content="理解Linux进程"><meta property="og:title" content="理解Linux进程 · PPID"><meta property="og:description" content="理解Linux进程"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/60554edfccab">理解Linux进程</a> <span> / PPID</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">理解Linux进程</p> <a class href="/free-programming-books-zh_CN/read/60554edfccab/001-readme/">前言</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/002-thanks/">致谢</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/003-overview/">概述</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/004-use-code/">使用代码</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/005-use-docker/">使用Docker</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/006-readme/">进程基础</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/007-what-is-process/">进程是什么</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/008-hello-world/">Hello World</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/009-pid/">PID</a><a class="active" href="/free-programming-books-zh_CN/read/60554edfccab/010-ppid/">PPID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/011-use-pid/">使用PID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/012-process-name/">进程名字</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/013-argv/">进程参数</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/014-input-and-output/">输入与输出</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/015-concurrent-and-parallel/">并发与并行</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/016-the-more-the-better/">进程越多越好</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/017-status/">进程状态</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/018-exit-code/">退出码</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/019-process-resource/">进程资源</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/020-deadlock/">死锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/021-livelock/">活锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/022-posix/">POSIX</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/023-nohup/">Nohup</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/024-run-process/">运行进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/025-readme/">Go编程实例</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/026-spawn/">衍生新进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/027-exec/">执行外部程序</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/028-fork/">复制进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/029-readme/">进程进阶</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/030-file-lock/">文件锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/031-orphan-process/">孤儿进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/032-zombie-process/">僵尸进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/033-daemon-process/">守护进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/034-ipc/">进程间通信</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/035-signal/">信号</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/036-system-call/">Linux系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/037-fd/">文件描述符</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/038-epoll/">Epoll</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/039-share-memory/">共享内存</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/040-copy-on-write/">Copy On Write</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/041-cgroups/">Cgroups</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/042-namespaces/">Namespaces</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/043-readme/">项目实例Run</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/044-architecture/">项目架构</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/045-implement/">代码实现</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/046-readme/">注意事项</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/047-mkdir/">创建目录权限</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/048-sigkill/">捕获SIGKILL</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/049-sendfile/">Sendfile系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/050-readme/">后记</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/051-book/">参考书籍</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/052-project/">项目学习</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/053-thanks-again/">再次感谢</a> </aside> <article class="reader-panel prose"> <h2 id="ppid">PPID</h2>
+<p>每个进程除了一定有PID还会有PPID，也就是父进程ID，通过PPID可以找到父进程的信息。</p>
+<p>为什么进程都会有父进程ID呢？因为进程都是由父进程衍生出来的，后面会详细介绍几种衍生的方法。那么跟人类起源问题一样，父进程的父进程的父进程又是什么呢？实际上有一个PID为1的进程是由内核创建的init进程，其他子进程都是由它衍生出来，所以前面的描述并不准确，进程号为1的进程并没有PPID。</p>
+<p>因为所有进程都来自于一个进程，所以Linux的进程模型也叫做进程树。</p>
+<h2 id="示例程序">示例程序</h2>
+<p>要想获得进程的PPID，可以通过以下<code>Getppid()</code>这个函数来获得，print_ppid.go程序的代码如下。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>package main</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import (</span></span>
+<span class="line"><span>  "fmt"</span></span>
+<span class="line"><span>  "os"</span></span>
+<span class="line"><span>  )</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func main() {</span></span>
+<span class="line"><span>    fmt.Println(os.Getppid())</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<h2 id="运行结果">运行结果</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>root@87096bf68cb2:/go/src# go run print_ppid.go</span></span>
+<span class="line"><span>2892</span></span>
+<span class="line"><span>root@87096bf68cb2:/go/src# go run print_ppid.go</span></span>
+<span class="line"><span>2902</span></span></code></pre>
+<p>有趣的事情发生了，有没有发现每次运行的父进程ID都不一样，这不符合我们的预期啊，原来我们通过<code>go run</code>每次都会启动一个新的Go虚拟机来执行进程。</p>
+<h2 id="编译后运行">编译后运行</h2>
+<p>如果我们先生成二进制文件再执行结果会怎样呢？</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>root@87096bf68cb2:/go/src# ./print_ppid</span></span>
+<span class="line"><span>1</span></span>
+<span class="line"><span>root@87096bf68cb2:/go/src# ./print_ppid</span></span>
+<span class="line"><span>1</span></span>
+<span class="line"><span>root@87096bf68cb2:/go/src# ps aux |grep "1" |grep -v "ps" |grep -v "grep"</span></span>
+<span class="line"><span>root         1  0.0  0.3  20228  3184 ?        Ss   07:25   0:00 /bin/bash</span></span></code></pre>
+<p>这次我们发现父进程ID都是一样的了，而且通过<code>ps</code>命令可以看到父进程就是<code>bash</code>，说明通过终端执行命令其实是从<code>bash</code>这个进程衍生出各种子进程。</p>
+<p>为了执行这个程序要查找包依赖、编译、打包、链接(和<code>go build</code>做一样的东西)然后执行，这是全新的进程。</p>
+<p>拿到PID和PPID后有什么用呢？马上揭晓。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/009-pid/">← PID</a></span> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/011-use-pid/">使用PID →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

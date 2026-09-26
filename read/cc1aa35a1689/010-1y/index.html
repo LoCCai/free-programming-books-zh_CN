@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 课程 07——内存管理 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 课程 07——内存管理 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 课程 07——内存管理 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <p><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management-slides.html">查看幻灯片</a></p>
+<blockquote>
+<table><colgroup><col> <col></colgroup><tbody><tr><th>keywords:</th><td>Linux 内核, 内存管理, 物理内存, 虚拟内存, 页面分配, 伙伴算法, SLAB 分配器</td></tr></tbody></table>
+</blockquote>
+<p><a href="https://linux-kernel-labs-zh.github.io/so2/memory-management-slides.html">查看幻灯片</a></p>
+<h2 id="课程目标">课程目标：<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>物理内存管理
+<ul>
+<li>页面分配</li>
+<li>小型分配</li>
+</ul>
+</li>
+<li>虚拟内存管理</li>
+<li>缺页错误处理概述</li>
+</ul>
+<h2 id="物理内存管理">物理内存管理<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>跟踪物理内存页面的算法和数据结构</li>
+<li>独立于虚拟内存管理</li>
+<li>完整的内存管理同时需要虚拟内存管理和物理内存管理</li>
+<li>物理页面使用特殊的数据结构进行跟踪：<code>struct page</code></li>
+<li>每个物理页面都在 <code>mem_map</code> 向量中保留有一个条目</li>
+<li>物理页面的状态可能包括：页面使用计数器，位于交换区（swap）或文件中的位置，该页面的缓冲区，页面缓存（page cache）中的位置等。</li>
+</ul>
+<h3 id="内存区域">内存区域<a href="#section-3" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>DMA 区域</li>
+<li>DMA32 区域</li>
+<li>正常区域（LowMem）</li>
+<li>高内存区域（HighMem）</li>
+<li>可移动区域（Movable Zone）</li>
+</ul>
+<h3 id="非均匀内存访问">非均匀内存访问<a href="#section-4" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>物理内存被分割成多个节点（node），每个 CPU 对应一个节点</li>
+<li>每个节点都可以访问单个物理地址空间</li>
+<li>访问本地内存更快</li>
+<li>每个节点维护自己的内存区域（例如 DMA、NORMAL、HIGHMEM 等）</li>
+</ul>
+<h3 id="页面分配">页面分配<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<p>/* 分配 2^order 个连续页面，并返回指针，指针指向第一个页面的描述符 */
+struct page *alloc_pages(gfp_mask, order);</p>
+<p>/* 分配单个页面 */
+struct page *alloc_page(gfp_mask);</p>
+<p>/* 返回内核虚拟地址的辅助函数 */
+void *__get_free_pages(gfp_mask, order);
+void *__get_free_page(gfp_mask);
+void *__get_zero_page(gfp_mask);
+void *__get_dma_pages(gfp_mask, order);</p>
+<ul>
+<li>
+<p>典型的内存分配算法具有线性复杂度</p>
+</li>
+<li>
+<p>为什么不使用分页？</p>
+<ul>
+<li>有时我们确实需要连续的内存分配（用于 DMA）</li>
+<li>分配将需要页表更改和 TLB 刷新</li>
+<li>无法使用扩展页面</li>
+<li>一些体系结构直接（在硬件中）线性映射地址空间的一部分（例如 MIPS）</li>
+</ul>
+</li>
+<li>
+<p>空闲块被分布在多个列表中</p>
+</li>
+<li>
+<p>每个列表包含相同大小的块</p>
+</li>
+<li>
+<p>块的大小是 2 的幂次</p>
+</li>
+<li>
+<p>如果 N 大小的列表中存在空闲块，选择第一个</p>
+</li>
+<li>
+<p>如果没有，在 2N 大小的列表中查找空闲块</p>
+</li>
+<li>
+<p>将 2N 大小的块分割为两个 N 大小的块，并将它们添加到 N 大小的列表中</p>
+</li>
+<li>
+<p>现在我们 N 大小的列表里有内容了，从该列表中选择第一个空闲块</p>
+</li>
+<li>
+<p>如果“伙伴”是空闲的，则合并为一个 2N 大小的块</p>
+</li>
+<li>
+<p>循环往复直到无法找到空闲的伙伴块，并将结果块放置在相应的列表中</p>
+</li>
+</ul>
+<h3 id="linux-的实现">Linux 的实现<a href="#linux" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>为 1、2、4、8、16、32、64、128、256、512 以及 1024 页面大小的块总共设置 11 个列表，每个列表对应某个大小的块。</li>
+<li>每个内存区域都有自己的伙伴分配器</li>
+<li>每个区域都有一个用于空闲块的描述符向量，每个大小对应一个条目</li>
+<li>描述符包含空闲块的数量和列表的头部</li>
+<li>块通过 <code>struct page</code> 的 lru 字段链接在列表中</li>
+<li>空闲页面设置了 PG_buddy 标志</li>
+<li>页面描述符在私有字段中保留了块大小的副本，以便轻松检查“伙伴”是否空闲</li>
+</ul>
+<h3 id="小型分配">小型分配<a href="#section-6" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>
+<p>伙伴系统被用于分配页面</p>
+</li>
+<li>
+<p>许多内核子系统需要分配小于一页的缓冲区</p>
+</li>
+<li>
+<p>典型解决方案：可变大小的缓冲区分配</p>
+<ul>
+<li>导致外部碎片</li>
+</ul>
+</li>
+<li>
+<p>另一种解决方案：固定大小的缓冲区分配</p>
+<ul>
+<li>导致内部碎片</li>
+</ul>
+</li>
+<li>
+<p>折中方案：使用多种固定大小的块分配，几何分布</p>
+<ul>
+<li>例如：32、64、…、131056</li>
+</ul>
+</li>
+<li>
+<p>缓冲区=对象</p>
+</li>
+<li>
+<p>使用伙伴系统分配一组页面以进行对象分配</p>
+</li>
+<li>
+<p>每个对象（可选地）具有构造函数和析构函数</p>
+</li>
+<li>
+<p>已释放的对象被缓存——避免了后续对构造函数和伙伴分配/释放的调用</p>
+</li>
+<li>
+<p>内核通常会多次分配和释放多种相同类型的数据结构（例如 <code>struct task_struct</code>），在这个过程中如果使用固定大小的分配，效率将会变高。SLAB 可帮助系统减少消耗资源更多的分配/释放操作。</p>
+</li>
+<li>
+<p>对于可变大小的缓冲区（发生频率较低），可以使用固定大小的几何分布缓存</p>
+</li>
+<li>
+<p>减少了内存分配的占用空间，因为我们仅需要在比伙伴分配器覆盖范围更小的内存区域中搜索</p>
+</li>
+<li>
+<p>使用缓存优化技术（slab 着色）</p>
+</li>
+</ul>
+<h3 id="slab-架构">SLAB 架构<a href="#slab" title="永久链接至标题">¶</a></h3>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/slab-overview1.png" alt="../_images/slab-overview1.png"></p>
+<ul>
+<li>
+<p>用于标识缓存的名称，用于统计信息</p>
+</li>
+<li>
+<p>对象的构造函数和析构函数</p>
+</li>
+<li>
+<p>对象的大小</p>
+</li>
+<li>
+<p>标志</p>
+</li>
+<li>
+<p>以 2 的幂次表示的页数作为 slab 的大小</p>
+</li>
+<li>
+<p>GFP 掩码</p>
+</li>
+<li>
+<p>一个或多个 slab，按状态分组：满、部分满、空</p>
+</li>
+<li>
+<p>对象的数量</p>
+</li>
+<li>
+<p>存储对象的内存区域</p>
+</li>
+<li>
+<p>指向第一个空闲对象的指针</p>
+</li>
+<li>
+<p>描述符可以存储在以下位置：</p>
+<ul>
+<li>SLAB 本身（如果对象大小低于 512，或者如果内部碎片给 SLAB 描述符留有足够空间）</li>
+<li>SLAB 分配器内部使用的通用缓存中</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/slab-detailed-arch1.png" alt="../_images/slab-detailed-arch1.png"></p>
+<ul>
+<li>通用缓存在 SLAB 分配器内部使用
+<ul>
+<li>为缓存和 SLAB 描述符分配内存</li>
+</ul>
+</li>
+<li>它们也用于通过实现 <code>kmalloc()</code>，具体实现方法为使用 20 种对象大小在 32 字节到 4MB 之间呈几何分布的缓存来实现</li>
+<li>特定缓存是由内核子系统根据需要动态创建的</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/slab-object-descriptors1.png" alt="../_images/slab-object-descriptors1.png"></p>
+<ul>
+<li>仅用于空闲对象</li>
+<li>整数，指向下一个空闲对象</li>
+<li>最后一个空闲对象使用终止值</li>
+<li>内部描述符——存储在 slab 中</li>
+<li>外部描述符——存储在通用缓存中</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/slab-coloring1.png" alt="../_images/slab-coloring1.png"></p>
+<h2 id="虚拟内存管理">虚拟内存管理<a href="#section-7" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>在内核和用户空间中都使用</li>
+<li>使用虚拟内存需要：
+<ul>
+<li>在*虚拟*地址空间中保留（分配）一个段（无论是内核还是用户）</li>
+<li>为缓冲区分配一个或多个物理页面</li>
+<li>为页表和内部结构分配一个或多个物理页面</li>
+<li>将虚拟内存段映射到分配的物理页面上</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-0eda95a3f39dfac448fd07589656b123d3548328.png" alt="../_images/ditaa-0eda95a3f39dfac448fd07589656b123d3548328.png"></p>
+<h3 id="地址空间描述符">地址空间描述符<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>
+<p>页表由以下之一使用：</p>
+<ul>
+<li>CPU 的 MMU</li>
+<li>内核，用于处理 TLB 异常（一些 RISC 处理器）</li>
+</ul>
+</li>
+<li>
+<p>地址空间描述符由内核用于维护高级信息，例如文件和文件偏移（对于使用文件的 mmap），只读段，写时复制段等。</p>
+</li>
+<li>
+<p>在地址空间描述符中搜索一个空闲区域</p>
+</li>
+<li>
+<p>为新的区域描述符分配内存</p>
+</li>
+<li>
+<p>将新的区域描述符插入地址空间描述符中</p>
+</li>
+<li>
+<p>为一个或多个页表分配物理内存</p>
+</li>
+<li>
+<p>在虚拟地址空间中设置新分配区域的页表</p>
+</li>
+<li>
+<p>（按需）分配物理页面，并通过更新页表将它们映射到虚拟地址空间中</p>
+</li>
+<li>
+<p>移除区域描述符</p>
+</li>
+<li>
+<p>释放区域描述符内存</p>
+</li>
+<li>
+<p>更新页表以从虚拟地址空间中删除该区域</p>
+</li>
+<li>
+<p>刷新已释放虚拟内存区域的 TLB</p>
+</li>
+<li>
+<p>释放与已释放区域相关联的页表的物理内存</p>
+</li>
+<li>
+<p>释放已释放虚拟内存区域的物理内存</p>
+</li>
+<li>
+<p>内核</p>
+<ul>
+<li>vmalloc
+<ul>
+<li>区域描述符：<code>struct vm_struct</code></li>
+<li>地址空间描述符：简单链表，由 <code>struct vm_struct</code> 组成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>用户空间</p>
+<ul>
+<li>区域描述符：<code>struct vm_area_struct</code></li>
+<li>地址空间描述符：<code>struct mm_struct</code>，红黑树</li>
+</ul>
+</li>
+</ul>
+<h2 id="缺页处理">缺页处理<a href="#section-9" title="永久链接至标题">¶</a></h2>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/page-fault-handling1.png" alt="../_images/page-fault-handling1.png"></p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">← SO2 课程 06——地址空间 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

@@ -1,0 +1,2062 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · Linux 内核教学 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · Linux 内核教学 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / Linux 内核教学 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <p>本文档包含一系列 Linux 内核主题的课程和实验。课程侧重于理论和 Linux 内核探索。</p>
+<p>实验侧重于设备驱动程序主题，文档风格类似“howto”。每个主题分两部分：</p>
+<ul>
+<li>主题概述，包含概述、主要抽象概念、简单示例和对 API 的指引。</li>
+<li>实践部分，包含几个应由学生解决的练习；为了使学生专注于当下的主题，学生会得到一个起始编码框架和深入的解决练习的技巧提示。</li>
+</ul>
+<p>本文档内容基于布加勒斯特理工大学自动控制与计算机学院计算机科学与工程系的 <a href="http://ocw.cs.pub.ro/courses/so2">“操作系统 2”</a> 课程。</p>
+<p>你可以在 <a href="https://github.com/linux-kernel-labs-zh">https://github.com/linux-kernel-labs-zh</a> 获取最新版本。</p>
+<p>在你的主机上安装 docker-compose 后，可以从源代码构建文档：</p>
+<p>cd tools/labs &#x26;&#x26; make docker-docs</p>
+<p>然后用你的浏览器中打开 <strong>Documentation/output/labs/index.html</strong>。</p>
+<p>或者，你可以直接在主机上构建(参见 tools/labs/docs/Dockerfile 中的依赖项)：</p>
+<p>cd tools/labs &#x26;&#x26; make docs</p>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/index.html">操作系统 2</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html">SO2——基本规则和评分</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-1">基本规则</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-2">1. 实验室</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-3">2. 分配作业的最后期限</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-4">3. 作业演示</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-5">4. 作业规则</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-6">5. 抄袭作业的惩罚</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-7">6. 补考/提分</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-8">7. 重新上课</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-9">评分</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-10">1. 讲座（3 分）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-11">2. 实验（2分）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/grading.html#section-12">3. 作业（5 分 + 额外加分）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html">SO2 课程 01——课程概要以及 Linux 内核介绍</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-1">团队</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-2">课程定位</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-3">资源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-4">社区</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-5">评分</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-6">课程目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-7">实验和作业目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-8">必修课程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-9">关于课程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-10">课程列表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-11">关于实验</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-12">关于主题</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-13">主题列表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-14">课程参考书目</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-15">实验参考书目</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-16">课程目标:</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-17">基本的操作系统名词和概念</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-18">用户与内核的比较</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-19">典型的操作系统架构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-20">单体内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-21">微内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-22">微内核与单体内核的比较</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-23">地址空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-24">用户和内核共享虚拟地址空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-25">执行上下文</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-26">多任务处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-27">抢占式内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-28">可分页的内核内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-29">内核堆栈</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-30">可移植性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#asmp">非对称多处理（ASMP）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#smp">对称多处理（SMP）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#cpu">CPU 可扩展性</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#linux">Linux 内核概述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#linux-1">Linux 开发模型</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-31">维护者层次结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#linux-2">Linux 源代码布局</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#linux-3">Linux 内核结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#arch">arch</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-32">设备驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-33">进程管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-34">内存管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#i-o">块 I/O 管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-35">虚拟文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#section-36">网络堆栈</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec1-intro.html#linux-4">Linux 安全模块</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec2-syscalls.html">SO2 课程 02——系统调用</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec2-syscalls.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec2-syscalls.html#linux">Linux 系统调用实现</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec2-syscalls.html#section-2">系统调用表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec2-syscalls.html#section-3">系统调用参数处理</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec2-syscalls.html#vdso">虚拟动态共享对象 (VDSO)</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec2-syscalls.html#section-4">通过系统调用访问用户空间</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html">SO2 课程 03——进程</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-1">课程目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-2">进程和线程</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-3">进程资源概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#struct-task-struct"><code>struct task_struct</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#task-struct">检查 task_struct</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-4">测验：查看任务以确定打开的文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-5">线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-6">克隆系统调用</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-7">命名空间和“容器”</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-8">访问当前进程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#current-x86">测验：current 宏的先前实现（x86）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-9">上下文切换</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-10">测验：上下文切换</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-11">阻塞和唤醒任务</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-12">任务状态</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-13">阻塞当前线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-14">唤醒任务</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-15">任务抢占</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-16">非抢占式内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-17">抢占式内核</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-18">进程上下文</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#section-19">内核线程</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#gdb">使用 gdb 脚本进行内核检查</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec3-processes.html#gdb-1">测验：内核 gdb 脚本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html">SO2 课程 04——中断</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-1">课堂目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-2">什么是中断？</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-3">异常</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-4">测验：中断术语</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-5">硬件概念</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-6">可编程中断控制器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#smp">在 SMP 系统中的中断控制器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-7">中断控制</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-8">中断优先级</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-9">测验：硬件概念</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#x86">x86 架构上的中断处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-10">中断描述符表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-11">中断处理程序地址</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-12">中断处理程序的栈</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-13">处理中断请求</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-14">从中断处理程序返回</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#x86-1">检查 x86 中断处理过程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#x86-2">测验：x86 中断处理</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#linux">Linux 中的中断处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-15">嵌套中断和异常</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-16">中断上下文</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-17">可延迟操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#soft-irq">软中断（Soft IRQ）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-18">网络包泛洪示例</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#tasklet">任务（tasklet）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-19">工作队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-20">定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#section-21">可延迟操作摘要</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec4-interrupts.html#linux-1">测验：Linux 中断处理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html">SO2 课程 05——对称多处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-1">课堂目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-2">基本同步</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#linux">Linux 内核并发源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-3">原子操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-4">禁用抢占（中断）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-5">自旋锁</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-6">多处理器系统中的缓存一致性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-7">优化的自旋锁</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-8">进程和中断上下文同步</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#mutexes">互斥锁（Mutexes）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#cpu">CPU 独占数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#section-9">内存顺序和屏障</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec5-smp.html#read-copy-update-rcu">读-复制-更新（Read Copy Update，RCU）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html">SO2 课程 06——地址空间</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#x86-mmu">x86 MMU</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-2">选择器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-3">段描述符</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#linux">Linux 中的分段</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-4">检查选择器和段</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#x86">x86 分页</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-5">页表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#linux-1">Linux 分页</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#tlb">转译后备缓冲区（TLB）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#linux-2">Linux 地址空间</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-6">32 位系统的地址空间选项</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-7">线性映射</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-8">高内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-9">固定映射的线性地址</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-10">临时映射</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec6-address-space.html#section-11">永久映射</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html">SO2 课程 07——内存管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-2">物理内存管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-3">内存区域</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-4">非均匀内存访问</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-5">页面分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#linux">Linux 的实现</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-6">小型分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#slab">SLAB 架构</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-7">虚拟内存管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-8">地址空间描述符</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec7-memory-management.html#section-9">缺页处理</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html">SO2 课程 08——文件系统管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-2">文件系统抽象</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-3">文件系统操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-4">挂载文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-5">打开文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-6">查询文件属性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-7">从文件读取数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-8">向文件写入数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-9">关闭文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-10">目录</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-11">创建文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-12">删除文件</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#linux">Linux 虚拟文件系统</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-13">超级块操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#inode">Inode 操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#inode-1">Inode 缓存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-14">目录项缓存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec8-filesystems.html#section-15">页面缓存</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html">SO2 课程 09——内核调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#oops-panic">解码 oops/panic</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#oops">解码 oops</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#addr2line">addr2line</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#objdump">objdump</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#gdb">gdb</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#section-2">内核崩溃</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#section-3">列表调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#section-4">内存调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#slab">SLAB 调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#debug-pagealloc">DEBUG_PAGEALLOC</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#kasan">KASan</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#kasan-vs-debug-pagealloc">KASan vs DEBUG_PAGEALLOC</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#kasan-vs-slub-debug">KASan vs SLUB_DEBUG</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#kmemleak">Kmemleak</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#lockdep">Lockdep 检查器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#perf">perf</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec9-debugging.html#section-5">其他工具</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html">SO2 课程 10——网络</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-2">网络管理概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#sockets">Sockets 实现概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#sockets-1">Sockets 系列和协议</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#udp">示例：UDP 发送</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-3">网络处理阶段</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-4">数据包路由</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-5">路由表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-6">路由策略数据库</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-7">路由表处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-8">转发信息数据库</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#netfilter">Netfilter</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#skb-sk-buff">网络数据包/skb（结构 sk_buff）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-9">网络设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking.html#section-10">硬件和软件加速技术</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html">SO2 课程 11——体系结构层</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-2">体系结构层概述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#boot">引导（boot）过程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-3">引导过程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-4">内存设置</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#mmu">MMU 管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-5">线程管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-6">时间管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-7">中断和异常管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-8">系统调用</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-9">平台驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-10">机器特定代码</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec11-arch.html#section-11">引导过程概述</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html">SO2 课程 12——虚拟化</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-1">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#emulation">模拟（emulation）基础知识</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#virtualization">虚拟化（virtualization）基础知识</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-2">经典虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-3">软件虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#mmu">MMU 虚拟化</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-4">影子页表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-5">延迟影子同步</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#i-o-emulation">I/O 仿真（emulation）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-6">部分虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#intel-vt-x">Intel VT-x</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-7">虚拟机控制结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-8">虚拟机进入和退出</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-9">虚拟机执行控制字段</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#section-10">扩展页表</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#vpid">VPID</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#i-o">I/O 虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#qemu">qemu</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#kvm">KVM</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#hypervisor">类型 1 和类型 2 的 Hypervisor</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lec12-virtualization.html#xen">Xen</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html">SO2 实验 01——介绍</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-2">关于本实验</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-3">参考资料</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-4">文档</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-5">内核模块概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-6">内核模块示例</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-7">编译内核模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-8">加载/卸载内核模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-9">内核模块调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#objdump">objdump</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#addr2line">addr2line</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#minicom">minicom</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#netconsole">netconsole</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#printk">Printk 调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-10">动态调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#dyndbg-1">Dyndbg 选项</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#kdb">KDB：内核调试器</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-11">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-12">备注</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-13">1. 内核模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#printk-1">2. Printk</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-14">3. 错误</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-15">4. 子模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#oops-1">5. 内核 oops</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-16">6. 模块参数</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-17">7. 进程信息</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-18">了解更多</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-19">源代码导航</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#cscope">cscope</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#clangd">clangd</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#kscope">Kscope</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#lxr-cross-reference">LXR Cross-Reference</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#sourceweb">SourceWeb</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-20">内核调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#gdb-linux">gdb（Linux）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab1-intro.html#section-21">获取堆栈跟踪</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html">SO2 实验 02——内核 API</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-2">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-3">访问内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-4">执行上下文</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-5">锁定</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#preemptivity">可抢占性（preemptivity）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#linux-api">Linux 内核 API</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-6">表示错误的约定</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-7">字符串处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#printk">printk</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-8">内存分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-9">列表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-10">自旋锁</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#mutex">互斥锁（Mutex）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-11">原子变量</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-12">原子变量的使用</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-13">原子位操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-14">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-15">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#linux">1. Linux 内核中的内存分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-16">2. 在原子上下文中睡眠</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-17">3. 使用内核内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-18">4. 使用内核列表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-19">5. 使用内核列表进行进程处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-20">6. 同步列表工作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#section-21">7. 在我们的列表模块中测试模块调用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html">SO2 实验 03——字符设备驱动</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-2">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-3">主设备号和次设备号</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-4">字符设备的数据结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#struct-file-operations"><code>struct file_operations</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#inode-file"><code>inode</code> 和 <code>file</code> 结构</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-5">实现操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-6">字符设备的注册和注销</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-7">访问进程地址空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-8">打开和释放</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-9">读取和写入</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#ioctl-1">ioctl</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-10">等待队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-11">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-12">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-13">1. 注册/注销</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-14">2. 注册一个已注册的主设备号</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-15">3. 打开和关闭</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-16">4. 访问限制</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-17">5. 读操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-18">6. 写操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#ioctl-2">7. ioctl 操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#section-19">额外练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#ioctl-3">带消息的 ioctl</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#ioctl-4">使用等待队列的 ioctl</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#o-nonblock">O_NONBLOCK 实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html">SO2 实验 04——I/O 访问和中断</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-2">背景信息</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-3">访问硬件</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#i-o">请求访问 I/O 端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#i-o-1">访问 I/O 端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#i-o-2">5. 从用户空间访问 I/O 端口</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-4">中断处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-5">请求中断</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-6">中断处理程序的实现</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-7">锁定</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-8">中断统计</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-9">进一步阅读</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-10">串口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-11">并行端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-12">键盘控制器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#linux">Linux 设备驱动程序</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-13">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-14">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-15">键盘驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#i-o-3">1. 请求 I/O 端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-16">2. 中断处理例程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#ascii">3. 将 ASCII 键存储到缓冲区</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-17">读取数据寄存器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-18">解释扫描码</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-19">将字符存储到缓冲区</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-20">4. 读取缓冲区</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-21">5. 重置缓冲区</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#section-22">额外练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab4-interrupts.html#kfifo">1. kfifo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html">SO2 实验 05——延迟工作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-2">背景信息</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#softirqs">软中断（Softirqs）</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#tasklet">tasklet</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#timer">定时器（Timer）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#locking">锁定（Locking）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-3">工作队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-4">内核线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-5">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-6">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-7">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-8">1. 定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-9">2. 周期性定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#ioctl">3. 使用 ioctl 控制定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-10">4. 阻塞操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-11">5. 工作队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-12">6. 内核线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab5-deferred-work.html#section-13">7. 定时器和进程之间共享的缓冲区</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html">SO2 实验 06——内存映射</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-2">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-3">用于内存映射的结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#struct-page"><code>struct page</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#struct-vm-area-struct"><code>struct vm_area_struct</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#struct-mm-struct"><code>struct mm_struct</code></a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-4">设备驱动程序的内存映射</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-5">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-6">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-7">1. 将连续的物理内存映射到用户空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-8">2. 将非连续的物理内存映射到用户空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#section-9">3. 在映射内存中进行读写操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab6-memory-mapping.html#procfs">4. 在 procfs 中显示内存映射</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html">SO2 实验 07——块设备驱动</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-2">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#i-o">注册块 I/O 设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-3">注册磁盘</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-gendisk"><code>struct gendisk</code> 结构体</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-block-device-operations"><code>struct block_device_operations</code> 结构体</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-4">请求队列——多队列块层</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-5">软件分段队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-6">硬件调度队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-7">标签集</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-8">创建和删除请求队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-9">用于处理请求队列的有用函数</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-10">块设备的请求</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-11">创建请求</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-12">处理请求</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio"><code>struct bio</code> 结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-1">创建 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-2">提交 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-3">等待 <code>struct bio</code> 结构的完成</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-4">初始化 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-5">如何使用 <code>struct bio</code> 结构的内容</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-6">释放 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-7">在 <code>struct bio</code> 级别设置请求队列</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-13">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-14">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-15">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-16">1. 块设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-17">2. 磁盘注册</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#ram">3. RAM 磁盘</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-18">4. 从磁盘读取数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#section-19">5. 将数据写入磁盘</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab7-block-device-drivers.html#struct-bio-8">6. 在 <code>struct bio</code> 级别处理请求队列中的请求</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html">SO2 实验 08——文件系统驱动（第一部分）</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#vfs">虚拟文件系统（VFS）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-2">常见的文件系统模型</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-3">超级块</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-4">本地化：</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#inode">inode</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-5">本地化：</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#file">file</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-6">本地化：</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-7">目录项</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-8">注册和注销文件系统</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#mount-kill-sb">mount 和 kill_sb 函数</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#vfs-1">VFS 中的超级块</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-9">超级块操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#fill-super"><code>fill_super()</code> 函数</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-10">缓冲区缓存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-11">函数和有用的宏</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-12">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#section-13">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#myfs">myfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#myfs-1">1. 注册和注销 myfs 文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#myfs-2">2. 完成 myfs 的超级块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#myfs-3">3. 初始化 myfs 根索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#myfs-4">4. 测试 myfs 的挂载和卸载</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#minfs">minfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#minfs-1">1. 注册和注销 minfs 文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#minfs-2">2. 完善 minfs 超级块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#minfs-3">3. 创建和销毁 minfs 索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#minfs-4">4. 初始化 minfs 根索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab8-filesystems-part1.html#minfs-5">5. minfs 挂载和卸载的测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html">SO2 实验 09——文件系统驱动程序（第二部分）</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#inode">Inode</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#inode-1">inode 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#inode-2">Inode 操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#inode-3">获取 inode</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-2">超级块操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#inode-operations">inode_operations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#file">file 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-3">常规文件索引节点</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-4">常规文件索引节点操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-5">地址空间操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#dentry">Dentry 结构体</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#dentry-1">Dentry 操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-6">目录索引节点操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-7">创建索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-8">创建目录</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-9">创建链接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-10">创建符号链接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-11">删除链接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-12">删除目录</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-13">在目录中搜索索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-14">遍历目录中的条目</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-15">位图操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-16">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-17">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#myfs">myfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-18">1. 目录操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-19">测试</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-20">2. 文件操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-21">测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#minfs">minfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-22">1. 迭代操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-23">测试</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-24">2. 查找操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-25">测试</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-26">3. 创建操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab9-filesystems-part2.html#section-27">测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html">SO2 实验 10——网络</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-2">概述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-3">用户空间中的网络编程</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#linux">Linux 网络编程</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#struct-socket"><code>struct socket</code> 结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#socket">对 socket 结构的操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-4">创建</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-5">关闭连接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-6">发送/接收消息</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#struct-socket-1"><code>struct socket</code> 字段</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#struct-proto-ops"><code>struct proto_ops</code> 结构</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#struct-sock"><code>struct sock</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#struct-sk-buff"><code>struct sk_buff</code> 结构体</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-7">转换</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#netfilter-1">netfilter</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#netcat">netcat</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-8">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-9">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-10">1. 在内核空间中显示数据包</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-11">2. 按目标地址进行过滤</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#tcp-socket">3. 监听 TCP socket</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#section-12">4. 在内核空间接受连接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab10-networking.html#udp-1">5. UDP 套接字发送方</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html">SO2 实验 11——ARM 内核开发</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-2">片上系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-3">板级支持软件包</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-4">工具链</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#arm-linux">编译 ARM 版 Linux 内核</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#linux">Linux 内核镜像</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#rootfs">Rootfs</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-5">设备树</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#qemu">Qemu</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-6">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-7">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-8">1. 启动</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#cpu">2. CPU 信息</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#i-o">3. I/O 内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#hello-world">4. Hello World</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab11-arm-kernel-development.html#section-9">5. 简单设备</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html">SO2 实验 12——内核分析</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#section-2">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#section-3">分析工具</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#perf">perf</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#ps">ps</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#time">time</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#top">top</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#section-4">性能分析方法论</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#section-5">练习</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#i-o">0. 演示：I/O 问题的性能分析</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#section-6">1. 调查降低响应性的问题</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#section-7">2. 启动新线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#cp">3. 调整 <code>cp</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#i-o-1">4. I/O 延迟</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/lab12-kernel-profiling.html#elf">5. 错误的 ELF 文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign-collaboration.html">合作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign-collaboration.html#github-gitlab">1. 使用 Github / Gitlab</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign-collaboration.html#section-2">2. 从任务的骨架开始</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign-collaboration.html#section-3">3. 为每个单独的更改添加提交</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign-collaboration.html#section-4">4. 在团队内拆分工作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign-collaboration.html#section-5">5. 进行代码审查</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign-collaboration.html#section-6">6. 合并工作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html">作业 0——内核 API</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-1">作业目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-2">说明</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-3">测试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-4">快速开始</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-5">提示</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-6">扣分项</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-7">提交作业</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-8">资源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign0-kernel-api.html#section-9">问题</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html">作业 1——基于 Kprobe 的跟踪器</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-1">作业目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-2">题目描述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-3">实现细节</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-4">测试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-5">快速开始</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-6">提示</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-7">扣分项</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-8">提交作业</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-9">资源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign1-kprobe-based-tracer.html#section-10">问题</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html">作业 2——驱动 UART</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-1">作业目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-2">任务描述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-3">缓冲区方案</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-4">实现细节</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-5">测试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-6">快速开始</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-7">提示</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-8">扣分规则</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-9">提交作业</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-10">资源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign2-driver-uart.html#section-11">问题</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html">作业 3——软件 RAID</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-1">作业目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-2">题目描述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-3">重要提示</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-4">实现细节</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-5">测试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-6">快速入门</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-7">提示</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-8">扣分项</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-9">提交作业</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-10">资源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign3-software-raid.html#section-11">问题</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html">作业 4——SO2 传输协议</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-1">作业目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-2">任务描述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-3">实现细节</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-4">示例协议实现</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-5">测试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#tcpdump">tcpdump</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-6">快速入门</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-7">提示</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-8">扣分项</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-9">提交作业</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-10">资源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign4-transport-protocol.html#section-11">问题</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html">作业 7——使用 KVM 的 SO2 虚拟机管理器</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#i">I. 虚拟机管理器</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#vmm">1. 初始化 VMM</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#cpu">2. 初始化虚拟 CPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-1">运行虚拟机</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#real-mode">设置实模式（real mode）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#long-mode">设置长模式（long mode）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-2">运行</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-3">客户机代码</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#simvirtio">SIMVIRTIO</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-4">控制器队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-5">设备结构</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-6">使用骨架</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-7">调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-8">任务</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-9">提交作业</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-10">提示</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-11">扣分项</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-12">参考资料</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/so2/assign7-kvm-vmm.html#section-13">太长不看</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>课程</p>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html">介绍</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-2">课程目标:</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-3">基本的操作系统名词和概念</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-4">用户与内核的比较</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-5">典型的操作系统架构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-6">单体内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-7">微内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-8">微内核与单体内核的比较</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-9">地址空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-10">用户和内核共享虚拟地址空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-11">执行上下文</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-12">多任务处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-13">抢占式内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-14">可分页的内核内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-15">内核堆栈</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-16">可移植性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#asmp">非对称多处理（ASMP）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#smp">对称多处理（SMP）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#cpu">CPU 可扩展性</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#linux">Linux 内核概述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#linux-1">Linux 开发模型</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-17">维护者层次结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#linux-2">Linux 源代码布局</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#linux-3">Linux 内核结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#arch">arch</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-18">设备驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-19">进程管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-20">内存管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#i-o">块 I/O 管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-21">虚拟文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#section-22">网络堆栈</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/intro.html#linux-4">Linux 安全模块</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/syscalls.html">系统调用</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/syscalls.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/syscalls.html#linux">Linux 系统调用实现</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/syscalls.html#section-3">系统调用表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/syscalls.html#section-4">系统调用参数处理</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/syscalls.html#vdso">虚拟动态共享对象 (VDSO)</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/syscalls.html#section-5">通过系统调用访问用户空间</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html">进程</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-2">课程目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-3">进程和线程</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-4">进程资源概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#struct-task-struct"><code>struct task_struct</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#task-struct">检查 task_struct</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-5">测验：查看任务以确定打开的文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-6">线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-7">克隆系统调用</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-8">命名空间和“容器”</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-9">访问当前进程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#current-x86">测验：current 宏的先前实现（x86）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-10">上下文切换</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-11">测验：上下文切换</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-12">阻塞和唤醒任务</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-13">任务状态</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-14">阻塞当前线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-15">唤醒任务</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-16">任务抢占</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-17">非抢占式内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-18">抢占式内核</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-19">进程上下文</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#section-20">内核线程</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#gdb">使用 gdb 脚本进行内核检查</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/processes.html#gdb-1">测验：内核 gdb 脚本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html">中断</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-2">课堂目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-3">什么是中断？</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-4">异常</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-5">测验：中断术语</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-6">硬件概念</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-7">可编程中断控制器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#smp">在 SMP 系统中的中断控制器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-8">中断控制</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-9">中断优先级</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-10">测验：硬件概念</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#x86">x86 架构上的中断处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-11">中断描述符表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-12">中断处理程序地址</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-13">中断处理程序的栈</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-14">处理中断请求</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-15">从中断处理程序返回</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#x86-1">检查 x86 中断处理过程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#x86-2">测验：x86 中断处理</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#linux">Linux 中的中断处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-16">嵌套中断和异常</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-17">中断上下文</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-18">可延迟操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#soft-irq">软中断（Soft IRQ）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-19">网络包泛洪示例</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#tasklet">任务（tasklet）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-20">工作队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-21">定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#section-22">可延迟操作摘要</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/interrupts.html#linux-1">测验：Linux 中断处理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html">对称多处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-2">课堂目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-3">基本同步</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#linux">Linux 内核并发源</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-4">原子操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-5">禁用抢占（中断）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-6">自旋锁</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-7">多处理器系统中的缓存一致性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-8">优化的自旋锁</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-9">进程和中断上下文同步</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#mutexes">互斥锁（Mutexes）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#cpu">CPU 独占数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#section-10">内存顺序和屏障</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/smp.html#read-copy-update-rcu">读-复制-更新（Read Copy Update，RCU）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html">地址空间</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#x86-mmu">x86 MMU</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-3">选择器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-4">段描述符</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#linux">Linux 中的分段</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-5">检查选择器和段</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#x86">x86 分页</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-6">页表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#linux-1">Linux 分页</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#tlb">转译后备缓冲区（TLB）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#linux-2">Linux 地址空间</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-7">32 位系统的地址空间选项</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-8">线性映射</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-9">高内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-10">固定映射的线性地址</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-11">临时映射</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/address-space.html#section-12">永久映射</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html">内存管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-3">物理内存管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-4">内存区域</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-5">非均匀内存访问</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-6">页面分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#linux">Linux 的实现</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-7">小型分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#slab">SLAB 架构</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-8">虚拟内存管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-9">地址空间描述符</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/memory-management.html#section-10">缺页处理</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html">文件系统管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-3">文件系统抽象</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-4">文件系统操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-5">挂载文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-6">打开文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-7">查询文件属性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-8">从文件读取数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-9">向文件写入数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-10">关闭文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-11">目录</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-12">创建文件</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-13">删除文件</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#linux">Linux 虚拟文件系统</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-14">超级块操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#inode">Inode 操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#inode-1">Inode 缓存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-15">目录项缓存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/fs.html#section-16">页面缓存</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html">调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#oops-panic">解码 oops/panic</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#oops">解码 oops</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#addr2line">addr2line</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#objdump">objdump</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#gdb">gdb</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#section-3">内核崩溃</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#section-4">列表调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#section-5">内存调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#slab">SLAB 调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#debug-pagealloc">DEBUG_PAGEALLOC</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#kasan">KASan</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#kasan-vs-debug-pagealloc">KASan vs DEBUG_PAGEALLOC</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#kasan-vs-slub-debug">KASan vs SLUB_DEBUG</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#kmemleak">Kmemleak</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#lockdep">Lockdep 检查器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#perf">perf</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging.html#section-6">其他工具</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html">网络管理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-3">网络管理概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#sockets">Sockets 实现概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#sockets-1">Sockets 系列和协议</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#udp">示例：UDP 发送</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-4">网络处理阶段</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-5">数据包路由</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-6">路由表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-7">路由策略数据库</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-8">路由表处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-9">转发信息数据库</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#netfilter">Netfilter</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#skb-sk-buff">网络数据包/skb（结构 sk_buff）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-10">网络设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/networking.html#section-11">硬件和软件加速技术</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html">体系结构层</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-3">体系结构层概述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#boot">引导（boot）过程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-4">引导过程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-5">内存设置</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#mmu">MMU 管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-6">线程管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-7">时间管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-8">中断和异常管理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-9">系统调用</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-10">平台驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-11">机器特定代码</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/arch.html#section-12">引导过程概述</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html">虚拟化</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-2">课程目标：</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#emulation">模拟（emulation）基础知识</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#virtualization">虚拟化（virtualization）基础知识</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-3">经典虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-4">软件虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#mmu">MMU 虚拟化</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-5">影子页表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-6">延迟影子同步</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#i-o-emulation">I/O 仿真（emulation）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-7">部分虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#intel-vt-x">Intel VT-x</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-8">虚拟机控制结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-9">虚拟机进入和退出</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-10">虚拟机执行控制字段</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#section-11">扩展页表</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#vpid">VPID</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#i-o">I/O 虚拟化</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#qemu">qemu</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#kvm">KVM</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#hypervisor">类型 1 和类型 2 的 Hypervisor</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/lectures/virt.html#xen">Xen</a></li>
+</ul>
+</li>
+</ul>
+<p>实验</p>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/infrastructure.html">基础设施</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html">介绍</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-3">关键词</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-4">关于本实验</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-5">参考资料</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-6">源代码导航</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#cscope">cscope</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#clangd">clangd</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#kscope">Kscope</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#lxr-cross-reference">LXR Cross-Reference</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#sourceweb">SourceWeb</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-7">内核调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#gdb-linux">gdb（Linux）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-8">获取堆栈跟踪</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-9">文档</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-10">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-11">备注</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-12">启动虚拟机</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#section-13">添加和使用虚拟磁盘</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#gdb-qemu">GDB 和 QEMU</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#gdb">4. GDB 探索</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/introduction.html#cscope-1">5. Cscope 探索</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html">内核模块</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-3">内核模块概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-4">内核模块示例</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-5">编译内核模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-6">加载/卸载内核模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-7">内核模块调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#objdump">objdump</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#addr2line">addr2line</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#minicom">minicom</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#netconsole">netconsole</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#printk">Printk 调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-8">动态调试</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#dyndbg-1">Dyndbg 选项</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#kdb">KDB：内核调试器</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-9">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-10">0. 引言</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-11">1. 内核模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#printk-1">2. Printk</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-12">3. 错误</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-13">4. 子模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#oops-1">5. 内核 oops</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-14">6. 模块参数</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-15">7. 进程信息</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#extra-exercises">Extra Exercises</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-16">额外练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#kdb-1">1. KDB</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#ps">2. PS模块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-17">3. 内存信息</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-18">4. 动态调试</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_modules.html#section-19">5. 初始化期间的动态调试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html">内核 API</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-2">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-3">访问内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-4">执行上下文</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-5">锁定</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#preemptivity">可抢占性（preemptivity）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#linux-api">Linux 内核 API</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-6">表示错误的约定</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-7">字符串处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#printk">printk</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-8">内存分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-9">列表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-10">自旋锁</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#mutex">互斥锁（Mutex）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-11">原子变量</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-12">原子变量的使用</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-13">原子位操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-14">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-15">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#linux">1. Linux 内核中的内存分配</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-16">2. 在原子上下文中睡眠</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-17">3. 使用内核内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-18">4. 使用内核列表</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-19">5. 使用内核列表进行进程处理</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-20">6. 同步列表工作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_api.html#section-21">7. 在我们的列表模块中测试模块调用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html">字符设备驱动程序</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-3">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-4">主设备号和次设备号</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-5">字符设备的数据结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#struct-file-operations"><code>struct file_operations</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#inode-file"><code>inode</code> 和 <code>file</code> 结构</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-6">实现操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-7">字符设备的注册和注销</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-8">访问进程地址空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-9">打开和释放</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-10">读取和写入</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#ioctl-1">ioctl</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-11">等待队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-12">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-13">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-14">1. 注册/注销</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-15">2. 注册一个已注册的主设备号</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-16">3. 打开和关闭</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-17">4. 访问限制</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-18">5. 读操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-19">6. 写操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#ioctl-2">7. ioctl 操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#section-20">额外练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#ioctl-3">带消息的 ioctl</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#ioctl-4">使用等待队列的 ioctl</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_drivers.html#o-nonblock">O_NONBLOCK 实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html">I/O 访问和中断</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-2">背景信息</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-3">访问硬件</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#i-o-1">请求访问 I/O 端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#i-o-2">访问 I/O 端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#i-o-3">5. 从用户空间访问 I/O 端口</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-4">中断处理</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-5">请求中断</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-6">中断处理程序的实现</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-7">锁定</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-8">中断统计</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-9">进一步阅读</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-10">串口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-11">并行端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-12">键盘控制器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#linux">Linux 设备驱动程序</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-13">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-14">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-15">键盘驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#i-o-4">1. 请求 I/O 端口</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-16">2. 中断处理例程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#ascii">3. 将 ASCII 键存储到缓冲区</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-17">读取数据寄存器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-18">解释扫描码</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-19">将字符存储到缓冲区</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-20">4. 读取缓冲区</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-21">5. 重置缓冲区</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#section-22">额外练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/interrupts.html#kfifo">1. kfifo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html">延迟工作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-3">背景信息</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#softirqs">软中断（Softirqs）</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#tasklet">tasklet</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#timer">定时器（Timer）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#locking">锁定（Locking）</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-4">工作队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-5">内核线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-6">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-7">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-8">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-9">1. 定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-10">2. 周期性定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#ioctl">3. 使用 ioctl 控制定时器</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-11">4. 阻塞操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-12">5. 工作队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-13">6. 内核线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/deferred_work.html#section-14">7. 定时器和进程之间共享的缓冲区</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html">块设备驱动程序</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-3">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#i-o">注册块 I/O 设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-4">注册磁盘</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-gendisk"><code>struct gendisk</code> 结构体</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-block-device-operations"><code>struct block_device_operations</code> 结构体</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-5">请求队列——多队列块层</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-6">软件分段队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-7">硬件调度队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-8">标签集</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-9">创建和删除请求队列</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-10">用于处理请求队列的有用函数</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-11">块设备的请求</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-12">创建请求</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-13">处理请求</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio"><code>struct bio</code> 结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-1">创建 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-2">提交 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-3">等待 <code>struct bio</code> 结构的完成</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-4">初始化 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-5">如何使用 <code>struct bio</code> 结构的内容</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-6">释放 <code>struct bio</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-7">在 <code>struct bio</code> 级别设置请求队列</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-14">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-15">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-16">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-17">1. 块设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-18">2. 磁盘注册</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#ram">3. RAM 磁盘</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-19">4. 从磁盘读取数据</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#section-20">5. 将数据写入磁盘</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/block_device_drivers.html#struct-bio-8">6. 在 <code>struct bio</code> 级别处理请求队列中的请求</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html">文件系统驱动程序（第一部分）</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#vfs">虚拟文件系统（VFS）</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-3">常见的文件系统模型</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-4">超级块</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-5">本地化：</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#inode">inode</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-6">本地化：</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#file">file</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-7">本地化：</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-8">目录项</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-9">注册和注销文件系统</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#mount-kill-sb">mount 和 kill_sb 函数</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#vfs-1">VFS 中的超级块</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-10">超级块操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#fill-super"><code>fill_super()</code> 函数</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-11">缓冲区缓存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-12">函数和有用的宏</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-13">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#section-14">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#myfs">myfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#myfs-1">1. 注册和注销 myfs 文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#myfs-2">2. 完成 myfs 的超级块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#myfs-3">3. 初始化 myfs 根索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#myfs-4">4. 测试 myfs 的挂载和卸载</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#minfs">minfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#minfs-1">1. 注册和注销 minfs 文件系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#minfs-2">2. 完善 minfs 超级块</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#minfs-3">3. 创建和销毁 minfs 索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#minfs-4">4. 初始化 minfs 根索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part1.html#minfs-5">5. minfs 挂载和卸载的测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html">文件系统驱动程序（第二部分）</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#inode">Inode</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#inode-1">inode 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#inode-2">Inode 操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#inode-3">获取 inode</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-3">超级块操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#inode-operations">inode_operations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#file">file 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-4">常规文件索引节点</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-5">常规文件索引节点操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-6">地址空间操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#dentry">Dentry 结构体</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#dentry-1">Dentry 操作</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-7">目录索引节点操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-8">创建索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-9">创建目录</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-10">创建链接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-11">创建符号链接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-12">删除链接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-13">删除目录</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-14">在目录中搜索索引节点</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-15">遍历目录中的条目</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-16">位图操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-17">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-18">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#myfs">myfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-19">1. 目录操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-20">测试</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-21">2. 文件操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-22">测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#minfs">minfs</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-23">1. 迭代操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-24">测试</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-25">2. 查找操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-26">测试</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-27">3. 创建操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/filesystems_part2.html#section-28">测试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html">网络</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-3">概述</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-4">用户空间中的网络编程</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#linux">Linux 网络编程</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#struct-socket"><code>struct socket</code> 结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#socket">对 socket 结构的操作</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-5">创建</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-6">关闭连接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-7">发送/接收消息</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#struct-socket-1"><code>struct socket</code> 字段</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#struct-proto-ops"><code>struct proto_ops</code> 结构</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#struct-sock"><code>struct sock</code> 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#struct-sk-buff"><code>struct sk_buff</code> 结构体</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-8">转换</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#netfilter-1">netfilter</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#netcat">netcat</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-9">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-10">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-11">1. 在内核空间中显示数据包</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-12">2. 按目标地址进行过滤</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#tcp-socket">3. 监听 TCP socket</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#section-13">4. 在内核空间接受连接</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/networking.html#udp-1">5. UDP 套接字发送方</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html">ARM 内核开发</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-1">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-2">片上系统</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-3">板级支持软件包</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-4">工具链</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#arm-linux">编译 ARM 版 Linux 内核</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#linux">Linux 内核镜像</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#rootfs">Rootfs</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-5">设备树</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#qemu">Qemu</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-6">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-7">0. 简介</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-8">1. 启动</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#cpu">2. CPU 信息</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#i-o">3. I/O 内存</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#hello-world">4. Hello World</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/arm_kernel_development.html#section-9">5. 简单设备</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html">内存映射</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-3">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-4">用于内存映射的结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#struct-page"><code>struct page</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#struct-vm-area-struct"><code>struct vm_area_struct</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#struct-mm-struct"><code>struct mm_struct</code></a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-5">设备驱动程序的内存映射</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-6">进一步阅读</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-7">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-8">1. 将连续的物理内存映射到用户空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-9">2. 将非连续的物理内存映射到用户空间</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#section-10">3. 在映射内存中进行读写操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/memory_mapping.html#procfs">4. 在 procfs 中显示内存映射</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html">Linux 设备模型</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-1">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#sysfs">sysfs</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#linux-1">Linux 设备中的基本结构</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#kobject">kobject 结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-2">总线</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-3">设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-4">驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-5">类</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-6">热插拔</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-7">即插即用</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#pnp">PNP 总线</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#pnp-1">PNP 操作</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-8">添加驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-9">移除驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-10">添加新设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-11">移除设备</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-12">练习</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-13">0. 引言</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-14">1. 总线实现</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#section-15">2. 添加类型和版本设备属性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#del-add">3. 添加 del 和 add 总线属性</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#bex">4. 注册 bex 杂项驱动程序</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#bex-misc-probe">5. 在 bex_misc probe 函数中注册杂项设备</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/device_model.html#uevent">6. 监视 uevent 通知</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html">内核分析</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#section-2">实验目标</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#section-3">概述</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#section-4">分析工具</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#perf">perf</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#ps">ps</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#time">time</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#top">top</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#section-5">性能分析方法论</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#section-6">练习</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#i-o">0. 演示：I/O 问题的性能分析</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#section-7">1. 调查降低响应性的问题</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#section-8">2. 启动新线程</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#cp">3. 调整 <code>cp</code></a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#i-o-1">4. I/O 延迟</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/labs/kernel_profiling.html#elf">5. 错误的 ELF 文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>有用信息</p>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/vm.html">推荐配置</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/vm.html#section-2">虚拟机配置</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/vm.html#section-3">启动虚拟机</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/vm.html#section-4">连接到虚拟机</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/extra-vm.html">自定义虚拟机配置</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/extra-vm.html#ssh">通过 SSH 连接到虚拟机</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/extra-vm.html#debugger">将调试器（debugger）连接到虚拟机内核</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/extra-vm.html#section-2">重建内核镜像</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/extra-vm.html#docker">使用 Docker 容器</a></li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/contributing.html">向 Linux 内核实验项目做贡献</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/contributing.html#section-1">仓库结构</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/contributing.html#section-2">构建文档</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/contributing.html#section-3">做出贡献</a>
+<ul>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/contributing.html#fork">Fork 仓库</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/contributing.html#section-4">创建拉取请求</a></li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/contributing.html#section-5">修改拉取请求</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://linux-kernel-labs-zh.github.io/info/chinese-localization-info.html">中文翻译介绍</a></li>
+</ul> <nav class="pager"> <span></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

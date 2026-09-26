@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 作业 3——软件 RAID — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 作业 3——软件 RAID — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 作业 3——软件 RAID — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <ul>
+<li>截止日期： <strong>周一，2023 年 5 月 15 日，23:00</strong></li>
+<li>本作业可以由团队（最多 2 人）完成。只需由其中一人提交作业，并在 README 文件中列出学生的姓名。</li>
+</ul>
+<p>实现一个软件 RAID 模块，该模块使用逻辑块设备从两个物理设备读取和写入数据，确保两个物理设备的数据一致性和同步。所实现的 RAID 类型类似于 RAID 1。</p>
+<h2 id="作业目标">作业目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>深入理解 I/O 子系统的工作原理。</li>
+<li>获得使用 bio 结构的进阶技能。</li>
+<li>在 Linux 内核中使用块/磁盘设备。</li>
+<li>获得在 Linux 中导航和理解专用于 I/O 子系统的代码和 API 的技能。</li>
+</ul>
+<h2 id="题目描述">题目描述<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>编写一个内核模块，实现 RAID 软件功能。 <a href="https://zh.wikipedia.org/zh-cn/RAID#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F">软件 RAID</a> 在逻辑设备和物理设备之间提供了一个抽象层。实现请使用 <a href="https://zh.wikipedia.org/zh-cn/RAID#%E6%A0%87%E5%87%86RAID">RAID 方案 1</a>。</p>
+<p>虚拟机具有两个硬盘，它们代表物理设备: /dev/vdb 和 /dev/vdc。操作系统有一个逻辑设备（块类型），其提供接口供用户空间访问。将请求写入逻辑设备将导致两个写操作，分别写入每个硬盘。硬盘未分区。可以认为每个硬盘都整个由单个分区覆盖。</p>
+<p>每个分区存储一个扇区以及关联的校验和（CRC32），以确保错误恢复。在每次读取时，会读取两个分区的相关信息。如果第一个分区的扇区存在损坏的数据（CRC 值错误），则将读取第二个分区的扇区；同时，将修复第一个分区的扇区。在读取第二个分区发现其扇区损坏时也是类似的。如果两个分区的扇区都具有不正确的 CRC 值，则返回适当的错误代码。</p>
+<h3 id="重要提示">重要提示<a href="#section-3" title="永久链接至标题">¶</a></h3>
+<p>为了确保错误恢复，每个扇区都与一个 CRC 码相关联。CRC 码存储在分区的 LOGICAL_DISK_SIZE 字节之后（在作业 <a href="https://gitlab.cs.pub.ro/so2/3-raid/-/blob/master/src/ssr.h">头文件</a> 中定义的宏）。磁盘结构的布局如下所示：</p>
+<p>+-----------+-----------+-----------+     +---+---+---+
+|  sector1  |  sector2  |  sector3  |…|C1 |C2 |C3 |
++-----------+-----------+-----------+     +---+---+---+</p>
+<p>其中, <code>C1</code>, <code>C2</code>, <code>C3</code> 是扇区 <code>sector1</code>, <code>sector2</code>, <code>sector3</code> 的 CRC 值。CRC 区域位于分区的 LOGICAL_DISK_SIZE 字节之后。</p>
+<p>CRC 的种子使用 0（零）。</p>
+<h2 id="实现细节">实现细节<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>内核模块的名称为 <code>ssr.ko</code>。</li>
+<li>逻辑设备将被作为块设备访问（使用主设备号 <code>SSR_MAJOR</code> 和次设备号 <code>SSR_FIRST_MINOR</code>，用户空间可通过访问名称为 <code>/dev/ssr</code> 的文件来访问该逻辑设备）（通过宏 <code>LOGICAL_DISK_NAME</code>）。</li>
+<li>虚拟设备 (<code>LOGICAL_DISK_NAME</code> —— <code>/dev/ssr</code>) 的容量为 <code>LOGICAL_DISK_SECTORS``（使用 ``struct gendisk</code> 结构的 <code>set_capacity</code> 函数）。</li>
+<li>两个硬盘由设备 <code>/dev/vdb</code> 和 <code>/dev/vdc</code> 表示，分别通过宏 <code>PHYSICAL_DISK1_NAME</code> 和 <code>PHYSICAL_DISK2_NAME</code> 定义。</li>
+<li>若要使用与物理设备关联的 <code>struct block_device</code> 结构进行操作，可以使用 <code>blkdev_get_by_path</code> 和 <code>blkdev_put</code> 函数。</li>
+<li>对于来自用户空间的请求处理，不建议使用 <code>request_queue</code>，而是在 <code>struct bio</code> 层面进行处理（使用 <code>struct block_device_operations</code> 的 <code>submit_bio</code> 字段）。</li>
+<li>由于数据扇区与 CRC 扇区是分开的，你需要为数据和 CRC 值构建单独的 <code>bio</code> 结构。</li>
+<li>要为物理硬盘分配 <code>struct bio</code>，可以使用 <code>bio_alloc()</code>；要向 bio 添加数据页，请使用 <code>alloc_page()</code> 和 <code>bio_add_page()</code>。</li>
+<li>要释放为 <code>struct bio</code> 分配的空间，你需要释放分配给该 bio 的页面（使用 <code>__free_page()</code> 宏），并调用 <code>bio_put()</code>。</li>
+<li>生成 <code>struct bio</code> 结构时，请注意其大小必须是磁盘扇区大小 (<code>KERNEL_SECTOR_SIZE</code>) 的倍数。</li>
+<li>要发送请求到块设备并等待其结束，可以使用 <code>submit_bio_wait()</code> 函数。</li>
+<li>使用 <code>bio_endio()</code> 来表示完成处理 <code>bio</code> 结构。</li>
+<li>对于 CRC32 计算，可以使用内核提供的 <code>crc32()</code> 宏。</li>
+<li>作业支持 <a href="https://gitlab.cs.pub.ro/so2/3-raid/-/blob/master/src/ssr.h">头文件</a> 中可以找到一些有用的宏定义。</li>
+<li>在调用堆栈中，块设备的单个请求处理函数可同时激活，有关更多详细信息，请参阅 <a href="https://elixir.bootlin.com/linux/v5.10/source/block/blk-core.c#L1048">此处</a>。 你需要在内核线程中提交对物理设备的请求；我们建议使用 <code>workqueues</code>。</li>
+<li>要想快速运行，使用一个单独的 bio 批量发送相邻扇区的 CRC 值的读/写请求。例如，如果你需要发送扇区 0、1、…、7 的 CRC 请求，则使用一个单独的 bio，而不是 8 个 bio。</li>
+<li>我们的建议不是强制性的（只要满足作业要求，任何解决方案都被接受）。</li>
+</ul>
+<h2 id="测试">测试<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<p>为了简化作业评估过程，减少提交作业时的错误，作业评估将通过一个名为 _checker 的 <a href="https://gitlab.cs.pub.ro/so2/3-raid/-/blob/master/checker/3-raid-checker/_checker">测试脚本</a> 自动进行。测试脚本假定内核模块的名称为 ssr.ko。</p>
+<p>如果在测试过程中，两个磁盘上的扇区都包含无效数据，导致读取错误，使得无法使用模块，则需要使用以下命令在虚拟机中重新创建两个磁盘：</p>
+<p>$ dd if=/dev/zero of=/dev/vdb bs=1M
+$ dd if=/dev/zero of=/dev/vdc bs=1M</p>
+<p>你还可以使用以下命令启动虚拟机以获得相同的结果：</p>
+<p>$ rm disk{1,2}.img; make console # 或者 rm disk{1,2}.img; make boot</p>
+<h2 id="快速入门">快速入门<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<p>必须从 <a href="https://gitlab.cs.pub.ro/so2/3-raid/-/tree/master/src">src 目录</a> 中的代码骨架开始实现作业。框架中只有一个名为 <a href="https://gitlab.cs.pub.ro/so2/3-raid/-/blob/master/src/ssr.h">ssr.h</a> 的头文件。你需要提供其余的实现。你可以添加任意数量的 *.c` 源文件和额外的 *.h` 头文件。你还应该提供一个名为 ssr.ko 的内核模块的 Kbuild 文件。请按照 <a href="https://gitlab.cs.pub.ro/so2/3-raid">作业仓库</a> 的 <a href="https://gitlab.cs.pub.ro/so2/3-raid/-/blob/master/README.md">README.md 文件</a> 中的说明进行操作。</p>
+<h3 id="提示">提示<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p>为了增加获得最高分的机会，请阅读并遵循 Linux 内核的编码风格，该风格在 <a href="https://elixir.bootlin.com/linux/v4.19.19/source/Documentation/process/coding-style.rst">编码风格文档</a> 中有描述。</p>
+<p>此外，请使用以下静态分析工具来验证代码：</p>
+<ul>
+<li>checkpatch.pl</li>
+</ul>
+<p>$ linux/scripts/checkpatch.pl —no-tree —terse -f /path/to/your/file.c</p>
+<ul>
+<li>sparse</li>
+</ul>
+<p>$ sudo apt-get install sparse
+$ cd linux
+$ make C=2 /path/to/your/file.c</p>
+<ul>
+<li>cppcheck</li>
+</ul>
+<p>$ sudo apt-get install cppcheck
+$ cppcheck /path/to/your/file.c</p>
+<h3 id="扣分项">扣分项<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p>有关作业扣分的信息可以在 <a href="https://ocw.cs.pub.ro/courses/so2/teme/general">综合说明页面</a> 上找到。</p>
+<p>在特殊情况下（作业通过测试，但不符合要求），以及如果作业未通过所有测试，则可能会降低更多分数。</p>
+<h2 id="资源">资源<a href="#section-10" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>Linux 内核中 RAID 软件的实现 <a href="https://elixir.bootlin.com/linux/v5.10/source/drivers/md">RAID</a></li>
+</ul>
+<p>建议使用 GitLab 存储你的作业。请按照 <a href="https://gitlab.cs.pub.ro/so2/3-raid/-/blob/master/README.md">README</a> 中的说明进行操作。</p>
+<h2 id="问题">问题<a href="#section-11" title="永久链接至标题">¶</a></h2>
+<p>如果有相关问题，你可以查阅 <a href="http://cursuri.cs.pub.ro/pipermail/so2/">邮件列表归档</a>，或在专用的 Teams 频道上提问。</p>
+<p>在提问之前，请确保：</p>
+<ul>
+<li>你已经仔细阅读了作业说明</li>
+<li>问题在 <a href="https://ocw.cs.pub.ro/courses/so2/teme/tema2/faq">FAQ 页面</a> 中没有被提及</li>
+<li>答案在 <a href="http://cursuri.cs.pub.ro/pipermail/so2/">邮件列表归档</a> 中无法找到</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">← 作业 2——驱动 UART — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 作业 0——内核 API — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 作业 0——内核 API — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 作业 0——内核 API — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <ul>
+<li>截止日期: <strong>周一，2024 年 3 月 25 日，23:59</strong></li>
+</ul>
+<h2 id="作业目标">作业目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>熟悉 qemu 的设置</li>
+<li>加载/卸载内核模块</li>
+<li>熟悉内核中实现的列表 API</li>
+<li>玩得开心 :)</li>
+</ul>
+<h2 id="说明">说明<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>编写名为 list 的内核模块（生成的文件必须命名为 list.ko），该模块在内部列表中存储数据（字符串）。</p>
+<p>必须使用内核中实现的 <a href="https://github.com/torvalds/linux/blob/master/include/linux/list.h">列表 API</a>。有关详细信息，请参阅 <a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html">实验 2</a>。</p>
+<p>该模块向 procfs 导出名为 <strong>list</strong> 的目录。该目录包含两个文件：</p>
+<ul>
+<li><strong>management</strong>：只能写入；用于向内核模块传输命令的接口</li>
+<li><strong>preview</strong>：只读；用于查看内核列表的内部内容的接口。</li>
+</ul>
+<p><a href="https://github.com/linux-kernel-labs/linux/blob/master/tools/labs/templates/assignments/0-list/list.c">代码骨架</a> 实现了这两个 procfs 文件。你需要创建一个列表，并实现对数据的 添加 和 读取 支持。请按照代码中的 TODO 进行操作。</p>
+<p>要与内核列表进行交互，你必须在 /proc/list/management 文件中编写命令（使用 echo 命令）：</p>
+<ul>
+<li>addf name：将 name 元素添加到列表的顶部</li>
+<li>adde name：将 name 元素添加到列表的末尾</li>
+<li>delf name：删除列表中第一个 name 项</li>
+<li>dela name：删除列表中所有的 name 元素</li>
+</ul>
+<p>要想查看列表内容，可以查看 /proc/list/preview 文件的内容（使用 cat 命令）。格式为每行一个元素。</p>
+<h2 id="测试">测试<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>为了简化作业评估过程，同时也为了减少提交作业时的错误，作业评估将通过一个名为 _checker 的 <a href="https://github.com/linux-kernel-labs/linux/blob/master/tools/labs/templates/assignments/0-list/checker/_checker">测试脚本</a> 自动进行。测试脚本假定内核模块名为 list.ko。</p>
+<h2 id="快速开始">快速开始<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>你必须从 <a href="https://gitlab.cs.pub.ro/so2/0-list/-/blob/master/src/list.c">list.c</a> 文件中找到的代码骨架开始实现作业。你应该按照 <a href="https://gitlab.cs.pub.ro/so2/0-list">任务仓库</a> 的 <a href="https://gitlab.cs.pub.ro/so2/0-list/-/blob/master/README.md">README.md 文件</a> 中的说明进行操作。</p>
+<h3 id="提示">提示<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<p>要想增加获得最高分的机会，请阅读并遵循 Linux 内核编码风格，该风格在 <a href="https://elixir.bootlin.com/linux/v4.19.19/source/Documentation/process/coding-style.rst">代码风格文档</a> 中有描述。</p>
+<p>此外，使用以下静态分析工具来验证代码：</p>
+<ul>
+<li>checkpatch.pl</li>
+</ul>
+<p>$ linux/scripts/checkpatch.pl —no-tree —terse -f /path/to/your/list.c</p>
+<ul>
+<li>sparse</li>
+</ul>
+<p>$ sudo apt-get install sparse
+$ cd linux
+$ make C=2 /path/to/your/list.c</p>
+<ul>
+<li>cppcheck</li>
+</ul>
+<p>$ sudo apt-get install cppcheck
+$ cppcheck /path/to/your/list.c</p>
+<h3 id="扣分项">扣分项<a href="#section-6" title="永久链接至标题">¶</a></h3>
+<p>有关作业扣分项的信息可以在 <a href="https://ocw.cs.pub.ro/courses/so2/teme/general">基本说明页面</a> 中找到。</p>
+<p>在特殊情况下（作业通过测试，但不符合要求）以及如果作业未通过所有测试，成绩可能会降低更多。</p>
+<h2 id="问题">问题<a href="#section-9" title="永久链接至标题">¶</a></h2>
+<p>如果你有相关的问题，你可以查阅邮件 <a href="http://cursuri.cs.pub.ro/pipermail/so2/">列表存档</a>，或在专用的 Teams 频道上提出问题。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">← 合作 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

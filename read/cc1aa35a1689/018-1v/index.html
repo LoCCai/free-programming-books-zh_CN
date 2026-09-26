@@ -1,0 +1,574 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 实验 03——字符设备驱动 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 实验 03——字符设备驱动 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 实验 03——字符设备驱动 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<ul>
+<li>理解字符设备驱动程序背后的概念</li>
+<li>理解可以在字符设备上执行的各种操作</li>
+<li>使用等待队列进行工作</li>
+</ul>
+</blockquote>
+<h2 id="概述">概述<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>在 UNIX 系统中，用户通过特殊的设备文件访问硬件设备。这些文件被组织在 /dev 目录下，并且操作系统会将对这些文件的系统调用（如 <code>open</code>、 <code>read</code>、 <code>write</code>、 <code>close</code>、 <code>lseek</code>、 <code>mmap</code> 等），重定向到与物理设备关联的设备驱动程序。设备驱动程序是与硬件设备交互的内核组件（通常是一个模块）。</p>
+<p>在 UNIX 世界中，设备文件和设备驱动程序分为两个类别：字符设备和块设备。这种划分是根据数据传输的速度、容量和数据组织方式进行的。第一类是一些速度较慢的设备，它们仅处理少量数据，并且对数据的访问不需要频繁的搜索查询，例如键盘、鼠标、串口、声卡、游戏手柄等设备。通常情况下，对这些设备（读取、写入）的操作是按字节顺序逐个执行的。第二类包括数据量大、数据以块为单位组织且搜索频繁的设备。这一类别的设备包括硬盘、光驱、RAM 磁盘以及磁带驱动器等。这些设备的读取和写入是以数据块为单位进行的。</p>
+<p>对于这两种类型的设备驱动程序，Linux 内核提供了不同的 API。如果是字符设备，系统调用直接传递给设备驱动程序；而如果是块设备，驱动程序不能直接与系统调用交互。用户空间和块设备驱动程序之间的通信是通过文件管理子系统和块设备子系统进行的。这些子系统的作用是准备设备驱动程序所需的资源（缓冲区），将最近读取的数据保存在缓存缓冲区中，并为了提升性能而对读取和写入操作进行排序。</p>
+<h2 id="主设备号和次设备号">主设备号和次设备号<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>在 UNIX 中，设备通常有一个唯一的、固定的标识符与之关联。这种传统在 Linux 中得以保留，尽管标识符可以动态分配（出于兼容性的原因，大多数驱动程序仍然使用静态标识符）。这个标识符由两部分组成：主设备号（major）和次设备号（minor）。第一部分用于标识设备类型（如 IDE 硬盘、SCSI 硬盘、串口等），而第二部分用于标识设备本身（如第一个硬盘、第二个串口等）。大多数情况下，主设备号用于标识驱动程序，而次设备号用于标识驱动程序所服务的某个物理设备。通常情况下，一个驱动程序会有一个关联的主设备号，并负责处理与该主设备号关联的所有次设备号。</p>
+<p>$ ls -la /dev/hda? /dev/ttyS?
+brw-rw----  1 root disk    3,  1 2004-09-18 14:51 /dev/hda1
+brw-rw----  1 root disk    3,  2 2004-09-18 14:51 /dev/hda2
+crw-rw----  1 root dialout 4, 64 2004-09-18 14:52 /dev/ttyS0
+crw-rw----  1 root dialout 4, 65 2004-09-18 14:52 /dev/ttyS1</p>
+<p>如上例所示，可以使用 ls 命令找到设备类型信息。特殊字符文件在命令输出的第一列中通过字符 <code>c</code> 进行标识，块类型则通过字符 <code>b</code> 进行标识。在结果的第 <code>5</code> 和第 <code>6</code> 列中，可以看到每个设备的主设备号和次设备号。</p>
+<p>某些主设备号是静态分配给设备的（可以在内核源代码的 <code>Documentation/admin-guide/devices.txt</code> 文件中查看）。选择新设备的标识符时，你可以使用两种方法：静态方法（选择一个尚未被使用的数字）或动态方法。/proc/devices 目录中列出了已加载的设备，以及其主设备号。</p>
+<p>要创建设备类型文件，请使用 <code>mknod</code> 命令；该命令的参数为设备的类型 (<code>block</code> 或 <code>character</code>)、主设备号和次设备号 (<code>mknod name type major minor</code>)。因此，要想创建一个名为 <code>mycdev</code>、主设备号为 <code>42</code>、次设备号为 <code>0</code> 的字符设备，可以使用以下命令：</p>
+<p># mknod /dev/mycdev c 42 0</p>
+<p>要创建名为 <code>mybdev</code>、主设备号为 <code>240</code> 并且次设备号为 <code>0</code> 的块设备，请使用如下命令：</p>
+<p># mknod /dev/mybdev b 240 0</p>
+<p>接下来，我们会把字符设备称为驱动程序。</p>
+<h2 id="字符设备的数据结构">字符设备的数据结构<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>在内核中，字符设备由 <code>struct cdev</code> 结构表示，该结构用于在系统中注册字符设备。大多数驱动程序操作都用到了三个重要的结构: <code>struct file_operations</code>、 <code>struct file</code> 和 <code>struct inode</code>。</p>
+<h3 id="struct-file_operations"><code>struct file_operations</code><a href="#struct-file-operations" title="永久链接至标题">¶</a></h3>
+<p>如上所述，字符设备驱动程序接收用户对设备类型文件的原始系统调用。因此，要想实现字符设备驱动程序，我们就需要实现特定于文件的系统调用，例如 <code>open</code>、 <code>close</code>、 <code>read</code>、 <code>write</code>、 <code>lseek</code> 以及 <code>mmap</code> 等。这些操作在 <code>struct file_operations</code> 结构的字段中描述：</p>
+<p>#include &#x3C;linux/fs.h></p>
+<p>struct file_operations {
+struct module *owner;
+loff_t (*llseek) (struct file *, loff_t, int);
+ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
+ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
+[…]
+long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
+[…]
+int (*open) (struct inode *, struct file *);
+int (*flush) (struct file *, fl_owner_t id);
+int (*release) (struct inode *, struct file *);
+[…]</p>
+<p>可以看出，函数的签名与用户使用的系统调用不同。操作系统位于用户和设备驱动程序之间，其简化了设备驱动程序的实现。</p>
+<p><code>open</code> 函数不接收参数路径或控制文件打开模式的各种参数。同样， <code>read</code>、 <code>write</code>、 <code>release</code>、 <code>ioctl</code>、 <code>lseek</code> 的参数也不包括文件描述符。相反，这些例程接收两个结构作为参数： <code>file</code> 和 <code>inode</code>。这两个结构都从不同的角度表示文件。</p>
+<p>所提供操作的大多数参数具有直接的含义：</p>
+<ul>
+<li><code>file</code> 和 <code>inode</code> 标识设备类型文件；</li>
+<li><code>size</code> 是要读取或写入的字节数；</li>
+<li><code>offset</code> 是要读取或写入的位移（将相应地更新）；</li>
+<li><code>user_buffer</code> 是要读取/写入的用户缓冲区；</li>
+<li><code>whence</code> 是寻找的方式（搜索操作开始的位置）；</li>
+<li><code>cmd</code> 和 <code>arg</code> 是由用户发送到 ioctl（IO 控制）调用的参数。</li>
+</ul>
+<h3 id="inode-和-file-结构"><code>inode</code> 和 <code>file</code> 结构<a href="#inode-file" title="永久链接至标题">¶</a></h3>
+<p><code>inode</code> 代表文件系统视角中的文件。inode 的属性包括文件大小、权限和相关时间。单个 inode 在文件系统中唯一标识一个文件。</p>
+<p><code>file</code> 结构仍然代表单个文件，但更接近用户的视角。file 结构的属性中，有 inode、文件名、文件打开属性和文件位置等。在给定时间内，所有打开的文件都有一个关联的 <code>file</code> 结构。</p>
+<p>为了更好的理解 inode 和 file 之间的区别，我们可以使用面向对象编程的类比：如果我们将 inode 视为一个类，那么文件就是对象，即 inode 类的实例。inode 表示文件的静态映像（inode 没有状态），而 file 表示文件的动态映像（file 具有状态）。</p>
+<p>回到设备驱动程序，这两个实体几乎总是有标准的使用方式：inode 用于确定操作执行的设备的主设备号和次设备号，而 file 用于确定文件的打开标志，还可以保存和（稍后）访问私有数据。</p>
+<p>file 结构包含许多字段，其中包括：</p>
+<blockquote>
+<ul>
+<li><code>f_mode</code>，指定是读取 (<code>FMODE_READ</code>) 还是写入 (<code>FMODE_WRITE</code>)；</li>
+<li><code>f_flags</code>，指定文件的打开标志 (<code>O_RDONLY</code>、 <code>O_NONBLOCK</code>、 <code>O_SYNC</code>、 <code>O_APPEND</code>、 <code>O_TRUNC</code> 等)；</li>
+<li><code>f_op</code>，指定与文件关联的操作（指向 <code>file_operations</code> 结构的指针）；</li>
+<li><code>private_data</code>，一个指针，程序员可以用来存储特定于设备的数据；该指针将被初始化到程序员分配的内存位置。</li>
+<li><code>f_pos</code>，文件内的偏移量。</li>
+</ul>
+</blockquote>
+<p>inode 结构包含许多信息，其中包括一个 <code>i_cdev</code> 字段，它是一个指向定义字符设备的结构的指针（如果 inode 对应于字符设备）。</p>
+<h2 id="实现操作">实现操作<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<p>为了实现设备驱动程序，建议创建一个包含有关设备信息和模块使用的信息的结构体。如果是字符设备驱动程序，则结构体将包含一个指向设备的 cdev 结构体字段。下面的示例使用了名为 my_device_data 的结构体：</p>
+<p>#include &#x3C;linux/fs.h>
+#include &#x3C;linux/cdev.h></p>
+<p>struct my_device_data {
+struct cdev cdev;
+/* 数据从这里开始 */
+//…
+};</p>
+<p>static int my_open(struct inode *inode, struct file *file)
+{
+struct my_device_data *my_data;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>my\_data \= container\_of(inode\->i\_cdev, struct my\_device\_data, cdev);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>file\->private\_data \= my\_data;</span></span>
+<span class="line"><span>//...</span></span></code></pre>
+<p>}</p>
+<p>static int my_read(struct file *file, char __user *user_buffer, size_t size, loff_t *offset)
+{
+struct my_device_data *my_data;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>my\_data \= (struct my\_device\_data \*) file\->private\_data;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>//...</span></span></code></pre>
+<p>}</p>
+<p>名为 <code>my_device_data</code> 的结构包含与设备相关的数据。<code>cdev</code> 字段 (<code>cdev</code> 类型)对应字符设备，用于在系统中记录和识别设备。可以使用 <code>inode</code> 结构的 <code>i_cdev</code> 字段（使用 <code>container_of</code> 宏）找到指向 <code>cdev</code> 的指针。可以在打开文件时，在 file 结构的 <code>private_data</code> 字段中存储可用于 <code>read</code>、 <code>write</code>、 <code>release</code> 等函数的信息。</p>
+<h2 id="字符设备的注册和注销">字符设备的注册和注销<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<p>要想注册和注销设备，你需要指定主设备号和次设备号。<code>dev_t</code> 类型用于保存设备的标识符（包括主设备号和次设备号），其可以通过使用 MKDEV 宏来获取。</p>
+<p>要想完成设备标识符的静态分配和释放，可以使用 <code>register_chrdev_region</code> 和 <code>unregister_chrdev_region</code> 函数：</p>
+<p>#include &#x3C;linux/fs.h></p>
+<p>int register_chrdev_region(dev_t first, unsigned int count, char *name);
+void unregister_chrdev_region(dev_t first, unsigned int count);</p>
+<p>建议将设备标识符动态分配给 <code>alloc_chrdev_region</code> 函数。</p>
+<p>以下程序准备了 <code>my_minor_count</code> 个设备，从 <code>my_major</code> 主设备号和 <code>my_first_minor</code> 次设备号开始（如果次设备号的最大值溢出了，就会切换到下一个主设备号）：</p>
+<p>#include &#x3C;linux/fs.h>
+…</p>
+<p>err = register_chrdev_region(MKDEV(my_major, my_first_minor), my_minor_count,
+“my_device_driver”);
+if (err != 0) {
+/* 报告错误 */
+return err;
+}
+…</p>
+<p>在分配标识符之后，字符设备需要进行初始化（使用 <code>cdev_init</code> 函数），并通知内核（使用 <code>cdev_add</code> 函数）。只有在设备准备好接收调用时才能调用 <code>cdev_add</code> 函数。使用 <code>cdev_del</code> 函数可以移除设备。</p>
+<p>#include &#x3C;linux/cdev.h></p>
+<p>void cdev_init(struct cdev *cdev, struct file_operations *fops);
+int cdev_add(struct cdev *dev, dev_t num, unsigned int count);
+void cdev_del(struct cdev *dev);</p>
+<p>以下程序注册并初始化 MY_MAX_MINORS 个设备：</p>
+<p>#include &#x3C;linux/fs.h>
+#include &#x3C;linux/cdev.h></p>
+<p>#define MY_MAJOR       42
+#define MY_MAX_MINORS  5</p>
+<p>struct my_device_data {
+struct cdev cdev;
+/* 数据从这里开始 */
+//…
+};</p>
+<p>struct my_device_data devs[MY_MAX_MINORS];</p>
+<p>const struct file_operations my_fops = {
+.owner = THIS_MODULE,
+.open = my_open,
+.read = my_read,
+.write = my_write,
+.release = my_release,
+.unlocked_ioctl = my_ioctl
+};</p>
+<p>int init_module(void)
+{
+int i, err;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>err \= register\_chrdev\_region(MKDEV(MY\_MAJOR, 0), MY\_MAX\_MINORS,</span></span>
+<span class="line"><span>                             "my\_device\_driver");</span></span>
+<span class="line"><span>if (err != 0) {</span></span>
+<span class="line"><span>    /\* 报告错误 \*/</span></span>
+<span class="line"><span>    return err;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>for(i \= 0; i &#x3C; MY\_MAX\_MINORS; i++) {</span></span>
+<span class="line"><span>    /\* 初始化 devs\[i\] 字段 \*/</span></span>
+<span class="line"><span>    cdev\_init(&#x26;devs\[i\].cdev, &#x26;my\_fops);</span></span>
+<span class="line"><span>    cdev\_add(&#x26;devs\[i\].cdev, MKDEV(MY\_MAJOR, i), 1);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>以下代码删除并注销它们：</p>
+<p>void cleanup_module(void)
+{
+int i;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>for(i \= 0; i &#x3C; MY\_MAX\_MINORS; i++) {</span></span>
+<span class="line"><span>    /\* 释放 devs\[i\] 字段 \*/</span></span>
+<span class="line"><span>    cdev\_del(&#x26;devs\[i\].cdev);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>unregister\_chrdev\_region(MKDEV(MY\_MAJOR, 0), MY\_MAX\_MINORS);</span></span></code></pre>
+<p>}</p>
+<p>注解</p>
+<p><code>my_fops</code> 结构的初始化使用了 C99 标准中的按名称初始化成员的方法（参见指定初始化器和 file_operations 结构）。未在此初始化中显式出现的结构成员将被设置为其类型的默认值。例如，在上述初始化之后，<code>my_fops.mmap</code> 将为 NULL。</p>
+<h2 id="访问进程地址空间">访问进程地址空间<a href="#section-7" title="永久链接至标题">¶</a></h2>
+<p>设备的驱动程序是应用程序与硬件之间的接口。因此，我们经常需要访问用户空间数据。直接访问用户空间数据是不可行的（通过解引用用户空间指针）。直接访问用户空间指针可能导致不正确的行为（根据体系结构，用户空间指针可能无效或映射到内核空间）、内核 oops（用户态指针可能引用非驻留内存区域）或安全问题。请通过调用下面的宏/函数来正确访问用户空间数据：</p>
+<p>#include &#x3C;asm/uaccess.h></p>
+<p>put_user(type val, type *address);
+get_user(type val, type *address);
+unsigned long copy_to_user(void __user *to, const void *from, unsigned long n);
+unsigned long copy_from_user(void *to, const void __user *from, unsigned long n);</p>
+<p>这些宏/函数成功后返回 0，错误时返回其他值，并具有以下作用：</p>
+<ul>
+<li><code>put_user</code> 将值 <code>val</code> 存储到用户空间地址 <code>address</code>；类型可以是 8 位、16 位、32 位，也可以是 64 位（最大的支持类型取决于硬件平台）；</li>
+<li><code>get_user</code> 类似于前一个函数，只是将值设置为与用户空间地址 <code>address</code> 处的值相同的值；</li>
+<li><code>copy_to_user</code> 从 <code>from</code> 引用的内核空间地址开始复制 <code>n</code> 字节到由 <code>to</code> 引用的用户空间地址；</li>
+<li><code>copy_from_user</code> 从 <code>from</code> 引用的用户空间地址开始复制 <code>n</code> 字节到由 <code>to</code> 引用的内核空间地址；</li>
+</ul>
+<p>以下是这些函数的常用代码示例：</p>
+<p>#include &#x3C;asm/uaccess.h></p>
+<p>/*
+* 将最多 size 字节复制到用户空间。
+* 成功则返回 0，错误则返回其他值。
+*/
+if (copy_to_user(user_buffer, kernel_buffer, size))
+return -EFAULT;
+else
+return 0;</p>
+<h2 id="打开和释放">打开和释放<a href="#section-8" title="永久链接至标题">¶</a></h2>
+<p><code>open</code> 函数执行设备的初始化。在大多数情况下，这些操作涉及初始化设备并填充特定数据（如果是第一次打开调用）。<a href="#system-message-1">*</a>释放函数*用于释放设备特定资源：在调用全部完成后，解除对特定数据的锁定并关闭设备。</p>
+<p>在大多数情况下, <em>打开函数</em> 的结构如下所示：</p>
+<p>static int my_open(struct inode *inode, struct file *file)
+{
+struct my_device_data *my_data =
+container_of(inode->i_cdev, struct my_device_data, cdev);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/\* 验证设备访问权限 \*/</span></span>
+<span class="line"><span>file\->private\_data \= my\_data;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/\* 初始化设备 \*/</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>实施 <code>open</code> 函数时会遇到访问控制的问题。有时候一个设备在同一时刻需要只打开一次；更具体地说，不允许在释放之前进行第二次打开。为了实现这种限制，你可以选择一种处理已经打开的设备的打开调用的方法：它可以返回一个错误 (<code>-EBUSY</code>)，阻塞打开调用直到进行释放操作，或者在执行打开操作之前关闭设备。</p>
+<p>在用户空间对设备调用打开和关闭函数时，会调用驱动程序中的 my_open 和 my_release 函数。以下是一个用户空间调用的示例：</p>
+<p>int fd = open(“/dev/my_device”, O_RDONLY);
+if (fd &#x3C; 0) {
+/* 处理错误 */
+}</p>
+<p>/* 执行工作 */
+//..</p>
+<p>close(fd);</p>
+<h2 id="读取和写入">读取和写入<a href="#section-9" title="永久链接至标题">¶</a></h2>
+<p>用户空间程序调用读取或写入系统调用，会导致设备驱动程序的读和写操作。</p>
+<p>if (read(fd, buffer, size) &#x3C; 0) {
+/* 处理错误 */
+}</p>
+<p>if (write(fd, buffer, size) &#x3C; 0) {
+/* 处理错误 */
+}</p>
+<p><code>read</code> 和 <code>write</code> 函数会在设备和用户空间之间传输数据：read 函数从设备读取数据并将其传输到用户空间，而 write 函数则读取用户空间的数据并将其写入设备。参数 buffer（缓冲区）是一个用户空间指针，这就是为什么需要使用 <code>copy_to_user</code> 或 <code>copy_from_user</code> 函数。</p>
+<p>read 或 write 返回的值可以是：</p>
+<blockquote>
+<ul>
+<li>传输的字节数；如果返回的值小于参数 size（请求的字节数），则表示只传输了部分数据。大多数情况下，用户空间应用程序会持续调用系统调用（read 或 write）函数，直到所需的数据量全部传输完成为止。</li>
+<li>如果是 read，返回值为 0 表示文件读到底了；如果 write 返回值为 0，则表示没有写入任何字节且没有发生错误；在这种情况下，用户空间应用程序会重新尝试写入调用。</li>
+<li>负值表示程序错误。</li>
+</ul>
+</blockquote>
+<p>要执行由多次部分传输组成的数据传输，应执行以下操作：</p>
+<blockquote>
+<ul>
+<li>在作为参数接收的缓冲区和设备之间传输尽可能多的字节（从作为参数接收的偏移量开始进行设备写入/读取）；</li>
+<li>更新作为参数接收的偏移量，以表示下一次读取/写入数据的位置；</li>
+<li>返回传输的字节数。</li>
+</ul>
+</blockquote>
+<p>下面的示例展示了考虑了内部缓冲区大小、用户缓冲区大小和偏移量的 read 函数的程序：</p>
+<p>static int my_read(struct file *file, char __user *user_buffer,
+size_t size, loff_t *offset)
+{
+struct my_device_data *my_data = (struct my_device_data *) file->private_data;
+ssize_t len = min(my_data->size - *offset, size);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if (len &#x3C;= 0)</span></span>
+<span class="line"><span>    return 0;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/\* 从 my\_data->buffer 读取数据到用户缓冲区 \*/</span></span>
+<span class="line"><span>if (copy\_to\_user(user\_buffer, my\_data\->buffer + \*offset, len))</span></span>
+<span class="line"><span>    return \-EFAULT;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>\*offset += len;</span></span>
+<span class="line"><span>return len;</span></span></code></pre>
+<p>}</p>
+<p>下面的图片展示了读操作以及数据如何在用户空间和驱动程序之间传输：</p>
+<ol>
+<li>驱动程序有足够的可用数据（从偏移位置开始），以准确地传输所需大小（SIZE）给用户。</li>
+<li>传输的数量比所需的少。</li>
+</ol>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/read1.png"><img src="https://linux-kernel-labs-zh.github.io/_images/read1.png" alt="../_images/read1.png"></a> <a href="https://linux-kernel-labs-zh.github.io/_images/read21.png"><img src="https://linux-kernel-labs-zh.github.io/_images/read21.png" alt="../_images/read21.png"></a></p>
+<p>我们可以将驱动程序实现的读操作视为对用户空间读取请求的响应。在这种情况下，驱动程序负责根据其读取的量推进偏移，并返回读取的大小（可能小于所需大小）。</p>
+<p>写函数的结构类似：</p>
+<p>static int my_write(struct file *file, const char __user *user_buffer,
+size_t size, loff_t * offset)
+{
+struct my_device_data *my_data = (struct my_device_data *) file->private_data;
+ssize_t len = min(my_data->size - *offset, size);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if (len &#x3C;= 0)</span></span>
+<span class="line"><span>    return 0;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/\* 将数据从用户缓冲区读到 my\_data->buffer \*/</span></span>
+<span class="line"><span>if (copy\_from\_user(my\_data\->buffer + \*offset, user\_buffer, len))</span></span>
+<span class="line"><span>    return \-EFAULT;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>\*offset += len;</span></span>
+<span class="line"><span>return len;</span></span></code></pre>
+<p>}</p>
+<p>写操作将响应来自用户空间的写请求。在这种情况下，根据驱动程序的最大容量（MAXSIZ），它可以写入比所需大小更多或更少的数据。</p>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/write1.png"><img src="https://linux-kernel-labs-zh.github.io/_images/write1.png" alt="../_images/write1.png"></a> <a href="https://linux-kernel-labs-zh.github.io/_images/write21.png"><img src="https://linux-kernel-labs-zh.github.io/_images/write21.png" alt="../_images/write21.png"></a></p>
+<h2 id="ioctl">ioctl<a href="#ioctl-1" title="永久链接至标题">¶</a></h2>
+<p>除了读和写操作之外，驱动程序需要能够执行某些物理设备控制任务。这些操作通过实现一个名为 <code>ioctl</code> 的函数来完成。最初，ioctl 系统调用使用了 Big Kernel Lock。因此，其无锁版本 <code>unlocked_ioctl</code> 逐渐替代了该调用。你可以在 LWN 上阅读更多信息：<a href="http://lwn.net/Articles/119652/">http://lwn.net/Articles/119652/</a></p>
+<p>static long my_ioctl (struct file *file, unsigned int cmd, unsigned long arg);</p>
+<p><code>cmd</code> 是从用户空间发送的命令。如果用户空间调用发送了一个值，可以通过 <code>cmd</code> 直接访问它。如果获取了一个缓冲区，那么 arg 的值将是指向它的指针，并且必须通过 <code>copy_to_user</code> 或 <code>copy_from_user</code> 进行访问。</p>
+<p>在实现 <code>ioctl</code> 函数之前，必须选择与命令对应的数字。一种方法是从 0 开始选择连续的数字，但我们建议使用 <code>_IOC(dir, type, nr, size)</code> 宏定义来生成 ioctl 代码。宏定义的参数如下：</p>
+<blockquote>
+<ul>
+<li><code>dir</code> 表示数据传输 (<code>_IOC_NONE</code> , <code>_IOC_READ</code> , <code>_IOC_WRITE</code>)。</li>
+<li><code>type</code> 表示魔数 (<code>Documentation/ioctl/ioctl-number.txt</code>)；</li>
+<li><code>nr</code> 是设备的 ioctl 代码；</li>
+<li><code>size</code> 是传输数据的大小。</li>
+</ul>
+</blockquote>
+<p>下面的示例展示了 <code>ioctl</code> 函数的实现：</p>
+<p>#include &#x3C;asm/ioctl.h></p>
+<p>#define MY_IOCTL_IN _IOC(_IOC_WRITE, ‘k’, 1, sizeof(my_ioctl_data))</p>
+<p>static long my_ioctl (struct file *file, unsigned int cmd, unsigned long arg)
+{
+struct my_device_data *my_data =
+(struct my_device_data*) file->private_data;
+my_ioctl_data mid;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>switch(cmd) {</span></span>
+<span class="line"><span>case MY\_IOCTL\_IN:</span></span>
+<span class="line"><span>    if( copy\_from\_user(&#x26;mid, (my\_ioctl\_data \*) arg,</span></span>
+<span class="line"><span>                       sizeof(my\_ioctl\_data)) )</span></span>
+<span class="line"><span>        return \-EFAULT;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /\* 处理数据以及执行命令 \*/</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    break;</span></span>
+<span class="line"><span>default:</span></span>
+<span class="line"><span>    return \-ENOTTY;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>用户空间调用 ioctl 函数时，将调用驱动程序的 my_ioctl 函数。以下是用户空间调用的示例：</p>
+<p>if (ioctl(fd, MY_IOCTL_IN, buffer) &#x3C; 0) {
+/* 处理错误 */
+}</p>
+<h2 id="等待队列">等待队列<a href="#section-10" title="永久链接至标题">¶</a></h2>
+<p>许多情况下，线程需要等待某个操作完成。但最好避免忙等待。通过使用等待队列，我们可以阻塞一个线程，直到发生某个事件再激活这个线程。当条件满足时（可能是内核中的其他地方、另一个进程、中断或可延迟工作）我们会唤醒该进程。</p>
+<p>等待队列是一个等待特定事件的进程列表。队列使用 <code>wait_queue_head_t</code> 类型定义，并可通过以下函数/宏使用：</p>
+<p>#include &#x3C;linux/wait.h></p>
+<p>DECLARE_WAIT_QUEUE_HEAD(wq_name);</p>
+<p>void init_waitqueue_head(wait_queue_head_t *q);</p>
+<p>int wait_event(wait_queue_head_t q, int condition);</p>
+<p>int wait_event_interruptible(wait_queue_head_t q, int condition);</p>
+<p>int wait_event_timeout(wait_queue_head_t q, int condition, int timeout);</p>
+<p>int wait_event_interruptible_timeout(wait_queue_head_t q, int condition, int timeout);</p>
+<p>void wake_up(wait_queue_head_t *q);</p>
+<p>void wake_up_interruptible(wait_queue_head_t *q);</p>
+<p>上述宏/函数的作用如下：</p>
+<blockquote>
+<ul>
+<li><code>init_waitqueue_head()</code> 初始化等待队列；如果是要在编译期间初始化队列，可以使用 <code>DECLARE_WAIT_QUEUE_HEAD</code> 宏；</li>
+<li><code>wait_event()</code> 和 <code>wait_event_interruptible()</code> 在条件为假时将当前线程加入队列，将其设置为 TASK_UNINTERRUPTIBLE 或 TASK_INTERRUPTIBLE，并调用调度程序以安排新线程；当另一个线程调用 wake_up 函数时，等待将被中断；</li>
+<li><code>wait_event_timeout()</code> 和 <code>wait_event_interruptible_timeout()</code> 具有与上述函数相同的效果，只是等待也可以在参数 timeout（超时）结束时被中断；</li>
+<li><code>wake_up()</code> 将所有处于 TASK_INTERRUPTIBLE 和 TASK_UNINTERRUPTIBLE 状态的线程切换到 TASK_RUNNING 状态；从队列中移除这些线程；</li>
+<li><code>wake_up_interruptible()</code> 执行相同的操作，但只唤醒处于 TASK_INTERRUPTIBLE 状态的线程。</li>
+</ul>
+</blockquote>
+<p>举个简单的示例，线程等待某个标志位的值的改变。以下代码实现初始化：</p>
+<p>#include &#x3C;linux/sched.h></p>
+<p>wait_queue_head_t wq;
+int flag = 0;</p>
+<p>init_waitqueue_head(&#x26;wq);</p>
+<p>某个线程等待标志的值变为非零：</p>
+<p>wait_event_interruptible(wq, flag != 0);</p>
+<p>而另一个线程将改变标志（flag）的值并唤醒等待中的线程：</p>
+<p>flag = 1 ;
+wake_up_interruptible (&#x26;wq);</p>
+<h2 id="练习">练习<a href="#section-11" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 device_drivers。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/device_drivers/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-11">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<h3 id="0-简介">0. 简介<a href="#section-12" title="永久链接至标题">¶</a></h3>
+<p>使用 <a href="http://elixir.free-electrons.com/linux/latest/source">LXR</a> 查找 Linux 内核中以下符号的定义：</p>
+<blockquote>
+<ul>
+<li><code>struct file</code></li>
+<li><code>struct file_operations</code></li>
+<li><code>generic_ro_fops</code></li>
+<li><code>vfs_read()</code></li>
+</ul>
+</blockquote>
+<h3 id="1-注册注销">1. 注册/注销<a href="#section-13" title="永久链接至标题">¶</a></h3>
+<p>驱动程序控制一个具有 <code>MY_MAJOR</code> 主设备号和 <code>MY_MINOR</code> 次设备号的设备（这些宏定义在 kernel/so2_cdev.c 文件中）。</p>
+<blockquote>
+<ol>
+<li>
+<p>使用 <strong>mknod</strong> 创建 <strong>/dev/so2_cdev</strong> 字符设备节点。</p>
+</li>
+<li>
+<p>在 init 和 exit 模块函数中实现设备的注册和注销，设备名称应为 <code>so2_cdev</code>。实现 <strong>TODO 1</strong>。</p>
+</li>
+<li>
+<p>通过 <code>pr_info</code> 函数使得在注册和注销操作后显示一条消息，以确认它们是否成功。然后将模块加载到内核中：</p>
+<p>$ insmod so2_cdev.ko</p>
+<p>并查看 <code>/proc/devices</code> 中的字符设备：</p>
+<p>$ cat /proc/devices | less</p>
+<p>确定使用主设备号 42 注册的设备类型。请注意，<code>/proc/devices</code> 仅包含设备类型（主设备号），而不包含实际设备（即次设备号）。</p>
+<p>注解</p>
+<p>/dev 中的条目不会通过加载模块来创建。可以通过两种方式创建：</p>
+<ul>
+<li>手动使用 <code>mknod</code> 命令，就像我们上面所做的那样。</li>
+<li>使用 udev 守护进程自动创建</li>
+</ul>
+</li>
+<li>
+<p>卸载内核模块</p>
+<p>rmmod so2_cdev</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="2-注册一个已注册的主设备号">2. 注册一个已注册的主设备号<a href="#section-14" title="永久链接至标题">¶</a></h3>
+<p>修改 <strong>MY_MAJOR</strong>，使其指向已经使用的主设备号。</p>
+<p>提示</p>
+<p>查看 <code>/proc/devices</code> 来获取一个已分配的主设备号。</p>
+<p>参考 <a href="http://elixir.free-electrons.com/linux/v4.9/source/include/uapi/asm-generic/errno-base.h">errno-base.h</a> 并找出错误码的含义。恢复模块的初始配置。</p>
+<h3 id="3-打开和关闭">3. 打开和关闭<a href="#section-15" title="永久链接至标题">¶</a></h3>
+<p>运行 <code>cat /dev/so2_cdev</code> ，从我们的字符设备中读取数据。由于驱动程序没有实现打开函数，因此读取操作无法正常工作。按照标记为 TODO 2 的注释进行操作并实现以下内容。</p>
+<blockquote>
+<ol>
+<li>初始化设备
+<ul>
+<li>在 <code>so2_device_data</code> 结构体中添加一个 cdev 字段。</li>
+<li>阅读实验中的 <a href="#section-6">字符设备的注册和注销</a> 部分。</li>
+</ul>
+</li>
+<li>在驱动程序中实现打开和释放函数。</li>
+<li>在打开和释放函数中显示一条消息。</li>
+<li>再次读取 <code>/dev/so2_cdev</code> 文件。按照内核显示的消息进行操作。由于尚未实现 <code>read</code> 函数，因此仍会出现错误。</li>
+</ol>
+</blockquote>
+<p>注解</p>
+<p>设备驱动程序操作的原型在 <code>file_operations</code> 结构体中。请阅读 <a href="#section-8">打开和释放</a> 部分。</p>
+<h3 id="4-访问限制">4. 访问限制<a href="#section-16" title="永久链接至标题">¶</a></h3>
+<p>使用原子变量限制设备访问，以便一次只能有一个进程打开该设备。其他进程将收到“设备忙”错误 (<code>-EBUSY</code>)。限制访问将在驱动程序中的打开函数中完成。按照标记为 <strong>TODO 3</strong> 的注释进行操作并实现以下内容。</p>
+<blockquote>
+<ol>
+<li>在设备结构体中添加 <code>atomic_t</code> 变量。</li>
+<li>在模块初始化时对该变量进行初始化。</li>
+<li>在打开函数中使用该变量限制对设备的访问。我们建议使用 <code>atomic_cmpxchg()</code>。</li>
+<li>在释放函数中重置该变量以恢复对设备的访问权限。</li>
+<li>要测试你的部署，你需要模拟对设备的长期使用。要模拟休眠，请在设备打开操作的末尾调用调度器：</li>
+</ol>
+</blockquote>
+<p>set_current_state(TASK_INTERRUPTIBLE);
+schedule_timeout(1000);</p>
+<h3 id="5-读操作">5. 读操作<a href="#section-17" title="永久链接至标题">¶</a></h3>
+<p>在驱动程序中实现读取函数。按照标有 <code>TODO 4</code> 的注释并实现以下步骤：</p>
+<blockquote>
+<ol>
+<li>在 <code>so2_device_data</code> 结构中保持一个缓冲区，并用 <code>MESSAGE</code> 宏的值进行初始化。缓冲区的初始化在模块的 <code>init</code> 函数中完成。</li>
+<li>在读取调用时，将内核空间缓冲区的内容复制到用户空间缓冲区。
+<ul>
+<li>使用 <code>copy_to_user()</code> 函数将信息从内核空间复制到用户空间。</li>
+<li>暂时忽略大小和偏移参数。可以假设用户空间的缓冲区足够大，不需要检查读取函数的大小参数的有效性。</li>
+<li>读取调用返回的值是从内核空间缓冲区传输到用户空间缓冲区的字节数。</li>
+</ul>
+</li>
+<li>实现完成后，使用 <code>cat /dev/so2_cdev</code> 进行测试。</li>
+</ol>
+</blockquote>
+<p>注解</p>
+<p>命令 <code>cat /dev/so2_cdev</code> 不会结束（使用Ctrl+C）。请阅读 <a href="#section-9">读取和写入</a> 和 <a href="#section-7">访问进程地址空间</a> 部分。如果要显示偏移值，请使用以下形式的构造: <code>pr_info("Offset: %lld \n", *offset)</code>；偏移值的数据类型 <code>loff_t</code> 是 <code>long long int</code> 的 typedef。</p>
+<p><code>cat</code> 命令一直读取到文件的末尾，文件通过读取返回值为 0 来表示读到末尾了。因此，为了正确实现，你需要更新并使用读函数中接收的偏移参数，并在用户达到缓冲区末尾时返回 0。</p>
+<p>修改驱动程序以使 <code>cat</code> 命令结束：</p>
+<blockquote>
+<ol>
+<li>使用大小参数。</li>
+<li>对于每次读取，相应地更新偏移参数。</li>
+<li>确保读取函数返回已复制到用户缓冲区的字节数。</li>
+</ol>
+</blockquote>
+<p>注解</p>
+<p>通过解引用偏移参数，可以读取并移动在文件中的当前位置。每次成功进行读取后都需要更新其值。</p>
+<h3 id="6-写操作">6. 写操作<a href="#section-18" title="永久链接至标题">¶</a></h3>
+<p>添加将消息写入内核缓冲区以替换预定义消息的功能。在驱动程序中实现写函数。按照标有 <code>TODO 5</code> 的注释进行操作。</p>
+<p>此时忽略偏移参数。你可以假设驱动程序缓冲区足够大。你无需检查写函数大小参数的有效性。</p>
+<p>注意</p>
+<p>设备驱动程序操作的原型位于 file_operations 结构中。使用以下命令进行测试：</p>
+<p>echo “arpeggio”> /dev/so2_cdev
+cat /dev/so2_cdev</p>
+<p>请阅读 <a href="#section-9">读取和写入</a> 小节和 <a href="#section-7">访问进程地址空间</a> 小节。</p>
+<h3 id="7-ioctl-操作">7. ioctl 操作<a href="#ioctl-2" title="永久链接至标题">¶</a></h3>
+<p>对于这个练习，我们希望在驱动程序中添加 ioctl <code>MY_IOCTL_PRINT</code> 来显示来自宏 <code>IOCTL_MESSAGE</code> 的消息。按照标有 <code>TODO 6</code> 的注释进行操作。</p>
+<p>为此：</p>
+<blockquote>
+<ol>
+<li>在驱动程序中实现 ioctl 函数。</li>
+<li>我们需要使用 <code>user/so2_cdev_test.c</code> 调用 ioctl 函数，并传递适当的参数。</li>
+<li>为了进行测试，我们将使用一个用户空间程序 (<code>user/so2_cdev_test.c</code>) 来调用具有所需参数的 <code>ioctl</code> 函数。</li>
+</ol>
+</blockquote>
+<p>注意</p>
+<p>宏 <code>MY_IOCTL_PRINT</code> 在文件 <code>include/so2_cdev.h</code> 中定义，该文件在内核模块和用户空间程序之间共享。</p>
+<p>请阅读实验中的 <a href="#ioctl">ioctl</a> 章节。</p>
+<p>注意</p>
+<p>用户空间代码在 <code>make build</code> 时会自动编译，并在 <code>make copy</code> 时被复制。</p>
+<p>由于我们需要为 32 位的 qemu 机器编译程序，如果你的主机是 64 位的，那么你需要安装 <code>gcc-multilib</code> 软件包。</p>
+<h2 id="额外练习">额外练习<a href="#section-19" title="永久链接至标题">¶</a></h2>
+<h3 id="带消息的-ioctl">带消息的 ioctl<a href="#ioctl-3" title="永久链接至标题">¶</a></h3>
+<p>为驱动程序添加两个 ioctl 操作，用于修改与驱动程序关联的消息。应使用固定长度的缓冲区（BUFFER_SIZE）。</p>
+<ol>
+<li>在驱动程序的 <code>ioctl</code> 函数中添加以下操作：
+<ul>
+<li><code>MY_IOCTL_SET_BUFFER</code>：用于向设备写入消息；</li>
+<li><code>MY_IOCTL_GET_BUFFER</code>：用于从设备读取消息。</li>
+</ul>
+</li>
+<li>为进行测试，将所需的命令行参数传递给用户空间程序。</li>
+</ol>
+<p>注解</p>
+<p>阅读实验中的 <a href="#ioctl">ioctl</a> 和 <a href="#section-7">访问进程地址空间</a> 部分。</p>
+<h3 id="使用等待队列的-ioctl">使用等待队列的 ioctl<a href="#ioctl-4" title="永久链接至标题">¶</a></h3>
+<p>为设备驱动程序添加两个 <code>ioctl</code> 操作，用于队列处理。</p>
+<ol>
+<li>在驱动程序的 <code>ioctl</code> 函数中添加以下操作：
+<ul>
+<li><code>MY_IOCTL_DOWN</code>：将进程添加到队列中；</li>
+<li><code>MY_IOCTL_UP</code>：将进程从队列中移除。</li>
+</ul>
+</li>
+<li>在设备结构中填充 <code>wait_queue_head_t</code> 字段和一个标志。</li>
+<li>不要忘记初始化等待队列和标志。</li>
+<li>从前一个练习中移除独占访问条件。</li>
+<li>为进行测试，将所需的命令行参数传递给用户空间程序。</li>
+</ol>
+<p>当进程被添加到队列中时，它将保持阻塞状态；要运行队列命令，请使用 Alt+F2 打开虚拟机中的新控制台；可以使用 Alt+F1 返回到上一个控制台。如果是通过 SSH 连接到虚拟机的，请打开新的控制台。</p>
+<p>注意</p>
+<p>阅读实验中的 <a href="#ioctl">ioctl</a> 和 <a href="#section-10">等待队列</a> 部分。</p>
+<h3 id="o_nonblock-实现">O_NONBLOCK 实现<a href="#o-nonblock" title="永久链接至标题">¶</a></h3>
+<p>注解</p>
+<p>如果文件使用 <code>O_NONBLOCK</code> 标志打开，则其操作将是非阻塞的。</p>
+<p>如果在执行读取操作时数据不可用，则会发生以下情况：</p>
+<blockquote>
+<ul>
+<li>如果文件是使用 <code>O_NONBLOCK</code> 打开的，读取调用将返回 <code>-EWOULDBLOCK</code>。</li>
+<li>否则，当前任务（进程）将被放入等待队列，并在数据可用时解除阻塞（在我们的情况下，在写入时）。</li>
+</ul>
+</blockquote>
+<ul>
+<li>为允许非阻塞的读取操作，从前面的练习中移除独占访问条件。</li>
+<li>可以使用前一个练习中定义的队列。</li>
+<li>可以忽略文件偏移量。</li>
+<li>将数据的初始大小修改为 <code>0</code>，以便进行测试。</li>
+<li>为进行测试，将所需的命令行参数传递给用户空间程序。
+<ul>
+<li>当使用 <code>n</code> 选项时，测试程序会将打开标志更改为 <code>O_NONBLOCK</code>，然后执行 <code>read</code> 操作。</li>
+</ul>
+</li>
+<li>运行 <code>cat /dev/so2_dev</code> 命令时，打开文件过程中使用了哪些标志？</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">← SO2 实验 02——内核 API — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

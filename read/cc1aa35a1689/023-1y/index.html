@@ -1,0 +1,522 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<ul>
+<li>了解 Linux 中虚拟文件系统（VFS）的知识，理解有关“inode”、“dentry”、“文件”、“超级块”和数据块的概念。</li>
+<li>理解在 VFS 内挂载文件系统的过程。</li>
+<li>了解各种文件系统类型，并理解具有物理支持（在磁盘上）和没有物理支持的文件系统之间的区别。</li>
+</ul>
+</blockquote>
+<h2 id="虚拟文件系统vfs">虚拟文件系统（VFS）<a href="#vfs" title="永久链接至标题">¶</a></h2>
+<p>虚拟文件系统（也称为 VFS）是内核的组件，处理所有与文件和文件系统相关的系统调用。VFS 是用户与特定文件系统之间的通用接口。这种抽象简化了文件系统的实现，并使得多个文件系统更容易集成。这样，通过使用 VFS 提供的 API 来实现文件系统，通用硬件以及 I/O 子系统的通信部分由 VFS 处理。</p>
+<p>从功能的角度来看，文件系统可以分为以下几类：</p>
+<blockquote>
+<ul>
+<li>磁盘文件系统（ext3、ext4、xfs、fat 以及 ntfs 等）</li>
+<li>网络文件系统（nfs、smbfs/cifs、ncp 等）</li>
+<li>虚拟文件系统（procfs、sysfs、sockfs、pipefs 等）</li>
+</ul>
+</blockquote>
+<p>Linux 内核实例使用 VFS 来处理目录和文件的层次结构（一棵树）。通过挂载操作，新的文件系统将被添加为 VFS 子树。文件系统通常是从其所对应的环境中挂载的（从块类型设备、网络等）。然而，VFS 可以将普通文件作为虚拟块设备使用，因此可以将普通文件挂载为磁盘文件系统。这样，可以创建文件系统的堆叠。</p>
+<p>VFS 的基本思想是提供可以表示任何文件系统文件的单一文件模型。文件系统驱动程序需要遵守公共的基准。这样，内核可以创建包含整个系统的单一目录结构。其中一个文件系统将作为根文件系统，其他文件系统将挂载在其各个目录下。</p>
+<h2 id="常见的文件系统模型">常见的文件系统模型<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>常见的文件系统模型（任何实现的文件系统都需要符合该模型）包括几种明确定义的实体: <code>superblock</code>, <code>inode</code>, <code>file</code> 和 <code>dentry</code>。这些实体是文件系统的元数据（包含有关数据或其他元数据的信息）。</p>
+<p>模型实体间通过某些 VFS 子系统或内核子系统进行交互：dentry cache（目录项缓存）、inode cache（索引节点缓存）和 buffer cache（缓冲区缓存）。每个实体都被视为对象：它具有关联的数据结构和指向方法表的指针。通过替换关联的方法来为每个组件引入特定的行为。</p>
+<h3 id="超级块">超级块<a href="#section-3" title="永久链接至标题">¶</a></h3>
+<p>超级块存储了挂载文件系统所需的信息：</p>
+<blockquote>
+<ul>
+<li>inode 和块的位置</li>
+<li>文件系统块大小</li>
+<li>最大文件名长度</li>
+<li>最大文件大小</li>
+<li>根 inode 的位置</li>
+</ul>
+</blockquote>
+<h4 id="本地化">本地化：<a href="#section-4" title="永久链接至标题">¶</a></h4>
+<blockquote>
+<ul>
+<li>对于磁盘文件系统，超级块在磁盘的第一个块中有对应项（文件系统控制块）。</li>
+<li>在 VFS 中，所有文件系统的超级块都保留在类型为 <code>struct super_block</code> 的结构列表中，方法则保留在类型为 <code>struct super_operations</code> 的结构中。</li>
+</ul>
+</blockquote>
+<h3 id="inode">inode<a href="#inode" title="永久链接至标题">¶</a></h3>
+<p>inode（索引节点）保存了有关文件的信息。注意这里的文件指的是泛指意义上的文件，常规文件、目录、特殊文件（管道、fifo）、块设备、字符设备、链接或可以抽象为文件的任何内容都包括在内。</p>
+<p>inode 存储了以下信息：</p>
+<blockquote>
+<ul>
+<li>文件类型；</li>
+<li>文件大小；</li>
+<li>访问权限；</li>
+<li>访问或修改时间；</li>
+<li>数据在磁盘上的位置（指向包含数据的磁盘块的指针）。</li>
+</ul>
+</blockquote>
+<p>注解</p>
+<p>通常，inode 不包含文件名。文件名由 <code>dentry</code> 实体存储。这样，一个 inode 可以有多个名称（硬链接）。</p>
+<h4 id="本地化-1">本地化：<a href="#section-5" title="永久链接至标题">¶</a></h4>
+<p>与 superblock 类似，<code>inode</code> 也有磁盘对应项。磁盘上的 inodes 通常分组存储在一个专用区域（inode 区域）中，与数据块区域分开；在某些文件系统中，与 inodes 等效的内容分散在文件系统结构中（FAT）；作为 VFS 实体，inode 由 <code>struct inode</code> 结构表示，并由 <code>struct inode_operations</code> 结构定义与之相关的操作。</p>
+<p>通常，每个 inode 都通过编号进行标识。在 Linux 上, <code>ls</code> 命令的 <code>-i</code> 实参显示与每个文件关联的 inode 编号：</p>
+<p>razvan@valhalla:~/school/so2/wiki$ ls -i
+1277956 lab10.wiki  1277962 lab9.wikibak  1277964 replace_lxr.sh
+1277954 lab9.wiki   1277958 link.txt      1277955 homework.wiki</p>
+<h3 id="file">file<a href="#file" title="永久链接至标题">¶</a></h3>
+<p>file 是文件系统模型中距离用户最近的组件。该结构体仅作为 VFS（虚拟文件系统）在内存中的实体存在，没有在磁盘上的物理对应物。</p>
+<p>inode 抽象了磁盘上的文件，而 file 结构抽象了打开的文件。从进程的角度来看，file 实体抽象了文件。然而，从文件系统实现的角度来看，inode 才是抽象文件的那个实体。</p>
+<p>file 结构维护了以下信息：</p>
+<blockquote>
+<ul>
+<li>文件游标位置；</li>
+<li>文件打开权限；</li>
+<li>指向关联 inode 的指针（最终是 inode 的索引）。</li>
+</ul>
+</blockquote>
+<h4 id="本地化-2">本地化：<a href="#section-6" title="永久链接至标题">¶</a></h4>
+<blockquote>
+<ul>
+<li>与之关联的 VFS 实体是 <code>struct file</code> 结构，与之相关的操作由 <code>struct file_operations</code> 结构表示。</li>
+</ul>
+</blockquote>
+<h3 id="目录项">目录项<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p>目录项（dentry）将 inode 与文件名关联起来。</p>
+<p>通常，dentry 结构包含两个字段：</p>
+<blockquote>
+<ul>
+<li>用于标识 inode 的整数；</li>
+<li>表示文件名的字符串。</li>
+</ul>
+</blockquote>
+<p>dentry 是目录或文件路径的特定部分。例如，对于路径 <code>/bin/vi</code>，将为 <code>/</code>, <code>bin</code> 和 <code>vi</code> 创建 dentry 对象（总共 3 个 dentry 对象）。</p>
+<blockquote>
+<ul>
+<li>dentry 在磁盘上有对应物，但对应关系不是直接的，因为每个文件系统都以特定方式维护 dentry。</li>
+<li>在 VFS 中，dentry 实体由 <code>struct dentry</code> 结构表示，与之相关的操作在 <code>struct dentry_operations</code> 结构中定义。</li>
+</ul>
+</blockquote>
+<h2 id="注册和注销文件系统">注册和注销文件系统<a href="#section-8" title="永久链接至标题">¶</a></h2>
+<p>在当前版本中，Linux 内核支持约 50 种文件系统，包括：</p>
+<blockquote>
+<ul>
+<li>ext2/ext4</li>
+<li>reiserfs</li>
+<li>xfs</li>
+<li>fat</li>
+<li>ntfs</li>
+<li>iso9660</li>
+<li>用于 CD 和 DVD 的 udf</li>
+<li>hpfs</li>
+</ul>
+</blockquote>
+<p>然而，在单个系统上，不太可能有超过 5-6 个文件系统。因此，文件系统（更准确地说，文件系统类型）被实现为模块，并可以随时加载或卸载。</p>
+<p>为了能够动态加载/卸载文件系统模块，文件系统注册/注销 API 是不可或缺的。描述特定文件系统的结构是 <code>struct file_system_type</code>：</p>
+<blockquote>
+<blockquote>
+<p>#include &#x3C;linux/fs.h></p>
+<p>struct file_system_type {
+const char *name;
+int fs_flags;
+struct dentry *(*mount) (struct file_system_type *, int,
+const char *, void *);
+void (*kill_sb) (struct super_block *);
+struct module *owner;
+struct file_system_type *next;
+struct hlist_head fs_supers;
+struct lock_class_key s_lock_key;
+struct lock_class_key s_umount_key;
+//…
+};</p>
+</blockquote>
+<ul>
+<li><code>name</code> 是表示文件系统名称的字符串（传递给 <code>mount -t</code> 的参数）。</li>
+<li><code>owner</code> 对于以模块形式实现的文件系统来说是 <code>THIS_MODULE</code>，如果直接编写在内核中，则 <code>owner</code> 为 <code>NULL</code>。</li>
+<li><code>mount</code> 函数在加载文件系统时从磁盘中读取超级块到内存中。每种文件系统的函数都是独一无二的。</li>
+<li><code>kill_sb</code> 函数释放内存中的超级块。</li>
+<li><code>fs_flags</code> 指定文件系统必须以哪些标志挂载。例如, <code>FS_REQUIRES_DEV</code> 是一个标志，指定 VFS 文件系统需要一个磁盘（而不是虚拟文件系统）。</li>
+<li><code>fs_supers</code> 是一个列表，包含与该文件系统关联的所有超级块。由于同一文件系统可能会被多次挂载，因此每个挂载点都会有一个单独的超级块。</li>
+</ul>
+</blockquote>
+<p>通常，在模块初始化函数中，将 <em>文件系统注册</em> 到内核。要进行注册，程序员需要：</p>
+<blockquote>
+<ol>
+<li>使用名称、标志、实现超级块读取操作的函数以及对标识当前模块的结构的引用来初始化 <code>struct file_system_type</code> 类型的结构体。</li>
+<li>调用 <code>register_filesystem()</code> 函数。</li>
+</ol>
+</blockquote>
+<p>在卸载模块时，必须调用 <code>unregister_filesystem()</code> 函数来注销文件系统。</p>
+<p>在 <code>ramfs</code> 的代码中可以找到注册虚拟文件系统的示例：</p>
+<p>static struct file_system_type ramfs_fs_type = {
+.name           = “ramfs”,
+.mount          = ramfs_mount,
+.kill_sb        = ramfs_kill_sb,
+.fs_flags       = FS_USERNS_MOUNT,
+};</p>
+<p>static int __init init_ramfs_fs(void)
+{
+if (test_and_set_bit(0, &#x26;once))
+return 0;
+return register_filesystem(&#x26;ramfs_fs_type);
+}</p>
+<h3 id="mount-和-kill_sb-函数">mount 和 kill_sb 函数<a href="#mount-kill-sb" title="永久链接至标题">¶</a></h3>
+<p>在挂载文件系统时，内核调用了在 <code>struct file_system_type</code> 结构中定义的 mount 函数。该函数进行一系列的初始化操作，并返回表示挂载点目录的 dentry（<code>struct dentry</code> 结构）。通常，<code>mount()</code> 是一个简单的函数，该函数调用以下函数之一：</p>
+<blockquote>
+<ul>
+<li><code>mount_bdev()</code>：挂载存储在块设备上的文件系统</li>
+<li><code>mount_single()</code>：挂载在所有挂载操作之间共享实例的文件系统</li>
+<li><code>mount_nodev()</code>：挂载不在物理设备上的文件系统</li>
+<li><code>mount_pseudo()</code>：用于伪文件系统的辅助函数（如 <code>sockfs</code>, <code>pipefs</code> 等无法被挂载的文件系统）</li>
+</ul>
+</blockquote>
+<p>这些函数的其中一个参数是指向 <code>fill_super()</code> 函数的指针，该函数在超级块初始化之后被调用，以借助驱动程序完成超级块的初始化。在 <code>fill_super</code> 部分可以找到此类函数的示例。</p>
+<p>在卸载文件系统时，内核调用 <code>kill_sb()</code> 函数，执行清理操作，并调用以下函数之一：</p>
+<blockquote>
+<ul>
+<li><code>kill_block_super()</code>：卸载块设备上的文件系统</li>
+<li><code>kill_anon_super()</code>：卸载虚拟文件系统（当请求时生成信息）</li>
+<li><code>kill_litter_super()</code>：卸载不在物理设备上的文件系统（信息保存在内存中）。</li>
+</ul>
+</blockquote>
+<p>关于没有磁盘支持的文件系统，一个示例是 <code>ramfs</code> 文件系统的 <code>ramfs_mount()</code> 函数：</p>
+<p>struct dentry *ramfs_mount(struct file_system_type *fs_type,
+int flags, const char *dev_name, void *data)
+{
+return mount_nodev(fs_type, flags, data, ramfs_fill_super);
+}</p>
+<p>关于来自磁盘的文件系统，一个示例是 <code>minix</code> 文件系统的 <code>minix_mount()</code> 函数：</p>
+<p>struct dentry *minix_mount(struct file_system_type *fs_type,
+int flags, const char *dev_name, void *data)
+{
+return mount_bdev(fs_type, flags, dev_name, data, minix_fill_super);
+}</p>
+<h2 id="vfs-中的超级块">VFS 中的超级块<a href="#vfs-1" title="永久链接至标题">¶</a></h2>
+<p>超级块既作为物理实体（磁盘上的实体）存在，也作为 VFS 实体（在 <code>struct super_block</code> 结构中）存在。超级块仅包含元信息，并用于从磁盘中读取和写入元数据（如 inode、目录项）。超级块（以及隐式的 <code>struct super_block</code> 结构）将包含有关所使用的块设备、inode 列表、文件系统根目录的 inode 指针以及超级块操作的指针的信息。</p>
+<p><code>struct super_block</code> 结构的部分定义如下：</p>
+<p>struct super_block {
+//…
+dev_t                   s_dev;              /* 标识符 */
+unsigned char           s_blocksize_bits;   /* 块大小（以位为单位） */
+unsigned long           s_blocksize;        /* 块大小（以字节为单位） */
+unsigned char           s_dirt;             /* 脏标志 */
+loff_t                  s_maxbytes;         /* 最大文件大小 */
+struct file_system_type *s_type;            /* 文件系统类型 */
+struct super_operations *s_op;              /* 超级块方法 */
+//…
+unsigned long           s_flags;            /* 挂载标志 */
+unsigned long           s_magic;            /* 文件系统的魔数 */
+struct dentry           *s_root;            /* 目录挂载点 */
+//…
+char                    s_id[32];           /* 信息标识符 */
+void                    *s_fs_info;         /* 文件系统私有信息 */
+};</p>
+<p>超级块存储了文件系统实例的全局信息：</p>
+<ul>
+<li>所使用的物理设备</li>
+<li>块大小</li>
+<li>文件的最大大小</li>
+<li>文件系统类型</li>
+<li>支持的操作</li>
+<li>魔数（用于标识文件系统）</li>
+<li>根目录的 <code>dentry</code></li>
+</ul>
+<p>此外，一个通用指针 (<code>void *</code>) 用于存储文件系统的私有数据。超级块可以被视为一个抽象对象，在具体实现时，会向其中添加自己的数据。</p>
+<h3 id="超级块操作">超级块操作<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<p>超级块操作由 <code>struct super_operations</code> 结构描述：</p>
+<p>struct super_operations {
+//…
+int (*write_inode) (struct inode *, struct writeback_control *wbc);
+struct inode *(*alloc_inode)(struct super_block *sb);
+void (*destroy_inode)(struct inode *);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>   void (\*put\_super) (struct super\_block \*);</span></span>
+<span class="line"><span>   int (\*statfs) (struct dentry \*, struct kstatfs \*);</span></span>
+<span class="line"><span>   int (\*remount\_fs) (struct super\_block \*, int \*, char \*);</span></span>
+<span class="line"><span>   //...</span></span></code></pre>
+<p>};</p>
+<p>该结构的字段是具有以下含义的函数指针：</p>
+<ul>
+<li><code>write_inode</code>, <code>alloc_inode</code> 与 <code>destroy_inode</code> 分别用于写入、分配和释放与 inode 相关的资源，将在下一个实验中进行详细描述。</li>
+<li><code>put_super</code> 在卸载时调用，释放文件系统私有数据的任何资源（通常是内存）；</li>
+<li><code>remount_fs</code> 在内核检测到重新挂载尝试（挂载标志 <code>MS_REMOUNTM</code>）时调用；大部分情况下，需要检测是否尝试从只读切换到读写或反之；这可以简单地通过访问旧标志（在 <code>sb->s_flags</code> 中）和新标志 (<code>flags</code> 参数) 来完成; <code>data</code> 是由 <code>mount()</code> 发送的表示文件系统特定选项的数据的指针；</li>
+<li><code>statfs</code> 在执行 <code>statfs</code> 系统调用时调用（尝试 <code>stat -f</code> 或 <code>df</code>）；此调用必须填充 <code>struct kstatfs</code> 结构的字段，就像在 <code>ext4_statfs()</code> 函数中所做的那样。</li>
+</ul>
+<h2 id="fill_super-函数"><code>fill_super()</code> 函数<a href="#fill-super" title="永久链接至标题">¶</a></h2>
+<p>如前所述, <code>fill_super()</code> 函数用于超级块初始化的最后一段。此初始化包括填充 <code>struct super_block</code> 结构字段和根目录 inode 的初始化。</p>
+<p>一个实现示例是 <code>ramfs_fill_super()</code> 函数，它用于初始化超级块中的其余字段：</p>
+<p>#include &#x3C;linux/pagemap.h></p>
+<p>#define RAMFS_MAGIC     0x858458f6</p>
+<p>static const struct super_operations ramfs_ops = {
+.statfs         = simple_statfs,
+.drop_inode     = generic_delete_inode,
+.show_options   = ramfs_show_options,
+};</p>
+<p>static int ramfs_fill_super(struct super_block *sb, void *data, int silent)
+{
+struct ramfs_fs_info *fsi;
+struct inode *inode;
+int err;</p>
+<p>save_mount_options(sb, data);</p>
+<p>fsi = kzalloc(sizeof(struct ramfs_fs_info), GFP_KERNEL);
+sb->s_fs_info = fsi;
+if (!fsi)
+return -ENOMEM;</p>
+<p>err = ramfs_parse_options(data, &#x26;fsi->mount_opts);
+if (err)
+return err;</p>
+<p>sb->s_maxbytes          = MAX_LFS_FILESIZE;
+sb->s_blocksize         = PAGE_SIZE;
+sb->s_blocksize_bits    = PAGE_SHIFT;
+sb->s_magic             = RAMFS_MAGIC;
+sb->s_op                = &#x26;ramfs_ops;
+sb->s_time_gran         = 1;</p>
+<p>inode = ramfs_get_inode(sb, NULL, S_IFDIR | fsi->mount_opts.mode, 0);
+sb->s_root = d_make_root(inode);
+if (!sb->s_root)
+return -ENOMEM;</p>
+<p>return 0;
+}</p>
+<p>内核提供了实现文件系统结构的操作的通用函数。上面代码中使用的 <code>generic_delete_inode()</code> 和 <code>simple_statfs()</code> 函数就是这种函数，如果它们的功能足够，可以用于实现驱动程序。</p>
+<p>上面代码中的 <code>ramfs_fill_super()</code> 函数填充了超级块中的一些字段，然后读取根 inode 并分配根 dentry。读取根 inode 在 <code>ramfs_get_inode()</code> 函数中完成，它包括使用 <code>new_inode()</code> 函数分配新的 inode 并进行初始化。为了释放 inode，使用了 <code>iput()</code>，并使用 <code>d_make_root()</code> 函数分配根 dentry。</p>
+<p>一个用于磁盘文件系统的示例实现是 minix 文件系统中的 <code>minix_fill_super()</code> 函数。磁盘文件系统的功能与虚拟文件系统类似，唯一的区别是使用了缓冲区缓存。此外，minix 文件系统使用 <code>struct minix_sb_info</code> 结构来保存私有数据。这个函数的很大一部分工作是初始化这些私有数据。私有数据使用 <code>kzalloc()</code> 函数进行分配，并存储在超级块结构的 <code>s_fs_info</code> 字段中。</p>
+<p>VFS 函数通常以超级块、索引节点和/或包含指向超级块的指针的目录项作为实参，以便能够轻松访问这些私有数据。</p>
+<h2 id="缓冲区缓存">缓冲区缓存<a href="#section-10" title="永久链接至标题">¶</a></h2>
+<p>缓冲区缓存是处理块设备读写缓存的内核子系统。缓冲区缓存使用的基本实体是 <code>struct buffer_head</code> 结构。该结构中最重要的字段包括：</p>
+<blockquote>
+<ul>
+<li><code>b_data</code>，指向读取数据或写入数据的内存区域的指针</li>
+<li><code>b_size</code>，缓冲区大小</li>
+<li><code>b_bdev</code>，块设备</li>
+<li><code>b_blocknr</code>，已加载或需要保存在磁盘上的设备的块号</li>
+<li><code>b_state</code>，缓冲区的状态</li>
+</ul>
+</blockquote>
+<p>以下是与这些结构一起使用的一些重要函数：</p>
+<blockquote>
+<ul>
+<li><code>__bread()</code>：读取具有给定编号和给定大小的块到一个 <code>buffer_head</code> 结构中；如果成功，则返回指向 <code>buffer_head</code> 结构的指针，否则返回 <code>NULL</code>；</li>
+<li><code>sb_bread()</code>：与前一个函数相同，但读取的块的大小从超级块中获取，读取的设备也从超级块中获取；</li>
+<li><code>mark_buffer_dirty()</code>：将缓冲区标记为脏（设置 <code>BH_Dirty</code> 位）；缓冲区将在稍后的时间写入磁盘 (<code>bdflush</code> 内核线程会定期唤醒并将缓冲区写入磁盘)；</li>
+<li><code>brelse()</code>：在先前将缓冲区写入磁盘（如果需要）后，释放缓冲区使用的内存；</li>
+<li><code>map_bh()</code>：将 buffer-head 与相应的扇区关联。</li>
+</ul>
+</blockquote>
+<h2 id="函数和有用的宏">函数和有用的宏<a href="#section-11" title="永久链接至标题">¶</a></h2>
+<p>超级块通常包含以位图（位向量）形式表示的占用块的映射（由索引节点、目录条目、数据占用）。为了处理这种映射，建议使用以下功能：</p>
+<blockquote>
+<ul>
+<li><code>find_first_zero_bit()</code>，用于在内存区域中查找第一个为零的位。size 参数表示搜索区域中的位数；</li>
+<li><code>test_and_set_bit()</code>，设置位并获取旧值；</li>
+<li><code>test_and_clear_bit()</code>，删除位并获取旧值；</li>
+<li><code>test_and_change_bit()</code>，取反位的值并获取旧值。</li>
+</ul>
+</blockquote>
+<p>以下宏定义可用于验证索引节点的类型：</p>
+<blockquote>
+<ul>
+<li><code>S_ISDIR</code> (<code>inode->i_mode</code>)，用于检查索引节点是否为目录；</li>
+<li><code>S_ISREG</code> (<code>inode->i_mode</code>)，用于检查索引节点是否为普通文件（非链接或设备文件）。</li>
+</ul>
+</blockquote>
+<h2 id="进一步阅读">进一步阅读<a href="#section-12" title="永久链接至标题">¶</a></h2>
+<ol>
+<li>Robert Love——Linux 内核开发，第二版——第 12 章 虚拟文件系统</li>
+<li>《深入理解 Linux 内核》，第 3 版——第 12 章 虚拟文件系统</li>
+<li><a href="http://www.coda.cs.cmu.edu/doc/talks/linuxvfs/">Linux 虚拟文件系统（演示）</a></li>
+<li><a href="http://www.cyberciti.biz/tips/understanding-unixlinux-file-system-part-i.html">理解 Unix/Linux 文件系统</a></li>
+<li><a href="http://lwn.net/Articles/57369/">创建 Linux 虚拟文件系统</a></li>
+<li><a href="#system-message-2">`Linux 文档项目——VFS`_</a></li>
+<li><a href="http://www.linux.it/~rubini/docs/vfs/vfs.html">Linux 中的“虚拟文件系统”</a></li>
+<li><a href="http://inglorion.net/documents/tutorials/tutorfs/">Linux 文件系统教程</a></li>
+<li><a href="http://www.win.tue.nl/~aeb/linux/lk/lk-8.html">Linux 虚拟文件系统</a></li>
+<li><a href="http://lxr.free-electrons.com/source/Documentation/filesystems/vfs.txt">Documentation/filesystems/vfs.txt</a></li>
+<li><a href="http://lxr.free-electrons.com/source/fs/">文件系统源代码</a></li>
+</ol>
+<h2 id="练习">练习<a href="#section-13" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 filesystems。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/filesystems/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-13">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<p>重要</p>
+<p>为了更好地了解我们在教学、课外活动和职业活动中做得好和可以做得更好的方面，我们请你填写 <a href="https://forms.office.com/r/SqBF2kfzk5">这份调查问卷</a>。这份调查问卷非常简短，你只需选择答案，预计完成时间为 3-5 分钟。当然，我们将向你发送调查分析结果，并将用它来改进教学活动。</p>
+<h3 id="myfs">myfs<a href="#myfs" title="永久链接至标题">¶</a></h3>
+<p>首先，我们计划熟悉 Linux 内核和虚拟文件系统（VFS）组件所提供的接口。为此，我们将使用一个简单的虚拟文件系统（即没有物理磁盘支持）。该文件系统名为 <code>myfs</code>。</p>
+<p>我们将在实验框架的 <code>myfs/</code> 子目录中进行操作。我们将在此实验中实现超级块操作，下一个实验将继续进行索引节点操作。</p>
+<h4 id="1-注册和注销-myfs-文件系统">1. 注册和注销 myfs 文件系统<a href="#myfs-1" title="永久链接至标题">¶</a></h4>
+<p>处理文件系统的第一步是注册和注销它。我们要为 <code>myfs.c</code> 中描述的文件系统执行此操作。查看文件内容并按照标记为 <code>TODO 1</code> 的指示进行操作。</p>
+<p>在 RegisterUnregisterSection 部分描述了需要执行的步骤。使用字符串 <code>"myfs"</code> 作为文件系统名称。</p>
+<p>注解</p>
+<p>在文件系统结构中，使用代码框架中的 <code>myfs_mount</code> 函数填充超级块（在挂载时完成）。在 <code>myfs_mount</code> 中调用专用于没有磁盘支持的文件系统的函数。作为特定挂载函数的参数，使用代码框架中定义的 <code>fill_super</code> 类型的函数。你可以查看 <a href="#functionsmountkillsbsection">mount 和 kill_sb 函数</a> 部分。</p>
+<p>要销毁超级块（在卸载时完成），请使用 <code>kill_litter_super</code>，这也是特定于没有磁盘支持的文件系统的函数。该函数已经实现，你需要在 <code>struct file_system_type</code> 结构中填充它。</p>
+<p>完成标记为 <code>TODO 1</code> 的部分后，编译模块，将其复制到 QEMU 虚拟机中，并启动虚拟机。加载内核模块，然后检查 <code>/proc/filesystems</code> 文件中是否存在 <code>myfs</code> 文件系统。</p>
+<p>目前，文件系统只是注册了，它没有暴露可以使用的操作。如果我们尝试挂载它，操作将失败。为了尝试挂载，我们创建挂载点 <code>/mnt/myfs/</code>。</p>
+<h1 id="mkdir--p-mntmyfs">mkdir -p /mnt/myfs</h1>
+<p>然后我们使用 <code>mount</code> 命令：</p>
+<h1 id="mount--t-myfs-none-mntmyfs">mount -t myfs none /mnt/myfs</h1>
+<p>我们得到的错误消息显示我们还没有实现在超级块上的操作。我们将需要实现超级块上的操作并初始化根索引节点。我们将在后续步骤中完成这些操作。</p>
+<p>注解</p>
+<p>发送给 <code>mount</code> 命令的 <code>none</code> 实参表示我们没有要挂载的设备，因为文件系统是虚拟的。类似地，这也是 Linux 系统上挂载 <code>procfs</code> 或 <code>sysfs</code> 文件系统的方式。</p>
+<h4 id="2-完成-myfs-的超级块">2. 完成 myfs 的超级块<a href="#myfs-2" title="永久链接至标题">¶</a></h4>
+<p>为了能够挂载文件系统，我们需要填充其超级块的字段，即类型为 <code>struct super_block</code> 的通用 VFS 结构。我们将在 <code>myfs_fill_super()</code> 函数内填充该结构；超级块由作为函数实参传递的变量 <code>sb</code> 表示。请按照标记为 <code>TODO 2</code> 的提示进行操作。</p>
+<p>注解</p>
+<p>要填充 <code>myfs_fill_super</code> 函数，你可以从 <a href="#fillsupersection">fill_super() 函数</a> 部分中的示例开始。</p>
+<p>对于超级块结构字段，请尽可能使用代码框架中定义的宏。</p>
+<p>超级块结构中的 <code>s_op</code> 字段必须初始化为超级块操作结构（类型为 <code>struct super_operations</code>）。你需要定义这样的结构。</p>
+<p>有关定义 <code>struct super_operations</code> 结构和填充超级块的信息，请参阅 <a href="#superblocksection">超级块操作</a> 部分。</p>
+<p>注解</p>
+<p>初始化 <code>struct super_operations</code> 结构的 <code>drop_inode</code> 和 <code>statfs</code> 字段。</p>
+<p>尽管此时超级块将被正确初始化，但挂载操作仍将失败。为了成功完成挂载操作，还需要初始化根索引节点，这将在下一个练习中进行操作。</p>
+<h4 id="3-初始化-myfs-根索引节点">3. 初始化 myfs 根索引节点<a href="#myfs-3" title="永久链接至标题">¶</a></h4>
+<p>根索引节点是文件系统根目录（即 <code>/</code>）的索引节点。初始化是在文件系统挂载时完成的。在挂载时调用的 <code>myfs_fill_super</code> 函数会调用 <code>myfs_get_inode</code> 函数来创建并初始化索引节点。通常，所有索引节点都是由此函数创建和初始化；但是，在本练习中，我们只创建根索引节点。</p>
+<p><code>inode</code> 在 <code>myfs_get_inode</code> 函数内进行分配（调用 <code>new_inode()</code> 函数，将返回的结果分配给局部变量 <code>inode</code>）。</p>
+<p>为了成功完成文件系统的挂载，你需要填充 <code>myfs_get_inode</code> 函数。按照标记为 <code>TODO 3</code> 的指示进行操作。可以参考 <a href="https://elixir.bootlin.com/linux/latest/source/fs/ramfs/inode.c#L63">ramfs_get_inode</a> 函数。</p>
+<p>注解</p>
+<p>要初始化 <code>uid</code>, <code>gid</code> 和 <code>mode</code>，可以使用 <code>inode_init_owner()</code> 函数，就像在 <code>ramfs_get_inode()</code> 中那样。调用 <code>inode_init_owner()</code> 时，应将 <code>NULL</code> 作为第二个参数，因为创建的索引节点没有父目录。</p>
+<p>将 VFS 索引节点的 <code>i_atime</code>, <code>i_ctime</code> 和 <code>i_mtime</code> 初始化为 <code>current_time()</code> 函数返回的值。</p>
+<p>你需要为目录类型的索引节点初始化操作。执行以下步骤：</p>
+<blockquote>
+<ol>
+<li>使用 <code>S_ISDIR</code> 宏检查这是否是目录类型的索引节点。</li>
+<li>对于 <code>i_op</code> 和 <code>i_fop</code> 字段，请使用已经实现的内核函数：
+<ul>
+<li>对于 <code>i_op</code>：使用 <code>simple_dir_inode_operations</code>。</li>
+<li>对于 <code>i_fop</code>：使用 <code>simple_dir_operations</code>。</li>
+</ul>
+</li>
+<li>使用 <code>inc_nlink()</code> 函数增加目录的链接数。</li>
+</ol>
+</blockquote>
+<h4 id="4-测试-myfs-的挂载和卸载">4. 测试 myfs 的挂载和卸载<a href="#myfs-4" title="永久链接至标题">¶</a></h4>
+<p>现在我们可以挂载文件系统了。按照上述步骤编译内核模块，将其复制到虚拟机中，启动虚拟机，然后插入内核模块，创建挂载点 <code>/mnt/myfs/</code>，并挂载文件系统。我们可以通过检查 <code>/proc/mounts</code> 文件来验证文件系统是否已挂载。</p>
+<p><a href="#system-message-1">“</a>/mnt/myfs“目录的索引节点号是多少？为什么？</p>
+<p>注解</p>
+<p>要显示目录的索引节点号，请使用以下命令：</p>
+<p>ls -di /path/to/directory</p>
+<p>其中 <code>/path/to/directory/</code> 是要显示其索引节点号的目录的路径。</p>
+<p>我们使用以下命令检查 myfs 文件系统的统计信息：</p>
+<p>stat -f /mnt/myfs</p>
+<p>我们想查看挂载点 <code>/mnt/myfs</code> 的内容以及是否可以创建文件。为此，我们运行以下命令：</p>
+<h1 id="ls--la-mntmyfs">ls -la /mnt/myfs</h1>
+<h1 id="touch-mntmyfsatxt">touch /mnt/myfs/a.txt</h1>
+<p>我们可以看到我们无法在文件系统上创建 <code>a.txt</code> 文件。这是因为我们尚未在 <code>struct super_operations</code> 结构中实现与索引节点相关的操作。我们将在下一个实验中实现这些操作。</p>
+<p>使用以下命令卸载文件系统：</p>
+<p>umount /mnt/myfs</p>
+<p>同时卸载对应的内核模块。</p>
+<p>注解</p>
+<p>要测试整个功能，你可以使用 <code>test-myfs.sh</code> 脚本：</p>
+<p>./test-myfs.sh</p>
+<p>该脚本将使用 <code>make copy</code> 将其复制到虚拟机，但前提是它具有可执行权限：</p>
+<p>student@workstation:~/linux/tools/labs$ chmod +x skels/filesystems/myfs/test-myfs.sh</p>
+<p>注解</p>
+<p>显示的文件系统统计信息很简单，因为这些信息是由 simple_statfs 函数提供的。</p>
+<h3 id="minfs">minfs<a href="#minfs" title="永久链接至标题">¶</a></h3>
+<p>接下来，我们将实现一个非常简单的文件系统，名为 <code>minfs</code>，这个文件系统支持磁盘。我们将使用虚拟机中的一个磁盘，格式化并挂载 <code>minfs</code> 文件系统。</p>
+<p>为此，我们需要从实验框架中访问 <code>minfs/kernel</code> 目录，并处理 <code>minfs.c</code> 中的代码。与 <code>myfs</code> 类似，我们不会实现与索引节点相关的操作，只限于处理超级块和挂载。其他操作将在下一个实验中实现。</p>
+<p>请按照下面的图表来理解 <code>minfs</code> 文件系统中各个结构的作用。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/minfs1.png" alt="../_images/minfs1.png"></p>
+<h4 id="1-注册和注销-minfs-文件系统">1. 注册和注销 minfs 文件系统<a href="#minfs-1" title="永久链接至标题">¶</a></h4>
+<p>注解</p>
+<p>在解决本练习之前，我们需要在虚拟机中添加一个磁盘。你可以使用以下命令生成一个文件作为磁盘镜像：</p>
+<p>dd if=/dev/zero of=mydisk.img bs=1M count=100</p>
+<p>并且在 <code>qemu/Makefile</code> 文件中的 <code>qemu</code> 命令中添加 <code>-drive file=mydisk.img,if=virtio,format=raw</code> 参数（在 <code>QEMU_OPTS</code> 变量中）。新的 <code>qemu</code> 命令参数必须在现有磁盘参数 (<code>YOCTO_IMAGE</code>) 之后添加。</p>
+<p>要注册和注销文件系统，你需要在 <code>minfs.c</code> 中填写 <code>minfs_fs_type</code> 和 <code>minfs_mount</code> 函数。按照标有 <code>TODO 1</code> 的指引进行操作。</p>
+<p>注解</p>
+<p>在文件系统结构中，对于挂载，请使用代码框架中的 <code>minfs_mount</code> 函数。在此函数中，调用带有磁盘支持的文件系统挂载函数（请参见 <a href="#functionsmountkillsbsection">mount 和 kill_sb 函数</a> 部分。使用 <code>mount_bdev()</code>）。选择最合适的函数来销毁超级块（在卸载时完成）；请记住这是带有磁盘支持的文件系统。使用 <code>kill_block_super()</code> 函数。</p>
+<p>使用适当的值初始化 <code>minfs_fs_type</code> 结构的 <code>fs_flags</code> 字段，以适应带有磁盘支持的文件系统。请参阅 RegisterUnregisterSection 部分。</p>
+<p>填充超级块的函数是 <code>minfs_fill_super</code>。</p>
+<p>完成标有 <code>TODO 1</code> 的部分后，编译模块，将其复制到 QEMU 虚拟机中，并启动虚拟机。加载内核模块，然后检查 <code>/proc/filesystems</code> 文件中是否存在 <code>minfs</code> 文件系统。</p>
+<p>为了测试 <code>minfs</code> 文件系统的挂载，我们需要使用其结构对磁盘进行格式化。格式化需要使用 <code>minfs/user</code> 目录下的 <code>mkfs.minfs</code> 格式化工具。该工具在运行 <code>make build</code> 时会自动编译，并在 <code>make copy</code> 时复制到虚拟机中。</p>
+<p>编译、复制和启动虚拟机后，使用格式化工具对 <code>/dev/vdd</code> 进行格式化：</p>
+<h1 id="mkfsminfs-devvdd">./mkfs.minfs /dev/vdd</h1>
+<p>加载内核模块：</p>
+<h1 id="insmod-minfsko">insmod minfs.ko</h1>
+<p>创建挂载点 <code>/mnt/minfs/</code>：</p>
+<h1 id="mkdir--p-mntminfs">mkdir -p /mnt/minfs/</h1>
+<p>并挂载文件系统</p>
+<h1 id="mount--t-minfs-devvdd-mntminfs">mount -t minfs /dev/vdd /mnt/minfs/</h1>
+<p>操作失败，因为根索引节点未初始化。</p>
+<h4 id="2-完善-minfs-超级块">2. 完善 minfs 超级块<a href="#minfs-2" title="永久链接至标题">¶</a></h4>
+<p>为了能够挂载文件系统，你需要在 <code>minfs_fill_super</code> 函数中填充超级块（即类型为 <code>struct super_block</code> 的结构体），超级块对应该函数的 <code>s</code> 实参。操作超级块的结构已经定义好了: <code>minfs_ops</code>。按照标有 <code>TODO 2</code> 的指引操作。你还可以参考 <a href="https://elixir.bootlin.com/linux/latest/source/fs/minix/inode.c#L153">minix_fill_super</a> 函数的实现。</p>
+<p>注解</p>
+<p>一些结构可以在头文件 <code>minfs.h</code> 中找到。</p>
+<p>有关使用缓冲区的信息，请参阅 <a href="#buffercachesection">缓冲区缓存</a> 部分。</p>
+<p>读取磁盘上的第一个块（索引为 0 的块）。要读取块，请使用 <code>sb_bread()</code> 函数。将读取的数据（<code>struct buffer_head</code> 结构中的 <code>b_data</code> 字段）转换为存储磁盘上的 <code>minfs</code> 超级块的信息的结构体：在源代码文件中定义的 <code>struct minfs_super_block</code>。</p>
+<p>结构 <code>struct minfs_super_block</code> 包含了文件系统特定的信息，这些信息在 <code>struct super_block</code> 通用结构中找不到（在这种情况下只有版本号）。这些附加信息（在磁盘上的 <code>struct minfs_super_block</code> 中找到，但在 <code>struct super_block`（VFS）中找不到）将存储在 :c:type:`struct minfs_sb_info</code> 结构中。</p>
+<p>为了检查功能，我们需要用于读取根索引节点的函数。这里暂时使用 <code>myfs</code> 文件系统练习中的 <code>myfs_get_inode</code> 函数。将该函数复制到源代码中，并像处理 myfs 时一样调用它。调用 <code>myfs_get_inode</code> 函数时的第三个参数是索引节点的创建权限，与虚拟文件系统练习（myfs）中的类似。</p>
+<p>执行上一个练习中的命令来验证实现。</p>
+<h4 id="3-创建和销毁-minfs-索引节点">3. 创建和销毁 minfs 索引节点<a href="#minfs-3" title="永久链接至标题">¶</a></h4>
+<p>挂载操作中，我们需要初始化根索引节点，并且为了获得根索引节点，我们需要实现与索引节点相关的函数。也就是说，你需要实现 <code>minfs_alloc_inode</code> 和 <code>minfs_destroy_inode</code> 函数。按照标有 <code>TODO 3</code> 的指示进行操作。你可以将 <code>minix_alloc_inode()</code> 和 <code>minix_destroy_inode()</code> 函数作为参考。</p>
+<p>为了实现，请查看 <code>minfs.h</code> 头文件中的宏和结构。</p>
+<p>注解</p>
+<p>要想实现在 <code>minfs_alloc_inode</code> 和 <code>minfs_destroy_inode</code> 中的内存分配/释放，建议使用 <code>kzalloc()</code> 和 <code>kfree()</code>。</p>
+<p>在 <code>minfs_alloc_inode</code> 中，分配类型为 <code>struct minfs_inode_info</code> 的结构体，但只返回类型为 <code>struct inode</code> 的结构体，即返回 <code>vfs_inode</code> 字段对应的结构体。</p>
+<p>在 <code>minfs_alloc_inode</code> 函数中，调用 <code>inode_init_once()</code> 来初始化索引节点。</p>
+<p>在 <code>destroy_inode</code> 函数中，你可以使用 <code>container_of</code> 宏访问 <code>struct minfs_inode_info</code> 结构体。</p>
+<p>注解</p>
+<p>在本练习中，你已经实现了 <code>minfs_alloc_inode</code> 和 <code>minfs_destroy_inode</code> 函数，但尚未调用它们。实现的正确性将在下一个练习的最后进行检查。</p>
+<h4 id="4-初始化-minfs-根索引节点">4. 初始化 minfs 根索引节点<a href="#minfs-4" title="永久链接至标题">¶</a></h4>
+<p>为了挂载文件系统，需要初始化根索引节点。为此，你需要完成 <code>minfs_ops</code> 结构体，包括 <code>minfs_alloc_inode</code> 和 <code>minfs_destroy_inode</code> 函数，并填充 <code>minfs_iget</code> 函数。</p>
+<p><code>minfs_iget</code> 函数用于分配 VFS 索引节点（即 <code>struct inode</code>），并用磁盘中的 minfs 索引节点特定信息（即 <code>struct minfs_inode</code>）来填充它。</p>
+<p>按照标有 <code>TODO 4</code> 的指示进行操作。在 <code>struct super_operations</code> 结构体的 <code>alloc_inode</code> 和 <code>destroy_inode</code> 字段中填写在上一步中实现的函数。</p>
+<p>根索引节点的信息存储在磁盘上的第二个块中（索引为 1 的索引节点）。使 <code>minfs_iget</code> 从磁盘中读取根 minfs 索引节点（<code>struct minfs_inode</code>）并填充 VFS 索引节点（<code>struct inode</code>）。</p>
+<p>在 <code>minfs_fill_super</code> 函数中，用 <code>minfs_iget</code> 函数调用替换 <code>myfs_get_inode</code> 的调用。</p>
+<p>注解</p>
+<p>要实现 <code>minfs_iget</code> 函数，请参考 <a href="https://elixir.bootlin.com/linux/v4.15/source/fs/minix/inode.c#L460">V1_minix_iget</a> 的实现。要读取块，请使用 <code>sb_bread()</code> 函数。将读取的数据（<code>struct buffer_head</code> 结构中的 <code>b_data</code> 字段）强制转换为磁盘上的 minfs 索引节点（<code>struct minfs_inode</code>）。</p>
+<p>使用从磁盘读取的 minfs 索引节点结构中的值填充 VFS 索引节点中的 <code>i_uid</code>, <code>i_gid</code>, <code>i_mode</code> 以及 <code>i_size</code> 字段。要初始化 <code>i_uid</code> 和 <code>i_gid</code> 字段，请使用函数 <code>i_uid_write()</code> 和 <code>i_gid_write()</code>。</p>
+<p>将 VFS 索引节点的 <code>i_atime</code>, <code>i_ctime</code> 和 <code>i_mtime</code> 字段初始化为 <code>current_time()</code> 函数的返回值。</p>
+<p>你需要为目录类型的索引节点初始化操作。请按照以下步骤进行操作：</p>
+<blockquote>
+<ol>
+<li>使用 <code>S_ISDIR</code> 宏检查是否为目录类型的索引节点。</li>
+<li>对于 <code>i_op</code> 和 <code>i_fop</code> 字段，使用已实现的内核函数：
+<ul>
+<li>对于 <code>i_op</code>：<code>simple_dir_inode_operations()</code>。</li>
+<li>对于 <code>i_fop</code>：<code>simple_dir_operations()</code>。</li>
+</ul>
+</li>
+<li>使用 <code>inc_nlink()</code> 函数增加目录的链接数。</li>
+</ol>
+</blockquote>
+<h4 id="5-minfs-挂载和卸载的测试">5. minfs 挂载和卸载的测试<a href="#minfs-5" title="永久链接至标题">¶</a></h4>
+<p>现在我们可以挂载文件系统了。按照上述步骤编译内核模块，将其复制到虚拟机中，启动虚拟机，然后插入内核模块，创建挂载点 <code>/mnt/minfs/</code> 并挂载文件系统。我们通过查看 <code>/proc/mounts</code> 文件来验证文件系统是否已挂载。</p>
+<p>通过列出挂载点内容 <code>/mnt/minfs/</code> 来检查是否一切正常：</p>
+<h1 id="ls-mntminfs">ls /mnt/minfs/</h1>
+<p>挂载和验证完成后，卸载文件系统并从内核中卸载模块。</p>
+<p>注解</p>
+<p>或者，你可以使用 <code>test-minfs.sh</code> 脚本来完整测试功能：</p>
+<h1 id="test-minfssh">./test-minfs.sh</h1>
+<p>仅当该脚本是可执行文件，在运行 <code>make copy</code> 命令时该脚本会被复制到虚拟机中。</p>
+<p>student@workstation:~/linux/tools/labs$ chmod +x skels/filesystems/minfs/user/test-minfs.sh</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">← SO2 实验 07——块设备驱动 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

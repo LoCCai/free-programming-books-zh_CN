@@ -1,0 +1,419 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Docker —— 从入门到实践 · 11.6 实战 Django · 免费编程中文书籍</title><meta name="description" content="Docker —— 从入门到实践"><meta property="og:title" content="Docker —— 从入门到实践 · 11.6 实战 Django"><meta property="og:description" content="Docker —— 从入门到实践"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/76b17944b571">Docker —— 从入门到实践</a> <span> / 11.6 实战 Django</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Docker —— 从入门到实践</p> <a class href="/free-programming-books-zh_CN/read/76b17944b571/001-readme/">Docker 从入门到实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/002-changelog/">修订记录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/003-contributing/">如何贡献</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/004-readme/">第一章 Docker 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/005-1-1-quickstart/">1.1 快速上手</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/006-1-2-what/">1.2 什么是 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/007-1-3-why/">1.3 为什么要用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/008-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/009-readme/">第二章 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/010-2-1-image/">2.1 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/011-2-2-container/">2.2 容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/012-2-3-repository/">2.3 仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/013-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/014-readme/">第三章 安装 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/015-3-1-ubuntu/">3.1 Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/016-3-2-debian/">3.2 Debian</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/017-3-3-fedora/">3.3 Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/018-3-4-centos/">3.4 CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/019-3-5-raspberry-pi/">3.5 Raspberry Pi</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/020-3-6-offline/">3.6 Linux 离线安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/021-3-7-mac/">3.7 macOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/022-3-8-windows/">3.8 Windows 10/11</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/023-3-9-mirror/">3.9 镜像加速器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/024-3-10-experimental/">3.10 开启实验特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/025-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/026-readme/">第四章 使用镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/027-4-1-pull/">4.1 获取镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/028-4-2-list/">4.2 列出镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/029-4-3-rm/">4.3 删除本地镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/030-4-4-commit/">4.4 利用 commit 理解镜像构成</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/031-4-5-build/">4.5 使用 Dockerfile 定制镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/032-4-6-other/">4.6 其他制作镜像的方式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/033-4-7-internal/">4.7 实现原理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/034-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/035-readme/">第五章 操作容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/036-5-1-run/">5.1 启动</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/037-5-2-daemon/">5.2 守护态运行</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/038-5-3-stop/">5.3 终止</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/039-5-4-attach-exec/">5.4 进入容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/040-5-5-import-export/">5.5 导出和导入</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/041-5-6-rm/">5.6 删除</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/042-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/043-readme/">第六章 访问仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/044-6-1-dockerhub/">6.1 Docker Hub</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/045-6-2-registry/">6.2 私有仓库</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/046-6-3-registry-auth/">6.3 私有仓库高级配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/047-6-4-nexus3-registry/">6.4 Nexus 3</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/048-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/049-readme/">第七章 Dockerfile 指令详解</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/050-7-1-run/">7.1 RUN 执行命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/051-7-2-copy/">7.2 COPY 复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/052-7-3-add/">7.3 ADD 更高级的复制文件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/053-7-4-cmd/">7.4 CMD 容器启动命令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/054-7-5-entrypoint/">7.5 ENTRYPOINT 入口点</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/055-7-6-env/">7.6 ENV 设置环境变量</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/056-7-7-arg/">7.7 ARG 构建参数</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/057-7-8-volume/">7.8 VOLUME 定义匿名卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/058-7-9-expose/">7.9 EXPOSE 暴露端口</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/059-7-10-workdir/">7.10 WORKDIR 指定工作目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/060-7-11-user/">7.11 USER 指定当前用户</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/061-7-12-healthcheck/">7.12 HEALTHCHECK 健康检查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/062-7-13-onbuild/">7.13 ONBUILD 为他人作嫁衣裳</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/063-7-14-label/">7.14 LABEL 为镜像添加元数据</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/064-7-15-shell/">7.15 SHELL 指令</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/065-7-16-references/">7.16 参考文档</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/066-7-17-multistage-builds/">7.17 多阶段构建</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/067-7-18-multistage-builds-laravel/">7.18 实战多阶段构建 Laravel 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/068-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/069-readme/">第八章 数据管理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/070-8-1-volume/">8.1 数据卷</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/071-8-2-bind-mounts/">8.2 挂载主机目录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/072-8-3-tmpfs/">8.3 tmpfs 挂载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/073-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/074-readme/">第九章 网络配置</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/075-9-1-dns/">9.1 配置 DNS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/076-9-2-network-types/">9.2 网络类型</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/077-9-3-custom-network/">9.3 自定义网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/078-9-4-container-linking/">9.4 容器互联</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/079-9-5-port-mapping/">9.5 外部访问容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/080-9-6-network-isolation/">9.6 网络隔离</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/081-9-7-advanced-networking/">9.7 容器网络高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/082-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/083-readme/">第十章 Docker Buildx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/084-10-1-buildkit/">10.1 BuildKit</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/085-10-2-buildx/">10.2 使用 buildx 构建镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/086-10-3-multi-arch-images/">10.3 使用 buildx 构建多种系统架构支持的 Docker 镜像</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/087-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/088-readme/">第十一章 Docker Compose</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/089-11-1-introduction/">11.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/090-11-2-install/">11.2 安装与卸载</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/091-11-3-usage/">11.3 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/092-11-4-commands/">11.4 命令说明</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">11.5 Compose 模板文件</a><a class="active" href="/free-programming-books-zh_CN/read/76b17944b571/094-11-6-django/">11.6 实战 Django</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/096-11-8-wordpress/">11.8 实战 WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/097-11-9-lnmp/">11.9 实战 LNMP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/098-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/099-readme/">第十二章 底层实现</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/100-12-1-arch/">12.1 基本架构</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/101-12-2-namespace/">12.2 命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/102-12-3-cgroups/">12.3 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/103-12-4-ufs/">12.4 联合文件系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/104-12-5-container-format/">12.5 容器格式</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/105-12-6-network/">12.6 网络</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/106-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/107-readme/">第十三章 容器编排基础</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/108-13-1-intro/">13.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/109-13-2-concepts/">13.2 基本概念</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/110-13-3-design/">13.3 架构设计</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/111-13-4-advanced/">13.4 高级特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/112-13-5-practice/">13.5 实战练习</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/113-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/114-readme/">第十四章 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/115-14-1-kubeadm/">14.1 使用 kubeadm 部署 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/116-14-2-kubeadm-docker/">14.2 使用 kubeadm 部署 Kubernetes：使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/117-14-3-docker-desktop/">14.3 在 Docker Desktop 使用</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/118-14-4-kind/">14.4 Kind - Kubernetes IN Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/119-14-5-k3s/">14.5 K3s - 轻量级 Kubernetes</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/120-14-6-systemd/">14.6 一步步部署 Kubernetes 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/121-14-7-dashboard/">14.7 可视化管理界面</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/122-14-8-kubectl/">14.8 Kubernetes 命令行 kubectl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/123-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/124-readme/">第十五章 Etcd 项目</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/125-15-1-intro/">15.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/126-15-2-install/">15.2 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/127-15-3-cluster/">15.3 集群</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/128-15-4-etcdctl/">15.4 使用 etcdctl</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/129-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/130-readme/">第十六章 容器与云计算</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/131-16-1-intro/">16.1 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/132-16-2-tencentcloud/">16.2 腾讯云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/133-16-3-alicloud/">16.3 阿里云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/134-16-4-aws/">16.4 亚马逊云</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/135-16-5-multicloud/">16.5 多云部署策略</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/136-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/137-readme/">第十七章 容器其他生态</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/138-17-1-coreos-intro/">17.1 Fedora CoreOS 简介</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/139-17-2-coreos-install/">17.2 Fedora CoreOS 安装</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/140-17-3-podman/">17.3 Podman - 下一代 Linux 容器工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/141-17-4-buildah/">17.4 Buildah - 容器镜像构建工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/142-17-5-skopeo/">17.5 Skopeo - 容器镜像管理工具</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/143-17-6-containerd/">17.6 containerd - 核心容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/144-17-7-secure-runtime/">17.7 安全容器运行时</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/145-17-8-wasm/">17.8 WebAssembly 与容器</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/146-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/147-readme/">第十八章 安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/148-18-1-kernel-ns/">18.1 内核命名空间</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/149-18-2-control-group/">18.2 控制组</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/150-18-3-daemon-sec/">18.3 服务端防护</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/151-18-4-kernel-capability/">18.4 内核能力机制</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/152-18-5-other-feature/">18.5 其他安全特性</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/153-18-6-image-security/">18.6 容器镜像安全扫描与供应链安全</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/154-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/155-readme/">第十九章 容器监控与日志</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/156-19-1-prometheus/">19.1 Prometheus</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/157-19-2-elk/">19.2 ELK 套件</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/158-19-3-performance-optimization/">19.3 容器性能优化与故障诊断</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/159-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/160-readme/">第二十章 实战案例 - 操作系统</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/161-20-1-busybox/">20.1 Busybox</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/162-20-2-alpine/">20.2 Alpine</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/163-20-3-debian/">20.3 Debian Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/164-20-4-centos/">20.4 CentOS Fedora</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/165-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/166-readme/">第二十一章 实战案例 - DevOps</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/167-21-1-devops-workflow/">21.1 DevOps 完整工作流</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/168-21-2-github-actions/">21.2 GitHub Actions</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/169-21-3-drone/">21.3 Drone</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/170-21-4-drone-demo/">21.4 Drone Demo</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/171-21-5-ide/">21.5 在 IDE 中使用 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/172-21-6-vscode/">21.6 VS Code</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/173-21-7-practical-examples/">21.7 实战案例：Go/Rust/数据库/微服务</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/174-summary/">本章小结</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/175-readme/">附录</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/176-readme/">附录一：常见问题与错误速查</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/177-errors/">常见错误处理</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/178-readme/">附录二：热门镜像介绍</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/179-ubuntu/">Ubuntu</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/180-centos/">CentOS</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/181-nginx/">Nginx</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/182-php/">PHP</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/183-nodejs/">Node.js</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/184-mysql/">MySQL</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/185-wordpress/">WordPress</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/186-mongodb/">MongoDB</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/187-redis/">Redis</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/188-minio/">Minio</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/189-readme/">附录三：Docker 命令查询</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/190-docker/">客户端命令 - docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/191-dockerd/">服务端命令 - dockerd</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/192-best-practices/">附录四：Dockerfile 最佳实践</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/193-debug/">附录五：如何调试 Docker</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/194-resources/">附录六：资源链接</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/195-glossary/">附录七：术语表</a><a class href="/free-programming-books-zh_CN/read/76b17944b571/196-learning-roadmap/">附录八：Docker 学习路线图与知识体系</a> </aside> <article class="reader-panel prose"> <h2 id="116-实战-django">11.6 实战 Django</h2>
+<blockquote>
+<p>本小节内容适合 <code>Python</code> 开发人员阅读。</p>
+</blockquote>
+<blockquote>
+<p><strong>版本说明</strong>：本示例使用以下镜像版本：</p>
+<ul>
+<li>Python：3.12-slim（可替换为其他 3.x 版本）</li>
+<li>PostgreSQL：16（可替换为其他 16.x、15.x 等版本）</li>
+<li>Django：>=5.0,&#x3C;6.0（可根据项目需求调整）</li>
+</ul>
+</blockquote>
+<p>本节将使用 Docker Compose 配置并运行一个 <strong>Django + PostgreSQL</strong> 应用。笔者不仅会介绍具体步骤，还会解释每个配置项的作用，以及开发环境和生产环境的差异。</p>
+<h3 id="1161-架构概览">11.6.1 架构概览</h3>
+<p>在开始之前，先看整体架构（如图 11-1 所示）：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="mermaid"><code><span class="line"><span style="color:#E1E4E8">flowchart TD</span></span>
+<span class="line"><span style="color:#E1E4E8">    subgraph Network ["Docker Compose 网络"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        direction LR</span></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph Web ["web 服务"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            direction TB</span></span>
+<span class="line"><span style="color:#E1E4E8">            Django["Django&#x3C;br/>应用"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            Port8000[":8000"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            Django ~~~ Port8000</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        subgraph DB ["db 服务"]</span></span>
+<span class="line"><span style="color:#E1E4E8">            direction TB</span></span>
+<span class="line"><span style="color:#E1E4E8">            Postgres["PostgreSQL&#x3C;br/>数据库"]</span></span>
+<span class="line"><span style="color:#E1E4E8">        end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        Django -- ":5432" --> Postgres</span></span>
+<span class="line"><span style="color:#E1E4E8">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    Browser["localhost:8000&#x3C;br/>（浏览器访问）"]</span></span>
+<span class="line"><span style="color:#E1E4E8">    Port8000 --> Browser</span></span></code></pre>
+<p>图 11-1：Django + PostgreSQL 的 Compose 架构</p>
+<p><strong>关键点</strong>：</p>
+<ul>
+<li><code>web</code> 服务运行 Django 应用，对外暴露 8000 端口</li>
+<li><code>db</code> 服务运行 PostgreSQL 数据库，只在内部网络可访问</li>
+<li>两个服务通过 Docker Compose 自动创建的网络相互通信</li>
+<li><code>web</code> 服务可以通过服务名 <code>db</code> 访问数据库（Docker 内置 DNS）</li>
+</ul>
+<h3 id="1162-准备工作">11.6.2 准备工作</h3>
+<p>创建一个项目目录并进入：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> mkdir</span><span style="color:#9ECBFF"> django-docker</span><span style="color:#E1E4E8"> &#x26;&#x26; </span><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> django-docker</span></span></code></pre>
+<p>我们需要创建三个文件：<code>Dockerfile</code>、<code>requirements.txt</code> 和 <code>compose.yaml</code>。</p>
+<h3 id="1163-步骤-1创建-dockerfile">11.6.3 步骤 1：创建 Dockerfile</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="docker"><code><span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> python:3.12-slim</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 防止 Python 缓冲 stdout/stderr，让日志实时输出</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">ENV</span><span style="color:#E1E4E8"> PYTHONUNBUFFERED=1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 设置工作目录</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">WORKDIR</span><span style="color:#E1E4E8"> /code</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 先复制依赖文件，利用 Docker 缓存加速构建</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> requirements.txt /code/</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 安装依赖</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> pip install --no-cache-dir -r requirements.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 复制项目代码</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> . /code/</span></span></code></pre>
+<p><strong>逐行解释</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>指令</th><th>作用</th><th>为什么这样写</th></tr></thead><tbody><tr><td><code>FROM python:3.12-slim</code></td><td>基础镜像</td><td><code>slim</code> 版本比完整版小很多，但包含运行 Python 所需的一切</td></tr><tr><td><code>ENV PYTHONUNBUFFERED=1</code></td><td>关闭输出缓冲</td><td>让 <code>print()</code> 和日志立即显示，便于调试</td></tr><tr><td><code>WORKDIR /code</code></td><td>设置工作目录</td><td>后续命令都在此目录执行</td></tr><tr><td><code>COPY requirements.txt</code> 在前</td><td>分层复制</td><td>只有 requirements.txt 变化时才重新安装依赖，加速构建</td></tr><tr><td><code>--no-cache-dir</code></td><td>不缓存 pip 下载</td><td>减小镜像体积</td></tr></tbody></table>
+<blockquote>
+<p>💡 <strong>笔者建议</strong>：总是将变化频率低的文件先复制，变化频率高的后复制。这样可以最大化利用 Docker 的构建缓存。</p>
+</blockquote>
+<h3 id="1164-步骤-2创建-requirementstxt">11.6.4 步骤 2：创建 requirements.txt</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="txt"><code><span class="line"><span>Django>=5.0,&#x3C;6.0</span></span>
+<span class="line"><span>psycopg[binary]>=3.1,&#x3C;4.0</span></span>
+<span class="line"><span>gunicorn>=21.0,&#x3C;22.0</span></span></code></pre>
+<p><strong>依赖说明</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>包名</th><th>作用</th></tr></thead><tbody><tr><td><code>Django</code></td><td>Web 框架</td></tr><tr><td><code>psycopg[binary]</code></td><td>PostgreSQL 数据库驱动（推荐使用 psycopg 3）</td></tr><tr><td><code>gunicorn</code></td><td>生产环境 WSGI 服务器（可选，开发时可不用）</td></tr></tbody></table>
+<h3 id="1165-步骤-3创建-composeyaml">11.6.5 步骤 3：创建 compose.yaml</h3>
+<p>配置如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  db</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres:16</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_DB</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">django_db</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_USER</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">django_user</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">postgres_data:/var/lib/postgresql/data</span></span>
+<span class="line"><span style="color:#85E89D">    healthcheck</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      test</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CMD-SHELL"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"pg_isready -U django_user -d django_db"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">      interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5s</span></span>
+<span class="line"><span style="color:#85E89D">      timeout</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5s</span></span>
+<span class="line"><span style="color:#85E89D">      retries</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  web</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    build</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">python manage.py runserver 0.0.0.0:8000</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">.:/code</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"8000:8000"</span></span>
+<span class="line"><span style="color:#85E89D">    depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      db</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">service_healthy</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">      # settings.py 直接读取 POSTGRES_PASSWORD，必须传入 web 容器</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}</span></span>
+<span class="line"><span style="color:#85E89D">      DATABASE_URL</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres://django_user:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}@db:5432/django_db</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  postgres_data</span><span style="color:#E1E4E8">:</span></span></code></pre>
+<p><strong>配置详解</strong>：</p>
+<h4 id="db-服务">db 服务</h4>
+<p>db 服务配置如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">db</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres:16</span><span style="color:#6A737D">                    # 使用官方 PostgreSQL 16 镜像</span></span>
+<span class="line"><span style="color:#85E89D">  environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    POSTGRES_DB</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">django_db</span><span style="color:#6A737D">              # 创建的数据库名</span></span>
+<span class="line"><span style="color:#85E89D">    POSTGRES_USER</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">django_user</span><span style="color:#6A737D">          # 数据库用户</span></span>
+<span class="line"><span style="color:#85E89D">    POSTGRES_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}</span><span style="color:#6A737D">  # 数据库密码经环境变量注入，不写明文</span></span>
+<span class="line"><span style="color:#85E89D">  volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">postgres_data:/var/lib/postgresql/data</span><span style="color:#6A737D">  # 持久化数据</span></span>
+<span class="line"><span style="color:#85E89D">  healthcheck</span><span style="color:#E1E4E8">:                          </span><span style="color:#6A737D"># 健康检查，确保数据库就绪</span></span>
+<span class="line"><span style="color:#85E89D">    test</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"CMD-SHELL"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"pg_isready -U django_user -d django_db"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">    interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5s</span></span></code></pre>
+<blockquote>
+<p>⚠️ <strong>笔者提醒</strong>：<code>volumes</code> 配置很重要！没有它，每次容器重启数据都会丢失。笔者见过不少新手因为忘记这一步，导致开发数据全部丢失。</p>
+</blockquote>
+<h4 id="web-服务">web 服务</h4>
+<p>web 服务配置如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">web</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  build</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span><span style="color:#6A737D">                              # 从当前目录的 Dockerfile 构建</span></span>
+<span class="line"><span style="color:#85E89D">  command</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">python manage.py runserver</span><span style="color:#6A737D">   # 启动 Django 开发服务器</span></span>
+<span class="line"><span style="color:#85E89D">  volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">.:/code</span><span style="color:#6A737D">                           # 挂载代码目录，支持热更新</span></span>
+<span class="line"><span style="color:#85E89D">  ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">"8000:8000"</span><span style="color:#6A737D">                       # 映射端口</span></span>
+<span class="line"><span style="color:#85E89D">  depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    db</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">service_healthy</span><span style="color:#6A737D">        # 等待数据库健康后再启动</span></span></code></pre>
+<p><strong>关键配置说明</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>配置项</th><th>作用</th><th>笔者建议</th></tr></thead><tbody><tr><td><code>volumes: .:/code</code></td><td>代码挂载</td><td>开发时必备，修改代码无需重新构建镜像</td></tr><tr><td><code>depends_on</code> + <code>healthcheck</code></td><td>启动顺序</td><td>确保数据库就绪后 Django 才启动，避免连接错误</td></tr><tr><td><code>environment</code></td><td>环境变量</td><td>推荐用环境变量管理配置，避免硬编码</td></tr></tbody></table>
+<h3 id="1166-步骤-4创建-django-项目">11.6.6 步骤 4：创建 Django 项目</h3>
+<p>运行以下命令创建新的 Django 项目：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> --rm</span><span style="color:#9ECBFF"> web</span><span style="color:#9ECBFF"> django-admin</span><span style="color:#9ECBFF"> startproject</span><span style="color:#9ECBFF"> mysite</span><span style="color:#9ECBFF"> .</span></span></code></pre>
+<p><strong>命令解释</strong>：</p>
+<ul>
+<li><code>docker compose run</code>：运行一次性命令</li>
+<li><code>--rm</code>：命令执行后删除临时容器</li>
+<li><code>web</code>：在 web 服务环境中执行</li>
+<li><code>django-admin startproject mysite .</code>：在当前目录创建 Django 项目</li>
+</ul>
+<p>生成的目录结构：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">django-docker/</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> compose.yaml</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> Dockerfile</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> requirements.txt</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> manage.py</span></span>
+<span class="line"><span style="color:#B392F0">└──</span><span style="color:#9ECBFF"> mysite/</span></span>
+<span class="line"><span style="color:#B392F0">    ├──</span><span style="color:#9ECBFF"> __init__.py</span></span>
+<span class="line"><span style="color:#B392F0">    ├──</span><span style="color:#9ECBFF"> settings.py</span></span>
+<span class="line"><span style="color:#B392F0">    ├──</span><span style="color:#9ECBFF"> urls.py</span></span>
+<span class="line"><span style="color:#B392F0">    ├──</span><span style="color:#9ECBFF"> asgi.py</span></span>
+<span class="line"><span style="color:#B392F0">    └──</span><span style="color:#9ECBFF"> wsgi.py</span></span></code></pre>
+<blockquote>
+<p>💡 <strong>Linux 用户注意</strong>：如果遇到权限问题，执行 <code>sudo chown -R $USER:$USER .</code></p>
+</blockquote>
+<h3 id="1167-步骤-5配置数据库连接">11.6.7 步骤 5：配置数据库连接</h3>
+<p>修改 <code>mysite/settings.py</code>，配置数据库连接：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> os</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">DATABASES</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    'default'</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">        'ENGINE'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'django.db.backends.postgresql'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        'NAME'</span><span style="color:#E1E4E8">: os.environ.get(</span><span style="color:#9ECBFF">'POSTGRES_DB'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'django_db'</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#9ECBFF">        'USER'</span><span style="color:#E1E4E8">: os.environ.get(</span><span style="color:#9ECBFF">'POSTGRES_USER'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'django_user'</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#9ECBFF">        'PASSWORD'</span><span style="color:#E1E4E8">: os.environ[</span><span style="color:#9ECBFF">'POSTGRES_PASSWORD'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">        'HOST'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'db'</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D"># Docker Compose 服务名</span></span>
+<span class="line"><span style="color:#9ECBFF">        'PORT'</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5432</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 允许的主机（开发环境）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">ALLOWED_HOSTS</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">'*'</span><span style="color:#E1E4E8">]</span></span></code></pre>
+<p>生产环境优先使用 Docker Compose secrets 或外部密钥管理；即使是本地示例，也不要把固定密码写进 Compose 文件或 Django 默认值中。</p>
+<p><strong>为什么 HOST 是 <code>db</code> 而不是 <code>localhost</code>？</strong></p>
+<p>在 Docker Compose 中，各服务通过服务名相互访问。Docker 内置的 DNS 会将 <code>db</code> 解析为 db 服务容器的 IP 地址。这是 Docker Compose 的核心功能之一。</p>
+<h3 id="1168-步骤-6启动应用">11.6.8 步骤 6：启动应用</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span></span></code></pre>
+<p>你会看到：</p>
+<ol>
+<li>首先构建 web 镜像（第一次运行）</li>
+<li>启动 db 服务，等待健康检查通过</li>
+<li>启动 web 服务</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">db-1</span><span style="color:#F97583">   |</span><span style="color:#B392F0"> PostgreSQL</span><span style="color:#9ECBFF"> init</span><span style="color:#9ECBFF"> process</span><span style="color:#9ECBFF"> complete</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">ready</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> start</span><span style="color:#9ECBFF"> up.</span></span>
+<span class="line"><span style="color:#B392F0">db-1</span><span style="color:#F97583">   |</span><span style="color:#B392F0"> LOG:</span><span style="color:#9ECBFF">  database</span><span style="color:#9ECBFF"> system</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> ready</span><span style="color:#9ECBFF"> to</span><span style="color:#9ECBFF"> accept</span><span style="color:#9ECBFF"> connections</span></span>
+<span class="line"><span style="color:#B392F0">web-1</span><span style="color:#F97583">  |</span><span style="color:#B392F0"> Watching</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> file</span><span style="color:#9ECBFF"> changes</span><span style="color:#9ECBFF"> with</span><span style="color:#9ECBFF"> StatReloader</span></span>
+<span class="line"><span style="color:#B392F0">web-1</span><span style="color:#F97583">  |</span><span style="color:#B392F0"> Starting</span><span style="color:#9ECBFF"> development</span><span style="color:#9ECBFF"> server</span><span style="color:#9ECBFF"> at</span><span style="color:#9ECBFF"> http://0.0.0.0:8000/</span></span></code></pre>
+<p>打开浏览器访问 <code>http://localhost:8000</code>，可以看到 Django 欢迎页面！</p>
+<h3 id="1169-常用开发命令">11.6.9 常用开发命令</h3>
+<p>在另一个终端窗口执行：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 执行数据库迁移</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> web</span><span style="color:#9ECBFF"> python</span><span style="color:#9ECBFF"> manage.py</span><span style="color:#9ECBFF"> migrate</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 创建超级用户</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> web</span><span style="color:#9ECBFF"> python</span><span style="color:#9ECBFF"> manage.py</span><span style="color:#9ECBFF"> createsuperuser</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 进入 Django shell</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> web</span><span style="color:#9ECBFF"> python</span><span style="color:#9ECBFF"> manage.py</span><span style="color:#9ECBFF"> shell</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## 进入 PostgreSQL 命令行</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> exec</span><span style="color:#9ECBFF"> db</span><span style="color:#9ECBFF"> psql</span><span style="color:#79B8FF"> -U</span><span style="color:#9ECBFF"> django_user</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> django_db</span></span></code></pre>
+<blockquote>
+<p>💡 笔者建议使用 <code>exec</code> 而不是 <code>run</code>。<code>exec</code> 在已运行的容器中执行命令，<code>run</code> 会创建新容器。</p>
+</blockquote>
+<h3 id="11610-常见问题排查">11.6.10 常见问题排查</h3>
+<h4 id="q1数据库连接失败">Q1：数据库连接失败</h4>
+<p><strong>错误信息</strong>：<code>django.db.utils.OperationalError: could not connect to server</code> <strong>可能原因与解决方案</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>原因</th><th>解决方案</th></tr></thead><tbody><tr><td>数据库还没启动完成</td><td>使用 <code>depends_on</code> + <code>healthcheck</code></td></tr><tr><td>HOST 配置错误</td><td>确保使用服务名 <code>db</code> 而不是 <code>localhost</code></td></tr><tr><td>网络未创建</td><td>运行 <code>docker compose down</code> 后重新 <code>up</code></td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 调试：检查数据库是否正常运行</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> ps</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> logs</span><span style="color:#9ECBFF"> db</span></span></code></pre>
+<h4 id="q2代码修改没有生效">Q2：代码修改没有生效</h4>
+<p><strong>可能原因</strong>：</p>
+<ol>
+<li><strong>开发服务器没有自动重载</strong>：确保使用 <code>runserver</code> 而不是 <code>gunicorn</code></li>
+<li><strong>Volume 挂载问题</strong>：检查 <code>compose.yaml</code> 中的 volumes 配置</li>
+<li><strong>缓存问题</strong>：尝试 <code>docker compose restart web</code></li>
+</ol>
+<h4 id="q3权限问题">Q3：权限问题</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">## 如果容器内创建的文件 root 用户所有</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> sudo</span><span style="color:#9ECBFF"> chown</span><span style="color:#79B8FF"> -R</span><span style="color:#E1E4E8"> $USER</span><span style="color:#9ECBFF">:</span><span style="color:#E1E4E8">$USER </span><span style="color:#9ECBFF">.</span></span></code></pre>
+<h3 id="11611-开发-vs-生产关键差异">11.6.11 开发 vs 生产：关键差异</h3>
+<p>笔者特别提醒，本节的配置是 <strong>开发环境</strong> 配置。生产环境需要以下调整：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>配置项</th><th>开发环境</th><th>生产环境</th></tr></thead><tbody><tr><td><strong>Web 服务器</strong></td><td><code>runserver</code></td><td><code>gunicorn</code> + Nginx</td></tr><tr><td><strong>DEBUG</strong></td><td><code>True</code></td><td><code>False</code></td></tr><tr><td><strong>密码管理</strong></td><td>环境变量注入（如本节 <code>${POSTGRES_PASSWORD:?}</code>）</td><td>使用 Docker Secrets 或外部密钥管理</td></tr><tr><td><strong>Volume</strong></td><td>挂载代码目录</td><td>代码直接 COPY 进镜像</td></tr><tr><td><strong>ALLOWED_HOSTS</strong></td><td><code>['*']</code></td><td>具体域名</td></tr></tbody></table>
+<p><strong>生产环境 Compose 文件示例</strong>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D">## compose.prod.yaml</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  web</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    build</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">gunicorn mysite.wsgi:application --bind 0.0.0.0:8000</span></span>
+<span class="line"><span style="color:#6A737D">    # 不挂载代码，使用镜像内的代码</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      DEBUG</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'False'</span></span>
+<span class="line"><span style="color:#85E89D">      ALLOWED_HOSTS</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'example.com,www.example.com'</span></span>
+<span class="line"><span style="color:#6A737D">    # ...</span></span>
+<span class="line"></span></code></pre>
+<h3 id="11612-延伸阅读">11.6.12 延伸阅读</h3>
+<ul>
+<li><a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/11_compose/11.5_compose_file.md">Compose 模板文件详解</a>：深入理解 Compose 文件的所有配置项</li>
+<li><a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/11_compose/11.8_wordpress.md">使用 WordPress</a>：另一个 Compose 实战案例</li>
+<li><a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/appendix/best_practices.md">Dockerfile 最佳实践</a>：构建更小、更安全的镜像</li>
+<li><a href="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/README.md">数据管理</a>：Volume 和数据持久化详解</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/093-11-5-compose-file/">← 11.5 Compose 模板文件</a></span> <span><a href="/free-programming-books-zh_CN/read/76b17944b571/095-11-7-rails/">11.7 实战 Rails →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

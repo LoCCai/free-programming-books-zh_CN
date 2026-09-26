@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mac 开发配置手册 · ZSH | Mac 开发配置手册 · 免费编程中文书籍</title><meta name="description" content="Mac 开发配置手册"><meta property="og:title" content="Mac 开发配置手册 · ZSH | Mac 开发配置手册"><meta property="og:description" content="Mac 开发配置手册"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/5497cc7a9cb0">Mac 开发配置手册</a> <span> / ZSH | Mac 开发配置手册</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Mac 开发配置手册</p> <a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/001-1g/">Introduction | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/002-28/">System Preferences | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/003-1w/">XCode | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/004-1z/">Homebrew | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/005-1z/">Usage | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/006-1y/">Cask | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/007-1w/">iTerm2 | Mac 开发配置手册</a><a class="active" href="/free-programming-books-zh_CN/read/5497cc7a9cb0/008-1u/">ZSH | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/009-1u/">Git | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/010-1y/">Git ignore | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/011-1w/">MySql | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/012-1y/">Node.js | Mac 开发配置手册</a><a class href="/free-programming-books-zh_CN/read/5497cc7a9cb0/013-1v/">Apps | Mac 开发配置手册</a> </aside> <article class="reader-panel prose"> <p>我们将安装 <code>zsh</code> ，其拓展功能和主题将由 <code>oh-my-zsh</code> 提供。其中<code>Env.sh</code> 文件用于维护别名（aliases），输出（exports）和路径改变（path changes）等等，以免影响 <code>~/.zshrc</code>。</p>
+<h3 id="zsh">Zsh</h3>
+<p>使用 Homebrew 完成 zsh 和 zsh completions 的安装</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    brew install zsh zsh-completions</span></span></code></pre>
+<p>安装 oh-my-zsh 让 zsh 获得拓展功能和主题</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh</span></span></code></pre>
+<p>用文本编辑器或 vi 打开 <code>.zshrc</code> 进行以下编辑:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    ZSH_THEME=pygmalion</span></span>
+<span class="line"><span>    alias zshconfig="vi ~/.zshrc"</span></span>
+<span class="line"><span>    alias envconfig="vi ~/Projects/config/env.sh"</span></span>
+<span class="line"><span>    plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)</span></span></code></pre>
+<p>用文本编辑器或 vi 打开 <code>~/Projects/config/env.sh</code> 进行以下编辑:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>    #!/bin/zsh</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # PATH</span></span>
+<span class="line"><span>    export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"</span></span>
+<span class="line"><span>    export EDITOR='vi -w'</span></span>
+<span class="line"><span>    # export PYTHONPATH=$PYTHONPATH</span></span>
+<span class="line"><span>    # export MANPATH="/usr/local/man:$MANPATH"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Virtual Environment</span></span>
+<span class="line"><span>    export WORKON_HOME=$HOME/.virtualenvs</span></span>
+<span class="line"><span>    export PROJECT_HOME=$HOME/Projects</span></span>
+<span class="line"><span>    source /usr/local/bin/virtualenvwrapper.sh</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Owner</span></span>
+<span class="line"><span>    export USER_NAME="YOUR NAME"</span></span>
+<span class="line"><span>    eval "$(rbenv init -)"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # FileSearch</span></span>
+<span class="line"><span>    function f() { find . -iname "*$1*" ${@:2} }</span></span>
+<span class="line"><span>    function r() { grep "$1" ${@:2} -R . }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    #mkdir and cd</span></span>
+<span class="line"><span>    function mkcd() { mkdir -p "$@" &#x26;&#x26; cd "$_"; }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Aliases</span></span>
+<span class="line"><span>    alias cppcompile='c++ -std=c++11 -stdlib=libc++'</span></span></code></pre>
+<hr>
+<p><code>译注：</code></p>
+<p>如果是新增环境变量或者是修改环境变量的值，都需要 source 一下才能立即生效。</p>
+<p>如果是删除一个环境变量，必须输入 exit 以 logout 当前 shell ，然后再重新打开一个新的 shell 并 login 才能生效。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/5497cc7a9cb0/007-1w/">← iTerm2 | Mac 开发配置手册</a></span> <span><a href="/free-programming-books-zh_CN/read/5497cc7a9cb0/009-1u/">Git | Mac 开发配置手册 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

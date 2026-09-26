@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 内核 API — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 内核 API — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 内核 API — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>熟悉基本的 Linux 内核 API</li>
+<li>描述内存分配机制</li>
+<li>描述锁定（locking）机制</li>
+</ul>
+<h2 id="概述">概述<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>本实验旨在帮助你掌握 Linux 内核编程的一些基本概念和函数。你需要注意，内核编程和用户空间编程有很多不同之处。内核是一个独立运行的实体，不能调用用户空间的任何库，包括 libc 在内。所以，你不能使用 printf、malloc、free、open、read、write、memcpy、strcpy 等常见的用户空间函数。简而言之，内核编程需要使用一套全新的、与用户空间 API 没有关联的独立 API，无论是 POSIX 还是 ANSI C 都不适用于内核编程。</p>
+<h2 id="访问内存">访问内存<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>内存的访问和分配是内核编程中一个重要且不同的方面。内核编程与物理机器紧密相关，因此对内存管理的规则非常重要。首先，它涉及以下几种类型的内存：</p>
+<ul>
+<li>物理内存</li>
+<li>内核地址空间中的虚拟内存</li>
+<li>进程地址空间中的虚拟内存</li>
+<li>常驻内存（resident memory）——可以确定所访问的页面存在于物理内存中</li>
+</ul>
+<p>由于操作系统实现的虚拟内存机制，进程地址空间中的虚拟内存不能被视为常驻内存：页面可能会被交换出去，或者由于需求分页机制的原因可能根本不存在于物理内存中。内核地址空间中的内存可以是常驻或非常驻的。模块的数据和代码段以及进程的内核栈是常驻的。动态内存可能是常驻或非常驻的，具体取决于它是如何被分配的。</p>
+<p>在使用常驻内存时，一切都很简单：可以随时访问内存。但是如果使用非常驻内存，则只能从特定的上下文中访问。只能从进程上下文中访问非常驻内存。从中断上下文访问非常驻内存会导致不可预知的结果，因此当操作系统检测到此类访问时，将采取严厉的措施：阻塞或重置系统，以防止严重破坏。</p>
+<p>内核不能直接访问进程的虚拟内存。一般来说，强烈不建议访问进程的地址空间，但是在某些情况下，设备驱动程序需要这样做。典型情况是设备驱动程序需要访问用户空间的缓冲（buffer）区。为了避免访问无效的内存区域，设备驱动程序不能直接访问缓冲区，而要通过特殊功能。</p>
+<p>内存方面，内核与用户空间的另一个区别是堆栈（stack），内核堆栈的大小是固定且有限的。例如，Linux 的堆栈大小为 4K，而 Windows 的堆栈大小为 12K。因此，我们应该避免在堆栈上分配大型结构或进行递归调用。</p>
+<h2 id="执行上下文">执行上下文<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>我们可以根据内核执行的情况，把上下文分为两种：进程上下文和中断上下文。如果我们是因为系统调用而在内核中运行代码，或者是在内核线程中运行，那么我们就在进程上下文中。如果我们是在响应中断或执行延迟操作的函数时运行，那么我们就在中断上下文中。</p>
+<p>一些内核 API 调用可以阻塞当前进程。常见的例子是使用信号量（semaphore）或等待条件。在这种情况下，进程被置于“等待”状态，而另一个进程在运行。当从中断上下文中调用可能导致当前进程被挂起的函数时，就会出现有趣的情况。在这种情况下，没有当前进程，因此结果是不可预测的。每当操作系统检测到这种情况时，将生成一个错误条件，导致操作系统关闭。</p>
+<h2 id="锁定">锁定<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<p>内核编程中最重要的特性之一是并行性（parallelism）。Linux 支持具有多个处理器和内核可抢占性的 SMP 系统。这使得内核编程更加困难，因为对全局变量的访问必须与自旋锁原语（primitives）或阻塞原语同步。虽然建议使用阻塞原语，但在中断上下文中无法使用它们，因此在中断的上下文中唯一的锁定解决方案是自旋锁。</p>
+<p>自旋锁是一种实现互斥的方法。它不会让当前进程进入挂起状态，而是让它一直忙等待（在一个 c:func:while 循环中检查锁是否可用）。运行在由自旋锁保护的临界区域的代码不允许挂起当前进程（它必须遵守中断上下文中的执行条件）。此外，除非发生中断，否则 CPU 不会被释放。由于此机制，最好尽可能使持有自旋锁的时长短一些。</p>
+<h2 id="可抢占性preemptivity">可抢占性（preemptivity）<a href="#preemptivity" title="永久链接至标题">¶</a></h2>
+<p>Linux 使用的是可抢占内核。这里，我们需要明确区分可抢占多任务（preemptive multitasking）和可抢占内核两个概念。可抢占多任务是指，当一个进程在用户空间运行时，一旦其分配的时间片（时间片段）到期，操作系统会强制中断该进程，转而运行另一个进程。而如果一个在内核模式下运行的进程（通常是作为系统调用的结果），可以被中断以便运行另一个进程，那么我们就说这个内核具有可抢占性。</p>
+<p>由于内核的可抢占性，即使在单处理器环境下，当我们需要在可能来自不同进程上下文的两段代码之间共享资源时，我们也必须使用同步原语进行保护。</p>
+<h2 id="linux-内核-api">Linux 内核 API<a href="#linux-api" title="永久链接至标题">¶</a></h2>
+<h3 id="表示错误的约定">表示错误的约定<a href="#section-6" title="永久链接至标题">¶</a></h3>
+<p>在 Linux 内核编程中，调用函数的返回值被用来表示成功与否，这个约定与 UNIX 编程相同：0 代表成功，非 0 值代表失败。如果失败，返回值应该是负数，如下面的例子所示：</p>
+<p>if (alloc_memory() != 0)
+return -ENOMEM;</p>
+<p>if (user_parameter_valid() != 0)
+return -EINVAL;</p>
+<p>可在 <code>include/uapi/asm-generic/errno-base.h</code> 和 <code>include/uapi/asm-generic/ernno.h</code> 中找到错误的详尽列表和摘要解释。</p>
+<h3 id="字符串处理">字符串处理<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p>在 Linux 中，内核程序员可以使用常见的常规函数来处理字符串，包括：<code>strcpy()</code> 、 <code>strncpy()</code>、 <code>strlcpy()</code> 、<code>strcat()</code>、 <code>strncat()</code>、 <code>strlcat()</code>、 <code>strcmp()</code>、 <code>strncmp()</code>、 <code>strnicmp()</code>、 <code>strchr()</code>、 <code>strnchr()</code>、 <code>strrchr()</code>、 <code>strstr()</code>、 <code>strlen()</code>、 <code>memset()</code>、 <code>memmove()</code>、 <code>memcmp()</code> 等。这些函数在 <code>include/linux/string.h</code> 头文件中声明，并在内核的 <code>lib/string.c</code> 文件中实现。</p>
+<h3 id="printk">printk<a href="#printk" title="永久链接至标题">¶</a></h3>
+<p>在内核中，与 printf 等效的函数是 printk，它在 <code>include/linux/printk.h</code> 中定义。<code>printk()</code> 的语法与 printf 非常相似。<code>printk()</code> 的第一个参数决定了当前日志所属的日志类别：</p>
+<p>#define KERN_EMERG   “&#x3C;0>”  /* 系统不可用 */
+#define KERN_ALERT   “&#x3C;1>”  /* 必须立即采取行动 */
+#define KERN_CRIT    “&#x3C;2>”  /* 严重情况 */
+#define KERN_ERR     “&#x3C;3>”  /* 错误情况 */
+#define KERN_WARNING “&#x3C;4>”  /* 警告情况 */
+#define KERN_NOTICE  “&#x3C;5>”  /* 正常但重要的情况 */
+#define KERN_INFO    “&#x3C;6>”  /* 信息 */
+#define KERN_DEBUG   “&#x3C;7>”  /* 调试级别的消息 */</p>
+<p>因此，在内核中发送警告消息的方式如下：</p>
+<p>printk(KERN_WARNING “my_module 的输入字符串 %s\n”, buff);</p>
+<p>如果在 <code>printk()</code> 调用中缺少日志级别，日志记录将使用调用时的默认级别。注意，只有当消息级别超过控制台上设置的默认级别时，使用 <code>printk()</code> 发送的消息才会在控制台上可见。</p>
+<p>为了减小使用 <code>printk()</code> 时的行长度，建议使用以下辅助函数（help functions）而不是直接调用 <code>printk()</code> ：</p>
+<p>pr_emerg(fmt, …); /* 类似于 printk(KERN_EMERG pr_fmt(fmt), …); */
+pr_alert(fmt, …); /* 类似于 printk(KERN_ALERT pr_fmt(fmt), …); */
+pr_crit(fmt, …); /* 类似于 printk(KERN_CRIT pr_fmt(fmt), …); */
+pr_err(fmt, …); /* 类似于 printk(KERN_ERR pr_fmt(fmt), …); */
+pr_warn(fmt, …); /* 类似于 printk(KERN_WARNING pr_fmt(fmt), …); */
+pr_notice(fmt, …); /* 类似于 printk(KERN_NOTICE pr_fmt(fmt), …); */
+pr_info(fmt, …); /* 类似于 printk(KERN_INFO pr_fmt(fmt), …); */
+pr_debug(fmt, …); /* 类似于 printk(KERN_DEBUG pr_fmt(fmt), …); */</p>
+<p>一个特殊情况是 <code>pr_debug()</code>，它只在定义了 DEBUG 宏或使用动态调试时才会调用 printk 函数。</p>
+<h3 id="内存分配">内存分配<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p>在 Linux 中，常驻内存只能使用 <code>kmalloc()</code> 调用来分配。下面是一个典型的 <code>kmalloc()</code> 调用示例：</p>
+<p>#include &#x3C;linux/slab.h></p>
+<p>string = kmalloc (string_len + 1, GFP_KERNEL);
+if (!string) {
+//报告错误：-ENOMEM;
+}</p>
+<p>如你所见，第一个参数表示分配区域的字节大小。这个函数返回一个指向内核中可直接使用的内存区域的指针，如果无法分配内存，则返回 <code>NULL</code>。第二个参数指定了如何进行分配，最常用的取值有：</p>
+<blockquote>
+<ul>
+<li><code>GFP_KERNEL</code> ——使用此值可能导致当前进程被挂起。因此，它不能在中断上下文中使用。</li>
+<li><code>GFP_ATOMIC</code> ——使用此值确保 <code>kmalloc()</code> 函数不会挂起当前进程。它可以随时使用。</li>
+</ul>
+</blockquote>
+<p>与 <code>kmalloc()</code> 函数相对应的是 <code>kfree()</code>，它接收由 <code>kmalloc()</code> 分配的区域作为参数。该函数不会挂起当前进程，因此可以从任何上下文中调用。</p>
+<h3 id="列表">列表<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<p>由于链表经常被使用，Linux 内核 API 提供了一种统一的方式来定义和使用链表。这涉及在我们希望将其视为链表节点的结构中使用 <code>struct list_head</code> 元素。 <code>struct list_head</code> 在 <code>include/linux/list.h</code> 中定义，同时还定义了所有其他操作链表的函数。以下代码展示了 <code>struct list_head</code> 的定义，以及在 Linux 内核中另一个众所周知的结构中使用该类型的元素的示例：</p>
+<p>struct list_head {
+struct list_head *next, *prev;
+};</p>
+<p>struct task_struct {
+…
+struct list_head children;
+…
+};</p>
+<p>操作链表的常用惯例如下：</p>
+<ul>
+<li><code>LIST_HEAD(name)</code> 用于声明链表的标记（sentinel）。</li>
+<li><code>INIT_LIST_HEAD(struct list_head *list)()</code> 用于在进行动态分配时，通过设置链表字段 <code>next</code> 和 <code>prev</code>，来初始化链表的标记。</li>
+<li><code>list_add(struct list_head *new, struct list_head *head)()</code> 将 <code>new</code> 指针所引用的元素添加到 <code>head</code> 指针所引用的元素之后。</li>
+<li><code>list_del(struct list_head *entry)()</code> 删除属于列表的 <code>entry</code> 地址处的项目。</li>
+<li><code>list_entry(ptr, type, member)()</code> 返回列表中包含元素 <code>ptr</code> 的类型为 <code>type</code> 的结构，该结构中具有名为 <code>member</code> 的成员。</li>
+<li><code>list_for_each(pos, head)</code> 使用 <code>pos</code> 作为游标来迭代列表。</li>
+<li><code>list_for_each_safe(pos, n, head)</code> 使用 <code>pos</code> 作为游标，<code>n</code> 作为临时游标来迭代列表。此宏用于从列表中删除项目。</li>
+</ul>
+<p>以下代码展示了如何使用这些惯例：</p>
+<p>#include &#x3C;linux/slab.h>
+#include &#x3C;linux/list.h></p>
+<p>struct pid_list {
+pid_t pid;
+struct list_head list;
+};</p>
+<p>LIST_HEAD(my_list);</p>
+<p>static int add_pid(pid_t pid)
+{
+struct pid_list *ple = kmalloc(sizeof *ple, GFP_KERNEL);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>if (!ple)</span></span>
+<span class="line"><span>    return \-ENOMEM;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ple\->pid \= pid;</span></span>
+<span class="line"><span>list\_add(&#x26;ple\->list, &#x26;my\_list);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>static int del_pid(pid_t pid)
+{
+struct list_head *i, *tmp;
+struct pid_list *ple;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>list\_for\_each\_safe(i, tmp, &#x26;my\_list) {</span></span>
+<span class="line"><span>    ple \= list\_entry(i, struct pid\_list, list);</span></span>
+<span class="line"><span>    if (ple\->pid \== pid) {</span></span>
+<span class="line"><span>        list\_del(i);</span></span>
+<span class="line"><span>        kfree(ple);</span></span>
+<span class="line"><span>        return 0;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return \-EINVAL;</span></span></code></pre>
+<p>}</p>
+<p>static void destroy_list(void)
+{
+struct list_head *i, *n;
+struct pid_list *ple;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>list\_for\_each\_safe(i, n, &#x26;my\_list) {</span></span>
+<span class="line"><span>    ple \= list\_entry(i, struct pid\_list, list);</span></span>
+<span class="line"><span>    list\_del(i);</span></span>
+<span class="line"><span>    kfree(ple);</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>}</p>
+<p>列表的演变可以在下图中看到：</p>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/list_evolution.svg"><img src="https://linux-kernel-labs-zh.github.io/_images/list_evolution.svg" alt="../_images/list_evolution.svg"></a></p>
+<p>从上面的例子可以看出，通过 <code>list_add</code> 宏引入了堆栈类型的行为，并使用了标记。</p>
+<p>通过上述示例可以看出，定义和使用一个（双向）列表的方法是通用的，并且同时不引入额外的开销。<code>struct list_head</code> 用于维护列表元素之间的链接。可以注意到，对列表的迭代也是使用这个结构进行的，使用 <code>list_entry</code> 可以获取列表元素。这种实现和使用列表的思想并不新鲜，在 20 世纪 80 年代，Donald Knuth 的《计算机程序设计艺术》中已经有描述。</p>
+<p>在 <code>include/linux/list.h</code> 头文件中介绍并且解释了几个内核列表函数和宏定义。</p>
+<h3 id="自旋锁">自旋锁<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<p><code>spinlock_t</code> （在 <code>linux/spinlock.h</code> 中定义）是在 Linux 中实现自旋锁概念的基本类型。它描述了自旋锁，与自旋锁相关的操作有 <code>spin_lock_init()</code> 、 <code>spin_lock()</code> 、 <code>spin_unlock()</code>。以下是一个使用示例：</p>
+<p>#include &#x3C;linux/spinlock.h></p>
+<p>DEFINE_SPINLOCK(lock1);
+spinlock_t lock2;</p>
+<p>spin_lock_init(&#x26;lock2);</p>
+<p>spin_lock(&#x26;lock1);
+/* 临界区（critical region） */
+spin_unlock(&#x26;lock1);</p>
+<p>spin_lock(&#x26;lock2);
+/* 临界区 */
+spin_unlock(&#x26;lock2);</p>
+<p>在 Linux 中，你可以使用读写自旋锁来解决读者—写者问题。这种类型的锁由 <code>rwlock_t</code> 标识，并且可以使用以下函数来操作读写自旋锁： <code>rwlock_init()</code> 、 <code>read_lock()</code> 以及 <code>write_lock()</code> 。以下是使用读写自旋锁的示例：</p>
+<p>#include &#x3C;linux/spinlock.h></p>
+<p>DEFINE_RWLOCK(lock);</p>
+<p>struct pid_list {
+pid_t pid;
+struct list_head list;
+};</p>
+<p>int have_pid(struct list_head *lh, int pid)
+{
+struct list_head *i;
+void *elem;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>read\_lock(&#x26;lock);</span></span>
+<span class="line"><span>list\_for\_each(i, lh) {</span></span>
+<span class="line"><span>    struct pid\_list \*pl \= list\_entry(i, struct pid\_list, list);</span></span>
+<span class="line"><span>    if (pl\->pid \== pid) {</span></span>
+<span class="line"><span>        read\_unlock(&#x26;lock);</span></span>
+<span class="line"><span>        return 1;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>read\_unlock(&#x26;lock);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>void add_pid(struct list_head *lh, struct pid_list *pl)
+{
+write_lock(&#x26;lock);
+list_add(&#x26;pl->list, lh);
+write_unlock(&#x26;lock);
+}</p>
+<h3 id="互斥锁mutex">互斥锁（Mutex）<a href="#mutex" title="永久链接至标题">¶</a></h3>
+<p>互斥锁是一种 <code>struct mutex</code> 类型的变量（定义在 <code>linux/mutex.h</code> 中）。下面列出了用于处理互斥锁的函数和宏：</p>
+<p>#include &#x3C;linux/mutex.h></p>
+<p>/* 互斥锁初始化函数 */
+void mutex_init(struct mutex *mutex);
+DEFINE_MUTEX(name);</p>
+<p>/* 互斥锁获取函数 */
+void mutex_lock(struct mutex *mutex);</p>
+<p>/* 互斥锁释放函数 */
+void mutex_unlock(struct mutex *mutex);</p>
+<p>这些操作与在用户空间中进行的经典互斥锁操作或自旋锁操作类似：在进入临界区之前获取互斥锁，在退出临界区之后释放互斥锁。不同于自旋锁，这些操作只能在进程上下文中使用。</p>
+<h3 id="原子变量">原子变量<a href="#section-11" title="永久链接至标题">¶</a></h3>
+<p>通常，你只需要对简单的变量（如计数器）进行访问同步。为此，可以使用 <code>atomic_t</code> 类型（定义在 <code>include/linux/atomic.h</code> 中），它保存一个整数值。下面是一些可以对 <code>atomic_t</code> 变量执行的操作。</p>
+<p>#include &#x3C;asm/atomic.h></p>
+<p>void atomic_set(atomic_t *v, int i);
+int atomic_read(atomic_t *v);
+void atomic_add(int i, atomic_t *v);
+void atomic_sub(int i, atomic_t *v);
+void atomic_inc(atomic_t *v);
+void atomic_dec(atomic_t *v);
+int atomic_inc_and_test(atomic_t *v);
+int atomic_dec_and_test(atomic_t *v);
+int atomic_cmpxchg(atomic_t *v, int old, int new);</p>
+<h4 id="原子变量的使用">原子变量的使用<a href="#section-12" title="永久链接至标题">¶</a></h4>
+<p>原子变量的常见使用方式是存储一个操作的状态（例如，一个标志）。因此，我们可以使用原子变量来标记独占操作。例如，我们可以考虑一个原子变量可以具有 LOCKED 和 UNLOCKED 两个值，如果该变量等于 LOCKED，则特定函数应返回 -EBUSY。下面的代码示例展示了这种用法：</p>
+<p>#define LOCKED 0
+#define UNLOCKED 1</p>
+<p>static atomic_t flag;</p>
+<p>static int my_acquire(void)
+{
+int initial_flag;</p>
+<p>/*
+* 检查 flag 是否为 UNLOCKED；如果是，则以原子方式将其锁定。
+*
+* 这个原子操作相当于：
+*   if (flag == UNLOCKED)
+*       flag = LOCKED;
+*   else
+*       return -EBUSY;
+*/
+initial_flag = atomic_cmpxchg(&#x26;flag, UNLOCKED, LOCKED);
+if (initial_flag == LOCKED) {
+printk(KERN_ALERT “已经被锁定。\n”);
+return -EBUSY;
+}</p>
+<p>/* 在获取锁之后进行操作。 */
+[…]
+}</p>
+<p>static void my_release(void)
+{
+/* 释放 flag，将其标记为解锁状态。 */
+atomic_set(&#x26;flag, UNLOCKED);
+}</p>
+<p>void my_init(void)
+{
+[…]
+/* 原子变量最初处于解锁状态。 */
+atomic_set(&#x26;flag, UNLOCKED);</p>
+<p>[…]
+}</p>
+<p>以上代码是 trylock（例如 <code>pthread_mutex_trylock()</code> ）的等效代码。</p>
+<p>我们还可以使用一个变量来存储缓冲区的大小，并进行相应变量的原子更新。下面是示例代码：</p>
+<p>static unsigned char buffer[MAX_SIZE];
+static atomic_t size;</p>
+<p>static void add_to_buffer(unsigned char value)
+{
+buffer[atomic_read(&#x26;size)] = value;
+atomic_inc(&#x26;size);
+}</p>
+<p>static unsigned char remove_from_buffer(void)
+{
+unsigned char value;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span> value \= buffer\[atomic\_read(&#x26;size)\];</span></span>
+<span class="line"><span> atomic\_dec(&#x26;size);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> return value</span></span></code></pre>
+<p>}</p>
+<p>static void reset_buffer(void)
+{
+atomic_set(&#x26;size, 0);
+}</p>
+<p>void my_init(void)
+{
+[…]
+/* 初始化缓冲和大小 */
+atomic_set(&#x26;size, 0);
+memset(buffer, 0, sizeof(buffer));</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span> \[...\]</span></span></code></pre>
+<p>}</p>
+<h3 id="原子位操作">原子位操作<a href="#section-13" title="永久链接至标题">¶</a></h3>
+<p>内核提供了一组函数（在 <code>asm/bitops.h</code> 中），可以以原子方式修改或测试位（bit）。</p>
+<p>#include &#x3C;asm/bitops.h></p>
+<p>void set_bit(int nr, void *addr);
+void clear_bit(int nr, void *addr);
+void change_bit(int nr, void *addr);
+int test_and_set_bit(int nr, void *addr);
+int test_and_clear_bit(int nr, void *addr);
+int test_and_change_bit(int nr, void *addr);</p>
+<p><code>Addr</code> 表示要修改或测试位的内存区域的地址，<code>nr</code> 是要执行操作的位。</p>
+<h2 id="练习">练习<a href="#section-14" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 kernel_api。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/kernel_api/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-14">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<h3 id="0-简介">0. 简介<a href="#section-15" title="永久链接至标题">¶</a></h3>
+<p>使用 <a href="http://elixir.free-electrons.com/linux/latest/source">LXR</a> 在 Linux 内核中查找以下符号的定义：</p>
+<blockquote>
+<ul>
+<li><code>struct list_head</code></li>
+<li><code>INIT_LIST_HEAD()</code></li>
+<li><code>list_add()</code></li>
+<li><code>list_for_each</code></li>
+<li><code>list_entry</code></li>
+<li><code>container_of</code></li>
+<li><code>offsetof</code></li>
+</ul>
+</blockquote>
+<h3 id="1-linux-内核中的内存分配">1. Linux 内核中的内存分配<a href="#linux" title="永久链接至标题">¶</a></h3>
+<p>生成名为 <strong>1-mem</strong> 的任务骨架，并浏览 <code>mem.c</code> 文件的内容。观察使用 <code>kmalloc()</code> 函数进行内存分配的情况。</p>
+<blockquote>
+<ol>
+<li>编译源代码并使用 <strong>insmod</strong> 加载 <code>mem.ko</code> 模块。</li>
+<li>使用 <strong>dmesg</strong> 命令查看内核消息。</li>
+<li>使用 <strong>rmmod mem</strong> 命令卸载内核模块。</li>
+</ol>
+</blockquote>
+<h3 id="2-在原子上下文中睡眠">2. 在原子上下文中睡眠<a href="#section-16" title="永久链接至标题">¶</a></h3>
+<p>生成名为 <strong>2-sched-spin</strong> 的任务骨架，并浏览 <code>sched-spin.c</code> 文件的内容。</p>
+<blockquote>
+<ol>
+<li>根据上述信息编译源代码并加载模块（使用命令 <strong>make build</strong> 和 <strong>make copy</strong> ）。</li>
+<li>注意：插入顺序完成之前需要等待 5 秒时间。</li>
+<li>卸载内核模块。</li>
+<li>查找标记为：<code>TODO 0</code> 的行以创建原子段（atomic section）。重新编译源代码并将模块重新加载到内核。</li>
+</ol>
+</blockquote>
+<p>现在你应该会遇到一个错误。查看堆栈跟踪。错误的原因是什么？</p>
+<p>提示</p>
+<p>在错误消息中，跟踪包含 <code>BUG</code> 的行查看对错误的描述。在原子上下文中不允许睡眠。在这里原子上下文是处于自旋锁进行锁定操作和解锁操作之间的部分。</p>
+<p>注解</p>
+<p><code>schedule_timeout()</code> 函数与 <code>set_current_state</code> 宏结合使用，强制当前进程等待了 5 秒钟。</p>
+<p>注解</p>
+<p>请查阅 <a href="#section-4">执行上下文</a> 、<a href="#section-5">锁定</a> 和 <a href="#section-10">自旋锁</a> 部分。</p>
+<h3 id="3-使用内核内存">3. 使用内核内存<a href="#section-17" title="永久链接至标题">¶</a></h3>
+<p>为名为 <strong>3-memory</strong> 的任务生成骨架，并浏览 <code>memory.c</code> 文件的内容。请注意带有 <code>TODO</code> 标记的注释。你需要分配 4 个类型为 <code>struct task_info</code> 的结构体并将其初始化（在 <code>memory_init()</code> 中），然后打印并释放它们（在 <code>memory_exit()</code> 中）。</p>
+<blockquote>
+<ol>
+<li>
+<p>（TODO 1）为 <code>struct task_info</code> 结构体分配内存并初始化其字段：</p>
+<ul>
+<li>将 <code>pid</code> 字段设置为作为参数传递的 PID 值；</li>
+<li>将 <code>timestamp</code> 字段设置为 <code>jiffies</code> 变量的值，该变量存储了自系统启动以来发生的滴答数（tick）。</li>
+</ul>
+</li>
+<li>
+<p>（TODO 2）为当前进程、父进程、下一个进程和下一个进程的下一个进程分别分配 <code>struct task_info</code>，并获取以下信息：</p>
+<ul>
+<li>当前进程的 PID，其可以从 <code>struct task_struct</code> 结构体中检索到，该结构体由 <code>current</code> 宏返回。</li>
+</ul>
+<p>提示</p>
+<p>在 <code>task_struct</code> 中搜索 <code>pid</code>。</p>
+<ul>
+<li>当前进程的父进程的 PID。</li>
+</ul>
+<p>提示</p>
+<p>在 <code>struct task_struct</code> 结构体中搜索相关字段。查找“parent”。</p>
+<ul>
+<li>相对于当前进程，进程列表中的下一个进程的 PID。</li>
+</ul>
+<p>提示</p>
+<p>使用 <code>next_task</code> 宏，该宏返回指向下一个进程的指针（即 <code>struct task_struct</code> 结构体）。</p>
+<ul>
+<li>相对于当前进程，下一个进程的下一个进程的 PID。</li>
+</ul>
+<p>提示</p>
+<p>调用 <code>next_task</code> 宏 2 次。</p>
+</li>
+<li>
+<p>（TODO 3）显示这四个结构体。</p>
+<ul>
+<li>使用 <code>printk()</code> 显示它们的两个字段：<code>pid</code> 和 <code>timestamp</code>。</li>
+</ul>
+</li>
+<li>
+<p>（TODO 4）释放结构体占用的内存（使用 <code>kfree()</code>）。</p>
+</li>
+</ol>
+</blockquote>
+<p>提示</p>
+<ul>
+<li>你可以使用 <code>current</code> 宏访问当前进程。</li>
+<li>在 <code>struct task_struct</code> 结构体中查找相关字段（<code>pid</code>、<code>parent</code>）。</li>
+<li>使用 <code>next_task</code> 宏。该宏返回指向下一个进程的指针（即 <code>struct task_struct*</code> 结构体）。</li>
+</ul>
+<p>注解</p>
+<p><code>struct task_struct</code> 结构体包含两个字段用于指定任务的父进程：</p>
+<ul>
+<li><code>real_parent</code> 指向创建任务的进程，或者如果父进程已完成执行，则指向具有 pid 1（init）的进程。</li>
+<li><code>parent</code> 指示当前任务的父进程（如果任务完成执行，则向该进程报告）。</li>
+</ul>
+<p>通常情况下，这两个字段的值是相同的，但在某些情况下它们可能不同，例如使用 <code>ptrace()</code> 系统调用时。</p>
+<h3 id="4-使用内核列表">4. 使用内核列表<a href="#section-18" title="永久链接至标题">¶</a></h3>
+<p>生成名为 <strong>4-list</strong> 的任务骨架。浏览 <code>list.c</code> 文件的内容，并注意标有 <code>TODO</code> 的注释。当前的进程将在列表中添加前面练习中的四个结构体。列表将在加载模块时在 <code>task_info_add_for_current()</code> 函数中构建。列表将在 <code>list_exit()</code> 函数和 <code>task_info_purge_list()</code> 函数中打印和删除。</p>
+<blockquote>
+<ol>
+<li>(TODO 1) 补全 <code>task_info_add_to_list()</code> 函数，此函数会分配 <code>struct task_info</code> 结构体，并将其添加到列表中。</li>
+<li>(TODO 2) 补全 <code>task_info_purge_list()</code> 函数，此函数会删除列表中的所有元素。</li>
+<li>编译内核模块。按照内核显示的消息加载和卸载模块。</li>
+</ol>
+</blockquote>
+<p>提示</p>
+<p>回顾一下实验中的 <a href="#section-9">列表</a> 部分。在从列表中删除项目时，你需要使用 <code>list_for_each_safe</code> 或 <code>list_for_each_entry_safe</code> 宏。</p>
+<h3 id="5-使用内核列表进行进程处理">5. 使用内核列表进行进程处理<a href="#section-19" title="永久链接至标题">¶</a></h3>
+<p>生成名为 <strong>5-list-full</strong> 的任务骨架。浏览 <code>list-full.c</code> 文件的内容，并注意标有 <code>TODO</code> 的注释。除了 <code>4-list</code> 的功能外，我们还添加了以下内容：</p>
+<blockquote>
+<ul>
+<li>
+<p>一个 <code>count</code> 字段，显示一个进程被“添加”到列表中的次数。</p>
+</li>
+<li>
+<p>如果一个进程被“添加”了多次，则不会在列表中创建新的条目，而是：</p>
+<blockquote>
+<ul>
+<li>更新 <code>timestamp</code> 字段。</li>
+<li>增加 <code>count</code>。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>为了实现计数器功能，请添加一个 <code>task_info_find_pid()</code> 函数，用于在现有列表中搜索 pid。</p>
+</li>
+<li>
+<p>如果找到，则返回对 <code>task_info</code> 结构的引用。如果没有找到，则返回 <code>NULL</code>。</p>
+</li>
+<li>
+<p>过期处理功能。如果一个进程从被添加到现在已超过 3 秒，并且它的 <code>count</code> 不大于 5，则被视为过期并从列表中删除。</p>
+</li>
+<li>
+<p>过期处理功能已经在 <code>task_info_remove_expired()</code> 函数中实现。</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>(TODO 1) 实现 <code>task_info_find_pid()</code> 函数。</p>
+</li>
+<li>
+<p>(TODO 2) 更改列表中的一个项目的字段，使其不会过期。它不应满足 <code>task_info_remove_expired()</code> 中的任何过期条件。</p>
+<p>提示</p>
+<p>要想完成 <code>TODO 2</code>，可以从列表中提取第一个元素（由 <code>head.next</code> 引用），并将其 <code>count</code> 字段设置为足够大的值。使用 <code>atomic_set()</code> 函数。</p>
+</li>
+<li>
+<p>编译、复制、加载和卸载内核模块，这个过程中请遵从显示的消息来操作。加载内核模块需要一些时间，因为 <code>schedule_timeout()</code> 函数会调用 <code>sleep()</code>。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="6-同步列表工作">6. 同步列表工作<a href="#section-20" title="永久链接至标题">¶</a></h3>
+<p>为名为 <strong>6-list-sync</strong> 的任务生成骨架。</p>
+<blockquote>
+<ol>
+<li>浏览代码并查找“TODO 1“字符串。</li>
+<li>使用自旋锁或读写锁来同步对列表的访问。</li>
+<li>编译、加载和卸载内核模块。</li>
+</ol>
+</blockquote>
+<p>重要</p>
+<p>始终锁定数据，而不是代码！</p>
+<h3 id="7-在我们的列表模块中测试模块调用">7. 在我们的列表模块中测试模块调用<a href="#section-21" title="永久链接至标题">¶</a></h3>
+<p>为名为 <strong>7-list-test</strong> 的任务生成骨架，并浏览 <code>list-test.c</code> 文件的内容。我们将使用它作为测试模块。它将调用由 <strong>6-list-sync</strong> 任务导出的函数。在 <code>list-test.c</code> 文件中，已经用 <strong>extern</strong> 标记出了导出的函数。</p>
+<p>取消注释 <code>7-list-test.c</code> 中的注释代码。查找 <code>TODO 1</code>。</p>
+<p>要从位于 <code>6-list-sync/</code> 目录中的模块导出上述函数，需要执行以下步骤：</p>
+<blockquote>
+<ol>
+<li>函数不能是静态的。</li>
+<li>使用 <code>EXPORT_SYMBOL</code> 宏导出内核符号。例如：<code>EXPORT_SYMBOL(task_info_remove_expired);</code>。该宏必须在函数定义后使用。浏览代码并查找 <code>list-sync.c</code> 中的 <code>TODO 2</code> 字符串。</li>
+<li>从 <strong>6-list-sync</strong> 模块中删除避免列表项过期的代码（它与我们的练习相矛盾）。</li>
+<li>编译并加载 <code>6-list-sync/</code> 中的模块。一旦加载，它会公开导出的函数，使其可以被测试模块使用。你可以通过分别在加载模块之前和之后在 <code>/proc/kallsyms</code> 中搜索函数名称来检查这一点。</li>
+<li>编译测试模块，然后加载它。</li>
+<li>使用 <strong>lsmod</strong> 命令检查这两个模块是否已加载。你注意到了什么？</li>
+<li>卸载内核测试模块。</li>
+</ol>
+</blockquote>
+<p>两个模块（来自 <strong>6-list-sync</strong> 的模块和测试模块）的卸载顺序应该是什么？如果使用其他顺序会发生什么？</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">← 内核模块 — Linux 系统内核文档</a></span> <span></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

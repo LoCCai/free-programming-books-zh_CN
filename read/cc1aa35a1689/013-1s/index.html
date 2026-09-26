@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 课程 10——网络 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 课程 10——网络 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 课程 10——网络 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <p><a href="https://linux-kernel-labs-zh.github.io/so2/lec10-networking-slides.html">查看幻灯片</a></p>
+<blockquote>
+<table><colgroup><col> <col></colgroup><tbody><tr><th>keywords:</th><td>网络管理, 套接字实现, 路由实现, 网络设备接口, 硬件和软件加速</td></tr></tbody></table>
+</blockquote>
+<p>这个元信息描述了这个文档的内容和关键词,希望对您有帮助。如果还有其他需要补充的地方,请告诉我。</p>
+<p><a href="https://linux-kernel-labs-zh.github.io/so2/networking-slides.html">查看幻灯片</a></p>
+<h2 id="课程目标">课程目标：<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>套接字实现</li>
+<li>路由实现</li>
+<li>网络设备接口</li>
+<li>硬件和软件加速技术</li>
+</ul>
+<h2 id="网络管理概述">网络管理概述<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/ditaa-a2ded49c8b739635d6742479583443fb10ad120a.png"><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-a2ded49c8b739635d6742479583443fb10ad120a.png" alt="../_images/ditaa-a2ded49c8b739635d6742479583443fb10ad120a.png"></a></p>
+<h2 id="sockets-实现概述">Sockets 实现概述<a href="#sockets" title="永久链接至标题">¶</a></h2>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/ditaa-79e3734c36891f6c04d684aa5caa39f76915dbaf.png"><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-79e3734c36891f6c04d684aa5caa39f76915dbaf.png" alt="../_images/ditaa-79e3734c36891f6c04d684aa5caa39f76915dbaf.png"></a></p>
+<h2 id="sockets-系列和协议">Sockets 系列和协议<a href="#sockets-1" title="永久链接至标题">¶</a></h2>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/ditaa-bf1244d1a5c3d99bd8d40148d81cb3e5748c0b94.png"><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-bf1244d1a5c3d99bd8d40148d81cb3e5748c0b94.png" alt="../_images/ditaa-bf1244d1a5c3d99bd8d40148d81cb3e5748c0b94.png"></a></p>
+<h3 id="示例udp-发送">示例：UDP 发送<a href="#udp" title="永久链接至标题">¶</a></h3>
+<p>char c;
+struct sockaddr_in addr;
+int s;</p>
+<p>s = socket(AF_INET, SOCK_DGRAM, 0);
+connect(s, (struct sockaddr*)&#x26;addr, sizeof(addr));
+write(s, &#x26;c, 1);
+close(s);</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-ee04e3e544de75375b914f7645c79d5ae46fe6f3.png" alt="../_images/ditaa-ee04e3e544de75375b914f7645c79d5ae46fe6f3.png"></p>
+<h2 id="网络处理阶段">网络处理阶段<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>中断处理程序——设备驱动程序从 RX 环获取数据，创建网络数据包，并将其放到网络栈队列等待处理</li>
+<li>NET_SOFTIRQ——数据包通过网络栈层，并进行处理：解封装以太网帧，检查 IP 数据包并进行路由，如果是本地数据包，则解封装协议数据包（例如 TCP）并将其放到套接字里的队列</li>
+<li>进程上下文——应用程序从套接字里的队列获取数据或将数据推送到套接字里的队列</li>
+</ul>
+<h2 id="数据包路由">数据包路由<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-528948c80a3fd78b89fb6f7bd69503a58b93a4ae.png" alt="../_images/ditaa-528948c80a3fd78b89fb6f7bd69503a58b93a4ae.png"></p>
+<h3 id="路由表">路由表<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<p>tavi@desktop-tavi:~/src/linux$ ip route list table main
+default via 172.30.240.1 dev eth0
+172.30.240.0/20 dev eth0 proto kernel scope link src 172.30.249.241</p>
+<p>tavi@desktop-tavi:~/src/linux$ ip route list table local
+broadcast 127.0.0.0 dev lo proto kernel scope link src 127.0.0.1
+local 127.0.0.0/8 dev lo proto kernel scope host src 127.0.0.1
+local 127.0.0.1 dev lo proto kernel scope host src 127.0.0.1
+broadcast 127.255.255.255 dev lo proto kernel scope link src 127.0.0.1
+broadcast 172.30.240.0 dev eth0 proto kernel scope link src 172.30.249.241
+local 172.30.249.241 dev eth0 proto kernel scope host src 172.30.249.241
+broadcast 172.30.255.255 dev eth0 proto kernel scope link src 172.30.249.241</p>
+<p>tavi@desktop-tavi:~/src/linux$ ip rule list
+0:      from all lookup local
+32766:  from all lookup main
+32767:  from all lookup default</p>
+<h3 id="路由策略数据库">路由策略数据库<a href="#section-6" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>“常规”路由仅使用目标地址进行路由</li>
+<li>为了增加灵活性，系统使用了“路由策略数据库”，其可以根据其他字段（如源地址、协议类型、传输端口等）进行不同的路由选择</li>
+<li>这被编码为一系列规则，根据优先级进行评估（优先级 0 最高）</li>
+<li>每个规则都有一个选择器（用于匹配数据包）和一个动作（如果数据包匹配，则采取什么动作）</li>
+<li>选择器：源地址、目标地址、服务类型（TOS）、输入接口、输出接口等</li>
+<li>动作：查找（lookup）/单播（unicast）——使用给定的路由表，黑洞（blackhole）——丢弃数据包，不可达（unreachable）——发送 ICMP 不可达消息并丢弃数据包等。</li>
+</ul>
+<h3 id="路由表处理">路由表处理<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>本地地址的特殊表 -> 根据地址族、类型、端口将数据包路由到套接字</li>
+<li>从最具体的路由开始检查每个路由条目（例如，192.168.0.0/24 在 192.168.0.0/16 之前）</li>
+<li>如果数据包目标地址与子网掩码进行逻辑 OR 运算后等于子网地址，则表示路由匹配</li>
+<li>一旦路由匹配，将检索以下信息：接口、链路层下一跳地址、网络下一跳地址</li>
+</ul>
+<h3 id="转发信息数据库">转发信息数据库<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/fidb-overview1.png" alt="../_images/fidb-overview1.png"> <img src="https://linux-kernel-labs-zh.github.io/_images/fidb-details1.png" alt="../_images/fidb-details1.png"></p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/routing-cache1.png" alt="../_images/routing-cache1.png"></p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/fib-trie1.png" alt="../_images/fib-trie1.png"></p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/fib-trie-compressed1.png" alt="../_images/fib-trie-compressed1.png"></p>
+<h2 id="netfilter">Netfilter<a href="#netfilter" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>实现数据包过滤和 NAT 的框架</li>
+<li>它在数据包流中的关键位置插入钩子（hook）：
+<ul>
+<li>NF_IP_PRE_ROUTING</li>
+<li>NF_IP_LOCAL_IN</li>
+<li>NF_IP_FORWARD</li>
+<li>NF_IP_LOCAL_OUT</li>
+<li>NF_IP_POST_ROUTING</li>
+<li>NF_IP_NUMHOOKS</li>
+</ul>
+</li>
+</ul>
+<h2 id="网络数据包skb结构-sk_buff">网络数据包/skb（结构 sk_buff）<a href="#skb-sk-buff" title="永久链接至标题">¶</a></h2>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/skb1.png" alt="../_images/skb1.png"></p>
+<p>struct sk_buff {
+struct sk_buff *next;
+struct sk_buff *prev;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>struct sock \*sk;</span></span>
+<span class="line"><span>ktime\_t tstamp;</span></span>
+<span class="line"><span>struct net\_device \*dev;</span></span>
+<span class="line"><span>char cb\[48\];</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>unsigned int len,</span></span>
+<span class="line"><span>data\_len;</span></span>
+<span class="line"><span>\_\_u16 mac\_len,</span></span>
+<span class="line"><span>hdr\_len;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>void (\*destructor)(struct sk\_buff \*skb);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>sk\_buff\_data\_t transport\_header;</span></span>
+<span class="line"><span>sk\_buff\_data\_t network\_header;</span></span>
+<span class="line"><span>sk\_buff\_data\_t mac\_header;</span></span>
+<span class="line"><span>sk\_buff\_data\_t tail;</span></span>
+<span class="line"><span>sk\_buff\_data\_t end;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>unsigned char \*head,</span></span>
+<span class="line"><span>\*data;</span></span>
+<span class="line"><span>unsigned int truesize;</span></span>
+<span class="line"><span>atomic\_t users;</span></span></code></pre>
+<p>/* 预留头部空间 */
+void skb_reserve(struct sk_buff *skb, int len);</p>
+<p>/* 在尾部添加数据 */
+unsigned char *skb_put(struct sk_buff *skb, unsigned int len);</p>
+<p>/* 在顶部添加数据 */
+unsigned char *skb_push(struct sk_buff *skb, unsigned int len);</p>
+<p>/* 丢弃顶部的数据 */
+unsigned char *skb_pull(struct sk_buff *skb, unsigned int len);</p>
+<p>/* 丢弃尾部的数据 */
+unsigned char *skb_trim(struct sk_buff *skb, unsigned int len);</p>
+<p>unsigned char *skb_transport_header(const struct sk_buff *skb);</p>
+<p>void skb_reset_transport_header(struct sk_buff *skb);</p>
+<p>void skb_set_transport_header(struct sk_buff *skb, const int offset);</p>
+<p>unsigned char *skb_network_header(const struct sk_buff *skb);</p>
+<p>void skb_reset_network_header(struct sk_buff *skb);</p>
+<p>void skb_set_network_header(struct sk_buff *skb, const int offset);</p>
+<p>unsigned char *skb_mac_header(const struct sk_buff *skb);</p>
+<p>int skb_mac_header_was_set(const struct sk_buff *skb);</p>
+<p>void skb_reset_mac_header(struct sk_buff *skb);</p>
+<p>void skb_set_mac_header(struct sk_buff *skb, const int offset);</p>
+<p><a href="https://linux-kernel-labs-zh.github.io/_images/ditaa-91073cb05a3f537eb54ab10745c307531e6795a0.png"><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-91073cb05a3f537eb54ab10745c307531e6795a0.png" alt="../_images/ditaa-91073cb05a3f537eb54ab10745c307531e6795a0.png"></a></p>
+<h2 id="网络设备">网络设备<a href="#section-9" title="永久链接至标题">¶</a></h2>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/net-dev-hw1.png" alt="../_images/net-dev-hw1.png"></p>
+<ul>
+<li>Scatter-Gather（散列-聚集）</li>
+<li>校验和外包：以太网、IP、UDP、TCP</li>
+<li>自适应中断处理（聚合、自适应）</li>
+</ul>
+<h2 id="硬件和软件加速技术">硬件和软件加速技术<a href="#section-10" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>
+<p>完全外包——在硬件中实现 TCP/IP 协议栈</p>
+</li>
+<li>
+<p>问题：</p>
+<ul>
+<li>连接数量的扩展</li>
+<li>安全性</li>
+<li>一致性</li>
+</ul>
+</li>
+<li>
+<p>性能与要处理的数据包数量成正比</p>
+</li>
+<li>
+<p>例如：如果一个端点可以每秒处理 60K 个数据包</p>
+<ul>
+<li>1538 MSS -> 738Mbps</li>
+<li>2038 MSS -> 978Mbps</li>
+<li>9038 MSS -> 4.3Gbps</li>
+<li>20738 MSS -> 9.9Gbps</li>
+</ul>
+</li>
+<li>
+<p>网络堆栈处理大数据包</p>
+</li>
+<li>
+<p>发送路径：硬件将大数据包分割为较小的数据包（TCP 分段外包）</p>
+</li>
+<li>
+<p>接收路径：硬件将小数据包聚合成较大的数据包（大体量接收外包——简称 LRO）</p>
+</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/tso1.png" alt="../_images/tso1.png"> <img src="https://linux-kernel-labs-zh.github.io/_images/lro1.png" alt="../_images/lro1.png"></p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">← SO2 课程 09——内核调试 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

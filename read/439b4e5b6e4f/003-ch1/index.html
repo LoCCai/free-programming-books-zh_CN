@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>操作系统思考 · 第一章 编译 · 免费编程中文书籍</title><meta name="description" content="操作系统思考"><meta property="og:title" content="操作系统思考 · 第一章 编译"><meta property="og:description" content="操作系统思考"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/439b4e5b6e4f">操作系统思考</a> <span> / 第一章 编译</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">操作系统思考</p> <a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/001-readme/">操作系统思考 中文版</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/002-ch0/">第零章 前言</a><a class="active" href="/free-programming-books-zh_CN/read/439b4e5b6e4f/003-ch1/">第一章 编译</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/004-ch2/">第二章 进程</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/005-ch3/">第三章 虚拟内存</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/006-ch4/">第四章 文件和文件系统</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/007-ch5/">第五章 更多的位与字节</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/008-ch6/">第六章 内存管理</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/009-ch7/">第七章 缓存</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/010-ch8/">第八章 多任务</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/011-ch9/">第九章 线程</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/012-ch10/">第十章 条件变量</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/013-ch11/">第十一章 C语言中的信号量</a><a class href="/free-programming-books-zh_CN/read/439b4e5b6e4f/014-donors/">捐赠名单</a> </aside> <article class="reader-panel prose"> <h1 id="第一章-编译">第一章 编译</h1>
+<blockquote>
+<p>作者：<a href="http://greenteapress.com/wp/">Allen B. Downey</a></p>
+</blockquote>
+<blockquote>
+<p>原文：<a href="http://greenteapress.com/thinkos/html/thinkos002.html">Chapter 1  Compilation</a></p>
+</blockquote>
+<blockquote>
+<p>译者：<a href="https://github.com/">飞龙</a></p>
+</blockquote>
+<blockquote>
+<p>协议：<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+</blockquote>
+<h2 id="11-编译语言和解释语言">1.1 编译语言和解释语言</h2>
+<p>人们通常把编程语言描述为编译语言或者解释语言。前者的意思是程序被翻译成机器语言，之后由硬件执行；而后者的意思是程序被软件解释器读取并执行。例如，C被认为是编译语言，而Python被认为是解释语言。但是二者之间的界限并不总是那么明显。</p>
+<p>首先，许多语言既可以编译执行也可以解释执行。例如，存在C的解释器，和Python的编译器。其次，类似Java的语言混合了这两种方法，它先把程序编译成中间语言，之后在解释器中执行转换后的程序。Java使用了一种叫做“Java 字节码”的中间语言，它类似于机器语言，但是由软件解释器执行，即Java虚拟机（JVM）。</p>
+<p>所以，编译执行或解释执行并不是语言的内在特征。尽管如此，在编译语言和解释语言之间有一些普遍的差异。</p>
+<h2 id="12-静态类型">1.2 静态类型</h2>
+<p>许多解释语言都支持动态类型，但是编译语言通常限制为静态类型。在静态类型的语言中，你可以通过观察程序，来分辨出每个变量都指向哪种类型。在动态类型的语言中，直到运行起来，你才能知道变量的类型。通常，“静态”指那些在编译时发生的事情，而“动态”指在运行时发生的事情。</p>
+<p>例如，在Python中你可以像这样编写函数：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> add</span><span style="color:#E1E4E8">(x, y):</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y</span></span></code></pre>
+<p>观察这段代码，你不能分辨出<code>x</code>和<code>y</code>所指向的类型。这个函数在运行时可能会调用数次，每次都接受不同类型的值。任何支持加法操作的值都是有效的，任何其它类型的值都会引发异常，或者“运行时错误”。</p>
+<p>C中你可以像这样编写同样的函数：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> add</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#FFAB70"> x</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">int</span><span style="color:#FFAB70"> y</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>函数的第一行包含了参数及返回值的“类型声明”：<code>x</code>和<code>y</code>都声明为整数，这意味着我们可以在编译时检查加法操作对该类型是否合法（是的）。返回值也声明为整数。</p>
+<p>由于这些类型声明，当函数在程序其它位置调用时，编译器就可以检查所提供的参数是否具有正确类型，以及返回值是否使用正确。</p>
+<p>这些检查在程序开始运行之前发生，所以可以更快地找到错误。更重要的是，程序永远不会运行的一部分中也可以找到错误。而且，这些检查不必发生于运行期间，这也是编译语言通常快于解释语言的原因之一。</p>
+<p>编译时的类型声明也会节省空间。在动态语言中，变量的名称在程序运行时储存在内存中，并且它们通常可由程序访问。例如，在Python中，内建的<code>locals</code>函数返回含有变量名称和值的字典。下面是Python解释器中的一个示例：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="py"><code><span class="line"><span style="color:#F97583">>>></span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span></span>
+<span class="line"><span style="color:#F97583">>>></span><span style="color:#79B8FF"> print</span><span style="color:#79B8FF"> locals</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">'x'</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'__builtins__'</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8">module </span><span style="color:#9ECBFF">'__builtin__'</span><span style="color:#E1E4E8"> (built</span><span style="color:#F97583">-in</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">></span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">'__name__'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'__main__'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'__doc__'</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">None</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'__package__'</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">None</span><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>这段代码表明，变量的名称在程序运行期间储存在内存中（以及其它作为默认运行时环境一部分的值）。</p>
+<p>在编译语言中，变量的名称只存在于编译时，而不是运行时。编译器为每个变量选择一个位置，并记录这些位置作为所编译程序的一部分[1]。变量的位置被称为“地址”。在运行期间，每个变量的值都储存在它的地址处，但是变量的名称完全不会储存（除非它们由于调试目的被编译器添加）。</p>
+<blockquote>
+<p>[1] 这只是一个简述，之后我们会深入了解更多细节。</p>
+</blockquote>
+<h2 id="13-编译过程">1.3 编译过程</h2>
+<p>作为程序员，你应该对编译期间发生的事情有所认识。如果你理解了这个过程，它会帮助你解释错误信息，调试你的代码，以及避免常见的陷阱。</p>
+<p>下面是编译的步骤：</p>
+<ol>
+<li>预处理：C是包含“预处理指令”的几种语言之一，它生效于编译之前。例如，<code>#include</code>指令使其它文件的源代码插入到指令所在的位置。</li>
+<li>解析：在解析过程中，编译器读取源代码，并构建程序的内部表示，称为“抽象语法树”（AST）。这一阶段的错误检测通常为语法错误。</li>
+<li>静态检查：编译器会检查变量和值的类型是否正确，函数调用是否带有正确数量和类型的参数，以及其它。这一阶段的错误检测通常为一些“静态语义”的错误。</li>
+<li>代码生成：编译器读取程序的内部表示，并生成机器码或字节码。</li>
+<li>链接：如果程序使用了定义在库中的值或函数，编译器需要找到合适的库并包含所需的代码。</li>
+<li>优化：在这个过程的几个时间点上，编译器可以修改程序来生成运行更快或占用更少空间的代码。大多数优化都是一些简单的修改，来消除明显的浪费。但是一些编译器会执行复杂的分析和修改。</li>
+</ol>
+<p>通常当你运行<code>gcc</code>时，它会执行上述所有步骤，并且生成一份可执行文件。例如，下面是一个小型的C语言程序：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">#include</span><span style="color:#9ECBFF"> &#x3C;stdio.h></span></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Hello World</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>如果你把它保存在名为<code>hello.c</code>的文件中，你可以像这样编译并运行它：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> gcc</span><span style="color:#9ECBFF"> hello.c</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> ./a.out</span></span></code></pre>
+<p>通常，<code>gcc</code>将可执行代码储存在名为<code>a.out</code>的文件中（它原本代表汇编器的输出，即“assembler output”）。第二行运行了这个可执行文件。<code>./</code>前缀告诉shell在当前目录中寻找它。</p>
+<p>使用<code>-o</code>选项来为可执行文件提供一个更好的名字，通常是个不错的主意。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> gcc</span><span style="color:#9ECBFF"> hello.c</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> hello</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> ./hello</span></span></code></pre>
+<h2 id="14-目标代码">1.4 目标代码</h2>
+<p><code>-c</code>选项告诉<code>gcc</code>编译程序并生成机器码，但是不链接它们或生成可执行文件：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> gcc</span><span style="color:#9ECBFF"> hello.c</span><span style="color:#79B8FF"> -c</span></span></code></pre>
+<p>执行结果是名为<code>hello.o</code>的文件，其中<code>o</code>代表“目标代码”（object code），它就是编译后的程序。目标代码并不是可执行代码，但是它可以链接到可执行文件中。</p>
+<p><code>nm</code> UNIX命令可以读取目标文件并生成关于它所定义和所使用的名称的信息。例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> nm</span><span style="color:#9ECBFF"> hello.o</span></span>
+<span class="line"><span style="color:#B392F0">0000000000000000</span><span style="color:#9ECBFF"> T</span><span style="color:#9ECBFF"> main</span></span>
+<span class="line"><span style="color:#B392F0">                 U</span><span style="color:#9ECBFF"> puts</span></span></code></pre>
+<p>输出显示，<code>hello.o</code>定义了<code>main</code>名称，并使用了<code>puts</code>函数，它代表“输出字符串”（put string）。在这个例子中，<code>gcc</code>通过将<code>printf</code>替换掉执行了优化，它是一个复杂的大型函数。而<code>puts</code>相对来说比较简单。</p>
+<p>你可以使用<code>-O</code>选项来控制<code>gcc</code>优化的程度。通常，它执行非常细微的优化，可以使调试更加容易。<code>-O1</code>选项会开启最为普通和安全的优化。更高的数值开启需要长时间编译的高级优化。</p>
+<p>理论上，优化除了加速运行之外，不应改变程序的行为。但是如果你的程序中有微妙的bug，你可能会发现，优化会使bug出现或消失。在开发新的代码时，关闭优化通常是一个不错的主意。一旦程序正常运行并通过了适当的测试，你可以开启优化，并确保测试仍然能够通过。</p>
+<h2 id="15-汇编代码">1.5 汇编代码</h2>
+<p>和<code>-c</code>选项类似。<code>-S</code>告诉<code>gcc</code>编译程序并生成汇编代码，它通常为机器代码的可读形式。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> gcc</span><span style="color:#9ECBFF"> hello.c</span><span style="color:#79B8FF"> -S</span></span></code></pre>
+<p>执行结果是名为<code>hello.s</code>的文件，它可能看起来是这样：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="asm"><code><span class="line"><span style="color:#E1E4E8">        .file        "hello.c"</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">section     .rodata</span></span>
+<span class="line"><span style="color:#F97583">.</span><span style="color:#B392F0">LC0:</span></span>
+<span class="line"><span style="color:#E1E4E8">        .string      "Hello World"</span></span>
+<span class="line"><span style="color:#B392F0">        .text</span></span>
+<span class="line"><span style="color:#E1E4E8">        .globl       main</span></span>
+<span class="line"><span style="color:#E1E4E8">        .type        main, @function</span></span>
+<span class="line"><span style="color:#B392F0">main:</span></span>
+<span class="line"><span style="color:#F97583">.</span><span style="color:#B392F0">LFB0:</span></span>
+<span class="line"><span style="color:#E1E4E8">        .cfi_startproc</span></span>
+<span class="line"><span style="color:#E1E4E8">        pushq %</span><span style="color:#79B8FF">rbp</span></span>
+<span class="line"><span style="color:#E1E4E8">        .cfi_def_cfa_offset </span><span style="color:#79B8FF">16</span></span>
+<span class="line"><span style="color:#E1E4E8">        .cfi_offset </span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">, -</span><span style="color:#79B8FF">16</span></span>
+<span class="line"><span style="color:#F97583">        movq</span><span style="color:#E1E4E8"> %</span><span style="color:#79B8FF">rsp</span><span style="color:#E1E4E8">, %</span><span style="color:#79B8FF">rbp</span></span>
+<span class="line"><span style="color:#E1E4E8">        .cfi_def_cfa_register </span><span style="color:#79B8FF">6</span></span>
+<span class="line"><span style="color:#E1E4E8">        movl $.LC0, %</span><span style="color:#79B8FF">edi</span></span>
+<span class="line"><span style="color:#F97583">        call</span><span style="color:#E1E4E8"> puts</span></span>
+<span class="line"><span style="color:#E1E4E8">        movl </span><span style="color:#79B8FF">$0</span><span style="color:#E1E4E8">, %</span><span style="color:#79B8FF">eax</span></span>
+<span class="line"><span style="color:#E1E4E8">        popq %</span><span style="color:#79B8FF">rbp</span></span>
+<span class="line"><span style="color:#E1E4E8">        .cfi_def_cfa </span><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">8</span></span>
+<span class="line"><span style="color:#F97583">        ret</span></span>
+<span class="line"><span style="color:#E1E4E8">        .cfi_endproc</span></span>
+<span class="line"><span style="color:#F97583">.</span><span style="color:#B392F0">LFE0:</span></span>
+<span class="line"><span style="color:#E1E4E8">        .size        main, .-main</span></span>
+<span class="line"><span style="color:#E1E4E8">        .ident       "</span><span style="color:#B392F0">GCC:</span><span style="color:#E1E4E8"> (Ubuntu/Linaro </span><span style="color:#79B8FF">4.7</span><span style="color:#F97583">.</span><span style="color:#B392F0">3</span><span style="color:#E1E4E8">-1ubuntu1) </span><span style="color:#79B8FF">4.7</span><span style="color:#F97583">.</span><span style="color:#B392F0">3</span><span style="color:#E1E4E8">"</span></span>
+<span class="line"><span style="color:#E1E4E8">        .section     .note.GNU-stack,"",@progbits</span></span></code></pre>
+<p><code>gcc</code>通常为你所运行的机器生成代码，所以对我来说它生成x86汇编代码，运行在Intel、AMD和许多其它处理器上面。如果你运行在不同的架构上，你会看到不同的代码。</p>
+<h2 id="16-预处理">1.6 预处理</h2>
+<p>在编译过程中再往前退一步，你可以使用<code>-E</code>选项来只运行预处理器：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> gcc</span><span style="color:#9ECBFF"> hello.c</span><span style="color:#79B8FF"> -E</span></span></code></pre>
+<p>执行结果就是预处理器的输出。这个例子中，它含有来自<code>stdio.h</code>的被包含代码，和<code>stdio.h</code>所包含的所有文件，还有这些文件所包含的所有文件，以及其它。在我的机器上，共计800行代码。因为几乎每个C语言程序都会包含<code>stdio.h</code>，这800行代码经常会被编译。如果你像大多数C程序那样也包含了<code>stdlib.h</code>，结果会变成多于1800行代码。</p>
+<h2 id="17-理解错误">1.7 理解错误</h2>
+<p>既然我们知道了编译过程的步骤，理解错误消息就变得十分容易。例如，如果<code>#include</code>指令中出现了一个错误，你会从预处理器处得到一个错误：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>hello.c:1:20: fatal error: stdioo.h: No such file or directory</span></span>
+<span class="line"><span>compilation terminated.</span></span></code></pre>
+<p>如果有语法错误，你会从编译器处得到一个错误：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>hello.c: In function 'main':</span></span>
+<span class="line"><span>hello.c:6:1: error: expected ';' before '}' token</span></span></code></pre>
+<p>如果你使用了没有在任何标准库中定义的函数，你会从链接器处得到一个错误：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/tmp/cc7iAUbN.o: In function `main':</span></span>
+<span class="line"><span>hello.c:(.text+0xf): undefined reference to `printff'</span></span>
+<span class="line"><span>collect2: error: ld returned 1 exit status</span></span></code></pre>
+<p><code>ld</code>是UNIX链接器的名称，这样命名是因为“装载”（loading）是编译过程中的另一个步骤，它和链接关系密切。</p>
+<p>一旦程序运行起来，C会执行非常少的运行时检测，所以你会看到极少的运行时错误。如果你发生了除零错误，或者执行了其它非法的浮点操作，你会得到“浮点数异常”。而且，如果你尝试读写内存的不正确位置，你会得到“段错误”。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/439b4e5b6e4f/002-ch0/">← 第零章 前言</a></span> <span><a href="/free-programming-books-zh_CN/read/439b4e5b6e4f/004-ch2/">第二章 进程 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

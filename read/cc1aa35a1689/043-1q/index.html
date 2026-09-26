@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 调试 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 调试 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 调试 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="调试">调试<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<p><a href="https://linux-kernel-labs-zh.github.io/lectures/debugging-slides.html">查看幻灯片</a></p>
+<h2 id="课程目标">课程目标：<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>调试是 Linux 内核开发的一个重要部分。在用户空间中，我们可以依靠内核的支持，轻松地停止进程并使用 gdb 来检查它们的行为。在内核中，为了使用 gdb，我们需要使用像 QEMU 或基于 JTAG 的硬件接口这样的虚拟化程序，然而这些并不总是可用的。Linux 内核提供了一组有用的工具和调试选项，用于调查异常行为。</p>
+<p>在本课程中，我们将学习以下内容：</p>
+<ul>
+<li>解码 oops/panic</li>
+<li>列表调试</li>
+<li>内存调试</li>
+<li>锁调试</li>
+<li>性能分析</li>
+</ul>
+<h2 id="解码-oopspanic">解码 oops/panic<a href="#oops-panic" title="永久链接至标题">¶</a></h2>
+<p>oops 是内核在自身内部检测到的一种不一致状态。在检测到 oops后，Linux 内核会终止有问题的进程，打印可以帮助调试问题的信息，并继续执行，但可靠性有限。</p>
+<p>让我们考虑以下 Linux 内核模块：</p>
+<p>static noinline void do_oops(void)
+{
+*(int*)0x42 = ‘a’;
+}</p>
+<p>static int so2_oops_init(void)
+{
+pr_info(“oops_init\n”);
+do_oops();</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>static void so2_oops_exit(void)
+{
+pr_info(“oops exit\n”);
+}</p>
+<p>module_init(so2_oops_init);
+module_exit(so2_oops_exit);</p>
+<p>请注意，”do_oops” 函数试图写入一个无效的内存地址。因为内核无法找到合适的物理页面来进行写操作，它会终止在 ”do_oops” 运行上下文中的 insmod 任务。然后，它会打印以下 oops 消息：</p>
+<blockquote>
+<p>root@qemux86:~/skels/debugging/oops# insmod oops.ko
+BUG: unable to handle kernel NULL pointer dereference at 00000042
+IP: do_oops+0x8/0x10 [oops]
+*pde = 00000000
+Oops: 0002 [#1] SMP
+Modules linked in: oops(O+)
+CPU: 0 PID: 234 Comm: insmod Tainted: G           O     4.15.0+ #3
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+EIP: do_oops+0x8/0x10 [oops]
+EFLAGS: 00000292 CPU: 0
+EAX: 00000061 EBX: 00000000 ECX: c7ed3584 EDX: c7ece8dc
+ESI: c716c908 EDI: c8816010 EBP: c7257df0 ESP: c7257df0
+DS: 007b ES: 007b FS: 00d8 GS: 0033 SS: 0068
+CR0: 80050033 CR2: 00000042 CR3: 0785f000 CR4: 00000690
+Call Trace:
+so2_oops_init+0x17/0x20 [oops]
+do_one_initcall+0x37/0x170
+? cache_alloc_debugcheck_after.isra.19+0x15f/0x2f0
+? __might_sleep+0x32/0x90
+? trace_hardirqs_on_caller+0x11c/0x1a0
+? do_init_module+0x17/0x1c2
+? kmem_cache_alloc+0xa4/0x1e0
+? do_init_module+0x17/0x1c2
+do_init_module+0x46/0x1c2
+load_module+0x1f45/0x2380
+SyS_init_module+0xe5/0x100
+do_int80_syscall_32+0x61/0x190
+entry_INT80_32+0x2f/0x2f
+EIP: 0x44902cc2
+EFLAGS: 00000206 CPU: 0
+EAX: ffffffda EBX: 08afb050 ECX: 0000eef4 EDX: 08afb008
+ESI: 00000000 EDI: bf914dbc EBP: 00000000 ESP: bf914c1c
+DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 007b
+Code: <a3> 42 00 00 00 5d c3 90 55 89 e5 83 ec 04 c7 04 24 24 70 81 c8 e8
+EIP: do_oops+0x8/0x10 [oops] SS:ESP: 0068:c7257df0
+CR2: 0000000000000042
+---[ end trace 011848be72f8bb42 ]---
+Killed</a3></p>
+</blockquote>
+<p>oops 包含有关导致故障的 IP、寄存器状态、进程和发生故障的 CPU 的信息，如下所示：</p>
+<p>root@qemux86:~/skels/debugging/oops# insmod oops.ko
+BUG: unable to handle kernel NULL pointer dereference at 00000042
+IP: do_oops+0x8/0x10 [oops]
+*pde = 00000000
+Oops: 0002 [#1] SMP
+Modules linked in: oops(O+)
+CPU: 0 PID: 234 Comm: insmod Tainted: G           O     4.15.0+ #3
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+EIP: do_oops+0x8/0x10 [oops]
+CR0: 80050033 CR2: 00000042 CR3: 0785f000 CR4: 00000690
+EIP: 0x44902cc2
+EFLAGS: 00000206 CPU: 0
+EAX: ffffffda EBX: 08afb050 ECX: 0000eef4 EDX: 08afb008
+ESI: 00000000 EDI: bf914dbc EBP: 00000000 ESP: bf914c1c
+DS: 007b ES: 007b FS: 0000 GS: 0033 SS: 007b
+Code: <a3> 42 00 00 00 5d c3 90 55 89 e5 83 ec 04 c7 04 24 24 70 81 c8 e8
+Killed</a3></p>
+<p>oops 还可以提供故障发生前调用的函数的堆栈跟踪信息：</p>
+<p>root@qemux86:~/skels/debugging/oops# insmod oops.ko
+BUG: unable to handle kernel NULL pointer dereference at 00000042
+Call Trace:
+so2_oops_init+0x17/0x20 [oops]
+do_one_initcall+0x37/0x170
+? cache_alloc_debugcheck_after.isra.19+0x15f/0x2f0
+? __might_sleep+0x32/0x90
+? trace_hardirqs_on_caller+0x11c/0x1a0
+? do_init_module+0x17/0x1c2
+? kmem_cache_alloc+0xa4/0x1e0
+? do_init_module+0x17/0x1c2
+do_init_module+0x46/0x1c2
+load_module+0x1f45/0x2380
+SyS_init_module+0xe5/0x100
+do_int80_syscall_32+0x61/0x190
+entry_INT80_32+0x2f/0x2f
+Killed</p>
+<h3 id="解码-oops">解码 oops<a href="#oops" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>CONFIG_DEBUG_INFO</li>
+<li>addr2line</li>
+<li>gdb</li>
+<li>objdump -dSr</li>
+</ul>
+<h3 id="addr2line">addr2line<a href="#addr2line" title="永久链接至标题">¶</a></h3>
+<p><em>addr2line</em> 将地址转换为文件名和行号。给定一个可执行文件中的地址，它使用调试信息来确定与之关联的文件名和行号。</p>
+<p>模块在动态地址上加载，但是它们从 0 开始编译作为基地址。因此，为了找到给定动态地址的行号，我们需要知道模块的加载地址。</p>
+<p>$ addr2line -e oops.o  0x08
+$ skels/debugging/oops/oops.c:5
+$ # 0x08 是 oops.ko 模块中有问题的指令的偏移量</p>
+<h3 id="objdump">objdump<a href="#objdump" title="永久链接至标题">¶</a></h3>
+<p>类似地，我们可以使用 objdump 确定有问题的行：</p>
+<p>$ cat /proc/modules
+oops 20480 1 - Loading 0xc8816000 (O+)</p>
+<p>$ objdump -dS —adjust-vma=0xc8816000 oops.ko
+c8816000:       b8 61 00 00 00          mov    $0x61,%eax</p>
+<p>static noinline void do_oops(void)
+{
+c8816005:       55                      push   %ebp
+c8816006:       89 e5                   mov    %esp,%ebp
+*(int*)0x42 = ‘a’;
+c8816008:       a3 42 00 00 00          mov    %eax,0x42</p>
+<h3 id="gdb">gdb<a href="#gdb" title="永久链接至标题">¶</a></h3>
+<p>$ gdb ./vmlinux</p>
+<p>(gdb) list *(do_panic+0x8)
+0xc1244138 is in do_panic (lib/test_panic.c:8).
+3
+4 static struct timer_list panic_timer;
+5
+6 static void do_panic(struct timer_list *unused)
+7 {
+8         *(int*)0x42 = ‘a’;
+9 }
+10
+11        static int so2_panic_init(void)</p>
+<h3 id="内核崩溃">内核崩溃<a href="#section-3" title="永久链接至标题">¶</a></h3>
+<p>内核崩溃（kernel panic）是一种特殊类型的 oops，其中内核无法继续执行。例如，如果上述的 do_oops 函数是在中断上下文中调用的，内核将不知道如何终止它，并决定最好的方式是崩溃内核并停止执行。</p>
+<p>以下是一个会导致内核崩溃的示例代码：</p>
+<p>static struct timer_list panic_timer;</p>
+<p>static void do_panic(struct timer_list *unused)
+{
+*(int*)0x42 = ‘a’;
+}</p>
+<p>static int so2_panic_init(void)
+{
+pr_info(“panic_init\n”);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>timer\_setup(&#x26;panic\_timer,  do\_panic, 0);</span></span>
+<span class="line"><span>mod\_timer(&#x26;panic\_timer, jiffies + 2 \* HZ);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>加载该模块将生成以下内核崩溃消息：</p>
+<p>root@qemux86:<del>/skels/debugging/panic# insmod panic.ko
+panic: loading out-of-tree module taints kernel.
+panic_init
+root@qemux86:</del>/skels/debugging/panic# BUG: unable to handle kernel NULL pointer dereference at 00000042
+IP: do_panic+0x8/0x10 [panic]
+*pde = 00000000
+Oops: 0002 [#1] SMP
+Modules linked in: panic(O)
+CPU: 0 PID: 0 Comm: swapper/0 Tainted: G           O     4.15.0+ #19
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Ubuntu-1.8.2-1ubuntu1 04/01/2014
+EIP: do_panic+0x8/0x10 [panic]
+EFLAGS: 00010246 CPU: 0
+EAX: 00000061 EBX: 00000101 ECX: 000002d8 EDX: 00000000
+ESI: c8817000 EDI: c8819200 EBP: c780ff34 ESP: c780ff34
+DS: 007b ES: 007b FS: 00d8 GS: 0000 SS: 0068
+CR0: 80050033 CR2: 00000042 CR3: 0716b000 CR4: 00000690
+Call Trace:
+<softirq>
+call_timer_fn+0x63/0xf0
+? process_timeout+0x10/0x10
+run_timer_softirq+0x14f/0x170
+? 0xc8817000
+? trace_hardirqs_on_caller+0x9b/0x1a0
+__do_softirq+0xde/0x1f2
+? __irqentry_text_end+0x6/0x6
+do_softirq_own_stack+0x57/0x70
+</softirq>
+irq_exit+0x7d/0x90
+smp_apic_timer_interrupt+0x4f/0x90
+? trace_hardirqs_off_thunk+0xc/0x1d
+apic_timer_interrupt+0x3a/0x40
+EIP: default_idle+0xa/0x10
+EFLAGS: 00000246 CPU: 0
+EAX: c15c97c0 EBX: 00000000 ECX: 00000000 EDX: 00000001
+ESI: 00000000 EDI: 00000000 EBP: c15c3f48 ESP: c15c3f48
+DS: 007b ES: 007b FS: 00d8 GS: 0000 SS: 0068
+arch_cpu_idle+0x9/0x10
+default_idle_call+0x19/0x30
+do_idle+0x105/0x180
+cpu_startup_entry+0x25/0x30
+rest_init+0x1e3/0x1f0
+start_kernel+0x305/0x30a
+i386_start_kernel+0x95/0x99
+startup_32_smp+0x15f/0x164
+Code: <a3> 42 00 00 00 5d c3 90 55 89 e5 83 ec 08 c7 04 24 24 80 81 c8 e8
+EIP: do_panic+0x8/0x10 [panic] SS:ESP: 0068:c780ff34
+CR2: 0000000000000042
+---[ end trace 77f49f83f2e42f91 ]---
+Kernel panic - not syncing: Fatal exception in interrupt
+Kernel Offset: disabled
+---[ end Kernel panic - not syncing: Fatal exception in interrupt</a3></p>
+<h2 id="列表调试">列表调试<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>为了捕获对未初始化元素的访问，内核使用毒药魔法值。</p>
+<p>static inline void list_del(struct list_head *entry)
+{
+__list_del(entry->prev, entry->next);
+entry->next = (struct list_head*)LIST_POISON1;
+entry->prev = (struct list_head*)LIST_POISON2;
+}</p>
+<p>BUG: unable to handle kernel NULL pointer dereference at 00000100
+IP: crush+0x80/0xb0 [list]</p>
+<h2 id="内存调试">内存调试<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<p>有多种用于内存调试的工具:</p>
+<ul>
+<li>SLAB/SLUB 调试</li>
+<li>KASAN</li>
+<li>kmemcheck</li>
+<li>DEBUG_PAGEALLOC</li>
+</ul>
+<h3 id="slab-调试">SLAB 调试<a href="#slab" title="永久链接至标题">¶</a></h3>
+<p>SLAB 调试使用内存毒药技术来检测 SLAB/SUB 分配器中的多种内存错误。</p>
+<p>分配的缓冲区使用填充了特殊标记的内存进行保护。当对缓冲区进行其他内存管理操作时（例如，释放缓冲区时），稍后会检测到对缓冲区的任何相邻写操作。</p>
+<p>在缓冲区分配时，缓冲区还被填充了一个特殊值，以便在初始化之前检测到对缓冲区的访问（例如，如果缓冲区保存指针）。该值不太可能是有效地址，以在访问时触发内核错误。</p>
+<p>在释放缓冲区时，也使用类似的技术：缓冲区被填充了另一个特殊值，如果在内存释放后仍然访问指针，则会触发内核错误。在这种情况下，分配器在下次分配缓冲区时还会检查缓冲区是否被修改。</p>
+<p>下图概述了 SLAB/SLUB 毒药技术的工作方式:</p>
+<ul>
+<li>CONFIG_DEBUG_SLAB</li>
+<li>基于毒药的内存调试器</li>
+</ul>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/ditaa-5e6f93e563d6e94c14fe3d483f988e0579b05b38.png" alt="../_images/ditaa-5e6f93e563d6e94c14fe3d483f988e0579b05b38.png"></p>
+<p>使用前未初始化错误的示例：</p>
+<p>BUG: unable to handle kernel paging request at 5a5a5a5a
+IP: [<c1225063>] __list_del_entry+0x37/0x71
+…
+Call Trace:
+[<c12250a8>] list_del+0xb/0x1b
+[<f1de81a2>] use_before_init+0x31/0x38 [crusher]
+[<f1de8265>] crush_it+0x38/0xa9 [crusher]
+[<f1de82de>] init_module+0x8/0xa [crusher]
+[<c1001072>] do_one_initcall+0x72/0x119
+[<f1de82d6>] ? crush_it+0xa9/0xa9 [crusher]
+[<c106b8ae>] sys_init_module+0xc8d/0xe77
+[<c14d7d18>] syscall_call+0x7/0xb</c14d7d18></c106b8ae></f1de82d6></c1001072></f1de82de></f1de8265></f1de81a2></c12250a8></c1225063></p>
+<p>noinline void use_before_init(void)
+{
+struct list_m *m = kmalloc(sizeof(*m), GFP_KERNEL);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span> printk("%s\\n", \_\_func\_\_);</span></span>
+<span class="line"><span> list\_del(&#x26;m\->lh);</span></span></code></pre>
+<p>}</p>
+<p>释放后使用错误示例：</p>
+<p>BUG: unable to handle kernel paging request at 6b6b6b6b
+IP: [<c1225063>] __list_del_entry+0x37/0x71
+…
+Call Trace:
+[<c12250a8>] list_del+0xb/0x1b
+[<f4c6816a>] use_after_free+0x38/0x3f [crusher]
+[<f4c6827f>] crush_it+0x52/0xa9 [crusher]
+[<f4c682de>] init_module+0x8/0xa [crusher]
+[<c1001072>] do_one_initcall+0x72/0x119
+[<f4c682d6>] ? crush_it+0xa9/0xa9 [crusher]
+[<c106b8ae>] sys_init_module+0xc8d/0xe77
+[<c14d7d18>] syscall_call+0x7/0xb</c14d7d18></c106b8ae></f4c682d6></c1001072></f4c682de></f4c6827f></f4c6816a></c12250a8></c1225063></p>
+<p>noinline void use_after_free(void)
+{
+struct list_m *m = kmalloc(sizeof(*m), GFP_KERNEL);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>printk("%s\\n", \_\_func\_\_);</span></span>
+<span class="line"><span>kfree(m);</span></span>
+<span class="line"><span>list\_del(&#x26;m\->lh);</span></span></code></pre>
+<p>}</p>
+<p>另一个释放后使用错误的示例如下所示。请注意，这次错误在下次分配时被检测到。</p>
+<p># insmod /system/lib/modules/crusher.ko test=use_before_init
+Slab corruption: size-4096 start=ed612000, len=4096
+000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6b 6b</p>
+<p>noinline void use_after_free2(void)
+{
+char *b = kmalloc(3000, GFP_KERNEL);
+kfree(b);
+memset(b, 0, 30);
+b = kmalloc(3000, GFP_KERNEL);
+kfree(b);
+}</p>
+<p>最后，这是一个缓冲区溢出错误的例子：</p>
+<p>slab error in verify_redzone_free(): cache `dummy’: memory outside object was overwritten
+Pid: 1282, comm: insmod Not tainted 3.0.16-mid10-00007-ga4a6b62-dirty #70
+Call Trace:
+[<c10cc1de>] __slab_error+0x17/0x1c
+[<c10cc7ca>] __cache_free+0x12c/0x317
+[<c10ccaba>] kmem_cache_free+0x2b/0xaf
+[<f27f1138>] buffer_overflow+0x4c/0x57 [crusher]
+[<f27f12aa>] crush_it+0x6c/0xa9 [crusher]
+[<f27f12ef>] init_module+0x8/0xd [crusher]
+[<c1001072>] do_one_initcall+0x72/0x119
+[<c106b8ae>] sys_init_module+0xc8d/0xe77
+[<c14d7d18>] syscall_call+0x7/0xb
+eb002bf8: redzone 1:0xd84156c5635688c0, redzone 2:0x0</c14d7d18></c106b8ae></c1001072></f27f12ef></f27f12aa></f27f1138></c10ccaba></c10cc7ca></c10cc1de></p>
+<p>noinline void buffer_overflow(void)
+{
+struct kmem_cache *km = kmem_cache_create(“dummy”, 3000, 0, 0, NULL);
+char *b = kmem_cache_alloc(km, GFP_KERNEL);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>printk("%s\\n", \_\_func\_\_);</span></span>
+<span class="line"><span>memset(b, 0, 3016);</span></span>
+<span class="line"><span>kmem\_cache\_free(km, b);</span></span></code></pre>
+<p>}</p>
+<h3 id="debug_pagealloc">DEBUG_PAGEALLOC<a href="#debug-pagealloc" title="永久链接至标题">¶</a></h3>
+<ul>
+<li>在页面级别上工作的内存调试器</li>
+<li>通过以下方式检测无效访问：
+<ul>
+<li>使用毒药字节模式填充页面，并在重新分配时检查模式</li>
+<li>从内核空间取消映射已释放的页面（仅适用于少数体系结构）</li>
+</ul>
+</li>
+</ul>
+<h3 id="kasan">KASan<a href="#kasan" title="永久链接至标题">¶</a></h3>
+<p>KASan 是一种动态内存错误检测器，旨在查找“释放后使用”和“越界访问”错误。</p>
+<p>KASAN 的主要思想是使用阴影内存记录每个字节的内存是否可以安全访问，并使用编译器的插桩在每次内存访问时检查阴影内存。</p>
+<p>地址污点分析器使用 1 字节的阴影内存来跟踪 8 字节的内核地址空间。它使用 0-7 来编码八字节区域开头连续有效字节的数量。</p>
+<p>有关更多信息，请参阅 内核地址污点分析器（KASAN），并查看 lib/test_kasan.c 以了解 KASan 可以检测到的问题示例。</p>
+<ul>
+<li>动态内存错误检测器</li>
+<li>查找“释放后使用”或越界访问错误</li>
+<li>使用阴影内存跟踪内存操作</li>
+<li>lib/test_kasan.c</li>
+</ul>
+<h4 id="kasan-vs-debug_pagealloc">KASan vs DEBUG_PAGEALLOC<a href="#kasan-vs-debug-pagealloc" title="永久链接至标题">¶</a></h4>
+<p>KASan 比 DEBUG_PAGEALLOC 慢，但 KASan 可以在子页面粒度级别上工作，因此能够发现更多的错误。</p>
+<h4 id="kasan-vs-slub_debug">KASan vs SLUB_DEBUG<a href="#kasan-vs-slub-debug" title="永久链接至标题">¶</a></h4>
+<ul>
+<li>SLUB_DEBUG 的开销较低。</li>
+<li>SLUB_DEBUG 在大多数情况下无法检测到错误的读取，而 KASan 可以同时检测到读取和写入。</li>
+<li>在某些情况下（例如，红区覆盖），SLUB_DEBUG 仅在对象分配/释放时检测到错误。KASan 在临近错误发生前捕捉错误，因此我们可以知道第一次错误读取/写入的确切位置。</li>
+</ul>
+<h3 id="kmemleak">Kmemleak<a href="#kmemleak" title="永久链接至标题">¶</a></h3>
+<p>Kmemleak 提供了一种检测内核内存泄漏的方法，该方法类似于跟踪垃圾收集器。由于在 C 语言中无法跟踪指针，kmemleak 扫描内核堆栈以及动态和静态内核内存，查找指向分配缓冲区的指针。如果没有指向缓冲区的指针，则认为该缓冲区泄漏。以下是使用 kmemleak 的基本步骤，了解更多信息请参阅 内核内存泄漏检测器。</p>
+<ul>
+<li>启用内核配置: CONFIG_DEBUG_KMEMLEAK</li>
+<li>设置: mount -t debugfs nodev /sys/kernel/debug</li>
+<li>触发内存扫描: echo scan > /sys/kernel/debug/kmemleak</li>
+<li>显示内存泄漏: cat /sys/kernel/debug/kmemleak</li>
+<li>清除所有可能的泄漏: echo clear > /sys/kernel/debug/kmemleak</li>
+</ul>
+<p>作为示例，让我们看一下以下简单模块:</p>
+<p>static int leak_init(void)
+{
+pr_info(“%s\n”, __func__);</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>(void)kmalloc(16, GFP\_KERNEL);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return 0;</span></span></code></pre>
+<p>}</p>
+<p>MODULE_LICENSE(“GPL v2”);
+module_init(leak_init);</p>
+<p>加载模块并触发 kmemleak 扫描将生成以下报告:</p>
+<p>root@qemux86:<del># insmod skels/debugging/leak/leak.ko
+leak: loading out-of-tree module taints kernel.
+leak_init
+root@qemux86:</del># echo scan > /sys/kernel/debug/kmemleak
+root@qemux86:<del># echo scan > /sys/kernel/debug/kmemleak
+kmemleak: 1 new suspected memory leaks (see /sys/kernel/debug/kmemleak)
+root@qemux86:</del># cat /sys/kernel/debug/kmemleak
+unreferenced object 0xd7871500 (size 32):
+comm “insmod”, pid 237, jiffies 4294902108 (age 24.628s)
+hex dump (first 32 bytes):
+5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZ
+5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a a5  ZZZZZZZZZZZZZZZ.
+backtrace:
+[&#x3C;(ptrval)>] kmem_cache_alloc_trace+0x163/0x310
+[&#x3C;(ptrval)>] leak_init+0x2f/0x1000 [leak]
+[&#x3C;(ptrval)>] do_one_initcall+0x57/0x2e0
+[&#x3C;(ptrval)>] do_init_module+0x4b/0x1be
+[&#x3C;(ptrval)>] load_module+0x201a/0x2590
+[&#x3C;(ptrval)>] sys_init_module+0xfd/0x120
+[&#x3C;(ptrval)>] do_int80_syscall_32+0x6a/0x1a0</p>
+<p>注解</p>
+<p>请注意，我们无需卸载模块就能检测到内存泄漏，因为 kmemleak 会检测到分配的缓冲区不再可达。</p>
+<h2 id="lockdep-检查器">Lockdep 检查器<a href="#lockdep" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>CONFIG_DEBUG_LOCKDEP</li>
+<li>检测锁反转、循环依赖、锁的错误使用（包括中断上下文）</li>
+<li>维护锁类之间的依赖关系，而不是个别锁</li>
+<li>每个场景只检查一次并进行哈希处理</li>
+</ul>
+<p>让我们用以下运行两个内核线程的内核模块为例：</p>
+<p>static noinline int thread_a(void *unused)
+{
+mutex_lock(&#x26;a); pr_info(“%s acquired A\n”, __func__);
+mutex_lock(&#x26;b); pr_info(“%s acquired B\n”, __func__);</p>
+<p>mutex_unlock(&#x26;b);
+mutex_unlock(&#x26;a);</p>
+<p>return 0;
+}</p>
+<p>static noinline int thread_b(void *unused)
+{
+mutex_lock(&#x26;b); pr_info(“%s acquired B\n”, __func__);
+mutex_lock(&#x26;a); pr_info(“%s acquired A\n”, __func__);</p>
+<p>mutex_unlock(&#x26;a);
+mutex_unlock(&#x26;b);</p>
+<p>return 0;
+}</p>
+<p>加载此模块并启用 lockdep 检查器将生成以下内核日志：</p>
+<p>thread_a acquired A
+thread_a acquired B
+thread_b acquired B</p>
+<h2 id="warning-possible-circular-locking-dependency-detected4190-4-tainted-g-----------o">======================================================
+WARNING: possible circular locking dependency detected
+4.19.0+ #4 Tainted: G           O</h2>
+<p>thread_b/238 is trying to acquire lock:
+(ptrval) (a){+.+.}, at: thread_b+0x48/0x90 [locking]</p>
+<p>but task is already holding lock:
+(ptrval) (b){+.+.}, at: thread_b+0x27/0x90 [locking]</p>
+<p>which lock already depends on the new lock.</p>
+<p>正如你所看到的，尽管死锁条件没有触发（因为线程 A 在线程 B 开始执行之前未完成执行），但 lockdep 检查器识别出了潜在的死锁情况。</p>
+<p>Lockdep 检查器将提供更多信息，以帮助确定是什么导致了死锁，例如依赖链：</p>
+<p>the existing dependency chain (in reverse order) is:</p>
+<p>-> #1 (b){+.+.}:
+__mutex_lock+0x60/0x830
+mutex_lock_nested+0x20/0x30
+thread_a+0x48/0x90 [locking]
+kthread+0xeb/0x100
+ret_from_fork+0x2e/0x38</p>
+<p>-> #0 (a){+.+.}:
+lock_acquire+0x93/0x190
+__mutex_lock+0x60/0x830
+mutex_lock_nested+0x20/0x30
+thread_b+0x48/0x90 [locking]
+kthread+0xeb/0x100
+ret_from_fork+0x2e/0x38</p>
+<p>甚至还有一种不安全的加锁场景：</p>
+<p>其他可能帮助我们调试的信息：</p>
+<p>可能的不安全加锁场景：</p>
+<p>CPU0                    CPU1</p>
+<hr>
+<p>lock(b);
+lock(a);
+lock(b);
+lock(a);</p>
+<p>*** 死锁 ***</p>
+<p>Lockdep 检查器检测到的另一个不安全加锁问题的示例是来自中断上下文的不安全加锁。让我们考虑以下内核模块：</p>
+<p>static DEFINE_SPINLOCK(lock);</p>
+<p>static void timerfn(struct timer_list *unused)
+{
+pr_info(“%s acquiring lock\n”, __func__);
+spin_lock(&#x26;lock);   pr_info(“%s acquired lock\n”, __func__);
+spin_unlock(&#x26;lock); pr_info(“%s released lock\n”, __func__);
+}</p>
+<p>static DEFINE_TIMER(timer, timerfn);</p>
+<p>int init_module(void)
+{
+mod_timer(&#x26;timer, jiffies);</p>
+<p>pr_info(“%s acquiring lock\n”, __func__);
+spin_lock(&#x26;lock);   pr_info(“%s acquired lock\n”, __func__);
+spin_unlock(&#x26;lock); pr_info(“%s released lock\n”, __func__);
+return 0;
+}</p>
+<p>与前一个案例类似，加载该模块将触发 lockdep 警告：</p>
+<p>init_module acquiring lock
+init_module acquired lock
+init_module released lock
+timerfn acquiring lock</p>
+<h2 id="warning-inconsistent-lock-state4190-4-tainted-g-----------o">================================
+WARNING: inconsistent lock state
+4.19.0+ #4 Tainted: G           O</h2>
+<p>inconsistent {SOFTIRQ-ON-W} -> {IN-SOFTIRQ-W} usage.
+ksoftirqd/0/9 [HC0[0]:SC1[1]:HE1:SE0] takes:
+(ptrval) (lock#4){+.?.}, at: timerfn+0x25/0x60 [locking2]
+{SOFTIRQ-ON-W} state was registered at:
+lock_acquire+0x93/0x190
+_raw_spin_lock+0x39/0x50
+init_module+0x35/0x70 [locking2]
+do_one_initcall+0x57/0x2e0
+do_init_module+0x4b/0x1be
+load_module+0x201a/0x2590
+sys_init_module+0xfd/0x120
+do_int80_syscall_32+0x6a/0x1a0
+restore_all+0x0/0x8d</p>
+<p>该警告还将提供额外的信息和一个潜在的不安全加锁场景：</p>
+<p>可能的不安全加锁场景：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>   CPU0</span></span>
+<span class="line"><span>   ----</span></span>
+<span class="line"><span>   lock(lock#4);</span></span>
+<span class="line"><span>   &#x3C;Interrupt></span></span>
+<span class="line"><span>   lock(lock#4);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>   \*\*\* DEADLOCK \*\*\*</span></span></code></pre>
+<p>1 lock held by ksoftirqd/0/9:
+#0: (ptrval) (/home/tavi/src/linux/tools/labs/skels/./debugging/locking2/locking2.c:13){+.-.}, at: call_timer_f0
+stack backtrace:
+CPU: 0 PID: 9 Comm: ksoftirqd/0 Tainted: G           O      4.19.0+ #4
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.10.2-1ubuntu1 04/01/2014
+Call Trace:
+dump_stack+0x66/0x96
+print_usage_bug.part.26+0x1ee/0x200
+mark_lock+0x5ea/0x640
+__lock_acquire+0x4b4/0x17a0
+lock_acquire+0x93/0x190
+_raw_spin_lock+0x39/0x50
+timerfn+0x25/0x60 [locking2]</p>
+<h2 id="perf">perf<a href="#perf" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>性能计数器，跟踪点，kprobes，uprobes</li>
+<li>硬件事件: CPU 周期，TLB 缺失，缓存缺失</li>
+<li>软件事件: 页面错误，上下文切换</li>
+<li>收集回溯信息（用户空间 + 内核空间）</li>
+</ul>
+<h2 id="其他工具">其他工具<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>ftrace</li>
+<li>kprobes</li>
+<li>sparse</li>
+<li>coccinelle</li>
+<li>checkpatch.pl</li>
+<li>printk</li>
+<li>dump_stack()</li>
+</ul> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">← 文件系统管理 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 实验 05——延迟工作 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 实验 05——延迟工作 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 实验 05——延迟工作 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>理解延迟工作（即在稍后时间执行的代码）</li>
+<li>实现使用延迟工作的常见任务</li>
+<li>理解延迟工作的同步特性</li>
+</ul>
+<p>关键词：softirq、tasklet、struct tasklet_struct、下半部处理程序、jiffies、HZ、timer、struct timer_list、spin_lock_bh、spin_unlock_bh、workqueue、struct work_struct、内核线程、events/x</p>
+<h2 id="背景信息">背景信息<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>延迟工作是一类内核功能，允许我们安排代码在稍后的时间执行。这些安排的代码可以在进程上下文或中断上下文中运行，具体取决于延迟工作的类型。延迟工作用于补充中断处理程序的功能，因为中断具有重要的要求和限制：</p>
+<ul>
+<li>中断处理程序的执行时间必须尽可能短</li>
+<li>在中断上下文中，我们不能使用阻塞调用</li>
+</ul>
+<p>使用延迟工作，我们可以在中断处理程序中执行最小所需的工作，并安排一个异步操作在稍后的时间运行，以执行其余的操作。</p>
+<p>在中断上下文中运行的延迟工作也称为下半部（bottom-half），因为其目的是执行中断处理程序（top-half）之外所剩余的操作。</p>
+<p>定时器（timer）是另一种类型的延迟工作，用于调度在经过一定时间后未来操作的执行。</p>
+<p>内核线程本身并不是延迟工作，但可以用来补充延迟工作机制。通常，内核线程用作处理包含阻塞调用的事件的“工作线程（workers）”。</p>
+<p>所有类型的延迟工作都使用三种典型的操作：</p>
+<ol>
+<li><strong>初始化</strong>。每种类型都由一个结构描述，其字段需要进行初始化。在此时还设置要调度的处理程序。</li>
+<li><strong>调度</strong>。尽快安排处理程序的执行（或在超时后）。</li>
+<li><strong>屏蔽</strong> 或 <strong>取消</strong>。禁用处理程序的执行。此操作可以是同步的（可保证在取消完成后不再运行处理程序）或异步的。</li>
+</ol>
+<p>注意</p>
+<p>在进行延迟工作的清理工作（例如释放与延迟工作相关的结构或从内核中删除模块及其处理程序代码），始终使用同步类型的延迟工作取消。</p>
+<p>主要的延迟工作类型包括内核线程和软中断（softirq）。工作队列是在内核线程之上实现的，而 tasklet 和定时器是在软中断之上实现的。下半部（bottom-half）处理程序是 Linux 中最早的延迟工作实现，但后来被软中断所取代。这就是某些函数名称中含有 <em>bh</em> 的原因（译注：bh 即 bottom-half 的首字母缩写）。</p>
+<h2 id="软中断softirqs">软中断（Softirqs）<a href="#softirqs" title="永久链接至标题">¶</a></h2>
+<p>设备驱动程序不能使用软中断，软中断专门为各种内核子系统保留。因此，在编译时定义的软中断的数量是固定的。针对当前内核版本，定义了以下类型：</p>
+<p>enum {
+HI_SOFTIRQ = 0,
+TIMER_SOFTIRQ,
+NET_TX_SOFTIRQ,
+NET_RX_SOFTIRQ,
+BLOCK_SOFTIRQ,
+IRQ_POLL_SOFTIRQ,
+TASKLET_SOFTIRQ,
+SCHED_SOFTIRQ,
+HRTIMER_SOFTIRQ,
+RCU_SOFTIRQ,
+NR_SOFTIRQS
+};</p>
+<p>每种类型都有特定的用途：</p>
+<ul>
+<li><em>HI_SOFTIRQ</em> 和 <em>TASKLET_SOFTIRQ</em> ——运行任务（tasklet）</li>
+<li><em>TIMER_SOFTIRQ</em> ——运行定时器</li>
+<li><em>NET_TX_SOFTIRQ</em> 和 <em>NET_RX_SOFTIRQ</em> ——由网络子系统使用</li>
+<li><em>BLOCK_SOFTIRQ</em> ——由 IO 子系统使用</li>
+<li><em>BLOCK_IOPOLL_SOFTIRQ</em> ——当调用 iopoll 处理程序时，由 IO 子系统使用以提高性能</li>
+<li><em>SCHED_SOFTIRQ</em> ——负载均衡</li>
+<li><em>HRTIMER_SOFTIRQ</em> ——高精度定时器的实现</li>
+<li><em>RCU_SOFTIRQ</em> ——RCU 类型机制的实现 <a href="#footnote-1">[1]</a></li>
+</ul>
+<table id="footnote-1"><colgroup><col><col></colgroup><tbody><tr><td><a href="#footnote-reference-1">[1]</a></td><td>RCU 是一种机制，用于按照两个步骤执行破坏性操作（例如从链表中删除元素）：（1）移除对已删除数据的引用（2）释放元素的内存。只有在确保没有人再使用该元素后，才执行第二个步骤。此机制的优点是可以无需同步地读取数据。有关更多信息，请参阅 Documentation/RCU/rcu.txt。</td></tr></tbody></table>
+<p><em>HI_SOFTIRQ</em> 类型的软中断优先级最高，其次是其他定义的软中断。<em>RCU_SOFTIRQ</em> 具有最低优先级。</p>
+<p>软中断在中断上下文中运行，这意味着它们不能调用阻塞函数。如果软中断处理程序需要调用此类函数，可以调度工作队列来执行这些阻塞调用。</p>
+<h3 id="tasklet">tasklet<a href="#tasklet" title="永久链接至标题">¶</a></h3>
+<p>与软中断类似，任务（tasklet）是一种在中断上下文中运行的延迟工作。任务（tasklet）与软中断之间的主要区别在于，任务（tasklet）可以动态分配，并且因此可以被设备驱动程序使用。任务（tasklet）由 <code>struct tasklet</code> 表示，与许多其他内核结构一样，需要在使用之前进行初始化。预初始化的任务（tasklet）可以以如下方式定义：</p>
+<p>void handler(unsigned long data);</p>
+<p>DECLARE_TASKLET(tasklet, handler, data);
+DECLARE_TASKLET_DISABLED(tasklet, handler, data);</p>
+<p>如果我们想手动初始化任务（tasklet），可以使用以下方法：</p>
+<p>void handler(unsigned long data);</p>
+<p>struct tasklet_struct tasklet;</p>
+<p>tasklet_init(&#x26;tasklet, handler, data);</p>
+<p>当执行任务（tasklet）时，<em>data</em> 参数将发送给处理程序。</p>
+<p>可以使用调度操作来安排任务（tasklet）的运行。任务（tasklet）是在软中断的基础上执行的。可以使用以下函数进行任务（tasklet）的调度：</p>
+<p>void tasklet_schedule(struct tasklet_struct *tasklet);</p>
+<p>void tasklet_hi_schedule(struct tasklet_struct *tasklet);</p>
+<p>使用 <em>tasklet_schedule</em> 函数，将调度一个 <em>TASKLET_SOFTIRQ</em> 软中断，并运行所有调度的任务（tasklet）。对于 <em>tasklet_hi_schedule</em> 函数，将调度一个 <em>HI_SOFTIRQ</em> 软中断。</p>
+<p>如果一个任务（tasklet）被多次调度，并且在多个调度之间这个任务（tasklet）没有运行，它将只运行一次。任务（tasklet）运行后，可以重新调度它，以便在稍后的时间再次运行。任务（tasklet）可以被其处理程序重新安排。</p>
+<p>任务（tasklet）可以被屏蔽，可以使用以下函数：</p>
+<p>void tasklet_enable(struct tasklet_struct *tasklet);
+void tasklet_disable(struct tasklet_struct *tasklet);</p>
+<p>请记住，由于任务（tasklet）是在软中断的基础上执行的，因此不能在处理程序函数中使用阻塞调用。</p>
+<h3 id="定时器timer">定时器（Timer）<a href="#timer" title="永久链接至标题">¶</a></h3>
+<p>定时器是一种特殊类型的延迟工作。它们由 <code>struct timer_list</code> 定义，并在中断上下文中运行，是基于软中断实现的。</p>
+<p>要使用定时器，首先必须调用 <code>timer_setup()</code> 函数进行初始化：</p>
+<p>#include &#x3C;linux/sched.h></p>
+<p>void timer_setup(struct timer_list *timer,
+void (*function)(struct timer_list *),
+unsigned int flags);</p>
+<p>上述函数初始化了结构体的内部字段，并将 <em>function</em> 关联为定时器处理程序。由于定时器是通过软中断计划的，因此在与处理函数相关的代码中不能使用阻塞调用。</p>
+<p>使用 <code>mod_timer()</code> 函数进行定时器的调度：</p>
+<p>int mod_timer(struct timer_list *timer, unsigned long expires);</p>
+<p>其中 <em>expires</em> 是要运行处理函数的时间（未来的时间）。该函数可用于调度或重新调度定时器。</p>
+<p>时间单位为 <em>jiffie</em>。一 jiffie 的绝对值取决于平台，并且可以使用 <code>HZ</code> 宏找到，该宏定义了 1 秒内的 jiffies 数。要在 jiffies (<em>jiffies_value</em>) 和秒 (<em>seconds_value</em>) 之间进行转换，使用以下公式：</p>
+<p>jiffies_value = seconds_value * HZ ;
+seconds_value = jiffies_value / HZ ;</p>
+<p>内核维护一个计数器，其中包含自上次引导（boot）以来的 jiffies 数，可以通过全局变量或宏 <code>jiffies</code> 访问。我们可以使用它来为定时器计算未来的时间：</p>
+<p>#include &#x3C;linux/jiffies.h></p>
+<p>unsigned long current_jiffies, next_jiffies;
+unsigned long seconds = 1;</p>
+<p>current_jiffies = jiffies;
+next_jiffies = jiffies + seconds * HZ;</p>
+<p>要停止定时器，请使用 <code>del_timer()</code> 和 <code>del_timer_sync()</code> 函数：</p>
+<p>int del_timer(struct timer_list *timer);
+int del_timer_sync(struct timer_list *timer);</p>
+<p>这些函数可以用于已调度的定时器和未计划的定时器。<code>del_timer_sync()</code> 用于消除在多处理器系统上可能出现的竞态条件，因为在调用结束时，可以保证定时器处理函数不会在任何处理器上运行。</p>
+<p>在使用定时器时，常见的错误是忘记关闭定时器。例如，在移除模块之前，我们必须停止定时器，因为如果定时器在模块被移除后过期，处理函数将不再加载到内核中，从而导致内核出错。</p>
+<p>通常用于初始化和调度一秒钟超时的代码是：</p>
+<p>#include &#x3C;linux/sched.h></p>
+<p>void timer_function(struct timer_list *);</p>
+<p>struct timer_list timer;
+unsigned long seconds = 1;</p>
+<p>timer_setup(&#x26;timer, timer_function, 0);
+mod_timer(&#x26;timer, jiffies + seconds * HZ);</p>
+<p>停止定时器的方法如下：</p>
+<p>del_timer_sync(&#x26;timer);</p>
+<h3 id="锁定locking">锁定（Locking）<a href="#locking" title="永久链接至标题">¶</a></h3>
+<p>为了在运行在进程上下文（A）的代码和运行在软中断上下文（B）的代码之间进行同步，我们需要使用特殊的锁原语。我们必须在（A）中使用自旋锁操作，并禁用底半部处理程序，在（B）中只使用基本的自旋锁操作。使用自旋锁可以确保在禁用软中断后，多个 CPU 之间不会发生竞争，而禁用软中断可以确保在已经获取自旋锁的 CPU 上调度软中断时不会发生死锁。</p>
+<p>我们可以使用 <code>local_bh_disable()</code> 和 <code>local_bh_enable()</code> 来禁用和启用软中断处理程序（并且由于定时器和任务（tasklet）在软中断之上运行，还包括它们）：</p>
+<p>void local_bh_disable(void);
+void local_bh_enable(void);</p>
+<p>允许嵌套调用，当所有的 local_bh_disable() 调用都有相应的 local_bh_enable() 调用时，才会实际重新启用软中断：</p>
+<p>/* 假设软中断已启用 */
+local_bh_disable();  /* 现在禁用了软中断 */
+local_bh_disable();  /* 软中断仍处于禁用状态 */</p>
+<p>local_bh_enable();  /* 软中断仍处于禁用状态 */
+local_bh_enable();  /* 现在启用了软中断 */</p>
+<p>注意</p>
+<p>上述调用只会在本地处理器上禁用软中断，通常不安全，必须与自旋锁配合使用。</p>
+<p>大多数情况下，设备驱动程序将使用用于同步的特殊版本的自旋锁调用，如 <code>spin_lock_bh()</code> 和 <code>spin_unlock_bh()</code>：</p>
+<p>void spin_lock_bh(spinlock_t *lock);
+void spin_unlock_bh(spinlock_t *lock);</p>
+<h2 id="工作队列">工作队列<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>工作队列（workqueue）用于在进程上下文中调度要执行的操作。它们所处理的基本单元称为工作项（work）。有两种类型的工作项：</p>
+<ul>
+<li><code>struct work_struct</code> ——它安排一个任务在稍后的时间运行</li>
+<li><code>struct delayed_work</code> ——它安排一个任务在至少给定的时间间隔之后运行</li>
+</ul>
+<p>延迟工作项使用定时器在指定的时间间隔后运行。这种类型的工作项的调用方式与 <code>struct work_struct</code> 类似，但在函数名称中有 <strong>_delayed</strong>。</p>
+<p>在使用工作项之前，必须对其进行初始化。有两种可以使用的宏类型，一种在同时声明和初始化工作项，另一种仅初始化工作项（声明必须单独进行）：</p>
+<p>#include &#x3C;linux/workqueue.h></p>
+<p>DECLARE_WORK(name , void (*function)(struct work_struct *));
+DECLARE_DELAYED_WORK(name, void(*function)(struct work_struct *));</p>
+<p>INIT_WORK(struct work_struct *work, void(*function)(struct work_struct *));
+INIT_DELAYED_WORK(struct delayed_work *work, void(*function)(struct work_struct *));</p>
+<p><code>DECLARE_WORK()</code> 和 <code>DECLARE_DELAYED_WORK()</code> 声明并初始化工作项，而 <code>INIT_WORK()</code> 和 <code>INIT_DELAYED_WORK()</code> 则初始化已经声明的工作项。</p>
+<p>以下代码声明并初始化工作项：</p>
+<p>#include &#x3C;linux/workqueue.h></p>
+<p>void my_work_handler(struct work_struct *work);</p>
+<p>DECLARE_WORK(my_work, my_work_handler);</p>
+<p>或者，如果我们想要单独初始化工作项：</p>
+<p>void my_work_handler(struct work_struct * work);</p>
+<p>struct work_struct my_work;</p>
+<p>INIT_WORK(&#x26;my_work, my_work_handler);</p>
+<p>一旦声明并初始化完成，我们就可以使用 <code>schedule_work()</code> 和 <code>schedule_delayed_work()</code> 来安排任务：</p>
+<p>schedule_work(struct work_struct *work);</p>
+<p>schedule_delayed_work(struct delayed_work *work, unsigned long delay);</p>
+<p><code>schedule_delayed_work()</code> 可以用于计划在给定延迟后执行工作项。延迟时间的单位是 jiffies。</p>
+<p>工作项无法被屏蔽，但可以通过调用 <code>cancel_delayed_work_sync()</code> 或 <code>cancel_work_sync()</code> 来取消它们：</p>
+<p>int cancel_work_sync(struct delayed_work *work);
+int cancel_delayed_work_sync(struct delayed_work *work);</p>
+<p>这些调用只会停止工作项的后续执行。如果在调用时工作项已经在运行，它将继续运行。无论如何，当这些调用返回时，可以确保该任务不再运行。</p>
+<p>注意</p>
+<p>尽管这些函数也有非同步版本（例如 <code>cancel_work()</code>），但在执行清理工作时不要使用它们，否则可能会出现竞态条件。</p>
+<p>我们可以通过调用 <code>flush_scheduled_work()</code> 来等待工作队列完成所有工作项的运行：</p>
+<p>void flush_scheduled_work(void);</p>
+<p>此函数是阻塞的，因此不能在中断上下文中使用。该函数将等待所有工作项完成。对于延迟工作项，在调用 <code>flush_scheduled_work()</code> 之前必须调用 <code>cancel_delayed_work</code>。</p>
+<p>最后，以下函数可用于在特定处理器上调度工作项 (<code>schedule_delayed_work_on()</code>)，或在所有处理器上调度工作项 (<code>schedule_on_each_cpu()</code>)：</p>
+<p>int schedule_delayed_work_on(int cpu, struct delayed_work *work, unsigned long delay);
+int schedule_on_each_cpu(void(*function)(struct work_struct *));</p>
+<p>初始化和调度工作项的常用代码如下：</p>
+<p>void my_work_handler(struct work_struct *work);</p>
+<p>struct work_struct my_work;</p>
+<p>INIT_WORK(&#x26;my_work, my_work_handler);</p>
+<p>schedule_work(&#x26;my_work);</p>
+<p>等待工作项终止的方法如下：</p>
+<p>flush_scheduled_work();</p>
+<p>正如你所见，<em>my_work_handler</em> 函数接收任务项作为参数。为了能够访问模块的私有数据，可以使用 <code>container_of()</code>：</p>
+<p>struct my_device_data {
+struct work_struct my_work;
+// …
+};</p>
+<p>void my_work_handler(struct work_struct *work)
+{
+struct my_device_data * my_data;</p>
+<p>my_data = container_of(work, struct my_device_data,  my_work);
+// …
+}</p>
+<p>使用上述函数调度工作项将在内核线程的上下文中运行处理程序，该线程称为 <em>events/x</em>，其中 x 是处理器编号。内核将为系统中每个处理器初始化一个内核线程（或工作池）：</p>
+<p>$ ps -e
+PID TTY TIME CMD
+1?  00:00:00 init
+2 ?  00:00:00 ksoftirqd / 0
+3 ?  00:00:00 events / 0 &#x3C;--- 运行工作项的内核线程
+4 ?  00:00:00 khelper
+5 ?  00:00:00 kthread
+7?  00:00:00 kblockd / 0
+8?  00:00:00 kacpid</p>
+<p>上述函数使用预定义的工作队列（称为 events），它们在 <em>events/x</em> 线程的上下文中运行，如上所述。尽管在大多数情况下这已经足够，但它是一个共享资源，在工作项处理程序中出现较长的延迟可能会导致其他队列使用者的延迟。因此，有一些函数用于创建额外的队列。</p>
+<p>工作队列由 <code>struct workqueue_struct</code> 表示。可以使用以下函数创建一个新的工作队列：</p>
+<p>struct workqueue_struct *create_workqueue(const char *name);
+struct workqueue_struct *create_singlethread_workqueue(const char *name);</p>
+<p><code>create_workqueue()</code> 为系统中的每个处理器使用一个线程，而 <code>create_singlethread_workqueue()</code> 则使用单个线程。</p>
+<p>要将任务添加到新队列中，请使用 <code>queue_work()</code> 或 <code>queue_delayed_work()</code>：</p>
+<p>int queue_work(struct workqueue_struct *queue, struct work_struct *work);</p>
+<p>int queue_delayed_work(struct workqueue_struct *queue,
+struct delayed_work *work, unsigned long delay);</p>
+<p><code>queue_delayed_work()</code> 可以用于计划延迟执行的工作项。延迟的时间单位是 jiffies。</p>
+<p>要等待所有工作项完成，请调用 <code>flush_workqueue()</code>：</p>
+<p>void flush_workqueue(struct workqueue_struct *queue);</p>
+<p>要销毁工作队列，请调用 <code>destroy_workqueue()</code>：</p>
+<p>void destroy_workqueue(struct workqueue_struct *queue);</p>
+<p>下面的示例代码声明并初始化一个额外的工作队列，声明并初始化一个工作项，并将其添加到队列中：</p>
+<p>void my_work_handler(struct work_struct *work);</p>
+<p>struct work_struct my_work;
+struct workqueue_struct *my_workqueue;</p>
+<p>my_workqueue = create_singlethread_workqueue(“my_workqueue”);
+INIT_WORK(&#x26;my_work, my_work_handler);</p>
+<p>queue_work(my_workqueue, &#x26;my_work);</p>
+<p>下面的代码示例显示了如何移除工作队列：</p>
+<p>flush_workqueue(my_workqueue);
+destroy_workqueue(my_workqueue);</p>
+<p>使用这些函数计划的工作项将在一个名为 <em>my_workqueue</em> 的新内核线程的上下文中运行，该名称是传递给 <code>create_singlethread_workqueue()</code> 函数的参数。</p>
+<h2 id="内核线程">内核线程<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>内核线程之所以出现，是为了在进程上下文中运行内核代码。内核线程是工作队列机制的基础。实质上，内核线程是一种只在内核态下运行，并且没有用户地址空间或其他用户属性的线程。</p>
+<p>要创建内核线程，请使用函数 <code>kthread_create()</code>：</p>
+<p>#include &#x3C;linux/kthread.h></p>
+<p>struct task_struct *kthread_create(int (*threadfn)(void *data),
+void *data, const char namefmt[], …);</p>
+<ul>
+<li><em>threadfn</em> 是将由内核线程运行的函数</li>
+<li><em>data</em> 是要传递给函数的参数</li>
+<li><em>namefmt</em> 表示内核线程的名称，如在 ps/top 中显示的那样；可以包含 %d、%s 等序列，它们将根据标准 printf 语法进行替换。</li>
+</ul>
+<p>例如，以下调用：</p>
+<p>kthread_create(f, NULL, “%skthread%d”, “my”, 0);</p>
+<p>将创建一个名为 mykthread0 的内核线程。</p>
+<p>使用此函数创建的内核线程将被停止（处于 <em>TASK_INTERRUPTIBLE</em> 状态）。要启动内核线程，请调用 <code>wake_up_process()</code>：</p>
+<p>#include &#x3C;linux/sched.h></p>
+<p>int wake_up_process(struct task_struct *p);</p>
+<p>或者，你可以使用 <code>kthread_run()</code> 来创建并运行内核线程：</p>
+<p>struct task_struct *kthread_run(int (*threadfn)(void *data),
+void *data, const char namefmt[], …);</p>
+<p>尽管在内核线程中运行的函数的编程限制更宽松，并且调度更接近用户空间的调度，但仍然有一些限制需要考虑。下面列出可以或不能从内核线程中执行的操作：</p>
+<ul>
+<li>不能访问用户地址空间（即使使用 copy_from_user、copy_to_user），因为内核线程没有用户地址空间</li>
+<li>不能实现长时间运行的忙等待代码；如果内核没有启用抢占选项，那么该代码将在不会被其他内核线程或用户进程抢占的情况下运行，从而占用系统资源</li>
+<li>可以调用阻塞操作</li>
+<li>可以使用自旋锁，但如果锁的保持时间很长，建议使用互斥锁（mutex）</li>
+</ul>
+<p>内核线程的终止是在内核线程中运行的函数自愿进行的，通过调用 <code>do_exit()</code>：</p>
+<p>fastcall NORET_TYPE void do_exit(long code);</p>
+<p>大多数内核线程处理程序的实现都使用相同的模型，建议开始使用相同的模型以避免常见错误：</p>
+<p>#include &#x3C;linux/kthread.h></p>
+<p>DECLARE_WAIT_QUEUE_HEAD(wq);</p>
+<p>// 列出内核线程要处理的事件
+struct list_head events_list;
+struct spin_lock events_lock;</p>
+<p>// 描述要处理的事件的结构体
+struct event {
+struct list_head lh;
+bool stop;
+// …
+};</p>
+<p>struct event* get_next_event(void)
+{
+struct event *e;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>spin\_lock(&#x26;events\_lock);</span></span>
+<span class="line"><span>e \= list\_first\_entry(&#x26;events\_list, struct event\*, lh);</span></span>
+<span class="line"><span>if (e)</span></span>
+<span class="line"><span>    list\_del(&#x26;e\->lh);</span></span>
+<span class="line"><span>spin\_unlock(&#x26;events\_lock);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return e;</span></span></code></pre>
+<p>}</p>
+<p>int my_thread_f(void *data)
+{
+struct event *e;</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>while (true) {</span></span>
+<span class="line"><span>    wait\_event(wq, (e \= get\_next\_event()));</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /\* 处理事件 \*/</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    if (e\->stop)</span></span>
+<span class="line"><span>        break;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>do\_exit(0);</span></span></code></pre>
+<p>}</p>
+<p>/* 启动并运行内核线程 */
+kthread_run(my_thread_f, NULL, “%skthread%d”, “my”, 0);</p>
+<p>使用上述模板，可以使用以下代码触发内核线程请求：</p>
+<p>void send_event(struct event *ev)
+{
+spin_lock(&#x26;events_lock);
+list_add(&#x26;ev->lh, &#x26;events_list);
+spin_unlock(&#x26;events_lock);
+wake_up(&#x26;wq);
+}</p>
+<h2 id="进一步阅读">进一步阅读<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><a href="http://lwn.net/images/pdf/LDD3/ch07.pdf">Linux 设备驱动程序（第 3 版），第 7 章：时间、延迟和延迟工作</a></li>
+<li><a href="http://tldp.org/LDP/lkmpg/2.6/html/x1211.html">调度任务</a></li>
+<li><a href="http://lwn.net/Articles/23634/">驱动程序移植：工作队列接口</a></li>
+<li><a href="http://lwn.net/Articles/211279/">工作队列重新工作</a></li>
+<li><a href="http://lwn.net/Articles/65178/">简化内核线程</a></li>
+<li><a href="http://www.kernel.org/pub/linux/kernel/people/rusty/kernel-locking/index.html">不可靠的锁指南</a></li>
+</ul>
+<h2 id="练习">练习<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 deferred_work。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/deferred_work/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-6">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<h3 id="0-简介">0. 简介<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p>使用 <a href="http://elixir.free-electrons.com/linux/latest/source">LXR</a>，找到以下符号的定义：</p>
+<ul>
+<li><code>jiffies</code></li>
+<li><code>struct timer_list</code></li>
+<li><code>spin_lock_bh function()</code></li>
+</ul>
+<h3 id="1-定时器">1. 定时器<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p>我们将创建一个简单的内核模块，在模块的内核加载后的第 <em>TIMER_TIMEOUT</em> 秒显示一条消息。</p>
+<p>生成名为 <strong>1-2-timer</strong> 的任务骨架，并按照标有 <strong>TODO 1</strong> 的部分来完成任务。</p>
+<p>提示</p>
+<p>使用 pr_info(…)。消息将显示在控制台上，并且还可以使用 dmesg 查看。在调度定时器时，我们需要使用系统的（未来）绝对时间并且以滴答数表示。系统的当前时间（以滴答数表示）由 <code>jiffies</code> 给出。因此，我们需要将 <code>jiffies + TIMER_TIMEOUT * HZ</code> 作为绝对时间传递给定时器。</p>
+<p>有关更多信息，请查阅 <a href="#timer">定时器（Timer）</a> 部分。</p>
+<h3 id="2-周期性定时器">2. 周期性定时器<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<p>修改前面的模块，使消息每隔 TIMER_TIMEOUT 秒显示一次。按照骨架中标有 <strong>TODO 2</strong> 的部分进行修改。</p>
+<h3 id="3-使用-ioctl-控制定时器">3. 使用 ioctl 控制定时器<a href="#ioctl" title="永久链接至标题">¶</a></h3>
+<p>我们计划在从用户空间接收到 ioctl 调用后的第 N 秒显示有关当前进程的信息。N 作为 ioctl 参数传递。</p>
+<p>生成名为 <strong>3-4-5-deferred</strong> 的任务骨架，并按照骨架中标有 <strong>TODO 1</strong> 的部分进行修改。</p>
+<p>你需要实现以下 ioctl 操作。</p>
+<ul>
+<li>MY_IOCTL_TIMER_SET：安排定时器在接收到的秒数之后运行，该秒数作为 ioctl 的参数。该定时器并不周期运行。 * 此命令直接接收一个值，而不是指针。</li>
+<li>MY_IOCTL_TIMER_CANCEL：停用定时器。</li>
+</ul>
+<p>注解</p>
+<p>请查阅 <a href="https://linux-kernel-labs-zh.github.io/so2/lab3-device-drivers.html#ioctl">ioctl</a> 了解如何访问 ioctl 参数。</p>
+<p>注解</p>
+<p>请查阅 <a href="#timer">定时器（Timer）</a> 部分，了解如何启用/禁用定时器。在定时器处理程序中，显示当前进程标识符（PID）和进程执行镜像名称。</p>
+<p>提示</p>
+<p>你可以使用当前进程的 <em>pid</em> 和 <em>comm</em> 字段来查找当前进程标识符。有关详细信息，请查阅 proc-info。</p>
+<p>提示</p>
+<p>要从用户空间使用设备驱动程序，你必须使用 mknod 程序创建设备字符文件 <em>/dev/deferred</em>。或者，你可以运行 <em>3-4-5-deferred/kernel/makenode</em> 脚本来执行此操作。</p>
+<p>通过调用用户空间的 ioctl 操作来启用和禁用定时器。使用 <em>3-4-5-deferred/user/test</em> 程序来测试定时器的计划和取消。该程序在命令行上接收 ioctl 类型操作及其参数（如果有）。</p>
+<p>提示</p>
+<p>运行测试可执行文件时不带参数，以观察它接受的命令行选项。</p>
+<p>要在 3 秒后启用定时器，请使用：</p>
+<p>./test s 3</p>
+<p>要停用定时器，请使用：</p>
+<p>./test c</p>
+<p>注意，定时器运行所基于的当前进程每次都是 PID 为 0 的 <em>swapper/0</em>。这个进程是空闲进程，当没有其他任务可运行时，它会一直运行。由于虚拟机非常轻量级且没有太多操作，大部分时间都会看到这个进程。</p>
+<h3 id="4-阻塞操作">4. 阻塞操作<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<p>接下来，我们将尝试在定时器例程中执行阻塞操作，以查看会发生什么情况。为此，我们尝试在定时器处理例程中调用一个名为 alloc_io() 的模拟阻塞操作的函数。</p>
+<p>修改模块，使得当接收到 <em>MY_IOCTL_TIMER_ALLOC</em> 命令时，定时器处理程序将调用 <code>alloc_io()</code>。按照骨架中标有 <strong>TODO 2</strong> 的部分进行修改。</p>
+<p>使用相同的定时器。为了区分定时器处理程序中的功能，可以在设备结构中使用一个标志。使用代码骨架中定义的 <em>TIMER_TYPE_ALLOC</em> 和 <em>TIMER_TYPE_SET</em> 宏。对于初始化，请使用 TIMER_TYPE_NONE。</p>
+<p>运行测试程序以验证任务 3 的功能。再次运行测试程序以调用 <code>alloc_io()</code>。</p>
+<p>注解</p>
+<p>该驱动程序会导致错误，因为在原子上下文（定时器处理程序运行在中断上下文中）中调用了阻塞函数。</p>
+<h3 id="5-工作队列">5. 工作队列<a href="#section-11" title="永久链接至标题">¶</a></h3>
+<p>我们将修改模块，以解决上一个任务中观察到的错误。</p>
+<p>为此，让我们使用工作队列调用 <code>alloc_io()</code>。从定时器处理程序中安排一个工作项。在工作项处理程序中（在进程上下文中运行），调用 <code>alloc_io()</code>。按照骨架中标有 <strong>TODO 3</strong> 的部分进行修改，并在需要时查阅 <a href="#section-3">工作队列</a> 部分。</p>
+<p>提示</p>
+<p>在设备结构中添加一个类型为 <code>struct work_struct</code> 的新字段。初始化此字段。使用 <code>schedule_work()</code> 从定时器处理程序中调度工作项。从 ioctl 后的 N 秒开始调度定时器处理程序。</p>
+<h3 id="6-内核线程">6. 内核线程<a href="#section-12" title="永久链接至标题">¶</a></h3>
+<p>实现一个简单的模块，创建一个显示当前进程标识符的内核线程。</p>
+<p>生成名为 <strong>6-kthread</strong> 的任务骨架，并按照骨架中标有 <strong>TODO</strong> 的部分进行修改。</p>
+<p>注解</p>
+<p>创建和运行线程有两种选择：</p>
+<ul>
+<li>使用 <code>kthread_run()</code> 创建并运行线程</li>
+<li>使用 <code>kthread_create()</code> 创建一个挂起的线程，然后使用 <code>wake_up_process()</code> 启动它。</li>
+</ul>
+<p>如果需要，请查阅 <a href="#section-4">内核线程</a> 部分。</p>
+<p>注意</p>
+<p>将线程终止与模块卸载进行同步：</p>
+<ul>
+<li>线程应在模块卸载时结束</li>
+<li>在卸载之前，请等待内核线程退出</li>
+</ul>
+<p>提示</p>
+<p>为了同步，使用两个等待队列和两个标志。</p>
+<p>请查阅 waiting-queues 了解如何使用等待队列。</p>
+<p>使用原子变量作为标志。请查阅 <a href="https://linux-kernel-labs-zh.github.io/so2/lab2-kernel-api.html#atomic-variables">原子变量</a>。</p>
+<h3 id="7-定时器和进程之间共享的缓冲区">7. 定时器和进程之间共享的缓冲区<a href="#section-13" title="永久链接至标题">¶</a></h3>
+<p>该任务的目的是在延迟操作（定时器）和进程上下文之间进行同步。设置一个周期性定时器，监视进程列表。如果其中一个进程终止，将打印一条消息。可以动态添加进程到列表中。请使用 <em>3-4-5-deferred/kernel/</em> 骨架作为基础，并按照标有 <strong>TODO 4</strong> 的部分完成任务。</p>
+<p>当接收到 <em>MY_IOCTL_TIMER_MON</em> 命令时，检查给定的进程是否存在，如果存在，则将其添加到监视的进程列表中，并在设置了类型后启用定时器。</p>
+<p>提示</p>
+<p>使用 <code>get_proc()</code> 检查 pid，找到关联的 <code>struct task_struct</code>，并分配一个 <code>struct mon_proc</code> 项目，可以将其添加到列表中。请注意，该函数还会增加任务的引用计数，以便在任务终止时不会释放其内存。</p>
+<p>注意</p>
+<p>使用自旋锁保护对列表的访问。请注意，由于我们与定时器处理程序共享数据，因此除了获取锁之外，还需要禁用底半部处理程序。请查阅 <a href="#system-message-1">`锁定`_</a> 部分。</p>
+<p>提示</p>
+<p>每秒钟从定时器中收集信息。使用现有的定时器，并通过 TIMER_TYPE_ACCT 添加新的行为。要设置标志，请使用测试程序的 <em>t</em> 参数。</p>
+<p>在定时器处理程序中，遍历监视的进程列表，并检查它们是否已终止。如果是，则打印进程名称和 PID，然后从列表中删除该进程，递减任务使用计数器，以便可以释放其内存，最后释放 <code>struct mon_proc</code> 结构。</p>
+<p>提示</p>
+<p>使用 <code>struct task_struct()</code> 的 <em>state</em> 字段。如果任务的状态为 <em>TASK_DEAD</em>，则表示任务已终止。</p>
+<p>提示</p>
+<p>使用 <code>put_task_struct()</code> 递减任务使用计数器。</p>
+<p>注意</p>
+<p>确保使用自旋锁保护列表访问。简单的变体就足够了。</p>
+<p>注意</p>
+<p>确保使用安全迭代器遍历列表，因为我们可能需要从列表中删除项目。</p>
+<p>在检查完列表后，重新启用定时器。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">← SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

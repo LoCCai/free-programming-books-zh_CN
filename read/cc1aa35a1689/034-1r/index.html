@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · 作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · 作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / 作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <ul>
+<li>截止日期: <strong>2023 年 5 月 29 日，23:00</strong></li>
+<li>这个作业可以由团队完成（最多 2 人）。只需由其中一人提交作业，并在 README 文件中列出学生的姓名。</li>
+</ul>
+<p>在本作业中，我们将使用 Linux 内核中的 KVM API 来开发一个简单的虚拟机管理器（VMM）。</p>
+<p>本作业分为两个部分：虚拟机（VM）代码和 VMM 代码。我们将使用一个非常简单的协议来实现这两个组件之间的通信。该协议名为 SIMVIRTIO。</p>
+<h2 id="i-虚拟机管理器">I. 虚拟机管理器<a href="#i" title="永久链接至标题">¶</a></h2>
+<p>通常情况下，要从零开始构建一个 VMM，我们需要实现三个主要功能：初始化 VMM、初始化虚拟 CPU 和运行客户机代码。我们将把 VMM 的实现分为这三个阶段。</p>
+<h3 id="1-初始化-vmm">1. 初始化 VMM<a href="#vmm" title="永久链接至标题">¶</a></h3>
+<p>一个 VM 通常由三个元素表示，一个是用于与 KVM API 进行交互的文件描述符，一个是用于配置 VM 文件描述符（每个 VM 对应一个）（例如设置其内存），还有一个是指向 VM 内存的指针。我们为你提供了以下结构，用于在使用 VM 时进行参考。</p>
+<p>typedef struct vm {
+int sys_fd;
+int fd;
+char *mem;
+} virtual_machine;</p>
+<p>初始化 KVM 虚拟机的第一步是与 [KVM_API](<a href="https://linux-kernel-labs-zh.github.io/%5Bhttps://www.kernel.org/doc/html/latest/virt/kvm/api.html">https://linux-kernel-labs-zh.github.io/[https://www.kernel.org/doc/html/latest/virt/kvm/api.html</a>](<a href="https://www.kernel.org/doc/html/latest/virt/kvm/api.html">https://www.kernel.org/doc/html/latest/virt/kvm/api.html</a>)) 进行交互。KVM API 通过 <code>/dev/kvm</code> 进行公开。我们需要使用 ioctl 调用来调用该 API。</p>
+<p>下面的代码片段展示了如何调用 <code>KVM_GET_API_VERSION</code> 来获取 KVM API 版本。</p>
+<p>int kvm_fd = open(“/dev/kvm”, O_RDWR);
+if (kvm_fd &#x3C; 0) {
+perror(“open /dev/kvm”);
+exit(1);
+}</p>
+<p>int api_ver = ioctl(kvm_fd, KVM_GET_API_VERSION, 0);
+if (api_ver &#x3C; 0) {
+perror(“KVM_GET_API_VERSION”);
+exit(1);
+}</p>
+<p>现在让我们简要介绍 VMM 如何初始化 VM。以下只是最基本的步骤，实际上在 VM 初始化过程中，VMM 可能会执行许多其他操作。</p>
+<ol>
+<li>首先，使用 KVM_GET_API_VERSION 检查我们是否运行了预期的 KVM 版本，即 <code>KVM_API_VERSION</code>。</li>
+<li>然后，使用 <code>KVM_CREATE_VM</code> 创建虚拟机。请注意，调用 <code>KVM_CREATE_VM</code> 会返回一个文件描述符。我们将在后续的设置阶段使用这个文件描述符。</li>
+<li>（可选）在基于 Intel 的 CPU 上，我们需要调用 <code>KVM_SET_TSS_ADDR</code>，并将地址设置为 <code>0xfffbd000</code>。</li>
+<li>接下来，为虚拟机分配内存。我们需要使用 <code>mmap</code> 函数进行分配，调用时需要使用 <code>PROT_WRITE</code>, <code>MAP_PRIVATE</code>, <code>MAP_ANONYMOUS</code> 和 <code>MAP_NORESERVE</code> 参数。我们建议为虚拟机分配 0x100000 字节的内存。</li>
+<li>使用 <code>madvise</code> 函数将内存标记为 <code>MADV_MERGEABLE</code>。</li>
+<li>最后，使用 <code>KVM_SET_USER_MEMORY_REGION</code> 将内存分配给虚拟机。</li>
+</ol>
+<p><strong>请确保你理解在何时使用哪个文件描述符，在调用 KVM_CREATE_VM 时我们使用 KVM 文件描述符，但在与虚拟机交互（例如调用 KVM_SET_USER_MEMORY_REGION）时我们使用虚拟机的文件描述符</strong></p>
+<p>简而言之，用于虚拟机初始化的 API 包括：</p>
+<ul>
+<li>KVM_GET_API_VERSION</li>
+<li>KVM_CREATE_VM</li>
+<li>KVM_SET_TSS_ADDR</li>
+<li>KVM_SET_USER_MEMORY_REGION。</li>
+</ul>
+<h4 id="2-初始化虚拟-cpu">2. 初始化虚拟 CPU<a href="#cpu" title="永久链接至标题">¶</a></h4>
+<p>我们需要虚拟 CPU（VCPU）来存储寄存器值。</p>
+<p>typedef struct vcpu {
+int fd;
+struct kvm_run *kvm_run;
+} virtual_cpu;</p>
+<p>要创建虚拟 CPU，我们需要执行以下操作： 1. 调用 <code>KVM_CREATE_VCPU</code> 创建虚拟 CPU。此调用将返回一个文件描述符。 2. 使用 <code>KVM_GET_VCPU_MMAP_SIZE</code> 获取共享内存的大小。 3. 使用 <code>mmap</code> 分配所需的 VCPU 内存大小。我们需要把 VCPU 文件描述符传递给 <code>mmap</code> 调用。我们可以将结果存储在 <code>kvm_run</code> 中。</p>
+<p>简而言之，用于虚拟机的 API 包括：</p>
+<ul>
+<li>KVM_CREATE_VCPU</li>
+<li>KVM_GET_VCPU_MMAP_SIZE</li>
+</ul>
+<p><strong>我们建议使用 2MB 页面以简化翻译过程。</strong></p>
+<h2 id="运行虚拟机">运行虚拟机<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<h3 id="设置实模式real-mode">设置实模式（real mode）<a href="#real-mode" title="永久链接至标题">¶</a></h3>
+<p>首先，CPU 会以保护模式启动。要想运行任何有意义的代码，我们需要把 CPU 切换到[实模式](<a href="https://linux-kernel-labs-zh.github.io/%5Bhttps://wiki.osdev.org/Real/_Mode">https://linux-kernel-labs-zh.github.io/[https://wiki.osdev.org/Real/_Mode</a>](<a href="https://wiki.osdev.org/Real_Mode))%E3%80%82%E4%B8%BA%E6%AD%A4%EF%BC%8C%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E9%85%8D%E7%BD%AE%E5%87%A0%E4%B8%AA">https://wiki.osdev.org/Real_Mode))。为此，我们需要配置几个</a> CPU 寄存器。</p>
+<ol>
+<li>首先，我们需要使用 <code>KVM_GET_SREGS</code> 获取寄存器的值。我们可以使用 <code>struct kvm_regs</code> 结构来完成这个任务。</li>
+<li>我们需要将 <code>cs.selector</code> 和 <code>cs.base</code> 设置为 0。我们可以使用 <code>KVM_SET_SREGS</code> 来设置这些寄存器。</li>
+<li>接下来，我们需要通过 <code>rflags</code> 寄存器清除所有 <code>FLAGS</code> 位。我们需要将 <code>rflags</code> 设置为 2，因为第一位必须始终为 1。我们还需要将 <code>RIP</code> 寄存器设置为 0。</li>
+</ol>
+<h3 id="设置长模式long-mode">设置长模式（long mode）<a href="#long-mode" title="永久链接至标题">¶</a></h3>
+<p>实模式适用于非常简单的客户机，比如在 guest_16_bits 文件夹中的客户机。但是，大多数现代程序需要 64 位地址，因此我们需要切换到长模式。OSDev 上的以下文章提供了[设置长模式](<a href="https://linux-kernel-labs-zh.github.io/%5Bhttps://wiki.osdev.org/Setting/_Up/_Long/_Mode">https://linux-kernel-labs-zh.github.io/[https://wiki.osdev.org/Setting/_Up/_Long/_Mode</a>](<a href="https://wiki.osdev.org/Setting_Up_Long_Mode))%E6%89%80%E9%9C%80%E7%9A%84%E6%89%80%E6%9C%89%E5%BF%85%E8%A6%81%E4%BF%A1%E6%81%AF%E3%80%82">https://wiki.osdev.org/Setting_Up_Long_Mode))所需的所有必要信息。</a></p>
+<p>在 <code>vcpu.h</code> 中，你可以找到有用的宏，例如 CR0_PE、CR0_MP 以及 CR0_ET 等。</p>
+<p>由于我们需要运行更复杂的程序，我们还需要为我们的程序创建一个小的堆栈 <code>regs.rsp = 1 &#x3C;&#x3C; 20;</code>。不要忘记设置 RIP 和 RFLAGS 寄存器。</p>
+<h3 id="运行">运行<a href="#section-2" title="永久链接至标题">¶</a></h3>
+<p>在设置了实模式或长模式的 VCPU 之后，我们终于可以在虚拟机上运行代码了。</p>
+<ol>
+<li>我们将客户机代码复制到虚拟机内存中, memcpy(vm->mem, guest_code, guest_code_size)。客户机代码将在下面两个将讨论的变量中提供。</li>
+<li>在无限循环中，我们执行以下操作： * 调用 VCPU 文件描述符上的 <code>KVM_RUN</code> 来运行 VCPU。 * 通过 VCPU 的共享内存，检查 <code>exit_reason</code> 参数，以查看客户机是否发出了任何请求： * 处理以下 VMEXIT: <code>KVM_EXIT_MMIO</code>, <code>KVM_EXIT_IO</code> 以及 <code>KVM_EXIT_HLT</code>。当 VM 写入 MMIO 地址时，会触发 <code>KVM_EXIT_MMIO</code>。当 VM 调用 <code>inb</code> 或 <code>outb</code> 时，会调用 <code>KVM_EXIT_IO</code>。当用户执行 <code>hlt</code> 指令时，会调用 <code>KVM_EXIT_HLT</code>。</li>
+</ol>
+<h3 id="客户机代码">客户机代码<a href="#section-3" title="永久链接至标题">¶</a></h3>
+<p>正在运行的虚拟机也被称为客户机。我们将使用客户机来测试我们的实现。</p>
+<ol>
+<li>在实现 SIMVIRTIO 之前进行测试。客户机会在地址 400 和 RAX 寄存器中写入值 42。</li>
+<li>为了测试更复杂的实现，我们需要扩展上述程序，使用 outb 指令在端口 0xE9 上也写入“Hello, world!n”。</li>
+<li>为了测试 SIMVIRTIO 的实现，我们需要</li>
+</ol>
+<p>如何获取客户机代码？客户机代码在以下静态指针 guest16、guest16_end-guest16 中可用。链接器脚本会填充它们。</p>
+<h3 id="simvirtio">SIMVIRTIO<a href="#simvirtio" title="永久链接至标题">¶</a></h3>
+<p>从客户机和 VMM 之间的通信中，我们将实现一种非常简单的协议称为 <code>SIMVIRTIO</code>。它是现实世界中使用的名为 virtio 的真实协议的简化版本。</p>
+<p>配置空间：</p>
+<p>＋－－－－－－－＋－－－－－－－－－＋－－－－－－－－＋－－－－－－－－－＋－－－－－－－－－－＋－－－－－－－＋－－－－－－－＋
+｜　u32　　　 　｜　u16　　　　　　｜　u8　　　　　　｜　u8　　　　　　　｜　u8　　　　　　　　｜　u8　　　　　｜　u8　　　　　｜
+＋＝＝＝＝＝＝＝＋＝＝＝＝＝＝＝＝＝＋＝＝＝＝＝＝＝＝＋＝＝＝＝＝＝＝＝＝＋＝＝＝＝＝＝＝＝＝＝＋＝＝＝＝＝＝＝＋＝＝＝＝＝＝＝＋
+｜　魔术值　　　｜　最大队列长度　　｜　设备状态　　　｜　驱动程序状态　　｜　队列选择器　　　　｜　Q0(TX)　CTL｜　Q1(RX)　CTL｜
+｜　R　　　　 　｜　R　　　　 　　　｜　R　　　　 　　｜　R/W　　　　　　｜　R/W　　 　　　　　｜　R/W　　　　｜　R/w　　 　　｜
+＋－－－－－－－＋－－－－－－－－－＋－－－－－－－－＋－－－－－－－－－＋－－－－－－－－－－＋－－－－－－－＋－－－－－－－＋</p>
+<h3 id="控制器队列">控制器队列<a href="#section-4" title="永久链接至标题">¶</a></h3>
+<p>对于 <code>SIMVIRTIO</code> 实现，我们为你提供了以下结构和方法。</p>
+<p>typedef uint8_t q_elem_t;
+typedef struct queue_control {
+// 指向‘buffer’中当前可用的头部/生产者索引的指针。
+unsigned head;
+// 指向消费者使用的‘buffer’中最后一个索引的指针。
+unsigned tail;
+} queue_control_t;
+typedef struct simqueue {
+// MMIO 队列控制。
+volatile queue_control_t *q_ctrl;
+// 队列缓冲区/数据的大小。
+unsigned maxlen;
+// 队列数据缓冲区。
+q_elem_t *buffer;
+} simqueue_t;
+int circ_bbuf_push(simqueue_t *q, q_elem_t data)
+{
+}
+int circ_bbuf_pop(simqueue_t *q, q_elem_t *data)
+{
+}</p>
+<h3 id="设备结构">设备结构<a href="#section-5" title="永久链接至标题">¶</a></h3>
+<p>#define MAGIC_VALUE 0x74726976
+#define DEVICE_RESET 0x0
+#define DEVICE_CONFIG 0x2
+#define DEVICE_READY 0x4
+#define DRIVER_ACK 0x0
+#define DRIVER 0x2
+#define DRIVER_OK 0x4
+#define DRIVER_RESET 0x8000
+typedef struct device {
+uint32_t magic;
+uint8_t device_status;
+uint8_t driver_status;
+uint8_t max_queue_len;
+} device_t;
+typedef struct device_table {
+uint16_t count;
+uint64_t device_addresses[10];
+} device_table_t;</p>
+<p>我们需要执行以下处理程序： * MMIO (read/write) VMEXIT * PIO (read/write) VMEXIT</p>
+<h2 id="使用骨架">使用骨架<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<h2 id="调试">调试<a href="#section-7" title="永久链接至标题">¶</a></h2>
+<h2 id="任务">任务<a href="#section-8" title="永久链接至标题">¶</a></h2>
+<ol>
+<li>30分 实现一个简单的 VMM，运行来自 guest_16_bits 的代码。在此任务中，我们需要以读模式运行 VCPU。</li>
+<li>20分 扩展前面的实现，以在实模式下运行 VCPU。我们需要运行 guest_32_bits 示例。</li>
+<li>30分 实现 SIMVIRTIO 协议。</li>
+<li>10分 实现池化而不是 VMEXIT。我们需要使用宏 USE_POOLING 来打开和关闭此选项。</li>
+<li>10分 添加性能分析代码。测量 VMM 触发的 VMEXIT 次数。</li>
+</ol>
+<h3 id="提交作业">提交作业<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<p>作业存档需要根据 <a href="https://ocw.cs.pub.ro/courses/so2/reguli-notare#reguli_de_trimitere_a_temelor">规则页面</a> 上的规定，通过 <strong>Moodle</strong> 提交。</p>
+<h3 id="提示">提示<a href="#section-10" title="永久链接至标题">¶</a></h3>
+<p>为了增加获得最高分的机会，请阅读并遵循 Linux 内核编码风格，该风格在 <a href="https://elixir.bootlin.com/linux/v4.19.19/source/Documentation/process/coding-style.rst">编码风格文档</a> 中有描述。</p>
+<p>此外，使用以下静态分析工具来验证代码：</p>
+<ul>
+<li>
+<p>checkpatch.pl</p>
+<p>$ linux/scripts/checkpatch.pl —no-tree —terse -f /path/to/your/file.c</p>
+</li>
+<li>
+<p>sparse</p>
+<p>$ sudo apt-get install sparse
+$ cd linux
+$ make C=2 /path/to/your/file.c</p>
+</li>
+<li>
+<p>cppcheck</p>
+<p>$ sudo apt-get install cppcheck
+$ cppcheck /path/to/your/file.c</p>
+</li>
+</ul>
+<h3 id="扣分项">扣分项<a href="#section-11" title="永久链接至标题">¶</a></h3>
+<p>关于作业扣分项的信息可以在 <a href="#system-message-1">`常规说明页面</a><a href="https://ocw.cs.pub.ro/courses/so2/teme/general">https://ocw.cs.pub.ro/courses/so2/teme/general</a>`__ 中找到。</p>
+<p>在特殊情况下（作业通过测试但不符合要求），以及如果作业未通过所有测试，成绩可能会比上述提到的降低更多。</p>
+<h3 id="太长不看">太长不看<a href="#section-13" title="永久链接至标题">¶</a></h3>
+<ol>
+<li>虚拟机管理程序（VMM）创建并初始化虚拟机和虚拟 CPU。</li>
+<li>切换到实模式并运行 guest_16_bits 中的简单客户机代码。</li>
+<li>切换到长模式并运行 guest_32_bits 中更复杂的客户机代码。</li>
+<li>实现 SIMVIRTIO 协议。我们将在以下子任务中描述其行为。</li>
+<li>客户机在 TX 队列（队列 0）中写入 R 的 ASCII 码，这将导致 VMEXIT。</li>
+<li>VMM 需要处理由前面在队列中的写入引起的 VMEXIT。当客户端接收到 R 字母时，它将启动设备的复位过程，并将设备状态设置为 DEVICE_RESET。</li>
+<li>在处理复位后，客户机必须将设备状态设置为 DRIVER_ACK。在此之后，客户机需要向 TX 队列中写入字母 C。</li>
+<li>在收到字母 C 时，VMM 需要初始化配置过程。它会将设备状态设置为 DEVICE_CONFIG 并在 device_table 中添加新条目。</li>
+<li>配置过程完成后，客户机会将驱动程序状态设置为 DRIVER_OK。</li>
+<li>接下来，VMM 会将设备状态设置为 DEVICE_READY。</li>
+<li>客户机需要在 TX 队列中写入“Ana are mere”并执行停机指令。</li>
+<li>VMM 需要向 STDOUT 打印接收到的消息并执行停机请求。</li>
+<li>最后，VMM 需要验证地址 0x400 处和寄存器 RAX 中是否存储了值 42。</li>
+</ol> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">← 作业 4——SO2 传输协议 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

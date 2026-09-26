@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linux 内核实验 · SO2 实验 11——ARM 内核开发 — Linux 系统内核文档 · 免费编程中文书籍</title><meta name="description" content="Linux 内核实验"><meta property="og:title" content="Linux 内核实验 · SO2 实验 11——ARM 内核开发 — Linux 系统内核文档"><meta property="og:description" content="Linux 内核实验"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/cc1aa35a1689">Linux 内核实验</a> <span> / SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">Linux 内核实验</p> <a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/001-13/">Linux 内核教学 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/002-1h/">操作系统 2 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/003-1j/">SO2——基本规则和评分 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/004-1m/">SO2 课程 01——课程概要以及 Linux 内核介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/005-1p/">SO2 课程 02——系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/006-1q/">SO2 课程 03——进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/007-1r/">SO2 课程 04——中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/008-1k/">SO2 课程 05——对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/009-1u/">SO2 课程 06——地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/010-1y/">SO2 课程 07——内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/011-1s/">SO2 课程 08——文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/012-1q/">SO2 课程 09——内核调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/013-1s/">SO2 课程 10——网络 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/014-1m/">SO2 课程 11——体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/015-1w/">SO2 课程 12——虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/016-1m/">SO2 实验 01——介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/017-1r/">SO2 实验 02——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/018-1v/">SO2 实验 03——字符设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/019-1r/">SO2 实验 04——I/O 访问和中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/020-1u/">SO2 实验 05——延迟工作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/021-1v/">SO2 实验 06——内存映射 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/022-21/">SO2 实验 07——块设备驱动 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/023-1y/">SO2 实验 08——文件系统驱动（第一部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/024-1y/">SO2 实验 09——文件系统驱动程序（第二部分） — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">SO2 实验 10——网络 — Linux 系统内核文档</a><a class="active" href="/free-programming-books-zh_CN/read/cc1aa35a1689/026-24/">SO2 实验 11——ARM 内核开发 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/028-1w/">合作 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/029-1u/">作业 0——内核 API — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/030-23/">作业 1——基于 Kprobe 的跟踪器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/031-1v/">作业 2——驱动 UART — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/032-1x/">作业 3——软件 RAID — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/033-22/">作业 4——SO2 传输协议 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/034-1r/">作业 7——使用 KVM 的 SO2 虚拟机管理器 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/035-1m/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/036-1p/">系统调用 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/037-1q/">进程 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/038-1r/">中断 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/039-1k/">对称多处理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/040-1u/">地址空间 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/041-1y/">内存管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/042-1j/">文件系统管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/043-1q/">调试 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/044-1r/">网络管理 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/045-1l/">体系结构层 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/046-1l/">虚拟化 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/047-1r/">基础设施 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/048-1p/">介绍 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/049-1r/">内核模块 — Linux 系统内核文档</a><a class href="/free-programming-books-zh_CN/read/cc1aa35a1689/050-1n/">内核 API — Linux 系统内核文档</a> </aside> <article class="reader-panel prose"> <h2 id="实验目标">实验目标<a href="#section-1" title="永久链接至标题">¶</a></h2>
+<ul>
+<li>初步了解片上系统（SoC）</li>
+<li>熟悉使用 ARM 作为支持架构的嵌入式世界</li>
+<li>理解什么是板级支持包（BSP）</li>
+<li>使用 i.MX6UL 平台作为示例，编译和引导 ARM 内核</li>
+<li>熟悉使用设备树进行硬件描述</li>
+</ul>
+<h2 id="片上系统">片上系统<a href="#section-2" title="永久链接至标题">¶</a></h2>
+<p>片上系统 (<strong>SoC</strong>) 是一块集成电路 (<strong>IC</strong>)，整个系统都集成在上面。通常在 SoC 上可以找到的组件，包括中央处理单元 (<strong>CPU</strong>)、内存、输入/输出端口、存储设备，以及更复杂的模块，如音频数字接口、神经处理单元 (<strong>NPU</strong>) 或图形处理单元 (<strong>GPU</strong>)。</p>
+<p>SoC 可用于各种应用领域，最常见的包括： - 消费电子产品（电视机、手机、游戏机） - 工业计算机（医学成像等） - 汽车 - 家用电器</p>
+<p>SoC 的主要架构是 <strong>ARM</strong>。值得一提的是，还有基于 x86 的 SoC 平台。我们还需要关注 <strong>RISC-V</strong>，这是一种开放的标准指令集架构。</p>
+<p>下图展示了 ARM 平台的简化视图：</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/schematic1.png" alt="../_images/schematic1.png"></p>
+<p>我们将以 NXP 的 <a href="https://linux-kernel-labs-zh.github.io/so2/imx6ul">i.MX6UL</a> 平台作为参考平台，但通常所有的 SoC 都包含以下构建模块：</p>
+<blockquote>
+<blockquote>
+<ul>
+<li>一个或多个 CPU 核心</li>
+<li>系统总线</li>
+<li>时钟和复位模块
+<ul>
+<li>相位锁定环（PLL）</li>
+<li>晶振（OSC）</li>
+<li>复位控制器</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>中断控制器</li>
+<li>定时器</li>
+<li>内存控制器</li>
+<li>外设控制器
+<ul>
+<li><a href="https://zh.wikipedia.org/zh-cn/I%C2%B2C">I2C</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%BA%8F%E5%88%97%E5%91%A8%E9%82%8A%E4%BB%8B%E9%9D%A2">SPI</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/GPIO">GPIO</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E5%8D%A1">以太网</a> (用于网络)</li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%A4%9A%E5%AA%92%E9%AB%94%E8%A8%98%E6%86%B6%E5%8D%A1">uSDHC</a> (用于存储)</li>
+<li>USB</li>
+<li><a href="https://zh.wikipedia.org/zh-cn/UART">UART</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/I%C2%B2S">I2S</a> (用于音频)</li>
+<li>eLCDIF (用于液晶显示面板)</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>下图是 i.MX6UL 平台的完整框图：</p>
+<p><a href="https://www.nxp.com/assets/images/en/block-diagrams/IMX6UL-BD.jpg"><img src="https://www.nxp.com/assets/images/en/block-diagrams/IMX6UL-BD.jpg" alt="IMX6UL-BD"></a></p>
+<p>i.MX6UL 评估套件板的外观如下：</p>
+<p><a href="https://www.compulab.com/wp-content/gallery/sbc-imx6ul/compulab_sbc-imx6ul_single-board-computer.jpg"><img src="https://www.compulab.com/wp-content/gallery/sbc-imx6ul/compulab_sbc-imx6ul_single-board-computer.jpg" alt="imx6ul-evk"></a></p>
+<p>其他流行的 SoC 开发板包括：</p>
+<blockquote>
+<ul>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E6%A0%91%E8%8E%93%E6%B4%BE">Broadcom Raspberry Pi</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/BeagleBoard">Texas Instruments Beagle board</a></li>
+<li><a href="https://wiki.odroid.com/odroid-xu4/odroid-xu4">Odroid Xu4</a></li>
+<li><a href="https://developer.nvidia.com/embedded/jetson-nano-developer-kit">Nvidia Jetson Nano</a></li>
+</ul>
+</blockquote>
+<h2 id="板级支持软件包">板级支持软件包<a href="#section-3" title="永久链接至标题">¶</a></h2>
+<p>板级支持软件包（BSP）是支持演示特定硬件平台的功能的情况下，最小的一组软件包。这包括：</p>
+<blockquote>
+<ul>
+<li>工具链</li>
+<li>引导加载程序</li>
+<li>Linux 内核映像、设备树文件和驱动程序</li>
+<li>根文件系统</li>
+</ul>
+</blockquote>
+<p>半导体制造商通常会提供一个评估板和相应的 <strong>BSP</strong>。BSP 通常使用 <a href="https://www.yoctoproject.org/">Yocto</a> 进行打包。</p>
+<h2 id="工具链">工具链<a href="#section-4" title="永久链接至标题">¶</a></h2>
+<p>由于我们的开发机主要基于 x86 架构，我们需要交叉编译器，这样可以生成针对 ARM 平台的可执行代码。</p>
+<p>我们可以使用 <a href="https://crosstool-ng.github.io/">https://crosstool-ng.github.io/</a> 从头开始构建自己的交叉编译器，或者我们可以安装一个</p>
+<p>$ sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf # 用于 arm32
+$ sudo apt-get install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu     # 用于 arm64</p>
+<p>根据配置，有几个工具链二进制文件可用：</p>
+<blockquote>
+<ul>
+<li>对于“arm-eabi-gcc”，你有 Linux 系统 C 库，该库将调用内核的 IOCTL，例如为进程分配内存页面。</li>
+<li>对于“arm-eabi-none-gcc”，你运行在没有任何操作系统的平台上，所以 C 库与之不同。</li>
+</ul>
+</blockquote>
+<h3 id="编译-arm-版-linux-内核">编译 ARM 版 Linux 内核<a href="#arm-linux" title="永久链接至标题">¶</a></h3>
+<p>为 32 位 ARM 板编译内核：</p>
+<p># 根据你的平台选择 defconfig
+$ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make imx_v6_v7_defconfig
+# 编译内核
+$ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8</p>
+<p>为 64 位 ARM 板编译内核：</p>
+<p># 对于 64 位 ARM，有一个适用于所有支持的板的单个配置
+$ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make defconfig
+# 编译内核
+$ ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- make -j8</p>
+<h2 id="linux-内核镜像">Linux 内核镜像<a href="#linux" title="永久链接至标题">¶</a></h2>
+<p>内核镜像二进制文件被命名为 <code>vmlinux</code>，可以在内核树的根目录下找到。用于引导的压缩镜像可以在以下位置找到：</p>
+<ul>
+<li><code>arch/arm/boot/Image</code>，适用于 arm32</li>
+<li><code>arch/arm64/boot/Image</code>，适用于 arm64</li>
+</ul>
+<p>$ file vmlinux
+vmlinux: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, not stripped</p>
+<p>$ file vmlinux
+vmlinux: ELF 64-bit LSB shared object, ARM aarch64, version 1 (SYSV), statically linked, not stripped</p>
+<h2 id="rootfs">Rootfs<a href="#rootfs" title="永久链接至标题">¶</a></h2>
+<p>根文件系统 (<code>rootfs</code>) 是挂载在文件层次结构顶部 (<code>/</code>) 的文件系统。它应该至少包含允许系统引导到某个 shell 的关键文件。</p>
+<p>root@so2$ tree -d -L 2
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+│   └── root
+├── lib
+│   └── udev
+├── mnt
+├── proc
+├── sbin
+│   └── init
+├── sys
+├── usr
+│   ├── bin
+│   ├── include
+│   ├── lib
+└── var</p>
+<p>对于 <code>x86</code>，我们将使用 Yocto rootfs 镜像。为了下载 <code>arm32</code> 的 <code>ext4</code> rootfs 镜像，需要运行以下命令：</p>
+<p>$ cd tools/labs/
+$ ARCH=arm make core-image-minimal-qemuarm.ext4</p>
+<h2 id="设备树">设备树<a href="#section-5" title="永久链接至标题">¶</a></h2>
+<p>设备树 (<strong>DT</strong>) 是一种用于描述系统中硬件设备的树状结构。树中的每个节点描述一个设备，因此这些节点被称为 <strong>设备节点</strong>。之引入设备树，是为了提供一种发现不可发现硬件的方式（例如，I2C 总线上的设备）。此前，这些信息是存储在 Linux 内核的源代码中的。这意味着每当我们需要修改某个设备的节点时，都需要重新编译内核。现在情况已经改变，因为设备树和内核镜像是独立的二进制文件。</p>
+<p>设备树以设备树源文件 (<em>.dts</em>) 的形式存储，并编译成设备树二进制文件 (<em>.dtb</em>)。</p>
+<p># 编译 dtbs
+$ make dtbs</p>
+<p># arm32 设备树源文件位置
+$ ls arch/arm/boot/dts/
+imx6ul-14x14-evk.dtb imx6ull-14x14-evk.dtb bcm2835-rpi-a-plus.dts</p>
+<p># arm64 设备树源文件位置
+$ ls arch/arm64/boot/dts/<vendor>
+imx8mm-evk.dts imx8mp-evk.dts</vendor></p>
+<p>下面的图片是简单的设备树示例，描述了板型、CPU 和内存。</p>
+<p><img src="https://linux-kernel-labs-zh.github.io/_images/dts_node1.png" alt="../_images/dts_node1.png"></p>
+<p>请注意，可以使用 <code>label: name@address</code> 来定义设备树节点：</p>
+<blockquote>
+<ul>
+<li><code>label</code>，用于从其他位置引用该节点的标识符</li>
+<li><code>name</code>，节点标识符</li>
+<li><code>address</code>，用于区分具有相同名称（name）的节点。</li>
+</ul>
+</blockquote>
+<p>节点可以包含多个以 <code>name = value</code> 格式排列的属性。name 是一个字符串，value 可以是字节、字符串或字符串数组。</p>
+<p>以下是一个示例：</p>
+<p>/ {
+node@0 {
+empty-property;
+string-property = “string value”;
+string-list-property = “string value 1”, “string value 2”;
+int-list-property = <value1 value2="">;</value1></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>      child-node@0 {</span></span>
+<span class="line"><span>              child-empty-property;</span></span>
+<span class="line"><span>              child-string-property = "string value";</span></span>
+<span class="line"><span>              child-node-reference = &#x3C;&#x26;child-node1>;</span></span>
+<span class="line"><span>      };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      child-node1: child-node@1 {</span></span>
+<span class="line"><span>              child-empty-property;</span></span>
+<span class="line"><span>              child-string-property = "string value";</span></span>
+<span class="line"><span>      };</span></span></code></pre>
+<p>};
+};</p>
+<h2 id="qemu">Qemu<a href="#qemu" title="永久链接至标题">¶</a></h2>
+<p>我们将使用 <code>qemu-system-arm</code> 启动 32 位 ARM 平台。虽然可以从官方发行版仓库中安装，例如：</p>
+<p>sudo apt-get install -y qemu-system-arm</p>
+<p>我们依然强烈推荐从源代码构建最新版本的 <code>qemu-system-arm</code>：</p>
+<p>$ git clone <a href="https://gitlab.com/qemu-project/qemu.git">https://gitlab.com/qemu-project/qemu.git</a>
+$ ./configure —target-list=arm-softmmu —disable-docs
+$ make -j8
+$ ./build/qemu-system-arm</p>
+<h2 id="练习">练习<a href="#section-6" title="永久链接至标题">¶</a></h2>
+<p>重要</p>
+<p>我们强烈建议你使用 <a href="https://github.com/linux-kernel-labs-zh/so2-labs">这个仓库</a> 中的配置。</p>
+<p>要解决练习问题，你需要执行以下步骤：</p>
+<blockquote>
+<ul>
+<li>用模板来准备骨架</li>
+<li>构建模块</li>
+<li>启动虚拟机并在虚拟机中测试模块。</li>
+</ul>
+</blockquote>
+<p>当前实验名称为 arm_kernel_development。请参阅任务名称的练习。</p>
+<p>骨架代码是从位于 <code>tools/labs/templates</code> 的完整源代码示例中生成的。要解决任务，首先要为所有实验生成骨架代码：</p>
+<p>tools/labs $ make clean
+tools/labs $ LABS=&#x3C;实验名称> make skels</p>
+<p>你还可以使用以下命令为单个任务生成骨架代码：</p>
+<p>tools/labs $ LABS=&#x3C;实验名称>/&#x3C;任务名称> make skels</p>
+<p>生成骨架驱动程序后，构建源代码：</p>
+<p>tools/labs $ make build</p>
+<p>然后，启动虚拟机：</p>
+<p>tools/labs $ make console</p>
+<p>模块将放置在 /home/root/skels/arm_kernel_development/&#x3C;任务名称> 目录中。</p>
+<p>重新构建模块时，无需停止虚拟机！本地 skels 目录与虚拟机共享。</p>
+<p>请查看 <a href="#section-6">练习</a> 部分以获取更详细的信息。</p>
+<p>警告</p>
+<p>在开始练习或生成骨架之前，请在 Linux 仓库中运行 <strong>git pull</strong> 命令，以确保你拥有最新版本的练习。</p>
+<p>如果你有本地更改，pull 命令将失败。使用 <code>git status</code> 检查本地更改。如果要保留更改，在 <code>pull</code> 之前运行 <code>git stash</code>，之后运行 <code>git stash pop</code>。要放弃更改，请运行 <code>git reset --hard master</code>。</p>
+<p>如果你在 <code>git pull</code> 之前已经生成了骨架，你需要再次生成骨架。</p>
+<p>警告</p>
+<p>以下是针对 <code>ARM</code> 虚拟机操作的新规则</p>
+<p># 模块构建
+tools/labs $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make build
+# 模块拷贝
+tools/labs $ ARCH=arm make copy
+# 内核构建
+$ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8</p>
+<h3 id="0-简介">0. 简介<a href="#section-7" title="永久链接至标题">¶</a></h3>
+<p>检查 Linux 内核代码中以下位置，并识别使用 ARM 架构的平台和供应商：</p>
+<blockquote>
+<ul>
+<li>32位: <code>arch/arm/boot/dts</code></li>
+<li>64位: <code>arch/arm64/boot/dts</code></li>
+</ul>
+</blockquote>
+<p>使用 <code>qemu</code> 查看支持的平台：</p>
+<p>../qemu/build/arm-softmmu/qemu-system-arm -M ?</p>
+<p>注解</p>
+<p>我们使用了自己编译的 <code>arm32</code> 版本的 <code>Qemu</code>。有关详细信息，请参见 <a href="#qemu">Qemu</a> 部分。</p>
+<h3 id="1-启动">1. 启动<a href="#section-8" title="永久链接至标题">¶</a></h3>
+<p>使用 <code>qemu</code> 启动 <code>i.MX6UL</code> 平台。为了启动，我们首先需要编译内核。请查看 <a href="#arm-linux">编译 ARM 版 Linux 内核</a> 部分。</p>
+<p>成功编译将生成以下二进制文件：</p>
+<blockquote>
+<ul>
+<li><code>arch/arm/boot/Image</code>，针对 ARM 架构编译的内核镜像</li>
+<li><code>arch/arm/boot/dts/imx6ul-14x14-evk.dtb</code>，适用于 <code>i.MX6UL</code> 开发板的设备树二进制文件</li>
+</ul>
+</blockquote>
+<p>请查看 <a href="#rootfs">Rootfs</a> 部分，并下载 <code>core-image-minimal-qemuarm.ext4</code> 根文件系统。然后使用以下命令运行 <code>qemu</code>：</p>
+<p>../qemu/build/arm-softmmu/qemu-system-arm -M mcimx6ul-evk -cpu cortex-a7 -m 512M \
+-kernel arch/arm/boot/zImage -nographic  -dtb arch/arm/boot/dts/imx6ul-14x14-evk.dtb \
+-append “root=/dev/mmcblk0 rw console=ttymxc0 loglevel=8 earlycon printk” -sd tools/labs/core-image-minimal-qemuarm.ext4</p>
+<p>注解</p>
+<p><code>Qemu</code> 对 LCDIF 和 ASRC 设备的支持不够完善。请从编译中移除它们。</p>
+<p>$ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make menuconfig
+# 设置 FSL_ASRC=n 和 DRM_MXSFB=n
+$ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8</p>
+<p>内核启动后，请检查内核版本和 CPU 信息：</p>
+<p>$ cat /proc/cpuinfo
+$ cat /proc/version</p>
+<h3 id="2-cpu-信息">2. CPU 信息<a href="#cpu" title="永久链接至标题">¶</a></h3>
+<p>检查 <code>NXP i.MX6UL</code> 开发板的 CPU 配置。从 <code>arch/arm/boot/dts/imx6ul-14x14-evk.dts</code> 开始。</p>
+<blockquote>
+<ul>
+<li>
+<p>找到 <code>cpu@0</code> 设备树节点，并查找 <code>operating-points</code> 属性。</p>
+</li>
+<li>
+<p>读取处理器可以运行的最大和最小操作频率</p>
+</li>
+</ul>
+<blockquote>
+<p>$ cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq
+$ cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq</p>
+</blockquote>
+</blockquote>
+<h3 id="3-io-内存">3. I/O 内存<a href="#i-o" title="永久链接至标题">¶</a></h3>
+<p>检查 <code>NXP i.MX6UL</code> 开发板的 I/O 空间配置。从 <code>arch/arm/boot/dts/imx6ul-14x14-evk.dts</code> 开始，并确定下面提到的每个设备。</p>
+<p>$ cat /proc/iomem
+00900000-0091ffff : 900000.sram sram@900000
+0209c000-0209ffff : 209c000.gpio gpio@209c000
+021a0000-021a3fff : 21a0000.i2c i2c@21a0000
+80000000-9fffffff : System RAM</p>
+<p>识别与以下设备对应的设备树节点：</p>
+<blockquote>
+<ul>
+<li><code>System RAM</code>，在 <code>arch/arm/boot/dts/imx6ul-14x14-evk.dtsi</code> 中查找 <code>memory@80000000</code> 节点。系统 RAM 的大小是多少？</li>
+<li><code>GPIO1</code>，在 <code>arch/arm/boot/dts/imx6ul.dtsi</code> 中查找 <code>gpio@209c000</code> 节点。该设备的 I/O 空间大小是多少？</li>
+<li><code>I2C1</code>，在 <code>arch/arm/boot/dts/imx6ul.dtsi</code> 中查找 <code>i2c@21a0000</code> 节点。该设备的 I/O 空间大小是多少？</li>
+</ul>
+</blockquote>
+<h3 id="4-hello-world">4. Hello World<a href="#hello-world" title="永久链接至标题">¶</a></h3>
+<p>实现一个简单的内核模块，在加载和卸载时打印一条消息。编译该模块并加载到 <code>i.MX6UL</code> 模拟平台上。</p>
+<p># 模块构建
+tools/labs $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make build
+# 模块复制
+tools/labs $ ARCH=arm make copy
+# 内核构建
+$ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make -j8</p>
+<h3 id="5-简单设备">5. 简单设备<a href="#section-9" title="永久链接至标题">¶</a></h3>
+<p>为一个简单的平台设备实现一个驱动程序。找到 <code>TODO 1</code>，注意如何声明并注册 <code>simple_driver</code> 作为平台驱动程序。按照 <code>TODO 2</code>，在 simple_device_ids 数组中添加 <code>so2,simple-device-v1</code> 和 <code>so2,simple-device-v2</code> 兼容字符串。</p>
+<p>在 <code>arch/arm/boot/dts/imx6ul.dtsi</code> 的 <code>soc</code> 节点下创建两个设备树节点，分别使用兼容字符串 <code>so2,simple-device-v1</code> 和 <code>so2,simple-device-v2</code>。然后观察加载 <code>simple_driver</code> 模块时的行为。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/025-1s/">← SO2 实验 10——网络 — Linux 系统内核文档</a></span> <span><a href="/free-programming-books-zh_CN/read/cc1aa35a1689/027-1y/">SO2 实验 12——内核分析 — Linux 系统内核文档 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>

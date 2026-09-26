@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>理解Linux进程 · 进程资源 · 免费编程中文书籍</title><meta name="description" content="理解Linux进程"><meta property="og:title" content="理解Linux进程 · 进程资源"><meta property="og:description" content="理解Linux进程"><link rel="icon" href="/free-programming-books-zh_CN/favicon.svg" type="image/svg+xml"><link rel="sitemap" href="/free-programming-books-zh_CN/sitemap-index.xml"><script>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script><link rel="stylesheet" href="/free-programming-books-zh_CN/_astro/about.C4f5Ff1p.css"></head> <body> <header class="site-header"> <div class="inner"> <a class="brand" href="/free-programming-books-zh_CN/">免费编程书库<span>.</span></a> <nav> <a href="/free-programming-books-zh_CN/">首页</a> <a href="/free-programming-books-zh_CN/search/">搜索</a> <a href="/free-programming-books-zh_CN/nonfiction/">非编程好书</a> <a href="/free-programming-books-zh_CN/about/">关于</a> </nav> <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button> </div> </header> <main class="wrap">  <div class="crumbs"> <a href="/free-programming-books-zh_CN/">首页</a> /
+<a href="/free-programming-books-zh_CN/books/60554edfccab">理解Linux进程</a> <span> / 进程资源</span> </div> <div class="reader-layout"> <aside class="reader-toc"> <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">理解Linux进程</p> <a class href="/free-programming-books-zh_CN/read/60554edfccab/001-readme/">前言</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/002-thanks/">致谢</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/003-overview/">概述</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/004-use-code/">使用代码</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/005-use-docker/">使用Docker</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/006-readme/">进程基础</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/007-what-is-process/">进程是什么</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/008-hello-world/">Hello World</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/009-pid/">PID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/010-ppid/">PPID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/011-use-pid/">使用PID</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/012-process-name/">进程名字</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/013-argv/">进程参数</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/014-input-and-output/">输入与输出</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/015-concurrent-and-parallel/">并发与并行</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/016-the-more-the-better/">进程越多越好</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/017-status/">进程状态</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/018-exit-code/">退出码</a><a class="active" href="/free-programming-books-zh_CN/read/60554edfccab/019-process-resource/">进程资源</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/020-deadlock/">死锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/021-livelock/">活锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/022-posix/">POSIX</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/023-nohup/">Nohup</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/024-run-process/">运行进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/025-readme/">Go编程实例</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/026-spawn/">衍生新进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/027-exec/">执行外部程序</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/028-fork/">复制进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/029-readme/">进程进阶</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/030-file-lock/">文件锁</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/031-orphan-process/">孤儿进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/032-zombie-process/">僵尸进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/033-daemon-process/">守护进程</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/034-ipc/">进程间通信</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/035-signal/">信号</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/036-system-call/">Linux系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/037-fd/">文件描述符</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/038-epoll/">Epoll</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/039-share-memory/">共享内存</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/040-copy-on-write/">Copy On Write</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/041-cgroups/">Cgroups</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/042-namespaces/">Namespaces</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/043-readme/">项目实例Run</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/044-architecture/">项目架构</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/045-implement/">代码实现</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/046-readme/">注意事项</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/047-mkdir/">创建目录权限</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/048-sigkill/">捕获SIGKILL</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/049-sendfile/">Sendfile系统调用</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/050-readme/">后记</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/051-book/">参考书籍</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/052-project/">项目学习</a><a class href="/free-programming-books-zh_CN/read/60554edfccab/053-thanks-again/">再次感谢</a> </aside> <article class="reader-panel prose"> <h2 id="进程文件">进程文件</h2>
+<p>在Linux中“一切皆文件”，进程的一切运行信息(占用CPU、内存等)都可以在文件系统找到，例如看一下PID为1的进程信息。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>root@87096bf68cb2:/go/src# ls /proc/1/</span></span>
+<span class="line"><span>attr        cmdline          cwd      fdinfo   loginuid   mounts      numa_maps      pagemap      sessionid  status   wchan</span></span>
+<span class="line"><span>auxv        comm             environ  gid_map  maps       mountstats  oom_adj        personality  smaps      syscall</span></span>
+<span class="line"><span>cgroup      coredump_filter  exe      io       mem        net         oom_score      projid_map   stat       task</span></span>
+<span class="line"><span>clear_refs  cpuset           fd       limits   mountinfo  ns          oom_score_adj  root         statm      uid_map</span></span></code></pre>
+<p>我们可以看一下它的运行状态，通过<code>cat /proc/1/status</code>即可。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>root@87096bf68cb2:/go/src# cat /proc/1/status</span></span>
+<span class="line"><span>Name:   bash</span></span>
+<span class="line"><span>State:  S (sleeping)</span></span>
+<span class="line"><span>Tgid:   1</span></span>
+<span class="line"><span>Ngid:   0</span></span>
+<span class="line"><span>Pid:    1</span></span>
+<span class="line"><span>PPid:   0</span></span>
+<span class="line"><span>TracerPid:      0</span></span>
+<span class="line"><span>Uid:    0       0       0       0</span></span>
+<span class="line"><span>Gid:    0       0       0       0</span></span>
+<span class="line"><span>FDSize: 256</span></span>
+<span class="line"><span>Groups:</span></span>
+<span class="line"><span>VmPeak:    20300 kB</span></span>
+<span class="line"><span>VmSize:    20300 kB</span></span>
+<span class="line"><span>VmLck:         0 kB</span></span>
+<span class="line"><span>VmPin:         0 kB</span></span>
+<span class="line"><span>VmHWM:      3228 kB</span></span>
+<span class="line"><span>VmRSS:      3228 kB</span></span>
+<span class="line"><span>VmData:      408 kB</span></span>
+<span class="line"><span>VmStk:       136 kB</span></span>
+<span class="line"><span>VmExe:       968 kB</span></span>
+<span class="line"><span>VmLib:      2292 kB</span></span>
+<span class="line"><span>VmPTE:        60 kB</span></span>
+<span class="line"><span>VmSwap:        0 kB</span></span>
+<span class="line"><span>Threads:        1</span></span>
+<span class="line"><span>SigQ:   0/3947</span></span>
+<span class="line"><span>SigPnd: 0000000000000000</span></span>
+<span class="line"><span>ShdPnd: 0000000000000000</span></span>
+<span class="line"><span>SigBlk: 0000000000010000</span></span>
+<span class="line"><span>SigIgn: 0000000000380004</span></span>
+<span class="line"><span>SigCgt: 000000004b817efb</span></span>
+<span class="line"><span>CapInh: 00000000a80425fb</span></span>
+<span class="line"><span>CapPrm: 00000000a80425fb</span></span>
+<span class="line"><span>CapEff: 00000000a80425fb</span></span>
+<span class="line"><span>CapBnd: 00000000a80425fb</span></span>
+<span class="line"><span>Seccomp:        0</span></span>
+<span class="line"><span>Cpus_allowed:   1</span></span>
+<span class="line"><span>Cpus_allowed_list:      0</span></span>
+<span class="line"><span>Mems_allowed:   00000000,00000001</span></span>
+<span class="line"><span>Mems_allowed_list:      0</span></span>
+<span class="line"><span>voluntary_ctxt_switches:        684</span></span>
+<span class="line"><span>nonvoluntary_ctxt_switches:     597</span></span></code></pre>
+<p>参考Linux手册可以看到更多信息，我们这不再深究，实际上<code>ps</code>命令获得的数据也是在这个文件系统获得的。</p>
+<p>我们已经了解了这么多进程属性，是时候开始学习“传说中”的死锁问题了。</p> <nav class="pager"> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/018-exit-code/">← 退出码</a></span> <span><a href="/free-programming-books-zh_CN/read/60554edfccab/020-deadlock/">死锁 →</a></span> </nav> </article> </div>  </main> <footer class="site-footer"> <div class="inner"> <p>
+数据来源
+<a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+(GPL-3.0),源码提交 a669b8a,数据生成于 2026-09-26。
+</p> <p>
+所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+</p> </div> </footer> <script type="module">document.getElementById("theme-btn")?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});</script> </body> </html>
