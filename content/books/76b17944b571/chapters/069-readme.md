@@ -1,0 +1,15 @@
+# 第八章 数据管理
+
+如图 8-1 所示，Docker 数据管理主要围绕三类挂载方式展开。
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/_images/types-of-mounts.png" alt="Docker 数据挂载类型">
+</p>
+
+图 8-1：Docker 数据挂载类型示意图
+
+这一章介绍如何在 Docker 内部以及容器之间管理数据，在容器中管理数据主要有以下几种方式：
+
+* [数据卷](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/8.1_volume.md)
+* [挂载主机目录](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/8.2_bind-mounts.md)
+* [tmpfs 挂载](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/8.3_tmpfs.md)

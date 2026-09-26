@@ -1,0 +1,76 @@
+{
+  "bookId": "5497cc7a9cb0",
+  "title": "Mac 开发配置手册",
+  "url": "https://aaaaaashu.gitbooks.io/mac-dev-setup/content/",
+  "status": "ok",
+  "fetchedAt": "2026-09-26T18:52:33.533Z",
+  "chapters": [
+    {
+      "slug": "001-1g",
+      "title": "Introduction | Mac 开发配置手册",
+      "file": "chapters/001-1g.md"
+    },
+    {
+      "slug": "002-28",
+      "title": "System Preferences | Mac 开发配置手册",
+      "file": "chapters/002-28.md"
+    },
+    {
+      "slug": "003-1w",
+      "title": "XCode | Mac 开发配置手册",
+      "file": "chapters/003-1w.md"
+    },
+    {
+      "slug": "004-1z",
+      "title": "Homebrew | Mac 开发配置手册",
+      "file": "chapters/004-1z.md"
+    },
+    {
+      "slug": "005-1z",
+      "title": "Usage | Mac 开发配置手册",
+      "file": "chapters/005-1z.md"
+    },
+    {
+      "slug": "006-1y",
+      "title": "Cask | Mac 开发配置手册",
+      "file": "chapters/006-1y.md"
+    },
+    {
+      "slug": "007-1w",
+      "title": "iTerm2 | Mac 开发配置手册",
+      "file": "chapters/007-1w.md"
+    },
+    {
+      "slug": "008-1u",
+      "title": "ZSH | Mac 开发配置手册",
+      "file": "chapters/008-1u.md"
+    },
+    {
+      "slug": "009-1u",
+      "title": "Git | Mac 开发配置手册",
+      "file": "chapters/009-1u.md"
+    },
+    {
+      "slug": "010-1y",
+      "title": "Git ignore | Mac 开发配置手册",
+      "file": "chapters/010-1y.md"
+    },
+    {
+      "slug": "011-1w",
+      "title": "MySql | Mac 开发配置手册",
+      "file": "chapters/011-1w.md"
+    },
+    {
+      "slug": "012-1y",
+      "title": "Node.js | Mac 开发配置手册",
+      "file": "chapters/012-1y.md"
+    },
+    {
+      "slug": "013-1v",
+      "title": "Apps | Mac 开发配置手册",
+      "file": "chapters/013-1v.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction | Mac 开发配置手册"
+}

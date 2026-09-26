@@ -1,0 +1,84 @@
+## 9.2 网络类型
+
+Docker 提供了多种网络驱动来满足不同的使用场景。安装 Docker 后，系统会自动创建三个默认网络：
+
+```bash
+$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+abc123...      bridge    bridge    local
+def456...      host      host      local
+ghi789...      none      null      local
+```
+
+### 9.2.1 网络类型对比
+
+各网络类型的特点和适用场景如下：
+
+| 网络类型 | 说明 | 适用场景 |
+|---------|------|---------|
+| **bridge** | 默认类型，容器连接到虚拟网桥 | 大多数单机场景 |
+| **host** | 容器直接使用宿主机网络栈 | 需要最高网络性能时 |
+| **none** | 禁用网络 | 完全隔离的容器 |
+| **overlay** | 跨主机网络 | Docker Swarm 集群 |
+| **macvlan** | 容器拥有独立 MAC 地址 | Linux 主机上需要直接接入物理网络 |
+| **ipvlan** | 容器共享父接口 MAC，独享 IP | 同网段大量容器、对 MAC 数量受限的网络 |
+
+### 9.2.2 Bridge 网络：默认
+
+Bridge 是 Docker 默认使用的网络模式。在原生 Linux Docker Engine 上，Docker 启动时通常会创建 `docker0` 虚拟网桥，未指定网络的容器会连接到这个网桥上。Docker Desktop 运行在虚拟机内，宿主机上不会直接看到 `docker0`，也不能假设宿主机可直接访问每个容器 IP。
+
+核心组件如下：
+
+| 组件 | 说明 |
+|------|------|
+| **docker0** | 虚拟网桥，充当交换机角色 |
+| **veth pair** | 虚拟网卡对，一端在容器内，一端连接网桥 |
+| **容器 eth0** | 容器内的网卡 |
+| **IP 地址** | 自动从 172.17.0.0/16 网段分配 |
+
+### 9.2.3 Host 网络
+
+使用 `--network host` 参数启动的容器会直接使用宿主机的网络栈，不再拥有独立的网络命名空间。容器内的端口就是宿主机的端口，无需端口映射。
+
+```bash
+$ docker run -d --network host nginx
+```
+这种模式下网络性能最高，但容器之间和宿主机之间没有网络隔离。
+
+> 注意：host 网络优先用于明确需要高性能或大量端口的 Linux 主机场景。Docker Desktop 仅在较新版本中支持，且需要在设置中启用；使用 host 网络时 `-p` / `--publish` 端口映射不会生效。普通 Web 服务默认仍建议使用 bridge 网络并显式发布端口。
+
+### 9.2.4 None 网络
+
+使用 `--network none` 参数启动的容器只有 `lo` 回环网卡，完全没有外部网络连接。适用于只需要运行计算任务、不需要网络的容器。
+
+```bash
+$ docker run -it --network none alpine ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> ...
+    inet 127.0.0.1/8 scope host lo
+```
+
+### 9.2.5 Macvlan 与平台限制
+
+Macvlan 适合少数需要让容器像物理主机一样直接出现在二层网络中的场景。它只支持 Linux 主机，不支持 Docker Desktop for Mac / Windows，也不支持 rootless 模式；多数云厂商网络会阻断或限制 macvlan。默认情况下，macvlan 容器与宿主机直接通信也需要额外路由或接口配置。
+
+### 9.2.6 数据流向
+
+容器网络中的数据流向可以分为以下几种情况：
+
+```mermaid
+flowchart LR
+    subgraph Comm1 ["容器间通信"]
+        direction LR
+        C1A["容器 A (172.17.0.2)"] --> D0A["docker0"] --> C1B["容器 B (172.17.0.3)"]
+    end
+
+    subgraph Comm2 ["访问外网"]
+        direction LR
+        C2A["容器 A (172.17.0.2)"] --> D0B["docker0"] --> Eth0A["eth0"] --> InternetA["互联网"]
+    end
+
+    subgraph Comm3 ["被外部访问，需端口映射"]
+        direction LR
+        Req["外部请求"] --> Eth0B["eth0"] --> D0C["docker0"] --> C3A["容器 A"]
+    end
+```

@@ -1,0 +1,153 @@
+## 21.2 GitHub Actions
+
+GitHub [Actions](https://github.com/features/actions) 是 GitHub 推出的一款 CI/CD 工具。
+
+我们可以在每个 `job` 的 `step` 中使用 Docker 执行构建步骤。
+
+### 21.2.1 最小可用示例
+
+更多语法、权限模型和可用 action，请以 [GitHub Actions 官方文档](https://docs.github.com/en/actions) 为准。
+
+在仓库根目录创建 `.github/workflows/ci.yml`：
+
+```yaml
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: false
+          tags: local/test:ci
+```
+该示例会在 GitHub Actions 中构建当前仓库的 Docker 镜像（不推送到 registry）。
+
+仓库还提供一份经 `actionlint` 校验、并将 `checkout` 固定到完整 commit SHA 的[可执行工作流示例](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/examples/validated/github-actions/validate.yml)。为了让正文突出结构，下面较长的教学片段仍用主版本 tag；生产工作流应采用完整 SHA。
+
+下面的完整围栏与仓库文件由测试强制保持一致，并校验下载工具的 SHA-256：
+
+<!-- canonical-example: github-actions -->
+```yaml
+name: Validate container examples
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Install pinned validators
+        env:
+          KUBECONFORM_VERSION: "0.8.0"
+          KUBECONFORM_SHA256: "9bc2bffbf71f261128533edaf912153948b7ff238f9a531ae6d34466ec287883"
+          ACTIONLINT_VERSION: "1.7.12"
+          ACTIONLINT_SHA256: "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+        run: |
+          mkdir -p "$RUNNER_TEMP/bin"
+          curl -fsSL --retry 3 \
+            "https://github.com/yannh/kubeconform/releases/download/v${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz" \
+            -o "$RUNNER_TEMP/kubeconform.tar.gz"
+          echo "${KUBECONFORM_SHA256}  $RUNNER_TEMP/kubeconform.tar.gz" | sha256sum -c -
+          tar xzf "$RUNNER_TEMP/kubeconform.tar.gz" -C "$RUNNER_TEMP/bin" kubeconform
+
+          curl -fsSL --retry 3 \
+            "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
+            -o "$RUNNER_TEMP/actionlint.tar.gz"
+          echo "${ACTIONLINT_SHA256}  $RUNNER_TEMP/actionlint.tar.gz" | sha256sum -c -
+          tar xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP/bin" actionlint
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+
+      - name: Validate canonical examples
+        run: python3 tools/test_examples.py --require-tools
+
+```
+
+### 21.2.2 构建并推送到 Registry
+
+实际项目中通常需要在 CI 中构建镜像并推送到容器 Registry。以下示例展示了多阶段构建 + 登录 + 推送的完整流程：
+
+```yaml
+name: Build and Push
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/setup-buildx-action@v4
+
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/${{ github.repository }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: mode=max
+          sbom: true
+```
+
+关键说明：
+
+* `docker/login-action` 负责认证，支持 Docker Hub、GHCR、ECR 等主流 Registry。
+* `cache-from` / `cache-to` 使用 GitHub Actions 原生缓存（`type=gha`），无需额外配置即可加速增量构建。
+* 标签同时使用 commit hash 和 `latest`，兼顾版本追溯与部署便利。
+* `provenance: mode=max` 和 `sbom: true` 会把构建来源证明和 SBOM 附加到推送的镜像上；只做本地 `load: true` 的构建无法完整保留这些 attestation。
+
+### 21.2.3 最佳实践
+
+* 生产流水线要按完整 commit SHA 固定第三方 action；示例中使用 `@v4` / `@v6` 只是为了可读性，仍属于信任 tag 维护者的取舍，不能等同于不可变引用。
+* 设置最小权限（例如 `contents: read`），需要写入权限时再打开。
+* 需要依赖缓存时，优先使用官方支持的缓存方案（例如针对语言包管理器的 cache 或 BuildKit cache）。
+* 敏感凭据（Registry 密码、Deploy Key 等）一律通过 `secrets` 注入，禁止硬编码。
+* 多平台构建可在 `build-push-action` 中添加 `platforms: linux/amd64,linux/arm64`。
+
+如果你需要在某个步骤里直接运行容器镜像（而不是构建镜像），可以使用 `docker://` 语法：
+
+```yaml
+- name: Run container step
+  uses: docker://golang:alpine
+  with:
+    args: go version
+```

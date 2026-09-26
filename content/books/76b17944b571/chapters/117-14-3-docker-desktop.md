@@ -1,0 +1,20 @@
+## 14.3 在 Docker Desktop 使用
+
+使用 Docker Desktop 可以很方便的启用 Kubernetes。
+
+### 14.3.1 启用 Kubernetes
+
+在 Docker Desktop 设置页面，进入 `Kubernetes`，创建或启用集群。较新的 Docker Desktop 可选择 `kind` 或 `kubeadm` 作为集群创建方式；日常本地开发优先选择 `kind`，因为它支持多节点和版本选择。
+
+![图](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/_images/settings-kubernetes.png)
+
+> 注意：Docker Desktop Kubernetes 的控制平面镜像默认从 Docker Hub 拉取，例如 `docker.io/docker/desktop-*` 或 `docker.io/kindest/node:<tag>`。如果企业网络不能访问 Docker Hub，应按 Docker Desktop 的 `KubernetesImagesRepository` 设置镜像仓库，并用 `docker desktop kubernetes images list`（Docker Desktop 4.44+）或 `docker ps` 确认实际镜像标签。普通 Docker Engine 的 `registry-mirrors` 不会自动改写这些控制平面镜像。
+
+### 14.3.2 测试
+
+```bash
+$ kubectl version
+$ kubectl config use-context docker-desktop
+$ kubectl get nodes
+```
+如果 `kubectl get nodes` 显示节点为 `Ready`，则证明 Kubernetes 成功启动。

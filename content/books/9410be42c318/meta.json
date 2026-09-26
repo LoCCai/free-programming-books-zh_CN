@@ -1,0 +1,16 @@
+{
+  "bookId": "9410be42c318",
+  "title": "FreeBSD 使用手册",
+  "url": "https://www.freebsd.org/doc/zh_CN/books/handbook/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-26T18:52:30.283Z",
+  "chapters": [
+    {
+      "slug": "001-1n",
+      "title": "FreeBSD 使用手册",
+      "file": "chapters/001-1n.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "FreeBSD 使用手册"
+}

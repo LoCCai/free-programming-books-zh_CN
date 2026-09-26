@@ -1,0 +1,127 @@
+## 6.2 私有仓库
+
+有时候使用 Docker Hub 这样的公共仓库可能不方便，用户可以创建一个本地仓库供私人使用。
+
+本节介绍如何使用本地仓库。
+
+[Docker Registry](https://distribution.github.io/distribution/) 是官方提供的工具，可以用于构建私有的镜像仓库。本文示例沿用 [distribution/distribution](https://github.com/distribution/distribution) v2.x 兼容路径；新生产部署应评估 Distribution 3.x，并核对配置路径、迁移说明和生态兼容性。
+
+### 6.2.1 安装运行 docker-registry
+
+#### 容器运行
+
+如果您需要搭建私有仓库，可以通过官方提供的 `registry` 镜像快速部署。
+
+你可以使用官方 `registry` 镜像来运行。
+
+```bash
+$ docker run -d -p 127.0.0.1:5000:5000 --restart=always --name registry registry:2
+```
+
+> **注意**：这样启动的 registry **没有任何认证、也没有 TLS**，因此这里刻意绑定到
+> `127.0.0.1`，仅供本机实验。不要直接把它绑到 `0.0.0.0` 或内网地址——那等于允许同网段
+> 任意主机匿名推送镜像（镜像投毒：覆盖你的 `latest` 标签，下游全部拉到攻击者的镜像）。
+> 需要多机访问请直接用 [6.3 节](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.3_registry_auth.md) 的 TLS + 认证方案。
+
+> **版本说明**：使用 `registry:2` 表示 Docker Registry 2.x 兼容示例。Distribution 3.x 已发布稳定版本；不要直接把本章 v2 配置原样套到 v3 生产环境，升级前应阅读迁移说明并做兼容测试。旧版本 Registry 1.x 已停止维护，不建议使用。
+这将使用官方的 `registry` 镜像来启动私有仓库。默认情况下，仓库会被创建在容器的 `/var/lib/registry` 目录下。你可以通过 `-v` 参数来将镜像文件存放在本地的指定路径。例如下面的例子将上传的镜像放到本地的 `/opt/data/registry` 目录。
+
+```bash
+$ docker run -d \
+    -p 5000:5000 \
+    -v /opt/data/registry:/var/lib/registry \
+    registry:2
+```
+
+### 6.2.2 在私有仓库上传、搜索、下载镜像
+
+创建好私有仓库之后，就可以使用 `docker tag` 来标记一个镜像，然后推送它到仓库。例如私有仓库地址为 `127.0.0.1:5000`。
+
+先在本机查看已有的镜像。
+
+```bash
+$ docker image ls
+REPOSITORY                        TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu                            latest              ba5877dc9bec        6 weeks ago         192.7 MB
+```
+使用 `docker tag` 将 `ubuntu:latest` 这个镜像标记为 `127.0.0.1:5000/ubuntu:latest`。
+
+格式为 `docker tag IMAGE[:TAG] [REGISTRY_HOST[:REGISTRY_PORT]/]REPOSITORY[:TAG]`。
+
+```bash
+$ docker tag ubuntu:latest 127.0.0.1:5000/ubuntu:latest
+$ docker image ls
+REPOSITORY                        TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu                            latest              ba5877dc9bec        6 weeks ago         192.7 MB
+127.0.0.1:5000/ubuntu             latest              ba5877dc9bec        6 weeks ago         192.7 MB
+```
+使用 `docker push` 上传标记的镜像。
+
+```bash
+$ docker push 127.0.0.1:5000/ubuntu:latest
+The push refers to repository [127.0.0.1:5000/ubuntu]
+373a30c24545: Pushed
+a9148f5200b0: Pushed
+cdd3de0940ab: Pushed
+fc56279bbb33: Pushed
+b38367233d37: Pushed
+2aebd096e0e2: Pushed
+latest: digest: sha256:fe4277621f10b5026266932ddf760f5a756d2facd505a94d2da12f4f52f71f5a size: 1568
+```
+用 `curl` 查看仓库中的镜像。
+
+```bash
+$ curl 127.0.0.1:5000/v2/_catalog
+{"repositories":["ubuntu"]}
+```
+这里可以看到 `{"repositories":["ubuntu"]}`，表明镜像已经被成功上传了。
+
+先删除已有镜像，再尝试从私有仓库中下载这个镜像。
+
+```bash
+$ docker image rm 127.0.0.1:5000/ubuntu:latest
+
+$ docker pull 127.0.0.1:5000/ubuntu:latest
+Pulling repository 127.0.0.1:5000/ubuntu:latest
+ba5877dc9bec: Download complete
+511136ea3c5a: Download complete
+9bad880da3d2: Download complete
+25f11f5fb0cb: Download complete
+ebc34468f71d: Download complete
+2318d26665ef: Download complete
+
+$ docker image ls
+REPOSITORY                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+127.0.0.1:5000/ubuntu              latest              ba5877dc9bec        6 weeks ago         192.7 MB
+```
+
+### 6.2.3 配置非 https 仓库地址
+
+如果你不想使用 `127.0.0.1:5000` 作为仓库地址，比如想让本网段的其他主机也能把镜像推送到私有仓库。你就得把例如 `192.168.199.100:5000` 这样的内网地址作为私有仓库地址，这时你会发现无法成功推送镜像。
+
+这是因为 Docker 默认不允许非 `HTTPS` 方式推送镜像。我们可以通过 Docker 的配置选项来取消这个限制，或者查看下一节配置能够通过 `HTTPS` 访问的私有仓库。
+
+> **警告**：下面的 `insecure-registries` 会关闭该地址的 TLS 校验，推送和拉取都是明文、可被中间人篡改；再叠加上 registry 默认无认证，等于把「任意主机可匿名投毒」的仓库开在内网。**仅限隔离的实验网络**，生产一律走 [6.3 节](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.3_registry_auth.md) 的 TLS + 认证。
+
+#### Linux
+
+默认情况下，Docker 强制使用 HTTPS 协议推送镜像。如果您搭建的私有仓库是 HTTP 协议，需要进行如下配置。
+
+
+对于使用 `systemd` 的系统，请在 `/etc/docker/daemon.json` 中写入如下内容（如果文件不存在请新建该文件）
+
+```json
+{
+  "registry-mirrors": [
+    "https://docker.your-mirror.example.com"
+  ],
+  "insecure-registries": [
+    "192.168.199.100:5000"
+  ]
+}
+```
+> 注意：该文件必须符合 `json` 规范，否则 Docker 将不能启动。镜像加速器地址请替换为实际可用的源，具体配置参见 [3.9 镜像加速器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md)。
+
+### 6.2.4 其他
+
+对于 Docker Desktop for Windows、Docker Desktop for Mac 在设置中的 `Docker Engine` 中进行编辑，增加和上边一样的字符串即可。

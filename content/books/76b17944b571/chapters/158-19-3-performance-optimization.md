@@ -1,0 +1,633 @@
+## 19.3 容器性能优化与故障诊断
+
+容器的轻量级特性不代表性能问题会自动消失。在实际运维中，性能瓶颈可能来自 CPU 限制、内存溢出、磁盘 I/O、网络拥塞等多个层面。本节深入讨论容器性能监控、诊断方法和优化策略。
+
+### 19.3.1 容器性能监控指标
+
+#### 核心性能指标体系
+
+容器性能监控涉及 Docker CLI、Prometheus/cAdvisor 指标和底层 cgroup 文件。现代 Linux 与 Kubernetes 新版本通常使用 cgroup v2；旧系统或兼容环境仍可能看到 cgroup v1 名称。
+
+| 类型 | Docker / Prometheus 常见指标 | cgroup v2 文件 | cgroup v1 兼容名 |
+|------|------------------------------|----------------|------------------|
+| CPU 使用 | `CPU %`、`container_cpu_usage_seconds_total` | `cpu.stat` 中的 `usage_usec` | `cpuacct.usage` |
+| CPU 限流 | `container_cpu_cfs_throttled_periods_total` | `cpu.stat` 中的 `nr_throttled`、`throttled_usec` | `cpu.stat.nr_throttled`、`cpu.stat.throttled_time` |
+| 内存使用 | `MEM USAGE`、`container_memory_working_set_bytes` | `memory.current` | `memory.usage_in_bytes` |
+| 内存限制 | `MEM USAGE / LIMIT` | `memory.max` | `memory.limit_in_bytes` |
+| OOM 次数 | `container_oom_events_total` 或运行时事件 | `memory.events` 中的 `oom` / `oom_kill` | `memory.failcnt` |
+| 网络收发 | `NET I/O`、`container_network_receive_bytes_total` / `transmit_bytes_total` | 网络命名空间接口计数 | `rx_bytes` / `tx_bytes` |
+| 块 I/O | `BLOCK I/O`、`container_fs_*` / `container_blkio_*` | `io.stat` | `blkio.throttle.io_service_bytes` |
+| 文件系统 | `container_fs_usage_bytes` / `container_fs_limit_bytes` | 运行时或文件系统采集 | `fs_usage_bytes` / `fs_limit_bytes` |
+
+### 19.3.2 使用 docker stats 实时监控
+
+`docker stats` 是最基础但强大的监控工具，提供实时的容器资源使用情况。
+
+**基本使用：**
+
+```bash
+# 实时监控所有运行中的容器
+docker stats
+
+# 输出示例：
+# CONTAINER ID   NAME      CPU %   MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O
+# abc123def456   nginx     0.45%   24.3 MiB / 256 MiB    9.49%     1.2kB / 3.4kB 0 B / 0 B
+# def789ghi012   redis     0.23%   12.5 MiB / 512 MiB    2.44%     2.1kB / 1.5kB 0 B / 0 B
+
+# 只监控特定容器
+docker stats nginx redis
+
+# 一次性输出不进入交互模式
+docker stats --no-stream
+
+# 每 2 秒采样一次（docker stats 没有 --interval 选项）
+while true; do
+  docker stats --no-stream
+  sleep 2
+done
+
+# 格式化输出（使用 Go 模板）
+docker stats --format "table {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" --no-stream
+
+# 导出为 JSON 格式用于日志记录
+docker stats --format json --no-stream > stats.json
+```
+**在脚本中使用：**
+
+```bash
+#!/bin/bash
+
+# 持续监控并记录到文件
+while true; do
+    timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    docker stats --no-stream --format "{{.Container}},{{.CPUPerc}},{{.MemUsage}}" | \
+        awk -v ts="$timestamp" '{print ts","$0}' >> container_stats.log
+    sleep 10
+done
+```
+**性能指标解读：**
+
+```bash
+# CPU % 超过 80%：需要增加 CPU 限制或优化应用
+# MEM % 接近 100%：容器即将 OOM，需要增加内存或排查内存泄漏
+# NET I/O 只显示收发字节；丢包要看 ip -s link、cAdvisor/Prometheus 或主机网卡计数器
+```
+
+### 19.3.3 cAdvisor 容器监控系统
+
+cAdvisor 是 Google 开发的容器监控工具，提供比 `docker stats` 更详细的性能数据。
+
+> **⚠️ 安全权衡提示**：下面的示例为简化部署使用了 `privileged: true`，与 [第 18 章](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/18_security/README.md) 中“最小权限 / `cap_drop=all`”的原则相冲突。生产环境建议改为按需授予能力（如 `cap_add: [SYS_ADMIN]` 加 `device_cgroup_rules` 与精确的 `devices`、`volumes` 挂载），并将 cAdvisor 部署在独立的监控网络中。如何选择请参考 [18.4 节](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/18_security/18.4_kernel_capability.md) 关于内核能力（capabilities）的细化授权。
+
+**Docker Compose 部署 cAdvisor：**
+
+```yaml
+services:
+  cadvisor:
+    image: ghcr.io/google/cadvisor:v0.56.2
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    privileged: true
+    devices:
+      - /dev/kmsg
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+    driver: bridge
+```
+启动后访问 `http://localhost:8080` 查看：
+
+- 容器性能统计
+- 系统资源使用情况
+- 历史性能数据
+
+**从 cAdvisor 提取指标：**
+
+```bash
+# 获取所有容器的 JSON 格式性能数据
+curl http://localhost:8080/api/v1.3/machine | jq .
+
+# 获取特定容器信息
+curl http://localhost:8080/api/v1.3/docker | jq '.docker | keys' | head -5
+
+# 获取容器统计信息
+curl http://localhost:8080/api/v1.3/docker/abc123/ | jq '.stats[-1]'
+```
+**与 Prometheus 集成：**
+
+```yaml
+# prometheus.yml 配置
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['localhost:8080']
+    metrics_path: '/metrics'
+```
+
+### 19.3.4 Prometheus 容器监控配置
+
+使用 Prometheus 和 node-exporter 进行长期的容器性能监控。
+
+**完整监控栈部署：**
+
+> [!TIP]
+> 以下示例中的镜像标签（如 `prom/prometheus:v3.11.2`、`prom/node-exporter:v1.11.1`、`ghcr.io/google/cadvisor:v0.56.2`、`grafana/grafana:13.0.1`）仅为参考。在生产环境部署前，请访问各项目的官方发布页或文档获取最新版本号。
+
+> [!WARNING]
+> 该完整栈示例包含宿主机根目录、`/proc`、`/sys`、Docker 数据目录挂载以及 `privileged: true`。Docker Compose 官方信任模型把这些字段列为高风险宿主机控制面；只应在受控监控节点使用，并优先改为 rootless、只读、最小挂载和独立监控网络。
+
+```yaml
+services:
+  prometheus:
+    image: prom/prometheus:v3.11.2
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - monitoring
+
+  node-exporter:
+    image: prom/node-exporter:v1.11.1
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    networks:
+      - monitoring
+
+  cadvisor:
+    image: ghcr.io/google/cadvisor:v0.56.2
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    privileged: true
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:13.0.1
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:?set GRAFANA_ADMIN_PASSWORD}
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - monitoring
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  monitoring:
+    driver: bridge
+```
+**Prometheus 配置文件（prometheus.yml）：**
+
+如果需要采集 Docker daemon 自身指标，需要先在 Docker daemon 配置中开启 metrics：
+
+```json
+{
+  "metrics-addr": "127.0.0.1:9323"
+}
+```
+
+Prometheus 运行在容器里并使用 `host.docker.internal:9323` 抓取时，daemon 必须监听容器可达的主机地址；若改为 `0.0.0.0:9323`，会把指标端口暴露给更大网络，必须配合防火墙和可信网络边界。
+
+```yaml
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['host.docker.internal:9323']
+```
+**常用的 Prometheus 查询（PromQL）：**
+
+```text
+# 容器 CPU 使用百分比
+rate(container_cpu_usage_seconds_total[5m]) * 100
+
+# 容器内存使用百分比
+(container_memory_usage_bytes / container_spec_memory_limit_bytes) * 100
+
+# 容器网络入站流量（MB/s）
+rate(container_network_receive_bytes_total[5m]) / 1024 / 1024
+
+# 容器网络出站流量（MB/s）
+rate(container_network_transmit_bytes_total[5m]) / 1024 / 1024
+
+# 容器磁盘读取速率（MB/s）
+rate(container_fs_reads_bytes_total[5m]) / 1024 / 1024
+
+# CPU 限流情况
+rate(container_cpu_cfs_throttled_seconds_total[5m])
+
+# 内存缓存占比
+container_memory_cache_bytes / container_memory_usage_bytes
+
+# 按镜像统计容器数
+count(container_memory_usage_bytes) by (image)
+```
+
+### 19.3.5 容器 OOM 排查与内存限制调优
+
+#### OOM 问题诊断
+
+```bash
+# 检查容器是否因 OOM 被杀死
+docker inspect <container_id> | grep OOMKilled
+
+# 查看容器退出码：137 表示被 OOM 杀死
+docker ps -a --format "{{.ID}}\t{{.Status}}" | grep "137"
+
+# 查看容器日志中的 OOM 信息
+docker logs <container_id> 2>&1 | grep -i "out of memory\|oom"
+
+# 从宿主机日志查看 OOM 事件
+dmesg | grep -i "oom\|kill"
+journalctl -u docker -n 100 | grep -i "oom"
+```
+
+#### 内存泄漏检测
+
+使用专项工具分析应用内存使用：
+
+**Python 应用内存泄漏检测：**
+
+```python
+# Dockerfile
+FROM python:3.14-slim
+WORKDIR /app
+COPY requirements.txt .
+# tracemalloc 是 Python 标准库模块（自 3.4 起内置），无需安装
+RUN pip install -r requirements.txt memory_profiler
+
+COPY app.py .
+CMD ["python", "-m", "memory_profiler", "app.py"]
+```
+```python
+# app.py - 内存泄漏示例
+from memory_profiler import profile
+import tracemalloc
+
+@profile
+def memory_leak():
+    # 不断创建未释放的列表
+    data = []
+    while True:
+        data.append([0] * 1000000)
+        print(f"List size: {len(data)}")
+
+# 使用 tracemalloc 跟踪内存分配
+tracemalloc.start()
+
+# 执行可能泄漏的代码
+# ...
+
+current, peak = tracemalloc.get_traced_memory()
+print(f"Current: {current / 1024 / 1024:.2f} MB")
+print(f"Peak: {peak / 1024 / 1024:.2f} MB")
+```
+**Java 应用内存分析：**
+
+```bash
+# 在容器中启用 JVM 远程调试
+docker run -e JAVA_OPTS="-Xmx512m -Xms256m -XX:+UseG1GC" \
+  -p 5005:5005 \
+  myapp:latest
+
+# 使用 jstat 检查垃圾回收情况
+jstat -gc <pid> 1000  # 每秒采样一次
+
+# 输出示例：
+#  S0C    S1C    S0U    S1U      EC       EU        OC         OU       MC       MU    CCSC   CCSU
+# 6144   6144      0   6144   39424    12288   149504     84320     50552   47689  6464   5989
+```
+
+#### 内存限制最佳实践
+
+```bash
+# 为容器设置内存限制
+docker run -m 512m --memory-swap 1g myapp:latest
+
+# 参数说明：
+# -m / --memory：内存限制（这里是 512MB）
+# --memory-swap：内存+SWAP 总额（这里是 1GB，意味着 SWAP 为 512MB）
+# 如果设置 --memory 但不设置 --memory-swap，有主机 swap 时容器总量可达内存限制的 2 倍；
+# 要禁用 swap，应把 --memory-swap 设置为与 --memory 相同
+
+# Docker Compose 配置
+services:
+  app:
+    image: myapp:latest
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+```
+**内存超额提交（Memory Overcommit）：**
+
+```bash
+# 在 Docker Compose 中区分限制和预留
+# limits：绝不能超过的最大值
+# reservations：Compose 排期时的参考值
+
+services:
+  web:
+    memory: 512M  # 限制
+    memswap_limit: 1G  # SWAP 限制
+
+  db:
+    memory: 2G
+    memory_reservation: 1G  # 预留 1GB，允许突发到 2GB
+```
+
+### 19.3.6 镜像体积优化与多阶段构建
+
+#### 镜像体积分析工具
+
+**使用 dive 分析镜像层：**
+
+```bash
+# 安装 dive
+wget https://github.com/wagoodman/dive/releases/download/v0.13.1/dive_0.13.1_linux_amd64.deb
+sudo apt install ./dive_0.13.1_linux_amd64.deb
+
+# 分析镜像
+dive myapp:latest
+
+# 输出详细的分层信息，显示每一层的大小和内容
+```
+**使用 Dockerfile 分析工具：**
+
+```bash
+# 安装 hadolint
+curl https://github.com/hadolint/hadolint/releases/download/v2.14.0/hadolint-Linux-x86_64 -L -o hadolint
+chmod +x hadolint
+
+# 检查 Dockerfile 最佳实践
+./hadolint Dockerfile
+```
+
+#### 多阶段构建最佳实践
+
+**Go 应用的最小化镜像构建：**
+
+```dockerfile
+# Stage 1: 构建阶段
+FROM golang:1.26-alpine AS builder
+
+WORKDIR /build
+
+# 安装依赖
+RUN apk add --no-cache git ca-certificates tzdata
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+COPY . .
+
+# 构建静态二进制（支持 scratch 基础镜像）
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
+    -a -installsuffix cgo \
+    -ldflags="-w -s" \
+    -o app .
+
+# Stage 2: 运行阶段
+FROM scratch
+
+# 从 builder 复制必要的文件
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
+COPY --from=builder /build/app /app
+
+EXPOSE 8080
+ENTRYPOINT ["/app"]
+
+# 最终镜像大小通常 < 15MB（相比 golang:1.26 基础镜像的 ~900MB）
+```
+**Node.js 应用的多阶段构建：**
+
+```dockerfile
+# Stage 1: 依赖安装
+FROM node:24-alpine AS dependencies
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production && \
+    npm cache clean --force
+
+# Stage 2: 构建阶段
+FROM node:24-alpine AS builder
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+# Stage 3: 运行阶段
+FROM node:24-alpine
+
+WORKDIR /app
+
+# 从依赖阶段复制 node_modules
+COPY --from=dependencies /app/node_modules ./node_modules
+
+# 从构建阶段复制构建产物
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package*.json ./
+
+# 删除开发依赖和不必要的文件
+RUN rm -rf src tests *.config.js
+
+USER node
+EXPOSE 3000
+
+CMD ["node", "dist/index.js"]
+
+# 镜像大小对比：
+# 不优化：~500MB
+# 多阶段构建后：~120MB（减少 76%）
+```
+**Python 应用的多阶段构建：**
+
+```dockerfile
+# Stage 1: 构建阶段
+FROM python:3.14-slim AS builder
+
+WORKDIR /build
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+## 装到共享前缀而不是 /root/.local：/root 权限是 0700，
+## 运行阶段切到 USER nobody 后将无法读取，容器会起不来
+ENV PYTHONUSERBASE=/opt/pydeps
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Stage 2: 运行阶段
+FROM python:3.14-slim
+
+WORKDIR /app
+
+# 从 builder 复制虚拟环境
+COPY --from=builder /opt/pydeps /opt/pydeps
+
+# 设置 PATH
+ENV PATH=/opt/pydeps/bin:$PATH \
+    PYTHONUSERBASE=/opt/pydeps \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+COPY . .
+
+USER nobody
+EXPOSE 5000
+
+CMD ["python", "app.py"]
+```
+
+#### 镜像体积优化检查清单
+
+```bash
+# 检查清单
+□ 使用精简基础镜像（Alpine、Distroless）
+□ 清理包管理器缓存（apt-get clean、rm -rf /var/cache/*）
+□ 在同一 RUN 指令中安装和清理依赖
+□ 使用 .dockerignore 排除不必要的文件
+□ 多阶段构建避免构建依赖污染最终镜像
+□ 去除调试符号：-ldflags="-w -s"（Go）、strip 命令（C/C++）
+□ 压缩静态资源和应用文件
+□ 使用 BuildKit 缓存优化加速构建
+
+# 优化示例：
+FROM ubuntu:24.04
+
+# ❌ 不推荐
+RUN apt-get update
+RUN apt-get install -y curl wget git
+RUN apt-get clean
+
+# ✓ 推荐
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    curl \
+    wget \
+    git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+```
+
+### 19.3.7 常见性能问题及解决方案
+
+**问题 1: 容器频繁被 OOM 杀死**
+
+症状：容器进程被无故杀死，exit code 137
+解决方案：
+```bash
+# 增加内存限制
+docker update -m 1g <container_id>
+
+# 排查内存泄漏
+docker exec <container_id> ps aux | grep -E "VSZ|RSS"
+
+# 使用 docker stats 实时监控
+docker stats <container_id>
+
+# 启用内存交换（作为最后手段）
+docker run -m 512m --memory-swap 1g myapp:latest
+```
+**问题 2: CPU 被限流（CPU Throttling）**
+
+症状：应用性能突然下降，但 CPU 使用率不高
+诊断：
+```bash
+# 查看 CPU 限流统计；现代发行版多为 cgroup v2，具体路径需先定位容器 cgroup
+docker inspect --format '{{.State.Pid}}' <container_id>
+grep cgroup /proc/<pid>/mountinfo
+docker exec <container_id> cat /sys/fs/cgroup/cpu.stat
+
+# cgroup v1 主机可能仍使用：
+# docker exec <container_id> cat /sys/fs/cgroup/cpu/cpu.stat
+
+# 如果 nr_throttled / throttled_usec > 0，说明发生了 CPU 限流
+# 解决方案：增加 CPU 限制
+docker update --cpus 2 <container_id>
+```
+**问题 3: 网络丢包或延迟高**
+
+诊断：
+```bash
+# 进入容器检查网络状态
+docker exec <container_id> ip -s link show
+
+# 检查路由和 DNS
+docker exec <container_id> cat /etc/resolv.conf
+
+# 测试网络延迟
+docker exec <container_id> ping 8.8.8.8
+
+# 检查容器网络驱动
+docker inspect <container_id> | grep -A 10 NetworkSettings
+
+# 解决方案：更换网络驱动或调整 MTU
+# host 网络可降低网络栈开销，但会放弃容器网络隔离；仅在明确接受安全边界变化时使用
+docker run --net=host myapp:latest
+```

@@ -1,0 +1,261 @@
+{
+  "bookId": "629d4571c013",
+  "title": "开源世界旅行手册",
+  "url": "http://i.linuxtoy.org/docs/guide/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-26T18:53:12.190Z",
+  "chapters": [
+    {
+      "slug": "001-17",
+      "title": "开源世界旅行手册",
+      "file": "chapters/001-17.md"
+    },
+    {
+      "slug": "002-16",
+      "title": "致谢",
+      "file": "chapters/002-16.md"
+    },
+    {
+      "slug": "003-16",
+      "title": "序言",
+      "file": "chapters/003-16.md"
+    },
+    {
+      "slug": "004-16",
+      "title": "更新纪录",
+      "file": "chapters/004-16.md"
+    },
+    {
+      "slug": "005-16",
+      "title": "导读",
+      "file": "chapters/005-16.md"
+    },
+    {
+      "slug": "006-16",
+      "title": "如何写作科技文档",
+      "file": "chapters/006-16.md"
+    },
+    {
+      "slug": "007-16",
+      "title": "部分 I. 气候",
+      "file": "chapters/007-16.md"
+    },
+    {
+      "slug": "008-16",
+      "title": "第 1 章 GUI? CLI?",
+      "file": "chapters/008-16.md"
+    },
+    {
+      "slug": "009-16",
+      "title": "第 2 章 UNIX 缩写风格",
+      "file": "chapters/009-16.md"
+    },
+    {
+      "slug": "010-19",
+      "title": "缩写习惯",
+      "file": "chapters/010-19.md"
+    },
+    {
+      "slug": "011-19",
+      "title": "命令选项，从a到z",
+      "file": "chapters/011-19.md"
+    },
+    {
+      "slug": "012-16",
+      "title": "第 3 章 版本号的迷雾",
+      "file": "chapters/012-16.md"
+    },
+    {
+      "slug": "013-16",
+      "title": "第 4 章 Vim 还是 Emacs",
+      "file": "chapters/013-16.md"
+    },
+    {
+      "slug": "014-16",
+      "title": "第 5 章 DocBook 还是 TeX",
+      "file": "chapters/014-16.md"
+    },
+    {
+      "slug": "015-16",
+      "title": "第 6 章 完全用 Gnu/Linux 工作",
+      "file": "chapters/015-16.md"
+    },
+    {
+      "slug": "016-19",
+      "title": "UNIX 不是计算机专家的专利",
+      "file": "chapters/016-19.md"
+    },
+    {
+      "slug": "017-19",
+      "title": "理解 GNU/Linux",
+      "file": "chapters/017-19.md"
+    },
+    {
+      "slug": "018-19",
+      "title": "微软的地位",
+      "file": "chapters/018-19.md"
+    },
+    {
+      "slug": "019-19",
+      "title": "为什么要反对使用 Windows",
+      "file": "chapters/019-19.md"
+    },
+    {
+      "slug": "020-19",
+      "title": "GUI vs. CLI",
+      "file": "chapters/020-19.md"
+    },
+    {
+      "slug": "021-19",
+      "title": "UNIX 是简单的",
+      "file": "chapters/021-19.md"
+    },
+    {
+      "slug": "022-19",
+      "title": "UNIX 是永恒的",
+      "file": "chapters/022-19.md"
+    },
+    {
+      "slug": "023-19",
+      "title": "UNIX 是强大的",
+      "file": "chapters/023-19.md"
+    },
+    {
+      "slug": "024-19",
+      "title": "学 UNIX 绝对不是浪费时间",
+      "file": "chapters/024-19.md"
+    },
+    {
+      "slug": "025-19",
+      "title": "怎样完全用 GNU/Linux 工作",
+      "file": "chapters/025-19.md"
+    },
+    {
+      "slug": "026-19",
+      "title": "结论",
+      "file": "chapters/026-19.md"
+    },
+    {
+      "slug": "027-19",
+      "title": "附录: 我用来处理日常事务的 Linux 程序",
+      "file": "chapters/027-19.md"
+    },
+    {
+      "slug": "028-16",
+      "title": "第 7 章 病毒",
+      "file": "chapters/028-16.md"
+    },
+    {
+      "slug": "029-19",
+      "title": "Windows 的缺陷",
+      "file": "chapters/029-19.md"
+    },
+    {
+      "slug": "030-19",
+      "title": "Unix 的健壮",
+      "file": "chapters/030-19.md"
+    },
+    {
+      "slug": "031-19",
+      "title": "历史",
+      "file": "chapters/031-19.md"
+    },
+    {
+      "slug": "032-16",
+      "title": "第 8 章 磁盘 分区",
+      "file": "chapters/032-16.md"
+    },
+    {
+      "slug": "033-19",
+      "title": "挂载分区",
+      "file": "chapters/033-19.md"
+    },
+    {
+      "slug": "034-16",
+      "title": "第 9 章 文件系统",
+      "file": "chapters/034-16.md"
+    },
+    {
+      "slug": "035-16",
+      "title": "第 10 章   发行版介绍",
+      "file": "chapters/035-16.md"
+    },
+    {
+      "slug": "036-16",
+      "title": "第 11 章   编程语言",
+      "file": "chapters/036-16.md"
+    },
+    {
+      "slug": "037-16",
+      "title": "第 12 章 无根的根：无名师的 Unix 心传",
+      "file": "chapters/037-16.md"
+    },
+    {
+      "slug": "038-19",
+      "title": "无名师与万行码",
+      "file": "chapters/038-19.md"
+    },
+    {
+      "slug": "039-19",
+      "title": "无名师与脚本狂",
+      "file": "chapters/039-19.md"
+    },
+    {
+      "slug": "040-19",
+      "title": "无名师的双路论",
+      "file": "chapters/040-19.md"
+    },
+    {
+      "slug": "041-19",
+      "title": "无名师与方法论",
+      "file": "chapters/041-19.md"
+    },
+    {
+      "slug": "042-19",
+      "title": "无名师的GUI论",
+      "file": "chapters/042-19.md"
+    },
+    {
+      "slug": "043-19",
+      "title": "无名师与Unix狂",
+      "file": "chapters/043-19.md"
+    },
+    {
+      "slug": "044-19",
+      "title": "无名师的Unix传统论",
+      "file": "chapters/044-19.md"
+    },
+    {
+      "slug": "045-19",
+      "title": "无名师与最终用户",
+      "file": "chapters/045-19.md"
+    },
+    {
+      "slug": "046-16",
+      "title": "部分 II. 地理",
+      "file": "chapters/046-16.md"
+    },
+    {
+      "slug": "047-16",
+      "title": "第 13 章 基础知识",
+      "file": "chapters/047-16.md"
+    },
+    {
+      "slug": "048-19",
+      "title": "Shell",
+      "file": "chapters/048-19.md"
+    },
+    {
+      "slug": "049-19",
+      "title": "命令",
+      "file": "chapters/049-19.md"
+    },
+    {
+      "slug": "050-19",
+      "title": "Linux 程序、进程",
+      "file": "chapters/050-19.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "开源世界旅行手册"
+}

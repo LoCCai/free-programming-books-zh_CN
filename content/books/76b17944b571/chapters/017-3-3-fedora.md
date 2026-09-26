@@ -1,0 +1,163 @@
+## 3.3 Fedora
+
+Fedora 作为技术前沿的 Linux 发行版，对 Docker 有着良好的支持。本节介绍在 Fedora 上的安装步骤。
+
+### YUM/DNF 源安装的策略建议
+
+Fedora 的快速发布周期（每 6 个月发布新版本）决定了它的用户群体多为开发者和技术爱好者。虽然通过 DNF 可以直接安装 Docker，但笔者建议仍然通过 Docker 官方 YUM 源进行安装，原因是：Fedora 官方仓库的 Docker 版本往往滞后，而官方源能确保你获得最新的 Docker 功能和安全补丁。特别是在开发环境需要用到最新 Docker 特性时，这一点显得尤为重要。
+
+> 警告：切勿在没有配置 Docker dnf 源的情况下直接使用 dnf 命令安装 Docker。
+
+### 3.3.1 准备工作
+
+确保你的 Fedora 版本在支持列表中，并清理旧版本。
+
+#### 系统要求
+
+根据 Docker 官方安装文档，当前受支持的 [Fedora](https://fedoraproject.org/) 版本包括（具体以官方 [安装文档](https://docs.docker.com/engine/install/fedora/) 为准）：
+
+* Fedora 44
+* Fedora 43
+
+#### 卸载旧版本
+
+旧版本的 Docker 称为 `docker` 或者 `docker-engine`，使用以下命令卸载旧版本：
+
+```bash
+$ sudo dnf remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-selinux \
+                  docker-engine-selinux \
+                  docker-engine
+```
+
+### 3.3.2 使用 dnf 安装
+
+使用 dnf 包管理器安装是推荐的方式，便于后续的更新和管理。
+
+执行以下命令安装依赖包：
+
+```bash
+$ sudo dnf -y install dnf-plugins-core
+```
+默认建议优先使用 Docker 官方仓库；如果企业内网维护了受信任镜像站，可自行替换仓库 URL。
+
+执行下面的命令添加 `dnf` 软件源：
+
+```bash
+$ sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+```
+如果需要测试版本的 Docker 请使用以下命令：
+
+```bash
+$ sudo dnf config-manager --set-enabled docker-ce-test
+```
+你也可以禁用测试版本的 Docker
+
+```bash
+$ sudo dnf config-manager --set-disabled docker-ce-test
+```
+
+#### 安装 Docker
+
+更新 `dnf` 软件源缓存，并安装 Docker Engine 及常用 CLI 插件。
+
+```bash
+$ sudo dnf update
+$ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+你也可以使用以下命令安装指定版本的 Docker
+
+```bash
+$ dnf list docker-ce  --showduplicates | sort -r
+
+docker-ce.x86_64          3:29.4.0-1.fc42                       docker-ce-stable
+
+$ sudo dnf -y install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING>
+```
+
+### 3.3.3 使用脚本自动安装
+
+在测试或开发环境中，Docker 官方提供了便捷安装脚本，但官方明确不建议把它作为生产环境的标准安装方式。
+
+在真正执行前，建议先用 `--dry-run` 预览脚本动作：
+
+```bash
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh ./get-docker.sh --dry-run
+
+# 若需要测试频道：
+# curl -fsSL https://test.docker.com -o test-docker.sh
+# sudo sh ./test-docker.sh
+```
+确认无误后，再执行 `sudo sh ./get-docker.sh` 安装稳定版。
+
+### 3.3.4 启动 Docker
+
+```bash
+$ sudo systemctl enable --now docker
+```
+
+### 3.3.5 建立 docker 用户组
+
+默认情况下，`docker` 命令会使用 [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket) 与 Docker 引擎通讯。而只有 `root` 用户和 `docker` 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 `root` 用户。因此，更好的做法是将需要使用 `docker` 的用户加入 `docker` 用户组。
+
+> ⚠️ **安全警告：`docker` 用户组等同于 `root` 权限**
+>
+> 将用户加入 `docker` 组免去了每次执行 `docker` 命令时输入 `sudo` 的繁琐，但这也意味着该用户可以轻易获取主机的最高 root 权限（例如通过挂载根目录运行容器）。
+> 如果你在一个多用户共享的生产系统上配置，切勿随意将普通用户加入此组。此时，更安全的替代方案是使用官方提供的 **[Rootless 模式 (Rootless mode)](https://docs.docker.com/engine/security/rootless/)**，它允许在没有任何 root 权限的情况下运行 Docker 守护进程和容器。
+
+建立 `docker` 组：
+
+```bash
+$ sudo groupadd docker
+```
+将当前用户加入 `docker` 组：
+
+```bash
+$ sudo usermod -aG docker $USER
+```
+退出当前终端并重新登录，进行如下测试。
+
+### 3.3.6 测试 Docker 是否安装正确
+
+```bash
+$ docker run --rm hello-world
+
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+b8dfde127a29: Pull complete
+Digest: sha256:308866a43596e83578c7dfa15e27a73011bdd402185a84c5cd7f32a88b501a24
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+若能正常输出以上信息，则说明安装成功。
+
+### 3.3.7 镜像加速
+
+如果在使用过程中发现拉取 Docker 镜像十分缓慢，可以配置 Docker [国内镜像加速](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md)。

@@ -1,0 +1,44 @@
+## 7.16 参考文档
+
+### 官方文档
+
+* `Dockerfile` 官方参考手册：https://docs.docker.com/reference/dockerfile/
+
+* `Dockerfile` 最佳实践指南：https://docs.docker.com/build/building/best-practices/
+
+* `Docker` 官方镜像 `Dockerfile` 库：https://github.com/docker-library/docs
+
+### 常用指令总结
+
+Dockerfile 中的常用指令包括：
+
+- **FROM**: 指定基础镜像，必须是第一条构建指令（只有全局 `ARG`、注释和 parser 指令可以在它之前）
+- **RUN**: 在镜像中执行命令，用于安装软件包等
+- **COPY**: 复制文件到镜像中
+- **ADD**: 更高级的复制文件（支持 URL 和自动解压）
+- **CMD**: 容器默认执行的命令
+- **ENTRYPOINT**: 容器启动时的入口点
+- **ENV**: 设置环境变量
+- **ARG**: 构建时的参数变量
+- **VOLUME**: 定义匿名卷挂载点
+- **EXPOSE**: 声明容器监听的端口
+- **WORKDIR**: 设置工作目录
+- **USER**: 指定运行容器时的用户
+- **HEALTHCHECK**: 配置容器健康检查
+- **ONBUILD**: 设置触发器指令，在子镜像构建时执行
+- **LABEL**: 为镜像添加元数据标签
+- **SHELL**: 指定 RUN 等指令使用的 shell
+
+### 最佳实践建议
+
+1. 使用具体的基础镜像版本标签而非 latest
+2. 最小化镜像层数，合并 RUN 指令
+3. 使用 .dockerignore 文件排除不必要的文件
+4. 安装必要的软件包后清理缓存
+5. 使用多阶段构建减小最终镜像体积
+6. 避免以 root 身份运行容器应用
+
+### 相关资源
+
+- Docker 官方镜像库：https://hub.docker.com/
+- Docker 镜像构建最佳实践：https://docs.docker.com/build/building/best-practices/

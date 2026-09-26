@@ -1,0 +1,102 @@
+## 13.5 实战练习
+
+本章通过部署一个 Nginx 网站并配置 Service，串联前面学到的 Deployment、探针、资源配额和服务发现知识。
+
+Deployment 与 Service 的[合并清单](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/examples/validated/kubernetes/web.yaml)使用仓库内固定的 Kubernetes 1.31 strict schema 做离线 `kubeconform` 校验。下面的围栏与该文件由测试强制保持一致。
+
+开始前请先准备好可用的 Kubernetes 集群和 `kubectl` 上下文。你可以先完成 [14.3 Docker Desktop](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/14_kubernetes_setup/14.3_docker-desktop.md) 或 [14.4 Kind](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/14_kubernetes_setup/14.4_kind.md)，并确认：
+
+```bash
+kubectl get nodes
+```
+
+### 13.5.1 目标
+
+1. 部署一个包含 readiness probe 和资源请求/限制的 Nginx Deployment。
+2. 创建一个 ClusterIP Service 暴露 Nginx。
+3. 通过端口转发访问服务，并观察一次滚动发布。
+
+### 13.5.2 保存并应用合并清单
+
+<!-- canonical-example: kubernetes -->
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.28-alpine
+          ports:
+            - name: http
+              containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+```
+
+仓库内运行时，可直接应用经过校验的文件：
+
+```bash
+kubectl apply -f examples/validated/kubernetes/web.yaml
+kubectl get deployment/nginx-deployment service/nginx-service
+```
+
+Service 未指定 `type`，因此使用默认的 `ClusterIP`，不会依赖不同本地集群对 NodePort 的宿主机映射行为。
+
+### 13.5.3 访问服务
+
+```bash
+kubectl port-forward service/nginx-service 8080:80
+```
+
+然后访问 `http://localhost:8080`。结束端口转发可按 `Ctrl+C`。
+
+> Ingress 只有在集群中已安装 Ingress controller 且配置了 IngressClass 时才会生效。当前练习只覆盖 Service；Ingress/Gateway API 建议在完成第 14 章后再单独练习。
+
+### 13.5.4 观察滚动发布
+
+修改 Pod 模板中的环境变量会触发 Deployment 滚动发布，而无需依赖另一个外部镜像标签：
+
+```bash
+kubectl set env deployment/nginx-deployment RELEASE_MARKER=demo-v2
+kubectl rollout status deployment/nginx-deployment
+```
+
+### 13.5.5 清理资源
+
+```bash
+kubectl delete -f examples/validated/kubernetes/web.yaml
+```

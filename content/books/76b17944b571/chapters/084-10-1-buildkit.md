@@ -1,0 +1,154 @@
+## 10.1 BuildKit
+
+**BuildKit** 是下一代的镜像构建组件，在 [moby/buildkit](https://github.com/moby/buildkit) 开源。
+
+> **重要**：自 Docker 23 起，BuildKit 已成为 **默认稳定构建器**，无需手动启用。Docker Engine 29 在新安装场景中进一步将 containerd image store 设为默认，提升多平台镜像、SBOM/Provenance 等 OCI 元数据能力。
+
+目前，Docker Hub 自动构建已经支持 BuildKit，具体请参考 [docker-practice/docker-hub-buildx](https://github.com/docker-practice/docker-hub-buildx)。
+
+### 10.1.1 `Dockerfile` 新增指令详解
+
+BuildKit 引入了多项新指令，旨在优化构建缓存和安全性。以下将详细介绍这些指令的用法。
+
+使用 BuildKit 后，我们可以使用下面几个新的 `Dockerfile` 指令来加快镜像构建。
+
+要使用最新的 Dockerfile 语法特性，建议在 Dockerfile 开头添加语法指令：
+
+```docker
+# syntax=docker/dockerfile:1
+
+```
+这将使用最新的稳定版语法解析器，确保你可以使用所有最新特性。
+
+#### `RUN --mount=type=cache`
+
+目前，几乎所有的程序都会使用依赖管理工具，例如 `Go` 中的 `go mod`、`Node.js` 中的 `npm` 等等，当我们构建一个镜像时，往往会重复的从互联网中获取依赖包，难以缓存，大大降低了镜像的构建效率。
+
+例如一个前端工程需要用到 `npm`：
+
+```docker
+FROM node:alpine AS builder
+
+WORKDIR /app
+
+COPY package.json /app/
+
+RUN npm i --registry=https://registry.npmmirror.com \
+        && rm -rf ~/.npm
+
+COPY src /app/src
+
+RUN npm run build
+
+FROM nginx:alpine
+
+COPY --from=builder /app/dist /app/dist
+```
+使用多阶段构建，构建的镜像中只包含了目标文件夹 `dist`，但仍然存在一些问题，当 `package.json` 文件变动时，`RUN npm i && rm -rf ~/.npm` 这一层会重新执行，变更多次后，生成了大量的中间层镜像。
+
+为解决这个问题，可以把包管理器的下载缓存挂载到构建步骤中，例如 npm 的 `/root/.npm`。注意：`type=cache` 只能作为性能优化，不能成为构建正确性的前提。缓存目录可能被并发构建改写，也可能被 GC 清理，所以不要把 `node_modules`、编译产物等必须存在的内容只放在 cache mount 里。
+
+`BuildKit` 提供了 `RUN --mount=type=cache` 指令，可以实现上边的设想。
+
+```docker
+# syntax=docker/dockerfile:1
+
+FROM node:alpine AS builder
+
+WORKDIR /app
+
+COPY package.json /app/
+
+RUN --mount=type=cache,target=/root/.npm,id=npm_cache \
+        npm install --registry=https://registry.npmmirror.com
+
+COPY src /app/src
+
+RUN npm run build
+
+FROM nginx:alpine
+
+COPY --from=builder /app/dist /app/dist
+```
+
+第一个 `RUN` 指令执行后，`id` 为 `npm_cache` 的缓存文件夹挂载到了 `/root/.npm`，后续构建可复用下载缓存。
+
+第二个 `RUN` 指令执行时，`node_modules` 已经作为上一层真实写入到 builder 阶段的文件系统中，构建不依赖缓存目录内容。
+
+最后使用 `COPY --from=builder` 将上一阶段产生的文件复制到最终镜像。跨阶段复制构建产物应使用 `COPY --from`；如果只是临时读取上一阶段文件，可使用 `RUN --mount=type=bind,from=builder,source=/app/dist,target=/tmp/dist,ro`。
+
+上面的 `Dockerfile` 中 `--mount=type=cache,...` 中指令作用如下：
+
+|Option               |Description|
+|---------------------|-----------|
+|`id`                 | `id` 设置一个标志，以便区分缓存。|
+|`target`（必填项）    | 缓存的挂载目标文件夹。|
+|`ro`,`readonly`      | 只读，缓存文件夹不能被写入。 |
+|`sharing`            | 有 `shared` `private` `locked` 值可供选择。`sharing` 设置当一个缓存被多次使用时的表现，由于 `BuildKit` 支持并行构建，当多个步骤使用同一缓存时（同一 `id`）会发生冲突。`shared` 表示多个步骤可以同时读写，`private` 表示当多个步骤使用同一缓存时，每个步骤使用不同的缓存，`locked` 表示当一个步骤完成释放缓存后，后一个步骤才能继续使用该缓存。|
+|`from`               | 缓存来源（构建阶段），不填写时为空文件夹。|
+|`source`             | 来源的文件夹路径。|
+
+#### `RUN --mount=type=bind`
+
+该指令可以将一个镜像（或上一构建阶段）的文件挂载到指定位置。
+
+```docker
+# syntax=docker/dockerfile:1
+
+RUN --mount=type=bind,from=php:alpine,source=/usr/local/bin/docker-php-entrypoint,target=/docker-php-entrypoint \
+        cat /docker-php-entrypoint
+```
+
+#### `RUN --mount=type=tmpfs`
+
+该指令可以将一个 `tmpfs` 文件系统挂载到指定位置。
+
+```docker
+# syntax=docker/dockerfile:1
+
+RUN --mount=type=tmpfs,target=/temp \
+        mount | grep /temp
+```
+
+#### `RUN --mount=type=secret`
+
+该指令可以将一个文件（例如密钥）挂载到指定位置。
+
+```docker
+# syntax=docker/dockerfile:1
+
+RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
+        test -s /root/.aws/credentials && echo "credentials mounted"
+```
+```bash
+$ docker build -t test --secret id=aws,src=$HOME/.aws/credentials .
+```
+
+#### `RUN --mount=type=ssh`
+
+该指令可以挂载 `ssh` 密钥。
+
+```docker
+# syntax=docker/dockerfile:1
+
+FROM alpine
+RUN apk add --no-cache openssh-client
+RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+RUN --mount=type=ssh ssh git@gitlab.com | tee /hello
+```
+```bash
+$ eval $(ssh-agent)
+$ ssh-add ~/.ssh/id_rsa
+(Input your passphrase here)
+$ docker build -t test --ssh default=$SSH_AUTH_SOCK .
+```
+
+### 10.1.2 使用 `docker compose build` 与 BuildKit
+
+Docker Compose 同样支持 BuildKit，这使得多服务应用的构建更加高效。
+
+自 Docker 23 起，BuildKit 已默认启用，无需额外配置。如果使用旧版本，可设置 `DOCKER_BUILDKIT=1` 环境变量启用。
+
+### 10.1.3 官方文档
+
+* https://docs.docker.com/reference/dockerfile/

@@ -1,0 +1,50 @@
+# 第六章 访问仓库
+
+仓库 (`Repository`) 是集中存放镜像的地方。
+
+一个容易混淆的概念是注册服务器 (`Registry`)。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 `docker.io/ubuntu` 来说，`docker.io` 是注册服务器地址，`ubuntu` 是仓库名。
+
+大部分时候，并不需要严格区分这两者的概念。
+
+## 版本号说明
+
+本章涉及的 Registry 和相关工具版本说明：
+
+- **Docker Registry / CNCF Distribution**：本章示例使用 `registry:2` 兼容路径；新生产部署应评估 Distribution 3.x，并核对配置路径、迁移说明和生态兼容性。已停止维护的 `registry:1` 不建议使用
+- **Nexus 3**：建议指定具体版本（如 `sonatype/nexus3:3.69`）而非 `latest`，避免自动升级带来的兼容性问题
+- **镜像标签规范**：
+  - 生产环境推送至仓库时应明确指定版本号（如 `myapp:v1.0.0`）
+  - 避免依赖 `latest` 标签，因为其含义存在歧义且易导致版本混淆
+
+## 为什么需要私有仓库？
+
+在讨论具体的安装和配置前，让我们先理解：**什么时候你应该建设私有仓库？**
+
+**开发团队**（有专利代码、不能公开）：
+
+- 需要私有仓库存储内部镜像
+- 涉及访问控制和审计
+- 强烈推荐使用托管方案（如 Harbor 或云厂商提供的镜像仓库）
+
+**开源项目或个人学习**：
+
+- Docker Hub 公开仓库足够
+- 无需自建私有仓库的成本
+
+**企业级部署**：
+
+- 需要高可用、备份、灾难恢复
+- 推荐使用专业级方案（Nexus 3、Harbor）而非简单的 Registry
+
+本章涵盖的方案从简到复杂：
+
+- Docker Registry：最小化部署（适合简单场景）
+- 私有仓库高级配置：添加认证、HTTPS 等生产必需项
+- Nexus 3：企业级完整解决方案，支持权限管理、备份等
+
+## 本章内容
+
+* [Docker Hub](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.1_dockerhub.md)
+* [私有仓库](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.2_registry.md)
+* [私有仓库高级配置](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.3_registry_auth.md)
+* [Nexus 3](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.4_nexus3_registry.md)

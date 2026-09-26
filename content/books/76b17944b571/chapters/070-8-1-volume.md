@@ -1,0 +1,361 @@
+## 8.1 数据卷
+
+### 8.1.1 为什么需要数据卷
+
+容器的存储层有一个关键问题：**容器删除后，数据就没了**。
+
+```mermaid
+flowchart LR
+    Run[容器运行] --> Write[写入数据]
+    Write --> Delete[容器删除]
+    Delete -->|数据都在容器 writable 层| Lost[DATA LOST! ❌]
+```
+数据卷 (Volume) 解决了这个问题，它的生命周期独立于容器。
+
+---
+
+### 8.1.2 数据卷的特性
+
+| 特性 | 说明 |
+|------|------|
+| **持久化** | 容器删除后数据仍然保留 |
+| **共享** | 多个容器可以挂载同一个数据卷 |
+| **即时生效** | 对数据卷的修改立即可见 |
+| **不影响镜像** | 数据卷中的数据不会打包进镜像 |
+| **性能更好** | 绕过 UnionFS，直接读写 |
+
+---
+
+### 8.1.3 数据卷 vs 容器存储层
+
+#### 容器存储层：不推荐存储重要数据
+
+```mermaid
+graph TD
+    subgraph Container [容器]
+        Writable[容器存储层<br>Writable]
+        Image[镜像层<br>ReadOnly]
+        Writable --- Image
+    end
+
+    Lifecycle[生命周期 = 容器生命周期] -.-> Container
+    Delete[容器删除] -->|导致| DataLost[数据丢失 ❌]
+```
+
+#### 数据卷：推荐
+
+```mermaid
+graph TD
+    subgraph Container [容器]
+        AppDir["/app/data"]
+    end
+
+    subgraph Volume [数据卷 my-data]
+        Data[持久化数据]
+    end
+
+    AppDir == 挂载 ==> Volume
+    Delete[容器删除] -.->|不会影响| Volume
+```
+---
+
+### 8.1.4 数据卷基本操作
+
+#### 创建数据卷
+
+```bash
+$ docker volume create my-vol
+```
+
+#### 列出所有数据卷
+
+```bash
+$ docker volume ls
+DRIVER    VOLUME NAME
+local     my-vol
+local     postgres_data
+local     redis_data
+```
+
+#### 查看数据卷详情
+
+```bash
+$ docker volume inspect my-vol
+[
+    {
+        "CreatedAt": "2026-01-15T10:00:00Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
+        "Name": "my-vol",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+```
+**关键字段**：
+
+- `Mountpoint`：数据卷在宿主机上的实际存储位置
+- `Driver`：存储驱动（默认 local，也可以用第三方驱动）
+
+---
+
+### 8.1.5 挂载数据卷
+
+#### 方式一：--mount：推荐
+
+```bash
+$ docker run -d \
+    --name web \
+    --mount source=my-vol,target=/usr/share/nginx/html \
+    nginx
+```
+**参数说明**：
+
+| 参数 | 说明 |
+|------|------|
+| `source` | 数据卷名称（不存在会自动创建）|
+| `target` | 容器内挂载路径 |
+| `readonly` | 可选，只读挂载 |
+
+#### 方式二：-v：简写
+
+```bash
+$ docker run -d \
+    --name web \
+    -v my-vol:/usr/share/nginx/html \
+    nginx
+```
+**格式**：`-v 数据卷名:容器路径[:选项]`
+
+#### 两种方式对比
+
+| 特性 | --mount | -v |
+|------|---------|-----|
+| 语法 | 键值对，更清晰 | 冒号分隔，更简洁 |
+| **数据卷 (Volume)** 挂载行为 | 卷不存在会自动创建，与 `-v` 结果一致 | 卷不存在会自动创建 |
+| **绑定挂载 (Bind Mount)** 行为 | ⭐**宿主机路径不存在会报错**，不会自动创建 | 宿主机路径不存在会 **自动创建为目录** |
+| 推荐程度 | ✅ 推荐（更明确安全，避免误创建）| 常用（更简洁）|
+
+> **提示**：官方更推荐使用 `--mount`。除了语法格式可读性更好之外，最重要的行为差异发生在 **绑定挂载 (Bind Mount)** 时：如果挂载的宿主机源路径尚未存在，`-v` 会擅自将其自动创建为一个空目录；而 `--mount` 则会严格检查并直接报错。这能有效避免因路径拼写错误而在宿主机上留下垃圾目录（以及导致的容器访问空目录问题）。而对于本节的 **数据卷 (Volume)** 挂载而言，两者在目标指定的卷不存在时皆会自动创建卷，产生的结果是 **完全一致** 的。
+
+#### 只读挂载
+
+```bash
+## --mount 方式
+
+$ docker run -d \
+    --mount source=my-vol,target=/data,readonly \
+    nginx
+
+## -v 方式
+
+$ docker run -d \
+    -v my-vol:/data:ro \
+    nginx
+```
+---
+
+### 8.1.6 使用场景示例
+
+#### 场景一：数据库持久化
+
+```bash
+## 创建数据卷
+
+$ docker volume create postgres_data
+
+## 启动 PostgreSQL，数据存储在数据卷中
+
+$ docker run -d \
+    --name postgres \
+    -e POSTGRES_PASSWORD=secret \
+    -v postgres_data:/var/lib/postgresql/data \
+    postgres:16  # 确保与环境兼容的 PostgreSQL 版本
+
+## 即使删除容器，数据仍然保留
+
+$ docker rm -f postgres
+
+## 重新启动，数据还在
+
+$ docker run -d \
+    --name postgres \
+    -e POSTGRES_PASSWORD=secret \
+    -v postgres_data:/var/lib/postgresql/data \
+    postgres:16  # 确保与环境兼容的 PostgreSQL 版本
+```
+
+#### 场景二：多容器共享数据
+
+```bash
+## 创建共享数据卷
+
+$ docker volume create shared-data
+
+## 容器 A 写入数据
+
+$ docker run -d --name writer \
+    -v shared-data:/data \
+    alpine sh -c "while true; do date >> /data/log.txt; sleep 5; done"
+
+## 容器 B 读取数据
+
+$ docker run --rm \
+    -v shared-data:/data \
+    alpine cat /data/log.txt
+```
+
+#### 场景三：配置文件持久化
+
+```bash
+## 将 nginx 配置存储在数据卷中
+
+$ docker run -d \
+    -v nginx-config:/etc/nginx/conf.d \
+    -v nginx-logs:/var/log/nginx \
+    -p 80:80 \
+    nginx
+```
+---
+
+### 8.1.7 数据卷管理
+
+#### 删除数据卷
+
+```bash
+## 删除指定数据卷
+
+$ docker volume rm my-vol
+
+## 删除容器时同时删除数据卷
+
+$ docker rm -v container_name
+```
+
+#### 清理未使用的数据卷
+
+```bash
+## 查看未被任何容器使用的数据卷
+
+$ docker volume ls -f dangling=true
+
+## 删除所有未使用的数据卷
+
+$ docker volume prune
+
+## 强制删除（不提示确认）
+
+$ docker volume prune -f
+```
+> ⚠️ **注意**：数据卷不会自动垃圾回收。长期运行的系统应定期清理无用数据卷。
+
+---
+
+### 8.1.8 数据卷备份与恢复
+
+#### 备份数据卷
+
+```bash
+## 使用临时容器挂载数据卷，打包备份
+
+$ docker run --rm \
+    -v my-vol:/source:ro \
+    -v $(pwd):/backup \
+    alpine tar czf /backup/my-vol-backup.tar.gz -C /source .
+```
+**原理**：
+
+1. 创建临时容器
+2. 挂载要备份的数据卷到 `/source`
+3. 挂载当前目录到 `/backup`
+4. 使用 tar 打包
+
+#### 恢复数据卷
+
+```bash
+## 创建新数据卷
+
+$ docker volume create my-vol-restored
+
+## 解压备份到新数据卷
+
+$ docker run --rm \
+    -v my-vol-restored:/target \
+    -v $(pwd):/backup:ro \
+    alpine tar xzf /backup/my-vol-backup.tar.gz -C /target
+```
+
+#### 备份脚本示例
+
+```bash
+#!/bin/bash
+
+## backup-volume.sh
+
+VOLUME_NAME=$1
+BACKUP_DIR=${2:-/backups}
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+
+docker run --rm \
+    -v ${VOLUME_NAME}:/source:ro \
+    -v ${BACKUP_DIR}:/backup \
+    alpine tar czf /backup/${VOLUME_NAME}_${TIMESTAMP}.tar.gz -C /source .
+
+echo "Backed up ${VOLUME_NAME} to ${BACKUP_DIR}/${VOLUME_NAME}_${TIMESTAMP}.tar.gz"
+```
+---
+
+### 8.1.9 数据卷 vs 绑定挂载
+
+Docker 有两种主要的数据持久化方式：
+
+| 特性 | 数据卷 (Volume) | 绑定挂载 (Bind Mount) |
+|------|----------------|---------------------|
+| **管理方式** | Docker 管理 | 用户管理 |
+| **存储位置** | `/var/lib/docker/volumes/` | 任意宿主机路径 |
+| **可移植性** | 更好 | 依赖宿主机路径 |
+| **适用场景** | 生产数据持久化 | 开发时同步代码 |
+| **备份** | 需要工具 | 直接访问文件 |
+
+```bash
+## 数据卷
+
+$ docker run -v mydata:/app/data nginx
+
+## 绑定挂载
+
+$ docker run -v /host/path:/app/data nginx
+```
+详见[绑定挂载](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/8.2_bind-mounts.md)章节。
+
+---
+
+### 8.1.10 常见问题
+
+#### Q：如何知道容器使用了哪些数据卷？
+
+```bash
+$ docker inspect container_name --format '{{json .Mounts}}' | jq
+```
+
+#### Q：数据卷的数据在哪里？
+
+```bash
+## 查看数据卷详情
+
+$ docker volume inspect my-vol
+
+## Mountpoint 字段显示实际路径
+
+"Mountpoint": "/var/lib/docker/volumes/my-vol/_data"
+```
+> ⚠️ **注意**：不建议直接修改 Mountpoint 中的文件，应通过容器操作。
+
+#### Q：如何在不同机器间迁移数据卷？
+
+1. 在源机器备份：`docker run --rm -v mydata:/data -v $(pwd):/backup alpine tar czf /backup/data.tar.gz -C /data .`
+2. 传输 tar.gz 文件
+3. 在目标机器恢复
+
+---

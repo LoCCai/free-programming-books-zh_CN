@@ -1,0 +1,601 @@
+## 18.6 容器镜像安全扫描与供应链安全
+
+在 DevOps 流程中，容器镜像安全已经成为不容忽视的关键环节。从开发、构建、存储到部署，镜像的整个生命周期都需要安全防护。本节深入讨论镜像漏洞扫描、软件物料清单（SBOM）、镜像签名验证等供应链安全实践。
+
+### 18.6.1 容器镜像漏洞扫描工具对比
+
+#### Trivy - 轻量级通用扫描器
+
+Trivy 是由 Aqua Security 开发的开源漏洞扫描器，以其轻量级、快速、准确而闻名，已成为业界标准。
+
+**优点：**
+
+- 零依赖，单个二进制文件
+- 扫描速度快（秒级）
+- 支持镜像、文件系统、Git 仓库多种扫描源
+- 数据库每日自动更新
+- 支持多种输出格式（JSON、表格、SBOM 等）
+
+**安装与基本使用：**
+
+```bash
+# 安装 Trivy
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh -o install-trivy.sh
+less install-trivy.sh  # 先审阅脚本内容
+sudo sh install-trivy.sh -b /usr/local/bin
+
+# 扫描本地镜像
+trivy image nginx:latest
+
+# 生成 JSON 格式报告
+trivy image -f json -o report.json nginx:latest
+
+# 扫描文件系统
+trivy fs /path/to/project
+
+# 扫描 Git 仓库
+trivy repo https://github.com/aquasecurity/trivy
+```
+**在 CI/CD 中集成：**
+
+```bash
+# 设置严重程度过滤
+trivy image --severity HIGH,CRITICAL \
+  --exit-code 1 \
+  myregistry.com/myapp:v1.0.0
+```
+
+#### Grype - 支持多种软件包的扫描器
+
+Grype 由 Anchore 开发，支持更广泛的软件包管理器和语言。
+
+**优点：**
+
+- 支持 Java、Python、Go、Ruby、JavaScript 等多种语言的依赖检测
+- 与 Syft（SBOM 生成器）配合效果好
+- 可自定义漏洞数据库源
+- 支持离线扫描模式
+
+**安装与使用：**
+
+```bash
+# 安装 Grype
+curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh -o install-grype.sh
+less install-grype.sh
+sudo sh install-grype.sh -b /usr/local/bin
+
+# 扫描镜像
+grype docker:nginx:latest
+
+# 与 Syft 配合生成 SBOM
+syft docker:nginx:latest -o json > sbom.json
+grype sbom:sbom.json
+
+# 扫描特定目录
+grype dir:/path/to/app
+```
+
+#### Snyk - 完整的安全平台
+
+Snyk 提供了商业级的安全扫描服务，特别适合企业环境。
+
+**特点：**
+
+- 支持开源漏洞、许可证扫描和修复建议
+- 与多个 Git 平台深度集成（GitHub、GitLab、Bitbucket）
+- 提供修复建议和自动化修复 PR
+- 支持 Kubernetes 部署后安全监控
+
+**基本使用：**
+
+```bash
+# 安装 Snyk CLI
+npm install -g snyk
+
+# 认证
+snyk auth
+
+# 扫描镜像
+snyk container test docker-archive://image.tar
+
+# 监控仓库
+snyk monitor --docker
+```
+此外，Docker 官方提供的 **Docker Scout**（`docker scout` CLI）可以直接在 Docker Desktop 或命令行中对镜像进行漏洞扫描和依赖分析，适合日常开发流程中快速检查：
+
+```bash
+# 扫描本地镜像
+$ docker scout cves myapp:latest
+
+# 查看镜像的依赖和漏洞摘要
+$ docker scout quickview myapp:latest
+```
+
+**工具对比表：**
+
+| 特性 | Docker Scout | Trivy | Grype | Snyk |
+|------|-------------|-------|-------|------|
+| Docker 集成 | ✓（原生） | 需安装 | 需安装 | 需安装 |
+| 零依赖 | ✗ | ✓ | ✗ | ✗ |
+| 离线模式 | ✗ | ✓ | ✓ | ✗ |
+| 许可证扫描 | ✓ | ✓ | ✓ | ✓ |
+| 自动修复建议 | ✓ | ✗ | ✗ | ✓ |
+| 开源免费 | 部分 | ✓ | ✓ | 部分 |
+| IDE 集成 | ✓ | ✓ | ✓ | ✓ |
+
+### 18.6.2 SBOM（软件物料清单）生成与管理
+
+SBOM（Software Bill of Materials）是一份详细列表，记录了软件中使用的所有组件、依赖库及其版本信息。SBOM 在供应链安全中至关重要，特别是在发现新的安全漏洞时，能快速定位受影响的应用。
+
+#### Syft - SBOM 生成工具
+
+Syft 是 Anchore 推出的专业 SBOM 生成工具。
+
+**安装：**
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh -o install-syft.sh
+less install-syft.sh
+sudo sh install-syft.sh -b /usr/local/bin
+```
+**生成 SBOM：**
+
+```bash
+# 从镜像生成 SBOM（多种格式）
+syft docker:nginx:latest -o json > sbom.json
+syft docker:nginx:latest -o spdx > sbom.spdx
+syft docker:nginx:latest -o cyclonedx > sbom.xml
+
+# 从本地文件系统生成
+syft dir:/path/to/app -o json > sbom.json
+
+# 从 OCI 镜像档案生成
+syft oci-archive:image.tar -o json > sbom.json
+```
+
+#### CycloneDX 与 SPDX 格式
+
+两种主流的 SBOM 格式：
+
+**CycloneDX 格式示例：**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<bom xmlns="http://cyclonedx.org/schema/bom/1.4" version="1">
+  <components>
+    <component type="library">
+      <name>openssl</name>
+      <version>1.1.1k</version>
+      <purl>pkg:deb/debian/openssl@1.1.1k-1+deb11u5</purl>
+    </component>
+    <component type="library">
+      <name>curl</name>
+      <version>7.74.0-1.3+deb11u1</version>
+      <purl>pkg:deb/debian/curl@7.74.0-1.3+deb11u1</purl>
+    </component>
+  </components>
+</bom>
+```
+**SPDX 格式示例：**
+
+```json
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "spdxVersion": "SPDX-2.2",
+  "creationInfo": {
+    "created": "2024-03-01T12:00:00Z",
+    "creators": ["Tool: syft"]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-openssl",
+      "name": "openssl",
+      "versionInfo": "1.1.1k",
+      "downloadLocation": "NOASSERTION"
+    }
+  ]
+}
+```
+
+#### SBOM 的应用场景
+
+**漏洞关联：**
+
+当新的 CVE 被发现时，可快速查询受影响的应用：
+
+```bash
+# 使用 Grype 针对 SBOM 进行漏洞扫描
+grype sbom:sbom.json --add-cpes-if-none
+```
+**合规性报告：**
+
+将 SBOM 保存为构建产物，用于审计和合规性检查。
+
+**依赖升级决策：**
+
+通过分析 SBOM 中的依赖版本，制定安全升级计划。
+
+### 18.6.3 镜像签名与验证
+
+镜像签名确保镜像的来源可信且未被篡改。新项目通常优先评估 Cosign (Sigstore) 或 Notary Project 的 Notation；Docker Content Trust / Notary v1 属于历史路径。
+
+#### Cosign - 现代签名解决方案
+
+Cosign 是 Sigstore 项目的核心工具，支持无密钥签名，适合现代 CI/CD 流程。
+
+**安装：**
+
+```bash
+wget https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64
+chmod +x cosign-linux-amd64
+sudo mv cosign-linux-amd64 /usr/local/bin/cosign
+```
+**生成密钥对（传统方式）：**
+
+```bash
+cosign generate-key-pair
+
+# 生成 cosign.key 和 cosign.pub
+```
+**签名镜像：**
+
+```bash
+# 先推送镜像，再使用不可变 digest 签名
+IMAGE_DIGEST="myregistry.com/myapp@sha256:<digest>"
+cosign sign --key cosign.key "$IMAGE_DIGEST"
+
+# 系统会提示输入私钥密码
+```
+**验证签名：**
+
+```bash
+# 使用公钥验证
+cosign verify --key cosign.pub "$IMAGE_DIGEST"
+
+# 输出结果示例
+# Verification successful!
+# {
+#   "critical": {
+#     "identity": {...},
+#     "image": {...},
+#     "type": "cosign container image signature"
+#   },
+#   "optional": {...}
+# }
+```
+**Keyless 签名（推荐用于 CI/CD）：**
+
+```bash
+# 在 GitHub Actions 等 CI 中无需存储密钥
+cosign sign --yes "$IMAGE_DIGEST"
+
+# 验证时检查签名证书中的 OIDC 身份声明是否匹配预期 workflow 与 issuer
+cosign verify "$IMAGE_DIGEST" \
+  --certificate-identity https://github.com/myorg/myrepo/.github/workflows/build.yml@refs/heads/main \
+  --certificate-oidc-issuer https://token.actions.githubusercontent.com
+```
+
+#### Notary Project / Notation
+
+Notation 是 Notary Project 的 OCI 签名工具，适合希望采用 CNCF Notary Project 规范、或使用 registry/云厂商原生集成的团队。与 Cosign 类似，生产环境应围绕不可变 digest 做签名和策略校验。
+
+```bash
+# 签名已推送的镜像 digest
+notation sign myregistry.com/myapp@sha256:<digest>
+
+# 验证签名
+notation verify myregistry.com/myapp@sha256:<digest>
+```
+
+#### Docker Content Trust 与 Notary v1
+
+> **注意：DCT 退役时间线**
+>
+> Docker 已宣布[退役 Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/)，Docker Official Images 的部分 DCT 签名证书自 2025 年 8 月起已陆续过期；根据 [Docker 官方退役说明](https://docs.docker.com/retired/)，Notary v1 服务 `notary.docker.io` 在 2026 年 7 月、8 月安排若干次 brownout（短时停服演练）之后，于 2026 年 12 月 8 日完全关闭。registry 服务商的具体节奏以其自身文档为准，不要把云厂商特定日期直接当作 Docker 全局时间线。
+>
+> 新项目应优先使用上文介绍的 **Cosign (Sigstore)** 或 registry 原生签名/证明能力；现有 DCT 用户应先盘点依赖、验证替代方案，再制定迁移计划。
+
+Docker Content Trust 使用 Notary v1 实现镜像签名，是 Docker 官方的传统签名解决方案，不建议新项目采用。**自 Docker Engine 29.0 起，Docker Content Trust 已从 Docker CLI 中移除**：`docker trust` 子命令不再内置（官方仅保留为可单独构建的插件），`DOCKER_CONTENT_TRUST` 环境变量不再生效，`docker push --disable-content-trust` 也仅作为已废弃选项保留、不再有实际作用。下面的示例仅适用于 Docker Engine 28.x 及更早版本。
+
+**历史用法示例（不建议新项目采用）：**
+
+```bash
+# 在环境中启用 DCT
+export DOCKER_CONTENT_TRUST=1
+
+# 此后所有 docker push/pull 都需要签名
+docker push myregistry.com/myapp:v1.0.0
+
+# 如果镜像未签名，操作会被拒绝
+
+# 禁用 DCT（仅用于特定操作）
+docker push --disable-content-trust myregistry.com/myapp:v1.0.0
+```
+**签名密钥管理：**
+
+```bash
+# 首次推送时会提示创建 Delegation Key
+# 密钥存储在 ~/.docker/trust/private/root_keys/ 和 ~/.docker/trust/private/tuf_keys/
+
+# 查看 DCT/Notary 信任数据；RepoDigests 只是内容摘要，不等于签名验证
+docker trust inspect --pretty myregistry.com/myapp:v1.0.0
+```
+
+### 18.6.4 供应链安全最佳实践
+
+#### 1. 基础镜像安全
+
+```dockerfile
+# ❌ 不推荐：使用 latest 标签
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y curl
+
+# ✓ 推荐：固定基础镜像版本和摘要
+FROM ubuntu:22.04@sha256:a6d2b38300ce017add71440577d5b0a90460d0e6e0e14...（完整 64 位哈希）
+RUN apt-get update && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+```
+
+#### 2. 构建时扫描
+
+在 CI/CD 构建阶段集成安全扫描，避免在 Dockerfile 里从分支 URL 下载并执行远程安装脚本：
+
+```bash
+docker run --rm \
+  -v "$PWD:/work" \
+  -w /work \
+  aquasec/trivy:latest \
+  fs . --exit-code 1 --severity HIGH,CRITICAL
+```
+
+#### 3. 运行时镜像扫描策略
+
+```bash
+# 镜像构建完成后立即扫描
+trivy image --severity HIGH,CRITICAL \
+  --exit-code 1 \
+  --timeout 30m \
+  $IMAGE_NAME:$IMAGE_TAG
+
+# 定期扫描已部署的镜像
+trivy image --scanners vuln,misconfig registry:5000/myapp:latest
+```
+
+#### 4. 镜像仓库安全配置
+
+**Harbor（私有镜像仓库）的安全扫描：**
+
+Harbor 的扫描器应在管理界面的 **Interrogation Services / Scanner** 中配置；推送自动扫描通常在项目级 **Configuration** 中启用。不要把扫描策略误写成通用 `harbor.yml` 顶层字段。实际部署时应按所用 Harbor 版本文档配置 scanner、项目策略和漏洞阻断阈值。
+
+#### 5. 政策执行
+
+在 Kubernetes 环境中使用 Admission Webhook 强制镜像签名和扫描：
+
+```yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: image-security-policy
+webhooks:
+- name: image-security.example.com
+  clientConfig:
+    service:
+      name: image-security-webhook
+      namespace: security
+      path: "/validate"
+  rules:
+  - operations: ["CREATE", "UPDATE"]
+    apiGroups: [""]
+    apiVersions: ["v1"]
+    resources: ["pods"]
+  admissionReviewVersions: ["v1"]
+  sideEffects: None
+```
+
+### 18.6.5 CI/CD 中集成安全扫描
+
+#### GitHub Actions 工作流示例
+
+```yaml
+name: Build and Scan Image
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+      id-token: write
+
+    # 注意：本示例其余 action 为便于阅读使用了可变标签（@v7 等），这与下面 Trivy 那条
+    # 注释里「务必使用不可变 commit SHA」的要求并不一致——真正部署时**每一条 uses 都应
+    # 钉死 40 位 commit SHA**，尤其是持有凭据的 docker/login-action 与能推镜像的
+    # docker/build-push-action：标签一旦被劫持，攻击者拿到的就是本 job 的
+    # packages: write 与 id-token: write 权限，可以推送恶意镜像并为其签名。
+    # 本书仓库自己的 .github/workflows/ 即全部按 SHA 钉死，可作为参照。
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v7
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v4
+
+    - name: Install Cosign
+      if: github.event_name == 'push'
+      # cosign-installer 没有发布可移动的 v4 大版本标签，只能引用完整版本号；
+      # 安装 Cosign v3+ 必须使用 v4 及以后的 installer，v3 系列只能安装 Cosign 2.x。
+      uses: sigstore/cosign-installer@v4.1.2
+
+    - name: Login to Registry
+      if: github.event_name == 'push'
+      uses: docker/login-action@v4
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push Docker image
+      if: github.event_name == 'push'
+      id: build-push
+      uses: docker/build-push-action@v7
+      with:
+        context: .
+        push: true
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        provenance: mode=max
+        sbom: true
+
+    - name: Build Docker image for pull request scan
+      if: github.event_name == 'pull_request'
+      uses: docker/build-push-action@v7
+      with:
+        context: .
+        push: false
+        load: true
+        tags: local/${{ env.IMAGE_NAME }}:pr
+
+    - name: Run Trivy vulnerability scan
+      # 安全提醒：2026 年 3 月 19 日 Trivy GitHub Actions 遭受供应链攻击，
+      # 76 个版本标签被劫持。务必使用不可变的 commit SHA 引用，而非可变标签。
+      # 使用前请到 https://github.com/aquasecurity/trivy-action/releases 核实 SHA 对应正确版本。
+      uses: aquasecurity/trivy-action@57a97c7e7821a5776cebc9bb87c984fa69cba8f1 # v0.35.0
+      with:
+        image-ref: ${{ github.event_name == 'push' && format('{0}/{1}@{2}', env.REGISTRY, env.IMAGE_NAME, steps.build-push.outputs.digest) || format('local/{0}:pr', env.IMAGE_NAME) }}
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        severity: 'HIGH,CRITICAL'
+
+    - name: Upload Trivy results to GitHub Security tab
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+    - name: Generate SBOM
+      uses: anchore/sbom-action@v0
+      with:
+        image: ${{ github.event_name == 'push' && format('{0}/{1}@{2}', env.REGISTRY, env.IMAGE_NAME, steps.build-push.outputs.digest) || format('local/{0}:pr', env.IMAGE_NAME) }}
+        format: cyclonedx-json
+        output-file: sbom-cyclonedx.json
+
+    - name: Upload SBOM
+      uses: actions/upload-artifact@v7
+      with:
+        name: sbom
+        path: sbom-cyclonedx.json
+
+    - name: Sign image with Cosign
+      if: github.event_name == 'push'
+      run: |
+        cosign sign --yes ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build-push.outputs.digest }}
+```
+
+#### GitLab CI 工作流示例
+
+```yaml
+stages:
+  - build
+  - scan
+  - push
+  - sign
+
+variables:
+  REGISTRY: registry.gitlab.com
+  IMAGE_NAME: $REGISTRY/$CI_PROJECT_PATH
+
+build:
+  stage: build
+  image: docker:<version>-cli@sha256:<docker-cli-digest>
+  services:
+    - name: docker:<version>-dind@sha256:<docker-dind-digest>
+  script:
+    - docker build -t $IMAGE_NAME:$CI_COMMIT_SHA .
+    - docker save $IMAGE_NAME:$CI_COMMIT_SHA > image.tar
+
+scan:trivy:
+  stage: scan
+  image: aquasec/trivy:<version>@sha256:<trivy-digest>
+  script:
+    - trivy image --severity HIGH,CRITICAL --exit-code 1 docker-archive://image.tar
+  allow_failure: false
+
+scan:grype:
+  stage: scan
+  image: anchore/grype:<version>@sha256:<grype-digest>
+  script:
+    - grype docker-archive://image.tar
+
+generate:sbom:
+  stage: scan
+  image: anchore/syft:<version>@sha256:<syft-digest>
+  script:
+    - syft docker-archive://image.tar -o cyclonedx > sbom.xml
+  artifacts:
+    reports:
+      cyclonedx: sbom.xml
+
+# 如需让 GitLab 安全面板摄取容器扫描结果，应输出 GitLab 兼容的 container_scanning 报告。
+
+push:
+  stage: push
+  image: docker:<version>-cli@sha256:<docker-cli-digest>
+  services:
+    - name: docker:<version>-dind@sha256:<docker-dind-digest>
+  script:
+    - docker load < image.tar
+    - echo "$REGISTRY_PASSWORD" | docker login --username "$REGISTRY_USER" --password-stdin "$REGISTRY"
+    - docker push $IMAGE_NAME:$CI_COMMIT_SHA
+    - DIGEST=$(docker buildx imagetools inspect "$IMAGE_NAME:$CI_COMMIT_SHA" --format '{{.Manifest.Digest}}')
+    - echo "$IMAGE_NAME@$DIGEST" > image-digest.txt
+  artifacts:
+    paths:
+      - image-digest.txt
+  only:
+    - main
+
+sign:
+  stage: sign
+  image: gcr.io/projectsigstore/cosign:<version>@sha256:<cosign-digest>
+  script:
+    - cosign sign --key $COSIGN_KEY "$(cat image-digest.txt)"
+  only:
+    - main
+```
+
+### 18.6.6 常见问题与最佳实践
+
+**Q: 扫描报告中有过时的 CVE，如何处理？**
+
+A: 某些 CVE 可能已经被修复但数据库未更新，可以：
+
+- 手动验证安全补丁是否已应用
+- 使用工具的忽略列表功能（如 Trivy 的 `.trivyignore`）
+- 定期更新扫描工具和漏洞数据库
+
+**Q: 如何平衡镜像大小和安全性？**
+
+A:
+
+- 使用多阶段构建减少最终镜像大小
+- 使用精简基础镜像（Alpine、Distroless）
+- 定期更新依赖而不是一味求小
+- 优先安全性，体积次之
+
+**Q: 如何管理和轮换签名密钥？**
+
+A:
+
+- 在密钥管理系统（如 HashiCorp Vault）中存储密钥
+- 定期轮换密钥（建议每 90 天）
+- 使用 Keyless 签名消除密钥管理复杂性
+- 保留密钥轮换的审计日志

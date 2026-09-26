@@ -1,0 +1,47 @@
+## 17.2 Fedora CoreOS 安装
+
+### 17.2.1 下载 ISO
+
+在[下载页面](https://fedoraproject.org/coreos/download/) `Bare Metal & Virtualized` 标签页下载 ISO。
+
+### 17.2.2 编写 Butane 配置
+
+> **注意**：Fedora CoreOS 配置工具已从 `fcct` (Fedora CoreOS Config Transpiler) 更名为 **Butane**。新版本使用 `.bu` 扩展名和更新的 spec 版本。
+
+```yaml
+## example.bu
+
+variant: fcos
+version: 1.6.0
+passwd:
+  users:
+    - name: core
+      ssh_authorized_keys:
+        - ssh-rsa AAAA...
+```
+将 `ssh-rsa AAAA...` 替换为自己的 SSH 公钥（位于 `~/.ssh/id_rsa.pub`）。
+
+### 17.2.3 转换 Butane 配置为 Ignition
+
+```bash
+$ docker run -i --rm quay.io/coreos/butane:release --pretty --strict < example.bu > example.ign
+```
+
+### 17.2.4 挂载 ISO 启动虚拟机并安装
+
+> 虚拟机需要分配 3GB 以上内存，否则会无法启动。
+
+在虚拟机终端执行以下命令安装：
+
+```bash
+$ sudo coreos-installer install /dev/sda --ignition-file example.ign
+```
+安装之后重新启动即可使用。
+
+### 17.2.5 使用
+
+```bash
+$ ssh core@虚拟机IP
+
+$ podman --version
+```

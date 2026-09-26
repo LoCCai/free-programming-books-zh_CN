@@ -1,0 +1,156 @@
+## 3.2 Debian
+
+Debian 以其稳定性著称，是 Docker 的理想宿主系统。本节将指导你在 Debian 上完成 Docker 的安装。
+
+### APT 源安装的必要性
+
+与 Ubuntu 类似，Debian 用户在安装 Docker 时同样应该优先选择 Docker 官方 APT 仓库。对于服务器环境，这种方式更利于版本控制、升级和长期维护。
+
+> 警告：切勿在没有配置 Docker APT 源的情况下直接使用 apt 命令安装 Docker。
+
+### 3.2.1 准备工作
+
+安装前请仔细检查 Debian 版本支持情况，并卸载旧版本以避免冲突。
+
+#### 系统要求
+
+Docker 支持以下版本的 [Debian](https://www.debian.org/intro/about) 操作系统（具体以官方 [安装文档](https://docs.docker.com/engine/install/debian/) 为准）：
+
+* Debian Trixie 13 (stable)
+* Debian Bookworm 12（oldstable，全面支持至 2026 年 6 月 10 日，LTS 至 2028 年 6 月 30 日）
+* Debian Bullseye 11（oldoldstable，LTS 支持至 2026 年 8 月 31 日）
+
+> **注意**：Debian Bullseye 11 已于 2026 年 8 月 31 日结束长期支持。建议新部署使用 Bookworm 12 或 Trixie 13。
+
+#### 卸载旧版本
+
+Docker 官方建议先卸载可能冲突的非官方软件包：
+
+```bash
+$ for pkg in docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc; do
+    sudo apt remove $pkg
+done
+```
+
+### 3.2.2 使用 APT 安装
+
+先安装基础依赖，并准备密钥目录：
+
+```bash
+$ sudo apt update
+
+$ sudo apt install ca-certificates curl
+$ sudo install -m 0755 -d /etc/apt/keyrings
+```
+如果公司内网维护了受信任镜像站，可在后续仓库地址中替换域名；默认建议优先使用 Docker 官方仓库。
+
+为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥。
+
+```bash
+$ sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+$ sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
+然后，我们需要向 `sources.list` 中添加 Docker 软件源：
+
+> 在一些基于 Debian 的 Linux 发行版中，`$(. /etc/os-release && echo "$VERSION_CODENAME")` 可能不会返回 Debian 官方仓库使用的代号，例如 [Kali Linux](https://www.kali.org/docs/policy/kali-linux-relationship-with-debian/) 等衍生发行版。此时请手动替换为对应的 Debian 代号，例如 `bookworm`。
+
+```bash
+$ sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/debian
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+```
+> 如果使用 Kali 等衍生发行版，请把 `Suites` 对应的版本代号替换为映射到的 Debian 代号，例如 `bookworm`。如果需要测试频道，可将 `Components: stable` 改为 `test`。
+
+更新 APT 缓存，并安装 Docker Engine 及常用 CLI 插件。
+
+```bash
+$ sudo apt update
+
+$ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+### 3.2.3 使用脚本自动安装
+
+在测试或开发环境中，Docker 官方提供了便捷安装脚本，但官方明确不建议把它作为生产环境的标准安装方式。
+
+在真正执行前，建议先用 `--dry-run` 预览脚本动作：
+
+```bash
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh ./get-docker.sh --dry-run
+
+# 若需要测试频道：
+# curl -fsSL https://test.docker.com -o test-docker.sh
+# sudo sh ./test-docker.sh
+```
+确认无误后，再执行 `sudo sh ./get-docker.sh` 安装稳定版。
+
+### 3.2.4 启动 Docker
+
+```bash
+$ sudo systemctl enable --now docker
+```
+
+### 3.2.5 建立 docker 用户组
+
+默认情况下，`docker` 命令会使用 [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket) 与 Docker 引擎通讯。而只有 `root` 用户和 `docker` 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 `root` 用户。因此，更好的做法是将需要使用 `docker` 的用户加入 `docker` 用户组。
+
+> ⚠️ **安全警告：`docker` 用户组等同于 `root` 权限**
+>
+> 将用户加入 `docker` 组免去了每次执行 `docker` 命令时输入 `sudo` 的繁琐，但这也意味着该用户可以轻易获取主机的最高 root 权限（例如通过挂载根目录运行容器）。
+> 如果你在一个多用户共享的生产系统上配置，切勿随意将普通用户加入此组。此时，更安全的替代方案是使用官方提供的 **[Rootless 模式 (Rootless mode)](https://docs.docker.com/engine/security/rootless/)**，它允许在没有任何 root 权限的情况下运行 Docker 守护进程和容器。
+
+建立 `docker` 组：
+
+```bash
+$ sudo groupadd docker
+```
+将当前用户加入 `docker` 组：
+
+```bash
+$ sudo usermod -aG docker $USER
+```
+退出当前终端并重新登录，进行如下测试。
+
+### 3.2.6 测试 Docker 是否安装正确
+
+```bash
+$ docker run --rm hello-world
+
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+b8dfde127a29: Pull complete
+Digest: sha256:308866a43596e83578c7dfa15e27a73011bdd402185a84c5cd7f32a88b501a24
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+若能正常输出以上信息，则说明安装成功。
+
+### 3.2.7 镜像加速
+
+如果在使用过程中发现拉取 Docker 镜像十分缓慢，可以配置 Docker [国内镜像加速](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md)。

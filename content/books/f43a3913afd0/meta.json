@@ -1,0 +1,9 @@
+{
+  "bookId": "f43a3913afd0",
+  "title": "Linux Documentation (中文版)",
+  "url": "https://www.gitbook.com/book/tinylab/linux-doc/details",
+  "status": "failed",
+  "error": "上游标记疑似失效,未尝试抓取",
+  "fetchedAt": "2026-09-26T18:52:30.570Z",
+  "chapters": []
+}

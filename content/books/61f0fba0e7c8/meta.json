@@ -1,0 +1,9 @@
+{
+  "bookId": "61f0fba0e7c8",
+  "title": "Docker中文指南",
+  "url": "https://github.com/widuu/chinese_docker",
+  "status": "failed",
+  "fetchedAt": "2026-09-26T18:52:29.255Z",
+  "chapters": [],
+  "error": "EISDIR: illegal operation on a directory, read"
+}

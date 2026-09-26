@@ -1,0 +1,211 @@
+## 9.7 容器网络高级特性
+
+本节聚焦 Docker 自身可见的高级网络能力：Overlay 网络、服务发现和 DNS 解析。更偏 Kubernetes 编排网络的概念，如 CNI 和 NetworkPolicy，不在本章展开。
+
+### 9.7.1 Overlay 网络原理与配置
+
+Overlay 网络在现有网络基础上建立虚拟网络，允许容器跨宿主机通信。它是 Swarm 场景下的核心网络驱动之一。
+
+#### Overlay 网络工作原理
+
+Overlay 网络通过隧道封装技术（通常是 VXLAN）将容器网络流量封装在宿主机物理网络的 UDP 数据包中传输。Docker overlay 网络默认使用 `4789/udp` 作为数据通道端口，同时 Swarm 控制面与节点通信还需要相应开放 `2377/tcp`、`7946/tcp` 和 `7946/udp`。
+
+```text
+容器 A (192.168.0.2)
+    ↓
+veth 对
+    ↓
+br-net (网桥)
+    ↓
+Docker 引擎 (VXLAN 封装)
+    ↓
+物理网络 (172.16.0.0/24)
+    ↓
+Docker 引擎 (VXLAN 解封装)
+    ↓
+br-net (网桥)
+    ↓
+veth 对
+    ↓
+容器 B (192.168.0.3，不同宿主机)
+```
+
+#### 创建和使用 Overlay 网络
+
+Overlay 网络依赖 Swarm。若要让独立容器加入 overlay 网络，需要把网络创建为 `attachable`。
+
+```bash
+# 初始化 Swarm
+docker swarm init
+
+# 创建 attachable overlay 网络
+docker network create --driver overlay \
+  --attachable \
+  --subnet 192.168.0.0/24 \
+  --opt com.docker.network.driver.mtu=1450 \
+  my-overlay-net
+
+# 验证网络创建
+docker network ls
+docker network inspect my-overlay-net
+
+# 在 Swarm 服务中使用 overlay 网络
+docker service create --name web \
+  --network my-overlay-net \
+  --replicas 3 \
+  nginx  # 确保与环境兼容的 Nginx 版本
+
+# 单机环境下也可以让普通容器加入 attachable overlay 网络
+docker run -d --name container1 --network my-overlay-net busybox sleep 1d
+docker run -d --name container2 --network my-overlay-net busybox sleep 1d
+
+# 测试跨容器通信
+docker exec container1 ping -c 1 container2
+```
+
+#### Overlay 网络性能优化
+
+```bash
+# 调整 MTU（Maximum Transmission Unit）避免分片
+# VXLAN 开销 50 字节，物理 MTU 1500 时建议设置为 1450
+docker network create --driver overlay \
+  --attachable \
+  --opt com.docker.network.driver.mtu=1450 \
+  optimized-overlay
+
+# 启用 IP 地址管理（IPAM）自定义
+docker network create --driver overlay \
+  --attachable \
+  --subnet 10.0.9.0/24 \
+  --aux-address "my-router=10.0.9.2" \
+  my-custom-overlay
+```
+
+### 9.7.2 容器 DNS 解析机制
+
+Docker 内置 DNS 服务器，但 DNS 解析涉及多个层面的配置。
+
+#### DNS 解析流程
+
+```text
+容器应用 (dig www.example.com)
+    ↓
+容器内 /etc/resolv.conf (127.0.0.11:53)
+    ↓
+Docker 内嵌 DNS 服务器 (127.0.0.11)
+    ↓
+用户自定义 DNS 或宿主机 /etc/resolv.conf
+    ↓
+外部 DNS 服务器 (8.8.8.8 等)
+    ↓
+DNS 响应 → 容器缓存 → 应用
+```
+
+#### 配置容器 DNS
+
+**在运行时指定 DNS：**
+
+```bash
+# 单个容器
+docker run -d \
+  --dns 8.8.8.8 \
+  --dns 1.1.1.1 \
+  --dns-search example.com \
+  nginx  # 确保与环境兼容的 Nginx 版本
+
+# DNS 选项
+docker run -d \
+  --dns-option ndots:2 \
+  --dns-option timeout:1 \
+  --dns-option attempts:3 \
+  nginx  # 确保与环境兼容的 Nginx 版本
+
+# 查看容器 DNS 配置
+docker exec <container_id> cat /etc/resolv.conf
+```
+
+**Docker Compose DNS 配置：**
+
+```yaml
+services:
+  web:
+    image: nginx
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    dns_search:
+      - example.com
+      - local
+
+  db:
+    image: postgres
+    networks:
+      - backend
+    hostname: postgres-db
+
+networks:
+  backend:
+    driver: bridge
+
+# 容器内 /etc/resolv.conf 将被自动配置
+# search example.com local
+# nameserver 8.8.8.8
+# nameserver 1.1.1.1
+```
+
+**Docker 守护进程级别配置：**
+
+```json
+{
+  "dns": ["8.8.8.8", "1.1.1.1"],
+  "dns-search": ["example.com"]
+}
+```
+
+#### 自定义服务发现
+
+**使用 Docker 内建 DNS 的服务发现：**
+
+```bash
+# 创建自定义网络
+docker network create mynet
+
+# 运行服务
+docker run -d --name web --network mynet nginx  # 确保与环境兼容的 Nginx 版本
+docker run -d --name db --network mynet postgres  # 确保与环境兼容的 PostgreSQL 版本
+
+# 在其他容器中通过服务名访问
+docker run -it --network mynet busybox sh
+
+# ping web  # 自动解析到 web 容器 IP
+# ping db   # 自动解析到 db 容器 IP
+```
+
+**Compose 服务名自动发现：**
+
+```yaml
+services:
+  frontend:
+    image: nginx
+    depends_on:
+      - backend
+    environment:
+      BACKEND_URL: http://backend:8080
+
+  backend:
+    image: myapp
+    depends_on:
+      - database
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_DB: mydb
+
+# frontend 容器可以直接访问 http://backend:8080
+# backend 容器可以直接访问 postgres://database:5432
+```
+
+### 9.7.3 本章边界
+
+Docker 的网络章节重点讨论 bridge、host、none、overlay 和 DNS 等能力。CNI、NetworkPolicy、Calico、Cilium 这类概念属于 Kubernetes 编排网络的范畴，后续在 Kubernetes 章节中再展开会更清晰。

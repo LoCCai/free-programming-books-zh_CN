@@ -1,0 +1,16 @@
+{
+  "bookId": "6136c2c5c78c",
+  "title": "Linux 构建指南",
+  "url": "https://www.jinbuguo.com/lfs/lfs62/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-26T18:52:30.570Z",
+  "chapters": [
+    {
+      "slug": "001-19",
+      "title": "Linux From Scratch",
+      "file": "chapters/001-19.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Linux From Scratch"
+}

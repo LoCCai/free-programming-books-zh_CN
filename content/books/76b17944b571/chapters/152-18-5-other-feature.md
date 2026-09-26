@@ -1,0 +1,99 @@
+## 18.5 其他安全特性
+
+除了上述的命名空间、控制组以及能力机制，Linux 内核与云原生生态还提供了大量安全增强功能，它们共同筑成了一道防御纵深的“马奇诺防线”。本节主要介绍强制访问控制、系统调用拦截以及自动化的容器漏洞扫描技术。
+
+### 18.5.1 系统调用过滤
+
+`Seccomp`（Secure Computing mode）是 Linux 内核的一个安全机制，用于限制进程能够发起的系统调用数量。
+
+一个普通的 Linux 内核提供了 300 多个系统调用，而一个正常运行的容器化应用（例如 Nginx 服务）通常只会用到几十个调用，这就给攻击者留下了大量的闲置入口点来进行内核层的缓冲区溢出攻击。
+
+Docker 默认启用了 Seccomp，并使用预置的 [默认配置文件](https://docs.docker.com/engine/security/seccomp/) 作为 allowlist：默认拒绝未显式允许的系统调用，并额外允许常见应用所需的调用。Docker 官方文档将其描述为默认禁用约 44 个系统调用（内核与 Docker 版本不同会有差异），例如与内核模块、系统重启或特权命名空间操作相关的调用。
+
+如果你对应用的系统调用特征了如指掌，你可以为容器定制专属规则。
+
+#### 实战：禁用 chmod 系统调用过滤
+
+> **务必先读**：`--security-opt seccomp=<file>` 是**整体替换**默认 profile，不是在默认之上叠加。
+> 如果自己写一个 `"defaultAction": "SCMP_ACT_ALLOW"` 的 blocklist，等于把上面那份
+> deny-by-default 的官方 allowlist 整个丢掉——你挡住了 `chmod`，却把默认被拦下的那
+> ~44 个高危调用（`unshare`、`keyctl`、`add_key`、`bpf`、`perf_event_open`、
+> `init_module`、`reboot` 等）全部放行，**净效果比不加这个参数还危险**。
+> 正确做法是**以官方默认 profile 为基线派生**。
+
+先取官方默认 profile，再在它之上把 `chmod` 改成拒绝：
+
+```bash
+$ curl -fsSL -o default.json \
+  https://raw.githubusercontent.com/moby/moby/master/profiles/seccomp/default.json
+
+## 在 default.json 中找到包含 "chmod" 的那条 syscalls 记录，把它从 allow 列表中移除；
+## 或追加一条更靠前的显式拒绝规则：
+##   { "names": ["chmod", "fchmod", "fchmodat"], "action": "SCMP_ACT_ERRNO" }
+$ cp default.json no-chmod.json && "$EDITOR" no-chmod.json
+```
+
+在启动时告诉 Docker 载入这套过滤配置：
+
+```bash
+$ docker run --rm -it \
+  --security-opt seccomp=no-chmod.json \
+  alpine sh
+
+/ # chmod 777 /etc/passwd
+chmod: /etc/passwd: Operation not permitted
+```
+应用只要被劫持进行越界尝试，其操作系统层命令便会立刻吃瘪——同时默认 profile 原有的
+~44 项拦截仍然生效。
+
+### 18.5.2 强制访问控制：AppArmor / SELinux
+
+传统的 Linux 模型遵循 DAC（自主访问控制），这意味着如果一个文件被赋予了全员读写权限（`777`），普通隔离下任何人便都能修改。但 **MAC（强制访问控制）** 技术，诸如 `AppArmor`（常用于 Ubuntu/Debian）或 `SELinux`（常用于 CentOS/RHEL），可以制定比“文件所有权”更宏观且优先的策略控制模块。
+
+在开启了上述机制的机器上：
+
+- **AppArmor**: 在启用 AppArmor 的系统上，Docker 默认为容器加载 `docker-default` profile；如果需要自定义策略，先用 `apparmor_parser` 加载 profile，再通过 `--security-opt apparmor=<profile>` 指定。
+- **SELinux**: 在启用 SELinux 集成的系统上，容器与挂载目录需要正确的 SELinux label。绑定挂载时常用 `:z` 表示多个容器共享，`:Z` 表示该挂载只给单个容器使用；不要对 `/home`、`/usr` 等系统目录随意使用 `:Z`，否则可能破坏宿主机标签。
+
+如果想为某些受信任应用施加特定的外部强化文件策略，可以通过如下方法指派规则表：
+
+```bash
+$ docker run --rm -it \
+  --security-opt apparmor=custom-nginx-profile \
+  nginx
+
+$ docker run --rm -it \
+  -v "$PWD/html":/usr/share/nginx/html:Z \
+  nginx
+```
+
+### 18.5.3 容器镜像漏洞静态扫描
+
+现代防护的防御已经不仅仅在运行阶段，而向“左”延伸至了构建与分发时期控制。很多安全隐患并不是用户代码中的直接逻辑异常，而是打包环境或者引入库的基础 `APT` 安装层面潜伏了开源界众所周知的历史漏洞。
+
+#### 使用 Trivy 识别风险
+
+[Trivy](https://github.com/aquasecurity/trivy) 是由 Aqua Security 发行的一款针对容器技术的快速镜像漏洞扫描利器。在分发应用前通过它的扫描可以规避绝大多数风险。
+
+```bash
+## 如果使用本地命令行扫描容器镜像
+$ trivy image alpine:3.20
+
+2024-03-01T10:05:07.124Z	INFO	Number of language-specific files: 1
+2024-03-01T10:05:07.124Z	INFO	Detecting vulnerabilities...
+
+alpine:3.20 (alpine 3.20.0)
+===========================
+Total: 2 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
++---------+------------------+----------+-------------------+---------------+---------------------------------------+
+| LIBRARY | VULNERABILITY ID | SEVERITY | INSTALLED VERSION | FIXED VERSION | TITLE                                 |
++---------+------------------+----------+-------------------+---------------+---------------------------------------+
+| busybox | CVE-2022-28391   | HIGH     | 1.30.1-r3         | 1.30.1-r4     | busybox: out-of-bounds read in...     |
+...
+```
+只要确保所有上传给私有或公共仓库分发服务的产物先被引入至 CI/CD 流水线，如果出现 `HIGH` 及 `CRITICAL` 严重的报错记录强行阻拦部署，这本身便是构建环节极其有力的自动化安全大门保障。除 Trivy 外，最新的 Docker 版本也已内置支持官方扫描利刃 **Docker Scout**。
+
+### 18.5.4 容器核心层基石结语
+
+到这里，Docker 为保障宿主和容器界限安全的几个护城河：从 **资源剥离限制**(`Cgroups`) 到 **进程/网络/身份蒙蔽**(`Namespace`)、到 **特权能力回收**(`Capabilities`) 再到 **内核强制策略拦截管制**(`Seccomp`/`AppArmor`) 已悉数交代完毕。虽然绝没有“100% 免疫网络穿刺的防线”，只要开发者牢记 **权限最小化原则** ，容器的堡垒就可以做到令攻击者望洋兴叹。

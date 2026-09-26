@@ -1,0 +1,121 @@
+## 13.4 高级特性
+
+掌握了 Kubernetes 的核心概念 (Pod，Service，Deployment) 后，我们需要了解更多高级特性以构建生产级应用。
+
+### 13.4.1 Helm - 包管理工具
+
+[Helm](https://helm.sh/) 被称为 Kubernetes 的包管理器（类似于 Linux 的 apt/yum）。它将一组 Kubernetes 资源定义文件打包为一个 **Chart**。
+
+*   **安装应用**：`helm install my-release bitnami/mysql`
+*   **版本管理**：轻松回滚应用的发布版本。
+*   **模板化**：支持复杂的应用部署逻辑配置。
+
+### 13.4.2 Gateway API 与 Ingress
+
+Service 虽然提供了负载均衡，但通常是 4 层 (TCP/UDP)。集群需要 7 层 (HTTP/HTTPS) 路由能力来充当网关。
+
+#### Gateway API（推荐）
+
+> **重要**：Kubernetes 社区推荐使用 [Gateway API](https://gateway-api.sigs.k8s.io/) 作为新一代流量管理标准。原 `kubernetes/ingress-nginx` 项目已于 2026 年 3 月退役停止维护，不再接收安全更新。
+
+Gateway API 基于 CRD 实现，提供了比 Ingress 更强大和标准化的流量管理能力：
+
+*   **GatewayClass**：定义网关实现（类似 IngressClass）。
+*   **Gateway**：定义监听端口和协议（由基础设施团队管理）。
+*   **HTTPRoute**：定义 HTTP 路由规则（由应用团队管理）。
+*   **职责分离**：基础设施、集群运维和应用开发者各管各的资源。
+
+```yaml
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: my-route
+spec:
+  parentRefs:
+  - name: my-gateway
+  hostnames:
+  - "api.example.com"
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /api
+    backendRefs:
+    - name: api-svc
+      port: 80
+```
+
+常见的 Gateway API 实现有 Envoy Gateway、Istio、Cilium、Traefik、Kong 等。
+
+#### Ingress（传统方案）
+
+Ingress 资源仍可正常使用，但建议新项目直接采用 Gateway API。已有 Ingress 配置可按需逐步迁移。
+
+*   **域名路由**：基于 Host 将请求转发不同服务。
+*   **路径路由**：基于 Path 将请求转发。
+*   **SSL/TLS**：集中管理证书。
+
+### 13.4.3 Persistent Volume 与 StorageClass
+
+容器内的文件是临时的。对于有状态应用（如数据库），需要持久化存储。
+
+*   **PVC (Persistent Volume Claim)**：用户申请存储的声明。
+*   **PV (Persistent Volume)**：实际的存储资源（NFS，AWS EBS，Ceph 等）。
+*   **StorageClass**：定义存储类，支持动态创建 PV。
+*   **VolumeAttributesClass**：Kubernetes 1.34 起 GA，用于在 CSI 驱动支持 `ModifyVolume` 时动态调整卷属性，例如性能等级或服务质量参数。
+
+### 13.4.4 Horizontal Pod Autoscaling
+
+HPA 根据 CPU 利用率或其他指标（如内存、自定义指标）自动扩缩 Deployment 或 ReplicaSet 中的 Pod 数量。
+
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: php-apache
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+```
+
+### 13.4.5 ConfigMap 与 Secret
+
+*   **ConfigMap**：存储非机密的配置数据（配置文件、环境变量）。
+*   **Secret**：存储机密数据（密码、Token、证书）。Secret 值默认只是 Base64 编码并存入 etcd；生产环境应显式启用 etcd 静态加密或 KMS。
+
+通过将配置与镜像分离，保证了容器的可移植性。
+
+### 13.4.6 Pod Security Standards
+
+> **注意**：PodSecurityPolicy (PSP) 已在 Kubernetes 1.25 中完全移除。
+
+Kubernetes 使用 **Pod Security Standards** 定义三个安全级别，通过内置的 Pod Security Admission 控制器在命名空间级别执行：
+
+*   **Privileged**：不受限制，适用于系统级和基础设施工作负载。
+*   **Baseline**：防止已知的权限提升，适用于大多数工作负载。
+*   **Restricted**：严格限制，遵循 Pod 安全加固最佳实践。
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-app
+  labels:
+    pod-security.kubernetes.io/enforce: baseline
+    pod-security.kubernetes.io/warn: restricted
+```
+
+### 13.4.7 Sidecar Containers
+
+Kubernetes 1.33 起 Sidecar Containers 进入 GA。它们通过 `initContainers` 中带 `restartPolicy: Always` 的容器表达，既保留 init container 的启动顺序，又会在主容器生命周期内持续运行。对于旧集群或不需要启动顺序控制的场景，仍可使用普通多容器 Pod。

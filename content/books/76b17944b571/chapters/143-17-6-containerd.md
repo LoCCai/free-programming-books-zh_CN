@@ -1,0 +1,76 @@
+## 17.6 containerd - 核心容器运行时
+
+> **版本说明**：containerd 和 nerdctl 保持活跃的发布周期。建议查阅 [containerd 官方文档](https://containerd.io/) 和 [nerdctl GitHub Releases](https://github.com/containerd/nerdctl/releases) 获取最新版本信息。
+
+本节介绍 containerd，它是现代容器技术栈中最为核心的基础组件之一。了解 containerd 有助于更深入地理解 Docker 和 Kubernetes 的底层运行机制。
+
+### 17.6.1 containerd 简介
+
+[containerd](https://containerd.io/) 是一个行业标准的容器运行时，它最初是由 Docker 引擎中剥离出来的一个核心组件，后来 Docker 将其捐赠给了云原生计算基金会（CNCF），目前已经是一个 CNCF 毕业（Graduated）项目。
+
+它的主要职责是管理单个宿主机上完整的容器生命周期，包括：
+
+- 镜像的传输和存储
+- 容器执行和管理
+- 存储和网络接口的管理
+
+简单来说，当你在使用 Docker 或者 Kubernetes 时，真正去底层调用操作系统接口（如 Linux 的 Namespace 和 Cgroups）来启动和管理容器进程的，往往是 containerd（及它所调用的 runc 组件）。
+
+### 17.6.2 与 Docker 和 Kubernetes 的关系
+
+> **版本说明**：本章节涉及 containerd、Docker 和 Kubernetes 的多个版本。建议查阅官方文档了解最新的兼容性信息。
+
+理解 containerd，首先要理清它与用户日常操作的 Docker 以及 Kubernetes 的关系。
+
+#### Docker 的架构
+
+在早期，Docker 引擎是一个包含了所有功能的单体架构。随着技术的发展和标准化要求，Docker 将底层关于容器运行时的部分解耦出来，形成了 `containerd` 和 `runc`。
+
+当你执行一个 `docker run` 命令时，调用链路大致如下：
+
+1. Docker Client 发送请求给 Docker Daemon（`dockerd`）。
+2. `dockerd` 将请求转发给 `containerd`。
+3. `containerd` 准备好镜像和容器的必要环境，然后调用 `runc`。
+4. `runc` 负责按照 OCI（Open Container Initiative）标准，拉起并运行真正的容器进程。
+
+因此，Docker 现在实际上是构建在 containerd 之上的一个包含更多开发者友好特性（如构建镜像、Compose 管理等）的增强平台。
+
+#### Kubernetes 与 CRI
+
+Kubernetes 作为一个容器编排系统，为了屏蔽底层不同容器运行时的实现差异，引入了 CRI（Container Runtime Interface）标准。
+
+- 早期版本中，Kubernetes 默认使用 docker 作为运行时，通过一个名为 `dockershim` 的桥接组件对接 Docker，Docker 再对接 containerd。
+- 随着 containerd 原生支持了 CRI 插件，Kubernetes 开始直接与 containerd 通信，去掉了 `dockershim` 和 `dockerd` 的中间层。这就是为什么从 Kubernetes 1.24+ 开始“弃用 Docker”引发了广泛关注，实际上 Kubernetes 只是弃用 `dockershim`，底层可以使用 containerd、CRI-O 等符合 CRI 的运行时。参见 [Kubernetes 官方文档](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)。
+- containerd 2.0+ 移除了已弃用的 CRI v1alpha2 接口，仅保留 CRI v1（Kubernetes 1.26+ 仅支持 CRI v1）。如果集群中仍有依赖 CRI v1alpha2 的组件，升级 containerd 2.x 前需先完成迁移。containerd 2.x 系列中 2.0 和 2.3 均为 LTS 版本，其中 2.3 支持从 1.7 LTS 直接升级，生产环境推荐使用。详见 [containerd 发布说明](https://github.com/containerd/containerd/releases)。
+
+### 17.6.3 为什么直接使用 containerd？
+
+对普通应用开发者来说，Docker 依然是本地开发和测试的首选。但对于构建云平台、自动化流水线或深度管理 Kubernetes 集群的系统工程师来说，直接使用 containerd 可以带来：
+
+- **更高的性能与更少的开销**：去掉了 Docker Daemon 等附加组件的资源占用，链路更短。
+- **更强的稳定性**：作为专注于运行时的底层组件，它的核心功能极为稳定且更新受控。
+- **直接符合 Kubernetes CRI 标准**：在生产级 Kubernetes 集群中作为标准配置。
+
+### 17.6.4 基础用法与工具介绍
+
+不同于 `docker` 命令行工具，containerd 提供了不同的客户端来满足不同的使用场景：
+
+- **ctr**：containerd 自带的调试用客户端。它功能比较基础，主要用于开发者在开发 containerd 时进行快速调试，一般不作为最终用户的日常管理工具。
+- **crictl**：Kubernetes 提供的 CRI 命令行工具。它用于排查 Kubernetes 节点上的容器和沙箱（Pod）问题。
+- **nerdctl**：这是一个由 containerd 项目维护者开发的，完全兼容 Docker CLI 体验的 containerd 命令行客户端。对于习惯了 `docker run/ps/build` 命令的用户来说，`nerdctl` 可以作为直接操作 containerd 的理想替代品，并且它还支持直接构建镜像（依赖 BuildKit）。
+
+#### nerdctl 使用示例
+
+安装完 containerd 和 nerdctl 后，你可以体验到几乎与 Docker 完全一致的命令行：
+
+```bash
+# 启动一个 nginx 容器
+$ nerdctl run -d -p 8080:80 --name my-nginx nginx:alpine
+
+# 查看运行中的容器
+$ nerdctl ps
+
+# 查看本地镜像
+$ nerdctl images
+```
+对于那些希望在生产服务器上剥离 Docker 庞大体积，但又想要保留类似 Docker 方便的命令行体验的用户，`containerd` + `nerdctl` 是一个极佳的组合。

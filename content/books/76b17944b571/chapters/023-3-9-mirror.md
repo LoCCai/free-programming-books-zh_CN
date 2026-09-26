@@ -1,0 +1,109 @@
+## 3.9 镜像加速器
+
+国内从 Docker Hub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。
+
+> ⚠️ **注意**：镜像加速器的可用性经常变化。配置前请先访问 [docker-practice/docker-registry-cn-mirror-test](https://github.com/docker-practice/docker-registry-cn-mirror-test/actions) 查看各镜像站的实时状态。
+
+### 3.9.1 推荐配置方案
+
+针对不同的使用场景，我们推荐以下几种镜像加速配置方案，以确保最佳的拉取速度。
+
+> ⚠️ **重要提示**：国内大多数 Docker Hub 加速服务已于 2024 年中旬关闭（包括阿里云、腾讯云、网易云、百度云等）。如下推荐的镜像源可用性因人而异，建议先测试可用性再配置。
+
+1. **云服务器用户**：优先使用所在云平台提供的内部加速器（见本页末尾“云服务商”部分）
+2. **本地开发用户**：优先使用自建 pull-through cache；如果必须依赖社区镜像，请先用上面的测试仓库确认实时可用性
+3. **代理方案**：如有条件，可配置 HTTP 代理直接访问 Docker Hub
+
+更稳妥的长期方案是使用**自己控制的 pull-through cache / registry mirror**，或者优先使用云厂商提供的内网镜像。下文统一用 `https://<your-registry-mirror>` 作为占位符；如果你选择第三方公共站，请先确认可用性、服务条款和缓存策略。
+
+### 3.9.2 Ubuntu 22.04+、Debian 12+、Rocky/Alma/CentOS Stream 9+
+
+目前主流 Linux 发行版均已使用 [systemd](https://systemd.io/) 进行服务管理，这里介绍如何在使用 systemd 的 Linux 发行版中配置镜像加速器。
+
+请首先执行以下命令，查看是否在 `docker.service` 文件中配置过镜像地址。
+
+```bash
+$ systemctl cat docker | grep '\-\-registry\-mirror'
+```
+如果该命令有输出，那么请执行 `$ systemctl cat docker` 查看 `ExecStart=` 出现的位置，修改对应的文件内容去掉 `--registry-mirror` 参数及其值，并按接下来的步骤进行配置。
+
+如果以上命令没有任何输出，那么就可以在 `/etc/docker/daemon.json` 中写入如下内容（如果文件不存在请新建该文件）：
+
+```json
+{
+  "registry-mirrors": [
+    "https://<your-registry-mirror>"
+  ]
+}
+```
+> 注意，一定要保证该文件符合 json 规范，否则 Docker 将不能启动。
+
+之后重新启动服务。
+
+```bash
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+```
+
+### 3.9.3 Windows 10/11
+
+对于使用 `Windows 10/11` 的用户，在任务栏托盘 Docker 图标内打开 `Settings`，在左侧导航菜单选择 `Docker Engine`，在右侧像下边一样编辑 JSON 文件，之后点击 `Apply & Restart` 保存后 Docker 就会重启并应用配置的镜像地址了。
+
+```json
+{
+  "registry-mirrors": [
+    "https://<your-registry-mirror>"
+  ]
+}
+```
+
+### 3.9.4 macOS
+
+对于使用 macOS 的用户，在任务栏点击 Docker Desktop 应用图标 -> `Settings...`，在左侧导航菜单选择 `Docker Engine`，在右侧像下边一样编辑 json 文件。修改完成之后，点击 `Apply & restart` 按钮，Docker 就会重启并应用配置的镜像地址了。
+
+```json
+{
+  "registry-mirrors": [
+    "https://<your-registry-mirror>"
+  ]
+}
+```
+
+### 3.9.5 检查加速器是否生效
+
+执行 `$ docker info`，如果从结果中看到了如下内容，说明配置成功。
+
+```bash
+Registry Mirrors:
+ https://<your-registry-mirror>/
+```
+
+### 3.9.6 Kubernetes 官方镜像地址迁移
+
+Kubernetes 社区已将官方镜像地址从 `k8s.gcr.io` 迁移到 `registry.k8s.io`。建议优先使用新地址。若需查找国内可用的替代镜像，可以登录 [阿里云容器镜像服务](https://www.aliyun.com/product/acr)，在 **镜像中心** -> **镜像搜索** 中查找对应镜像。
+
+一般情况下有如下对应关系：
+
+```bash
+$ docker pull registry.k8s.io/xxx
+```
+
+### 3.9.7 已停止服务的镜像列表
+
+以下镜像源已停止服务，添加无用的镜像加速器会拖慢拉取速度，请从配置中删除：
+
+* https://hub.atomgit.com （已于 2024 年底关闭）
+* https://registry.cn-hangzhou.aliyuncs.com （阿里云 Docker 加速已于 2024 年关闭）
+* https://dockerhub.azk8s.cn （已转为私有）
+* https://reg-mirror.qiniu.com （已停止服务）
+* https://registry.docker-cn.com （已停止服务）
+* https://hub-mirror.c.163.com （网易云镜像已于 2024 年关闭）
+* https://mirror.baidubce.com （百度云镜像已停止）
+
+建议 **watch（页面右上角）** [镜像测试仓库](https://github.com/docker-practice/docker-registry-cn-mirror-test) 这个 GitHub 仓库，我们会持续更新各镜像源的可用状态。
+
+### 3.9.8 云服务商
+
+某些云服务商提供了 **仅供内部** 访问的镜像服务，当您的 Docker 运行在云平台时可以选择它们。
+
+* [腾讯云 `https://mirror.ccs.tencentyun.com`](https://cloud.tencent.com/product/tke)

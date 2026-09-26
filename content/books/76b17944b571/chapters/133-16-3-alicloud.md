@@ -1,0 +1,275 @@
+## 16.3 阿里云
+
+如图 16-3 所示，阿里云是国内主流云服务平台之一。
+
+![阿里云](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/16_cloud/_images/aliyun-logo.png)
+
+图 16-3：阿里云标识
+
+[阿里云](https://www.aliyun.com/)创立于 2009 年，是中国较早的云计算平台。阿里云致力于提供安全、可靠的计算和数据处理能力。
+
+[阿里云](https://www.aliyun.com/)的客户群体中，活跃着微博、虎牙、魅族、优酷等一大批明星互联网公司。在天猫双 11 全球狂欢节等极富挑战的应用场景中，阿里云保持着良好的运行纪录。
+
+[阿里云容器服务 Kubernetes 版 ACK](https://cn.aliyun.com/product/ack) 提供了高性能、可伸缩的容器应用管理服务，支持在一组云服务器上通过 Docker 容器来进行应用生命周期管理。容器服务极大简化了用户对容器管理集群的搭建工作，无缝整合了阿里云虚拟化、存储、网络和安全能力。容器服务提供了多种应用发布方式和流水线般的持续交付能力，原生支持微服务架构，助力用户无缝上云和跨云管理。
+
+<!-- 注意：原阿里云容器服务截图链接已失效，请参考阿里云官方文档获取最新界面截图 -->
+<!-- 原链接: https://img.alicdn.com/tps/TB10yjtPpXXXXacXXXXXXXXXXXX-1531-1140.png -->
+
+图 16-4：阿里云容器服务示意图（请访问 [阿里云容器服务 ACK 官方文档](https://help.aliyun.com/zh/ack/) 查看最新界面）
+
+### 阿里云容器服务 ACK 简介
+
+阿里云容器服务 Kubernetes 版 (ACK, Container Service for Kubernetes) 是一款托管式 Kubernetes 服务，基于开源 Kubernetes 构建，提供企业级的容器编排和管理能力。ACK 集成了阿里云存储、网络和安全能力，支持多种应用部署模式和持续交付流程。
+
+### 基本使用步骤
+
+#### 1. 创建集群
+
+登录阿里云控制台，进入容器服务 > Kubernetes 集群：
+
+- 点击 “创建集群”，选择集群配置
+- 配置集群名称、地域、可用区和节点类型
+- 选择节点规格和数量（支持弹性伸缩）
+- 配置网络参数和安全设置
+- 完成创建，下载 kubeconfig 文件
+
+```bash
+# 配置本地 kubectl
+export KUBECONFIG=/path/to/kubeconfig.yaml
+kubectl get nodes
+```
+
+#### 2. 部署容器应用
+
+通过 Deployment 部署应用示例：
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: registry.cn-hangzhou.aliyuncs.com/myapp/web:v1
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+```
+部署应用：
+
+```bash
+kubectl apply -f deployment.yaml
+kubectl get pods -o wide
+kubectl logs <pod-name>
+```
+
+#### 3. 暴露服务
+
+创建 Service 暴露应用：
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: web
+```
+应用：
+
+```bash
+kubectl apply -f service.yaml
+kubectl get svc web-service
+```
+
+### 阿里云 Docker 镜像加速器配置
+
+为了加快从阿里云镜像源拉取官方镜像的速度，可以配置镜像加速器。阿里云为容器服务 ACK 用户提供了免费的镜像加速服务。
+
+#### 获取加速器地址
+
+登录阿里云容器镜像服务控制台，在 “镜像工具” > “镜像加速器” 中可获取个人的加速器地址（类似于 `https://xxxxxx.mirror.aliyuncs.com`）。
+
+#### Linux 系统配置
+
+编辑或创建 `/etc/docker/daemon.json` 文件：
+
+```bash
+sudo mkdir -p /etc/docker
+sudo nano /etc/docker/daemon.json
+```
+添加或修改以下内容（替换为你的加速器地址）：
+
+```json
+{
+  "registry-mirrors": [
+    "https://xxxxxx.mirror.aliyuncs.com"
+  ]
+}
+```
+重新加载并重启 Docker：
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+验证配置生效：
+
+```bash
+docker info | grep -A 5 "Registry Mirrors"
+```
+
+#### Windows/Mac 配置
+
+在 Docker Desktop 的 Settings 中：
+
+1. 进入 “Docker Engine” 标签
+2. 编辑 JSON 配置，添加 `registry-mirrors` 字段
+3. 点击 “Apply & Restart”
+
+#### 测试加速效果
+
+```bash
+# 从加速器拉取镜像（速度应该明显提升）
+docker pull nginx:latest
+time docker pull alpine:latest
+```
+
+### 阿里云容器镜像服务：ACR
+
+阿里云容器镜像服务 (ACR, Container Registry) 是企业级的容器镜像存储和分发平台：
+
+- **私有镜像仓库**：支持多个命名空间，细粒度权限控制
+- **镜像构建**：云端编译和构建，支持自动化 CI/CD
+- **镜像扫描**：自动检测镜像中的漏洞和恶意代码
+- **跨地域复制**：支持镜像在多个地域的同步和加速
+- **集成 ACK**：与 ACK 无缝集成，自动身份认证
+- **镜像版本管理**：标签管理、镜像过期清理、保留策略
+
+#### 完整推送/拉取示例
+
+```bash
+# 登录阿里云镜像仓库（使用 Docker 登录）
+# 使用阿里云账户 ID 和 RAM 访问密钥或密码
+docker login registry.cn-hangzhou.aliyuncs.com \
+  --username=<阿里云账户ID>
+
+# 拉取阿里云公开镜像
+docker pull registry.cn-hangzhou.aliyuncs.com/library/nginx:latest
+
+# 构建本地镜像
+docker build -t my-app:v1.0 .
+
+# 标记镜像为阿里云仓库地址
+docker tag my-app:v1.0 \
+  registry.cn-hangzhou.aliyuncs.com/myapp/my-app:v1.0
+
+# 推送镜像到阿里云 ACR
+docker push registry.cn-hangzhou.aliyuncs.com/myapp/my-app:v1.0
+
+# 在 Dockerfile 中使用 ACR 镜像
+FROM registry.cn-hangzhou.aliyuncs.com/myapp/my-app:v1.0
+COPY . /app
+RUN echo "已成功使用阿里云镜像"
+```
+
+#### ACK 集群中使用 ACR 镜像
+
+在 ACK 集群中，需要先配置镜像拉取凭证（Secret），然后在 Deployment 中引用：
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-server
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      # 如果是私有镜像，需配置镜像拉取凭证
+      imagePullSecrets:
+      - name: acr-secret
+      containers:
+      - name: web
+        image: registry.cn-hangzhou.aliyuncs.com/myapp/web:v2.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      affinity:
+        # 配置 Pod 反亲和性，分散到不同节点
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - web
+              topologyKey: kubernetes.io/hostname
+```
+
+#### 创建镜像拉取凭证
+
+在 ACK 集群中创建 Secret，用于拉取私有镜像：
+
+```bash
+# 避免把真实口令写入命令历史。使用临时 Docker config 并通过标准输入登录。
+export DOCKER_CONFIG="$(mktemp -d)"
+read -rsp "ACR token: " ACR_TOKEN; echo
+printf "%s" "$ACR_TOKEN" | docker login registry.cn-hangzhou.aliyuncs.com \
+  --username "<阿里云账户ID>" \
+  --password-stdin
+
+kubectl create secret generic acr-secret \
+  --from-file=.dockerconfigjson="$DOCKER_CONFIG/config.json" \
+  --type=kubernetes.io/dockerconfigjson
+
+rm -rf "$DOCKER_CONFIG"
+unset ACR_TOKEN DOCKER_CONFIG
+
+# 查看创建的 Secret
+kubectl get secret acr-secret
+kubectl describe secret acr-secret
+```
+
+#### ACR 优势
+
+- 在 ACK 集群中与镜像仓库无缝集成，简化身份认证
+- 支持 Helm Chart 存储和版本管理，方便应用交付
+- 提供完整的图形化镜像仓库管理界面
+- 完整的审计日志和操作追踪功能
+- 支持镜像自动扫描和漏洞报告

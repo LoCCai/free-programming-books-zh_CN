@@ -1,0 +1,16 @@
+{
+  "bookId": "cda8ba3febfe",
+  "title": "Pro Git",
+  "url": "http://git-scm.com/book/zh/v2",
+  "status": "ok",
+  "fetchedAt": "2026-09-26T18:50:56.081Z",
+  "chapters": [
+    {
+      "slug": "001-t",
+      "title": "Git",
+      "file": "chapters/001-t.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Git"
+}

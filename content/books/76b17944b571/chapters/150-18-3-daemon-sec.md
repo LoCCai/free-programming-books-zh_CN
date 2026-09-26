@@ -1,0 +1,118 @@
+## 18.3 服务端防护
+
+Docker 守护进程（`dockerd`）是容器生命周期的核心驱动力。默认情况下，Docker 服务的运行需要极高的系统特权（root 权限），因此其安全性关系到整台宿主机的生死存亡。
+
+如果 Docker 守护进程的访问控制没有做好，恶意攻击者可以通过 Docker API 轻易地启动一个特权容器，并将宿主机的根目录（`/`）挂载到容器中，从而完全接管服务器。
+
+为了加强对服务端的保护，我们需要从访问控制、通信加密和权限最小化三个维度进行加固。
+
+### 18.3.1 限制 API 访问
+
+Docker 客户端（`docker` 命令）通过 REST API 与守护进程进行通信。
+
+在早期版本中，Docker 有时会绑定在 `127.0.0.1` 的 TCP 套接字上，但这容易遭遇跨站脚本（跨协议）攻击。现在的发行版默认使用 Unix Domain Socket（`/var/run/docker.sock`）并依赖文件系统的权限控制。
+
+#### 原则 1：决不可将无认证的 TCP 端口暴露在公网
+
+这是最常见的 Docker 被入侵抓去挖矿的原因！绝不能在没有任何安全控制的情况下强行开启 `-H tcp://0.0.0.0:2375`。
+
+如果业务确实需要远程访问 Docker 守护进程，**必须启用 TLS 认证机制**，让客户端和服务端互相进行证书校验。
+
+#### 开启 TLS 认证双向加密
+
+利用安全机制，确保只有经过授权的主机网络，并在强证书保护下进行通信：
+
+1. 首先使用 `openssl` 或基于本地 CA 工具生成一套客户端与服务器的证书。
+2. 配置 Docker 守护进程（通常是 `daemon.json` 或 `dockerd` 启动参数），指定证书路径：
+
+```bash
+dockerd \
+  --tlsverify \
+  --tlscacert=ca.pem \
+  --tlscert=server-cert.pem \
+  --tlskey=server-key.pem \
+  -H=0.0.0.0:2376
+```
+
+3. 客户端想要连接时，也必须出示客户端证书。
+
+> [!TIP]
+> 配置 TLS 生成证书的完整步骤可以查阅 [Docker 官方 TLS 文档](https://docs.docker.com/engine/security/protect-access/)。在现代编排系统（如 Kubernetes）中，通常会有自动化方案管理这些凭据。
+
+### 18.3.2 保护本地 Socket 访问
+
+哪怕不开启网络端口，本地的 `/var/run/docker.sock` 也需要谨慎对待。
+
+任何被授予该 Socket 读写权限的用户（通常被加入 `docker` 用户组），等同于拥有了对宿主机的零成本提权途径，即“无需密码的免密 `sudo` 权限”。
+
+> [!CAUTION]
+> 永远不要将不可信的普通用户加入到 `docker` 用户组中。同样，在容器编排时尽量避免将宿主机的 `/var/run/docker.sock` 直接映射给普通容器使用，这种模式被称为 Docker-in-Docker (DinD) 或 Docker-out-of-Docker (DooD)，存在极高的越权风险。
+
+### 18.3.3 Rootless 模式：非特权运行
+
+为了从根本上解决“拥有 Docker socket 就是 root”的问题，Docker 自 19.03 版本（2019 年）起提供了 **Rootless 模式**。
+
+Rootless 模式允许在完全局限于非 `root` 用户的环境中运行 Docker 守护进程（`dockerd`）和容器。该模式利用了现代 Linux 内核的 User Namespace 技术和非特权网络命名空间实现。
+
+#### 配置运行 Rootless Docker
+
+要在非 root 环境中运行 Docker，需要先满足宿主机条件：安装 `newuidmap` / `newgidmap`，并在 `/etc/subuid` 与 `/etc/subgid` 中为该用户分配足够的 subordinate UID/GID。若系统级 Docker daemon 仍在运行，命令行也仍可能连到 rootful socket，因此应明确切换 Docker context 或 `DOCKER_HOST`。
+
+1. 安装必要的依赖（通常是 `uidmap` 工具包以便系统支持 `newuidmap` 和 `newgidmap`）：
+```bash
+$ sudo apt-get install uidmap
+```
+
+2. 切换到一个没有任何 `sudo` 权限的普通用户（假设用户名为 `testuser`）：
+```bash
+$ su - testuser
+```
+
+3. 下载并检查 Docker 官方提供的 Rootless 安装脚本，确认来源和内容后再执行：
+```bash
+$ curl -fsSL https://get.docker.com/rootless -o install-rootless-docker.sh
+$ less install-rootless-docker.sh
+$ sh install-rootless-docker.sh
+```
+
+4. 配置环境变量指向新创建的私有 socket：
+```bash
+$ export DOCKER_HOST=unix:///run/user/1000/docker.sock
+$ docker version
+```
+安装并暴露相应的配置后，该用户的环境将能独立启动属于他自己的 Docker Daemon。即使由于某些未知 0-Day 漏洞使得攻击者突破了容器，他们也只会受限于 `testuser` 这个非特权用户所在的有限系统环境内。
+
+> [!NOTE]
+> Rootless 模式不是无条件替代 rootful Docker。端口绑定、网络、cgroup、存储驱动和系统服务自启动能力都受发行版、内核与 systemd 用户服务配置影响；生产环境应先验证具体工作负载，并用 `loginctl enable-linger <user>` 等方式显式配置开机自启动。
+
+### 18.3.4 授权插件（Authorization Plugin）与访问策略
+
+在企业环境中，对 Docker 守护进程的访问控制往往不仅限于文件系统权限，还需要更细粒度的授权策略。**Authorization Plugin** 机制允许在 API 层级对请求进行拦截和审批。
+
+常见的授权插件包括：
+
+- **OPA/Conftest**：开放策略引擎，支持声明式策略定义。
+- **Prisma Cloud（Twistlock）**：商业容器安全平台。
+- 自定义脚本：根据请求内容（镜像、命令、用户等）做出允许/拒绝决定。
+
+#### 配置 Authorization Plugin
+
+在 `daemon.json` 中指定授权插件：
+
+```json
+{
+  "authorization-plugins": ["myauthorizer"]
+}
+```
+
+此后，Docker 守护进程会在执行任何 API 请求前，将请求转发给授权插件进行审批。
+
+> [!CAUTION]
+> 重要的安全事项：在配置 Authorization Plugin 时，务必确保插件本身的可靠性和及时更新。历史上已发现多个 AuthZ 验证绕过漏洞，可能导致攻击者绕过授权检查并获得宿主机访问权限。建议：
+> - 定期审计授权插件的日志，检查是否有可疑的请求被错误允许。
+> - 使用来自可信来源的授权插件，并保持其版本最新。
+> - 将授权检查结果与其他安全措施（如 TLS 认证、Rootless 模式）结合使用，构建纵深防御。
+
+### 18.3.5 结语
+
+保障 Docker 服务端的安全主要是做减法：关闭不必要的网络监听点，严管 Socket 访问权限。在基础系统、网络和存储约束都验证通过后，Rootless 模式是一项值得优先评估的安全加固选择。

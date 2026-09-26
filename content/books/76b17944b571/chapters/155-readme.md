@@ -1,0 +1,28 @@
+# 第十九章 容器监控与日志
+
+在生产环境中，容器化应用部署完成后，实时掌握容器的运行状态以及应用日志非常重要。本章将以 Docker/Compose 的场景为主，介绍容器监控与日志管理的落地思路与最小实践闭环。
+
+对于 Kubernetes 场景，可观测性链路与组件选择通常会有所不同（例如使用 Prometheus Operator、日志采集 DaemonSet 等）。本章会在关键点给出迁移提示，但不会展开为完整的 Kubernetes 教程。
+
+我们将重点探讨以下内容：
+
+- **容器监控**：以 Prometheus 为主，讲解如何采集和展示容器性能指标。
+- **日志管理**：以 ELK (Elasticsearch, Logstash, Kibana) 套件为例，介绍集中式日志收集平台。
+
+为了让读者能够在生产环境中真正用起来，本章会补齐以下“最小闭环”：
+
+* 关键指标与日志的验证方法
+* 常见故障排查路径
+* 最小告警闭环（Prometheus -> Alertmanager -> 接收端）
+* 日志容量治理的最小实践
+
+## 本章内容
+
+* [Prometheus 监控](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/19_observability/19.1_prometheus.md)
+  * 容器监控基础、指标采集与告警配置。
+
+* [ELK 日志管理](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/19_observability/19.2_elk.md)
+  * 集中式日志收集、存储与检索。
+
+* [性能优化](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/19_observability/19.3_performance_optimization.md)
+  * 容器和应用性能优化实践。

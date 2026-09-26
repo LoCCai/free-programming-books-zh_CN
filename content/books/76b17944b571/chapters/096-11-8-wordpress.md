@@ -1,0 +1,235 @@
+## 11.8 实战 WordPress
+
+> **版本说明**：本示例使用以下镜像版本：
+> - MySQL：8.4（可替换为其他 8.x 版本，或使用 MariaDB 替代）
+> - WordPress：latest（建议在生产环境指定具体版本，如 6.x）
+
+WordPress 是全球最流行的内容管理系统 (CMS)。使用 Docker Compose 可以在几分钟内搭建一个包含数据库、Web 服务和持久化存储的本地练习/单机演示环境。
+
+---
+
+### 11.8.1 项目结构
+
+```bash
+wordpress/
+├── compose.yaml
+├── .env                # 非敏感环境变量（如版本、端口）
+├── secrets/            # 本地密钥文件，生产环境应由密钥管理系统提供
+│   ├── db_root_password.txt
+│   └── db_password.txt
+└── nginx/              # 可选：反向代理配置
+    └── nginx.conf
+```
+---
+
+### 11.8.2 编写 `compose.yaml`
+
+这是一个可运行的单机最小配置，不是完整生产安全基线。正式部署前应固定镜像版本、放在反向代理/TLS 后面、限制公开端口、配置备份与监控，并按 WordPress 与插件生命周期做升级测试。
+
+```yaml
+services:
+  # 数据库服务
+
+  db:
+    image: mysql:8.4
+    container_name: wordpress_db
+    restart: always
+    command:
+      # 启用原生密码认证（MySQL 8.4 默认禁用，旧版 WP 兼容性需要）
+
+      - --mysql-native-password=ON
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_root_password
+      - db_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - wp_net
+
+  # WordPress 服务
+
+  wordpress:
+    # 示例保留 latest 以便读者快速体验；生产环境请固定到经过测试的明确版本标签
+    image: wordpress:latest
+    container_name: wordpress_app
+    restart: always
+    ports:
+      # 本机调试入口；生产环境请通过反向代理发布 HTTPS
+      - "127.0.0.1:8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_password
+      WORDPRESS_DB_NAME: wordpress
+    secrets:
+      - db_password
+    volumes:
+      - wp_data:/var/www/html
+      # 增加上传文件大小限制
+
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - db
+    networks:
+      - wp_net
+
+volumes:
+  db_data:  # 数据库持久化
+  wp_data:  # WordPress 文件(插件/主题/上传)持久化
+
+networks:
+  wp_net:
+
+secrets:
+  db_root_password:
+    file: ./secrets/db_root_password.txt
+  db_password:
+    file: ./secrets/db_password.txt
+```
+---
+
+### 11.8.3 配置文件详解
+
+#### 1. 密钥文件
+
+不要把数据库密码写入 `compose.yaml`、`.env`、命令行或 Git。Compose 官方建议敏感值使用 secrets；本地练习可用只读密钥文件模拟：
+
+```bash
+mkdir -p secrets
+printf '%s\n' 'somestrongrootpassword' > secrets/db_root_password.txt
+printf '%s\n' 'somestronguserpassword' > secrets/db_password.txt
+chmod 600 secrets/*.txt
+```
+
+把 `secrets/` 加入 `.gitignore`。生产环境应改用平台密钥管理能力，而不是把真实密码放在项目目录。
+
+#### 2. 数据持久化
+
+我们定义了两个命名卷：
+
+- `db_data`：确保 MySQL 容器重建后数据不丢失
+- `wp_data`：保存 WordPress 的核心文件、插件、主题和上传的媒体文件
+
+#### 3. PHP 配置优化
+
+默认的 WordPress 镜像上传文件限制较小（通常 2MB）。创建 `uploads.ini`：
+
+```ini
+file_uploads = On
+memory_limit = 256M
+upload_max_filesize = 64M
+post_max_size = 64M
+max_execution_time = 600
+```
+---
+
+### 11.8.4 启动与运行
+
+1. 启动服务：
+
+```bash
+$ docker compose up -d
+```
+
+2. 访问安装界面：
+   打开浏览器访问 `http://localhost:8000`
+
+3. 查看日志：
+
+```bash
+$ docker compose logs -f
+```
+---
+
+### 11.8.5 生产环境最佳实践
+
+#### 1. 数据库备份
+
+不要只依赖 Volume。建议定期备份数据库：
+
+```bash
+## 导出 SQL
+
+$ docker compose exec -T db sh -c 'tmp=$(mktemp) && printf "[client]\nuser=wordpress\npassword=%s\n" "$(cat /run/secrets/db_password)" > "$tmp" && mysqldump --defaults-extra-file="$tmp" wordpress; rc=$?; rm -f "$tmp"; exit "$rc"' > backup.sql
+```
+或者添加一个自动备份容器：
+
+```yaml
+  backup:
+    image: tiredofit/db-backup
+    volumes:
+      - ./backups:/backup
+    environment:
+      # tiredofit/db-backup 4.x 起按 DB01_ 前缀配置备份任务，并原生支持 _FILE 读密
+      - DB01_TYPE=mysql
+      - DB01_HOST=db
+      - DB01_NAME=wordpress
+      - DB01_USER=wordpress
+      - DB01_PASS_FILE=/run/secrets/db_password
+      - DB01_BACKUP_INTERVAL=1440 # 每天备份一次（单位：分钟）
+    secrets:
+      - db_password
+    depends_on:
+      - db
+    networks:
+      - wp_net
+```
+
+#### 2. 使用 Nginx 反向代理
+
+在生产环境中，不要直接暴露 WordPress 端口，而是通过 Nginx 进行反向代理并配置 SSL。
+
+#### 3. 使用 Redis 缓存
+
+WordPress 支持 Redis 缓存以提高性能。
+
+```yaml
+  redis:
+    image: redis:alpine
+    restart: always
+    networks:
+      - wp_net
+```
+在 WordPress 容器环境变量中添加：
+```yaml
+      # 官方 wordpress 镜像只把固定的一组 WORDPRESS_* 变量写进 wp-config.php，
+      # 其中并没有 Redis 相关项；Redis Object Cache 插件读的是 PHP 常量 WP_REDIS_HOST，
+      # 因此要通过 WORDPRESS_CONFIG_EXTRA 注入
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_REDIS_HOST', 'redis');
+```
+并安装 Redis Object Cache 插件。
+
+---
+
+### 11.8.6 常见问题
+
+#### Q：数据库连接错误
+
+**现象**：访问页面显示 “Error establishing a database connection”。**排查**：
+
+1. 检查 `docker compose logs wordpress`
+2. 确认 `secrets/db_password.txt` 的内容正确，且与数据库初始化时使用的密码一致（改密码后需要重建 db 数据卷）
+3. 确认 `WORDPRESS_DB_HOST` 也是 `db`（服务名）
+4. MySQL 8.4 可能需要几秒钟启动，WordPress 会自动重试，稍等片刻即可。
+
+#### Q：无法上传大文件
+
+**解决**：确保挂载了 `uploads.ini` 配置，并且重启了容器：
+```bash
+$ docker compose restart wordpress
+```
+---
+
+### 11.8.7 延伸阅读
+
+- [Compose 模板文件](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/11_compose/11.5_compose_file.md)：深入了解配置项
+- [数据卷](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/8.1_volume.md)：理解数据持久化
+- [Docker Hub WordPress](https://hub.docker.com/_/wordpress)：官方镜像文档

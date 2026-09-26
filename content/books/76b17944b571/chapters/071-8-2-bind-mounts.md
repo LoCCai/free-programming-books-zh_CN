@@ -1,0 +1,292 @@
+## 8.2 挂载主机目录
+
+### 8.2.1 什么是绑定挂载
+
+Bind Mount（绑定挂载）将 **Docker daemon 所在主机** 上的目录或文件直接挂载到容器中。容器可以读写这台主机上的文件系统。
+
+```mermaid
+flowchart LR
+    subgraph Host ["宿主机"]
+        Dir1["/home/user/code/"]
+    end
+
+    subgraph Container ["容器"]
+        Dir2["/usr/share/nginx/html/"]
+    end
+
+    Dir1 <-->|Bind Mount| Dir2
+```
+目录结构（同一份文件）：
+```text
+/home/user/code/ (或 /usr/share/nginx/html/)
+├── index.html
+├── style.css
+└── app.js
+```
+---
+
+### 8.2.2 Bind Mount vs Volume
+
+| 特性 | Bind Mount | Volume |
+|------|------------|--------|
+| **数据位置** | 宿主机任意路径 | Docker 管理的目录 |
+| **路径指定** | 必须是绝对路径 | 卷名 |
+| **可移植性** | 依赖宿主机路径 | 更好（Docker 管理）|
+| **性能** | 依赖宿主机文件系统 | 优化的存储驱动 |
+| **适用场景** | 开发环境、配置文件 | 生产数据持久化 |
+| **备份** | 直接访问文件 | 需要通过 Docker |
+
+#### 选择建议
+
+| 需求 | 推荐方案 |
+|------|----------|
+| 开发时同步代码 | Bind Mount |
+| 持久化数据库数据 | Volume |
+| 共享配置文件 | Bind Mount |
+| 容器间共享数据 | Volume |
+| 备份方便 | Bind Mount（直接访问）|
+| 生产环境 | Volume |
+
+---
+
+### 8.2.3 基本语法
+
+#### 使用 `--mount`：推荐
+
+```bash
+$ docker run -d \
+    --mount type=bind,source=/宿主机路径,target=/容器路径 \
+    nginx
+```
+
+#### 使用 `-v`：简写
+
+```bash
+$ docker run -d \
+    -v /宿主机路径:/容器路径 \
+    nginx
+```
+
+#### 两种语法对比
+
+| 特性 | --mount | -v |
+|------|---------|-----|
+| 语法 | 键值对，更清晰 | 冒号分隔，更简洁 |
+| 路径不存在时 | 直接报错 (Fail Fast) | 静默自动创建 **目录** |
+| 推荐程度 | ✅ 推荐 | 常用 |
+
+> **⚠️ 陷阱**：如果不小心挂载了一个不存在的主机路径，使用 `-v` 会在 **daemon 主机** 上静默创建一个空目录。对于本地 Docker Desktop 用户，这个主机通常就是本机；对于远程 daemon，这个主机就是远程机器。这也是 Docker 官方更推荐使用 `--mount` 的原因：它会直接报错，避免因路径拼写错误而挂错位置。
+
+---
+
+### 8.2.4 使用场景
+
+#### 场景一：开发环境代码同步
+
+```bash
+## 将本地代码目录挂载到容器
+
+$ docker run -d \
+    -p 8080:80 \
+    --mount type=bind,source=$(pwd)/src,target=/usr/share/nginx/html \
+    nginx
+
+## 修改本地文件，容器内立即生效（热更新）
+
+$ echo "Hello" > src/index.html
+
+## 浏览器刷新即可看到变化
+
+...
+```
+
+#### 场景二：配置文件挂载
+
+```bash
+## 挂载自定义 nginx 配置
+
+$ docker run -d \
+    --mount type=bind,source=/path/to/nginx.conf,target=/etc/nginx/nginx.conf,readonly \
+    nginx
+```
+
+#### 场景三：日志收集
+
+```bash
+## 将容器日志输出到宿主机目录
+
+$ docker run -d \
+    --mount type=bind,source=/var/log/myapp,target=/app/logs \
+    myapp
+```
+
+#### 场景四：共享 SSH 密钥
+
+只读挂载可以防止容器修改主机密钥，但不能防止容器读取并外传密钥。只有在镜像完全可信、密钥作用域很窄且可随时轮换时，才考虑这种做法。更稳妥的方式是使用 SSH agent socket 转发、一次性 deploy key，或在 CI/构建场景中使用 BuildKit `--ssh`。
+
+```bash
+## 挂载 SSH 密钥（只读）
+
+$ docker run --rm -it \
+    --mount type=bind,source=$HOME/.ssh,target=/root/.ssh,readonly \
+    alpine ssh user@remote
+```
+---
+
+### 8.2.5 只读挂载
+
+防止容器修改宿主机文件：
+
+```bash
+## --mount 语法
+
+$ docker run -d \
+    --mount type=bind,source=/config,target=/app/config,readonly \
+    myapp
+
+## -v 语法
+
+$ docker run -d \
+    -v /config:/app/config:ro \
+    myapp
+```
+容器内尝试写入会报错：
+
+```bash
+$ touch /app/config/new.txt
+touch: /app/config/new.txt: Read-only file system
+```
+---
+
+### 8.2.6 挂载单个文件
+
+```bash
+## 挂载 bash 历史记录
+
+$ docker run --rm -it \
+    --mount type=bind,source=$HOME/.bash_history,target=/root/.bash_history \
+    ubuntu bash
+
+## 挂载自定义配置文件
+
+$ docker run -d \
+    --mount type=bind,source=/path/to/my.cnf,target=/etc/mysql/my.cnf \
+    mysql
+```
+> ⚠️ **注意**：挂载单个文件时，如果宿主机上的文件被编辑器替换（而非原地修改），容器内仍是旧文件的 inode。建议重启容器或挂载目录。
+
+---
+
+### 8.2.7 查看挂载信息
+
+```bash
+$ docker inspect mycontainer --format '{{json .Mounts}}' | jq
+```
+输出：
+
+```json
+[
+  {
+    "Type": "bind",
+    "Source": "/home/user/code",
+    "Destination": "/app",
+    "Mode": "",
+    "RW": true,
+    "Propagation": "rprivate"
+  }
+]
+```
+| 字段 | 说明 |
+|------|------|
+| `Type` | 挂载类型 (bind)|
+| `Source` | 宿主机路径 |
+| `Destination` | 容器内路径 |
+| `RW` | 是否可读写 |
+| `Propagation` | 挂载传播模式 |
+
+---
+
+### 8.2.8 常见问题
+
+#### Q：路径不存在报错
+
+```bash
+$ docker run --mount type=bind,source=/not/exist,target=/app nginx
+docker: Error response from daemon: invalid mount config for type "bind":
+bind source path does not exist: /not/exist
+```
+**解决**：确保源路径存在。若你确实需要自动创建目录，可改用 `-v`，但要先确认创建位置就是你想要的主机路径。
+
+#### Q：权限问题
+
+容器内用户可能无权访问挂载的文件：
+
+```bash
+## 方法1：确保宿主机文件权限允许容器用户访问
+
+$ chmod -R 755 /path/to/data
+
+## 方法2：以 root 运行容器
+
+$ docker run -u root ...
+
+## 方法3：使用相同的 UID
+
+$ docker run -u $(id -u):$(id -g) ...
+```
+
+#### Q：macOS/Windows 性能问题
+
+在 Docker Desktop 上，Bind Mount 性能通常不如 Volume，因为数据需要在宿主机文件系统和 Linux VM 之间同步：
+
+```bash
+## 使用 :cached 或 :delegated 提高性能（macOS，仅 Docker Desktop 4.5 及更早版本）
+
+$ docker run -v /host/path:/container/path:cached myapp
+```
+| 选项 | 说明 |
+|------|------|
+| `:cached` | 宿主机权威，容器读取可能延迟 |
+| `:delegated` | 容器权威，宿主机读取可能延迟 |
+| `:consistent` | 默认，完全一致（最慢）|
+
+> **注意**：Docker Desktop 4.6+ 默认使用 VirtioFS 文件共享引擎，上述 `:cached`/`:delegated` 选项已被静默忽略。如需优化文件同步性能，请参考 Docker Desktop 的 [Synchronized file shares](https://docs.docker.com/desktop/features/synchronized-file-sharing/) 功能。
+
+---
+
+### 8.2.9 最佳实践
+
+#### 1. 开发环境使用 Bind Mount
+
+```bash
+## 代码热更新
+
+$ docker run -v "$(pwd)":/app -w /app -p 3000:3000 node:22 npm run dev
+```
+
+#### 2. 生产环境使用 Volume
+
+```bash
+## 数据持久化
+
+$ docker run -v mysql_data:/var/lib/mysql mysql
+```
+
+#### 3. 配置文件使用只读挂载
+
+```bash
+$ docker run -v /config/nginx.conf:/etc/nginx/nginx.conf:ro nginx
+```
+
+#### 4. 注意路径安全
+
+```bash
+## ❌ 危险：挂载根目录或敏感目录
+
+$ docker run -v /:/host ...
+
+## ✅ 只挂载必要的目录
+
+$ docker run -v /app/data:/data ...
+```
+---

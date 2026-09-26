@@ -1,0 +1,33 @@
+## 5.5 导出和导入
+
+当我们需要迁移容器或者备份容器时，可以使用 Docker 的导入和导出功能。本节将介绍这两个命令的使用方法。
+
+### 5.5.1 导出容器
+
+如果要导出本地某个容器，可以使用 `docker export` 命令。
+```bash
+$ docker container ls -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                    PORTS               NAMES
+7691a814370e        ubuntu:24.04        "/bin/bash"         36 hours ago        Exited (0) 21 hours ago                       test
+$ docker export 7691a814370e > ubuntu.tar
+```
+这样将导出容器快照到本地文件。
+
+> **版本说明**：导出的容器快照不包含镜像版本历史，导入时可以自定义标签和版本号。
+
+### 5.5.2 导入容器快照
+
+可以使用 `docker import` 从容器快照文件中再导入为镜像，例如
+
+```bash
+$ cat ubuntu.tar | docker import - test/ubuntu:v1.0
+$ docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+test/ubuntu         v1.0                9d37a6082e97        About a minute ago   171.3 MB
+```
+此外，也可以通过指定 URL 或者某个目录来导入，例如
+
+```bash
+$ docker import http://example.com/exampleimage.tgz example/imagerepo
+```
+*注：用户既可以使用 `docker load` 来导入镜像存储文件到本地镜像库，也可以使用 `docker import` 来导入一个容器快照到本地镜像库。这两者的区别在于容器快照文件将丢弃所有的历史记录和元数据信息（即仅保存容器当时的快照状态），而镜像存储文件将保存完整记录，体积也要大。此外，从容器快照文件导入时可以重新指定标签等元数据信息。*

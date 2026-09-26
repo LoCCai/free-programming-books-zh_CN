@@ -1,0 +1,200 @@
+## 7.12 HEALTHCHECK 健康检查
+
+### 7.12.1 基本语法
+
+```docker
+HEALTHCHECK [选项] CMD <命令>
+HEALTHCHECK NONE
+```
+`HEALTHCHECK` 指令告诉 Docker 如何判断容器状态是否正常。这是保障服务高可用的重要机制。
+
+---
+
+### 7.12.2 为什么需要 HEALTHCHECK
+
+在没有 HEALTHCHECK 之前，Docker 只能通过 **进程退出码** 来判断容器状态。**问题场景**：
+
+- Web 服务死锁，无法响应请求，但进程仍在运行
+- 数据库正在启动中，尚未准备好接受连接
+- 应用陷入死循环，CPU 爆满但进程存活
+
+**引入 HEALTHCHECK 后**：
+Docker 定期执行指定的检查命令，根据返回值判断容器是否 “健康”。
+
+```bash
+容器状态转换：
+Starting ──成功──> Healthy ──失败N次──> Unhealthy
+                    ▲                │
+                    └──────成功──────┘
+```
+---
+
+### 7.12.3 基本用法
+
+#### Web 服务检查
+
+```docker
+# 注：nginx 镜像推荐使用具体的版本标签（如 nginx:1.28-alpine）
+FROM nginx
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
+  CMD curl -fs http://localhost/ || exit 1
+```
+
+#### 命令返回值
+
+- `0`：成功 (healthy)
+- `1`：失败 (unhealthy)
+- `2`：保留值（不使用）
+
+#### 常用选项
+
+| 选项 | 说明 | 默认值 |
+|------|------|--------|
+| `--interval` | 两次检查的间隔 | 30s |
+| `--timeout` | 检查命令的超时时间 | 30s |
+| `--start-period` | 启动缓冲期（期间失败不计入次数）| 0s |
+| `--retries` | 连续失败多少次标记为 unhealthy | 3 |
+
+---
+
+### 7.12.4 屏蔽健康检查
+
+如果基础镜像定义了 HEALTHCHECK，但你不想使用它：
+
+```docker
+FROM my-base-image
+HEALTHCHECK NONE
+```
+---
+
+### 7.12.5 常见检查脚本
+
+#### HTTP 服务
+
+使用 `curl` 或 `wget`：
+
+```docker
+## 使用 curl
+
+HEALTHCHECK CMD curl -f http://localhost/ || exit 1
+
+## 使用 wget（Alpine 默认包含）
+
+HEALTHCHECK CMD wget -q --spider http://localhost/ || exit 1
+```
+
+#### 数据库
+
+```docker
+## MySQL
+
+HEALTHCHECK CMD mysqladmin ping -h localhost || exit 1
+
+## Redis
+
+HEALTHCHECK CMD redis-cli ping || exit 1
+```
+
+#### 自定义脚本
+
+```docker
+COPY healthcheck.sh /usr/local/bin/
+HEALTHCHECK CMD ["healthcheck.sh"]
+```
+---
+
+### 7.12.6 在 Compose 中使用
+
+可以在 `compose.yaml`（或 `docker-compose.yml`）中覆盖或定义健康检查：
+
+```yaml
+services:
+  web:
+    image: nginx
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+```
+带健康检查的依赖启动：
+
+```yaml
+services:
+  web:
+    depends_on:
+      db:
+        condition: service_healthy  # 等待 db 变健康才启动 web
+  db:
+    image: mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+```
+---
+
+### 7.12.7 查看健康状态
+
+```bash
+## 查看容器状态（包含健康信息）
+
+$ docker ps
+CONTAINER ID   STATUS
+abc123         Up 1 minute (healthy)
+def456         Up 2 minutes (unhealthy)
+
+## 查看详细健康日志
+
+$ docker inspect --format '{{json .State.Health}}' mycontainer | jq
+{
+  "Status": "healthy",
+  "FailingStreak": 0,
+  "Log": [
+    {
+      "Start": "...",
+      "End": "...",
+      "ExitCode": 0,
+      "Output": "..."
+    }
+  ]
+}
+```
+---
+
+### 7.12.8 最佳实践
+
+#### 1. 避免副作用
+
+健康检查会被频繁执行，不要在检查脚本中进行写操作或消耗大量资源的操作。
+
+#### 2. 使用轻量级工具
+
+优先使用镜像中已有的工具（如 `wget`），避免为了健康检查安装庞大的依赖（如 `curl`）。
+
+#### 3. 设置合理的 Start Period
+
+应用启动可能需要时间（如 Java 应用）。设置 `--start-period` 可以防止在启动阶段因检查失败而误判。
+
+```docker
+## 给应用 1 分钟启动时间
+
+HEALTHCHECK --start-period=60s CMD curl -f http://localhost/ || exit 1
+```
+
+#### 4. 只检查核心依赖
+
+健康检查应主要关注 **当前服务** 是否可用，而不是检查其下游依赖（数据库等）。下游依赖的检查应由应用逻辑处理。
+
+#### 5. 与容器编排平台的关系
+
+不同平台对 HEALTHCHECK 的支持有所不同：
+
+- **Docker Compose**：直接使用 Dockerfile 中定义的 HEALTHCHECK，也可在 `compose.yaml` 中覆盖
+- **Docker Swarm**：使用 HEALTHCHECK 进行服务健康判断和滚动更新决策
+- **Kubernetes**：**忽略** Dockerfile 中的 HEALTHCHECK，使用自己的 `livenessProbe` 和 `readinessProbe` 机制
+
+如果应用同时部署在 Docker Compose 和 Kubernetes 环境中，建议在 Dockerfile 中保留 HEALTHCHECK（供 Compose 使用），同时在 Kubernetes 的 Pod 配置中定义对应的探针。
+
+---

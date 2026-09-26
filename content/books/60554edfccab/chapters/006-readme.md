@@ -1,0 +1,9 @@
+## 第一章 进程基础
+
+作为本书的第一部分，主要介绍进程的PID、进程状态、退出码和POSIX等基础概念。
+
+网络有很多零散的资料介绍基础了，为什么还要花篇幅介绍这些呢？首先我们要保证看过这些章节的都能掌握这些概念，其次通过编写代码实例，我们还能动手验证这些概念，已经不能更赞了。
+
+学习完这章我们应该能够准确回答出PID、PPID、进程名字、进程参数、进程状态、退出码、死锁、活锁、POSIX、Nohup等概念。
+
+![](https://raw.githubusercontent.com/tobegit3hub/understand_linux_process/HEAD/process_basic/image/htop.png)

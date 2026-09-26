@@ -1,0 +1,186 @@
+## 3.4 CentOS
+
+CentOS（及其替代品 Rocky Linux、AlmaLinux）是企业级服务器常用的操作系统。本节介绍在这些系统上安装 Docker 的步骤。
+
+### 企业级部署的版本选择
+
+值得注意的是，**CentOS 8 已停止维护，CentOS 7 已停止支持**。如果你正在规划新的生产部署，强烈建议选择 Rocky Linux 或 AlmaLinux——这两个项目是由社区维护的 CentOS 替代品，延续了 CentOS 的企业级特性，同时提供了更长的生命周期承诺。选择稳定的基础系统，才能为 Docker 的长期运维奠定坚实基础。
+
+> 警告：切勿在没有配置 Docker YUM 源的情况下直接使用 yum 命令安装 Docker。
+
+### 3.4.1 准备工作
+
+安装前请确认系统版本和内核版本满足 Docker 的运行要求。
+
+#### 系统要求
+
+> **严重警告**：CentOS 7 已于 2024 年 6 月 30 日结束所有支持，不再接收任何安全更新。CentOS 8 已于 2021 年 12 月 31 日停止维护。强烈建议新项目使用 **Rocky Linux** 或 **AlmaLinux** 替代，这两个项目由社区维护，提供长期支持承诺。
+
+Docker 官方当前安装文档覆盖的 CentOS 平台为 **CentOS Stream 9** 和 **CentOS Stream 10**（具体以官方 [安装文档](https://docs.docker.com/engine/install/centos/) 为准）。Rocky Linux、AlmaLinux 等 RHEL 兼容发行版通常可以沿用相近步骤，但建议先在测试环境验证仓库与依赖是否匹配。
+
+对于 Rocky Linux、AlmaLinux 或 CentOS Stream，推荐使用 `dnf` 包管理器。
+
+#### 卸载旧版本
+
+旧版本的 Docker 称为 `docker` 或者 `docker-engine`，使用以下命令卸载旧版本：
+
+```bash
+$ sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-selinux \
+                  docker-engine-selinux \
+                  docker-engine \
+                  docker-ce-cli \
+                  containerd.io
+```
+
+### 3.4.2 使用 yum 安装
+
+使用 yum/dnf 安装是管理 Docker 生命周期的标准方式。
+
+执行以下命令安装依赖包：
+
+```bash
+$ sudo dnf install -y dnf-plugins-core
+```
+默认建议优先使用 Docker 官方仓库；如果企业内网维护了受信任镜像站，可自行替换仓库 URL。
+
+执行下面的命令添加 `yum` 软件源：
+
+```bash
+$ sudo dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+```
+如果需要测试版本的 Docker 请执行以下命令：
+
+```bash
+$ sudo dnf config-manager --set-enabled docker-ce-test
+```
+
+#### 安装 Docker
+
+更新 `dnf` 软件源缓存，并安装 Docker Engine 及常用 CLI 插件。
+
+```bash
+$ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+### 3.4.3 防火墙注意事项
+
+Docker 官方提醒：如果主机使用 `ufw` 或 `firewalld` 管理防火墙，容器暴露出的端口可能绕过现有规则；同时 Docker 仅兼容 `iptables-nft` 和 `iptables-legacy`，不支持直接由 `nft` 创建的规则集。
+
+因此，生产环境中更稳妥的做法是：
+
+- 明确使用 `iptables-nft` 或 `iptables-legacy` 维护规则；
+- 需要限制容器流量时，优先把自定义规则写入 `DOCKER-USER` 链；
+- 在变更防火墙策略前，先用测试容器验证端口暴露和东西向流量是否符合预期。
+
+### 3.4.4 使用脚本自动安装
+
+在测试或开发环境中，Docker 官方提供了便捷安装脚本，但官方明确不建议把它作为生产环境的标准安装方式。
+
+在真正执行前，建议先用 `--dry-run` 预览脚本动作：
+
+```bash
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh ./get-docker.sh --dry-run
+
+# 若需要测试频道：
+# curl -fsSL https://test.docker.com -o test-docker.sh
+# sudo sh ./test-docker.sh
+
+```
+确认无误后，再执行 `sudo sh ./get-docker.sh` 安装稳定版。
+
+### 3.4.5 启动 Docker
+
+```bash
+$ sudo systemctl enable --now docker
+```
+
+### 3.4.6 建立 docker 用户组
+
+默认情况下，`docker` 命令会使用 [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket) 与 Docker 引擎通讯。而只有 `root` 用户和 `docker` 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 `root` 用户。因此，更好的做法是将需要使用 `docker` 的用户加入 `docker` 用户组。
+
+> ⚠️ **安全警告：`docker` 用户组等同于 `root` 权限**
+>
+> 将用户加入 `docker` 组免去了每次执行 `docker` 命令时输入 `sudo` 的繁琐，但这也意味着该用户可以轻易获取主机的最高 root 权限（例如通过挂载根目录运行容器）。
+> 如果你在一个多用户共享的生产系统上配置，切勿随意将普通用户加入此组。此时，更安全的替代方案是使用官方提供的 **[Rootless 模式 (Rootless mode)](https://docs.docker.com/engine/security/rootless/)**，它允许在没有任何 root 权限的情况下运行 Docker 守护进程和容器。
+
+建立 `docker` 组：
+
+```bash
+$ sudo groupadd docker
+```
+将当前用户加入 `docker` 组：
+
+```bash
+$ sudo usermod -aG docker $USER
+```
+退出当前终端并重新登录，进行如下测试。
+
+### 3.4.7 测试 Docker 是否安装正确
+
+```bash
+$ docker run --rm hello-world
+
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+b8dfde127a29: Pull complete
+Digest: sha256:308866a43596e83578c7dfa15e27a73011bdd402185a84c5cd7f32a88b501a24
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+若能正常输出以上信息，则说明安装成功。
+
+### 3.4.8 镜像加速
+
+如果在使用过程中发现拉取 Docker 镜像十分缓慢，可以配置 Docker [国内镜像加速](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md)。
+
+### 3.4.9 添加内核参数
+
+如果在 CentOS 使用 Docker 看到下面的这些警告信息：
+
+```bash
+WARNING: bridge-nf-call-iptables is disabled
+WARNING: bridge-nf-call-ip6tables is disabled
+```
+请添加内核配置参数以启用这些功能。
+
+```bash
+$ sudo tee -a /etc/sysctl.conf <<-EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+```
+然后重新加载 `sysctl.conf` 即可
+
+```bash
+$ sudo sysctl -p
+```

@@ -1,0 +1,100 @@
+## 15.2 安装
+
+本节将介绍 etcd 的几种常见安装方式，包括二进制安装、Docker 镜像运行以及在 macOS 上的安装。
+
+`etcd` 基于 `Go` 语言实现，因此，用户可以从[项目主页](https://github.com/etcd-io/etcd)下载源代码自行编译，也可以下载编译好的二进制文件，甚至直接使用制作好的 `Docker` 镜像文件来体验。
+
+> 注意：etcd 3.7.0 于 2026 年 7 月发布，官方仍在维护 3.5、3.6、3.7 三个发布分支。etcd 3.4 已随 2026 年 6 月的 v3.4.45 结束支持（EOL），仍在使用的用户应尽快升级。本章示例基于 etcd `3.5.x` 版本编写，etcd 3.6.x/3.7.x 可用于新部署。请访问 [etcd 官方发布页](https://github.com/etcd-io/etcd/releases) 获取最新版本。
+
+### 15.2.1 二进制文件方式下载
+
+编译好的二进制文件都在 [github.com/etcd-io/etcd/releases](https://github.com/etcd-io/etcd/releases/) 页面，用户可以选择需要的版本，或通过下载工具下载。
+
+例如，使用 `curl` 工具下载压缩包，并解压。
+
+```bash
+# 下载 etcd v3.5.33 版本（请访问 https://github.com/etcd-io/etcd/releases 获取最新版本）
+$ curl -L https://github.com/etcd-io/etcd/releases/download/v3.5.33/etcd-v3.5.33-linux-amd64.tar.gz -o etcd-v3.5.33-linux-amd64.tar.gz
+
+## 国内用户可选择就近的网络加速方式（以可用镜像站为准）
+
+$ tar xzvf etcd-v3.5.33-linux-amd64.tar.gz
+$ cd etcd-v3.5.33-linux-amd64
+```
+解压后，可以看到文件包括
+
+```bash
+$ ls
+Documentation README-etcdctl.md README.md READMEv2-etcdctl.md etcd etcdctl
+```
+其中 `etcd` 是服务主文件，`etcdctl` 是提供给用户的命令客户端，其他文件是支持文档。
+
+下面将 `etcd` `etcdctl` 文件放到系统可执行目录（例如 `/usr/local/bin/`）。
+
+```bash
+$ sudo cp etcd* /usr/local/bin/
+```
+默认 `2379` 端口处理客户端的请求，`2380` 端口用于集群各成员间的通信。启动 `etcd` 显示类似如下的信息：
+
+```bash
+$ etcd
+...
+2017-12-03 11:18:34.411579 I | embed: listening for peers on http://localhost:2380
+2017-12-03 11:18:34.411938 I | embed: listening for client requests on localhost:2379
+```
+此时，可以使用 `etcdctl` 命令进行测试，设置和获取键值 `testkey: "hello world"`，检查 `etcd` 服务是否启动成功：
+
+```bash
+$ ETCDCTL_API=3 etcdctl member list
+8e9e05c52164694d, started, default, http://localhost:2380, http://localhost:2379
+
+$ ETCDCTL_API=3 etcdctl put testkey "hello world"
+OK
+
+$ ETCDCTL_API=3 etcdctl get testkey
+testkey
+hello world
+```
+说明 etcd 服务已经成功启动了。
+
+### 15.2.2 Docker 镜像方式运行
+
+镜像名称为 `quay.io/coreos/etcd`，可以通过下面的命令启动单机实验用 `etcd` 服务，并只把 `2379` 和 `2380` 映射到宿主机回环地址。
+
+> **版本说明：** 示例中使用 `v3.5.33` 标签。请访问 [etcd 官方发布页](https://github.com/etcd-io/etcd/releases) 获取最新可用版本标签。
+
+```bash
+$ docker run \
+-p 127.0.0.1:2379:2379 \
+-p 127.0.0.1:2380:2380 \
+--mount type=bind,source=/tmp/etcd-data.tmp,destination=/etcd-data \
+--name etcd-gcr-v3.5.33 \
+quay.io/coreos/etcd:v3.5.33 \
+/usr/local/bin/etcd \
+--name s1 \
+--data-dir /etcd-data \
+--listen-client-urls http://0.0.0.0:2379 \
+--advertise-client-urls http://127.0.0.1:2379 \
+--listen-peer-urls http://0.0.0.0:2380 \
+--initial-advertise-peer-urls http://127.0.0.1:2380 \
+--initial-cluster s1=http://127.0.0.1:2380 \
+--initial-cluster-token tkn \
+--initial-cluster-state new \
+--log-level info \
+--logger zap \
+--log-outputs stderr
+```
+
+上面示例仅用于单机实验：宿主机端口限定在 `127.0.0.1`，因此不会把未启用 TLS 的 etcd 直接暴露到外部网络。容器内部的 `listen-*` 可以绑定 `0.0.0.0` 监听容器网卡，但 `advertise-*` 应填写其他节点或客户端**实际可访问的主机地址**，不能直接写成 `0.0.0.0`。生产或多节点环境不要使用明文 HTTP 暴露 etcd，应结合固定内网地址、TLS、客户端证书认证和防火墙访问控制。
+
+打开新的终端按照上一步的方法测试 `etcd` 是否成功启动。
+
+### 15.2.3 macOS 中运行
+
+```bash
+$ brew install etcd
+
+$ etcd
+
+$ ETCDCTL_API=3 etcdctl member list
+```

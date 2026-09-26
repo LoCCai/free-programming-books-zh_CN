@@ -1,0 +1,16 @@
+{
+  "bookId": "5742090c45e7",
+  "title": "Linux 命令行(中文版)",
+  "url": "http://billie66.github.io/TLCL/book/",
+  "status": "ok",
+  "fetchedAt": "2026-09-26T18:52:29.530Z",
+  "chapters": [
+    {
+      "slug": "001-10",
+      "title": "http://billie66.github.io/TLCL/book/",
+      "file": "chapters/001-10.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://billie66.github.io/TLCL/book/"
+}

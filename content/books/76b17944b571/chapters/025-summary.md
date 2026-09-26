@@ -1,0 +1,30 @@
+## 本章小结
+
+Docker 支持在多种平台上安装和使用，选择合适的安装方式是顺利使用 Docker 的第一步。
+
+| 平台 | 推荐方式 | 说明 |
+|------|---------|------|
+| **Ubuntu/Debian** | 官方 APT 仓库 | 最完善的支持，推荐首选 |
+| **CentOS/Fedora** | 官方 DNF/YUM 仓库 | 注意验证防火墙与 `iptables` 兼容性 |
+| **macOS** | Docker Desktop | 图形化安装，默认集成 Compose |
+| **Windows 10/11** | Docker Desktop（WSL 2 或 Hyper-V） | 按机器能力与企业策略选择后端 |
+| **Raspberry Pi** | 官方 APT 仓库或 Debian `arm64` 方案 | 32 位系统已停止接收 v29+ 新主版本 |
+| **离线环境** | 二进制包安装 | 适用于无法联网的服务器 |
+
+### 安装后验证
+
+安装完成后，运行以下命令验证 Docker 是否正常工作：
+
+```bash
+$ docker version
+$ docker run --rm hello-world
+```
+
+### 延伸阅读
+
+- [镜像加速器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md)：解决国内拉取镜像慢的问题
+- [开启实验特性](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.10_experimental.md)：使用最新功能
+- [Docker Hub](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.1_dockerhub.md)：官方镜像仓库
+---
+
+> 📝 **发现错误或有改进建议？** 欢迎提交 [Issue](https://github.com/yeasy/docker_practice/issues) 或 [PR](https://github.com/yeasy/docker_practice/pulls)。

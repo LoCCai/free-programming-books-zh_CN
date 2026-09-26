@@ -1,0 +1,248 @@
+## 7.8 VOLUME 定义匿名卷
+
+### 7.8.1 基本语法
+
+```docker
+VOLUME ["/路径1", "/路径2"]
+VOLUME /路径
+```
+`VOLUME` 指令创建挂载点，并标记为外部挂载的卷。
+
+---
+
+### 7.8.2 为什么使用 VOLUME
+
+> **核心原则**：容器存储层应该保持无状态，任何运行时数据都应该存储在卷中。
+
+```mermaid
+flowchart LR
+    subgraph NoVolume ["没有 VOLUME："]
+        direction TB
+        subgraph Container1 ["容器存储层"]
+            direction TB
+            Files["数据库文件 (问题)<br/>日志文件<br/>上传文件"]
+        end
+        Result1["容器删除 = 数据丢失"]
+        Container1 ~~~ Result1
+    end
+
+    subgraph UseVolume ["使用 VOLUME："]
+        direction TB
+        Container2["容器存储层<br/>（只读/无状态）"]
+        subgraph Volume ["数据卷"]
+            Data["持久化数据 (安全)"]
+        end
+        Container2 --> Volume
+        Result2["容器删除，数据保留"]
+        Volume ~~~ Result2
+    end
+```
+---
+
+### 7.8.3 基本用法
+
+#### 定义单个卷
+
+```docker
+FROM mysql:8.4
+VOLUME /var/lib/mysql
+```
+
+#### 定义多个卷
+
+```docker
+FROM myapp
+VOLUME ["/data", "/logs", "/config"]
+```
+---
+
+### 7.8.4 VOLUME 的行为
+
+#### 1. 自动创建匿名卷
+
+如果运行时未指定挂载，Docker 会自动创建匿名卷：
+
+```bash
+$ docker run mysql:8.4
+$ docker volume ls
+DRIVER    VOLUME NAME
+local     a1b2c3d4e5f6...  # 自动创建的匿名卷
+```
+
+#### 2. 可被命名卷覆盖
+
+```bash
+## 使用命名卷替代匿名卷
+
+$ docker run -v mysql_data:/var/lib/mysql mysql:8.4
+```
+
+#### 3. 可被 Bind Mount 覆盖
+
+```bash
+## 使用宿主机目录替代
+
+$ docker run -v /my/data:/var/lib/mysql mysql:8.4
+```
+---
+
+### 7.8.5 VOLUME 在构建时的特殊行为
+
+> ⚠️ **重要**：`VOLUME` 之后再写入该目录的构建语义取决于 builder。legacy builder 会丢弃这些修改；BuildKit 会保留。但运行容器时，一旦该路径挂载了卷，卷会遮蔽镜像内同路径的内容。
+
+```docker
+FROM ubuntu
+VOLUME /data
+
+## ⚠️ legacy builder 会丢弃；BuildKit 会保留，但运行时挂载卷会遮蔽它
+
+RUN echo "hello" > /data/test.txt
+```
+**原因**：旧 builder 会在构建过程中为该目录创建临时匿名卷，后续写入发生在临时卷中；BuildKit 则会把修改保留在镜像层。为了避免不同 builder 下出现不同结果，也为了避免运行时卷遮蔽镜像内初始化数据，不要把必须存在的初始化文件写在 `VOLUME` 之后。
+
+#### 正确做法
+
+```docker
+FROM ubuntu
+
+## ✅ 先写入文件
+
+RUN mkdir -p /data && echo "hello" > /data/test.txt
+
+## 再声明 VOLUME
+
+VOLUME /data
+```
+---
+
+### 7.8.6 常见使用场景
+
+#### 数据库持久化
+
+```docker
+# 建议使用 postgres:16 等具体版本标签，避免 latest，具体版本号根据数据库兼容性需求选择
+FROM postgres:16
+VOLUME /var/lib/postgresql/data
+```
+
+#### 日志目录
+
+```docker
+FROM nginx
+VOLUME /var/log/nginx
+```
+
+#### 上传文件目录
+
+```docker
+FROM myapp
+VOLUME /app/uploads
+```
+---
+
+### 7.8.7 查看 VOLUME 定义
+
+```bash
+## 查看镜像定义的 VOLUME
+
+$ docker inspect mysql:8.4 --format '{{json .Config.Volumes}}' | jq
+{
+  "/var/lib/mysql": {}
+}
+
+## 查看容器挂载的卷
+
+$ docker inspect mycontainer --format '{{json .Mounts}}' | jq
+```
+---
+
+### 7.8.8 VOLUME vs docker run -v
+
+| 特性 | Dockerfile VOLUME | docker run -v |
+|------|-------------------|---------------|
+| **定义时机** | 镜像构建时 | 容器运行时 |
+| **默认行为** | 创建匿名卷 | 可指定命名卷或路径 |
+| **灵活性** | 低（固定路径）| 高（可任意指定）|
+| **适用场景** | 定义必须持久化的路径 | 灵活的数据管理 |
+
+---
+
+### 7.8.9 在 Compose 中
+
+在 Compose 中配置如下：
+
+```yaml
+services:
+  db:
+    # 建议使用 postgres:16 或其他具体版本，避免 latest
+    image: postgres:16
+    volumes:
+      # 命名卷（推荐）
+
+      - postgres_data:/var/lib/postgresql/data
+      # Bind Mount
+
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:  # 声明命名卷
+```
+---
+
+### 7.8.10 安全注意事项
+
+#### 匿名卷可能导致数据丢失
+
+```bash
+## 使用 --rm 运行的容器，匿名卷会在容器删除时一起删除
+
+$ docker run --rm mysql:8.4
+
+## 容器停止后，数据丢失！
+
+...
+```
+**解决**：始终使用命名卷
+
+```bash
+$ docker run -v mysql_data:/var/lib/mysql mysql:8.4
+```
+---
+
+### 7.8.11 最佳实践
+
+#### 1. 定义必须持久化的路径
+
+```docker
+## 数据库必须使用卷
+
+FROM postgres:16
+VOLUME /var/lib/postgresql/data
+```
+
+#### 2. 不要在 VOLUME 后修改目录
+
+```docker
+## ❌ 避免
+
+VOLUME /app/data
+RUN cp init-data.json /app/data/
+
+## ✅ 正确
+
+RUN mkdir -p /app/data && cp init-data.json /app/data/
+VOLUME /app/data
+```
+
+#### 3. 文档中说明 VOLUME 用途
+
+```docker
+## 持久化用户上传的文件
+
+VOLUME /app/uploads
+
+## 持久化数据库数据
+
+VOLUME /var/lib/mysql
+```
+---

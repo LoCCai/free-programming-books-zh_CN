@@ -1,0 +1,276 @@
+{
+  "bookId": "60554edfccab",
+  "title": "理解Linux进程",
+  "url": "https://github.com/tobegit3hub/understand_linux_process",
+  "status": "ok",
+  "fetchedAt": "2026-09-26T18:52:31.758Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "前言",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-thanks",
+      "title": "致谢",
+      "file": "chapters/002-thanks.md"
+    },
+    {
+      "slug": "003-overview",
+      "title": "概述",
+      "file": "chapters/003-overview.md"
+    },
+    {
+      "slug": "004-use-code",
+      "title": "使用代码",
+      "file": "chapters/004-use-code.md"
+    },
+    {
+      "slug": "005-use-docker",
+      "title": "使用Docker",
+      "file": "chapters/005-use-docker.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "进程基础",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-what-is-process",
+      "title": "进程是什么",
+      "file": "chapters/007-what-is-process.md"
+    },
+    {
+      "slug": "008-hello-world",
+      "title": "Hello World",
+      "file": "chapters/008-hello-world.md"
+    },
+    {
+      "slug": "009-pid",
+      "title": "PID",
+      "file": "chapters/009-pid.md"
+    },
+    {
+      "slug": "010-ppid",
+      "title": "PPID",
+      "file": "chapters/010-ppid.md"
+    },
+    {
+      "slug": "011-use-pid",
+      "title": "使用PID",
+      "file": "chapters/011-use-pid.md"
+    },
+    {
+      "slug": "012-process-name",
+      "title": "进程名字",
+      "file": "chapters/012-process-name.md"
+    },
+    {
+      "slug": "013-argv",
+      "title": "进程参数",
+      "file": "chapters/013-argv.md"
+    },
+    {
+      "slug": "014-input-and-output",
+      "title": "输入与输出",
+      "file": "chapters/014-input-and-output.md"
+    },
+    {
+      "slug": "015-concurrent-and-parallel",
+      "title": "并发与并行",
+      "file": "chapters/015-concurrent-and-parallel.md"
+    },
+    {
+      "slug": "016-the-more-the-better",
+      "title": "进程越多越好",
+      "file": "chapters/016-the-more-the-better.md"
+    },
+    {
+      "slug": "017-status",
+      "title": "进程状态",
+      "file": "chapters/017-status.md"
+    },
+    {
+      "slug": "018-exit-code",
+      "title": "退出码",
+      "file": "chapters/018-exit-code.md"
+    },
+    {
+      "slug": "019-process-resource",
+      "title": "进程资源",
+      "file": "chapters/019-process-resource.md"
+    },
+    {
+      "slug": "020-deadlock",
+      "title": "死锁",
+      "file": "chapters/020-deadlock.md"
+    },
+    {
+      "slug": "021-livelock",
+      "title": "活锁",
+      "file": "chapters/021-livelock.md"
+    },
+    {
+      "slug": "022-posix",
+      "title": "POSIX",
+      "file": "chapters/022-posix.md"
+    },
+    {
+      "slug": "023-nohup",
+      "title": "Nohup",
+      "file": "chapters/023-nohup.md"
+    },
+    {
+      "slug": "024-run-process",
+      "title": "运行进程",
+      "file": "chapters/024-run-process.md"
+    },
+    {
+      "slug": "025-readme",
+      "title": "Go编程实例",
+      "file": "chapters/025-readme.md"
+    },
+    {
+      "slug": "026-spawn",
+      "title": "衍生新进程",
+      "file": "chapters/026-spawn.md"
+    },
+    {
+      "slug": "027-exec",
+      "title": "执行外部程序",
+      "file": "chapters/027-exec.md"
+    },
+    {
+      "slug": "028-fork",
+      "title": "复制进程",
+      "file": "chapters/028-fork.md"
+    },
+    {
+      "slug": "029-readme",
+      "title": "进程进阶",
+      "file": "chapters/029-readme.md"
+    },
+    {
+      "slug": "030-file-lock",
+      "title": "文件锁",
+      "file": "chapters/030-file-lock.md"
+    },
+    {
+      "slug": "031-orphan-process",
+      "title": "孤儿进程",
+      "file": "chapters/031-orphan-process.md"
+    },
+    {
+      "slug": "032-zombie-process",
+      "title": "僵尸进程",
+      "file": "chapters/032-zombie-process.md"
+    },
+    {
+      "slug": "033-daemon-process",
+      "title": "守护进程",
+      "file": "chapters/033-daemon-process.md"
+    },
+    {
+      "slug": "034-ipc",
+      "title": "进程间通信",
+      "file": "chapters/034-ipc.md"
+    },
+    {
+      "slug": "035-signal",
+      "title": "信号",
+      "file": "chapters/035-signal.md"
+    },
+    {
+      "slug": "036-system-call",
+      "title": "Linux系统调用",
+      "file": "chapters/036-system-call.md"
+    },
+    {
+      "slug": "037-fd",
+      "title": "文件描述符",
+      "file": "chapters/037-fd.md"
+    },
+    {
+      "slug": "038-epoll",
+      "title": "Epoll",
+      "file": "chapters/038-epoll.md"
+    },
+    {
+      "slug": "039-share-memory",
+      "title": "共享内存",
+      "file": "chapters/039-share-memory.md"
+    },
+    {
+      "slug": "040-copy-on-write",
+      "title": "Copy On Write",
+      "file": "chapters/040-copy-on-write.md"
+    },
+    {
+      "slug": "041-cgroups",
+      "title": "Cgroups",
+      "file": "chapters/041-cgroups.md"
+    },
+    {
+      "slug": "042-namespaces",
+      "title": "Namespaces",
+      "file": "chapters/042-namespaces.md"
+    },
+    {
+      "slug": "043-readme",
+      "title": "项目实例Run",
+      "file": "chapters/043-readme.md"
+    },
+    {
+      "slug": "044-architecture",
+      "title": "项目架构",
+      "file": "chapters/044-architecture.md"
+    },
+    {
+      "slug": "045-implement",
+      "title": "代码实现",
+      "file": "chapters/045-implement.md"
+    },
+    {
+      "slug": "046-readme",
+      "title": "注意事项",
+      "file": "chapters/046-readme.md"
+    },
+    {
+      "slug": "047-mkdir",
+      "title": "创建目录权限",
+      "file": "chapters/047-mkdir.md"
+    },
+    {
+      "slug": "048-sigkill",
+      "title": "捕获SIGKILL",
+      "file": "chapters/048-sigkill.md"
+    },
+    {
+      "slug": "049-sendfile",
+      "title": "Sendfile系统调用",
+      "file": "chapters/049-sendfile.md"
+    },
+    {
+      "slug": "050-readme",
+      "title": "后记",
+      "file": "chapters/050-readme.md"
+    },
+    {
+      "slug": "051-book",
+      "title": "参考书籍",
+      "file": "chapters/051-book.md"
+    },
+    {
+      "slug": "052-project",
+      "title": "项目学习",
+      "file": "chapters/052-project.md"
+    },
+    {
+      "slug": "053-thanks-again",
+      "title": "再次感谢",
+      "file": "chapters/053-thanks-again.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

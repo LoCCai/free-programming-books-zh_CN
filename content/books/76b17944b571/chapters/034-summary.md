@@ -1,0 +1,36 @@
+## 本章小结
+
+本章介绍了 Docker 镜像的获取、列出、删除以及构建方式。
+
+| 操作 | 命令 |
+|------|------|
+| 拉取镜像 | `docker pull 镜像名:标签` |
+| 拉取所有标签 | `docker pull -a 镜像名` |
+| 指定平台 | `docker pull --platform linux/amd64 镜像名` |
+| 用摘要拉取 | `docker pull 镜像名@sha256:...` |
+| 列出所有镜像 | `docker images` |
+| 按仓库名过滤 | `docker images nginx` |
+| 列出虚悬镜像 | `docker images -f dangling=true` |
+| 只输出 ID | `docker images -q` |
+| 显示摘要 | `docker images --digests` |
+| 自定义格式 | `docker images --format "..."` |
+| 查看空间占用 | `docker system df` |
+| 删除指定镜像 | `docker rmi 镜像名:标签` |
+| 强制删除 | `docker rmi -f 镜像名` |
+| 删除虚悬镜像 | `docker image prune` |
+| 删除未使用镜像 | `docker image prune -a` |
+| 批量删除 | `docker rmi $(docker images -q -f ...)` |
+
+### 延伸阅读
+
+- [获取镜像](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/04_image/4.1_pull.md)：从 Registry 拉取镜像
+- [列出镜像](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/04_image/4.2_list.md)：查看和过滤镜像
+- [删除镜像](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/04_image/4.3_rm.md)：清理本地镜像
+- [镜像加速器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md)：加速镜像下载
+- [Docker Hub](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/06_repository/6.1_dockerhub.md)：官方镜像仓库
+- [镜像](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/02_basic_concept/2.1_image.md)：理解镜像概念
+- [删除容器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/05_container/5.6_rm.md)：清理容器
+- [数据卷](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/08_data/8.1_volume.md)：清理数据卷
+---
+
+> 📝 **发现错误或有改进建议？** 欢迎提交 [Issue](https://github.com/yeasy/docker_practice/issues) 或 [PR](https://github.com/yeasy/docker_practice/pulls)。

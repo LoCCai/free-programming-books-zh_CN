@@ -1,0 +1,25 @@
+# 第五章 操作容器
+
+容器是 Docker 又一核心概念。
+
+简单的说，容器是独立运行的一个或一组应用，以及它们的运行态环境。对应的，虚拟机可以理解为模拟运行的一整套操作系统（提供了运行态环境和其他系统环境）和跑在上面的应用。
+
+本章将具体介绍如何来管理一个容器，包括创建、启动和停止等。
+
+## 版本号说明
+
+本章示例涉及多个 Docker 镜像，遵循以下版本号最佳实践：
+
+- **官方镜像**（如 `ubuntu`、`nginx`、`mysql`）：使用具体大版本号（如 `ubuntu:24.04`、`mysql:8.4`）而非 `latest`，确保示例的可重复性
+- **镜像标签约定**：
+  - `latest` 或 `v1.0.0` 等：带标签的自定义镜像，示例中指定具体版本
+  - `24.04`、`8.4`：官方镜像的稳定版本分支
+  - 生产环境建议：**运行/部署**服务镜像时指定确切版本号（如 `nginx:1.28.0`、`mysql:8.4.4`）而非仅大版本号，让每次部署可复现、升级是显式动作。
+  （注意这与 [第 7 章](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/07_dockerfile/README.md) 对 **Dockerfile 基础镜像** 的建议方向相反：基础镜像用主/次版本号，以便重新构建时自动带上补丁。两者面向的是不同环节。）
+
+* [启动容器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/05_container/5.1_run.md)
+* [守护态运行](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/05_container/5.2_daemon.md)
+* [终止容器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/05_container/5.3_stop.md)
+* [进入容器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/05_container/5.4_attach_exec.md)
+* [导出和导入容器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/05_container/5.5_import_export.md)
+* [删除容器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/05_container/5.6_rm.md)

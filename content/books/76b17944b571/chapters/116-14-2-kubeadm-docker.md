@@ -1,0 +1,316 @@
+## 14.2 使用 kubeadm 部署 Kubernetes：使用 Docker
+
+`kubeadm` 提供了 `kubeadm init` 以及 `kubeadm join` 这两个命令，作为快速创建 `Kubernetes` 集群的最佳实践。
+
+> **版本说明**：本文档基于 Kubernetes v1.36 编写。Kubernetes 版本更新较快（约每 4 个月一个新版本），本文档中的第三方工具版本（如 cri-dockerd、flannel）仅为示例，请根据实际需求更新至当前版本。更完整的安装和兼容性说明请以 [Kubernetes 官方文档](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) 为准。
+
+> ⚠️ **强烈提示：Docker 与 Kubernetes 环境的时代分界**
+>
+> 自 Kubernetes v1.24 起，内置的 `dockershim` 组件已被正式移除。这意味着 **Kubernetes 不再将 Docker Engine 作为默认内置的容器运行时**。虽然 Docker 仍然是你本地构建、管理镜像的绝佳工具，但它已不再是 kubelet 的默认运行时选项。
+>
+> 因此，**强烈推荐** 读者直接参考同目录下的《[使用 kubeadm 部署 Kubernetes（CRI 使用 containerd）](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/14_kubernetes_setup/14.1_kubeadm.md)》作为主要的部署路线。
+>
+> 本文档保留，主要用于历史环境维护或特殊需求场景：如果你必须在较新的 Kubernetes 集群中继续使用 Docker Engine 作为底层运行时，你必须理解 CRI 层机制，额外部署并配置第三方兼容层 `cri-dockerd`，同时在部署时手动补充 `--cri-socket` 等参数约束。
+
+### 14.2.1 安装 Docker
+
+参考[安装 Docker](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/README.md) 一节安装 Docker。
+
+### 14.2.2 安装并配置 cri-dockerd
+
+由于 Kubernetes v1.24 移除了内置的 dockershim，需要额外安装 **cri-dockerd** 作为 Docker 与 kubelet 之间的 CRI（Container Runtime Interface）适配层。
+
+#### Ubuntu/Debian
+
+```bash
+# 安装 cri-dockerd
+# 注意：以下以 v0.4.3 为示例；安装前请到 releases 页面核验当前版本和校验值
+# 参见 https://github.com/Mirantis/cri-dockerd/releases
+
+$ cd /tmp
+$ wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.4.3/cri-dockerd-0.4.3.amd64.tgz
+$ tar xzvf cri-dockerd-0.4.3.amd64.tgz
+$ sudo mv cri-dockerd/cri-dockerd /usr/local/bin/
+
+# 下载并安装 systemd service 文件
+
+$ wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/master/packaging/systemd/cri-docker.service
+$ wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/master/packaging/systemd/cri-docker.socket
+$ sed -i -e 's,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,' cri-docker.service
+$ sudo mv cri-docker.service cri-docker.socket /etc/systemd/system/
+
+# 启动 cri-dockerd
+
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable cri-docker
+$ sudo systemctl start cri-docker
+
+# 验证安装
+
+$ sudo /usr/local/bin/cri-dockerd --version
+```
+
+#### CentOS/Fedora
+
+```bash
+# 安装 cri-dockerd
+# 注意：以下以 v0.4.3 为示例；安装前请到 releases 页面核验当前版本和校验值
+# 参见 https://github.com/Mirantis/cri-dockerd/releases
+
+$ cd /tmp
+$ wget https://github.com/Mirantis/cri-dockerd/releases/download/v0.4.3/cri-dockerd-0.4.3.amd64.tgz
+$ tar xzvf cri-dockerd-0.4.3.amd64.tgz
+$ sudo mv cri-dockerd/cri-dockerd /usr/local/bin/
+
+# 下载并安装 systemd service 文件
+
+$ wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/master/packaging/systemd/cri-docker.service
+$ wget https://raw.githubusercontent.com/Mirantis/cri-dockerd/master/packaging/systemd/cri-docker.socket
+$ sed -i -e 's,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,' cri-docker.service
+$ sudo mv cri-docker.service cri-docker.socket /etc/systemd/system/
+
+# 启动 cri-dockerd
+
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable cri-docker
+$ sudo systemctl start cri-docker
+```
+
+### 14.2.3 安装 **kubelet**、**kubeadm**、**kubectl**
+
+需要在每台机器上安装以下的软件包：
+
+#### Ubuntu/Debian
+
+```bash
+$ K8S_MINOR="v1.36"
+
+$ sudo apt-get update
+$ sudo apt-get install -y ca-certificates curl gpg
+
+$ sudo install -m 0755 -d /etc/apt/keyrings
+$ curl -fsSL "https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/deb/Release.key" | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+$ sudo chmod a+r /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+$ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
+
+$ sudo apt-get update
+$ sudo apt-get install -y kubelet kubeadm kubectl
+
+$ sudo apt-mark hold kubelet kubeadm kubectl
+```
+
+#### CentOS/Fedora
+
+```bash
+$ K8S_MINOR="v1.36"
+
+$ cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/rpm/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/rpm/repodata/repomd.xml.key
+EOF
+
+$ sudo yum install -y kubelet kubeadm kubectl
+```
+
+### 14.2.4 修改内核的运行参数
+
+#### cgroup v2 要求：必须
+
+Kubernetes v1.36 默认要求节点使用 cgroup v2。kubelet 在 cgroup v1 节点上默认会拒绝启动，但管理员可以在 kubelet 配置中设置 `failCgroupV1: false` 来兼容 cgroup v1（仅建议用于遗留系统过渡期）。验证节点是否支持 cgroup v2：
+
+```bash
+$ mount | grep cgroup2
+```
+
+如果输出包含 `cgroup2`，则系统已支持 cgroup v2。对于仍在使用 cgroup v1 的系统（如较旧的 RHEL 8），建议升级内核或更新系统配置以启用 cgroup v2。
+
+#### 加载内核模块
+
+```bash
+$ cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+
+$ sudo modprobe overlay
+$ sudo modprobe br_netfilter
+```
+
+#### swap 设置：现代集群仍建议优先关闭
+
+在现代 Kubernetes 中，Linux 节点已经支持更细粒度的 swap 行为控制。对于多数 `kubeadm` 教学环境，**优先关闭 swap 仍然是最稳妥的默认做法**，因为这样最接近常见生产基线，也能避免不同发行版和 kubelet 配置差异带来的排障成本。
+
+如果你明确要在启用 swap 的前提下运行节点，则应额外核对 kubelet 的 `NoSwap` / `LimitedSwap` 配置与当前 Kubernetes 版本文档，而不要把“开着 swap 也能跑”直接当作通用默认路径。
+
+```bash
+$ sudo swapoff -a
+
+# 如需永久禁用，可在 /etc/fstab 中注释 swap 对应行
+```
+```bash
+$ cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+
+# 应用配置
+
+$ sudo sysctl --system
+```
+
+### 14.2.5 配置 kubelet
+
+为了让 kubelet 正确运行，我们需要对其进行一些必要的配置。
+
+#### 修改 `kubelet.service`（可选：IPVS 模式）
+
+> **注意**：kube-proxy 的 IPVS 模式已在 Kubernetes 1.35 中被标记为弃用；Kubernetes 1.36 文档仍将其列为已弃用模式，并推荐迁移到 nftables。新部署应使用默认的 iptables 模式或 nftables 模式（Kubernetes 1.33+ 稳定）。以下 IPVS 配置仅供旧环境参考。
+
+`/etc/systemd/system/kubelet.service.d/10-proxy-ipvs.conf` 写入以下内容
+
+```bash
+# 启用 ipvs 相关内核模块（已弃用，建议迁移至 nftables）
+
+[Service]
+ExecStartPre=-/sbin/modprobe ip_vs
+ExecStartPre=-/sbin/modprobe ip_vs_rr
+ExecStartPre=-/sbin/modprobe ip_vs_wrr
+ExecStartPre=-/sbin/modprobe ip_vs_sh
+```
+执行以下命令应用配置。
+
+```bash
+$ sudo systemctl daemon-reload
+```
+
+### 14.2.6 部署
+
+安装配置完成后，我们将分别在 Master 节点和 Worker 节点上进行部署操作。
+
+#### master
+
+```bash
+$ sudo kubeadm init --pod-network-cidr 10.244.0.0/16 \
+      --cri-socket unix:///var/run/cri-dockerd.sock \
+      --v 5
+```
+
+* `--cri-socket unix:///var/run/cri-dockerd.sock` 参数指定使用 cri-dockerd 作为容器运行时接口。
+* `--pod-network-cidr 10.244.0.0/16` 参数与后续 CNI 插件有关，这里以 `flannel` 为例，若后续部署其他类型的网络插件请更改此参数。
+* kubeadm 默认使用 `registry.k8s.io` 拉取 Kubernetes 控制平面镜像。受限网络环境可通过 kubeadm 配置文件中的 `imageRepository` 指向受信任镜像仓库；不要把第三方镜像仓库当成通用默认值。
+
+> 若 `kubeadm` 预检失败，应按提示修复缺失依赖、内核参数、swap 或运行时配置。实验环境确需忽略预检时，只忽略明确理解且可接受的单项检查，不建议使用 `--ignore-preflight-errors=all`。
+
+执行成功会输出
+
+```bash
+...
+[addons] Applied essential addon: CoreDNS
+I1116 12:35:13.270407   86677 request.go:538] Throttling request took 181.409184ms, request: POST:https://<CONTROL_PLANE_HOST>:6443/api/v1/namespaces/kube-system/serviceaccounts
+I1116 12:35:13.470292   86677 request.go:538] Throttling request took 186.088112ms, request: POST:https://<CONTROL_PLANE_HOST>:6443/api/v1/namespaces/kube-system/configmaps
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join <CONTROL_PLANE_HOST>:6443 --token <TOKEN> \
+    --discovery-token-ca-cert-hash sha256:<DISCOVERY_TOKEN_CA_CERT_HASH>
+```
+
+#### node 工作节点
+
+在 **另一主机** 重复 **部署** 小节以前的步骤，安装配置好 kubelet。根据提示，加入到集群。
+
+```bash
+$ kubeadm join <CONTROL_PLANE_HOST>:6443 --token <TOKEN> \
+    --discovery-token-ca-cert-hash sha256:<DISCOVERY_TOKEN_CA_CERT_HASH> \
+    --cri-socket unix:///var/run/cri-dockerd.sock
+```
+
+其中 `<CONTROL_PLANE_HOST>`、`<TOKEN>` 和 `<DISCOVERY_TOKEN_CA_CERT_HASH>` 应使用你自己的 `kubeadm init` 输出，不要复用示例值。
+
+### 14.2.7 查看服务
+
+所有服务启动后，查看本地实际运行的 Docker 容器。这些服务大概分为三类：主节点服务、工作节点服务和其他服务。
+
+#### 主节点服务
+
+* `apiserver` 是整个系统的对外接口，提供 RESTful 方式供客户端和其他组件调用；
+
+* `scheduler` 负责对资源进行调度，分配某个 pod 到某个节点上；
+
+* `controller-manager` 负责管理控制器，包括 endpoint-controller（刷新服务和 pod 的关联信息）和 replication-controller（维护某个 pod 的复制为配置的数值）。
+
+#### 工作节点服务
+
+* `proxy` 为 pod 上的服务提供访问的代理。
+
+#### 其他服务
+
+* Etcd 是所有状态的存储数据库；
+
+### 14.2.8 使用
+
+将 `/etc/kubernetes/admin.conf` 复制到 `~/.kube/config`
+
+执行 `$ kubectl get all -A` 查看启动的服务。
+
+由于未部署 CNI 插件，CoreDNS 未正常启动。如何使用 Kubernetes，请参考后续章节。
+
+### 14.2.9 部署 CNI
+
+这里以 `flannel` 为例进行介绍。
+
+#### flannel
+
+检查 podCIDR 设置
+
+```bash
+$ kubectl get node -o yaml | grep CIDR
+
+# 输出
+
+    podCIDR: 10.244.0.0/16
+    podCIDRs:
+```
+```bash
+# 注意：以下以 v0.28.4 为示例；安装前请到 releases 页面核验当前版本
+# 参见 https://github.com/flannel-io/flannel/releases
+$ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/v0.28.4/Documentation/kube-flannel.yml
+```
+
+### 14.2.10 master 节点默认不能运行 pod
+
+如果用 `kubeadm` 部署一个单节点集群，默认情况下无法使用，请执行以下命令解除限制
+
+```bash
+$ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+# 较旧版本使用 master taint
+
+# $ kubectl taint nodes --all node-role.kubernetes.io/master-
+
+# 恢复默认值
+
+# $ kubectl taint nodes NODE_NAME node-role.kubernetes.io/control-plane=true:NoSchedule
+
+...
+```

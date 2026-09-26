@@ -1,0 +1,298 @@
+## 14.1 使用 kubeadm 部署 Kubernetes
+
+`kubeadm` 提供了 `kubeadm init` 以及 `kubeadm join` 这两个命令，作为快速创建 `Kubernetes` 集群的常用工具。
+
+> **版本说明**：Kubernetes 版本更新较快（约每 4 个月一个新版本），本文档基于 Kubernetes 1.36 编写。更完整的安装和兼容性说明请以 [Kubernetes 官方 kubeadm 文档](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) 和 [containerd 官方文档](https://containerd.io/docs/) 为准。
+
+### 14.1.1 安装 containerd
+
+参考[安装 Docker](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/README.md) 一节添加 apt/yum 源，之后执行如下命令。
+
+```bash
+# debian 系
+
+$ sudo apt install containerd.io
+
+# rhel 系
+
+$ sudo yum install containerd.io
+```
+
+### 14.1.2 配置 containerd
+
+先生成默认配置文件，然后只调整与 kubeadm 相关的关键项：
+
+```bash
+$ sudo mkdir -p /etc/containerd
+$ containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
+```
+
+打开 `/etc/containerd/config.toml`，确认 `runc` 选项使用 `systemd` cgroup 驱动：
+
+```toml
+# containerd 2.x（当前默认版本）
+[plugins."io.containerd.cri.v1.runtime".containerd.runtimes.runc.options]
+  SystemdCgroup = true
+
+# containerd 1.x（旧版本）使用以下路径，2.x 亦兼容
+# [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+#   SystemdCgroup = true
+```
+
+> **提示**：`containerd config default` 生成的默认配置会自动使用当前版本的正确路径。如果你使用的是 containerd 2.x，配置中的插件路径将以 `io.containerd.cri.v1.runtime` 开头；如果仍在使用 1.x，则为 `io.containerd.grpc.v1.cri`。
+
+默认配置里的其他内容通常可以保持不变。修改完成后重启 containerd：
+
+```bash
+$ sudo systemctl restart containerd
+```
+
+### 14.1.3 安装 **kubelet**、**kubeadm**、**kubectl**、**cri-tools**、**kubernetes-cni**
+
+需要在每台机器上安装以下的软件包：
+
+#### Ubuntu/Debian
+
+```bash
+$ K8S_MINOR="v1.36"
+
+$ sudo apt-get update
+$ sudo apt-get install -y ca-certificates curl gpg
+
+$ sudo install -m 0755 -d /etc/apt/keyrings
+$ curl -fsSL "https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/deb/Release.key" | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+$ sudo chmod a+r /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+$ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list > /dev/null
+
+$ sudo apt-get update
+$ sudo apt-get install -y kubelet kubeadm kubectl cri-tools kubernetes-cni
+
+$ sudo apt-mark hold kubelet kubeadm kubectl
+```
+
+#### CentOS/Fedora
+
+```bash
+$ K8S_MINOR="v1.36"
+
+$ cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/rpm/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/${K8S_MINOR}/rpm/repodata/repomd.xml.key
+EOF
+
+$ sudo yum install -y kubelet kubeadm kubectl cri-tools kubernetes-cni
+```
+
+### 14.1.4 修改内核的运行参数
+
+#### 加载内核模块
+
+```bash
+$ cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+
+$ sudo modprobe overlay
+$ sudo modprobe br_netfilter
+```
+
+#### cgroup v2 要求：必须
+
+Kubernetes 自 v1.35 起弃用 cgroup v1，默认要求节点使用 cgroup v2。从 v1.35 开始，kubelet 在 cgroup v1 节点上默认会拒绝启动，但管理员可以在 kubelet 配置中设置 `failCgroupV1: false` 来兼容 cgroup v1（仅建议用于遗留系统过渡期）。验证节点是否支持 cgroup v2：
+
+```bash
+$ mount | grep cgroup2
+```
+
+如果输出包含 `cgroup2`，则系统已支持 cgroup v2。对于仍在使用 cgroup v1 的系统（如较旧的 RHEL 8），建议升级内核或更新系统配置以启用 cgroup v2。
+
+#### 禁用 swap：必须
+
+kubelet 默认要求禁用 swap，否则可能导致初始化失败或节点无法加入集群。
+
+```bash
+$ sudo swapoff -a
+
+# 如需永久禁用，可在 /etc/fstab 中注释 swap 对应行
+```
+```bash
+$ cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+
+# 应用配置
+
+$ sudo sysctl --system
+```
+
+### 14.1.5 配置 kubelet
+
+为了让 kubelet 正确运行，我们需要对其进行一些必要的配置。
+
+#### 修改 `kubelet.service`（可选：IPVS 模式）
+
+> **注意**：kube-proxy 的 IPVS 模式已在 Kubernetes 1.35 中被标记为弃用；Kubernetes 1.36 文档仍将其列为已弃用模式，并推荐迁移到 nftables。新部署应使用默认的 iptables 模式或 nftables 模式（Kubernetes 1.33+ 稳定）。以下 IPVS 配置仅供旧环境参考。
+
+`/etc/systemd/system/kubelet.service.d/10-proxy-ipvs.conf` 写入以下内容
+
+```bash
+# 启用 ipvs 相关内核模块（已弃用，建议迁移至 nftables）
+
+[Service]
+ExecStartPre=-/sbin/modprobe ip_vs
+ExecStartPre=-/sbin/modprobe ip_vs_rr
+ExecStartPre=-/sbin/modprobe ip_vs_wrr
+ExecStartPre=-/sbin/modprobe ip_vs_sh
+```
+执行以下命令应用配置。
+
+```bash
+$ sudo systemctl daemon-reload
+```
+
+### 14.1.6 部署
+
+安装配置完成后，我们将分别在 Master 节点和 Worker 节点上进行部署操作。
+
+#### master
+
+```bash
+$ sudo systemctl enable containerd
+
+$ sudo systemctl start containerd
+
+$ sudo kubeadm init \
+      --pod-network-cidr 10.244.0.0/16 \
+      --cri-socket unix:///run/containerd/containerd.sock \
+      --v 5
+```
+
+* `--pod-network-cidr 10.244.0.0/16` 参数与后续 CNI 插件有关，这里以 `flannel` 为例，若后续部署其他类型的网络插件请更改此参数。
+* kubeadm 默认使用 `registry.k8s.io` 拉取 Kubernetes 控制平面镜像。受限网络环境可通过 kubeadm 配置文件中的 `imageRepository` 指向受信任镜像仓库；不要把第三方镜像仓库当成通用默认值。
+
+> 若 `kubeadm` 预检失败，应按提示修复缺失依赖、内核参数、swap 或运行时配置。实验环境确需忽略预检时，只忽略明确理解且可接受的单项检查，不建议使用 `--ignore-preflight-errors=all`。
+
+执行成功会输出
+
+```bash
+...
+[addons] Applied essential addon: CoreDNS
+I1116 12:35:13.270407   86677 request.go:538] Throttling request took 181.409184ms, request: POST:https://<CONTROL_PLANE_HOST>:6443/api/v1/namespaces/kube-system/serviceaccounts
+I1116 12:35:13.470292   86677 request.go:538] Throttling request took 186.088112ms, request: POST:https://<CONTROL_PLANE_HOST>:6443/api/v1/namespaces/kube-system/configmaps
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join <CONTROL_PLANE_HOST>:6443 --token <TOKEN> \
+    --discovery-token-ca-cert-hash sha256:<DISCOVERY_TOKEN_CA_CERT_HASH>
+```
+
+#### node 工作节点
+
+在 **另一主机** 重复 **部署** 小节以前的步骤，安装配置好 kubelet。根据提示，加入到集群。
+
+```bash
+$ sudo systemctl enable containerd
+
+$ sudo systemctl start containerd
+
+$ kubeadm join <CONTROL_PLANE_HOST>:6443 \
+    --token <TOKEN> \
+    --discovery-token-ca-cert-hash sha256:<DISCOVERY_TOKEN_CA_CERT_HASH> \
+    --cri-socket unix:///run/containerd/containerd.sock
+```
+
+其中 `<CONTROL_PLANE_HOST>`、`<TOKEN>` 和 `<DISCOVERY_TOKEN_CA_CERT_HASH>` 应使用你自己的 `kubeadm init` 输出，不要复用示例值。
+
+### 14.1.7 查看服务
+
+所有服务启动后，通过 `crictl` 查看本地实际运行的容器。这些服务大概分为三类：主节点服务、工作节点服务和其他服务。
+
+```bash
+CONTAINER_RUNTIME_ENDPOINT=unix:///run/containerd/containerd.sock crictl ps -a
+```
+
+#### 主节点服务
+
+* `apiserver` 是整个系统的对外接口，提供 RESTful 方式供客户端和其他组件调用；
+
+* `scheduler` 负责对资源进行调度，分配某个 pod 到某个节点上；
+
+* `controller-manager` 负责管理控制器，包括 endpoint-controller（刷新服务和 pod 的关联信息）和 replication-controller（维护某个 pod 的复制为配置的数值）。
+
+#### 工作节点服务
+
+* `proxy` 为 pod 上的服务提供访问的代理。
+
+#### 其他服务
+
+* Etcd 是所有状态的存储数据库；
+
+### 14.1.8 使用
+
+将 `/etc/kubernetes/admin.conf` 复制到 `~/.kube/config`
+
+执行 `$ kubectl get all -A` 查看启动的服务。
+
+由于未部署 CNI 插件，CoreDNS 未正常启动。如何使用 Kubernetes，请参考后续章节。
+
+### 14.1.9 部署 CNI
+
+这里以 `flannel` 为例进行介绍。
+
+#### flannel
+
+检查 podCIDR 设置
+
+```bash
+$ kubectl get node -o yaml | grep CIDR
+
+# 输出
+
+    podCIDR: 10.244.0.0/16
+    podCIDRs:
+```
+```bash
+# 注意：以下以 v0.28.4 为示例；安装前请到 releases 页面核验当前版本
+# 参见 https://github.com/flannel-io/flannel/releases
+$ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/v0.28.4/Documentation/kube-flannel.yml
+```
+
+### 14.1.10 master 节点默认不能运行 pod
+
+如果用 `kubeadm` 部署一个单节点集群，默认情况下无法使用，请执行以下命令解除限制
+
+```bash
+$ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+
+# 较旧版本使用 master taint
+
+# $ kubectl taint nodes --all node-role.kubernetes.io/master-
+
+# 恢复默认值
+
+# $ kubectl taint nodes NODE_NAME node-role.kubernetes.io/control-plane=true:NoSchedule
+
+...
+```

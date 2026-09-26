@@ -1,0 +1,138 @@
+## 6.1 Docker Hub
+
+### 6.1.1 什么是 Docker Hub
+
+Docker Hub 是 Docker 的中央镜像仓库，通过它您可以轻松地分享和获取 Docker 镜像。
+
+
+[Docker Hub](https://hub.docker.com/) 是 Docker 官方维护的公共镜像仓库，也是全球最大的容器镜像库。
+
+它提供了：
+
+- **官方镜像**：由 Docker 官方和软件厂商（如 Nginx，MySQL，Node.js）维护的高质量镜像。
+- **个人/组织仓库**：用户可以上传自己的镜像。
+- **自动构建**：与 GitHub/Bitbucket 集成的历史功能，Docker 已标记为 deprecated，并计划于 2027-04-01 完全退役。
+- **Webhooks**：镜像更新时触发回调。
+
+---
+
+### 6.1.2 核心功能
+
+#### 1. 搜索镜像
+
+我们可以通过 `docker search` 命令来查找官方仓库中的镜像，并利用 `docker pull` 命令来将它下载到本地。
+
+
+除了网页搜索，也可以使用命令行：
+
+```bash
+$ docker search centos
+NAME      DESCRIPTION                                  STARS     OFFICIAL
+centos    DEPRECATED; The official build of CentOS.    7000+     [OK]
+```
+> **技巧**：始终优先使用 `OFFICIAL` 标记为 `[OK]` 的镜像，安全性更有保障。
+
+#### 2. 拉取镜像
+
+```bash
+$ docker pull nginx:alpine
+```
+
+#### 3. 推送镜像
+
+需要先登录：
+
+```bash
+$ docker login
+
+## 默认情况下，不带其他参数进行 docker login 会自动走 Device Code Web Flow (浏览器认证)
+## 若在非交互 CI 环境中，推荐结合 --username 与 --password-stdin 参数使用
+
+...
+```
+打标签并推送：
+
+```bash
+## 1. 标记镜像
+
+$ docker tag myapp:v1 username/myapp:v1
+
+## 2. 推送
+
+$ docker push username/myapp:v1
+```
+---
+
+### 6.1.3 限制与配额
+
+#### 镜像拉取限制
+
+Docker Hub 对不同类型用户实施拉取速率限制（基于 6 小时周期）：
+
+| 用户类型 | 限制 |
+|---------|------|
+| **匿名用户**（未登录）| 每 6 小时 100 次请求 |
+| **免费账户**（已登录）| 每 6 小时 200 次请求 |
+| **Pro/Team/Business 账户** | 无限制（公平使用政策） |
+
+> **注意**：Docker 曾计划于 2025 年 4 月调整拉取限制策略，但在 2025 年 2 月宣布取消该计划。目前付费订阅用户享有无限制拉取额度，匿名用户和免费账户的限制保持不变。建议在 CI/CD 环境中始终配置 `docker login` 以获得更高的拉取额度。
+
+#### 滥用限流
+
+除了上述针对特定账号拉取镜像数量的 Pull Rate Limit 之外，Docker Hub 对所有用户（包含已认证及付费用户）还实施了 **滥用保护限流 (Abuse Rate Limiting)**。它是根据网络出口 IP（IPv4 或 IPv6 /64 子网）计算整体请求频率，阈值动态触发（通常为每分钟数千级别请求）。
+
+**两类的差异与排查方法**：
+
+- **Pull Rate Limit**：针对拉取量达到上限。报错返回 `429 Too Many Requests`，并且 HTTP 返回体/CLI 错误提示中会带有明确的 `toomanyrequests: You have reached your pull rate limit` 提示，常附有账户升级链接。
+- **Abuse Rate Limit**：防范接口频率打击。报错仅返回简化的 `429 Too Many Requests`。这一限流不分付费与否，常发生在“多终端共享出口 IP”的企业局域网或者第三方云 CI 服务（如 GitHub Actions 等）中，即使你已正常配置 `docker login` 也依旧可能触发。
+
+> **提示**：如果在 CI/CD 等环境遇到 429 错误，建议：
+> 1. 先甄别具体是哪类限流：普通的 pull rate limit 只要在 CI 中配置 `docker login`（并使用有效账号）就能解除匿名限制。
+> 2. 如果是 Abuse 频控导致，应考虑搭建私有仓库作为拉取缓存代理 (Registry pull-through cache)，避免频繁直接请求官方 Hub。
+> 3. 使用国内镜像加速器。
+
+---
+
+### 6.1.4 安全最佳实践
+
+#### 1. 启用 2FA：双因素认证
+
+为了保护您的 Docker Hub 账号安全，我们建议采取以下措施。
+
+
+在 Account Settings -> Security 中启用 2FA，保护账号安全。启用后，CLI 登录需要使用 **Access Token** 而非密码。
+
+#### 2. 使用 Access Token
+
+> **⚠️ 警告**：绝不要在脚本或 CI/CD 系统中，直接使用 `-p` 参数传递密码或 Token（类似 `docker login -p xxx`）！这会导致凭证直接暴露在系统的命令历史、进程列表和终端输出中。
+
+1. 在 Docker Hub -> Account Settings -> Security -> Access Tokens 创建 Token (PAT)。
+2. 将 Token 保存在权限受限的本地文件或 CI secret 中，再通过标准输入 (stdin) 传递给 Docker，避免把真实 Token 写进脚本、命令历史或日志：
+
+```bash
+$ chmod 600 "$HOME/.dockerhub-token"
+$ cat "$HOME/.dockerhub-token" | docker login --username username --password-stdin
+```
+
+#### 3. 关注镜像漏洞
+
+Docker Hub 提供 Docker Scout 安全扫描功能。官方镜像的漏洞扫描结果对所有用户免费可见。Docker Scout 的持续扫描功能在免费层可以覆盖 1 个私有仓库，付费用户可以扫描更多仓库。在镜像标签页可以看到漏洞扫描结果。
+
+---
+
+### 6.1.5 Webhooks
+
+当镜像被推送时，可以自动触发 HTTP 回调（例如通知 CI 系统部署）。
+
+**配置方法**：
+仓库页面 -> Webhooks -> Create Webhook。
+
+---
+
+### 6.1.6 自动构建
+
+> ⚠️ Docker Hub Automated Builds 已被 Docker 标记为 deprecated，并计划于 2027-04-01 完全退役；新项目应优先使用 GitHub Actions、Buildx 或自有 CI 构建并推送镜像。
+
+对于仍在迁移期内的旧仓库，链接 GitHub/Bitbucket 仓库后，当代码有提交或打标签时，Docker Hub 会自动运行构建。不要把它作为新架构的默认方案。
+
+---

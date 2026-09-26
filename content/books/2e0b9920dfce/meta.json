@@ -1,0 +1,9 @@
+{
+  "bookId": "2e0b9920dfce",
+  "title": "Linux工具快速教程",
+  "url": "https://github.com/me115/linuxtools_rst",
+  "status": "failed",
+  "fetchedAt": "2026-09-26T18:52:31.349Z",
+  "chapters": [],
+  "error": "子目录不存在: "
+}

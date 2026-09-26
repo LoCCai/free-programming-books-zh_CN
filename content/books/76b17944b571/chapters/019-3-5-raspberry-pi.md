@@ -1,0 +1,192 @@
+## 3.5 Raspberry Pi
+
+树莓派等 ARM 架构设备在物联网和边缘计算领域应用广泛。本节介绍如何在树莓派上安装 Docker。
+
+### 树莓派运行 Docker 的现实考虑
+
+树莓派是 Docker 在边缘计算的一个优秀用例。但在安装前，笔者建议你了解几个实际情况：
+
+**性能特性**：
+
+- Raspberry Pi 4 及以上才能流畅运行 Docker 和基本容器
+- Raspberry Pi Zero 2 可以运行，但性能受限
+- 磁盘 I/O 是主要瓶颈（特别是使用 microSD 卡时）
+
+**镜像可用性**：
+
+- 并非所有 Docker 镜像都有 ARM 版本（arm64 或 armv7）
+- 官方镜像通常提供多架构支持，但第三方镜像可能没有
+- 某些依赖 Intel 特定指令的应用无法在 ARM 上运行
+
+**存储和内存**：
+
+- 容器镜像会占用较多存储空间，128GB microSD 卡建议最多运行 3-4 个中等大小的容器
+- 512MB 或 1GB 内存的树莓派运行多个容器会非常吃力
+
+**实践建议**：树莓派 Docker 部署最适合轻量级应用——单个微服务、监控代理、Web 服务器等。复杂多容器应用还是应该部署在性能更强的硬件上。
+
+> 警告：切勿在没有配置 Docker APT 源的情况下直接使用 apt 命令安装 Docker。
+
+### 3.5.1 系统要求
+
+Docker 对 ARM 架构有着良好的支持。
+
+Docker 可以运行在多种 CPU 架构上，但本小节**只聚焦 Raspberry Pi OS 32-bit (armhf)** 的官方安装流程；如果你使用的是 64 位 Raspberry Pi OS，请直接参考 Debian `arm64` 安装说明。
+
+Docker 官方目前单独提供的是 **Raspberry Pi OS 32-bit (armhf)** 安装页（具体以官方 [安装文档](https://docs.docker.com/engine/install/raspberry-pi-os/) 为准），支持情况如下：
+
+* Raspberry Pi OS Bookworm
+* Raspberry Pi OS Bullseye
+
+> **重要提醒**：Docker Engine v28 是官方最后一个支持 Raspberry Pi OS 32-bit (armhf) 的大版本。从 v29 开始，32 位 Raspberry Pi OS 不再提供新主版本软件包。若你使用的是 64 位 Raspberry Pi OS，请直接参考 Debian `arm64` 安装方式。
+
+*注：*`Raspberry Pi OS` 由树莓派的开发与维护机构[树莓派基金会](https://www.raspberrypi.org/)官方支持，并推荐用作树莓派的首选系统，其基于 `Debian`。
+
+### 3.5.2 使用 APT 安装
+
+推荐使用 APT 包管理器进行安装，以确保版本的稳定性和安全性。
+
+先安装基础依赖，并准备密钥目录：
+
+```bash
+$ sudo apt-get update
+
+$ sudo apt-get install \
+     ca-certificates \
+     curl \
+     gnupg
+```
+默认建议优先使用 Docker 官方仓库；如果企业内网维护了受信任镜像站，可自行替换仓库 URL。
+
+为了确认所下载软件包的合法性，需要添加软件源的 GPG 密钥。
+
+```bash
+$ sudo install -m 0755 -d /etc/apt/keyrings
+$ sudo curl -fsSL https://download.docker.com/linux/raspbian/gpg -o /etc/apt/keyrings/docker.asc
+$ sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
+然后，我们需要向 `sources.list` 中添加 Docker 软件源：
+
+```bash
+$ sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/raspbian
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+```
+> 以上命令会添加稳定版本的 Docker APT 源，如果需要测试版本的 Docker 请将 stable 改为 test。
+
+#### 报错解决办法
+
+在 `Raspberry Pi OS Bullseye/Bookworm` 中，如果你使用 `add-apt-repository` 添加源，可能会出现如下报错。官方当前更推荐的做法是**不要继续回退到旧式单行 `deb` 配置**，而是直接使用上面的 `docker.sources` 文件方式写入仓库：
+
+```bash
+Traceback (most recent call last):
+ File "/usr/bin/add-apt-repository", line 95, in <module>
+   sp = SoftwareProperties(options=options)
+ File "/usr/lib/python3/dist-packages/softwareproperties/SoftwareProperties.py", line 109, in __init__
+   self.reload_sourceslist()
+ File "/usr/lib/python3/dist-packages/softwareproperties/SoftwareProperties.py", line 599, in reload_sourceslist
+   self.distro.get_sources(self.sourceslist)
+ File "/usr/lib/python3/dist-packages/aptsources/distro.py", line 91, in get_sources
+   raise NoDistroTemplateException(
+aptsources.distro.NoDistroTemplateException: Error: could not find a distribution template for Raspbian/bullseye
+```
+如果之前已经写入了错误的源配置，建议先删除旧条目，再重新执行本节前面的 `docker.asc + docker.sources` 两步。
+
+#### 安装 Docker
+
+更新 apt 软件包缓存，并安装 Docker Engine 及常用 CLI 插件。
+
+```bash
+$ sudo apt-get update
+
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+### 3.5.3 使用脚本自动安装
+
+在测试或开发环境中，Docker 官方提供了便捷安装脚本，但官方明确不建议把它作为生产环境的标准安装方式。
+
+在真正执行前，建议先用 `--dry-run` 预览脚本动作：
+
+```bash
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh ./get-docker.sh --dry-run
+
+# 若需要测试频道：
+# curl -fsSL https://test.docker.com -o test-docker.sh
+# sudo sh ./test-docker.sh
+
+```
+确认无误后，再执行 `sudo sh ./get-docker.sh` 安装稳定版。如果你运行的是 64 位 Raspberry Pi OS，更推荐直接迁移到 Debian `arm64` 安装路径，而不是继续停留在 32 位 armhf 流程上。
+
+### 3.5.4 启动 Docker
+
+```bash
+$ sudo systemctl enable --now docker
+```
+
+### 3.5.5 建立 docker 用户组
+
+默认情况下，`docker` 命令会使用 [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket) 与 Docker 引擎通讯。而只有 `root` 用户和 `docker` 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 `root` 用户。因此，更好的做法是将需要使用 `docker` 的用户加入 `docker` 用户组。
+
+> ⚠️ **安全警告：`docker` 用户组等同于 `root` 权限**
+>
+> 将用户加入 `docker` 组免去了每次执行 `docker` 命令时输入 `sudo` 的繁琐，但这也意味着该用户可以轻易获取主机的最高 root 权限（例如通过挂载根目录运行容器）。
+> 如果你在一个多用户共享的生产系统上配置，切勿随意将普通用户加入此组。此时，更安全的替代方案是使用官方提供的 **[Rootless 模式 (Rootless mode)](https://docs.docker.com/engine/security/rootless/)**，它允许在没有任何 root 权限的情况下运行 Docker 守护进程和容器。
+
+建立 `docker` 组：
+
+```bash
+$ sudo groupadd docker
+```
+将当前用户加入 `docker` 组：
+
+```bash
+$ sudo usermod -aG docker $USER
+```
+退出当前终端并重新登录，进行如下测试。
+
+### 3.5.6 测试 Docker 是否安装正确
+
+```bash
+$ docker run --rm hello-world
+
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+4ee5c797bcd7: Pull complete
+Digest: sha256:308866a43596e83578c7dfa15e27a73011bdd402185a84c5cd7f32a88b501a24
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm32v7)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
+若能正常输出以上信息，则说明安装成功。
+
+*注意：* ARM 平台不能使用 `x86` 镜像，查看 Raspberry Pi OS 可使用镜像请访问 [arm32v7](https://hub.docker.com/u/arm32v7/) 或者 [arm64v8](https://hub.docker.com/u/arm64v8/)。
+
+### 3.5.7 镜像加速
+
+如果在使用过程中发现拉取 Docker 镜像十分缓慢，可以配置 Docker [国内镜像加速](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/03_install/3.9_mirror.md)。

@@ -1,0 +1,39 @@
+## 本章小结
+
+本章深入介绍了 Docker 的底层实现，包括命名空间、控制组和联合文件系统三大核心技术。
+
+| 技术 | 作用 | 要点 |
+|------|------|------|
+| **Namespace** | 资源隔离 | Docker 默认启用 PID、NET、MNT、UTS、IPC（cgroup v2 主机上还有 Cgroup）；USER 默认**不**启用，Time 未被使用 |
+| **Cgroups** | 资源限制 | 限制 CPU、内存、磁盘 I/O、进程数 |
+| **Union FS** | 分层存储 | 镜像分层与 Copy-on-Write 是核心；Engine 29 新装默认 containerd image store，overlay2 是经典 graph driver 场景的主要后备 |
+
+| Namespace | 隔离内容 | 一句话说明 |
+|-----------|---------|-----------|
+| PID | 进程 ID | 容器有自己的进程树 |
+| NET | 网络 | 容器有自己的 IP 和端口 |
+| MNT | 文件系统 | 容器有自己的根目录 |
+| UTS | 主机名 | 容器有自己的 hostname |
+| IPC | 进程间通信 | 容器间 IPC 隔离 |
+| USER | 用户 ID | 启用 `userns-remap` 后容器 root 才 ≠ 宿主机 root；**默认不启用** |
+
+| 资源 | 限制参数 | 示例 |
+|------|---------|------|
+| **内存** | `-m` | `-m 512m` |
+| **CPU 核心数** | `--cpus` | `--cpus=1.5` |
+| **CPU 绑定** | `--cpuset-cpus` | `--cpuset-cpus="0,1"` |
+| **磁盘 I/O** | `--device-write-bps` | `--device-write-bps /dev/sda:10mb` |
+| **进程数** | `--pids-limit` | `--pids-limit=100` |
+
+### 延伸阅读
+
+- [命名空间](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/12_implementation/12.2_namespace.md)：资源隔离机制详解
+- [控制组 (Cgroups)](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/12_implementation/12.3_cgroups.md)：资源限制机制
+- [联合文件系统](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/12_implementation/12.4_ufs.md)：分层存储的实现
+- [安全](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/18_security/README.md)：容器安全实践
+- [镜像](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/02_basic_concept/2.1_image.md)：理解镜像分层
+- [容器](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/02_basic_concept/2.2_container.md)：容器存储层
+- [构建镜像](https://raw.githubusercontent.com/yeasy/docker_practice/HEAD/04_image/4.5_build.md)：Dockerfile 层的创建
+---
+
+> 📝 **发现错误或有改进建议？** 欢迎提交 [Issue](https://github.com/yeasy/docker_practice/issues) 或 [PR](https://github.com/yeasy/docker_practice/pulls)。
