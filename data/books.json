@@ -1,0 +1,5540 @@
+[
+  {
+    "id": "730c3ef54b34",
+    "title": "[笔记]前端工程师的入门与进阶",
+    "url": "https://shenbao.github.io/2017/04/22/justjavac-live/",
+    "description": "",
+    "categoryPath": [
+      "置顶"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 88
+  },
+  {
+    "id": "b9d86efaea63",
+    "title": "[全文]如何正确的学习 Node.js",
+    "url": "https://github.com/i5ting/How-to-learn-node-correctly",
+    "description": "",
+    "categoryPath": [
+      "置顶"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 89
+  },
+  {
+    "id": "629d4571c013",
+    "title": "开源世界旅行手册",
+    "url": "http://i.linuxtoy.org/docs/guide/index.html",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 93
+  },
+  {
+    "id": "8a3cda82d93a",
+    "title": "鸟哥的Linux私房菜",
+    "url": "http://linux.vbird.org/",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 94
+  },
+  {
+    "id": "86bc60d9eccb",
+    "title": "The Linux Command Line",
+    "url": "http://billie66.github.io/TLCL/index.html",
+    "description": "(中英文版)",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 95
+  },
+  {
+    "id": "0f5641562ed3",
+    "title": "UNIX TOOLBOX",
+    "url": "http://cb.vu/unixtoolbox_zh_CN.xhtml",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 96
+  },
+  {
+    "id": "61f0fba0e7c8",
+    "title": "Docker中文指南",
+    "url": "https://github.com/widuu/chinese_docker",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 97
+  },
+  {
+    "id": "76b17944b571",
+    "title": "Docker —— 从入门到实践",
+    "url": "https://github.com/yeasy/docker_practice",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 98
+  },
+  {
+    "id": "699a5fefd2c3",
+    "title": "Docker入门实战",
+    "url": "http://yuedu.baidu.com/ebook/d817967416fc700abb68fca1",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 99
+  },
+  {
+    "id": "f6afe78972bc",
+    "title": "Docker Cheat Sheet",
+    "url": "https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn#docker-cheat-sheet",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 100
+  },
+  {
+    "id": "d0be49f327b8",
+    "title": "FreeRADIUS新手入门",
+    "url": "http://freeradius.akagi201.org",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 101
+  },
+  {
+    "id": "5497cc7a9cb0",
+    "title": "Mac 开发配置手册",
+    "url": "https://aaaaaashu.gitbooks.io/mac-dev-setup/content/",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 102
+  },
+  {
+    "id": "9410be42c318",
+    "title": "FreeBSD 使用手册",
+    "url": "https://www.freebsd.org/doc/zh_CN/books/handbook/index.html",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 103
+  },
+  {
+    "id": "5742090c45e7",
+    "title": "Linux 命令行(中文版)",
+    "url": "http://billie66.github.io/TLCL/book/",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 104
+  },
+  {
+    "id": "6136c2c5c78c",
+    "title": "Linux 构建指南",
+    "url": "https://www.jinbuguo.com/lfs/lfs62/index.html",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 105
+  },
+  {
+    "id": "2e0b9920dfce",
+    "title": "Linux工具快速教程",
+    "url": "https://github.com/me115/linuxtools_rst",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 106
+  },
+  {
+    "id": "f43a3913afd0",
+    "title": "Linux Documentation (中文版)",
+    "url": "https://www.gitbook.com/book/tinylab/linux-doc/details",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 107
+  },
+  {
+    "id": "7097c5195197",
+    "title": "嵌入式 Linux 知识库 (eLinux.org 中文版)",
+    "url": "https://www.gitbook.com/book/tinylab/elinux/details",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 108
+  },
+  {
+    "id": "60554edfccab",
+    "title": "理解Linux进程",
+    "url": "https://github.com/tobegit3hub/understand_linux_process",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 109
+  },
+  {
+    "id": "43083ce62475",
+    "title": "命令行的艺术",
+    "url": "https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 110
+  },
+  {
+    "id": "11c438b71650",
+    "title": "SystemTap新手指南",
+    "url": "https://spacewander.gitbooks.io/systemtapbeginnersguide_zh/content/index.html",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 111
+  },
+  {
+    "id": "439b4e5b6e4f",
+    "title": "操作系统思考",
+    "url": "https://github.com/wizardforcel/think-os-zh",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 112
+  },
+  {
+    "id": "cc1aa35a1689",
+    "title": "Linux 内核实验",
+    "url": "https://linux-kernel-labs-zh.github.io/",
+    "description": "",
+    "categoryPath": [
+      "操作系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 113
+  },
+  {
+    "id": "b5c1daefdc0a",
+    "title": "大语言模型",
+    "url": "https://github.com/LLMBook-zh/LLMBook-zh.github.io",
+    "description": "（中国人民大学）",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 118
+  },
+  {
+    "id": "db614d3adf35",
+    "title": "大模型基础",
+    "url": "https://github.com/ZJU-LLMs/Foundations-of-LLMs",
+    "description": "（浙江大学）",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 119
+  },
+  {
+    "id": "ffbca88e2857",
+    "title": "Happy-LLM：从零开始的大语言模型原理与实践教程",
+    "url": "https://github.com/datawhalechina/happy-llm",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 120
+  },
+  {
+    "id": "03532acae388",
+    "title": "动手学大模型 Dive into LLMs",
+    "url": "https://github.com/Lordog/dive-into-llms",
+    "description": "（上海交通大学）",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 121
+  },
+  {
+    "id": "cf4cfc1e0770",
+    "title": "开源大模型食用指南 Self-LLM",
+    "url": "https://github.com/datawhalechina/self-llm",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 122
+  },
+  {
+    "id": "aea3fa1d4df4",
+    "title": "动手学大模型应用开发",
+    "url": "https://github.com/datawhalechina/llm-universe",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 123
+  },
+  {
+    "id": "1766b36ec2a1",
+    "title": "RAG 技术全栈指南",
+    "url": "https://github.com/datawhalechina/all-in-rag",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 124
+  },
+  {
+    "id": "cac4408a57d1",
+    "title": "面向开发者的 LLM 入门教程",
+    "url": "https://github.com/datawhalechina/llm-cookbook",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 125
+  },
+  {
+    "id": "5535012bfb20",
+    "title": "Hello-Agents：从零开始构建智能体",
+    "url": "https://github.com/datawhalechina/hello-agents",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 126
+  },
+  {
+    "id": "6f83c4b98e8b",
+    "title": "深入理解 AI Agent：设计原理与工程实践",
+    "url": "https://github.com/bojieli/ai-agent-book",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 127
+  },
+  {
+    "id": "6bab5df5cc5d",
+    "title": "Hugging Face Agents Course",
+    "url": "https://github.com/huggingface/agents-course",
+    "description": "（含中文版）",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 128
+  },
+  {
+    "id": "af16f2fecfcc",
+    "title": "Vibe Vibe：人人都能学会的 AI 编程指南",
+    "url": "https://github.com/datawhalechina/vibe-vibe",
+    "description": "",
+    "categoryPath": [
+      "AI"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 129
+  },
+  {
+    "id": "27335a7889b4",
+    "title": "一步步搭建物联网系统",
+    "url": "https://github.com/phodal/designiot",
+    "description": "",
+    "categoryPath": [
+      "智能系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 134
+  },
+  {
+    "id": "499583e2988c",
+    "title": "走向分布式",
+    "url": "http://dcaoyuan.github.io/papers/pdfs/Scalability.pdf",
+    "description": "",
+    "categoryPath": [
+      "分布式系统"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 139
+  },
+  {
+    "id": "ce7efff41f3e",
+    "title": "《计算机程序的结构和解释》公开课 翻译项目",
+    "url": "https://github.com/DeathKing/Learning-SICP",
+    "description": "",
+    "categoryPath": [
+      "编译原理"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 144
+  },
+  {
+    "id": "e50edaf134de",
+    "title": "傻瓜函数编程",
+    "url": "https://github.com/justinyhuang/Functional-Programming-For-The-Rest-of-Us-Cn",
+    "description": "",
+    "categoryPath": [
+      "函数式概念"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 149
+  },
+  {
+    "id": "39fab88f0b3c",
+    "title": "OpenGL 教程",
+    "url": "https://github.com/zilongshanren/opengl-tutorials",
+    "description": "",
+    "categoryPath": [
+      "计算机图形学"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 154
+  },
+  {
+    "id": "64876a52cf4a",
+    "title": "《Real-Time Rendering 3rd》提炼总结",
+    "url": "https://github.com/QianMo/Real-Time-Rendering-3rd-Summary-Ebook",
+    "description": "",
+    "categoryPath": [
+      "计算机图形学"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 155
+  },
+  {
+    "id": "3e90d40d9e14",
+    "title": "Nginx开发从入门到精通",
+    "url": "http://tengine.taobao.org/book/index.html",
+    "description": "(淘宝团队出品)",
+    "categoryPath": [
+      "WEB服务器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 161
+  },
+  {
+    "id": "898deebb7ba2",
+    "title": "Nginx教程从入门到精通",
+    "url": "https://github.com/parieses/source/blob/master/Nginx%E6%95%99%E7%A8%8B%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E8%BF%90%E7%BB%B4%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4TTLSA%E5%87%BA%E5%93%81).pdf",
+    "description": "(PDF版本，运维生存时间出品)",
+    "categoryPath": [
+      "WEB服务器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 162
+  },
+  {
+    "id": "cd19eed0756f",
+    "title": "OpenResty最佳实践",
+    "url": "https://www.gitbook.com/book/moonbingbing/openresty-best-practices/details",
+    "description": "",
+    "categoryPath": [
+      "WEB服务器"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 163
+  },
+  {
+    "id": "0800b770f940",
+    "title": "Apache 中文手册",
+    "url": "https://www.jinbuguo.com/apache/manual/index.html",
+    "description": "",
+    "categoryPath": [
+      "WEB服务器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 164
+  },
+  {
+    "id": "f74cde9941ef",
+    "title": "Learn Git - complete book in Chinese",
+    "url": "https://www.git-tower.com/learn/git/ebook/cn/command-line/",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 170
+  },
+  {
+    "id": "38e494737bc1",
+    "title": "Git Cheat Sheet",
+    "url": "https://www.git-tower.com/blog/git-cheat-sheet-cn",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 171
+  },
+  {
+    "id": "e3b4277792f1",
+    "title": "Git教程",
+    "url": "http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000",
+    "description": "（本文由 廖雪峰 创作，如果觉得本教程对您有帮助，可以去 iTunes 购买）",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 172
+  },
+  {
+    "id": "039eac54a0d5",
+    "title": "git - 简易指南",
+    "url": "http://rogerdudler.github.io/git-guide/index.zh.html",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 173
+  },
+  {
+    "id": "c0e366102d80",
+    "title": "猴子都能懂的GIT入门",
+    "url": "http://backlogtool.com/git-guide/cn/",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 174
+  },
+  {
+    "id": "ac4d4e38ed80",
+    "title": "Git 参考手册",
+    "url": "http://gitref.justjavac.com",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 175
+  },
+  {
+    "id": "cda8ba3febfe",
+    "title": "Pro Git",
+    "url": "http://git-scm.com/book/zh/v2",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 176
+  },
+  {
+    "id": "a6b90b5fb99f",
+    "title": "Pro Git 中文版",
+    "url": "https://www.gitbook.com/book/0532/progit/details",
+    "description": "(整理在gitbook上)",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 177
+  },
+  {
+    "id": "c1e5599e321f",
+    "title": "Git Magic",
+    "url": "http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 178
+  },
+  {
+    "id": "28c12cb9cd08",
+    "title": "GotGitHub",
+    "url": "http://www.worldhello.net/gotgithub/index.html",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 179
+  },
+  {
+    "id": "a3a43893dcdd",
+    "title": "Git权威指南",
+    "url": "http://www.worldhello.net/gotgit/",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 180
+  },
+  {
+    "id": "642e5dd08b4d",
+    "title": "Git Community Book 中文版",
+    "url": "http://gitbook.liuhui998.com/index.html",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 181
+  },
+  {
+    "id": "488a745b253b",
+    "title": "Mercurial 使用教程",
+    "url": "https://www.mercurial-scm.org/wiki/ChineseTutorial",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 182
+  },
+  {
+    "id": "4915eedcbad2",
+    "title": "沉浸式学 Git",
+    "url": "http://igit.linuxtoy.org",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 183
+  },
+  {
+    "id": "110af8cac0ac",
+    "title": "Git-Cheat-Sheet",
+    "url": "https://github.com/flyhigher139/Git-Cheat-Sheet",
+    "description": "（感谢 @flyhigher139 翻译了中文版）",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 184
+  },
+  {
+    "id": "7547fc9958fd",
+    "title": "GitHub秘籍",
+    "url": "https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 185
+  },
+  {
+    "id": "b8cdf947f4fc",
+    "title": "GitHub帮助文档",
+    "url": "https://github.com/waylau/github-help",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 186
+  },
+  {
+    "id": "4176ccdcbeb2",
+    "title": "git-flow 备忘清单",
+    "url": "http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 187
+  },
+  {
+    "id": "58e19a11adf8",
+    "title": "svn 手册",
+    "url": "http://svnbook.red-bean.com/nightly/zh/index.html",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 188
+  },
+  {
+    "id": "0fb0b83be795",
+    "title": "GitHub漫游指南",
+    "url": "https://github.com/phodal/github-roam",
+    "description": "",
+    "categoryPath": [
+      "版本控制"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 189
+  },
+  {
+    "id": "e220bf8ebabd",
+    "title": "exvim--vim 改良成IDE项目",
+    "url": "http://exvim.github.io/docs-zh/intro/",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 195
+  },
+  {
+    "id": "0feb43577551",
+    "title": "笨方法学Vimscript 中译本",
+    "url": "http://learnvimscriptthehardway.onefloweroneworld.com/",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 196
+  },
+  {
+    "id": "fc52d32860a4",
+    "title": "Vim中文文档",
+    "url": "https://github.com/vimcn/vimcdoc",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 197
+  },
+  {
+    "id": "b8e0687274fc",
+    "title": "21天学会Emacs",
+    "url": "http://book.emacs-china.org/",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 198
+  },
+  {
+    "id": "7383fd497fd8",
+    "title": "一年成为Emacs高手 (像神一样使用编辑器)",
+    "url": "https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 199
+  },
+  {
+    "id": "7b00c2f0f3ea",
+    "title": "所需即所获：像 IDE 一样使用 vim",
+    "url": "https://github.com/yangyangwithgnu/use_vim_as_ide",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 200
+  },
+  {
+    "id": "df666d733f8d",
+    "title": "vim 实操教程",
+    "url": "https://github.com/dofy/learn-vim",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 201
+  },
+  {
+    "id": "0fec93be9b1e",
+    "title": "Atom飞行手册中文版",
+    "url": "https://github.com/wizardforcel/atom-flight-manual-zh-cn",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 202
+  },
+  {
+    "id": "a90c2b244c3a",
+    "title": "Markdown·简单的世界",
+    "url": "https://github.com/wizardforcel/markdown-simple-world",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 203
+  },
+  {
+    "id": "7383fd497fd8-2",
+    "title": "一年成为 Emacs 高手",
+    "url": "https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 204
+  },
+  {
+    "id": "25b032b94a61",
+    "title": "Emacs 生存指南",
+    "url": "http://lifegoo.pluskid.org/upload/blog/152/Survive.in.Emacs.pdf",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 205
+  },
+  {
+    "id": "664907c46294",
+    "title": "Atom官方手册",
+    "url": "https://atom-china.org/t/atom/62",
+    "description": "",
+    "categoryPath": [
+      "编辑器"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 206
+  },
+  {
+    "id": "975ace063dae",
+    "title": "Redis 设计与实现",
+    "url": "http://redisbook.com/",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 212
+  },
+  {
+    "id": "65f3eeac14ee",
+    "title": "Redis 命令参考",
+    "url": "http://redisdoc.com/",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 213
+  },
+  {
+    "id": "afc21c2476ab",
+    "title": "带有详细注释的 Redis 3.0 代码",
+    "url": "https://github.com/huangz1990/redis-3.0-annotated",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 214
+  },
+  {
+    "id": "e117bcd369aa",
+    "title": "带有详细注释的 Redis 2.6 代码",
+    "url": "https://github.com/huangz1990/annotated_redis_source",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 215
+  },
+  {
+    "id": "abc3323efd6a",
+    "title": "The Little MongoDB Book",
+    "url": "https://github.com/justinyhuang/the-little-mongodb-book-cn/blob/master/mongodb.md",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 216
+  },
+  {
+    "id": "ae3c259098b9",
+    "title": "The Little Redis Book",
+    "url": "https://github.com/JasonLai256/the-little-redis-book/blob/master/cn/redis.md",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 217
+  },
+  {
+    "id": "bfbaffb5b78d",
+    "title": "Neo4j .rb 中文資源",
+    "url": "https://web.archive.org/web/20130716014446/http://neo4j.tw/",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 218
+  },
+  {
+    "id": "af0560afac3d",
+    "title": "Apache Spark 设计与实现",
+    "url": "https://github.com/JerryLead/SparkInternals/tree/master/markdown",
+    "description": "",
+    "categoryPath": [
+      "NoSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 219
+  },
+  {
+    "id": "b2eb2fd40b00",
+    "title": "PostgreSQL 8.2.3 中文文档",
+    "url": "https://www.jinbuguo.com/postgresql/manual/index.html",
+    "description": "",
+    "categoryPath": [
+      "PostgreSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 225
+  },
+  {
+    "id": "1e85dc2d7620",
+    "title": "PostgreSQL 9.3.1 中文文档",
+    "url": "http://www.postgres.cn/docs/9.3/index.html",
+    "description": "",
+    "categoryPath": [
+      "PostgreSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 226
+  },
+  {
+    "id": "5684df927fe7",
+    "title": "PostgreSQL 9.5.3 中文文档",
+    "url": "http://www.postgres.cn/docs/9.5/index.html",
+    "description": "",
+    "categoryPath": [
+      "PostgreSQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 227
+  },
+  {
+    "id": "25a39bc4f363",
+    "title": "MySQL索引背后的数据结构及算法原理",
+    "url": "http://blog.codinglabs.org/articles/theory-of-mysql-index.html",
+    "description": "",
+    "categoryPath": [
+      "MySQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 233
+  },
+  {
+    "id": "f12a6fdf2873",
+    "title": "21分钟MySQL入门教程",
+    "url": "http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html",
+    "description": "",
+    "categoryPath": [
+      "MySQL"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 234
+  },
+  {
+    "id": "7c753b9a3c59",
+    "title": "ElasticSearch 权威指南",
+    "url": "https://www.gitbook.com/book/fuxiaopang/learnelasticsearch/details",
+    "description": "",
+    "categoryPath": [
+      "管理和监控"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 240
+  },
+  {
+    "id": "07110a6136be",
+    "title": "Logstash 最佳实践",
+    "url": "https://github.com/chenryn/logstash-best-practice-cn",
+    "description": "",
+    "categoryPath": [
+      "管理和监控"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 241
+  },
+  {
+    "id": "fbdebeac7816",
+    "title": "持续集成（第二版）",
+    "url": "http://article.yeeyan.org/view/2251/94882",
+    "description": "(译言网)",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 247
+  },
+  {
+    "id": "2ae5135afb7c",
+    "title": "让开发自动化系列专栏",
+    "url": "https://web.archive.org/web/20181023074323/https://www.ibm.com/developerworks/cn/java/j-ap/",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 248
+  },
+  {
+    "id": "398336145a33",
+    "title": "追求代码质量",
+    "url": "https://web.archive.org/web/20181023194039/https://www.ibm.com/developerworks/cn/java/j-cq/",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 249
+  },
+  {
+    "id": "3241e7ba0d82",
+    "title": "Selenium Webdriver 简易教程",
+    "url": "https://github.com/it-ebooks-0/it-ebooks-2016-allinone/blob/master/Selenium%20Webdriver%20%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B.epub",
+    "description": "(EPUB)",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 250
+  },
+  {
+    "id": "10232e0785be",
+    "title": "Gradle 2 用户指南",
+    "url": "https://github.com/waylau/Gradle-2-User-Guide",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 251
+  },
+  {
+    "id": "b7ea405d2d69",
+    "title": "Gradle 中文使用文档",
+    "url": "http://yuedu.baidu.com/ebook/f23af265998fcc22bcd10da2",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 252
+  },
+  {
+    "id": "29fbae3510a4",
+    "title": "编码规范",
+    "url": "https://github.com/ecomfe/spec",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 253
+  },
+  {
+    "id": "39966eeeedc8",
+    "title": "开源软件架构",
+    "url": "http://www.ituring.com.cn/book/1143",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 254
+  },
+  {
+    "id": "5372c615ad36",
+    "title": "GNU make 指南",
+    "url": "http://docs.huihoo.com/gnu/linux/gmake.html",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 255
+  },
+  {
+    "id": "5c04b95582f2",
+    "title": "The Twelve-Factor App",
+    "url": "http://12factor.net/zh_cn/",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 256
+  },
+  {
+    "id": "e1286749d441",
+    "title": "Software Engineering at Google",
+    "url": "https://github.com/qiangmzsx/Software-Engineering-at-Google",
+    "description": "",
+    "categoryPath": [
+      "项目相关"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 257
+  },
+  {
+    "id": "beb874455d27",
+    "title": "图说设计模式",
+    "url": "https://github.com/me115/design_patterns",
+    "description": "",
+    "categoryPath": [
+      "设计模式"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 263
+  },
+  {
+    "id": "a60539b9855d",
+    "title": "史上最全设计模式导学目录",
+    "url": "http://blog.csdn.net/lovelion/article/details/17517213",
+    "description": "",
+    "categoryPath": [
+      "设计模式"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 264
+  },
+  {
+    "id": "92c77815d0de",
+    "title": "design pattern 包教不包会",
+    "url": "https://github.com/MiaoJoy/Design-Pattern",
+    "description": "",
+    "categoryPath": [
+      "设计模式"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 265
+  },
+  {
+    "id": "866ed4869537",
+    "title": "设计模式 Java 版",
+    "url": "https://quanke.gitbooks.io/design-pattern-java/content/",
+    "description": "",
+    "categoryPath": [
+      "设计模式"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 266
+  },
+  {
+    "id": "8f9f575f7236",
+    "title": "设计模式目录",
+    "url": "https://refactoringguru.cn/design-patterns/catalog",
+    "description": "",
+    "categoryPath": [
+      "设计模式"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 267
+  },
+  {
+    "id": "9edb4df0cda0",
+    "title": "关于浏览器和网络的 20 项须知",
+    "url": "http://www.20thingsilearned.com/zh-CN/home",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 273
+  },
+  {
+    "id": "1c7e0796e96f",
+    "title": "浏览器开发工具的秘密",
+    "url": "http://jinlong.github.io/2013/08/29/devtoolsecrets/",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 274
+  },
+  {
+    "id": "e38b12ae6127",
+    "title": "Chrome 开发者工具中文手册",
+    "url": "https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 275
+  },
+  {
+    "id": "3040a7312315",
+    "title": "Chrome扩展开发文档",
+    "url": "http://open.chrome.360.cn/extension_dev/overview.html",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 276
+  },
+  {
+    "id": "e29057cb2c68",
+    "title": "Grunt中文文档",
+    "url": "http://www.gruntjs.net/",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 277
+  },
+  {
+    "id": "6352d1a8251f",
+    "title": "gulp中文文档",
+    "url": "http://www.gulpjs.com.cn/docs/",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 278
+  },
+  {
+    "id": "6a24b79fbdeb",
+    "title": "Gulp 入门指南",
+    "url": "https://github.com/nimojs/gulp-book",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 279
+  },
+  {
+    "id": "7df4ff84c53a",
+    "title": "移动Web前端知识库",
+    "url": "https://github.com/AlloyTeam/Mars",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 280
+  },
+  {
+    "id": "3adeb43f8d59",
+    "title": "正则表达式30分钟入门教程",
+    "url": "http://deerchao.net/tutorials/regex/regex.htm",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 281
+  },
+  {
+    "id": "658b6de4ca4d",
+    "title": "前端开发体系建设日记",
+    "url": "https://github.com/fouber/blog/issues/2",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 282
+  },
+  {
+    "id": "570336f5eeea",
+    "title": "移动前端开发收藏夹",
+    "url": "https://github.com/hoosin/mobile-web-favorites",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 283
+  },
+  {
+    "id": "0ceff9326204",
+    "title": "JSON风格指南",
+    "url": "https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 284
+  },
+  {
+    "id": "59057e626faf",
+    "title": "HTTP 接口设计指北",
+    "url": "https://github.com/bolasblack/http-api-guide",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 285
+  },
+  {
+    "id": "5f7dd8191858",
+    "title": "前端资源分享（一）",
+    "url": "https://github.com/hacke2/hacke2.github.io/issues/1",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 286
+  },
+  {
+    "id": "74af7c4e3b1b",
+    "title": "前端资源分享（二）",
+    "url": "https://github.com/hacke2/hacke2.github.io/issues/3",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 287
+  },
+  {
+    "id": "f78003e53849",
+    "title": "前端代码规范 及 最佳实践",
+    "url": "http://coderlmn.github.io/code-standards/",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 288
+  },
+  {
+    "id": "fcb6ad018fc3",
+    "title": "前端开发者手册",
+    "url": "https://www.gitbook.com/book/dwqs/frontenddevhandbook/details",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 289
+  },
+  {
+    "id": "3c4667080c1e",
+    "title": "前端工程师手册",
+    "url": "https://www.gitbook.com/book/leohxj/front-end-database/details",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 290
+  },
+  {
+    "id": "2ffc9d8904ac",
+    "title": "一站式学习Wireshark",
+    "url": "https://community.emc.com/thread/194901",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 291
+  },
+  {
+    "id": "debbbaba5612",
+    "title": "HTTP 下午茶",
+    "url": "https://ccbikai.gitbooks.io/http-book/content/",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 292
+  },
+  {
+    "id": "a954aa7211d4",
+    "title": "HTTP/2.0 中文翻译",
+    "url": "http://yuedu.baidu.com/ebook/478d1a62376baf1ffc4fad99?pn=1",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 293
+  },
+  {
+    "id": "74a48849400e",
+    "title": "RFC 7540 - HTTP/2 中文翻译版",
+    "url": "https://github.com/abbshr/rfc7540-translation-zh_cn",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 294
+  },
+  {
+    "id": "c1dfeaa0d95f",
+    "title": "http2讲解",
+    "url": "https://www.gitbook.com/book/ye11ow/http2-explained/details",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 295
+  },
+  {
+    "id": "d8077b9b5475",
+    "title": "3 Web Designs in 3 Weeks",
+    "url": "https://www.gitbook.com/book/juntao/3-web-designs-in-3-weeks/details",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 296
+  },
+  {
+    "id": "10ec709f3b19",
+    "title": "Web安全学习笔记",
+    "url": "https://websec.readthedocs.io",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 297
+  },
+  {
+    "id": "ac57e602a8bf",
+    "title": "Serverless 架构应用开发指南",
+    "url": "https://github.com/phodal/serverless",
+    "description": "",
+    "categoryPath": [
+      "Web"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 298
+  },
+  {
+    "id": "68eae8651abb",
+    "title": "数据挖掘中经典的算法实现和详细的注释",
+    "url": "https://github.com/linyiqun/DataMiningAlgorithm",
+    "description": "",
+    "categoryPath": [
+      "大数据"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 304
+  },
+  {
+    "id": "da1ac58a26da",
+    "title": "Spark 编程指南简体中文版",
+    "url": "https://aiyanbo.gitbooks.io/spark-programming-guide-zh-cn/content/",
+    "description": "",
+    "categoryPath": [
+      "大数据"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 305
+  },
+  {
+    "id": "70d87c12d230",
+    "title": "程序员编程艺术",
+    "url": "https://github.com/julycoding/The-Art-Of-Programming-by-July",
+    "description": "",
+    "categoryPath": [
+      "编程艺术"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 311
+  },
+  {
+    "id": "a01736e11428",
+    "title": "每个程序员都应该了解的内存知识(译)",
+    "url": "http://www.oschina.net/translate/what-every-programmer-should-know-about-memory-part1?print",
+    "description": "【第一部分】",
+    "categoryPath": [
+      "编程艺术"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 312
+  },
+  {
+    "id": "162b9d5f2fe4",
+    "title": "游戏引擎 浅入浅出",
+    "url": "https://github.com/ThisisGame/cpp-game-engine-book",
+    "description": "",
+    "categoryPath": [
+      "游戏引擎"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 318
+  },
+  {
+    "id": "0289d5d9797c",
+    "title": "labuladong 的算法小抄",
+    "url": "https://github.com/labuladong/fucking-algorithm",
+    "description": "",
+    "categoryPath": [
+      "算法"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 324
+  },
+  {
+    "id": "a6e4449d8769",
+    "title": "OpenWrt智能、自动、透明翻墙路由器教程",
+    "url": "https://www.gitbook.com/book/softwaredownload/openwrt-fanqiang/details",
+    "description": "",
+    "categoryPath": [
+      "其它"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 330
+  },
+  {
+    "id": "57d84ec31b98",
+    "title": "SAN 管理入门系列",
+    "url": "https://community.emc.com/docs/DOC-16067",
+    "description": "",
+    "categoryPath": [
+      "其它"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 331
+  },
+  {
+    "id": "fcaab2741f1a",
+    "title": "Sketch 中文手册",
+    "url": "http://sketchcn.com/sketch-chinese-user-manual.html#introduce",
+    "description": "",
+    "categoryPath": [
+      "其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 332
+  },
+  {
+    "id": "a7e69ed2938e",
+    "title": "深入理解并行编程",
+    "url": "http://ifeve.com/perfbook/",
+    "description": "",
+    "categoryPath": [
+      "其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 333
+  },
+  {
+    "id": "d3422b0b2670",
+    "title": "程序员的自我修养",
+    "url": "http://www.kancloud.cn/kancloud/a-programmer-prepares",
+    "description": "",
+    "categoryPath": [
+      "其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 334
+  },
+  {
+    "id": "b102ad30d46c",
+    "title": "Growth: 全栈增长工程师指南",
+    "url": "https://github.com/phodal/growth-ebook",
+    "description": "",
+    "categoryPath": [
+      "其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 335
+  },
+  {
+    "id": "022e7a219c1a",
+    "title": "系统重构与迁移指南",
+    "url": "https://github.com/phodal/migration",
+    "description": "",
+    "categoryPath": [
+      "其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 336
+  },
+  {
+    "id": "7afa15be2b99",
+    "title": "译本一",
+    "url": "https://wcc723.gitbooks.io/google_design_translate/content/style-icons.html",
+    "description": "译本二)",
+    "categoryPath": [
+      "Android"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 342
+  },
+  {
+    "id": "8642ee901c3f",
+    "title": "Material Design 中文版",
+    "url": "http://wiki.jikexueyuan.com/project/material-design/",
+    "description": "",
+    "categoryPath": [
+      "Android"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 343
+  },
+  {
+    "id": "8f370bf138d1",
+    "title": "Google Android官方培训课程中文版",
+    "url": "http://hukai.me/android-training-course-in-chinese/index.html",
+    "description": "",
+    "categoryPath": [
+      "Android"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 344
+  },
+  {
+    "id": "f7d1cd27a75f",
+    "title": "Android开发技术前线(android-tech-frontier)",
+    "url": "https://github.com/bboyfeiyu/android-tech-frontier",
+    "description": "",
+    "categoryPath": [
+      "Android"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 345
+  },
+  {
+    "id": "2d559a064344",
+    "title": "Point-of-Android",
+    "url": "https://github.com/FX-Max/Point-of-Android",
+    "description": "Android 一些重要知识点解析整理",
+    "categoryPath": [
+      "Android"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 346
+  },
+  {
+    "id": "0fe3336fa524",
+    "title": "Android6.0新特性详解",
+    "url": "http://leanote.com/blog/post/561658f938f41126b2000298",
+    "description": "",
+    "categoryPath": [
+      "Android"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 347
+  },
+  {
+    "id": "ad057e8711f0",
+    "title": "Apache Cordova 开发指南",
+    "url": "https://github.com/waylau/cordova-dev-guide",
+    "description": "",
+    "categoryPath": [
+      "APP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 353
+  },
+  {
+    "id": "ef9eec169b80",
+    "title": "awk程序设计语言",
+    "url": "https://github.com/wuzhouhui/awk",
+    "description": "",
+    "categoryPath": [
+      "AWK"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 359
+  },
+  {
+    "id": "bb34552140d9",
+    "title": "awk中文指南",
+    "url": "https://awk.readthedocs.io/en/latest/index.html",
+    "description": "",
+    "categoryPath": [
+      "AWK"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 360
+  },
+  {
+    "id": "cf7f594abac2",
+    "title": "awk实战指南",
+    "url": "https://book.saubcy.com/AwkInAction/",
+    "description": "",
+    "categoryPath": [
+      "AWK"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 361
+  },
+  {
+    "id": "3d4ac0b724bc",
+    "title": "C/C++ 中文参考手册",
+    "url": "http://zh.cppreference.com/",
+    "description": "(欢迎大家参与在线翻译和校对)",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 367
+  },
+  {
+    "id": "8700333cff42",
+    "title": "C 语言编程透视",
+    "url": "https://www.gitbook.com/book/tinylab/cbook/details",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 368
+  },
+  {
+    "id": "33297fdfc1f4",
+    "title": "C++ 并发编程指南",
+    "url": "https://github.com/forhappy/Cplusplus-Concurrency-In-Practice",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 369
+  },
+  {
+    "id": "70294a8fdcad",
+    "title": "Linux C编程一站式学习",
+    "url": "http://akaedu.github.io/book/",
+    "description": "(宋劲杉, 北京亚嵌教育研究中心)",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 370
+  },
+  {
+    "id": "cfc480e98c9e",
+    "title": "CGDB中文手册",
+    "url": "https://github.com/leeyiw/cgdb-manual-in-chinese",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 371
+  },
+  {
+    "id": "96203a1d9cd5",
+    "title": "100个gdb小技巧",
+    "url": "https://github.com/hellogcc/100-gdb-tips/blob/master/src/index.md",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 372
+  },
+  {
+    "id": "7a8c8c145a9a",
+    "title": "100个gcc小技巧",
+    "url": "https://github.com/hellogcc/100-gcc-tips/blob/master/src/index.md",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 373
+  },
+  {
+    "id": "513b468101df",
+    "title": "ZMQ 指南",
+    "url": "https://github.com/anjuke/zguide-cn",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 374
+  },
+  {
+    "id": "e9842b3e1d34",
+    "title": "How to Think Like a Computer Scientist",
+    "url": "http://www.ituring.com.cn/book/1203",
+    "description": "(中英文版)",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 375
+  },
+  {
+    "id": "556cbe9f640a",
+    "title": "跟我一起写 Makefile",
+    "url": "https://github.com/seisman/how-to-write-makefile",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 376
+  },
+  {
+    "id": "7051fb2df6c4",
+    "title": "GNU make中文手册",
+    "url": "https://github.com/Jing--Li/book/blob/master/PL%20GNU%20make%20%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C.pdf",
+    "description": "(PDF)",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 377
+  },
+  {
+    "id": "5372c615ad36-2",
+    "title": "GNU make 指南",
+    "url": "http://docs.huihoo.com/gnu/linux/gmake.html",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 378
+  },
+  {
+    "id": "d954e300a54c",
+    "title": "Google C++ 风格指南",
+    "url": "https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents.html",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 379
+  },
+  {
+    "id": "f4f3c43866cf",
+    "title": "C/C++ Primer",
+    "url": "https://github.com/andycai/cprimer",
+    "description": "(by @andycai)",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 380
+  },
+  {
+    "id": "b0243cc0253d",
+    "title": "简单易懂的C魔法",
+    "url": "http://www.nowamagic.net/librarys/books/contents/c",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 381
+  },
+  {
+    "id": "2460c9acd827",
+    "title": "C++ FAQ LITE(中文版)",
+    "url": "http://www.sunistudio.com/cppfaq/",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 382
+  },
+  {
+    "id": "a29c08a728fa",
+    "title": "C++ Primer 5th Answers",
+    "url": "https://github.com/Mooophy/Cpp-Primer",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 383
+  },
+  {
+    "id": "c489b315124c",
+    "title": "C++ 并发编程(基于C++11)",
+    "url": "https://www.gitbook.com/book/chenxiaowei/cpp_concurrency_in_action/details",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 384
+  },
+  {
+    "id": "365a3f82e3eb",
+    "title": "DevBean的《Qt学习之路2》(Qt5)",
+    "url": "http://www.devbean.net/category/qt-study-road-2/",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 385
+  },
+  {
+    "id": "15385aa1d6e4",
+    "title": "中文版《QmlBook》",
+    "url": "https://github.com/cwc1987/QmlBook-In-Chinese",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 386
+  },
+  {
+    "id": "8916f09e4675",
+    "title": "C++ Template 进阶指南",
+    "url": "https://github.com/wuye9036/CppTemplateTutorial",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 387
+  },
+  {
+    "id": "ca357bb5ad18",
+    "title": "libuv中文教程",
+    "url": "https://github.com/luohaha/Chinese-uvbook",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 388
+  },
+  {
+    "id": "81d8ac5bf9a1",
+    "title": "Boost 库中文教程",
+    "url": "http://zh.highscore.de/cpp/boost/",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 389
+  },
+  {
+    "id": "6086dee8d9be",
+    "title": "笨办法学C",
+    "url": "https://github.com/wizardforcel/lcthw-zh",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 390
+  },
+  {
+    "id": "8a40d1bb2b30",
+    "title": "高速上手 C++11/14/17",
+    "url": "https://github.com/changkun/modern-cpp-tutorial",
+    "description": "",
+    "categoryPath": [
+      "C/C++"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 391
+  },
+  {
+    "id": "fc0ad5db316c",
+    "title": "Microsoft Docs C# 官方文档",
+    "url": "https://docs.microsoft.com/zh-cn/dotnet/csharp/",
+    "description": "",
+    "categoryPath": [
+      "C#"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 397
+  },
+  {
+    "id": "dcced953946b",
+    "title": "ASP.NET MVC 5 入门指南",
+    "url": "http://www.cnblogs.com/powertoolsteam/p/aspnetmvc5-tutorials-grapecity.html",
+    "description": "",
+    "categoryPath": [
+      "C#"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 398
+  },
+  {
+    "id": "c8d047e6d8f8",
+    "title": "超全面的 .NET GDI+ 图形图像编程教程",
+    "url": "http://www.cnblogs.com/geeksss/p/4162318.html",
+    "description": "",
+    "categoryPath": [
+      "C#"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 399
+  },
+  {
+    "id": "41bd221c85ff",
+    "title": ".NET控件开发基础",
+    "url": "https://github.com/JackWangCUMT/customcontrol",
+    "description": "",
+    "categoryPath": [
+      "C#"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 400
+  },
+  {
+    "id": "23adafe97f8e",
+    "title": ".NET开发要点精讲（初稿）",
+    "url": "https://github.com/sherlockchou86/-free-ebook-.NET-",
+    "description": "",
+    "categoryPath": [
+      "C#"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 401
+  },
+  {
+    "id": "e82663181e85",
+    "title": "Clojure入门教程",
+    "url": "https://wizardforcel.gitbooks.io/clojure-fpftj/",
+    "description": "",
+    "categoryPath": [
+      "Clojure"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 407
+  },
+  {
+    "id": "37cf74afe321",
+    "title": "学习CSS布局",
+    "url": "http://zh.learnlayout.com/",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 413
+  },
+  {
+    "id": "6b5365de8bc3",
+    "title": "通用 CSS 笔记、建议与指导",
+    "url": "https://github.com/chadluo/CSS-Guidelines/blob/master/README.md",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 414
+  },
+  {
+    "id": "11b9a89824f9",
+    "title": "CSS参考手册",
+    "url": "http://css.doyoe.com/",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 415
+  },
+  {
+    "id": "60c499976cfd",
+    "title": "Emmet 文档",
+    "url": "http://yanxyz.github.io/emmet-docs/",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 416
+  },
+  {
+    "id": "0cefd5edfb42",
+    "title": "前端代码规范",
+    "url": "http://alloyteam.github.io/CodeGuide/",
+    "description": "(腾讯 AlloyTeam 团队)",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 417
+  },
+  {
+    "id": "27be074ee758",
+    "title": "HTML和CSS编码规范",
+    "url": "http://codeguide.bootcss.com/",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 418
+  },
+  {
+    "id": "c878045a2af8",
+    "title": "Sass Guidelines 中文",
+    "url": "http://sass-guidelin.es/zh/",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 419
+  },
+  {
+    "id": "9a87ae618e11",
+    "title": "CSS3 Tutorial 《CSS3 教程》",
+    "url": "https://github.com/waylau/css3-tutorial",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 420
+  },
+  {
+    "id": "48cd09ea615d",
+    "title": "MDN HTML 中文文档",
+    "url": "https://developer.mozilla.org/zh-CN/docs/Web/HTML",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 421
+  },
+  {
+    "id": "888fed689fa5",
+    "title": "MDN CSS 中文文档",
+    "url": "https://developer.mozilla.org/zh-CN/docs/Web/CSS",
+    "description": "",
+    "categoryPath": [
+      "CSS/HTML"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 422
+  },
+  {
+    "id": "9f5742334c95",
+    "title": "Elixir编程入门",
+    "url": "https://github.com/straightdave/programming_elixir",
+    "description": "",
+    "categoryPath": [
+      "Elixir"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 428
+  },
+  {
+    "id": "dd36cd59cd96",
+    "title": "Fortran77和90/95编程入门",
+    "url": "http://micro.ustc.edu.cn/Fortran/ZJDing/",
+    "description": "",
+    "categoryPath": [
+      "Fortran"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 434
+  },
+  {
+    "id": "059a52255891",
+    "title": "Go语言圣经",
+    "url": "https://gopl-zh.github.io/",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 440
+  },
+  {
+    "id": "953c73c955d6",
+    "title": "Go语言高级编程",
+    "url": "https://chai2010.cn/advanced-go-programming-book/",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 441
+  },
+  {
+    "id": "4f9004ff9477",
+    "title": "Go语言定制指南",
+    "url": "https://chai2010.cn/go-ast-book/",
+    "description": "（原名：Go语法树入门）",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 442
+  },
+  {
+    "id": "9bd7003cd771",
+    "title": "Go语言设计与实现",
+    "url": "https://draveness.me/golang/",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 443
+  },
+  {
+    "id": "08dbb3820677",
+    "title": "Go编程基础",
+    "url": "https://github.com/Unknwon/go-fundamental-programming",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 444
+  },
+  {
+    "id": "5ce4f07f3067",
+    "title": "Go入门指南",
+    "url": "https://github.com/Unknwon/the-way-to-go_ZH_CN",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 445
+  },
+  {
+    "id": "b583e2233fbe",
+    "title": "学习Go语言",
+    "url": "http://mikespook.com/learning-go/",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 446
+  },
+  {
+    "id": "f0985cf1950f",
+    "title": "Go Web 编程",
+    "url": "https://github.com/astaxie/build-web-application-with-golang",
+    "description": "(此书已经出版，希望开发者们去购买，支持作者的创作)",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 447
+  },
+  {
+    "id": "440bd273d897",
+    "title": "Go实战开发",
+    "url": "https://github.com/astaxie/Go-in-Action",
+    "description": "(当我收录此项目时，作者已经写完第三章，如果读完前面章节觉得有帮助，可以给作者捐赠，以鼓励作者的继续创作)",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 448
+  },
+  {
+    "id": "f67d553521e9",
+    "title": "Network programming with Go 中文翻译版本",
+    "url": "https://github.com/astaxie/NPWG_zh",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 449
+  },
+  {
+    "id": "9988ff57f5ba",
+    "title": "Go 语言标准库",
+    "url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 450
+  },
+  {
+    "id": "1e80b229929a",
+    "title": "Java程序员的Golang入门指南",
+    "url": "http://blog.csdn.net/dc_726/article/details/46565241",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 451
+  },
+  {
+    "id": "2d161ea679bf",
+    "title": "Go命令教程",
+    "url": "https://github.com/hyper-carrot/go_command_tutorial",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 452
+  },
+  {
+    "id": "2085bc9a61e1",
+    "title": "Go语言博客实践",
+    "url": "https://github.com/achun/Go-Blog-In-Action",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 453
+  },
+  {
+    "id": "10ffd6de7641",
+    "title": "Go 官方文档翻译",
+    "url": "https://github.com/golang-china/golangdoc.translations",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 454
+  },
+  {
+    "id": "b0c135661a32",
+    "title": "深入解析Go",
+    "url": "https://github.com/tiancaiamao/go-internals",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 455
+  },
+  {
+    "id": "2cd908b32800",
+    "title": "golang runtime源码分析",
+    "url": "https://github.com/sheepbao/golang_runtime_reading",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 456
+  },
+  {
+    "id": "544f18192475",
+    "title": "Go语言实战: 编写可维护Go语言代码建议",
+    "url": "https://github.com/llitfkitfk/go-best-practice",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 457
+  },
+  {
+    "id": "9cc236e35e85",
+    "title": "Golang 系列教程(译)",
+    "url": "https://github.com/Tinywan/golang-tutorial",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 458
+  },
+  {
+    "id": "dce585da2b6e",
+    "title": "Go RPC 开发指南",
+    "url": "https://github.com/smallnest/go-rpc-programming-guide",
+    "description": "GitBook",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 459
+  },
+  {
+    "id": "f79febb6a25c",
+    "title": "Go语言设计模式",
+    "url": "https://github.com/senghoo/golang-design-pattern",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 460
+  },
+  {
+    "id": "ceb9dc866a2c",
+    "title": "Go语言四十二章经",
+    "url": "https://github.com/ffhelicopter/Go42",
+    "description": "",
+    "categoryPath": [
+      "Go"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 461
+  },
+  {
+    "id": "8093f226abc0",
+    "title": "Real World Haskell 中文版",
+    "url": "https://rwh.readthedocs.io/en/latest/",
+    "description": "",
+    "categoryPath": [
+      "Haskell"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 467
+  },
+  {
+    "id": "2283f93d7aae",
+    "title": "iOS开发60分钟入门",
+    "url": "https://github.com/qinjx/30min_guides/blob/master/ios.md",
+    "description": "",
+    "categoryPath": [
+      "iOS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 473
+  },
+  {
+    "id": "a717fe55b485",
+    "title": "iOS7人机界面指南",
+    "url": "http://isux.tencent.com/ios-human-interface-guidelines-ui-design-basics-ios7.html",
+    "description": "",
+    "categoryPath": [
+      "iOS"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 474
+  },
+  {
+    "id": "35c29d87fdff",
+    "title": "Google Objective-C Style Guide 中文版",
+    "url": "https://zh-google-styleguide.readthedocs.io/en/latest/google-objc-styleguide/",
+    "description": "",
+    "categoryPath": [
+      "iOS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 475
+  },
+  {
+    "id": "dea15a06d875",
+    "title": "iPhone 6 屏幕揭秘",
+    "url": "http://wileam.com/iphone-6-screen-cn/",
+    "description": "",
+    "categoryPath": [
+      "iOS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 476
+  },
+  {
+    "id": "923467bd0149",
+    "title": "马上着手开发 iOS 应用程序",
+    "url": "https://developer.apple.com/library/archive/referencelibrary/GettingStarted/RoadMapiOSCh-Legacy/index.html",
+    "description": "",
+    "categoryPath": [
+      "iOS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 477
+  },
+  {
+    "id": "3b78a5c49d09",
+    "title": "网易斯坦福大学公开课：iOS 7应用开发字幕文件",
+    "url": "https://github.com/jkyin/Subtitle",
+    "description": "",
+    "categoryPath": [
+      "iOS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 478
+  },
+  {
+    "id": "97ff62125d84",
+    "title": "Apache Shiro 用户指南",
+    "url": "https://github.com/waylau/apache-shiro-1.2.x-reference",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 484
+  },
+  {
+    "id": "c08e2d913b3f",
+    "title": "Jersey 2.x 用户指南",
+    "url": "https://github.com/waylau/Jersey-2.x-User-Guide",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 485
+  },
+  {
+    "id": "aa3f985fa9c8",
+    "title": "Spring Framework 4.x参考文档",
+    "url": "https://github.com/waylau/spring-framework-4-reference",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 486
+  },
+  {
+    "id": "c8ba8e0ab9d7",
+    "title": "Spring Boot参考指南",
+    "url": "https://github.com/qibaoguang/Spring-Boot-Reference-Guide",
+    "description": "(翻译中)",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 487
+  },
+  {
+    "id": "7711bd6bb3a6",
+    "title": "Spring 系列中文参考指南",
+    "url": "https://github.com/jcohy/jcohy-docs",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 488
+  },
+  {
+    "id": "b1bfaf84af03",
+    "title": "MyBatis中文文档",
+    "url": "https://mybatis.org/mybatis-3/zh_CN/index.html",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 489
+  },
+  {
+    "id": "df0810cca166",
+    "title": "用jersey构建REST服务",
+    "url": "https://github.com/waylau/RestDemo",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 490
+  },
+  {
+    "id": "269d18a30739",
+    "title": "Activiti 5.x 用户指南",
+    "url": "https://github.com/waylau/activiti-5.x-user-guide",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 491
+  },
+  {
+    "id": "3c0841ca5a47",
+    "title": "Google Java编程风格指南",
+    "url": "https://hawstein.com/2014/01/20/google-java-style/",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 492
+  },
+  {
+    "id": "9e93145a352f",
+    "title": "Netty 4.x 用户指南",
+    "url": "https://github.com/waylau/netty-4-user-guide",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 493
+  },
+  {
+    "id": "51d988dce1c2",
+    "title": "Netty 实战(精髓)",
+    "url": "https://github.com/waylau/essential-netty-in-action",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 494
+  },
+  {
+    "id": "944aed4431ef",
+    "title": "REST 实战",
+    "url": "https://github.com/waylau/rest-in-action",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 495
+  },
+  {
+    "id": "72ffb40c5496",
+    "title": "Java 编码规范",
+    "url": "https://github.com/waylau/java-code-conventions",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 496
+  },
+  {
+    "id": "ecb45e1c54e5",
+    "title": "Apache MINA 2 用户指南",
+    "url": "https://github.com/waylau/apache-mina-2.x-user-guide",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 497
+  },
+  {
+    "id": "45c3509df73d",
+    "title": "H2 Database 教程",
+    "url": "https://github.com/waylau/h2-database-doc",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 498
+  },
+  {
+    "id": "ed186c5f34e2",
+    "title": "Java Servlet 3.1 规范",
+    "url": "https://github.com/waylau/servlet-3.1-specification",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 499
+  },
+  {
+    "id": "55f3b6368a05",
+    "title": "JSSE 参考指南",
+    "url": "https://github.com/waylau/jsse-reference-guide",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 500
+  },
+  {
+    "id": "1ea59dac6e61",
+    "title": "Java开源实现及最佳实践",
+    "url": "https://github.com/biezhi/jb",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 501
+  },
+  {
+    "id": "42c25ce8e2b9",
+    "title": "Java 编程要点",
+    "url": "https://github.com/waylau/essential-java",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 502
+  },
+  {
+    "id": "c1b204346f33",
+    "title": "Think Java",
+    "url": "http://www.ituring.com.cn/minibook/69",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 503
+  },
+  {
+    "id": "ccaf8d1d5821",
+    "title": "Java 8 简明教程",
+    "url": "https://github.com/wizardforcel/modern-java-zh",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 504
+  },
+  {
+    "id": "cd75d7508def",
+    "title": "On Java 8 中文版",
+    "url": "https://github.com/LingCoder/OnJava8",
+    "description": "(翻译中)",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 505
+  },
+  {
+    "id": "3decd96742db",
+    "title": "Effective Java 第3版中文版",
+    "url": "https://github.com/sjsdfg/effective-java-3rd-chinese",
+    "description": "",
+    "categoryPath": [
+      "Java"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 506
+  },
+  {
+    "id": "5f5ad7ed5220",
+    "title": "现代 Javascript 教程",
+    "url": "https://zh.javascript.info/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 512
+  },
+  {
+    "id": "0ceff9326204-2",
+    "title": "Google JSON 风格指南",
+    "url": "https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 513
+  },
+  {
+    "id": "29e7ff67f465",
+    "title": "Airbnb JavaScript 规范",
+    "url": "https://github.com/adamlu/javascript-style-guide",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 514
+  },
+  {
+    "id": "c145529432f8",
+    "title": "JavaScript 标准参考教程（alpha）",
+    "url": "http://javascript.ruanyifeng.com/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 515
+  },
+  {
+    "id": "17f4bf4f3844",
+    "title": "Javascript编程指南",
+    "url": "http://pij.robinqu.me/",
+    "description": "(源码)",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 516
+  },
+  {
+    "id": "c712dff15af6",
+    "title": "javascript 的 12 个怪癖",
+    "url": "https://github.com/justjavac/12-javascript-quirks",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 517
+  },
+  {
+    "id": "e33051302764",
+    "title": "《JavaScript 模式》",
+    "url": "https://github.com/jayli/javascript-patterns",
+    "description": "“JavaScript patterns”中译本",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 518
+  },
+  {
+    "id": "73f3f445ac0d",
+    "title": "JavaScript语言精粹",
+    "url": "https://github.com/qibaoguang/Study-Step-by-Step/blob/master/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/javascript_the_good_parts.md",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 519
+  },
+  {
+    "id": "24c9c7e893d0",
+    "title": "命名函数表达式探秘",
+    "url": "http://justjavac.com/named-function-expressions-demystified.html",
+    "description": "(注:原文由为之漫笔翻译，原始地址无法打开，所以此处地址为我博客上的备份)",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 520
+  },
+  {
+    "id": "31aed779fe7a",
+    "title": "学用 JavaScript 设计模式",
+    "url": "http://www.oschina.net/translate/learning-javascript-design-patterns",
+    "description": "(开源中国)",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 521
+  },
+  {
+    "id": "d6b21fd3f8d9",
+    "title": "深入理解JavaScript系列",
+    "url": "http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 522
+  },
+  {
+    "id": "d4ba5f3a30d9",
+    "title": "ECMAScript 5.1 中文版",
+    "url": "http://yanhaijing.com/es5",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 523
+  },
+  {
+    "id": "560422d3323b",
+    "title": "ECMAScript 6 入门",
+    "url": "http://es6.ruanyifeng.com/",
+    "description": "(作者：阮一峰)",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 524
+  },
+  {
+    "id": "f8cd6adb1f4d",
+    "title": "JavaScript Promise迷你书",
+    "url": "http://liubin.github.io/promises-book/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 525
+  },
+  {
+    "id": "817634bad233",
+    "title": "You-Dont-Know-JS",
+    "url": "https://github.com/getify/You-Dont-Know-JS",
+    "description": "(深入JavaScript语言核心机制的系列图书)",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 526
+  },
+  {
+    "id": "98828ed492bf",
+    "title": "JavaScript 教程",
+    "url": "http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000",
+    "description": "廖雪峰",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 527
+  },
+  {
+    "id": "e4a0010a9ed0",
+    "title": "MDN JavaScript 中文文档",
+    "url": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
+    "description": "",
+    "categoryPath": [
+      "JavaScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 528
+  },
+  {
+    "id": "d451c645c4df",
+    "title": "简单易懂的JQuery魔法",
+    "url": "http://www.nowamagic.net/librarys/books/contents/jquery",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "jQuery"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 530
+  },
+  {
+    "id": "5e7769b39156",
+    "title": "How to write jQuery plugin",
+    "url": "http://i5ting.github.io/How-to-write-jQuery-plugin/build/jquery.plugin.html",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "jQuery"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 531
+  },
+  {
+    "id": "7f6a97bb5db1",
+    "title": "You Don't Need jQuery",
+    "url": "https://github.com/oneuijs/You-Dont-Need-jQuery/blob/master/README.zh-CN.md",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "jQuery"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 532
+  },
+  {
+    "id": "d749c695c4bf",
+    "title": "Node入门",
+    "url": "http://www.nodebeginner.org/index-zh-cn.html",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 534
+  },
+  {
+    "id": "c20ee2efadef",
+    "title": "七天学会NodeJS",
+    "url": "http://nqdeng.github.io/7-days-nodejs/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 535
+  },
+  {
+    "id": "e01f32965c0f",
+    "title": "Nodejs Wiki Book",
+    "url": "https://github.com/nodejs-tw/nodejs-wiki-book",
+    "description": "(繁体中文)",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 536
+  },
+  {
+    "id": "8efc841ecb21",
+    "title": "express.js 中文文档",
+    "url": "http://expressjs.jser.us/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 537
+  },
+  {
+    "id": "cc2fa8749a29",
+    "title": "koa 中文文档",
+    "url": "https://github.com/guo-yu/koa-guide",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 538
+  },
+  {
+    "id": "42e74d3fffbc",
+    "title": "一起学koa",
+    "url": "http://base-n.github.io/koa-generator-examples/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 539
+  },
+  {
+    "id": "38fea739e26a",
+    "title": "使用 Express + MongoDB 搭建多人博客",
+    "url": "https://github.com/nswbmw/N-blog",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 540
+  },
+  {
+    "id": "a9bec8aeea2a",
+    "title": "Express框架",
+    "url": "http://javascript.ruanyifeng.com/nodejs/express.html",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 541
+  },
+  {
+    "id": "d413100c4531",
+    "title": "Node.js 包教不包会",
+    "url": "https://github.com/alsotang/node-lessons",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 542
+  },
+  {
+    "id": "38ae6adf3b87",
+    "title": "Learn You The Node.js For Much Win! (中文版)",
+    "url": "https://www.npmjs.com/package/learnyounode-zh-cn",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 543
+  },
+  {
+    "id": "5b618ab8238e",
+    "title": "Node debug 三法三例",
+    "url": "http://i5ting.github.io/node-debug-tutorial/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 544
+  },
+  {
+    "id": "1a9676231cf5",
+    "title": "nodejs中文文档",
+    "url": "https://www.gitbook.com/book/0532/nodejs/details",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 545
+  },
+  {
+    "id": "6cc0dc45507c",
+    "title": "orm2 中文文档",
+    "url": "https://github.com/wizardforcel/orm2-doc-zh-cn",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 546
+  },
+  {
+    "id": "38fea739e26a-2",
+    "title": "一起学 Node.js",
+    "url": "https://github.com/nswbmw/N-blog",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 547
+  },
+  {
+    "id": "16cda894a6da",
+    "title": "Node入门：一本全面的Node.js教程",
+    "url": "https://www.nodebeginner.org/index-zh-cn.html",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 548
+  },
+  {
+    "id": "db3a52d25a92",
+    "title": "从零开始的Nodejs系列文章",
+    "url": "http://blog.fens.me/series-nodejs/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Node.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 549
+  },
+  {
+    "id": "d52bde1ae16f",
+    "title": "Underscore.js中文文档",
+    "url": "http://learningcn.com/underscore/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "underscore.js"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 551
+  },
+  {
+    "id": "e7490dd3244b",
+    "title": "backbone.js入门教程",
+    "url": "http://www.the5fire.com/backbone-js-tutorials-pdf-download.html",
+    "description": "(PDF)",
+    "categoryPath": [
+      "JavaScript",
+      "backbone.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 553
+  },
+  {
+    "id": "99562b8232d4",
+    "title": "Backbone.js入门教程第二版",
+    "url": "https://github.com/the5fire/backbonejs-learning-note",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "backbone.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 554
+  },
+  {
+    "id": "59c2c8ce4eda",
+    "title": "AngularJS最佳实践和风格指南",
+    "url": "https://github.com/mgechev/angularjs-style-guide/blob/master/README-zh-cn.md",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "AngularJS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 556
+  },
+  {
+    "id": "ece9d7556450",
+    "title": "AngularJS入门教程",
+    "url": "https://github.com/zensh/AngularjsTutorial_cn",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "AngularJS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 557
+  },
+  {
+    "id": "5be591676d95",
+    "title": "构建自己的AngularJS",
+    "url": "https://github.com/xufei/Make-Your-Own-AngularJS/blob/master/01.md",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "AngularJS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 558
+  },
+  {
+    "id": "bace5d7fd24c",
+    "title": "在Windows环境下用Yeoman构建AngularJS项目",
+    "url": "http://www.waylau.com/build-angularjs-app-with-yeoman-in-windows/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "AngularJS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 559
+  },
+  {
+    "id": "0ce91db92f75",
+    "title": "Hello Sea.js",
+    "url": "http://island205.github.io/HelloSea.js/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Sea.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 562
+  },
+  {
+    "id": "5652cab160ff",
+    "title": "React 学习之道",
+    "url": "https://github.com/the-road-to-learn-react/the-road-to-learn-react-chinese",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "React.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 564
+  },
+  {
+    "id": "774505006e11",
+    "title": "React.js 小书",
+    "url": "https://github.com/huzidaha/react-naive-book",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "React.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 565
+  },
+  {
+    "id": "773e1f8af57c",
+    "title": "React webpack-cookbook",
+    "url": "https://github.com/fakefish/react-webpack-cookbook",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "React.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 566
+  },
+  {
+    "id": "4417582cfa6d",
+    "title": "React 入门教程",
+    "url": "https://hulufei.gitbooks.io/react-tutorial/content/",
+    "description": "(作者：hulufei, 与上行不同作者)",
+    "categoryPath": [
+      "JavaScript",
+      "React.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 567
+  },
+  {
+    "id": "317b3b9224e4",
+    "title": "React Native 中文文档(含最新Android内容)",
+    "url": "http://wiki.jikexueyuan.com/project/react-native/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "React.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 568
+  },
+  {
+    "id": "8edfa318dc13",
+    "title": "Learn React & Webpack by building the Hacker News front page",
+    "url": "https://github.com/theJian/build-a-hn-front-page",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "React.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 569
+  },
+  {
+    "id": "be25633541e1",
+    "title": "impress.js的中文教程",
+    "url": "https://github.com/kokdemo/impress.js-tutorial-in-Chinese",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "impress.js"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 571
+  },
+  {
+    "id": "38e9d62f4fb3",
+    "title": "CoffeeScript 编码风格指南",
+    "url": "https://github.com/geekplux/coffeescript-style-guide",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "CoffeeScript"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 573
+  },
+  {
+    "id": "90fe27cdb777",
+    "title": "TypeScript Handbook",
+    "url": "https://zhongsp.gitbooks.io/typescript-handbook/content/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "TypeScipt"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 575
+  },
+  {
+    "id": "0fa4e103506c",
+    "title": "Ext4.1.0 中文文档",
+    "url": "http://extjs-doc-cn.github.io/ext4api/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "ExtJS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 577
+  },
+  {
+    "id": "a593130bc0c0",
+    "title": "Discover Meteor",
+    "url": "https://github.com/DiscoverMeteor/DiscoverMeteor_zh",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "Meteor"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 579
+  },
+  {
+    "id": "3d572b757e48",
+    "title": "逐行剖析 Vue.js 源码",
+    "url": "https://nlrx-wjc.github.io/Learn-Vue-Source-Code/",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "VueJS"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 581
+  },
+  {
+    "id": "6ac797b391c8",
+    "title": "Chrome扩展及应用开发",
+    "url": "http://www.ituring.com.cn/minibook/950",
+    "description": "",
+    "categoryPath": [
+      "JavaScript",
+      "VueJS"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 582
+  },
+  {
+    "id": "e4e7b4b9e504",
+    "title": "Kotlin 官方参考文档 中文版",
+    "url": "https://hltj.gitbooks.io/kotlin-reference-chinese/content/",
+    "description": "",
+    "categoryPath": [
+      "Kotlin"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 585
+  },
+  {
+    "id": "a487162c2004",
+    "title": "Kotlin 中文文档",
+    "url": "https://huanglizhuo.gitbooks.io/kotlin-in-chinese/",
+    "description": "GitHub",
+    "categoryPath": [
+      "Kotlin"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 586
+  },
+  {
+    "id": "b2739f567e76",
+    "title": "Kotlin 参考文档",
+    "url": "http://www.liying-cn.net/kotlin/docs/reference/",
+    "description": "",
+    "categoryPath": [
+      "Kotlin"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 587
+  },
+  {
+    "id": "d93ca995aa49",
+    "title": "《Kotlin for android developers》中文版",
+    "url": "https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/content/",
+    "description": "",
+    "categoryPath": [
+      "Kotlin"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 588
+  },
+  {
+    "id": "337361675e32",
+    "title": "一份其实很短的 LaTeX 入门文档",
+    "url": "http://liam0205.me/2014/09/08/latex-introduction/",
+    "description": "",
+    "categoryPath": [
+      "LaTeX"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 595
+  },
+  {
+    "id": "d36261b22d73",
+    "title": "一份不太简短的 LATEX 2ε 介绍",
+    "url": "http://www.mohu.org/info/lshort-cn.pdf",
+    "description": "（PDF版）",
+    "categoryPath": [
+      "LaTeX"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 596
+  },
+  {
+    "id": "a0746216fccd",
+    "title": "ANSI Common Lisp 中文翻譯版",
+    "url": "https://acl.readthedocs.io/en/latest/",
+    "description": "",
+    "categoryPath": [
+      "LISP",
+      "Common Lisp"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 602
+  },
+  {
+    "id": "6200a1fd8738",
+    "title": "On Lisp 中文翻译版本",
+    "url": "http://www.ituring.com.cn/minibook/862",
+    "description": "",
+    "categoryPath": [
+      "LISP",
+      "Common Lisp"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 603
+  },
+  {
+    "id": "a28074440c22",
+    "title": "Yet Another Scheme Tutorial Scheme入门教程",
+    "url": "http://deathking.github.io/yast-cn/",
+    "description": "",
+    "categoryPath": [
+      "LISP",
+      "Scheme"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 605
+  },
+  {
+    "id": "8681e22b7c32",
+    "title": "Scheme语言简明教程",
+    "url": "http://songjinghe.github.io/TYS-zh-translation/",
+    "description": "",
+    "categoryPath": [
+      "LISP",
+      "Scheme"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 606
+  },
+  {
+    "id": "ae49ed917fbd",
+    "title": "Racket book",
+    "url": "https://github.com/tyrchen/racket-book",
+    "description": "",
+    "categoryPath": [
+      "LISP",
+      "Scheme",
+      "Racket"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 608
+  },
+  {
+    "id": "8e75c5c280a1",
+    "title": "Lua编程入门",
+    "url": "https://github.com/andycai/luaprimer",
+    "description": "",
+    "categoryPath": [
+      "Lua"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 615
+  },
+  {
+    "id": "dc4e19b45c59",
+    "title": "Lua 5.1 参考手册 中文翻译",
+    "url": "http://www.codingnow.com/2000/download/lua_manual.html",
+    "description": "",
+    "categoryPath": [
+      "Lua"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 616
+  },
+  {
+    "id": "03a1cbb03500",
+    "title": "Lua 5.3 参考手册 中文翻译",
+    "url": "http://cloudwu.github.io/lua53doc/",
+    "description": "",
+    "categoryPath": [
+      "Lua"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 617
+  },
+  {
+    "id": "baa818191fc0",
+    "title": "Real World OCaml",
+    "url": "https://github.com/zforget/translation/tree/master/real_world_ocaml",
+    "description": "",
+    "categoryPath": [
+      "OCaml"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 623
+  },
+  {
+    "id": "f3e7afc80b3d",
+    "title": "Perl 程序员应该知道的事",
+    "url": "http://perl.linuxtoy.org/",
+    "description": "",
+    "categoryPath": [
+      "Perl"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 629
+  },
+  {
+    "id": "39eb50f42dc9",
+    "title": "PHP 官方手册",
+    "url": "http://php.net/manual/zh/",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 635
+  },
+  {
+    "id": "47faf6dbd394",
+    "title": "PHP调试技术手册",
+    "url": "http://www.laruence.com/2010/06/21/1608.html",
+    "description": "(PDF)",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 636
+  },
+  {
+    "id": "90ab3d93fb8a",
+    "title": "@wulijun版",
+    "url": "http://wulijun.github.io/php-the-right-way/",
+    "description": "PHPHub版)",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 637
+  },
+  {
+    "id": "2689b9413f08",
+    "title": "PHP 最佳实践",
+    "url": "https://github.com/justjavac/PHP-Best-Practices-zh_CN",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 638
+  },
+  {
+    "id": "d499fca9174d",
+    "title": "PHP 开发者实践",
+    "url": "https://ryancao.gitbooks.io/php-developer-prepares/content/",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 639
+  },
+  {
+    "id": "97ca836aff05",
+    "title": "深入理解PHP内核",
+    "url": "https://github.com/reeze/tipi",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 640
+  },
+  {
+    "id": "b9f8de7a8178",
+    "title": "Laravel 5.1 LTS 速查表",
+    "url": "https://learninglaravel.net/cheatsheet-chinese",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 641
+  },
+  {
+    "id": "72e523112146",
+    "title": "Symfony2 Cookbook 中文版",
+    "url": "http://wiki.jikexueyuan.com/project/symfony-cookbook/",
+    "description": "(版本 2.7.0 LTS)",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 642
+  },
+  {
+    "id": "f87cff0f0e40",
+    "title": "Symfony2中文文档",
+    "url": "https://symfony-docs-chs.readthedocs.io/en/latest/",
+    "description": "(未译完)",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 643
+  },
+  {
+    "id": "39df59152e4f",
+    "title": "YiiBook几本Yii框架的在线教程",
+    "url": "http://yiibook.com//doc",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 644
+  },
+  {
+    "id": "de5c6db8b711",
+    "title": "深入理解 Yii 2.0",
+    "url": "http://www.digpage.com/",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 645
+  },
+  {
+    "id": "bead07f38351",
+    "title": "Yii 框架中文官网",
+    "url": "http://www.yiichina.com/",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 646
+  },
+  {
+    "id": "2adbc01d540d",
+    "title": "简单易懂的PHP魔法",
+    "url": "http://www.nowamagic.net/librarys/books/contents/php",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 647
+  },
+  {
+    "id": "bb24be305d9d",
+    "title": "swoole文档及入门教程",
+    "url": "https://github.com/LinkedDestiny/swoole-doc",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 648
+  },
+  {
+    "id": "bd14bd70b3c6",
+    "title": "Composer 中文网",
+    "url": "http://www.phpcomposer.com",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 649
+  },
+  {
+    "id": "419bcc16e18f",
+    "title": "Lumen 中文文档",
+    "url": "https://learnku.com/docs/lumen/5.7/",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 650
+  },
+  {
+    "id": "359cd4febecb",
+    "title": "PHPUnit 中文文档",
+    "url": "https://www.w3cschool.cn/phpunit5/",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 651
+  },
+  {
+    "id": "1e94c08d7509",
+    "title": "PHP-LeetCode",
+    "url": "https://github.com/wuqinqiang/leetcode-php",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 652
+  },
+  {
+    "id": "831523cbfe4a",
+    "title": "ThinkPHP5.1完全开发手册",
+    "url": "https://www.kancloud.cn/manual/thinkphp5_1",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 653
+  },
+  {
+    "id": "8e45393be37e",
+    "title": "ThinkPHP3.2.3完全开发手册",
+    "url": "https://www.kancloud.cn/manual/thinkphp",
+    "description": "",
+    "categoryPath": [
+      "PHP"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 654
+  },
+  {
+    "id": "0a613904785f",
+    "title": "笨办法学Prolog",
+    "url": "http://fengdidi.github.io/blog/2011/11/15/qian-yan/",
+    "description": "",
+    "categoryPath": [
+      "Prolog"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 660
+  },
+  {
+    "id": "d0e82756b298",
+    "title": "廖雪峰 Python 2.7 中文教程",
+    "url": "http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 666
+  },
+  {
+    "id": "465d608e99ad",
+    "title": "廖雪峰 Python 3 中文教程",
+    "url": "http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 667
+  },
+  {
+    "id": "519750571f7c",
+    "title": "简明 Python 教程(Python 3)",
+    "url": "https://legacy.gitbook.com/book/lenkimo/byte-of-python-chinese-edition/details",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 668
+  },
+  {
+    "id": "eefc61cf4d38",
+    "title": "零基础学 Python 第一版",
+    "url": "http://www.kancloud.cn/kancloud/python-basic",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 669
+  },
+  {
+    "id": "57d869f256ce",
+    "title": "零基础学 Python 第二版",
+    "url": "http://www.kancloud.cn/kancloud/starter-learning-python",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 670
+  },
+  {
+    "id": "e5da09c31611",
+    "title": "可爱的 Python",
+    "url": "https://lovelypython.readthedocs.io/en/latest/",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 671
+  },
+  {
+    "id": "1a385afa9a8e",
+    "title": "Python Cookbook 中文版",
+    "url": "http://www.kancloud.cn/thinkphp/python-cookbook",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 672
+  },
+  {
+    "id": "f66c9ce20b8a",
+    "title": "Python3 Cookbook 中文版",
+    "url": "https://github.com/yidao620c/python3-cookbook",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 673
+  },
+  {
+    "id": "11ab9b484e75",
+    "title": "PEP8 Python代码风格规范",
+    "url": "https://code.google.com/p/zhong-wiki/wiki/PEP8",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 674
+  },
+  {
+    "id": "121e71fdd79d",
+    "title": "Google Python 风格指南 中文版",
+    "url": "https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 675
+  },
+  {
+    "id": "dab5f92cd44a",
+    "title": "Python入门教程",
+    "url": "http://liam0205.me/2013/11/02/Python-tutorial-zh_cn/",
+    "description": "(PDF)",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 676
+  },
+  {
+    "id": "85d0cfd46ed0",
+    "title": "笨办法学 Python",
+    "url": "http://liam0205.me/attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf",
+    "description": "(EPUB)",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 677
+  },
+  {
+    "id": "da82043f0761",
+    "title": "Python自然语言处理中文版",
+    "url": "http://pan.baidu.com/s/1qW4pvnY",
+    "description": "（感谢陈涛同学的翻译，也谢谢 @shwley 联系了作者）",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 678
+  },
+  {
+    "id": "55e599493bba",
+    "title": "Python 绘图库 matplotlib 官方指南中文翻译",
+    "url": "http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 679
+  },
+  {
+    "id": "b3548eae56a3",
+    "title": "Scrapy 0.25 文档",
+    "url": "https://scrapy-chs.readthedocs.io/zh_CN/latest/",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 680
+  },
+  {
+    "id": "183c20ca7d43",
+    "title": "ThinkPython",
+    "url": "https://github.com/carfly/thinkpython-cn",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 681
+  },
+  {
+    "id": "38b011b7ac6f",
+    "title": "ThinkPython 2ed",
+    "url": "https://github.com/bingjin/ThinkPython2-CN",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 682
+  },
+  {
+    "id": "65d39f2513b8",
+    "title": "Python快速教程",
+    "url": "http://www.cnblogs.com/vamei/archive/2012/09/13/2682778.html",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 683
+  },
+  {
+    "id": "842c4937ea8d",
+    "title": "Python 正则表达式操作指南",
+    "url": "http://wiki.ubuntu.org.cn/Python正则表达式操作指南",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 684
+  },
+  {
+    "id": "a3f5bbca13d8",
+    "title": "python初级教程：入门详解",
+    "url": "http://www.crifan.com/files/doc/docbook/python_beginner_tutorial/release/html/python_beginner_tutorial.html",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 685
+  },
+  {
+    "id": "a5717a6f97bb",
+    "title": "Twisted 与异步编程入门",
+    "url": "https://www.gitbook.com/book/likebeta/twisted-intro-cn/details",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 686
+  },
+  {
+    "id": "5849579e76d8",
+    "title": "TextGrocery 中文 API",
+    "url": "https://textgrocery.readthedocs.io/zh/latest/index.html",
+    "description": "( 基于svm算法的一个短文本分类 Python 库 )",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 687
+  },
+  {
+    "id": "3311162f78a6",
+    "title": "Requests: HTTP for Humans",
+    "url": "https://requests-docs-cn.readthedocs.io/zh_CN/latest/",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 688
+  },
+  {
+    "id": "3fc606f3b171",
+    "title": "Pillow 中文文档",
+    "url": "https://pillow-docs-cn.readthedocs.io/zh_CN/latest/index.html",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 689
+  },
+  {
+    "id": "40033a70f393",
+    "title": "PyMOTW 中文版",
+    "url": "https://pymotwcn.readthedocs.io/en/latest/index.html",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 690
+  },
+  {
+    "id": "189343c5e2dc",
+    "title": "Fabric 中文文档",
+    "url": "https://fabric-chs.readthedocs.io",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 691
+  },
+  {
+    "id": "42bf7d06fbce",
+    "title": "Beautiful Soup 4.2.0 中文文档",
+    "url": "https://beautifulsoup.readthedocs.io/zh_CN/latest/",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 692
+  },
+  {
+    "id": "860d4b8b078e",
+    "title": "Python 中的 Socket 编程",
+    "url": "https://legacy.gitbook.com/book/keelii/socket-programming-in-python-cn/details",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 693
+  },
+  {
+    "id": "de00e9439c93",
+    "title": "用Python做科学计算",
+    "url": "https://docs.huihoo.com/scipy/scipy-zh-cn/index.html",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 694
+  },
+  {
+    "id": "51514054d9c4",
+    "title": "精通 Python 设计模式",
+    "url": "https://github.com/cundi/Mastering.Python.Design.Patterns",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 695
+  },
+  {
+    "id": "7e917c4b1840",
+    "title": "python 安全编程教程",
+    "url": "https://github.com/smartFlash/pySecurity",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 696
+  },
+  {
+    "id": "d37a5969aeaa",
+    "title": "程序设计思想与方法",
+    "url": "https://www.gitbook.com/book/wizardforcel/sjtu-cs902-courseware/details",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 697
+  },
+  {
+    "id": "d247ff509aa4",
+    "title": "Scipy 讲义",
+    "url": "https://github.com/cloga/scipy-lecture-notes_cn",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 698
+  },
+  {
+    "id": "30ddbb9fd0b7",
+    "title": "Python 标准库 中文版",
+    "url": "https://docs.python.org/zh-cn/3/library/index.html",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 699
+  },
+  {
+    "id": "ba5e6f13cc94",
+    "title": "Python进阶",
+    "url": "https://www.gitbook.com/book/eastlakeside/interpy-zh/details",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 700
+  },
+  {
+    "id": "1733729dfc5e",
+    "title": "Python 核心编程 第二版",
+    "url": "https://wizardforcel.gitbooks.io/core-python-2e/content/",
+    "description": "CPyUG译",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 701
+  },
+  {
+    "id": "1adea12ffcfd",
+    "title": "Python最佳实践指南",
+    "url": "http://pythonguidecn.readthedocs.io/zh/latest/",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 702
+  },
+  {
+    "id": "a6006f191a3b",
+    "title": "Python 精要教程",
+    "url": "https://www.gitbook.com/book/wizardforcel/python-essential-tutorial/details",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 703
+  },
+  {
+    "id": "ff0395a98aa9",
+    "title": "Python 量化交易教程",
+    "url": "https://www.gitbook.com/book/wizardforcel/python-quant-uqer/details",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 704
+  },
+  {
+    "id": "b067707952bd",
+    "title": "Python黑魔法手册",
+    "url": "https://magic.iswbm.com/preface.html",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 705
+  },
+  {
+    "id": "2c3cb71df58e",
+    "title": "不基础的Python基础",
+    "url": "https://space.bilibili.com/245645656/channel/collectiondetail?sid=346060",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 706
+  },
+  {
+    "id": "b0b11e93550f",
+    "title": "Python 魔术方法大全",
+    "url": "https://space.bilibili.com/245645656/channel/collectiondetail?sid=1023741",
+    "description": "",
+    "categoryPath": [
+      "Python"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 707
+  },
+  {
+    "id": "80c520652cc5",
+    "title": "Django 1.5 文档中文版",
+    "url": "https://django-chinese-docs.readthedocs.io/en/latest/",
+    "description": "正在翻译中",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 709
+  },
+  {
+    "id": "96094ce4e80d",
+    "title": "Django 2.0 文档中文版",
+    "url": "https://docs.djangoproject.com/zh-hans/2.0/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 710
+  },
+  {
+    "id": "218b45a959f8",
+    "title": "Django 最佳实践",
+    "url": "https://github.com/yangyubo/zh-django-best-practices",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 711
+  },
+  {
+    "id": "b75f0b19c6e6",
+    "title": "Django 搭建个人博客教程",
+    "url": "https://github.com/stacklens/django_blog_tutorial",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 712
+  },
+  {
+    "id": "32f2a34ce1fe",
+    "title": "Django搭建简易博客教程",
+    "url": "https://www.gitbook.com/book/andrew-liu/django-blog/details",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 713
+  },
+  {
+    "id": "ec46436565f4",
+    "title": "The Django Book 中文版",
+    "url": "http://djangobook.py3k.cn/2.0/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 714
+  },
+  {
+    "id": "b489a0150efc",
+    "title": "Django 设计模式与最佳实践",
+    "url": "https://github.com/cundi/Django-Design-Patterns-and-Best-Practices",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 715
+  },
+  {
+    "id": "ec2561bcb264",
+    "title": "Django 网站开发 Cookbook",
+    "url": "https://github.com/cundi/Web.Development.with.Django.Cookbook",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 716
+  },
+  {
+    "id": "161ce818f1d8",
+    "title": "Django Girls 學習指南",
+    "url": "https://www.gitbook.com/book/djangogirlstaipei/django-girls-taipei-tutorial/details",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Django"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 717
+  },
+  {
+    "id": "7d0201284e01",
+    "title": "Flask 文档中文版",
+    "url": "http://docs.jinkan.org/docs/flask/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Flask"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 719
+  },
+  {
+    "id": "0fa83d6f9809",
+    "title": "Jinja2 文档中文版",
+    "url": "http://docs.jinkan.org/docs/jinja2/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Flask"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 720
+  },
+  {
+    "id": "59d2eeee5108",
+    "title": "Werkzeug 文档中文版",
+    "url": "https://werkzeug-docs-cn.readthedocs.io/zh_CN/latest/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Flask"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 721
+  },
+  {
+    "id": "df8410410524",
+    "title": "Flask之旅",
+    "url": "http://spacewander.github.io/explore-flask-zh/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Flask"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 722
+  },
+  {
+    "id": "d7c6b84962c3",
+    "title": "Flask 扩展文档汇总",
+    "url": "https://www.gitbook.com/book/wizardforcel/flask-extension-docs/details",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Flask"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 723
+  },
+  {
+    "id": "23d39e5bef95",
+    "title": "SQLAlchemy 中文文档",
+    "url": "http://docs.jinkan.org/docs/flask-sqlalchemy/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Flask"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 724
+  },
+  {
+    "id": "dcbc3332ab3f",
+    "title": "Flask 入门教程",
+    "url": "https://read.helloflask.com",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Flask"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 725
+  },
+  {
+    "id": "47291bbbbe5e",
+    "title": "Web.py Cookbook 简体中文版",
+    "url": "http://webpy.org/cookbook/index.zh-cn",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "web.py"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 727
+  },
+  {
+    "id": "00df0fff0e17",
+    "title": "Introduction to Tornado 中文翻译",
+    "url": "http://demo.pythoner.com/itt2zh/index.html",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Tornado"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 729
+  },
+  {
+    "id": "5d177617fcb1",
+    "title": "Tornado源码解析",
+    "url": "http://www.nowamagic.net/academy/detail/13321002",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Tornado"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 730
+  },
+  {
+    "id": "c68867debb66",
+    "title": "Tornado 4.3 文档中文版",
+    "url": "https://tornado-zh.readthedocs.io/zh/latest/",
+    "description": "",
+    "categoryPath": [
+      "Python",
+      "Tornado"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 731
+  },
+  {
+    "id": "3e41369c1c65",
+    "title": "R语言忍者秘笈",
+    "url": "https://github.com/yihui/r-ninja",
+    "description": "",
+    "categoryPath": [
+      "R"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 737
+  },
+  {
+    "id": "abe22872e5c1",
+    "title": "R语言教程",
+    "url": "https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/index.html",
+    "description": "",
+    "categoryPath": [
+      "R"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 738
+  },
+  {
+    "id": "7670e4a45063",
+    "title": "Ruby 风格指南",
+    "url": "https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 744
+  },
+  {
+    "id": "4cde2f0b7322",
+    "title": "Rails 风格指南",
+    "url": "https://github.com/JuanitoFatas/rails-style-guide/blob/master/README-zhCN.md",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 745
+  },
+  {
+    "id": "c13d9bdd51cf",
+    "title": "笨方法學 Ruby",
+    "url": "http://lrthw.github.io/",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 746
+  },
+  {
+    "id": "0b8e47fbec4c",
+    "title": "Ruby on Rails 實戰聖經",
+    "url": "https://ihower.tw/rails4/index.html",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 747
+  },
+  {
+    "id": "2f559a49602b",
+    "title": "Ruby on Rails Tutorial 原书第 3 版",
+    "url": "http://railstutorial-china.org/",
+    "description": "(本书网页版免费提供，电子版以 PDF、EPub 和 Mobi 格式提供购买，仅售 9.9 美元)",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 748
+  },
+  {
+    "id": "208b44d3ed05",
+    "title": "Rails 5 开发进阶(Beta)",
+    "url": "https://www.gitbook.com/book/kelby/rails-beginner-s-guide/details",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 749
+  },
+  {
+    "id": "56909e9b38c7",
+    "title": "Rails 102",
+    "url": "https://www.gitbook.com/book/rocodev/rails-102/details",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 750
+  },
+  {
+    "id": "07c70d518e24",
+    "title": "编写Ruby的C拓展",
+    "url": "https://wusuopu.gitbooks.io/write-ruby-extension-with-c/content/",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 751
+  },
+  {
+    "id": "a4a4bc556974",
+    "title": "Ruby 源码解读",
+    "url": "https://ruby-china.org/topics/22386",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 752
+  },
+  {
+    "id": "0ac1317339a9",
+    "title": "Ruby中的元编程",
+    "url": "http://deathking.github.io/metaprogramming-in-ruby/",
+    "description": "",
+    "categoryPath": [
+      "Ruby"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 753
+  },
+  {
+    "id": "5a253adc670c",
+    "title": "Rust编程语言 中文翻译",
+    "url": "https://kaisery.github.io/trpl-zh-cn/",
+    "description": "",
+    "categoryPath": [
+      "Rust"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 759
+  },
+  {
+    "id": "a040988f789d",
+    "title": "通过例子学 Rust 中文版",
+    "url": "https://rustwiki.org/zh-CN/rust-by-example/",
+    "description": "",
+    "categoryPath": [
+      "Rust"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 760
+  },
+  {
+    "id": "891975d5e8e2",
+    "title": "Rust Primer",
+    "url": "https://github.com/rustcc/RustPrimer",
+    "description": "",
+    "categoryPath": [
+      "Rust"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 761
+  },
+  {
+    "id": "c2537f120dd7",
+    "title": "Scala课堂",
+    "url": "http://twitter.github.io/scala_school/zh_cn/index.html",
+    "description": "(Twitter的Scala中文教程)",
+    "categoryPath": [
+      "Scala"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 767
+  },
+  {
+    "id": "279c5dbec0a2",
+    "title": "Effective Scala",
+    "url": "http://twitter.github.io/effectivescala/index-cn.html",
+    "description": "(Twitter的Scala最佳实践的中文翻译)",
+    "categoryPath": [
+      "Scala"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 768
+  },
+  {
+    "id": "ce0861b35b18",
+    "title": "Shell脚本编程30分钟入门",
+    "url": "https://github.com/qinjx/30min_guides/blob/master/shell.md",
+    "description": "",
+    "categoryPath": [
+      "Shell"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 774
+  },
+  {
+    "id": "8c2521930092",
+    "title": "Bash脚本15分钟进阶教程",
+    "url": "http://blog.sae.sina.com.cn/archives/3606",
+    "description": "",
+    "categoryPath": [
+      "Shell"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 775
+  },
+  {
+    "id": "2e0b9920dfce-2",
+    "title": "Linux工具快速教程",
+    "url": "https://github.com/me115/linuxtools_rst",
+    "description": "",
+    "categoryPath": [
+      "Shell"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 776
+  },
+  {
+    "id": "2915305483f4",
+    "title": "shell十三问",
+    "url": "https://github.com/wzb56/13_questions_of_shell",
+    "description": "",
+    "categoryPath": [
+      "Shell"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 777
+  },
+  {
+    "id": "b7c03ccd2e69",
+    "title": "Shell编程范例",
+    "url": "https://www.gitbook.com/book/tinylab/shellbook/details",
+    "description": "",
+    "categoryPath": [
+      "Shell"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 778
+  },
+  {
+    "id": "865b8f5dd7c2",
+    "title": "Linux命令搜索引擎",
+    "url": "https://wangchujiang.com/linux-command/",
+    "description": "",
+    "categoryPath": [
+      "Shell"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 779
+  },
+  {
+    "id": "4e63d717dfde",
+    "title": "The Swift Programming Language 中文版",
+    "url": "https://swiftggteam.github.io/the-swift-programming-language-in-chinese/",
+    "description": "",
+    "categoryPath": [
+      "Swift"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 785
+  },
+  {
+    "id": "fd2448712dcc",
+    "title": "Stanford 公开课，Developing iOS 8 Apps with Swift 字幕翻译文件",
+    "url": "https://github.com/x140yu/Developing_iOS_8_Apps_With_Swift",
+    "description": "",
+    "categoryPath": [
+      "Swift"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 786
+  },
+  {
+    "id": "b9f59c802ce8",
+    "title": "C4iOS - COSMOS",
+    "url": "http://c4ios.swift.gg",
+    "description": "",
+    "categoryPath": [
+      "Swift"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 787
+  },
+  {
+    "id": "4b898bf912c2",
+    "title": "编译原理（紫龙书）中文第2版习题答案",
+    "url": "https://github.com/fool2fish/dragon-book-exercise-answers",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 793
+  },
+  {
+    "id": "96d54938ed4c",
+    "title": "把《编程珠玑》读薄",
+    "url": "http://hawstein.com/2013/08/11/make-thiner-programming-pearls/",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 794
+  },
+  {
+    "id": "8dd687824e96",
+    "title": "Golang 学习笔记、Python 学习笔记、C 学习笔记",
+    "url": "https://github.com/qyuhen/book",
+    "description": "(PDF)",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 795
+  },
+  {
+    "id": "3e2b7f09060d",
+    "title": "Jsoup 学习笔记",
+    "url": "https://github.com/code4craft/jsoup-learning",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 796
+  },
+  {
+    "id": "18bb43a0be70",
+    "title": "学习笔记: Vim、Python、memcached",
+    "url": "https://github.com/lzjun567/note",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 797
+  },
+  {
+    "id": "f089d4934dee",
+    "title": "图灵开放书翻译计划--C++、Python、Java等",
+    "url": "http://www.ituring.com.cn/activity/details/2004",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 798
+  },
+  {
+    "id": "3daeb02daf3d",
+    "title": "蒂姆·奥莱利随笔",
+    "url": "http://g.yeeyan.org/books/2095",
+    "description": "（由译言网翻译，电子版免费）",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 799
+  },
+  {
+    "id": "0de3e7a599da",
+    "title": "SICP 解题集",
+    "url": "https://sicp.readthedocs.io/en/latest/",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 800
+  },
+  {
+    "id": "aa9fa1439539",
+    "title": "精彩博客集合",
+    "url": "https://github.com/hacke2/hacke2.github.io/issues/2",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 801
+  },
+  {
+    "id": "e052c5e1f839",
+    "title": "中文文案排版指北",
+    "url": "https://github.com/sparanoid/chinese-copywriting-guidelines",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 802
+  },
+  {
+    "id": "cf09aaf8d9bd",
+    "title": "GitBook简明教程",
+    "url": "http://www.chengweiyang.cn/gitbook/index.html",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 803
+  },
+  {
+    "id": "740e93dd3855",
+    "title": "制造开源软件",
+    "url": "http://producingoss.com/zh/",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 804
+  },
+  {
+    "id": "8e1a62c61f5a",
+    "title": "提问的智慧",
+    "url": "http://www.dianbo.org/9238/stone/tiwendezhihui.htm",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 805
+  },
+  {
+    "id": "0a061879f7cb",
+    "title": "Markdown 入门参考",
+    "url": "https://github.com/LearnShare/Learning-Markdown",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 806
+  },
+  {
+    "id": "c83838919550",
+    "title": "AsciiDoc简明指南",
+    "url": "https://github.com/stanzgy/wiki/blob/master/markup/asciidoc-guide.asciidoc",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 807
+  },
+  {
+    "id": "75c31f081deb",
+    "title": "背包问题九讲",
+    "url": "http://love-oriented.com/pack/",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 808
+  },
+  {
+    "id": "cc3f1436e63f",
+    "title": "老齐的技术资料",
+    "url": "https://github.com/qiwsir/ITArticles",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 809
+  },
+  {
+    "id": "c6bbfa5b16d7",
+    "title": "前端技能汇总",
+    "url": "https://github.com/JacksonTian/fks",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 810
+  },
+  {
+    "id": "642ffe7d60b8",
+    "title": "借助开源项目，学习软件开发",
+    "url": "https://github.com/zhuangbiaowei/learn-with-open-source",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 811
+  },
+  {
+    "id": "fd487f648bc8",
+    "title": "leetcode/lintcode题解/算法学习笔记",
+    "url": "https://www.gitbook.com/book/yuanbin/algorithm/details",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "deprecated",
+    "sourceFile": "README.md",
+    "line": 812
+  },
+  {
+    "id": "df24c56b1a13",
+    "title": "LeetCode题解",
+    "url": "https://siddontang.gitbooks.io/leetcode-solution/content/",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 813
+  },
+  {
+    "id": "a9b5cc43aeca",
+    "title": "《不可替代的团队领袖培养计划》",
+    "url": "https://leader.js.cool/#/",
+    "description": "",
+    "categoryPath": [
+      "读书笔记及其它"
+    ],
+    "status": "ok",
+    "sourceFile": "README.md",
+    "line": 814
+  }
+]

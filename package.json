@@ -1,0 +1,22 @@
+{
+  "name": "fpb-zh-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "free-programming-books-zh_CN 在线书库:数据管道 + Astro 站点(site 分支项目)",
+  "license": "GPL-3.0",
+  "scripts": {
+    "parse": "node scripts/parse-books.mjs",
+    "validate": "node scripts/validate.mjs",
+    "fetch:all": "node scripts/fetch-all.mjs",
+    "fetch:book": "node scripts/fetch-book.mjs",
+    "build": "npm run parse && npm run validate && npm --prefix web run build",
+    "preview": "npm --prefix web run preview"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "linkedom": "^0.18.13",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}
