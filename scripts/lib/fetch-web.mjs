@@ -44,6 +44,36 @@ export async function fetchPageText(url) {
 /** 单页 HTML → { title, markdown, nextUrl } */
 export function htmlToArticle(html, baseUrl) {
   const { document } = parseHTML(html);
+  // DOM 层资源绝对化:覆盖 src/href/poster/srcset 全部形态(Vite 会把 md 里
+  // 的相对图片当构建资源导入,漏网即构建失败)
+  for (const el of document.querySelectorAll('[src], [href], [poster], [srcset]')) {
+    for (const attr of ['src', 'href', 'poster']) {
+      const v = el.getAttribute(attr);
+      if (v && !/^(https?:|data:|mailto:|javascript:|#)/i.test(v)) {
+        try {
+          el.setAttribute(attr, new URL(v, baseUrl).href);
+        } catch { /* 非法 URL 保留原样 */ }
+      }
+    }
+    const srcset = el.getAttribute('srcset');
+    if (srcset) {
+      el.setAttribute(
+        'srcset',
+        srcset
+          .split(',')
+          .map((part) => {
+            const t = part.trim().split(/\s+/);
+            if (t[0] && !/^(https?:|data:)/i.test(t[0])) {
+              try {
+                t[0] = new URL(t[0], baseUrl).href;
+              } catch { /* 保留 */ }
+            }
+            return t.join(' ');
+          })
+          .join(', '),
+      );
+    }
+  }
   // 常见"下一页"链接(rel=next 或文本匹配)
   let nextUrl;
   const nextLink =
@@ -74,6 +104,17 @@ export function htmlToArticle(html, baseUrl) {
     markdown: turndown.turndown(article.content),
     nextUrl,
   };
+}
+
+/** markdown 层兜底绝对化(HTML 层遗漏的 `](rel)` / src 形态) */
+export function absolutizeWebMd(md, baseUrl) {
+  return md.replace(/(\]\(|src="|src=')((?!https?:\/\/|data:|mailto:|javascript:|#)[^)"'\s]+)/g, (full, prefix, target) => {
+    try {
+      return `${prefix}${new URL(target, baseUrl).href}`;
+    } catch {
+      return full;
+    }
+  });
 }
 
 /**

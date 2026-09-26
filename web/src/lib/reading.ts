@@ -22,7 +22,7 @@ export interface BookMeta {
 }
 
 // eager:false:章节按需编译;meta eager:true:路由生成需要全部章节树
-const metaModules = import.meta.glob('../../../content/books/*/meta.json', {
+const metaModules = import.meta.glob('../_content/books/*/meta.json', {
   eager: true,
 }) as Record<string, { default: BookMeta }>;
 

@@ -2,10 +2,10 @@
  * 数据访问层:读取仓库 data/*.json(由 scripts/parse-books.mjs 生成)。
  * 构建时内联,运行时零 IO。
  */
-import booksJson from '../../../data/books.json';
-import categoriesJson from '../../../data/categories.json';
-import nonproJson from '../../../data/non-programming-books.json';
-import metaJson from '../../../data/meta.json';
+import booksJson from '../_data/books.json';
+import categoriesJson from '../_data/categories.json';
+import nonproJson from '../_data/non-programming-books.json';
+import metaJson from '../_data/meta.json';
 
 export interface Book {
   id: string;

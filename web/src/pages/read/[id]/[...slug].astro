@@ -4,7 +4,7 @@ import { withBase, bookPath } from '../../../lib/data';
 import { bookMetas, metaOf, chaptersOf, type ChapterRef } from '../../../lib/reading';
 
 // 章节正文:构建期编译 content/books/<id>/chapters/*.md
-const chapterModules = import.meta.glob('../../../../content/books/*/chapters/*.md');
+const chapterModules = import.meta.glob('../../../_content/books/*/chapters/*.md');
 
 export function getStaticPaths() {
   const paths: { params: { id: string; slug?: string }; props: { bookId: string; slug?: string } }[] = [];

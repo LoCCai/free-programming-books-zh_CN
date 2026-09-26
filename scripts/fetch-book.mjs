@@ -12,7 +12,7 @@ import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchGithubBook, absolutizeMd } from './lib/fetch-github.mjs';
-import { fetchWebBook } from './lib/fetch-web.mjs';
+import { fetchWebBook, absolutizeWebMd } from './lib/fetch-web.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CONTENT_DIR = join(ROOT, 'content', 'books');
@@ -44,6 +44,10 @@ export async function fetchOne(book, { workDir }) {
       meta.sourceType = 'github';
     } else {
       result = await fetchWebBook(book.url);
+      // markdown 层兜底绝对化(基准 = 起始页 URL)
+      for (const ch of result.chapters) {
+        ch.body = absolutizeWebMd(ch.body, book.url);
+      }
       meta.sourceType = 'web';
     }
     if (!result.chapters.length) throw new Error('没有可用章节');

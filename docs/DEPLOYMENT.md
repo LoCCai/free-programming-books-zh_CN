@@ -25,9 +25,11 @@ gh api -X POST repos/LoCCai/free-programming-books-zh_CN/pages \
 ```bash
 npm run parse        # 重新解析上游书单
 npm run validate     # 数据校验门禁
+npm run sync:inputs  # data/ content/ → web/src/_data _content(Astro 构建输入)
 npm install --prefix web
 npm run build --prefix web   # astro build + pagefind --site dist
 npm run preview --prefix web # http://localhost:4321/free-programming-books-zh_CN/
+# 一键: npm run build(等价于上面除 npm install 外的全部)
 ```
 
 ## 本地开发

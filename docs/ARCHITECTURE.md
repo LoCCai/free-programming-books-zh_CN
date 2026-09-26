@@ -87,7 +87,11 @@ GitHub Pages(deploy.yml)
 ## 站点(Astro + Pagefind)
 
 - **静态优先**:全部页面构建期渲染,运行时零服务端;托管零成本
-- **数据读取**:`data/*.json` 构建时内联(import),`content/books/*` 经
+- **构建输入同步**:Astro root 固定在 `web/`,而 `data/`、`content/` 是管道在
+  仓库根维护的真相源;`npm run sync:inputs`(deploy 构建前自动执行)把它们
+  复制为 `web/src/_data`、`web/src/_content`(gitignore)——因为
+  `import.meta.glob` 的模式不能越出 Astro root
+- **数据读取**:`_data/*.json` 构建时内联(import),`_content/books/*` 经
   `import.meta.glob` 按需编译
 - **搜索**:Pagefind 构建后索引(内置中文分词),覆盖详情页元数据 +
   章节正文——站内可读书籍的内容可被全文命中

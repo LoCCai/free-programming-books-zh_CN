@@ -10,8 +10,8 @@ npm install && npm install --prefix web
 
 npm run parse          # 上游 markdown → data/*.json
 npm run validate       # 数据校验门禁
-npm run build --prefix web   # astro build + pagefind 索引
-npm run preview --prefix web # http://localhost:4321/free-programming-books-zh_CN/
+npm run build          # 解析 + 校验 + 同步输入 + astro build + pagefind 索引
+npm run preview        # http://localhost:4321/free-programming-books-zh_CN/
 ```
 
 ## 它能做什么

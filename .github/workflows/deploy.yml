@@ -28,7 +28,7 @@ jobs:
         working-directory: web
         run: npm ci
       - name: Regenerate & validate data
-        run: npm run parse && npm run validate
+        run: npm run parse && npm run validate && npm run sync:inputs
       - name: Build site (Astro + Pagefind)
         working-directory: web
         run: npm run build
