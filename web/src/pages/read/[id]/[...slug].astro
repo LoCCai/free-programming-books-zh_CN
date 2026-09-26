@@ -1,0 +1,73 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { withBase, bookPath } from '../../../lib/data';
+import { bookMetas, metaOf, chaptersOf, type ChapterRef } from '../../../lib/reading';
+
+// 章节正文:构建期编译 content/books/<id>/chapters/*.md
+const chapterModules = import.meta.glob('../../../../content/books/*/chapters/*.md');
+
+export function getStaticPaths() {
+  const paths: { params: { id: string; slug?: string }; props: { bookId: string; slug?: string } }[] = [];
+  for (const [id, m] of Object.entries(bookMetas)) {
+    if (m.status === 'failed' || !m.chapters.length) continue; // 抓取失败:不生成阅读路由
+    paths.push({ params: { id, slug: undefined }, props: { bookId: id, slug: undefined } });
+    for (const ch of m.chapters) {
+      paths.push({ params: { id, slug: ch.slug }, props: { bookId: id, slug: ch.slug } });
+    }
+  }
+  return paths;
+}
+
+const { bookId, slug } = Astro.props;
+const meta = metaOf(bookId)!;
+const chapters = chaptersOf(bookId);
+const idx = chapters.findIndex((c) => c.slug === slug);
+const current: ChapterRef | undefined = slug ? chapters[idx] : chapters[0];
+const firstHref = chapters.length ? withBase(`/read/${bookId}/${chapters[0].slug}/`) : undefined;
+const prev = slug && idx > 0 ? chapters[idx - 1] : undefined;
+const next = slug ? chapters[idx + 1] : chapters[1];
+
+const modKey = current
+  ? Object.keys(chapterModules).find((k) => k.endsWith(`/${bookId}/chapters/${current.slug}.md`))
+  : undefined;
+const mod = modKey ? await chapterModules[modKey]() : undefined;
+const Content = mod?.default;
+const headings = mod?.headings ?? [];
+---
+
+<Base title={`${meta.title}${current ? ` · ${current.title}` : ''}`} description={meta.title}>
+  <div class="crumbs">
+    <a href={withBase('/')}>首页</a> /
+    <a href={withBase(bookPath({ id: bookId }))}>{meta.title}</a>
+    {current && <span> / {current.title}</span>}
+  </div>
+
+  <div class="reader-layout">
+    <aside class="reader-toc">
+      <p style="margin:2px 4px 10px;font-weight:700;font-size:14px">{meta.title}</p>
+      {chapters.map((ch) => (
+        <a
+          class={ch.slug === current?.slug ? 'active' : ''}
+          href={withBase(`/read/${bookId}/${ch.slug}/`)}
+        >{ch.title}</a>
+      ))}
+    </aside>
+
+    <article class="reader-panel prose">
+      {Content ? (
+        <Content />
+      ) : (
+        <div>
+          <h1>{meta.title}</h1>
+          <p>{chapters.length} 章 · <a href={firstHref}>从第一章开始 →</a></p>
+          <p class="page-sub">章节列表见左侧目录。</p>
+        </div>
+      )}
+
+      <nav class="pager">
+        <span>{prev && <a href={withBase(`/read/${bookId}/${prev.slug}/`)}>← {prev.title}</a>}</span>
+        <span>{next && <a href={withBase(`/read/${bookId}/${next.slug}/`)}>{next.title} →</a>}</span>
+      </nav>
+    </article>
+  </div>
+</Base>

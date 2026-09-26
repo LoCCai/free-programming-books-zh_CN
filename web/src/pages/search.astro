@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/data';
+---
+
+<Base title="搜索" description="全文搜索免费编程中文书籍">
+  <h1 class="page-title">搜索</h1>
+  <p class="page-sub">支持书名、描述、分类与已收录书籍的正文内容全文搜索(中文分词)。</p>
+  <div id="search"></div>
+
+  <script>
+    // Pagefind 资源由构建后 `pagefind --site dist` 生成到 dist/pagefind/
+    async function init() {
+      try {
+        const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+        await import(/* @vite-ignore */ `${base}/pagefind/pagefind-ui.js`);
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = `${base}/pagefind/pagefind-ui.css`;
+        document.head.appendChild(css);
+        // @ts-expect-error PagefindUI 由运行时脚本提供
+        new window.PagefindUI({ element: '#search', showImages: false, autofocus: true });
+      } catch {
+        document.getElementById('search')!.innerHTML =
+          '<p>搜索索引在构建部署后可用;本地开发请先运行 <code>npm run build && npm run preview</code>。</p>';
+      }
+    }
+    init();
+  </script>
+</Base>

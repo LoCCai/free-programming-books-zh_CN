@@ -1,0 +1,165 @@
+:root {
+  --bg: #f8f9fb;
+  --bg-soft: #ffffff;
+  --bg-inset: #eef1f5;
+  --border: #d8dee7;
+  --text: #1c2530;
+  --text-soft: #55637a;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --code-bg: #eceff3;
+  --warn: #b45309;
+  --warn-bg: #fef3c7;
+  --shadow: 0 1px 3px rgb(16 24 40 / 0.08);
+  --radius: 10px;
+  --maxw: 1080px;
+}
+html.dark {
+  --bg: #12161c;
+  --bg-soft: #1a2027;
+  --bg-inset: #212932;
+  --border: #303a46;
+  --text: #e3e8ee;
+  --text-soft: #97a3b5;
+  --accent: #60a5fa;
+  --accent-soft: #1e3a5f;
+  --code-bg: #262f3a;
+  --warn: #fbbf24;
+  --warn-bg: #3a2e10;
+  --shadow: 0 1px 3px rgb(0 0 0 / 0.4);
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; scroll-behavior: smooth; }
+html.dark { color-scheme: dark; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  line-height: 1.7;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- 头部 ---- */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+}
+.site-header .inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 0 16px;
+  display: flex; align-items: center; gap: 14px; height: 56px;
+}
+.site-header .brand {
+  font-weight: 700; font-size: 17px; color: var(--text); white-space: nowrap;
+}
+.site-header .brand span { color: var(--accent); }
+.site-header nav { display: flex; gap: 4px; margin-left: auto; }
+.site-header nav a {
+  color: var(--text-soft); padding: 6px 10px; border-radius: 8px; font-size: 14px;
+}
+.site-header nav a:hover { background: var(--bg-inset); color: var(--text); text-decoration: none; }
+.theme-btn {
+  border: 1px solid var(--border); background: var(--bg-soft); color: var(--text);
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 15px;
+}
+.theme-btn:hover { background: var(--bg-inset); }
+
+/* ---- 页面骨架 ---- */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 16px 60px; }
+.page-title { font-size: 26px; margin: 0 0 6px; }
+.page-sub { color: var(--text-soft); margin: 0 0 24px; font-size: 14px; }
+.crumbs { font-size: 13px; color: var(--text-soft); margin-bottom: 14px; }
+.crumbs a { color: var(--text-soft); }
+
+/* ---- 统计与分类 ---- */
+.stats-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 26px; }
+.stat {
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 20px; box-shadow: var(--shadow); min-width: 110px;
+}
+.stat b { display: block; font-size: 22px; }
+.stat span { font-size: 13px; color: var(--text-soft); }
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+.cat-card {
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 14px; color: var(--text); box-shadow: var(--shadow);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.cat-card:hover { border-color: var(--accent); text-decoration: none; }
+.cat-card .n { color: var(--text-soft); font-size: 13px; }
+
+/* ---- 书籍列表 ---- */
+.book-list { display: flex; flex-direction: column; gap: 10px; }
+.book-card {
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 18px; box-shadow: var(--shadow);
+}
+.book-card:hover { border-color: var(--accent); }
+.book-card .t { font-weight: 600; font-size: 15.5px; }
+.book-card .d { color: var(--text-soft); font-size: 13.5px; margin-top: 3px; }
+.badge {
+  display: inline-block; font-size: 11.5px; border-radius: 999px;
+  padding: 1px 9px; margin-left: 8px; vertical-align: 1px;
+}
+.badge.dep { background: var(--warn-bg); color: var(--warn); }
+.badge.read { background: var(--accent-soft); color: var(--accent); }
+
+/* ---- 详情与阅读器 ---- */
+.detail-panel, .reader-panel {
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 22px 26px;
+}
+.btn {
+  display: inline-block; background: var(--accent); color: #fff; border-radius: 8px;
+  padding: 9px 18px; font-weight: 600; font-size: 14.5px; border: none;
+}
+.btn:hover { opacity: 0.9; text-decoration: none; }
+.btn.ghost { background: var(--bg-inset); color: var(--text); }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
+
+.reader-layout { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: start; }
+@media (max-width: 800px) { .reader-layout { grid-template-columns: 1fr; } .reader-toc { display: none; } }
+.reader-toc {
+  position: sticky; top: 72px; max-height: calc(100vh - 90px); overflow: auto;
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px; font-size: 13.5px;
+}
+.reader-toc a { display: block; color: var(--text-soft); padding: 4px 8px; border-radius: 6px; }
+.reader-toc a:hover { background: var(--bg-inset); text-decoration: none; color: var(--text); }
+.reader-toc a.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.prose { max-width: 46em; }
+.prose h1, .prose h2, .prose h3 { line-height: 1.4; }
+.prose pre {
+  background: var(--code-bg); border-radius: 8px; padding: 14px; overflow-x: auto;
+  font-size: 13.5px; border: 1px solid var(--border);
+}
+.prose code { background: var(--code-bg); border-radius: 4px; padding: 1px 5px; font-size: 0.9em; }
+.prose pre code { background: none; padding: 0; }
+.prose img { max-width: 100%; }
+.prose blockquote {
+  margin: 1em 0; padding: 2px 16px; border-left: 3px solid var(--accent);
+  background: var(--bg-inset); border-radius: 0 8px 8px 0; color: var(--text-soft);
+}
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 30px; }
+.pager a { font-size: 14px; }
+
+/* ---- 搜索页 ---- */
+#search { max-width: 720px; }
+.pagefind-ui__search-input, .pagefind-ui__search-clear {
+  border-radius: 8px !important; border: 1px solid var(--border) !important;
+  background: var(--bg-soft) !important; color: var(--text) !important;
+}
+.pagefind-ui__result { border-color: var(--border) !important; }
+.pagefind-ui__result-link { color: var(--accent) !important; }
+
+/* ---- 页脚 ---- */
+.site-footer {
+  border-top: 1px solid var(--border); margin-top: 40px;
+  color: var(--text-soft); font-size: 13px;
+}
+.site-footer .inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 22px 16px; line-height: 1.9;
+}

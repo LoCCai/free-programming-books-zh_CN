@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { allBooks, allCategories, nonProBooks, siteMeta, withBase, categoryPath } from '../lib/data';
+
+const categoryList = [...allCategories].sort((a, b) => a.name.localeCompare(b.name, 'zh'));
+---
+
+<Base title="首页" description="免费的编程中文书籍索引,可搜索、可在线阅读。">
+  <h1 class="page-title">免费编程中文书籍</h1>
+  <p class="page-sub">
+    收录 {allBooks.length} 本免费开放的中英文编程书籍与教程,支持全文搜索;
+    开源书籍可在线阅读,其余提供原文链接。
+  </p>
+
+  <div class="stats-row">
+    <div class="stat"><b>{allBooks.length}</b><span>书籍条目</span></div>
+    <div class="stat"><b>{allCategories.length}</b><span>分类</span></div>
+    <div class="stat"><b>{siteMeta.stats.deprecated}</b><span>疑似失效(已标记)</span></div>
+    <div class="stat"><b>{nonProBooks.length}</b><span>非编程好书</span></div>
+  </div>
+
+  <h2>按分类浏览</h2>
+  <div class="cat-grid">
+    {categoryList.map((c) => (
+      <a class="cat-card" href={withBase(categoryPath(c.name))}>
+        <span>{c.name}</span><span class="n">{c.bookCount}</span>
+      </a>
+    ))}
+  </div>
+</Base>

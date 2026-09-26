@@ -1,0 +1,17 @@
+---
+import { withBase, bookPath, type Book } from '../lib/data';
+import { isReadable } from '../lib/reading';
+
+interface Props {
+  book: Book;
+}
+const { book } = Astro.props;
+const readable = isReadable(book.id);
+---
+
+<div class="book-card">
+  <a class="t" href={withBase(bookPath(book))}>{book.title}</a>
+  {book.status === 'deprecated' && <span class="badge dep" title="上游标记疑似失效">疑似失效</span>}
+  {readable && <span class="badge read">可在线阅读</span>}
+  {book.description && <div class="d">{book.description}</div>}
+</div>

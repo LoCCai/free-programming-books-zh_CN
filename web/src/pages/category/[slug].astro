@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import BookCard from '../../components/BookCard.astro';
+import { allCategories, booksOfCategory, groupBooks, withBase } from '../../lib/data';
+
+export function getStaticPaths() {
+  // 路由用预生成的 slug(C/C++ → C-C),分类名经 props 传递
+  return allCategories.map((c) => ({
+    params: { slug: c.slug },
+    props: { category: c },
+  }));
+}
+
+const { category } = Astro.props;
+const books = booksOfCategory(category.name);
+const groups = groupBooks(books);
+---
+
+<Base title={category.name} description={`${category.name}分类下的免费编程书籍,共 ${books.length} 本`}>
+  <div class="crumbs"><a href={withBase('/')}>首页</a> / {category.name}</div>
+  <h1 class="page-title">{category.name}</h1>
+  <p class="page-sub">共 {books.length} 本</p>
+
+  {groups.map((g) => (
+    <section>
+      {g.path !== category.name && <h2>{g.path.split('/').slice(1).join(' / ')}</h2>}
+      <div class="book-list">
+        {g.books.map((b) => <BookCard book={b} />)}
+      </div>
+    </section>
+  ))}
+</Base>

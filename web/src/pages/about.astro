@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import { siteMeta, withBase } from '../lib/data';
+---
+
+<Base title="关于" description="关于本项目:数据来源、抓取策略、同步机制与许可证">
+  <h1 class="page-title">关于本项目</h1>
+
+  <div class="detail-panel prose">
+    <h2>数据来源</h2>
+    <p>
+      本站书单数据来自 GitHub 知名开源项目
+      <a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+      (GPL-3.0)。站点分支通过解析器把上游 markdown 书单转换为结构化数据(JSON),
+      数据当前对应上游提交 <code>{siteMeta.sourceCommit.slice(0, 10)}</code>。
+    </p>
+
+    <h2>在线阅读说明</h2>
+    <p>
+      站点对每本书优先尝试把内容抓取到站内,提供全文阅读与站内搜索;
+      抓取不可用或上游标记失效的条目,自动降级为"去原站阅读"外链,
+      保证任何情况下都能找到阅读入口。
+    </p>
+    <p>
+      所有书籍内容的著作权归原作者/出版社所有。本站仅聚合免费开放的教育资源,
+      不用于任何商业用途;如内容侵犯您的权益,请提交 Issue 联系移除。
+    </p>
+
+    <h2>上游同步机制</h2>
+    <p>
+      上游书单更新后,本站通过 GitHub Actions 自动同步:合并上游 main 分支 →
+      重新解析生成数据 → 新增书籍自动进入抓取队列 → 重新构建部署。
+      同步不修改上游任何文件,合并几乎不会产生冲突(详见仓库 docs/UPSTREAM-SYNC.md)。
+    </p>
+
+    <h2>许可证</h2>
+    <p>
+      本项目代码与衍生数据遵循
+      <a href="https://github.com/justjavac/free-programming-books-zh_CN/blob/main/LICENSE" target="_blank" rel="noopener">GPL-3.0</a>
+      开源。
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import { bookById, allBooks, withBase, bookPath, categoryPath } from '../../lib/data';
+import { metaOf, chaptersOf, isReadable } from '../../lib/reading';
+
+export function getStaticPaths() {
+  return (allBooks as { id: string }[]).map((b) => ({ params: { id: b.id } }));
+}
+
+const { id } = Astro.params;
+const book = bookById(id!);
+if (!book) return Astro.redirect(withBase('/'));
+const meta = metaOf(book.id);
+const chapters = chaptersOf(book.id);
+const catHref = withBase(categoryPath(book.categoryPath[0]));
+---
+
+<Base title={book.title} description={book.description || book.title}>
+  <div class="crumbs">
+    <a href={withBase('/')}>首页</a> /
+    <a href={catHref}>{book.categoryPath[0]}</a>
+    {book.categoryPath.length > 1 && <span> / {book.categoryPath.slice(1).join(' / ')}</span>}
+  </div>
+
+  <div class="detail-panel">
+    <h1 class="page-title">{book.title}</h1>
+    {book.status === 'deprecated' && (
+      <p style="color:var(--warn);font-size:14px">⚠ 上游标记此链接疑似失效,可能无法访问。</p>
+    )}
+    {book.description && <p>{book.description}</p>}
+
+    <div class="btn-row">
+      {isReadable(book.id) ? (
+        <a class="btn" href={withBase(`/read/${book.id}/`)}>📖 开始阅读{chapters.length ? `(${chapters.length} 章)` : ''}</a>
+      ) : (
+        <a class="btn" href={book.url} target="_blank" rel="noopener">🔗 去原站阅读</a>
+      )}
+      <a class="btn ghost" href={book.url} target="_blank" rel="noopener">原网站 ↗</a>
+    </div>
+
+    <p class="page-sub" style="margin-bottom:8px">
+      来源:{book.sourceFile} 第 {book.line} 行 ·
+      分类:{book.categoryPath.join(' / ')}
+      {meta?.license && <> · 许可证:{meta.license}</>}
+    </p>
+
+    {meta?.error && <p class="page-sub">站内抓取失败({meta.error}),已降级为原站链接。</p>}
+
+    {chapters.length > 0 && (
+      <section>
+        <h2>章节目录</h2>
+        <div class="reader-toc" style="position:static;max-height:none">
+          {chapters.map((ch) => (
+            <a href={withBase(`/read/${book.id}/${ch.slug}/`)}>{ch.title}</a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Base>

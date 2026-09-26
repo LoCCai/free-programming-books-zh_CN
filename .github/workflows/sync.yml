@@ -1,0 +1,68 @@
+name: Sync upstream
+
+on:
+  schedule:
+    # 每周一 UTC 02:00(北京时间 10:00)
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge upstream main
+        run: |
+          git config user.name "LoCCai"
+          git config user.email "LoCCai@users.noreply.github.com"
+          git remote add upstream https://github.com/justjavac/free-programming-books-zh_CN.git
+          git fetch upstream main
+          git checkout main
+          git merge --ff-only upstream/main
+          git push origin main
+          git checkout site
+          git merge main --no-edit
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install deps
+        run: |
+          npm install
+          npm install --prefix web
+
+      - name: Re-parse & report upstream changes
+        run: |
+          npm run parse
+          node scripts/sync-report.mjs
+          npm run validate
+
+      - name: Fetch newly added books
+        if: ${{ hashFiles('data/new-book-ids.txt') != '' }}
+        run: node scripts/fetch-all.mjs --ids-file=data/new-book-ids.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit & push (triggers deploy)
+        run: |
+          git config user.name "LoCCai"
+          git config user.email "LoCCai@users.noreply.github.com"
+          git add data/ content/ || true
+          if git diff --cached --quiet; then
+            echo "无变更,跳过提交"
+          else
+            git commit -m "sync: 上游书单更新 $(date -u +%F)"
+            git push origin site
+          fi

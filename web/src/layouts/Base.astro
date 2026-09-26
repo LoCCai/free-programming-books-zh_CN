@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import { withBase, siteMeta } from '../lib/data';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = '免费的编程中文书籍索引 — 可搜索、可在线阅读' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · 免费编程中文书籍</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
+    <script is:inline>
+      // 主题初始化(防闪烁):localStorage 优先,其次系统偏好
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href={withBase('/')}>免费编程书库<span>.</span></a>
+        <nav>
+          <a href={withBase('/')}>首页</a>
+          <a href={withBase('/search/')}>搜索</a>
+          <a href={withBase('/nonfiction/')}>非编程好书</a>
+          <a href={withBase('/about/')}>关于</a>
+        </nav>
+        <button class="theme-btn" id="theme-btn" aria-label="切换深浅色">◐</button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <p>
+          数据来源
+          <a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="noopener">justjavac/free-programming-books-zh_CN</a>
+          (GPL-3.0),源码提交 {siteMeta.sourceCommit.slice(0, 7)},数据生成于 {siteMeta.generatedAt.slice(0, 10)}。
+        </p>
+        <p>
+          所有书籍内容与商标归原作者/出版社所有;本站仅聚合免费开放资源,如内容侵权请联系移除。
+          本分支项目遵循 GPL-3.0 开源。
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('theme-btn')?.addEventListener('click', () => {
+        const dark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>
