@@ -3,257 +3,1007 @@
   "title": "Python 标准库 中文版",
   "url": "https://docs.python.org/zh-cn/3/library/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:13:48.552Z",
+  "fetchedAt": "2026-09-27T12:05:05.473Z",
   "chapters": [
     {
-      "slug": "001-1e",
+      "slug": "001-the-python-standard-library",
       "title": "The Python standard library",
-      "file": "chapters/001-1e.md"
+      "file": "chapters/001-the-python-standard-library.md"
     },
     {
-      "slug": "002-1e",
+      "slug": "002-概述",
       "title": "概述",
-      "file": "chapters/002-1e.md"
+      "file": "chapters/002-概述.md"
     },
     {
-      "slug": "003-1d",
+      "slug": "003-文本处理服务",
       "title": "文本处理服务",
-      "file": "chapters/003-1d.md"
+      "file": "chapters/003-文本处理服务.md"
     },
     {
-      "slug": "004-1f",
+      "slug": "004-string-常见的字符串操作",
       "title": "string --- 常见的字符串操作",
-      "file": "chapters/004-1f.md"
+      "file": "chapters/004-string-常见的字符串操作.md"
     },
     {
-      "slug": "005-1r",
+      "slug": "005-string-templatelib-对模板字符串字面值的支持",
       "title": "string.templatelib --- 对模板字符串字面值的支持",
-      "file": "chapters/005-1r.md"
+      "file": "chapters/005-string-templatelib-对模板字符串字面值的支持.md"
     },
     {
-      "slug": "006-1b",
+      "slug": "006-re-正则表达式操作",
       "title": "re --- 正则表达式操作",
-      "file": "chapters/006-1b.md"
+      "file": "chapters/006-re-正则表达式操作.md"
     },
     {
-      "slug": "007-1g",
+      "slug": "007-difflib-计算差异的辅助工具",
       "title": "difflib --- 计算差异的辅助工具",
-      "file": "chapters/007-1g.md"
+      "file": "chapters/007-difflib-计算差异的辅助工具.md"
     },
     {
-      "slug": "008-1h",
+      "slug": "008-textwrap-文本自动换行与填充",
       "title": "textwrap --- 文本自动换行与填充",
-      "file": "chapters/008-1h.md"
+      "file": "chapters/008-textwrap-文本自动换行与填充.md"
     },
     {
-      "slug": "009-1k",
+      "slug": "009-unicodedata-unicode-数据库",
       "title": "unicodedata --- Unicode 数据库",
-      "file": "chapters/009-1k.md"
+      "file": "chapters/009-unicodedata-unicode-数据库.md"
     },
     {
-      "slug": "010-1j",
+      "slug": "010-stringprep-因特网字符串预处理",
       "title": "stringprep --- 因特网字符串预处理",
-      "file": "chapters/010-1j.md"
+      "file": "chapters/010-stringprep-因特网字符串预处理.md"
     },
     {
-      "slug": "011-1h",
+      "slug": "011-readline-gnu-readline-接口",
       "title": "readline --- GNU readline 接口",
-      "file": "chapters/011-1h.md"
+      "file": "chapters/011-readline-gnu-readline-接口.md"
     },
     {
-      "slug": "012-1k",
+      "slug": "012-rlcompleter-用于-gnu-readline-的补全函数",
       "title": "rlcompleter --- 用于 GNU readline 的补全函数",
-      "file": "chapters/012-1k.md"
+      "file": "chapters/012-rlcompleter-用于-gnu-readline-的补全函数.md"
     },
     {
-      "slug": "013-1f",
+      "slug": "013-二进制数据服务",
       "title": "二进制数据服务",
-      "file": "chapters/013-1f.md"
+      "file": "chapters/013-二进制数据服务.md"
     },
     {
-      "slug": "014-1f",
+      "slug": "014-struct-将字节串解读为打包的二进制数据",
       "title": "struct --- 将字节串解读为打包的二进制数据",
-      "file": "chapters/014-1f.md"
+      "file": "chapters/014-struct-将字节串解读为打包的二进制数据.md"
     },
     {
-      "slug": "015-1f",
+      "slug": "015-codecs-编解码器注册和相关基类",
       "title": "codecs --- 编解码器注册和相关基类",
-      "file": "chapters/015-1f.md"
+      "file": "chapters/015-codecs-编解码器注册和相关基类.md"
     },
     {
-      "slug": "016-1i",
+      "slug": "016-数据类型",
       "title": "数据类型",
-      "file": "chapters/016-1i.md"
+      "file": "chapters/016-数据类型.md"
     },
     {
-      "slug": "017-1h",
+      "slug": "017-datetime-基本日期和时间类型",
       "title": "datetime --- 基本日期和时间类型",
-      "file": "chapters/017-1h.md"
+      "file": "chapters/017-datetime-基本日期和时间类型.md"
     },
     {
-      "slug": "018-1h",
+      "slug": "018-zoneinfo-iana-时区支持",
       "title": "zoneinfo --- IANA 时区支持",
-      "file": "chapters/018-1h.md"
+      "file": "chapters/018-zoneinfo-iana-时区支持.md"
     },
     {
-      "slug": "019-1h",
+      "slug": "019-calendar-通用日历相关函数",
       "title": "calendar --- 通用日历相关函数",
-      "file": "chapters/019-1h.md"
+      "file": "chapters/019-calendar-通用日历相关函数.md"
     },
     {
-      "slug": "020-1k",
+      "slug": "020-collections-容器数据类型",
       "title": "collections --- 容器数据类型",
-      "file": "chapters/020-1k.md"
+      "file": "chapters/020-collections-容器数据类型.md"
     },
     {
-      "slug": "021-1o",
+      "slug": "021-collections-abc-容器的抽象基类",
       "title": "collections.abc --- 容器的抽象基类",
-      "file": "chapters/021-1o.md"
+      "file": "chapters/021-collections-abc-容器的抽象基类.md"
     },
     {
-      "slug": "022-1e",
+      "slug": "022-heapq-堆队列算法",
       "title": "heapq --- 堆队列算法",
-      "file": "chapters/022-1e.md"
+      "file": "chapters/022-heapq-堆队列算法.md"
     },
     {
-      "slug": "023-1f",
+      "slug": "023-bisect-数组二分算法",
       "title": "bisect --- 数组二分算法",
-      "file": "chapters/023-1f.md"
+      "file": "chapters/023-bisect-数组二分算法.md"
     },
     {
-      "slug": "024-1e",
+      "slug": "024-array-高效的数值数组",
       "title": "array --- 高效的数值数组",
-      "file": "chapters/024-1e.md"
+      "file": "chapters/024-array-高效的数值数组.md"
     },
     {
-      "slug": "025-1g",
+      "slug": "025-weakref-弱引用",
       "title": "weakref --- 弱引用",
-      "file": "chapters/025-1g.md"
+      "file": "chapters/025-weakref-弱引用.md"
     },
     {
-      "slug": "026-1e",
+      "slug": "026-types-动态类型创建和内置类型名称",
       "title": "types --- 动态类型创建和内置类型名称",
-      "file": "chapters/026-1e.md"
+      "file": "chapters/026-types-动态类型创建和内置类型名称.md"
     },
     {
-      "slug": "027-1d",
+      "slug": "027-copy-浅层及深层拷贝操作",
       "title": "copy --- 浅层及深层拷贝操作",
-      "file": "chapters/027-1d.md"
+      "file": "chapters/027-copy-浅层及深层拷贝操作.md"
     },
     {
-      "slug": "028-1f",
+      "slug": "028-pprint-数据美化输出",
       "title": "pprint --- 数据美化输出",
-      "file": "chapters/028-1f.md"
+      "file": "chapters/028-pprint-数据美化输出.md"
     },
     {
-      "slug": "029-1g",
+      "slug": "029-reprlib-替代性-repr-实现",
       "title": "reprlib --- 替代性 repr() 实现",
-      "file": "chapters/029-1g.md"
+      "file": "chapters/029-reprlib-替代性-repr-实现.md"
     },
     {
-      "slug": "030-1d",
+      "slug": "030-enum-对枚举的支持",
       "title": "enum --- 对枚举的支持",
-      "file": "chapters/030-1d.md"
+      "file": "chapters/030-enum-对枚举的支持.md"
     },
     {
-      "slug": "031-1h",
+      "slug": "031-graphlib-操作类似图的结构的功能",
       "title": "graphlib --- 操作类似图的结构的功能",
-      "file": "chapters/031-1h.md"
+      "file": "chapters/031-graphlib-操作类似图的结构的功能.md"
     },
     {
-      "slug": "032-1g",
+      "slug": "032-数字和数学模块",
       "title": "数字和数学模块",
-      "file": "chapters/032-1g.md"
+      "file": "chapters/032-数字和数学模块.md"
     },
     {
-      "slug": "033-1g",
+      "slug": "033-numbers-数字抽象基类",
       "title": "numbers --- 数字抽象基类",
-      "file": "chapters/033-1g.md"
+      "file": "chapters/033-numbers-数字抽象基类.md"
     },
     {
-      "slug": "034-1d",
+      "slug": "034-math-数学函数",
       "title": "math --- 数学函数",
-      "file": "chapters/034-1d.md"
+      "file": "chapters/034-math-数学函数.md"
     },
     {
-      "slug": "035-1e",
+      "slug": "035-cmath-针对复数的数学函数",
       "title": "cmath --- 针对复数的数学函数",
-      "file": "chapters/035-1e.md"
+      "file": "chapters/035-cmath-针对复数的数学函数.md"
     },
     {
-      "slug": "036-1g",
+      "slug": "036-decimal-十进制定点和浮点算术",
       "title": "decimal --- 十进制定点和浮点算术",
-      "file": "chapters/036-1g.md"
+      "file": "chapters/036-decimal-十进制定点和浮点算术.md"
     },
     {
-      "slug": "037-1i",
+      "slug": "037-fractions-有理数",
       "title": "fractions --- 有理数",
-      "file": "chapters/037-1i.md"
+      "file": "chapters/037-fractions-有理数.md"
     },
     {
-      "slug": "038-1f",
+      "slug": "038-random-生成伪随机数",
       "title": "random --- 生成伪随机数",
-      "file": "chapters/038-1f.md"
+      "file": "chapters/038-random-生成伪随机数.md"
     },
     {
-      "slug": "039-1j",
+      "slug": "039-statistics-数学统计函数",
       "title": "statistics --- 数学统计函数",
-      "file": "chapters/039-1j.md"
+      "file": "chapters/039-statistics-数学统计函数.md"
     },
     {
-      "slug": "040-1j",
+      "slug": "040-函数式编程模块",
       "title": "函数式编程模块",
-      "file": "chapters/040-1j.md"
+      "file": "chapters/040-函数式编程模块.md"
     },
     {
-      "slug": "041-1i",
+      "slug": "041-itertools-为高效循环创建迭代器的函数",
       "title": "itertools --- 为高效循环创建迭代器的函数",
-      "file": "chapters/041-1i.md"
+      "file": "chapters/041-itertools-为高效循环创建迭代器的函数.md"
     },
     {
-      "slug": "042-1i",
+      "slug": "042-functools-高阶函数-以及可调用对象上的操作",
       "title": "functools —— 高阶函数，以及可调用对象上的操作",
-      "file": "chapters/042-1i.md"
+      "file": "chapters/042-functools-高阶函数-以及可调用对象上的操作.md"
     },
     {
-      "slug": "043-1h",
+      "slug": "043-operator-标准运算符对应函数",
       "title": "operator --- 标准运算符对应函数",
-      "file": "chapters/043-1h.md"
+      "file": "chapters/043-operator-标准运算符对应函数.md"
     },
     {
-      "slug": "044-1g",
+      "slug": "044-文件和目录访问",
       "title": "文件和目录访问",
-      "file": "chapters/044-1g.md"
+      "file": "chapters/044-文件和目录访问.md"
     },
     {
-      "slug": "045-1g",
+      "slug": "045-pathlib-面向对象的文件系统路径",
       "title": "pathlib --- 面向对象的文件系统路径",
-      "file": "chapters/045-1g.md"
+      "file": "chapters/045-pathlib-面向对象的文件系统路径.md"
     },
     {
-      "slug": "046-1g",
+      "slug": "046-os-path-常用的路径操作",
       "title": "os.path --- 常用的路径操作",
-      "file": "chapters/046-1g.md"
+      "file": "chapters/046-os-path-常用的路径操作.md"
     },
     {
-      "slug": "047-1d",
+      "slug": "047-stat-解释-stat-的结果",
       "title": "stat --- 解释 stat() 的结果",
-      "file": "chapters/047-1d.md"
+      "file": "chapters/047-stat-解释-stat-的结果.md"
     },
     {
-      "slug": "048-1g",
+      "slug": "048-filecmp-文件和目录比较",
       "title": "filecmp --- 文件和目录比较",
-      "file": "chapters/048-1g.md"
+      "file": "chapters/048-filecmp-文件和目录比较.md"
     },
     {
-      "slug": "049-1h",
+      "slug": "049-tempfile-生成临时文件和目录",
       "title": "tempfile --- 生成临时文件和目录",
-      "file": "chapters/049-1h.md"
+      "file": "chapters/049-tempfile-生成临时文件和目录.md"
     },
     {
-      "slug": "050-1d",
+      "slug": "050-glob-unix-风格的路径名模式扩展",
       "title": "glob --- Unix 风格的路径名模式扩展",
-      "file": "chapters/050-1d.md"
+      "file": "chapters/050-glob-unix-风格的路径名模式扩展.md"
+    },
+    {
+      "slug": "051-fnmatch-unix-文件名模式匹配",
+      "title": "fnmatch --- Unix 文件名模式匹配",
+      "file": "chapters/051-fnmatch-unix-文件名模式匹配.md"
+    },
+    {
+      "slug": "052-linecache-随机访问文本行",
+      "title": "linecache --- 随机访问文本行",
+      "file": "chapters/052-linecache-随机访问文本行.md"
+    },
+    {
+      "slug": "053-shutil-高层级文件操作",
+      "title": "shutil --- 高层级文件操作",
+      "file": "chapters/053-shutil-高层级文件操作.md"
+    },
+    {
+      "slug": "054-数据持久化",
+      "title": "数据持久化",
+      "file": "chapters/054-数据持久化.md"
+    },
+    {
+      "slug": "055-pickle-python-对象序列化",
+      "title": "pickle --- Python 对象序列化",
+      "file": "chapters/055-pickle-python-对象序列化.md"
+    },
+    {
+      "slug": "056-copyreg-注册-pickle-支持函数",
+      "title": "copyreg --- 注册 pickle 支持函数",
+      "file": "chapters/056-copyreg-注册-pickle-支持函数.md"
+    },
+    {
+      "slug": "057-shelve-python-对象持久化",
+      "title": "shelve --- Python 对象持久化",
+      "file": "chapters/057-shelve-python-对象持久化.md"
+    },
+    {
+      "slug": "058-marshal-内部-python-对象序列化",
+      "title": "marshal --- 内部 Python 对象序列化",
+      "file": "chapters/058-marshal-内部-python-对象序列化.md"
+    },
+    {
+      "slug": "059-dbm-unix-数据库-接口",
+      "title": "dbm --- Unix \"数据库\" 接口",
+      "file": "chapters/059-dbm-unix-数据库-接口.md"
+    },
+    {
+      "slug": "060-sqlite3-sqlite-数据库的-db-api-2-0-接口",
+      "title": "sqlite3 --- SQLite 数据库的 DB-API 2.0 接口",
+      "file": "chapters/060-sqlite3-sqlite-数据库的-db-api-2-0-接口.md"
+    },
+    {
+      "slug": "061-数据压缩和存档",
+      "title": "数据压缩和存档",
+      "file": "chapters/061-数据压缩和存档.md"
+    },
+    {
+      "slug": "062-compression-包",
+      "title": "compression 包",
+      "file": "chapters/062-compression-包.md"
+    },
+    {
+      "slug": "063-compression-zstd-与-zstandard-格式兼容的压缩",
+      "title": "compression.zstd --- 与 Zstandard 格式兼容的压缩",
+      "file": "chapters/063-compression-zstd-与-zstandard-格式兼容的压缩.md"
+    },
+    {
+      "slug": "064-zlib-与-gzip-兼容的压缩",
+      "title": "zlib --- 与 gzip 兼容的压缩",
+      "file": "chapters/064-zlib-与-gzip-兼容的压缩.md"
+    },
+    {
+      "slug": "065-gzip-对-gzip-文件的支持",
+      "title": "gzip --- 对 gzip 文件的支持",
+      "file": "chapters/065-gzip-对-gzip-文件的支持.md"
+    },
+    {
+      "slug": "066-bz2-对-bzip2-压缩算法的支持",
+      "title": "bz2 --- 对 bzip2 压缩算法的支持",
+      "file": "chapters/066-bz2-对-bzip2-压缩算法的支持.md"
+    },
+    {
+      "slug": "067-lzma-使用-lzma-算法进行压缩",
+      "title": "lzma --- 使用 LZMA 算法进行压缩",
+      "file": "chapters/067-lzma-使用-lzma-算法进行压缩.md"
+    },
+    {
+      "slug": "068-zipfile-操作-zip-归档文件",
+      "title": "zipfile --- 操作 ZIP 归档文件",
+      "file": "chapters/068-zipfile-操作-zip-归档文件.md"
+    },
+    {
+      "slug": "069-tarfile-读写-tar-归档文件",
+      "title": "tarfile --- 读写 tar 归档文件",
+      "file": "chapters/069-tarfile-读写-tar-归档文件.md"
+    },
+    {
+      "slug": "070-文件格式",
+      "title": "文件格式",
+      "file": "chapters/070-文件格式.md"
+    },
+    {
+      "slug": "071-csv-csv-文件读写",
+      "title": "csv --- CSV 文件读写",
+      "file": "chapters/071-csv-csv-文件读写.md"
+    },
+    {
+      "slug": "072-configparser-配置文件解析器",
+      "title": "configparser --- 配置文件解析器",
+      "file": "chapters/072-configparser-配置文件解析器.md"
+    },
+    {
+      "slug": "073-tomllib-解析-toml-文件",
+      "title": "tomllib --- 解析 TOML 文件",
+      "file": "chapters/073-tomllib-解析-toml-文件.md"
+    },
+    {
+      "slug": "074-netrc-netrc-文件处理",
+      "title": "netrc --- netrc 文件处理",
+      "file": "chapters/074-netrc-netrc-文件处理.md"
+    },
+    {
+      "slug": "075-plistlib-生成与解析-apple-plist-文件",
+      "title": "plistlib --- 生成与解析 Apple .plist 文件",
+      "file": "chapters/075-plistlib-生成与解析-apple-plist-文件.md"
+    },
+    {
+      "slug": "076-加密服务",
+      "title": "加密服务",
+      "file": "chapters/076-加密服务.md"
+    },
+    {
+      "slug": "077-hashlib-安全哈希与消息摘要",
+      "title": "hashlib --- 安全哈希与消息摘要",
+      "file": "chapters/077-hashlib-安全哈希与消息摘要.md"
+    },
+    {
+      "slug": "078-hmac-用于消息验证的密钥哈希",
+      "title": "hmac --- 用于消息验证的密钥哈希",
+      "file": "chapters/078-hmac-用于消息验证的密钥哈希.md"
+    },
+    {
+      "slug": "079-secrets-生成管理密码的安全随机数",
+      "title": "secrets --- 生成管理密码的安全随机数",
+      "file": "chapters/079-secrets-生成管理密码的安全随机数.md"
+    },
+    {
+      "slug": "080-通用操作系统服务",
+      "title": "通用操作系统服务",
+      "file": "chapters/080-通用操作系统服务.md"
+    },
+    {
+      "slug": "081-os-多种操作系统接口",
+      "title": "os --- 多种操作系统接口",
+      "file": "chapters/081-os-多种操作系统接口.md"
+    },
+    {
+      "slug": "082-io-处理流的核心工具",
+      "title": "io --- 处理流的核心工具",
+      "file": "chapters/082-io-处理流的核心工具.md"
+    },
+    {
+      "slug": "083-time-时间的访问和转换",
+      "title": "time --- 时间的访问和转换",
+      "file": "chapters/083-time-时间的访问和转换.md"
+    },
+    {
+      "slug": "084-logging-python-的日志记录工具",
+      "title": "logging --- Python 的日志记录工具",
+      "file": "chapters/084-logging-python-的日志记录工具.md"
+    },
+    {
+      "slug": "085-logging-config-日志记录配置",
+      "title": "logging.config --- 日志记录配置",
+      "file": "chapters/085-logging-config-日志记录配置.md"
+    },
+    {
+      "slug": "086-logging-handlers-日志处理器",
+      "title": "logging.handlers --- 日志处理器",
+      "file": "chapters/086-logging-handlers-日志处理器.md"
+    },
+    {
+      "slug": "087-platform-访问底层平台的标识数据",
+      "title": "platform ---  访问底层平台的标识数据",
+      "file": "chapters/087-platform-访问底层平台的标识数据.md"
+    },
+    {
+      "slug": "088-errno-标准-errno-系统符号",
+      "title": "errno --- 标准 errno 系统符号",
+      "file": "chapters/088-errno-标准-errno-系统符号.md"
+    },
+    {
+      "slug": "089-ctypes-python-的外部函数库",
+      "title": "ctypes --- Python 的外部函数库",
+      "file": "chapters/089-ctypes-python-的外部函数库.md"
+    },
+    {
+      "slug": "090-命令行界面库",
+      "title": "命令行界面库",
+      "file": "chapters/090-命令行界面库.md"
+    },
+    {
+      "slug": "091-argparse-用于命令行选项-参数和子命令的解析器",
+      "title": "argparse --- 用于命令行选项、参数和子命令的解析器",
+      "file": "chapters/091-argparse-用于命令行选项-参数和子命令的解析器.md"
+    },
+    {
+      "slug": "092-optparse-命令行选项的解析器",
+      "title": "optparse --- 命令行选项的解析器",
+      "file": "chapters/092-optparse-命令行选项的解析器.md"
+    },
+    {
+      "slug": "093-getpass-可移植的密码输入",
+      "title": "getpass --- 可移植的密码输入",
+      "file": "chapters/093-getpass-可移植的密码输入.md"
+    },
+    {
+      "slug": "094-fileinput-迭代来自多个输入流的行",
+      "title": "fileinput --- 迭代来自多个输入流的行",
+      "file": "chapters/094-fileinput-迭代来自多个输入流的行.md"
+    },
+    {
+      "slug": "095-curses-字符单元显示的终端处理",
+      "title": "curses --- 字符单元显示的终端处理",
+      "file": "chapters/095-curses-字符单元显示的终端处理.md"
+    },
+    {
+      "slug": "096-curses-ascii-用于-ascii-字符的工具",
+      "title": "curses.ascii --- 用于 ASCII 字符的工具",
+      "file": "chapters/096-curses-ascii-用于-ascii-字符的工具.md"
+    },
+    {
+      "slug": "097-curses-panel-针对-curses-的面板栈扩展",
+      "title": "curses.panel --- 针对 curses 的面板栈扩展",
+      "file": "chapters/097-curses-panel-针对-curses-的面板栈扩展.md"
+    },
+    {
+      "slug": "098-cmd-对面向行的命令解释器的支持",
+      "title": "cmd --- 对面向行的命令解释器的支持",
+      "file": "chapters/098-cmd-对面向行的命令解释器的支持.md"
+    },
+    {
+      "slug": "099-并发执行",
+      "title": "并发执行",
+      "file": "chapters/099-并发执行.md"
+    },
+    {
+      "slug": "100-threading-基于线程的并行",
+      "title": "threading --- 基于线程的并行",
+      "file": "chapters/100-threading-基于线程的并行.md"
+    },
+    {
+      "slug": "101-multiprocessing-基于进程的并行",
+      "title": "multiprocessing --- 基于进程的并行",
+      "file": "chapters/101-multiprocessing-基于进程的并行.md"
+    },
+    {
+      "slug": "102-multiprocessing-shared-memory-可跨进程直接访问的共",
+      "title": "multiprocessing.shared_memory --- 可跨进程直接访问的共享内存",
+      "file": "chapters/102-multiprocessing-shared-memory-可跨进程直接访问的共.md"
+    },
+    {
+      "slug": "103-concurrent-包",
+      "title": "concurrent 包",
+      "file": "chapters/103-concurrent-包.md"
+    },
+    {
+      "slug": "104-concurrent-futures-启动并行任务",
+      "title": "concurrent.futures --- 启动并行任务",
+      "file": "chapters/104-concurrent-futures-启动并行任务.md"
+    },
+    {
+      "slug": "105-concurrent-interpreters-同一进程中的多个解释器",
+      "title": "concurrent.interpreters --- 同一进程中的多个解释器",
+      "file": "chapters/105-concurrent-interpreters-同一进程中的多个解释器.md"
+    },
+    {
+      "slug": "106-subprocess-子进程管理",
+      "title": "subprocess --- 子进程管理",
+      "file": "chapters/106-subprocess-子进程管理.md"
+    },
+    {
+      "slug": "107-sched-事件调度器",
+      "title": "sched --- 事件调度器",
+      "file": "chapters/107-sched-事件调度器.md"
+    },
+    {
+      "slug": "108-queue-同步队列类",
+      "title": "queue --- 同步队列类",
+      "file": "chapters/108-queue-同步队列类.md"
+    },
+    {
+      "slug": "109-contextvars-上下文变量",
+      "title": "contextvars --- 上下文变量",
+      "file": "chapters/109-contextvars-上下文变量.md"
+    },
+    {
+      "slug": "110-thread-低层级多线程-api",
+      "title": "_thread --- 低层级多线程 API",
+      "file": "chapters/110-thread-低层级多线程-api.md"
+    },
+    {
+      "slug": "111-网络和进程间通信",
+      "title": "网络和进程间通信",
+      "file": "chapters/111-网络和进程间通信.md"
+    },
+    {
+      "slug": "112-asyncio-异步-i-o",
+      "title": "asyncio --- 异步 I/O",
+      "file": "chapters/112-asyncio-异步-i-o.md"
+    },
+    {
+      "slug": "113-socket-低层级的网络接口",
+      "title": "socket --- 低层级的网络接口",
+      "file": "chapters/113-socket-低层级的网络接口.md"
+    },
+    {
+      "slug": "114-ssl-套接字对象的-tls-ssl-包装器",
+      "title": "ssl --- 套接字对象的 TLS/SSL 包装器",
+      "file": "chapters/114-ssl-套接字对象的-tls-ssl-包装器.md"
+    },
+    {
+      "slug": "115-select-等待-i-o-完成",
+      "title": "select --- 等待 I/O 完成",
+      "file": "chapters/115-select-等待-i-o-完成.md"
+    },
+    {
+      "slug": "116-selectors-高层级-i-o-复用",
+      "title": "selectors --- 高层级 I/O 复用",
+      "file": "chapters/116-selectors-高层级-i-o-复用.md"
+    },
+    {
+      "slug": "117-signal-设置异步事件处理器",
+      "title": "signal --- 设置异步事件处理器",
+      "file": "chapters/117-signal-设置异步事件处理器.md"
+    },
+    {
+      "slug": "118-mmap-内存映射文件支持",
+      "title": "mmap --- 内存映射文件支持",
+      "file": "chapters/118-mmap-内存映射文件支持.md"
+    },
+    {
+      "slug": "119-互联网数据处理",
+      "title": "互联网数据处理",
+      "file": "chapters/119-互联网数据处理.md"
+    },
+    {
+      "slug": "120-email-电子邮件与-mime-处理包",
+      "title": "email --- 电子邮件与 MIME 处理包",
+      "file": "chapters/120-email-电子邮件与-mime-处理包.md"
+    },
+    {
+      "slug": "121-json-json-编码器和解码器",
+      "title": "json --- JSON 编码器和解码器",
+      "file": "chapters/121-json-json-编码器和解码器.md"
+    },
+    {
+      "slug": "122-mailbox-操纵多种格式的邮箱",
+      "title": "mailbox --- 操纵多种格式的邮箱",
+      "file": "chapters/122-mailbox-操纵多种格式的邮箱.md"
+    },
+    {
+      "slug": "123-mimetypes-将文件名映射到-mime-类型",
+      "title": "mimetypes --- 将文件名映射到 MIME 类型",
+      "file": "chapters/123-mimetypes-将文件名映射到-mime-类型.md"
+    },
+    {
+      "slug": "124-base64-base16-base32-base64-base85-数据编码",
+      "title": "base64 --- Base16, Base32, Base64, Base85 数据编码",
+      "file": "chapters/124-base64-base16-base32-base64-base85-数据编码.md"
+    },
+    {
+      "slug": "125-binascii-在二进制数据和-ascii-之间进行转换",
+      "title": "binascii --- 在二进制数据和 ASCII 之间进行转换",
+      "file": "chapters/125-binascii-在二进制数据和-ascii-之间进行转换.md"
+    },
+    {
+      "slug": "126-quopri-编码与解码-mime-转码的可打印数据",
+      "title": "quopri --- 编码与解码 MIME 转码的可打印数据",
+      "file": "chapters/126-quopri-编码与解码-mime-转码的可打印数据.md"
+    },
+    {
+      "slug": "127-结构化标记处理工具",
+      "title": "结构化标记处理工具",
+      "file": "chapters/127-结构化标记处理工具.md"
+    },
+    {
+      "slug": "128-html-超文本标记语言支持",
+      "title": "html --- 超文本标记语言支持",
+      "file": "chapters/128-html-超文本标记语言支持.md"
+    },
+    {
+      "slug": "129-html-parser-简单的-html-和-xhtml-解析器",
+      "title": "html.parser --- 简单的 HTML 和 XHTML 解析器",
+      "file": "chapters/129-html-parser-简单的-html-和-xhtml-解析器.md"
+    },
+    {
+      "slug": "130-html-entities-html-一般实体的定义",
+      "title": "html.entities --- HTML 一般实体的定义",
+      "file": "chapters/130-html-entities-html-一般实体的定义.md"
+    },
+    {
+      "slug": "131-xml-处理模块",
+      "title": "XML 处理模块",
+      "file": "chapters/131-xml-处理模块.md"
+    },
+    {
+      "slug": "132-xml-etree-elementtree-elementtree-xml-ap",
+      "title": "xml.etree.ElementTree --- ElementTree XML API",
+      "file": "chapters/132-xml-etree-elementtree-elementtree-xml-ap.md"
+    },
+    {
+      "slug": "133-xml-dom-文档对象模型-api",
+      "title": "xml.dom --- 文档对象模型 API",
+      "file": "chapters/133-xml-dom-文档对象模型-api.md"
+    },
+    {
+      "slug": "134-xml-dom-minidom-最小化的-dom-实现",
+      "title": "xml.dom.minidom --- 最小化的 DOM 实现",
+      "file": "chapters/134-xml-dom-minidom-最小化的-dom-实现.md"
+    },
+    {
+      "slug": "135-xml-dom-pulldom-对构建部分-dom-树的支持",
+      "title": "xml.dom.pulldom --- 对构建部分 DOM 树的支持",
+      "file": "chapters/135-xml-dom-pulldom-对构建部分-dom-树的支持.md"
+    },
+    {
+      "slug": "136-xml-sax-sax2-解析器支持",
+      "title": "xml.sax --- SAX2 解析器支持",
+      "file": "chapters/136-xml-sax-sax2-解析器支持.md"
+    },
+    {
+      "slug": "137-xml-sax-handler-sax-处理器的基类",
+      "title": "xml.sax.handler --- SAX 处理器的基类",
+      "file": "chapters/137-xml-sax-handler-sax-处理器的基类.md"
+    },
+    {
+      "slug": "138-xml-sax-saxutils-sax-工具集",
+      "title": "xml.sax.saxutils --- SAX 工具集",
+      "file": "chapters/138-xml-sax-saxutils-sax-工具集.md"
+    },
+    {
+      "slug": "139-xml-sax-xmlreader-用于-xml-解析器的接口",
+      "title": "xml.sax.xmlreader --- 用于 XML 解析器的接口",
+      "file": "chapters/139-xml-sax-xmlreader-用于-xml-解析器的接口.md"
+    },
+    {
+      "slug": "140-xml-parsers-expat-使用-expat-进行快速-xml-解析",
+      "title": "xml.parsers.expat --- 使用 Expat 进行快速 XML 解析",
+      "file": "chapters/140-xml-parsers-expat-使用-expat-进行快速-xml-解析.md"
+    },
+    {
+      "slug": "141-互联网协议和支持",
+      "title": "互联网协议和支持",
+      "file": "chapters/141-互联网协议和支持.md"
+    },
+    {
+      "slug": "142-webbrowser-方便的-web-浏览器控制工具",
+      "title": "webbrowser --- 方便的 Web 浏览器控制工具",
+      "file": "chapters/142-webbrowser-方便的-web-浏览器控制工具.md"
+    },
+    {
+      "slug": "143-wsgiref-wsgi-工具和参考实现",
+      "title": "wsgiref --- WSGI 工具和参考实现",
+      "file": "chapters/143-wsgiref-wsgi-工具和参考实现.md"
+    },
+    {
+      "slug": "144-urllib-url-处理模块",
+      "title": "urllib --- URL 处理模块",
+      "file": "chapters/144-urllib-url-处理模块.md"
+    },
+    {
+      "slug": "145-urllib-request-用于打开-url-的可扩展库",
+      "title": "urllib.request --- 用于打开 URL 的可扩展库",
+      "file": "chapters/145-urllib-request-用于打开-url-的可扩展库.md"
+    },
+    {
+      "slug": "146-urllib-parse-将-url-解析为组件",
+      "title": "urllib.parse --- 将 URL 解析为组件",
+      "file": "chapters/146-urllib-parse-将-url-解析为组件.md"
+    },
+    {
+      "slug": "147-urllib-error-由-urllib-request-引发的异常类",
+      "title": "urllib.error --- 由 urllib.request 引发的异常类",
+      "file": "chapters/147-urllib-error-由-urllib-request-引发的异常类.md"
+    },
+    {
+      "slug": "148-urllib-robotparser-用于-robots-txt-的解析器",
+      "title": "urllib.robotparser ---  用于 robots.txt 的解析器",
+      "file": "chapters/148-urllib-robotparser-用于-robots-txt-的解析器.md"
+    },
+    {
+      "slug": "149-http-http-模块",
+      "title": "http --- HTTP 模块",
+      "file": "chapters/149-http-http-模块.md"
+    },
+    {
+      "slug": "150-http-client-http-协议客户端",
+      "title": "http.client --- HTTP 协议客户端",
+      "file": "chapters/150-http-client-http-协议客户端.md"
+    },
+    {
+      "slug": "151-ftplib-ftp-协议客户端",
+      "title": "ftplib --- FTP 协议客户端",
+      "file": "chapters/151-ftplib-ftp-协议客户端.md"
+    },
+    {
+      "slug": "152-poplib-pop3-协议客户端",
+      "title": "poplib --- POP3 协议客户端",
+      "file": "chapters/152-poplib-pop3-协议客户端.md"
+    },
+    {
+      "slug": "153-imaplib-imap4-协议客户端",
+      "title": "imaplib --- IMAP4 协议客户端",
+      "file": "chapters/153-imaplib-imap4-协议客户端.md"
+    },
+    {
+      "slug": "154-smtplib-smtp-协议客户端",
+      "title": "smtplib --- SMTP 协议客户端",
+      "file": "chapters/154-smtplib-smtp-协议客户端.md"
+    },
+    {
+      "slug": "155-uuid-根据-rfc-9562-定义的-uuid-对象",
+      "title": "uuid --- 根据 RFC 9562 定义的 UUID 对象",
+      "file": "chapters/155-uuid-根据-rfc-9562-定义的-uuid-对象.md"
+    },
+    {
+      "slug": "156-socketserver-用于网络服务器的框架",
+      "title": "socketserver --- 用于网络服务器的框架",
+      "file": "chapters/156-socketserver-用于网络服务器的框架.md"
+    },
+    {
+      "slug": "157-http-server-http-服务器",
+      "title": "http.server --- HTTP 服务器",
+      "file": "chapters/157-http-server-http-服务器.md"
+    },
+    {
+      "slug": "158-http-cookies-http-状态管理",
+      "title": "http.cookies --- HTTP 状态管理",
+      "file": "chapters/158-http-cookies-http-状态管理.md"
+    },
+    {
+      "slug": "159-http-cookiejar-http-客户端的-cookie-处理",
+      "title": "http.cookiejar --- HTTP 客户端的 Cookie 处理",
+      "file": "chapters/159-http-cookiejar-http-客户端的-cookie-处理.md"
+    },
+    {
+      "slug": "160-xmlrpc-xmlrpc-服务端与客户端模块",
+      "title": "xmlrpc --- XMLRPC 服务端与客户端模块",
+      "file": "chapters/160-xmlrpc-xmlrpc-服务端与客户端模块.md"
+    },
+    {
+      "slug": "161-xmlrpc-client-xml-rpc-客户端访问",
+      "title": "xmlrpc.client --- XML-RPC 客户端访问",
+      "file": "chapters/161-xmlrpc-client-xml-rpc-客户端访问.md"
+    },
+    {
+      "slug": "162-xmlrpc-server-基本-xml-rpc-服务器",
+      "title": "xmlrpc.server --- 基本 XML-RPC 服务器",
+      "file": "chapters/162-xmlrpc-server-基本-xml-rpc-服务器.md"
+    },
+    {
+      "slug": "163-ipaddress-ipv4-ipv6-操作库",
+      "title": "ipaddress --- IPv4/IPv6 操作库",
+      "file": "chapters/163-ipaddress-ipv4-ipv6-操作库.md"
+    },
+    {
+      "slug": "164-多媒体服务",
+      "title": "多媒体服务",
+      "file": "chapters/164-多媒体服务.md"
+    },
+    {
+      "slug": "165-wave-读写-wav-文件",
+      "title": "wave --- 读写 WAV 文件",
+      "file": "chapters/165-wave-读写-wav-文件.md"
+    },
+    {
+      "slug": "166-colorsys-颜色系统间的转换",
+      "title": "colorsys --- 颜色系统间的转换",
+      "file": "chapters/166-colorsys-颜色系统间的转换.md"
+    },
+    {
+      "slug": "167-国际化",
+      "title": "国际化",
+      "file": "chapters/167-国际化.md"
+    },
+    {
+      "slug": "168-gettext-多语种国际化服务",
+      "title": "gettext --- 多语种国际化服务",
+      "file": "chapters/168-gettext-多语种国际化服务.md"
+    },
+    {
+      "slug": "169-locale-国际化服务",
+      "title": "locale --- 国际化服务",
+      "file": "chapters/169-locale-国际化服务.md"
+    },
+    {
+      "slug": "170-使用-tk-创建图形用户界面",
+      "title": "使用 Tk 创建图形用户界面",
+      "file": "chapters/170-使用-tk-创建图形用户界面.md"
+    },
+    {
+      "slug": "171-tkinter-tcl-tk-的-python-接口",
+      "title": "tkinter --- Tcl/Tk 的 Python 接口",
+      "file": "chapters/171-tkinter-tcl-tk-的-python-接口.md"
+    },
+    {
+      "slug": "172-tkinter-colorchooser-颜色选择对话框",
+      "title": "tkinter.colorchooser --- 颜色选择对话框",
+      "file": "chapters/172-tkinter-colorchooser-颜色选择对话框.md"
+    },
+    {
+      "slug": "173-tkinter-font-tkinter-字体包装器",
+      "title": "tkinter.font --- Tkinter 字体包装器",
+      "file": "chapters/173-tkinter-font-tkinter-字体包装器.md"
+    },
+    {
+      "slug": "174-tkinter-对话框",
+      "title": "Tkinter 对话框",
+      "file": "chapters/174-tkinter-对话框.md"
+    },
+    {
+      "slug": "175-tkinter-messagebox-tkinter-消息提示",
+      "title": "tkinter.messagebox --- Tkinter 消息提示",
+      "file": "chapters/175-tkinter-messagebox-tkinter-消息提示.md"
+    },
+    {
+      "slug": "176-tkinter-scrolledtext-scrolled-text-widge",
+      "title": "tkinter.scrolledtext --- Scrolled text widget",
+      "file": "chapters/176-tkinter-scrolledtext-scrolled-text-widge.md"
+    },
+    {
+      "slug": "177-tkinter-dnd-拖放操作支持",
+      "title": "tkinter.dnd --- 拖放操作支持",
+      "file": "chapters/177-tkinter-dnd-拖放操作支持.md"
+    },
+    {
+      "slug": "178-tkinter-ttk-tk-带主题的控件",
+      "title": "tkinter.ttk --- Tk 带主题的控件",
+      "file": "chapters/178-tkinter-ttk-tk-带主题的控件.md"
+    },
+    {
+      "slug": "179-idle-python-编辑器和-shell",
+      "title": "IDLE --- Python 编辑器和 shell",
+      "file": "chapters/179-idle-python-编辑器和-shell.md"
+    },
+    {
+      "slug": "180-turtle-海龟绘图",
+      "title": "turtle --- 海龟绘图",
+      "file": "chapters/180-turtle-海龟绘图.md"
+    },
+    {
+      "slug": "181-开发工具",
+      "title": "开发工具",
+      "file": "chapters/181-开发工具.md"
+    },
+    {
+      "slug": "182-typing-对类型提示的支持",
+      "title": "typing --- 对类型提示的支持",
+      "file": "chapters/182-typing-对类型提示的支持.md"
+    },
+    {
+      "slug": "183-pydoc-文档生成器和在线帮助系统",
+      "title": "pydoc --- 文档生成器和在线帮助系统",
+      "file": "chapters/183-pydoc-文档生成器和在线帮助系统.md"
+    },
+    {
+      "slug": "184-python-开发模式",
+      "title": "Python 开发模式",
+      "file": "chapters/184-python-开发模式.md"
+    },
+    {
+      "slug": "185-doctest-测试交互式的-python-示例",
+      "title": "doctest --- 测试交互式的 Python 示例",
+      "file": "chapters/185-doctest-测试交互式的-python-示例.md"
+    },
+    {
+      "slug": "186-unittest-单元测试框架",
+      "title": "unittest --- 单元测试框架",
+      "file": "chapters/186-unittest-单元测试框架.md"
+    },
+    {
+      "slug": "187-unittest-mock-模拟对象库",
+      "title": "unittest.mock --- 模拟对象库",
+      "file": "chapters/187-unittest-mock-模拟对象库.md"
+    },
+    {
+      "slug": "188-unittest-mock-新手入门",
+      "title": "unittest.mock --- 新手入门",
+      "file": "chapters/188-unittest-mock-新手入门.md"
+    },
+    {
+      "slug": "189-test-python-回归测试包",
+      "title": "test --- Python 回归测试包",
+      "file": "chapters/189-test-python-回归测试包.md"
+    },
+    {
+      "slug": "190-debugging-and-profiling",
+      "title": "Debugging and Profiling",
+      "file": "chapters/190-debugging-and-profiling.md"
+    },
+    {
+      "slug": "191-审计事件表",
+      "title": "审计事件表",
+      "file": "chapters/191-审计事件表.md"
+    },
+    {
+      "slug": "192-bdb-调试器框架",
+      "title": "bdb --- 调试器框架",
+      "file": "chapters/192-bdb-调试器框架.md"
+    },
+    {
+      "slug": "193-faulthandler-转储-python-回溯信息",
+      "title": "faulthandler --- 转储 Python 回溯信息",
+      "file": "chapters/193-faulthandler-转储-python-回溯信息.md"
+    },
+    {
+      "slug": "194-pdb-the-python-debugger",
+      "title": "pdb --- The Python Debugger",
+      "file": "chapters/194-pdb-the-python-debugger.md"
+    },
+    {
+      "slug": "195-the-python-profilers",
+      "title": "The Python Profilers",
+      "file": "chapters/195-the-python-profilers.md"
+    },
+    {
+      "slug": "196-timeit-测量小代码片段的执行时间",
+      "title": "timeit --- 测量小代码片段的执行时间",
+      "file": "chapters/196-timeit-测量小代码片段的执行时间.md"
+    },
+    {
+      "slug": "197-trace-跟踪或记录-python-语句的执行",
+      "title": "trace --- 跟踪或记录 Python 语句的执行",
+      "file": "chapters/197-trace-跟踪或记录-python-语句的执行.md"
+    },
+    {
+      "slug": "198-tracemalloc-跟踪内存分配",
+      "title": "tracemalloc --- 跟踪内存分配",
+      "file": "chapters/198-tracemalloc-跟踪内存分配.md"
+    },
+    {
+      "slug": "199-软件打包和分发",
+      "title": "软件打包和分发",
+      "file": "chapters/199-软件打包和分发.md"
+    },
+    {
+      "slug": "200-ensurepip-初始设置-pip-安装器",
+      "title": "ensurepip --- 初始设置 pip 安装器",
+      "file": "chapters/200-ensurepip-初始设置-pip-安装器.md"
     }
   ],
   "sourceType": "web",

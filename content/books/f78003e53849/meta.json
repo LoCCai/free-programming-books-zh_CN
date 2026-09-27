@@ -3,12 +3,12 @@
   "title": "前端代码规范 及 最佳实践",
   "url": "http://coderlmn.github.io/code-standards/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:33.951Z",
+  "fetchedAt": "2026-09-27T11:57:18.739Z",
   "chapters": [
     {
-      "slug": "001-15",
+      "slug": "001-前端代码规范-及-最佳实践-isobar",
       "title": "前端代码规范 及 最佳实践 | Isobar",
-      "file": "chapters/001-15.md"
+      "file": "chapters/001-前端代码规范-及-最佳实践-isobar.md"
     }
   ],
   "sourceType": "web",

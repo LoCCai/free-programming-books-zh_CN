@@ -2,8 +2,314 @@
   "bookId": "da1ac58a26da",
   "title": "Spark 编程指南简体中文版",
   "url": "https://aiyanbo.gitbooks.io/spark-programming-guide-zh-cn/content/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:25:53.846Z",
-  "chapters": [],
-  "error": "HTTP 401"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T12:11:32.242Z",
+  "chapters": [
+    {
+      "slug": "001-introduction",
+      "title": "Introduction | Spark编程指南 - 简体中文版",
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-1-快速上手",
+      "title": "快速上手 | Spark编程指南 - 简体中文版",
+      "file": "chapters/002-1-快速上手.md"
+    },
+    {
+      "slug": "003-1-1-spark-shell",
+      "title": "Spark Shell | Spark编程指南 - 简体中文版",
+      "file": "chapters/003-1-1-spark-shell.md"
+    },
+    {
+      "slug": "004-1-2-独立应用程序",
+      "title": "独立应用程序 | Spark编程指南 - 简体中文版",
+      "file": "chapters/004-1-2-独立应用程序.md"
+    },
+    {
+      "slug": "005-1-3-开始翻滚吧",
+      "title": "开始翻滚吧! | Spark编程指南 - 简体中文版",
+      "file": "chapters/005-1-3-开始翻滚吧.md"
+    },
+    {
+      "slug": "006-2-编程指南",
+      "title": "编程指南 | Spark编程指南 - 简体中文版",
+      "file": "chapters/006-2-编程指南.md"
+    },
+    {
+      "slug": "007-2-1-引入-spark",
+      "title": "引入 Spark | Spark编程指南 - 简体中文版",
+      "file": "chapters/007-2-1-引入-spark.md"
+    },
+    {
+      "slug": "008-2-2-初始化-spark",
+      "title": "初始化 Spark | Spark编程指南 - 简体中文版",
+      "file": "chapters/008-2-2-初始化-spark.md"
+    },
+    {
+      "slug": "009-2-3-spark-rdds",
+      "title": "Spark RDDs | Spark编程指南 - 简体中文版",
+      "file": "chapters/009-2-3-spark-rdds.md"
+    },
+    {
+      "slug": "010-2-3-1-并行集合",
+      "title": "并行集合 | Spark编程指南 - 简体中文版",
+      "file": "chapters/010-2-3-1-并行集合.md"
+    },
+    {
+      "slug": "011-2-3-2-外部数据集",
+      "title": "外部数据集 | Spark编程指南 - 简体中文版",
+      "file": "chapters/011-2-3-2-外部数据集.md"
+    },
+    {
+      "slug": "012-2-3-3-rdd-操作",
+      "title": "RDD 操作 | Spark编程指南 - 简体中文版",
+      "file": "chapters/012-2-3-3-rdd-操作.md"
+    },
+    {
+      "slug": "013-2-3-3-1-传递函数到-spark",
+      "title": "传递函数到 Spark | Spark编程指南 - 简体中文版",
+      "file": "chapters/013-2-3-3-1-传递函数到-spark.md"
+    },
+    {
+      "slug": "014-2-3-3-2-使用键值对",
+      "title": "使用键值对 | Spark编程指南 - 简体中文版",
+      "file": "chapters/014-2-3-3-2-使用键值对.md"
+    },
+    {
+      "slug": "015-2-3-3-3-transformations",
+      "title": "Transformations | Spark编程指南 - 简体中文版",
+      "file": "chapters/015-2-3-3-3-transformations.md"
+    },
+    {
+      "slug": "016-2-3-3-4-actions",
+      "title": "Actions | Spark编程指南 - 简体中文版",
+      "file": "chapters/016-2-3-3-4-actions.md"
+    },
+    {
+      "slug": "017-2-3-4-rdd持久化",
+      "title": "RDD持久化 | Spark编程指南 - 简体中文版",
+      "file": "chapters/017-2-3-4-rdd持久化.md"
+    },
+    {
+      "slug": "018-2-4-共享变量",
+      "title": "共享变量 | Spark编程指南 - 简体中文版",
+      "file": "chapters/018-2-4-共享变量.md"
+    },
+    {
+      "slug": "019-2-5-从这里开始",
+      "title": "从这里开始 | Spark编程指南 - 简体中文版",
+      "file": "chapters/019-2-5-从这里开始.md"
+    },
+    {
+      "slug": "020-3-spark-streaming",
+      "title": "Spark Streaming | Spark编程指南 - 简体中文版",
+      "file": "chapters/020-3-spark-streaming.md"
+    },
+    {
+      "slug": "021-3-1-一个快速的例子",
+      "title": "一个快速的例子 | Spark编程指南 - 简体中文版",
+      "file": "chapters/021-3-1-一个快速的例子.md"
+    },
+    {
+      "slug": "022-3-2-基本概念",
+      "title": "基本概念 | Spark编程指南 - 简体中文版",
+      "file": "chapters/022-3-2-基本概念.md"
+    },
+    {
+      "slug": "023-3-2-1-关联",
+      "title": "关联 | Spark编程指南 - 简体中文版",
+      "file": "chapters/023-3-2-1-关联.md"
+    },
+    {
+      "slug": "024-3-2-2-初始化streamingcontext",
+      "title": "初始化StreamingContext | Spark编程指南 - 简体中文版",
+      "file": "chapters/024-3-2-2-初始化streamingcontext.md"
+    },
+    {
+      "slug": "025-3-2-3-离散流",
+      "title": "离散流 | Spark编程指南 - 简体中文版",
+      "file": "chapters/025-3-2-3-离散流.md"
+    },
+    {
+      "slug": "026-3-2-4-输入dstreams",
+      "title": "输入DStreams | Spark编程指南 - 简体中文版",
+      "file": "chapters/026-3-2-4-输入dstreams.md"
+    },
+    {
+      "slug": "027-3-2-5-dstream中的转换",
+      "title": "DStream中的转换 | Spark编程指南 - 简体中文版",
+      "file": "chapters/027-3-2-5-dstream中的转换.md"
+    },
+    {
+      "slug": "028-3-2-6-dstream的输出操作",
+      "title": "DStream的输出操作 | Spark编程指南 - 简体中文版",
+      "file": "chapters/028-3-2-6-dstream的输出操作.md"
+    },
+    {
+      "slug": "029-3-2-7-缓存或持久化",
+      "title": "缓存或持久化 | Spark编程指南 - 简体中文版",
+      "file": "chapters/029-3-2-7-缓存或持久化.md"
+    },
+    {
+      "slug": "030-3-2-8-checkpointing",
+      "title": "Checkpointing | Spark编程指南 - 简体中文版",
+      "file": "chapters/030-3-2-8-checkpointing.md"
+    },
+    {
+      "slug": "031-3-2-9-部署应用程序",
+      "title": "部署应用程序 | Spark编程指南 - 简体中文版",
+      "file": "chapters/031-3-2-9-部署应用程序.md"
+    },
+    {
+      "slug": "032-3-2-10-监控应用程序",
+      "title": "监控应用程序 | Spark编程指南 - 简体中文版",
+      "file": "chapters/032-3-2-10-监控应用程序.md"
+    },
+    {
+      "slug": "033-3-3-性能调优",
+      "title": "性能调优 | Spark编程指南 - 简体中文版",
+      "file": "chapters/033-3-3-性能调优.md"
+    },
+    {
+      "slug": "034-3-3-1-减少批数据的执行时间",
+      "title": "减少批数据的执行时间 | Spark编程指南 - 简体中文版",
+      "file": "chapters/034-3-3-1-减少批数据的执行时间.md"
+    },
+    {
+      "slug": "035-3-3-2-设置正确的批容量",
+      "title": "设置正确的批容量 | Spark编程指南 - 简体中文版",
+      "file": "chapters/035-3-3-2-设置正确的批容量.md"
+    },
+    {
+      "slug": "036-3-3-3-内存调优",
+      "title": "内存调优 | Spark编程指南 - 简体中文版",
+      "file": "chapters/036-3-3-3-内存调优.md"
+    },
+    {
+      "slug": "037-3-4-容错语义",
+      "title": "容错语义 | Spark编程指南 - 简体中文版",
+      "file": "chapters/037-3-4-容错语义.md"
+    },
+    {
+      "slug": "038-4-spark-sql",
+      "title": "Spark SQL | Spark编程指南 - 简体中文版",
+      "file": "chapters/038-4-spark-sql.md"
+    },
+    {
+      "slug": "039-4-1-开始",
+      "title": "开始 | Spark编程指南 - 简体中文版",
+      "file": "chapters/039-4-1-开始.md"
+    },
+    {
+      "slug": "040-4-2-数据源",
+      "title": "数据源 | Spark编程指南 - 简体中文版",
+      "file": "chapters/040-4-2-数据源.md"
+    },
+    {
+      "slug": "041-4-2-1-rdds",
+      "title": "RDDs | Spark编程指南 - 简体中文版",
+      "file": "chapters/041-4-2-1-rdds.md"
+    },
+    {
+      "slug": "042-4-2-2-parquet文件",
+      "title": "parquet文件 | Spark编程指南 - 简体中文版",
+      "file": "chapters/042-4-2-2-parquet文件.md"
+    },
+    {
+      "slug": "043-4-2-3-json数据集",
+      "title": "JSON数据集 | Spark编程指南 - 简体中文版",
+      "file": "chapters/043-4-2-3-json数据集.md"
+    },
+    {
+      "slug": "044-4-2-4-hive表",
+      "title": "Hive表 | Spark编程指南 - 简体中文版",
+      "file": "chapters/044-4-2-4-hive表.md"
+    },
+    {
+      "slug": "045-4-3-性能调优",
+      "title": "性能调优 | Spark编程指南 - 简体中文版",
+      "file": "chapters/045-4-3-性能调优.md"
+    },
+    {
+      "slug": "046-4-4-其它sql接口",
+      "title": "其它SQL接口 | Spark编程指南 - 简体中文版",
+      "file": "chapters/046-4-4-其它sql接口.md"
+    },
+    {
+      "slug": "047-4-5-编写语言集成-language-integrated-的相关查询",
+      "title": "编写语言集成(Language-Integrated)的相关查询 | Spark编程指南 - 简体中文版",
+      "file": "chapters/047-4-5-编写语言集成-language-integrated-的相关查询.md"
+    },
+    {
+      "slug": "048-4-6-spark-sql数据类型",
+      "title": "Spark SQL数据类型 | Spark编程指南 - 简体中文版",
+      "file": "chapters/048-4-6-spark-sql数据类型.md"
+    },
+    {
+      "slug": "049-5-graphx编程指南",
+      "title": "GraphX编程指南 | Spark编程指南 - 简体中文版",
+      "file": "chapters/049-5-graphx编程指南.md"
+    },
+    {
+      "slug": "050-5-1-开始",
+      "title": "开始 | Spark编程指南 - 简体中文版",
+      "file": "chapters/050-5-1-开始.md"
+    },
+    {
+      "slug": "051-5-2-属性图",
+      "title": "属性图 | Spark编程指南 - 简体中文版",
+      "file": "chapters/051-5-2-属性图.md"
+    },
+    {
+      "slug": "052-5-3-图操作符",
+      "title": "图操作符 | Spark编程指南 - 简体中文版",
+      "file": "chapters/052-5-3-图操作符.md"
+    },
+    {
+      "slug": "053-5-4-pregel-api",
+      "title": "Pregel API | Spark编程指南 - 简体中文版",
+      "file": "chapters/053-5-4-pregel-api.md"
+    },
+    {
+      "slug": "054-5-5-图构造者",
+      "title": "图构造者 | Spark编程指南 - 简体中文版",
+      "file": "chapters/054-5-5-图构造者.md"
+    },
+    {
+      "slug": "055-5-6-顶点和边rdds",
+      "title": "顶点和边RDDs | Spark编程指南 - 简体中文版",
+      "file": "chapters/055-5-6-顶点和边rdds.md"
+    },
+    {
+      "slug": "056-5-7-图算法",
+      "title": "图算法 | Spark编程指南 - 简体中文版",
+      "file": "chapters/056-5-7-图算法.md"
+    },
+    {
+      "slug": "057-5-8-例子",
+      "title": "例子 | Spark编程指南 - 简体中文版",
+      "file": "chapters/057-5-8-例子.md"
+    },
+    {
+      "slug": "058-6-部署",
+      "title": "部署 | Spark编程指南 - 简体中文版",
+      "file": "chapters/058-6-部署.md"
+    },
+    {
+      "slug": "059-6-1-独立运行spark",
+      "title": "独立运行Spark | Spark编程指南 - 简体中文版",
+      "file": "chapters/059-6-1-独立运行spark.md"
+    },
+    {
+      "slug": "060-6-2-在yarn上运行spark",
+      "title": "在yarn上运行Spark | Spark编程指南 - 简体中文版",
+      "file": "chapters/060-6-2-在yarn上运行spark.md"
+    },
+    {
+      "slug": "061-7-更多文档",
+      "title": "更多文档 | Spark编程指南 - 简体中文版",
+      "file": "chapters/061-7-更多文档.md"
+    }
+  ],
+  "sourceType": "web"
 }

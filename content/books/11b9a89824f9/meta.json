@@ -3,12 +3,12 @@
   "title": "CSS参考手册",
   "url": "http://css.doyoe.com/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:52.667Z",
+  "fetchedAt": "2026-09-27T11:58:41.037Z",
   "chapters": [
     {
-      "slug": "001-l",
+      "slug": "001-http-css-doyoe-com",
       "title": "http://css.doyoe.com/",
-      "file": "chapters/001-l.md"
+      "file": "chapters/001-http-css-doyoe-com.md"
     }
   ],
   "sourceType": "web",

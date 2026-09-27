@@ -3,12 +3,187 @@
   "title": "Go语言设计与实现",
   "url": "https://draveness.me/golang/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:50.264Z",
+  "fetchedAt": "2026-09-27T11:22:44.598Z",
   "chapters": [
     {
-      "slug": "001-s",
+      "slug": "001-go-语言设计与实现",
       "title": "Go 语言设计与实现",
-      "file": "chapters/001-s.md"
+      "file": "chapters/001-go-语言设计与实现.md"
+    },
+    {
+      "slug": "002-购买纸质书",
+      "title": "《Go 语言设计与实现》纸质书预售了！ - 面向信仰编程",
+      "file": "chapters/002-购买纸质书.md"
+    },
+    {
+      "slug": "003-面向信仰编程",
+      "title": "面向信仰编程",
+      "file": "chapters/003-面向信仰编程.md"
+    },
+    {
+      "slug": "004-1-1-调试源代码",
+      "title": "如何调试 Go 语言源代码",
+      "file": "chapters/004-1-1-调试源代码.md"
+    },
+    {
+      "slug": "005-2-1-编译过程",
+      "title": "Go 语言编译过程概述",
+      "file": "chapters/005-2-1-编译过程.md"
+    },
+    {
+      "slug": "006-2-2-词法分析和语法分析",
+      "title": "解析器眼中的 Go 语言",
+      "file": "chapters/006-2-2-词法分析和语法分析.md"
+    },
+    {
+      "slug": "007-2-3-类型检查",
+      "title": "Go 语言如何进行类型检查",
+      "file": "chapters/007-2-3-类型检查.md"
+    },
+    {
+      "slug": "008-2-4-中间代码生成",
+      "title": "详解 Go 语言中间代码生成",
+      "file": "chapters/008-2-4-中间代码生成.md"
+    },
+    {
+      "slug": "009-2-5-机器码生成",
+      "title": "指令集架构、机器码与 Go 语言",
+      "file": "chapters/009-2-5-机器码生成.md"
+    },
+    {
+      "slug": "010-3-1-数组",
+      "title": "Go 语言数组的实现原理",
+      "file": "chapters/010-3-1-数组.md"
+    },
+    {
+      "slug": "011-3-2-切片",
+      "title": "Go 语言切片的实现原理",
+      "file": "chapters/011-3-2-切片.md"
+    },
+    {
+      "slug": "012-3-3-哈希表",
+      "title": "理解 Golang 哈希表 Map 的原理",
+      "file": "chapters/012-3-3-哈希表.md"
+    },
+    {
+      "slug": "013-3-4-字符串",
+      "title": "Go 语言字符串和字节数组的实现原理",
+      "file": "chapters/013-3-4-字符串.md"
+    },
+    {
+      "slug": "014-4-1-函数调用",
+      "title": "理解 Go 语言的函数调用",
+      "file": "chapters/014-4-1-函数调用.md"
+    },
+    {
+      "slug": "015-4-2-接口",
+      "title": "Go 语言接口的原理",
+      "file": "chapters/015-4-2-接口.md"
+    },
+    {
+      "slug": "016-4-3-反射",
+      "title": "Go 语言反射的实现原理",
+      "file": "chapters/016-4-3-反射.md"
+    },
+    {
+      "slug": "017-5-1-for-和-range",
+      "title": "Go 语言 for 和 range 的实现",
+      "file": "chapters/017-5-1-for-和-range.md"
+    },
+    {
+      "slug": "018-5-2-select",
+      "title": "Go 语言 select 的实现原理",
+      "file": "chapters/018-5-2-select.md"
+    },
+    {
+      "slug": "019-5-3-defer",
+      "title": "理解 Go 语言 defer 关键字的原理",
+      "file": "chapters/019-5-3-defer.md"
+    },
+    {
+      "slug": "020-5-4-panic-和-recover",
+      "title": "Go 语言 panic 和 recover 的原理",
+      "file": "chapters/020-5-4-panic-和-recover.md"
+    },
+    {
+      "slug": "021-5-5-make-和-new",
+      "title": "Go 语言中的 make 和 new",
+      "file": "chapters/021-5-5-make-和-new.md"
+    },
+    {
+      "slug": "022-6-1-上下文-context",
+      "title": "Go 语言并发编程与 Context",
+      "file": "chapters/022-6-1-上下文-context.md"
+    },
+    {
+      "slug": "023-6-2-同步原语与锁",
+      "title": "Go 语言并发编程、同步原语与锁",
+      "file": "chapters/023-6-2-同步原语与锁.md"
+    },
+    {
+      "slug": "024-6-3-定时器",
+      "title": "Go 语言并发编程与计时器",
+      "file": "chapters/024-6-3-定时器.md"
+    },
+    {
+      "slug": "025-6-4-channel",
+      "title": "Go 语言 Channel 实现原理精要",
+      "file": "chapters/025-6-4-channel.md"
+    },
+    {
+      "slug": "026-6-5-调度器",
+      "title": "Go 语言调度器与 Goroutine 实现原理",
+      "file": "chapters/026-6-5-调度器.md"
+    },
+    {
+      "slug": "027-6-6-网络轮询器",
+      "title": "Go 语言网络轮询器的实现原理",
+      "file": "chapters/027-6-6-网络轮询器.md"
+    },
+    {
+      "slug": "028-6-7-系统监控",
+      "title": "Go 语言系统监控的实现原理",
+      "file": "chapters/028-6-7-系统监控.md"
+    },
+    {
+      "slug": "029-7-1-内存分配器",
+      "title": "Go 语言内存分配器的实现原理",
+      "file": "chapters/029-7-1-内存分配器.md"
+    },
+    {
+      "slug": "030-7-2-垃圾收集器",
+      "title": "Go 语言垃圾收集器的实现原理",
+      "file": "chapters/030-7-2-垃圾收集器.md"
+    },
+    {
+      "slug": "031-7-3-栈内存管理",
+      "title": "Go 语言的栈内存和逃逸分析",
+      "file": "chapters/031-7-3-栈内存管理.md"
+    },
+    {
+      "slug": "032-8-1-插件系统",
+      "title": "Go 语言的动态库和插件系统",
+      "file": "chapters/032-8-1-插件系统.md"
+    },
+    {
+      "slug": "033-8-2-代码生成",
+      "title": "Go 语言的代码生成机制",
+      "file": "chapters/033-8-2-代码生成.md"
+    },
+    {
+      "slug": "034-9-1-json",
+      "title": "Go 语言 JSON 的实现原理",
+      "file": "chapters/034-9-1-json.md"
+    },
+    {
+      "slug": "035-9-2-http",
+      "title": "Go 语言 HTTP 标准库的实现原理",
+      "file": "chapters/035-9-2-http.md"
+    },
+    {
+      "slug": "036-9-3-数据库",
+      "title": "Go 语言数据库的实现原理",
+      "file": "chapters/036-9-3-数据库.md"
     }
   ],
   "sourceType": "web",

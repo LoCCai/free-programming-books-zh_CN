@@ -3,14 +3,14 @@
   "title": "Kotlin 参考文档",
   "url": "http://www.liying-cn.net/kotlin/docs/reference/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:53.313Z",
+  "fetchedAt": "2026-09-27T12:01:35.718Z",
   "chapters": [
     {
-      "slug": "001-1b",
-      "title": "http://www.liying-cn.net/kotlin/docs/reference/",
-      "file": "chapters/001-1b.md"
+      "slug": "001-https-kotlin-liying-cn-net",
+      "title": "https://kotlin.liying-cn.net/",
+      "file": "chapters/001-https-kotlin-liying-cn-net.md"
     }
   ],
   "sourceType": "web",
-  "sourceTitle": "http://www.liying-cn.net/kotlin/docs/reference/"
+  "sourceTitle": "https://kotlin.liying-cn.net/"
 }

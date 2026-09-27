@@ -3,14 +3,163 @@
   "title": "C++ FAQ LITE(中文版)",
   "url": "http://www.sunistudio.com/cppfaq/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:27.036Z",
+  "fetchedAt": "2026-09-27T11:58:45.160Z",
   "chapters": [
     {
-      "slug": "001-x",
+      "slug": "001-copyright-1991-2001",
+      "title": "[1] Copying permissions, C++ FAQ Lite",
+      "file": "chapters/001-copyright-1991-2001.md"
+    },
+    {
+      "slug": "002-2-վ-ĵ",
+      "title": "[2] On-line sites that distribute this document, C++ FAQ Lite",
+      "file": "chapters/002-2-վ-ĵ.md"
+    },
+    {
+      "slug": "003-3-c-faq-book-c-faq-lite",
+      "title": "[3] C++-FAQ-Book versus C++-FAQ-Lite, C++ FAQ Lite",
+      "file": "chapters/003-3-c-faq-book-c-faq-lite.md"
+    },
+    {
+      "slug": "004-6",
+      "title": "[6] Big Picture issues, C++ FAQ Lite",
+      "file": "chapters/004-6.md"
+    },
+    {
+      "slug": "005-7-ͷ",
+      "title": "[7] Classes and objects, C++ FAQ Lite",
+      "file": "chapters/005-7-ͷ.md"
+    },
+    {
+      "slug": "006-8",
+      "title": "[8] References, C++ FAQ Lite",
+      "file": "chapters/006-8.md"
+    },
+    {
+      "slug": "007-9",
+      "title": "[9] Inline functions, C++ FAQ Lite",
+      "file": "chapters/007-9.md"
+    },
+    {
+      "slug": "008-10-캯",
+      "title": "[10] Constructors, C++ FAQ Lite",
+      "file": "chapters/008-10-캯.md"
+    },
+    {
+      "slug": "009-11",
+      "title": "[11] Destructors, C++ FAQ Lite",
+      "file": "chapters/009-11.md"
+    },
+    {
+      "slug": "010-12-assignment",
+      "title": "[12] Assignment operators, C++ FAQ Lite",
+      "file": "chapters/010-12-assignment.md"
+    },
+    {
+      "slug": "011-13",
+      "title": "[13] Operator overloading, C++ FAQ Lite",
+      "file": "chapters/011-13.md"
+    },
+    {
+      "slug": "012-14-ԫ",
+      "title": "[14] Friends, C++ FAQ Lite",
+      "file": "chapters/012-14-ԫ.md"
+    },
+    {
+      "slug": "013-15-iostream-cstdio-룯",
+      "title": "[15] Input/output via <iostream> and <cstdio>, C++ FAQ Lite",
+      "file": "chapters/013-15-iostream-cstdio-룯.md"
+    },
+    {
+      "slug": "014-16-ɴ洢-freestore",
+      "title": "[16] Freestore management, C++ FAQ Lite",
+      "file": "chapters/014-16-ɴ洢-freestore.md"
+    },
+    {
+      "slug": "015-17-쳣-ʹ",
+      "title": "[17] Exceptions and error handling, C++ FAQ Lite",
+      "file": "chapters/015-17-쳣-ʹ.md"
+    },
+    {
+      "slug": "016-18-const-ȷ-ԣ-correctness",
+      "title": "[18] const��ȷ��, C++ FAQ Lite",
+      "file": "chapters/016-18-const-ȷ-ԣ-correctness.md"
+    },
+    {
+      "slug": "017-19",
+      "title": "[19] Inheritance basics, C++ FAQ Lite",
+      "file": "chapters/017-19.md"
+    },
+    {
+      "slug": "018-20-麯",
+      "title": "[20] Inheritance virtual functions, C++ FAQ Lite",
+      "file": "chapters/018-20-麯.md"
+    },
+    {
+      "slug": "019-21-ʵ-ļ-у-proper-inheritance-ϳ-û-ԣ-substi",
+      "title": "[21] Inheritance proper inheritance and substitutability, C++ FAQ Lite",
+      "file": "chapters/019-21-ʵ-ļ-у-proper-inheritance-ϳ-û-ԣ-substi.md"
+    },
+    {
+      "slug": "020-22-abcs",
+      "title": "[22] Inheritance abstract base classes (ABCs), C++ FAQ Lite",
+      "file": "chapters/020-22-abcs.md"
+    },
+    {
+      "slug": "021-23",
+      "title": "[23] Inheritance what your mother never told you, C++ FAQ Lite",
+      "file": "chapters/021-23.md"
+    },
+    {
+      "slug": "022-24-м-кͱ",
+      "title": "[24] Inheritance private and protected inheritance, C++ FAQ Lite",
+      "file": "chapters/022-24-м-кͱ.md"
+    },
+    {
+      "slug": "023-27-淶",
+      "title": "[27] ����淶�� C++ FAQ Lite",
+      "file": "chapters/023-27-淶.md"
+    },
+    {
+      "slug": "024-28-ѧϰ-oo-c",
+      "title": "[28] ѧϰOO/C++, C++ FAQ Lite",
+      "file": "chapters/024-28-ѧϰ-oo-c.md"
+    },
+    {
+      "slug": "025-31",
+      "title": "[31] Reference and value semantics, C++ FAQ Lite",
+      "file": "chapters/025-31.md"
+    },
+    {
+      "slug": "026-32-λ-c-c",
+      "title": "[32] How to mix C and C++, C++ FAQ Lite",
+      "file": "chapters/026-32-λ-c-c.md"
+    },
+    {
+      "slug": "027-33-ա",
+      "title": "[33] Pointers to member functions Updated! , C++ FAQ Lite",
+      "file": "chapters/027-33-ա.md"
+    },
+    {
+      "slug": "028-35-ģ",
+      "title": "[35] Templates Updated! , C++ FAQ Lite",
+      "file": "chapters/028-35-ģ.md"
+    },
+    {
+      "slug": "029-36-л-뷴-л",
+      "title": "[36] Serialization and Unserialization, C++ FAQ Lite",
+      "file": "chapters/029-36-л-뷴-л.md"
+    },
+    {
+      "slug": "030-37",
+      "title": "[37] Class libraries, C++ FAQ Lite",
+      "file": "chapters/030-37.md"
+    },
+    {
+      "slug": "031-c-faq-lite",
       "title": "C++ FAQ LITE",
-      "file": "chapters/001-x.md"
+      "file": "chapters/031-c-faq-lite.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "C++ FAQ LITE"
+  "sourceType": "web"
 }

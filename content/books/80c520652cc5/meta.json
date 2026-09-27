@@ -3,257 +3,662 @@
   "title": "Django 1.5 文档中文版",
   "url": "https://django-chinese-docs.readthedocs.io/en/latest/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:05.244Z",
+  "fetchedAt": "2026-09-27T12:05:51.859Z",
   "chapters": [
     {
-      "slug": "001-1h",
+      "slug": "001-django-中文文档-django-1-5-documentation",
       "title": "Django 中文文档 — Django 1.5 documentation",
-      "file": "chapters/001-1h.md"
+      "file": "chapters/001-django-中文文档-django-1-5-documentation.md"
     },
     {
-      "slug": "002-1x",
+      "slug": "002-table-of-contents",
+      "title": "Django 文档目录 — Django 1.5 documentation",
+      "file": "chapters/002-table-of-contents.md"
+    },
+    {
+      "slug": "003-index",
+      "title": "Index — Django 1.5 documentation",
+      "file": "chapters/003-index.md"
+    },
+    {
+      "slug": "004-modules",
+      "title": "Python Module Index — Django 1.5 documentation",
+      "file": "chapters/004-modules.md"
+    },
+    {
+      "slug": "005-next",
       "title": "新手入门 — Django 1.5 documentation",
-      "file": "chapters/002-1x.md"
+      "file": "chapters/005-next.md"
     },
     {
-      "slug": "003-20",
+      "slug": "006-常见问题",
+      "title": "Django FAQ — Django 1.5 documentation",
+      "file": "chapters/006-常见问题.md"
+    },
+    {
+      "slug": "007-初探",
       "title": "初探 Django — Django 1.5 documentation",
-      "file": "chapters/003-20.md"
+      "file": "chapters/007-初探.md"
     },
     {
-      "slug": "004-1z",
+      "slug": "008-安装",
       "title": "快速安装指南 — Django 1.5 documentation",
-      "file": "chapters/004-1z.md"
+      "file": "chapters/008-安装.md"
     },
     {
-      "slug": "005-22",
+      "slug": "009-第1部分",
       "title": "编写你的第一个 Django 程序 第1部分 — Django 1.5 documentation",
-      "file": "chapters/005-22.md"
+      "file": "chapters/009-第1部分.md"
     },
     {
-      "slug": "006-22",
+      "slug": "010-第2部分",
       "title": "编写你的第一个 Django 程序 第2部分 — Django 1.5 documentation",
-      "file": "chapters/006-22.md"
+      "file": "chapters/010-第2部分.md"
     },
     {
-      "slug": "007-22",
+      "slug": "011-第3部分",
       "title": "编写你的第一个 Django 程序 第3部分 — Django 1.5 documentation",
-      "file": "chapters/007-22.md"
+      "file": "chapters/011-第3部分.md"
     },
     {
-      "slug": "008-22",
+      "slug": "012-第4部分",
       "title": "编写你的第一个 Django 程序 第4部分 — Django 1.5 documentation",
-      "file": "chapters/008-22.md"
+      "file": "chapters/012-第4部分.md"
     },
     {
-      "slug": "009-22",
+      "slug": "013-第5部分",
       "title": "编写你的第一个 Django 程序 第5部分 — Django 1.5 documentation",
-      "file": "chapters/009-22.md"
+      "file": "chapters/013-第5部分.md"
     },
     {
-      "slug": "010-25",
+      "slug": "014-如何编写可重用的应用程序",
       "title": "进阶教程：如何编写可重用的应用程序 — Django 1.5 documentation",
-      "file": "chapters/010-25.md"
+      "file": "chapters/014-如何编写可重用的应用程序.md"
     },
     {
-      "slug": "011-21",
-      "title": "下一步阅读什么 — Django 1.5 documentation",
-      "file": "chapters/011-21.md"
-    },
-    {
-      "slug": "012-24",
+      "slug": "015-为django编写属于你的首个补丁",
       "title": "为Django编写属于你的首个补丁 — Django 1.5 documentation",
-      "file": "chapters/012-24.md"
+      "file": "chapters/015-为django编写属于你的首个补丁.md"
     },
     {
-      "slug": "013-1y",
-      "title": "使用 Django — Django 1.5 documentation",
-      "file": "chapters/013-1y.md"
-    },
-    {
-      "slug": "014-20",
-      "title": "如何安装 Django — Django 1.5 documentation",
-      "file": "chapters/014-20.md"
-    },
-    {
-      "slug": "015-21",
-      "title": "Models and databases — Django 1.5 documentation",
-      "file": "chapters/015-21.md"
-    },
-    {
-      "slug": "016-22",
+      "slug": "016-模型语法",
       "title": "Models — Django 1.5 documentation",
-      "file": "chapters/016-22.md"
+      "file": "chapters/016-模型语法.md"
     },
     {
-      "slug": "017-23",
+      "slug": "017-字段类型",
+      "title": "Model field reference — Django 1.5 documentation",
+      "file": "chapters/017-字段类型.md"
+    },
+    {
+      "slug": "018-meta选项",
+      "title": "Model Meta options — Django 1.5 documentation",
+      "file": "chapters/018-meta选项.md"
+    },
+    {
+      "slug": "019-执行查询",
       "title": "Making queries — Django 1.5 documentation",
-      "file": "chapters/017-23.md"
+      "file": "chapters/019-执行查询.md"
     },
     {
-      "slug": "018-27",
-      "title": "Aggregation — Django 1.5 documentation",
-      "file": "chapters/018-27.md"
+      "slug": "020-queryset-方法参考",
+      "title": "QuerySet API reference — Django 1.5 documentation",
+      "file": "chapters/020-queryset-方法参考.md"
     },
     {
-      "slug": "019-24",
+      "slug": "021-instance-方法",
+      "title": "Model instance reference — Django 1.5 documentation",
+      "file": "chapters/021-instance-方法.md"
+    },
+    {
+      "slug": "022-访问关联对象",
+      "title": "Related objects reference — Django 1.5 documentation",
+      "file": "chapters/022-访问关联对象.md"
+    },
+    {
+      "slug": "023-管理器-managers",
       "title": "Managers — Django 1.5 documentation",
-      "file": "chapters/019-24.md"
+      "file": "chapters/023-管理器-managers.md"
     },
     {
-      "slug": "020-1z",
+      "slug": "024-sql-语句查询",
       "title": "Performing raw SQL queries — Django 1.5 documentation",
-      "file": "chapters/020-1z.md"
+      "file": "chapters/024-sql-语句查询.md"
     },
     {
-      "slug": "021-28",
+      "slug": "025-事务管理",
       "title": "Managing database transactions — Django 1.5 documentation",
-      "file": "chapters/021-28.md"
+      "file": "chapters/025-事务管理.md"
     },
     {
-      "slug": "022-24",
+      "slug": "026-数据处理",
+      "title": "Aggregation — Django 1.5 documentation",
+      "file": "chapters/026-数据处理.md"
+    },
+    {
+      "slug": "027-自定义字段",
+      "title": "Writing custom model fields — Django 1.5 documentation",
+      "file": "chapters/027-自定义字段.md"
+    },
+    {
+      "slug": "028-多数据库",
       "title": "Multiple databases — Django 1.5 documentation",
-      "file": "chapters/022-24.md"
+      "file": "chapters/028-多数据库.md"
     },
     {
-      "slug": "023-27",
-      "title": "Tablespaces — Django 1.5 documentation",
-      "file": "chapters/023-27.md"
+      "slug": "029-支持的数据库",
+      "title": "Databases — Django 1.5 documentation",
+      "file": "chapters/029-支持的数据库.md"
     },
     {
-      "slug": "024-28",
+      "slug": "030-遗留型旧数据库",
+      "title": "Integrating Django with a legacy database — Django 1.5 documentation",
+      "file": "chapters/030-遗留型旧数据库.md"
+    },
+    {
+      "slug": "031-为模型提供初始数据",
+      "title": "Providing initial data for models — Django 1.5 documentation",
+      "file": "chapters/031-为模型提供初始数据.md"
+    },
+    {
+      "slug": "032-优化数据库访问",
       "title": "Database access optimization — Django 1.5 documentation",
-      "file": "chapters/024-28.md"
+      "file": "chapters/032-优化数据库访问.md"
     },
     {
-      "slug": "025-2a",
-      "title": "Examples of model relationship API usage — Django 1.5 documentation",
-      "file": "chapters/025-2a.md"
-    },
-    {
-      "slug": "026-2h",
-      "title": "Many-to-many relationships — Django 1.5 documentation",
-      "file": "chapters/026-2h.md"
-    },
-    {
-      "slug": "027-2g",
-      "title": "Many-to-one relationships — Django 1.5 documentation",
-      "file": "chapters/027-2g.md"
-    },
-    {
-      "slug": "028-2f",
-      "title": "One-to-one relationships — Django 1.5 documentation",
-      "file": "chapters/028-2f.md"
-    },
-    {
-      "slug": "029-23",
-      "title": "Handling HTTP requests — Django 1.5 documentation",
-      "file": "chapters/029-23.md"
-    },
-    {
-      "slug": "030-22",
+      "slug": "033-url配置-urlconfs",
       "title": "URL dispatcher — Django 1.5 documentation",
-      "file": "chapters/030-22.md"
+      "file": "chapters/033-url配置-urlconfs.md"
     },
     {
-      "slug": "031-23",
+      "slug": "034-视图定义",
       "title": "Writing views — Django 1.5 documentation",
-      "file": "chapters/031-23.md"
+      "file": "chapters/034-视图定义.md"
     },
     {
-      "slug": "032-28",
-      "title": "View decorators — Django 1.5 documentation",
-      "file": "chapters/032-28.md"
-    },
-    {
-      "slug": "033-2a",
-      "title": "File Uploads — Django 1.5 documentation",
-      "file": "chapters/033-2a.md"
-    },
-    {
-      "slug": "034-27",
+      "slug": "035-快捷方法",
       "title": "Django shortcut functions — Django 1.5 documentation",
-      "file": "chapters/034-27.md"
+      "file": "chapters/035-快捷方法.md"
     },
     {
-      "slug": "035-2b",
-      "title": "Generic views — Django 1.5 documentation",
-      "file": "chapters/035-2b.md"
+      "slug": "036-装饰器",
+      "title": "View decorators — Django 1.5 documentation",
+      "file": "chapters/036-装饰器.md"
     },
     {
-      "slug": "036-28",
-      "title": "Middleware — Django 1.5 documentation",
-      "file": "chapters/036-28.md"
+      "slug": "037-request-response-对象",
+      "title": "Request and response objects — Django 1.5 documentation",
+      "file": "chapters/037-request-response-对象.md"
     },
     {
-      "slug": "037-26",
-      "title": "How to use sessions — Django 1.5 documentation",
-      "file": "chapters/037-26.md"
+      "slug": "038-templateresponse-对象",
+      "title": "TemplateResponse and SimpleTemplateResponse — Django 1.5 documentation",
+      "file": "chapters/038-templateresponse-对象.md"
     },
     {
-      "slug": "038-24",
-      "title": "Working with forms — Django 1.5 documentation",
-      "file": "chapters/038-24.md"
+      "slug": "039-概述",
+      "title": "File Uploads — Django 1.5 documentation",
+      "file": "chapters/039-概述.md"
     },
     {
-      "slug": "039-27",
-      "title": "Formsets — Django 1.5 documentation",
-      "file": "chapters/039-27.md"
+      "slug": "040-file-对象",
+      "title": "The File object — Django 1.5 documentation",
+      "file": "chapters/040-file-对象.md"
     },
     {
-      "slug": "040-29",
-      "title": "Creating forms from models — Django 1.5 documentation",
-      "file": "chapters/040-29.md"
+      "slug": "041-存储-api",
+      "title": "File storage API — Django 1.5 documentation",
+      "file": "chapters/041-存储-api.md"
     },
     {
-      "slug": "041-24",
-      "title": "Form Media — Django 1.5 documentation",
-      "file": "chapters/041-24.md"
-    },
-    {
-      "slug": "042-22",
-      "title": "The Django template language — Django 1.5 documentation",
-      "file": "chapters/042-22.md"
-    },
-    {
-      "slug": "043-2g",
-      "title": "Class-based views — Django 1.5 documentation",
-      "file": "chapters/043-2g.md"
-    },
-    {
-      "slug": "044-2q",
-      "title": "Class-based generic views — Django 1.5 documentation",
-      "file": "chapters/044-2q.md"
-    },
-    {
-      "slug": "045-2q",
-      "title": "Form handling with class-based views — Django 1.5 documentation",
-      "file": "chapters/045-2q.md"
-    },
-    {
-      "slug": "046-2h",
-      "title": "Using mixins with class-based views — Django 1.5 documentation",
-      "file": "chapters/046-2h.md"
-    },
-    {
-      "slug": "047-1y",
+      "slug": "042-文件管理",
       "title": "Managing files — Django 1.5 documentation",
-      "file": "chapters/047-1y.md"
+      "file": "chapters/042-文件管理.md"
     },
     {
-      "slug": "048-26",
+      "slug": "043-自定义存储",
+      "title": "Writing a custom storage system — Django 1.5 documentation",
+      "file": "chapters/043-自定义存储.md"
+    },
+    {
+      "slug": "044-概述",
+      "title": "Class-based views — Django 1.5 documentation",
+      "file": "chapters/044-概述.md"
+    },
+    {
+      "slug": "045-内置显示视图",
+      "title": "Class-based generic views — Django 1.5 documentation",
+      "file": "chapters/045-内置显示视图.md"
+    },
+    {
+      "slug": "046-内置编辑视图",
+      "title": "Form handling with class-based views — Django 1.5 documentation",
+      "file": "chapters/046-内置编辑视图.md"
+    },
+    {
+      "slug": "047-混合使用",
+      "title": "Using mixins with class-based views — Django 1.5 documentation",
+      "file": "chapters/047-混合使用.md"
+    },
+    {
+      "slug": "048-api-参考",
+      "title": "Class-based views — Django 1.5 documentation",
+      "file": "chapters/048-api-参考.md"
+    },
+    {
+      "slug": "049-分类索引",
+      "title": "Class-based generic views - flattened index — Django 1.5 documentation",
+      "file": "chapters/049-分类索引.md"
+    },
+    {
+      "slug": "050-生成-csv",
+      "title": "Outputting CSV with Django — Django 1.5 documentation",
+      "file": "chapters/050-生成-csv.md"
+    },
+    {
+      "slug": "051-生成-pdf",
+      "title": "Outputting PDFs with Django — Django 1.5 documentation",
+      "file": "chapters/051-生成-pdf.md"
+    },
+    {
+      "slug": "052-概述",
+      "title": "Middleware — Django 1.5 documentation",
+      "file": "chapters/052-概述.md"
+    },
+    {
+      "slug": "053-内置中间件",
+      "title": "Middleware — Django 1.5 documentation",
+      "file": "chapters/053-内置中间件.md"
+    },
+    {
+      "slug": "054-语法概述",
+      "title": "The Django template language — Django 1.5 documentation",
+      "file": "chapters/054-语法概述.md"
+    },
+    {
+      "slug": "055-内置-tags-和-filters",
+      "title": "Built-in template tags and filters — Django 1.5 documentation",
+      "file": "chapters/055-内置-tags-和-filters.md"
+    },
+    {
+      "slug": "056-web-设计助手",
+      "title": "django.contrib.webdesign — Django 1.5 documentation",
+      "file": "chapters/056-web-设计助手.md"
+    },
+    {
+      "slug": "057-人性化",
+      "title": "django.contrib.humanize — Django 1.5 documentation",
+      "file": "chapters/057-人性化.md"
+    },
+    {
+      "slug": "058-模板-api",
+      "title": "For Python programmers — Django 1.5 documentation",
+      "file": "chapters/058-模板-api.md"
+    },
+    {
+      "slug": "059-自定义-tags-和-filters",
+      "title": "Custom template tags and filters — Django 1.5 documentation",
+      "file": "chapters/059-自定义-tags-和-filters.md"
+    },
+    {
+      "slug": "060-概述",
+      "title": "Working with forms — Django 1.5 documentation",
+      "file": "chapters/060-概述.md"
+    },
+    {
+      "slug": "061-表单-api",
+      "title": "The Forms API — Django 1.5 documentation",
+      "file": "chapters/061-表单-api.md"
+    },
+    {
+      "slug": "062-内置字段",
+      "title": "Form fields — Django 1.5 documentation",
+      "file": "chapters/062-内置字段.md"
+    },
+    {
+      "slug": "063-内置小工具",
+      "title": "Widgets — Django 1.5 documentation",
+      "file": "chapters/063-内置小工具.md"
+    },
+    {
+      "slug": "064-模型表单",
+      "title": "Creating forms from models — Django 1.5 documentation",
+      "file": "chapters/064-模型表单.md"
+    },
+    {
+      "slug": "065-表单外观",
+      "title": "Form Media — Django 1.5 documentation",
+      "file": "chapters/065-表单外观.md"
+    },
+    {
+      "slug": "066-表单集",
+      "title": "Formsets — Django 1.5 documentation",
+      "file": "chapters/066-表单集.md"
+    },
+    {
+      "slug": "067-自定义验证",
+      "title": "Form and field validation — Django 1.5 documentation",
+      "file": "chapters/067-自定义验证.md"
+    },
+    {
+      "slug": "068-表单预览",
+      "title": "Form preview — Django 1.5 documentation",
+      "file": "chapters/068-表单预览.md"
+    },
+    {
+      "slug": "069-表单向导",
+      "title": "Form wizard — Django 1.5 documentation",
+      "file": "chapters/069-表单向导.md"
+    },
+    {
+      "slug": "070-概述",
+      "title": "Django settings — Django 1.5 documentation",
+      "file": "chapters/070-概述.md"
+    },
+    {
+      "slug": "071-全部设置列表",
+      "title": "Settings — Django 1.5 documentation",
+      "file": "chapters/071-全部设置列表.md"
+    },
+    {
+      "slug": "072-概述",
+      "title": "Django 异常 — Django 1.5 documentation",
+      "file": "chapters/072-概述.md"
+    },
+    {
+      "slug": "073-概述",
+      "title": "django-admin.py and manage.py — Django 1.5 documentation",
+      "file": "chapters/073-概述.md"
+    },
+    {
+      "slug": "074-添加自定义命令",
+      "title": "Writing custom django-admin commands — Django 1.5 documentation",
+      "file": "chapters/074-添加自定义命令.md"
+    },
+    {
+      "slug": "075-介绍",
       "title": "Testing in Django — Django 1.5 documentation",
-      "file": "chapters/048-26.md"
+      "file": "chapters/075-介绍.md"
     },
     {
-      "slug": "049-29",
+      "slug": "076-编写和运行测试",
       "title": "Testing Django applications — Django 1.5 documentation",
-      "file": "chapters/049-29.md"
+      "file": "chapters/076-编写和运行测试.md"
     },
     {
-      "slug": "050-29",
+      "slug": "077-进阶主题",
+      "title": "Advanced testing topics — Django 1.5 documentation",
+      "file": "chapters/077-进阶主题.md"
+    },
+    {
+      "slug": "078-doctests",
       "title": "Django and doctests — Django 1.5 documentation",
-      "file": "chapters/050-29.md"
+      "file": "chapters/078-doctests.md"
+    },
+    {
+      "slug": "079-概述",
+      "title": "Deploying Django — Django 1.5 documentation",
+      "file": "chapters/079-概述.md"
+    },
+    {
+      "slug": "080-wsgi-servers",
+      "title": "How to deploy with WSGI — Django 1.5 documentation",
+      "file": "chapters/080-wsgi-servers.md"
+    },
+    {
+      "slug": "081-fastcgi-scgi-ajp",
+      "title": "How to use Django with FastCGI, SCGI, or AJP — Django 1.5 documentation",
+      "file": "chapters/081-fastcgi-scgi-ajp.md"
+    },
+    {
+      "slug": "082-处理静态文件",
+      "title": "Managing static files — Django 1.5 documentation",
+      "file": "chapters/082-处理静态文件.md"
+    },
+    {
+      "slug": "083-通过电子邮件跟踪代码中的错误",
+      "title": "Error reporting — Django 1.5 documentation",
+      "file": "chapters/083-通过电子邮件跟踪代码中的错误.md"
+    },
+    {
+      "slug": "084-管理网站",
+      "title": "The Django admin site — Django 1.5 documentation",
+      "file": "chapters/084-管理网站.md"
+    },
+    {
+      "slug": "085-管理操作",
+      "title": "Admin actions — Django 1.5 documentation",
+      "file": "chapters/085-管理操作.md"
+    },
+    {
+      "slug": "086-管理文档生成器",
+      "title": "The Django admin documentation generator — Django 1.5 documentation",
+      "file": "chapters/086-管理文档生成器.md"
+    },
+    {
+      "slug": "087-安全概述",
+      "title": "Security in Django — Django 1.5 documentation",
+      "file": "chapters/087-安全概述.md"
+    },
+    {
+      "slug": "088-clickjacking-防护",
+      "title": "Clickjacking Protection — Django 1.5 documentation",
+      "file": "chapters/088-clickjacking-防护.md"
+    },
+    {
+      "slug": "089-跨站请求伪造防护",
+      "title": "Cross Site Request Forgery protection — Django 1.5 documentation",
+      "file": "chapters/089-跨站请求伪造防护.md"
+    },
+    {
+      "slug": "090-加密签名",
+      "title": "Cryptographic signing — Django 1.5 documentation",
+      "file": "chapters/090-加密签名.md"
+    },
+    {
+      "slug": "091-概述",
+      "title": "Internationalization and localization — Django 1.5 documentation",
+      "file": "chapters/091-概述.md"
+    },
+    {
+      "slug": "092-国际化",
+      "title": "Translation — Django 1.5 documentation",
+      "file": "chapters/092-国际化.md"
+    },
+    {
+      "slug": "093-local-flavor",
+      "title": "The “local flavor” add-ons — Django 1.5 documentation",
+      "file": "chapters/093-local-flavor.md"
+    },
+    {
+      "slug": "094-时区",
+      "title": "Time zones — Django 1.5 documentation",
+      "file": "chapters/094-时区.md"
+    },
+    {
+      "slug": "095-jython-支持",
+      "title": "Running Django on Jython — Django 1.5 documentation",
+      "file": "chapters/095-jython-支持.md"
+    },
+    {
+      "slug": "096-python-3-兼容性",
+      "title": "Porting to Python 3 — Django 1.5 documentation",
+      "file": "chapters/096-python-3-兼容性.md"
+    },
+    {
+      "slug": "097-geodjango",
+      "title": "GeoDjango — Django 1.5 documentation",
+      "file": "chapters/097-geodjango.md"
+    },
+    {
+      "slug": "098-认证",
+      "title": "User authentication in Django — Django 1.5 documentation",
+      "file": "chapters/098-认证.md"
+    },
+    {
+      "slug": "099-缓存",
+      "title": "Django’s cache framework — Django 1.5 documentation",
+      "file": "chapters/099-缓存.md"
+    },
+    {
+      "slug": "100-日志",
+      "title": "Logging — Django 1.5 documentation",
+      "file": "chapters/100-日志.md"
+    },
+    {
+      "slug": "101-发送电子邮件",
+      "title": "Sending email — Django 1.5 documentation",
+      "file": "chapters/101-发送电子邮件.md"
+    },
+    {
+      "slug": "102-聚合供稿-rss-atom",
+      "title": "The syndication feed framework — Django 1.5 documentation",
+      "file": "chapters/102-聚合供稿-rss-atom.md"
+    },
+    {
+      "slug": "103-评论",
+      "title": "Django’s comments framework — Django 1.5 documentation",
+      "file": "chapters/103-评论.md"
+    },
+    {
+      "slug": "104-评论审核",
+      "title": "Generic comment moderation — Django 1.5 documentation",
+      "file": "chapters/104-评论审核.md"
+    },
+    {
+      "slug": "105-自定义评论",
+      "title": "Customizing the comments framework — Django 1.5 documentation",
+      "file": "chapters/105-自定义评论.md"
+    },
+    {
+      "slug": "106-分页",
+      "title": "Pagination — Django 1.5 documentation",
+      "file": "chapters/106-分页.md"
+    },
+    {
+      "slug": "107-消息框架",
+      "title": "The messages framework — Django 1.5 documentation",
+      "file": "chapters/107-消息框架.md"
+    },
+    {
+      "slug": "108-序列化",
+      "title": "Serializing Django objects — Django 1.5 documentation",
+      "file": "chapters/108-序列化.md"
+    },
+    {
+      "slug": "109-sessions",
+      "title": "How to use sessions — Django 1.5 documentation",
+      "file": "chapters/109-sessions.md"
+    },
+    {
+      "slug": "110-站点地图",
+      "title": "The sitemap framework — Django 1.5 documentation",
+      "file": "chapters/110-站点地图.md"
+    },
+    {
+      "slug": "111-静态文件管理",
+      "title": "The staticfiles app — Django 1.5 documentation",
+      "file": "chapters/111-静态文件管理.md"
+    },
+    {
+      "slug": "112-数据验证",
+      "title": "Validators — Django 1.5 documentation",
+      "file": "chapters/112-数据验证.md"
+    },
+    {
+      "slug": "113-按需处理内容",
+      "title": "Conditional View Processing — Django 1.5 documentation",
+      "file": "chapters/113-按需处理内容.md"
+    },
+    {
+      "slug": "114-内容类型和泛型关系",
+      "title": "The contenttypes framework — Django 1.5 documentation",
+      "file": "chapters/114-内容类型和泛型关系.md"
+    },
+    {
+      "slug": "115-数据浏览",
+      "title": "Databrowse — Django 1.5 documentation",
+      "file": "chapters/115-数据浏览.md"
+    },
+    {
+      "slug": "116-简单页面",
+      "title": "The flatpages app — Django 1.5 documentation",
+      "file": "chapters/116-简单页面.md"
+    },
+    {
+      "slug": "117-重定向",
+      "title": "The redirects app — Django 1.5 documentation",
+      "file": "chapters/117-重定向.md"
+    },
+    {
+      "slug": "118-信号",
+      "title": "Signals — Django 1.5 documentation",
+      "file": "chapters/118-信号.md"
+    },
+    {
+      "slug": "119-sites-框架",
+      "title": "The “sites” framework — Django 1.5 documentation",
+      "file": "chapters/119-sites-框架.md"
+    },
+    {
+      "slug": "120-在-django-中使用-unicode",
+      "title": "Unicode data — Django 1.5 documentation",
+      "file": "chapters/120-在-django-中使用-unicode.md"
+    },
+    {
+      "slug": "121-如何参与",
+      "title": "Contributing to Django — Django 1.5 documentation",
+      "file": "chapters/121-如何参与.md"
+    },
+    {
+      "slug": "122-发布过程",
+      "title": "Django’s release process — Django 1.5 documentation",
+      "file": "chapters/122-发布过程.md"
+    },
+    {
+      "slug": "123-团队提交",
+      "title": "Django committers — Django 1.5 documentation",
+      "file": "chapters/123-团队提交.md"
+    },
+    {
+      "slug": "124-django-源码库",
+      "title": "The Django source code repository — Django 1.5 documentation",
+      "file": "chapters/124-django-源码库.md"
+    },
+    {
+      "slug": "125-安全策略",
+      "title": "Django’s security policies — Django 1.5 documentation",
+      "file": "chapters/125-安全策略.md"
+    },
+    {
+      "slug": "126-概述",
+      "title": "Design philosophies — Django 1.5 documentation",
+      "file": "chapters/126-概述.md"
+    },
+    {
+      "slug": "127-关于本文档",
+      "title": "Writing documentation — Django 1.5 documentation",
+      "file": "chapters/127-关于本文档.md"
+    },
+    {
+      "slug": "128-概述",
+      "title": "Third-party distributions of Django — Django 1.5 documentation",
+      "file": "chapters/128-概述.md"
+    },
+    {
+      "slug": "129-api-稳定性",
+      "title": "API stability — Django 1.5 documentation",
+      "file": "chapters/129-api-稳定性.md"
+    },
+    {
+      "slug": "130-发行说明和升级说明",
+      "title": "Release notes — Django 1.5 documentation",
+      "file": "chapters/130-发行说明和升级说明.md"
+    },
+    {
+      "slug": "131-功能弃用时间轴",
+      "title": "Django Deprecation Timeline — Django 1.5 documentation",
+      "file": "chapters/131-功能弃用时间轴.md"
     }
   ],
   "sourceType": "web",

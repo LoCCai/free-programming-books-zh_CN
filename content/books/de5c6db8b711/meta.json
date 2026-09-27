@@ -3,12 +3,47 @@
   "title": "深入理解 Yii 2.0",
   "url": "http://www.digpage.com/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:10.754Z",
+  "fetchedAt": "2026-09-27T12:02:13.944Z",
   "chapters": [
     {
-      "slug": "001-n",
+      "slug": "001-digpage-com-is-for-sale-hugedomains",
       "title": "DigPage.com is for sale | HugeDomains",
-      "file": "chapters/001-n.md"
+      "file": "chapters/001-digpage-com-is-for-sale-hugedomains.md"
+    },
+    {
+      "slug": "002-home",
+      "title": "The #1 Source For Domain Names | HugeDomains",
+      "file": "chapters/002-home.md"
+    },
+    {
+      "slug": "003-faqs",
+      "title": "Domain Names Frequently Asked Questions - FAQ | HugeDomains",
+      "file": "chapters/003-faqs.md"
+    },
+    {
+      "slug": "004-about-us",
+      "title": "Since 2005, Providing Premium Domains + Excellent Service | HugeDomains",
+      "file": "chapters/004-about-us.md"
+    },
+    {
+      "slug": "005-contact-us",
+      "title": "How Would You Like To Contact Us? | HugeDomains",
+      "file": "chapters/005-contact-us.md"
+    },
+    {
+      "slug": "006-my-account",
+      "title": "Manage Your Payment Plan | HugeDomains",
+      "file": "chapters/006-my-account.md"
+    },
+    {
+      "slug": "007-my-favorites",
+      "title": "My Favorites | HugeDomains",
+      "file": "chapters/007-my-favorites.md"
+    },
+    {
+      "slug": "008-shopping-cart",
+      "title": "Shopping Cart | HugeDomains",
+      "file": "chapters/008-shopping-cart.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,12 @@
   "title": "Python入门教程",
   "url": "http://liam0205.me/2013/11/02/Python-tutorial-zh_cn/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:29.340Z",
+  "fetchedAt": "2026-09-27T12:02:52.513Z",
   "chapters": [
     {
-      "slug": "001-1g",
+      "slug": "001-liam0205-me",
       "title": "liam0205.me",
-      "file": "chapters/001-1g.md"
+      "file": "chapters/001-liam0205-me.md"
     }
   ],
   "sourceType": "web",

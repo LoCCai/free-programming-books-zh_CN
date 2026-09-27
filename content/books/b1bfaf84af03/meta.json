@@ -3,12 +3,112 @@
   "title": "MyBatis中文文档",
   "url": "https://mybatis.org/mybatis-3/zh_CN/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:22.123Z",
+  "fetchedAt": "2026-09-27T12:00:23.933Z",
   "chapters": [
     {
-      "slug": "001-1a",
+      "slug": "001-mybatis-3-简介-mybatis",
       "title": "MyBatis 3 | 简介 – mybatis",
-      "file": "chapters/001-1a.md"
+      "file": "chapters/001-mybatis-3-简介-mybatis.md"
+    },
+    {
+      "slug": "002-入门",
+      "title": "MyBatis 3 | 入门 – mybatis",
+      "file": "chapters/002-入门.md"
+    },
+    {
+      "slug": "003-xml-配置",
+      "title": "MyBatis 3 | 配置 – mybatis",
+      "file": "chapters/003-xml-配置.md"
+    },
+    {
+      "slug": "004-xml-映射文件",
+      "title": "MyBatis 3 | XML 映射器 – mybatis",
+      "file": "chapters/004-xml-映射文件.md"
+    },
+    {
+      "slug": "005-动态-sql",
+      "title": "MyBatis 3 | 动态 SQL – mybatis",
+      "file": "chapters/005-动态-sql.md"
+    },
+    {
+      "slug": "006-java-api",
+      "title": "MyBatis 3 | Java API – mybatis",
+      "file": "chapters/006-java-api.md"
+    },
+    {
+      "slug": "007-sql-语句构建器",
+      "title": "MyBatis 3 | SQL 语句构建器 – mybatis",
+      "file": "chapters/007-sql-语句构建器.md"
+    },
+    {
+      "slug": "008-日志",
+      "title": "MyBatis 3 | 日志 – mybatis",
+      "file": "chapters/008-日志.md"
+    },
+    {
+      "slug": "009-项目信息",
+      "title": "项目总体信息 – mybatis",
+      "file": "chapters/009-项目信息.md"
+    },
+    {
+      "slug": "010-持续集成",
+      "title": "持续集成 – mybatis",
+      "file": "chapters/010-持续集成.md"
+    },
+    {
+      "slug": "011-项目依赖",
+      "title": "项目依赖 – mybatis",
+      "file": "chapters/011-项目依赖.md"
+    },
+    {
+      "slug": "012-maven-coordinates",
+      "title": "Maven Coordinates – mybatis",
+      "file": "chapters/012-maven-coordinates.md"
+    },
+    {
+      "slug": "013-分发管理",
+      "title": "项目分发管理 – mybatis",
+      "file": "chapters/013-分发管理.md"
+    },
+    {
+      "slug": "014-项目许可证",
+      "title": "项目许可证 – mybatis",
+      "file": "chapters/014-项目许可证.md"
+    },
+    {
+      "slug": "015-邮件列表",
+      "title": "项目邮件列表 – mybatis",
+      "file": "chapters/015-邮件列表.md"
+    },
+    {
+      "slug": "016-项目插件管理",
+      "title": "项目插件管理 – mybatis",
+      "file": "chapters/016-项目插件管理.md"
+    },
+    {
+      "slug": "017-插件",
+      "title": "项目插件 – mybatis",
+      "file": "chapters/017-插件.md"
+    },
+    {
+      "slug": "018-源代码库",
+      "title": "源代码库 – mybatis",
+      "file": "chapters/018-源代码库.md"
+    },
+    {
+      "slug": "019-项目概要",
+      "title": "项目概要 – mybatis",
+      "file": "chapters/019-项目概要.md"
+    },
+    {
+      "slug": "020-项目团队",
+      "title": "项目团队 – mybatis",
+      "file": "chapters/020-项目团队.md"
+    },
+    {
+      "slug": "021-项目报表",
+      "title": "生成报表 – mybatis",
+      "file": "chapters/021-项目报表.md"
     }
   ],
   "sourceType": "web",

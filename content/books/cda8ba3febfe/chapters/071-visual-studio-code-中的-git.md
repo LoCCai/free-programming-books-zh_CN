@@ -1,0 +1,33 @@
+## Visual Studio Code 中的 Git
+
+Visual Studio Code 自带对 Git 的支持。 你需要安装 2.0.0（及以上）版本的 Git。
+
+主要功能如下：
+
+-   在行号槽显示你正在编辑的文件的改动情况。
+    
+-   Git 状态栏（位于左下角）会显示当前所在分支，编辑指示符以及未提交或者未拉取的提交的数量。
+    
+-   你能够在编辑器内完成常用的 Git 操作：
+    
+    -   初始化一个仓库。
+        
+    -   克隆一个仓库。
+        
+    -   新建分支和标签。
+        
+    -   暂存和提交修改。
+        
+    -   对一个远程分支进行推送/拉取/同步。
+        
+    -   解决合并冲突。
+        
+    -   查看比较。
+        
+    
+-   配合一个扩展，你也能够处理 GitHub 的拉取请求： [https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github。](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github%E3%80%82)
+    
+
+官方文档请访问： [https://code.visualstudio.com/Docs/editor/versioncontrol。](https://code.visualstudio.com/Docs/editor/versioncontrol%E3%80%82)
+
+[prev](https://git-scm.com/book/zh/v2/%E9%99%84%E5%BD%95-A:-%E5%9C%A8%E5%85%B6%E5%AE%83%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8-Git-Visual-Studio-%E4%B8%AD%E7%9A%84-Git) | [next](https://git-scm.com/book/zh/v2/%E9%99%84%E5%BD%95-A:-%E5%9C%A8%E5%85%B6%E5%AE%83%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BD%BF%E7%94%A8-Git-IntelliJ-/-PyCharm-/-WebStorm-/-PhpStorm-/-RubyMine-%E4%B8%AD%E7%9A%84-Git)

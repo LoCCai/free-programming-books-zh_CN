@@ -3,14 +3,628 @@
   "title": "Go语言圣经",
   "url": "https://gopl-zh.github.io/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:48.360Z",
+  "fetchedAt": "2026-09-27T11:47:39.368Z",
   "chapters": [
     {
-      "slug": "001-q",
+      "slug": "001-go语言圣经",
       "title": "Go语言圣经 - Go语言圣经",
-      "file": "chapters/001-q.md"
+      "file": "chapters/001-go语言圣经.md"
+    },
+    {
+      "slug": "002-译者序",
+      "title": "译者序 - Go语言圣经",
+      "file": "chapters/002-译者序.md"
+    },
+    {
+      "slug": "003-前言",
+      "title": "前言 - Go语言圣经",
+      "file": "chapters/003-前言.md"
+    },
+    {
+      "slug": "004-1-入门",
+      "title": "入门 - Go语言圣经",
+      "file": "chapters/004-1-入门.md"
+    },
+    {
+      "slug": "005-1-1-hello-world",
+      "title": "Hello, World - Go语言圣经",
+      "file": "chapters/005-1-1-hello-world.md"
+    },
+    {
+      "slug": "006-1-2-命令行参数",
+      "title": "命令行参数 - Go语言圣经",
+      "file": "chapters/006-1-2-命令行参数.md"
+    },
+    {
+      "slug": "007-1-3-查找重复的行",
+      "title": "查找重复的行 - Go语言圣经",
+      "file": "chapters/007-1-3-查找重复的行.md"
+    },
+    {
+      "slug": "008-1-4-gif动画",
+      "title": "GIF动画 - Go语言圣经",
+      "file": "chapters/008-1-4-gif动画.md"
+    },
+    {
+      "slug": "009-1-5-获取url",
+      "title": "获取URL - Go语言圣经",
+      "file": "chapters/009-1-5-获取url.md"
+    },
+    {
+      "slug": "010-1-6-并发获取多个url",
+      "title": "并发获取多个URL - Go语言圣经",
+      "file": "chapters/010-1-6-并发获取多个url.md"
+    },
+    {
+      "slug": "011-1-7-web服务",
+      "title": "Web服务 - Go语言圣经",
+      "file": "chapters/011-1-7-web服务.md"
+    },
+    {
+      "slug": "012-1-8-本章要点",
+      "title": "本章要点 - Go语言圣经",
+      "file": "chapters/012-1-8-本章要点.md"
+    },
+    {
+      "slug": "013-2-程序结构",
+      "title": "程序结构 - Go语言圣经",
+      "file": "chapters/013-2-程序结构.md"
+    },
+    {
+      "slug": "014-2-1-命名",
+      "title": "命名 - Go语言圣经",
+      "file": "chapters/014-2-1-命名.md"
+    },
+    {
+      "slug": "015-2-2-声明",
+      "title": "声明 - Go语言圣经",
+      "file": "chapters/015-2-2-声明.md"
+    },
+    {
+      "slug": "016-2-3-变量",
+      "title": "变量 - Go语言圣经",
+      "file": "chapters/016-2-3-变量.md"
+    },
+    {
+      "slug": "017-2-4-赋值",
+      "title": "赋值 - Go语言圣经",
+      "file": "chapters/017-2-4-赋值.md"
+    },
+    {
+      "slug": "018-2-5-类型",
+      "title": "类型 - Go语言圣经",
+      "file": "chapters/018-2-5-类型.md"
+    },
+    {
+      "slug": "019-2-6-包和文件",
+      "title": "包和文件 - Go语言圣经",
+      "file": "chapters/019-2-6-包和文件.md"
+    },
+    {
+      "slug": "020-2-7-作用域",
+      "title": "作用域 - Go语言圣经",
+      "file": "chapters/020-2-7-作用域.md"
+    },
+    {
+      "slug": "021-3-基础数据类型",
+      "title": "基础数据类型 - Go语言圣经",
+      "file": "chapters/021-3-基础数据类型.md"
+    },
+    {
+      "slug": "022-3-1-整型",
+      "title": "整型 - Go语言圣经",
+      "file": "chapters/022-3-1-整型.md"
+    },
+    {
+      "slug": "023-3-2-浮点数",
+      "title": "浮点数 - Go语言圣经",
+      "file": "chapters/023-3-2-浮点数.md"
+    },
+    {
+      "slug": "024-3-3-复数",
+      "title": "复数 - Go语言圣经",
+      "file": "chapters/024-3-3-复数.md"
+    },
+    {
+      "slug": "025-3-4-布尔型",
+      "title": "布尔型 - Go语言圣经",
+      "file": "chapters/025-3-4-布尔型.md"
+    },
+    {
+      "slug": "026-3-5-字符串",
+      "title": "字符串 - Go语言圣经",
+      "file": "chapters/026-3-5-字符串.md"
+    },
+    {
+      "slug": "027-3-6-常量",
+      "title": "常量 - Go语言圣经",
+      "file": "chapters/027-3-6-常量.md"
+    },
+    {
+      "slug": "028-4-复合数据类型",
+      "title": "复合数据类型 - Go语言圣经",
+      "file": "chapters/028-4-复合数据类型.md"
+    },
+    {
+      "slug": "029-4-1-数组",
+      "title": "数组 - Go语言圣经",
+      "file": "chapters/029-4-1-数组.md"
+    },
+    {
+      "slug": "030-4-2-slice",
+      "title": "Slice - Go语言圣经",
+      "file": "chapters/030-4-2-slice.md"
+    },
+    {
+      "slug": "031-4-3-map",
+      "title": "Map - Go语言圣经",
+      "file": "chapters/031-4-3-map.md"
+    },
+    {
+      "slug": "032-4-4-结构体",
+      "title": "结构体 - Go语言圣经",
+      "file": "chapters/032-4-4-结构体.md"
+    },
+    {
+      "slug": "033-4-5-json",
+      "title": "JSON - Go语言圣经",
+      "file": "chapters/033-4-5-json.md"
+    },
+    {
+      "slug": "034-4-6-文本和html模板",
+      "title": "文本和HTML模板 - Go语言圣经",
+      "file": "chapters/034-4-6-文本和html模板.md"
+    },
+    {
+      "slug": "035-5-函数",
+      "title": "函数 - Go语言圣经",
+      "file": "chapters/035-5-函数.md"
+    },
+    {
+      "slug": "036-5-1-函数声明",
+      "title": "函数声明 - Go语言圣经",
+      "file": "chapters/036-5-1-函数声明.md"
+    },
+    {
+      "slug": "037-5-2-递归",
+      "title": "递归 - Go语言圣经",
+      "file": "chapters/037-5-2-递归.md"
+    },
+    {
+      "slug": "038-5-3-多返回值",
+      "title": "多返回值 - Go语言圣经",
+      "file": "chapters/038-5-3-多返回值.md"
+    },
+    {
+      "slug": "039-5-4-错误",
+      "title": "错误 - Go语言圣经",
+      "file": "chapters/039-5-4-错误.md"
+    },
+    {
+      "slug": "040-5-5-函数值",
+      "title": "函数值 - Go语言圣经",
+      "file": "chapters/040-5-5-函数值.md"
+    },
+    {
+      "slug": "041-5-6-匿名函数",
+      "title": "匿名函数 - Go语言圣经",
+      "file": "chapters/041-5-6-匿名函数.md"
+    },
+    {
+      "slug": "042-5-7-可变参数",
+      "title": "可变参数 - Go语言圣经",
+      "file": "chapters/042-5-7-可变参数.md"
+    },
+    {
+      "slug": "043-5-8-deferred函数",
+      "title": "Deferred函数 - Go语言圣经",
+      "file": "chapters/043-5-8-deferred函数.md"
+    },
+    {
+      "slug": "044-5-9-panic异常",
+      "title": "Panic异常 - Go语言圣经",
+      "file": "chapters/044-5-9-panic异常.md"
+    },
+    {
+      "slug": "045-5-10-recover捕获异常",
+      "title": "Recover捕获异常 - Go语言圣经",
+      "file": "chapters/045-5-10-recover捕获异常.md"
+    },
+    {
+      "slug": "046-6-方法",
+      "title": "方法 - Go语言圣经",
+      "file": "chapters/046-6-方法.md"
+    },
+    {
+      "slug": "047-6-1-方法声明",
+      "title": "方法声明 - Go语言圣经",
+      "file": "chapters/047-6-1-方法声明.md"
+    },
+    {
+      "slug": "048-6-2-基于指针对象的方法",
+      "title": "基于指针对象的方法 - Go语言圣经",
+      "file": "chapters/048-6-2-基于指针对象的方法.md"
+    },
+    {
+      "slug": "049-6-3-通过嵌入结构体来扩展类型",
+      "title": "通过嵌入结构体来扩展类型 - Go语言圣经",
+      "file": "chapters/049-6-3-通过嵌入结构体来扩展类型.md"
+    },
+    {
+      "slug": "050-6-4-方法值和方法表达式",
+      "title": "方法值和方法表达式 - Go语言圣经",
+      "file": "chapters/050-6-4-方法值和方法表达式.md"
+    },
+    {
+      "slug": "051-6-5-示例-bit数组",
+      "title": "示例: Bit数组 - Go语言圣经",
+      "file": "chapters/051-6-5-示例-bit数组.md"
+    },
+    {
+      "slug": "052-6-6-封装",
+      "title": "封装 - Go语言圣经",
+      "file": "chapters/052-6-6-封装.md"
+    },
+    {
+      "slug": "053-7-接口",
+      "title": "接口 - Go语言圣经",
+      "file": "chapters/053-7-接口.md"
+    },
+    {
+      "slug": "054-7-1-接口是合约",
+      "title": "接口是合约 - Go语言圣经",
+      "file": "chapters/054-7-1-接口是合约.md"
+    },
+    {
+      "slug": "055-7-2-接口类型",
+      "title": "接口类型 - Go语言圣经",
+      "file": "chapters/055-7-2-接口类型.md"
+    },
+    {
+      "slug": "056-7-3-实现接口的条件",
+      "title": "实现接口的条件 - Go语言圣经",
+      "file": "chapters/056-7-3-实现接口的条件.md"
+    },
+    {
+      "slug": "057-7-4-flag-value接口",
+      "title": "flag.Value接口 - Go语言圣经",
+      "file": "chapters/057-7-4-flag-value接口.md"
+    },
+    {
+      "slug": "058-7-5-接口值",
+      "title": "接口值 - Go语言圣经",
+      "file": "chapters/058-7-5-接口值.md"
+    },
+    {
+      "slug": "059-7-6-sort-interface接口",
+      "title": "sort.Interface接口 - Go语言圣经",
+      "file": "chapters/059-7-6-sort-interface接口.md"
+    },
+    {
+      "slug": "060-7-7-http-handler接口",
+      "title": "http.Handler接口 - Go语言圣经",
+      "file": "chapters/060-7-7-http-handler接口.md"
+    },
+    {
+      "slug": "061-7-8-error接口",
+      "title": "error接口 - Go语言圣经",
+      "file": "chapters/061-7-8-error接口.md"
+    },
+    {
+      "slug": "062-7-9-示例-表达式求值",
+      "title": "示例: 表达式求值 - Go语言圣经",
+      "file": "chapters/062-7-9-示例-表达式求值.md"
+    },
+    {
+      "slug": "063-7-10-类型断言",
+      "title": "类型断言 - Go语言圣经",
+      "file": "chapters/063-7-10-类型断言.md"
+    },
+    {
+      "slug": "064-7-11-基于类型断言识别错误类型",
+      "title": "基于类型断言识别错误类型 - Go语言圣经",
+      "file": "chapters/064-7-11-基于类型断言识别错误类型.md"
+    },
+    {
+      "slug": "065-7-12-通过类型断言查询接口",
+      "title": "通过类型断言查询接口 - Go语言圣经",
+      "file": "chapters/065-7-12-通过类型断言查询接口.md"
+    },
+    {
+      "slug": "066-7-13-类型分支",
+      "title": "类型分支 - Go语言圣经",
+      "file": "chapters/066-7-13-类型分支.md"
+    },
+    {
+      "slug": "067-7-14-示例-基于标记的xml解码",
+      "title": "示例: 基于标记的XML解码 - Go语言圣经",
+      "file": "chapters/067-7-14-示例-基于标记的xml解码.md"
+    },
+    {
+      "slug": "068-7-15-补充几点",
+      "title": "补充几点 - Go语言圣经",
+      "file": "chapters/068-7-15-补充几点.md"
+    },
+    {
+      "slug": "069-8-goroutines和channels",
+      "title": "Goroutines和Channels - Go语言圣经",
+      "file": "chapters/069-8-goroutines和channels.md"
+    },
+    {
+      "slug": "070-8-1-goroutines",
+      "title": "Goroutines - Go语言圣经",
+      "file": "chapters/070-8-1-goroutines.md"
+    },
+    {
+      "slug": "071-8-2-示例-并发的clock服务",
+      "title": "示例: 并发的Clock服务 - Go语言圣经",
+      "file": "chapters/071-8-2-示例-并发的clock服务.md"
+    },
+    {
+      "slug": "072-8-3-示例-并发的echo服务",
+      "title": "示例: 并发的Echo服务 - Go语言圣经",
+      "file": "chapters/072-8-3-示例-并发的echo服务.md"
+    },
+    {
+      "slug": "073-8-4-channels",
+      "title": "Channels - Go语言圣经",
+      "file": "chapters/073-8-4-channels.md"
+    },
+    {
+      "slug": "074-8-5-并发的循环",
+      "title": "并发的循环 - Go语言圣经",
+      "file": "chapters/074-8-5-并发的循环.md"
+    },
+    {
+      "slug": "075-8-6-示例-并发的web爬虫",
+      "title": "示例: 并发的Web爬虫 - Go语言圣经",
+      "file": "chapters/075-8-6-示例-并发的web爬虫.md"
+    },
+    {
+      "slug": "076-8-7-基于select的多路复用",
+      "title": "基于select的多路复用 - Go语言圣经",
+      "file": "chapters/076-8-7-基于select的多路复用.md"
+    },
+    {
+      "slug": "077-8-8-示例-并发的目录遍历",
+      "title": "示例: 并发的目录遍历 - Go语言圣经",
+      "file": "chapters/077-8-8-示例-并发的目录遍历.md"
+    },
+    {
+      "slug": "078-8-9-并发的退出",
+      "title": "并发的退出 - Go语言圣经",
+      "file": "chapters/078-8-9-并发的退出.md"
+    },
+    {
+      "slug": "079-8-10-示例-聊天服务",
+      "title": "示例: 聊天服务 - Go语言圣经",
+      "file": "chapters/079-8-10-示例-聊天服务.md"
+    },
+    {
+      "slug": "080-9-基于共享变量的并发",
+      "title": "基于共享变量的并发 - Go语言圣经",
+      "file": "chapters/080-9-基于共享变量的并发.md"
+    },
+    {
+      "slug": "081-9-1-竞争条件",
+      "title": "竞争条件 - Go语言圣经",
+      "file": "chapters/081-9-1-竞争条件.md"
+    },
+    {
+      "slug": "082-9-2-sync-mutex互斥锁",
+      "title": "sync.Mutex互斥锁 - Go语言圣经",
+      "file": "chapters/082-9-2-sync-mutex互斥锁.md"
+    },
+    {
+      "slug": "083-9-3-sync-rwmutex读写锁",
+      "title": "sync.RWMutex读写锁 - Go语言圣经",
+      "file": "chapters/083-9-3-sync-rwmutex读写锁.md"
+    },
+    {
+      "slug": "084-9-4-内存同步",
+      "title": "内存同步 - Go语言圣经",
+      "file": "chapters/084-9-4-内存同步.md"
+    },
+    {
+      "slug": "085-9-5-sync-once惰性初始化",
+      "title": "sync.Once惰性初始化 - Go语言圣经",
+      "file": "chapters/085-9-5-sync-once惰性初始化.md"
+    },
+    {
+      "slug": "086-9-6-竞争条件检测",
+      "title": "竞争条件检测 - Go语言圣经",
+      "file": "chapters/086-9-6-竞争条件检测.md"
+    },
+    {
+      "slug": "087-9-7-示例-并发的非阻塞缓存",
+      "title": "示例: 并发的非阻塞缓存 - Go语言圣经",
+      "file": "chapters/087-9-7-示例-并发的非阻塞缓存.md"
+    },
+    {
+      "slug": "088-9-8-goroutines和线程",
+      "title": "Goroutines和线程 - Go语言圣经",
+      "file": "chapters/088-9-8-goroutines和线程.md"
+    },
+    {
+      "slug": "089-10-包和工具",
+      "title": "包和工具 - Go语言圣经",
+      "file": "chapters/089-10-包和工具.md"
+    },
+    {
+      "slug": "090-10-1-包简介",
+      "title": "包简介 - Go语言圣经",
+      "file": "chapters/090-10-1-包简介.md"
+    },
+    {
+      "slug": "091-10-2-导入路径",
+      "title": "导入路径 - Go语言圣经",
+      "file": "chapters/091-10-2-导入路径.md"
+    },
+    {
+      "slug": "092-10-3-包声明",
+      "title": "包声明 - Go语言圣经",
+      "file": "chapters/092-10-3-包声明.md"
+    },
+    {
+      "slug": "093-10-4-导入声明",
+      "title": "导入声明 - Go语言圣经",
+      "file": "chapters/093-10-4-导入声明.md"
+    },
+    {
+      "slug": "094-10-5-包的匿名导入",
+      "title": "包的匿名导入 - Go语言圣经",
+      "file": "chapters/094-10-5-包的匿名导入.md"
+    },
+    {
+      "slug": "095-10-6-包和命名",
+      "title": "包和命名 - Go语言圣经",
+      "file": "chapters/095-10-6-包和命名.md"
+    },
+    {
+      "slug": "096-10-7-工具",
+      "title": "工具 - Go语言圣经",
+      "file": "chapters/096-10-7-工具.md"
+    },
+    {
+      "slug": "097-11-测试",
+      "title": "测试 - Go语言圣经",
+      "file": "chapters/097-11-测试.md"
+    },
+    {
+      "slug": "098-11-1-go-test",
+      "title": "go test - Go语言圣经",
+      "file": "chapters/098-11-1-go-test.md"
+    },
+    {
+      "slug": "099-11-2-测试函数",
+      "title": "测试函数 - Go语言圣经",
+      "file": "chapters/099-11-2-测试函数.md"
+    },
+    {
+      "slug": "100-11-3-测试覆盖率",
+      "title": "测试覆盖率 - Go语言圣经",
+      "file": "chapters/100-11-3-测试覆盖率.md"
+    },
+    {
+      "slug": "101-11-4-基准测试",
+      "title": "基准测试 - Go语言圣经",
+      "file": "chapters/101-11-4-基准测试.md"
+    },
+    {
+      "slug": "102-11-5-剖析",
+      "title": "剖析 - Go语言圣经",
+      "file": "chapters/102-11-5-剖析.md"
+    },
+    {
+      "slug": "103-11-6-示例函数",
+      "title": "示例函数 - Go语言圣经",
+      "file": "chapters/103-11-6-示例函数.md"
+    },
+    {
+      "slug": "104-12-反射",
+      "title": "反射 - Go语言圣经",
+      "file": "chapters/104-12-反射.md"
+    },
+    {
+      "slug": "105-12-1-为何需要反射",
+      "title": "为何需要反射? - Go语言圣经",
+      "file": "chapters/105-12-1-为何需要反射.md"
+    },
+    {
+      "slug": "106-12-2-reflect-type和reflect-value",
+      "title": "reflect.Type和reflect.Value - Go语言圣经",
+      "file": "chapters/106-12-2-reflect-type和reflect-value.md"
+    },
+    {
+      "slug": "107-12-3-display递归打印",
+      "title": "Display递归打印 - Go语言圣经",
+      "file": "chapters/107-12-3-display递归打印.md"
+    },
+    {
+      "slug": "108-12-4-示例-编码s表达式",
+      "title": "示例: 编码S表达式 - Go语言圣经",
+      "file": "chapters/108-12-4-示例-编码s表达式.md"
+    },
+    {
+      "slug": "109-12-5-通过reflect-value修改值",
+      "title": "通过reflect.Value修改值 - Go语言圣经",
+      "file": "chapters/109-12-5-通过reflect-value修改值.md"
+    },
+    {
+      "slug": "110-12-6-示例-解码s表达式",
+      "title": "示例: 解码S表达式 - Go语言圣经",
+      "file": "chapters/110-12-6-示例-解码s表达式.md"
+    },
+    {
+      "slug": "111-12-7-获取结构体字段标签",
+      "title": "获取结构体字段标签 - Go语言圣经",
+      "file": "chapters/111-12-7-获取结构体字段标签.md"
+    },
+    {
+      "slug": "112-12-8-显示一个类型的方法集",
+      "title": "显示一个类型的方法集 - Go语言圣经",
+      "file": "chapters/112-12-8-显示一个类型的方法集.md"
+    },
+    {
+      "slug": "113-12-9-几点忠告",
+      "title": "几点忠告 - Go语言圣经",
+      "file": "chapters/113-12-9-几点忠告.md"
+    },
+    {
+      "slug": "114-13-底层编程",
+      "title": "底层编程 - Go语言圣经",
+      "file": "chapters/114-13-底层编程.md"
+    },
+    {
+      "slug": "115-13-1-unsafe-sizeof-alignof-和-offsetof",
+      "title": "unsafe.Sizeof, Alignof 和 Offsetof - Go语言圣经",
+      "file": "chapters/115-13-1-unsafe-sizeof-alignof-和-offsetof.md"
+    },
+    {
+      "slug": "116-13-2-unsafe-pointer",
+      "title": "unsafe.Pointer - Go语言圣经",
+      "file": "chapters/116-13-2-unsafe-pointer.md"
+    },
+    {
+      "slug": "117-13-3-示例-深度相等判断",
+      "title": "示例: 深度相等判断 - Go语言圣经",
+      "file": "chapters/117-13-3-示例-深度相等判断.md"
+    },
+    {
+      "slug": "118-13-4-通过cgo调用c代码",
+      "title": "通过cgo调用C代码 - Go语言圣经",
+      "file": "chapters/118-13-4-通过cgo调用c代码.md"
+    },
+    {
+      "slug": "119-13-5-几点忠告",
+      "title": "几点忠告 - Go语言圣经",
+      "file": "chapters/119-13-5-几点忠告.md"
+    },
+    {
+      "slug": "120-14-附录",
+      "title": "附录 - Go语言圣经",
+      "file": "chapters/120-14-附录.md"
+    },
+    {
+      "slug": "121-14-1-附录a-原文勘误",
+      "title": "附录A：原文勘误 - Go语言圣经",
+      "file": "chapters/121-14-1-附录a-原文勘误.md"
+    },
+    {
+      "slug": "122-14-2-附录b-作者译者",
+      "title": "附录B：作者译者 - Go语言圣经",
+      "file": "chapters/122-14-2-附录b-作者译者.md"
+    },
+    {
+      "slug": "123-14-3-附录c-译文授权",
+      "title": "附录C：译文授权 - Go语言圣经",
+      "file": "chapters/123-14-3-附录c-译文授权.md"
+    },
+    {
+      "slug": "124-14-4-附录d-其它语言",
+      "title": "附录D：其它语言 - Go语言圣经",
+      "file": "chapters/124-14-4-附录d-其它语言.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "Go语言圣经 - Go语言圣经"
+  "sourceType": "web"
 }

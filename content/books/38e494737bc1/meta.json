@@ -3,12 +3,152 @@
   "title": "Git Cheat Sheet",
   "url": "https://www.git-tower.com/blog/git-cheat-sheet-cn",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:10.563Z",
+  "fetchedAt": "2026-09-27T11:55:41.428Z",
   "chapters": [
     {
-      "slug": "001-1d",
+      "slug": "001-git-cheat-sheet-chinese-edition",
       "title": "Git Cheat Sheet (Chinese Edition)",
-      "file": "chapters/001-1d.md"
+      "file": "chapters/001-git-cheat-sheet-chinese-edition.md"
+    },
+    {
+      "slug": "002-tower",
+      "title": "Tower Git Client - Tower — The most powerful Git client for Mac and Windows",
+      "file": "chapters/002-tower.md"
+    },
+    {
+      "slug": "003-features",
+      "title": "Tower Git Client - Git Made Easy",
+      "file": "chapters/003-features.md"
+    },
+    {
+      "slug": "004-undo-anything-just-press-cmd-z",
+      "title": "Tower Git Client - Undo Anything in Git",
+      "file": "chapters/004-undo-anything-just-press-cmd-z.md"
+    },
+    {
+      "slug": "005-drag-and-drop-make-the-complex-effortles",
+      "title": "Tower Git Client - More Productive with Drag and Drop",
+      "file": "chapters/005-drag-and-drop-make-the-complex-effortles.md"
+    },
+    {
+      "slug": "006-integrations-use-your-favorite-tools",
+      "title": "Tower Git Client - Integrations and Services",
+      "file": "chapters/006-integrations-use-your-favorite-tools.md"
+    },
+    {
+      "slug": "007-tower-workflows-branching-configurations",
+      "title": "Tower Git Client - Tower Workflows",
+      "file": "chapters/007-tower-workflows-branching-configurations.md"
+    },
+    {
+      "slug": "008-all-features",
+      "title": "Tower Git Client - Feature Overview",
+      "file": "chapters/008-all-features.md"
+    },
+    {
+      "slug": "009-release-notes",
+      "title": "Tower Git Client - Release Notes",
+      "file": "chapters/009-release-notes.md"
+    },
+    {
+      "slug": "010-join-beta-channel",
+      "title": "Tower Git Client - Get Early Access to the New Tower",
+      "file": "chapters/010-join-beta-channel.md"
+    },
+    {
+      "slug": "011-tower-pro",
+      "title": "Tower Git Client - Tower Pro",
+      "file": "chapters/011-tower-pro.md"
+    },
+    {
+      "slug": "012-stacked-branches-supercharged-workflows",
+      "title": "Tower Git Client - Stacked Branches",
+      "file": "chapters/012-stacked-branches-supercharged-workflows.md"
+    },
+    {
+      "slug": "013-custom-workflows-start-and-finish-instan",
+      "title": "Tower Git Client - Advanced Custom Workflows",
+      "file": "chapters/013-custom-workflows-start-and-finish-instan.md"
+    },
+    {
+      "slug": "014-graphite-support-code-review-at-scale",
+      "title": "Tower Git Client - Graphite Workflow",
+      "file": "chapters/014-graphite-support-code-review-at-scale.md"
+    },
+    {
+      "slug": "015-branch-cleanup-cut-through-the-branch-no",
+      "title": "Tower Git Client - Automatic Branch Management",
+      "file": "chapters/015-branch-cleanup-cut-through-the-branch-no.md"
+    },
+    {
+      "slug": "016-self-hosted-repos-connect-your-own-serve",
+      "title": "Tower Git Client - Self-Hosted Services",
+      "file": "chapters/016-self-hosted-repos-connect-your-own-serve.md"
+    },
+    {
+      "slug": "017-merge-detection-catch-merges-git-can-t-s",
+      "title": "Tower Git Client - PR-Based Merge Detection",
+      "file": "chapters/017-merge-detection-catch-merges-git-can-t-s.md"
+    },
+    {
+      "slug": "018-pricing",
+      "title": "Tower Git Client - Pricing & Plans — Mac & Windows",
+      "file": "chapters/018-pricing.md"
+    },
+    {
+      "slug": "019-support",
+      "title": "Tower Git Client - Support",
+      "file": "chapters/019-support.md"
+    },
+    {
+      "slug": "020-learn-git",
+      "title": "Learn Version Control with Git for Free",
+      "file": "chapters/020-learn-git.md"
+    },
+    {
+      "slug": "021-video-course-24-episodes",
+      "title": "Learn Git with Our Free Video Course",
+      "file": "chapters/021-video-course-24-episodes.md"
+    },
+    {
+      "slug": "022-online-book-from-novice-to-master",
+      "title": "Learn Git with Our Free Online Book",
+      "file": "chapters/022-online-book-from-novice-to-master.md"
+    },
+    {
+      "slug": "023-cheat-sheets-for-quick-lookup",
+      "title": "Cheat Sheets for Developers",
+      "file": "chapters/023-cheat-sheets-for-quick-lookup.md"
+    },
+    {
+      "slug": "024-webinar-learn-from-a-git-professional",
+      "title": "Live Webinar - 17 Ways to Undo Mistakes with Git",
+      "file": "chapters/024-webinar-learn-from-a-git-professional.md"
+    },
+    {
+      "slug": "025-first-aid-kit-recover-from-mistakes",
+      "title": "First Aid Kit for Git",
+      "file": "chapters/025-first-aid-kit-recover-from-mistakes.md"
+    },
+    {
+      "slug": "026-advanced-git-kit-dive-deeper",
+      "title": "Advanced Git Kit",
+      "file": "chapters/026-advanced-git-kit-dive-deeper.md"
+    },
+    {
+      "slug": "027-documentation",
+      "title": "Tower Help for Windows",
+      "file": "chapters/027-documentation.md"
+    },
+    {
+      "slug": "028-contact-us",
+      "title": "Tower Git Client - Contact Us",
+      "file": "chapters/028-contact-us.md"
+    },
+    {
+      "slug": "029-blog",
+      "title": "Home",
+      "file": "chapters/029-blog.md"
     }
   ],
   "sourceType": "web",

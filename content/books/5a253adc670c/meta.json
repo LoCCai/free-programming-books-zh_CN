@@ -3,12 +3,37 @@
   "title": "Rust编程语言 中文翻译",
   "url": "https://kaisery.github.io/trpl-zh-cn/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:18.808Z",
+  "fetchedAt": "2026-09-27T12:06:39.834Z",
   "chapters": [
     {
-      "slug": "001-11",
+      "slug": "001-rust-程序设计语言-简体中文版",
+      "title": "Rust 程序设计语言 简体中文版",
+      "file": "chapters/001-rust-程序设计语言-简体中文版.md"
+    },
+    {
+      "slug": "002-第一章的-安装-部分",
+      "title": "安装 - Rust 程序设计语言 简体中文版",
+      "file": "chapters/002-第一章的-安装-部分.md"
+    },
+    {
+      "slug": "003-附录-e",
+      "title": "E - 版本 - Rust 程序设计语言 简体中文版",
+      "file": "chapters/003-附录-e.md"
+    },
+    {
+      "slug": "004-翻译版本",
+      "title": "F - 本书译本 - Rust 程序设计语言 简体中文版",
+      "file": "chapters/004-翻译版本.md"
+    },
+    {
+      "slug": "005-https-kaisery-github-io-trpl-zh-cn",
       "title": "Rust 程序设计语言 - Rust 程序设计语言 简体中文版",
-      "file": "chapters/001-11.md"
+      "file": "chapters/005-https-kaisery-github-io-trpl-zh-cn.md"
+    },
+    {
+      "slug": "006-前言-rust-程序设计语言-简体中文版",
+      "title": "前言 - Rust 程序设计语言 简体中文版",
+      "file": "chapters/006-前言-rust-程序设计语言-简体中文版.md"
     }
   ],
   "sourceType": "web",

@@ -3,14 +3,188 @@
   "title": "PHPUnit 中文文档",
   "url": "https://www.w3cschool.cn/phpunit5/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:14.210Z",
+  "fetchedAt": "2026-09-27T12:04:38.084Z",
   "chapters": [
     {
-      "slug": "001-y",
-      "title": "PHPUnit5.0中文手册_w3cschool",
-      "file": "chapters/001-y.md"
+      "slug": "001-更多文章",
+      "title": "PHPUnit5.0中文手册文章列表-1- w3cschool",
+      "file": "chapters/001-更多文章.md"
+    },
+    {
+      "slug": "002-phpunit-手册",
+      "title": "PHPUnit 手册_w3cschool",
+      "file": "chapters/002-phpunit-手册.md"
+    },
+    {
+      "slug": "003-1-安装-phpunit",
+      "title": "1. 安装 PHPUnit_w3cschool",
+      "file": "chapters/003-1-安装-phpunit.md"
+    },
+    {
+      "slug": "004-需求",
+      "title": "需求_w3cschool",
+      "file": "chapters/004-需求.md"
+    },
+    {
+      "slug": "005-php-档案包-phar",
+      "title": "PHP 档案包 (PHAR)_w3cschool",
+      "file": "chapters/005-php-档案包-phar.md"
+    },
+    {
+      "slug": "006-composer",
+      "title": "Composer_w3cschool",
+      "file": "chapters/006-composer.md"
+    },
+    {
+      "slug": "007-可选的组件包",
+      "title": "可选的组件包_w3cschool",
+      "file": "chapters/007-可选的组件包.md"
+    },
+    {
+      "slug": "008-phpunit-通义灵码",
+      "title": "如何使用通义灵码完成PHP单元测试 - AI辅助开发教程_w3cschool",
+      "file": "chapters/008-phpunit-通义灵码.md"
+    },
+    {
+      "slug": "009-2-编写-phpunit-测试",
+      "title": "2. 编写 PHPUnit 测试_w3cschool",
+      "file": "chapters/009-2-编写-phpunit-测试.md"
+    },
+    {
+      "slug": "010-测试的依赖关系",
+      "title": "测试的依赖关系_w3cschool",
+      "file": "chapters/010-测试的依赖关系.md"
+    },
+    {
+      "slug": "011-数据供给器",
+      "title": "数据供给器_w3cschool",
+      "file": "chapters/011-数据供给器.md"
+    },
+    {
+      "slug": "012-对异常进行测试",
+      "title": "对异常进行测试_w3cschool",
+      "file": "chapters/012-对异常进行测试.md"
+    },
+    {
+      "slug": "013-测试结果-tap",
+      "title": "测试结果 (TAP)_w3cschool",
+      "file": "chapters/013-测试结果-tap.md"
+    },
+    {
+      "slug": "014-测试结果-json",
+      "title": "测试结果 (JSON)_w3cschool",
+      "file": "chapters/014-测试结果-json.md"
+    },
+    {
+      "slug": "015-代码覆盖率-xml",
+      "title": "代码覆盖率 (XML)_w3cschool",
+      "file": "chapters/015-代码覆盖率-xml.md"
+    },
+    {
+      "slug": "016-代码覆盖率-text",
+      "title": "代码覆盖率 (TEXT)_w3cschool",
+      "file": "chapters/016-代码覆盖率-text.md"
+    },
+    {
+      "slug": "017-编写自定义断言",
+      "title": "编写自定义断言_w3cschool",
+      "file": "chapters/017-编写自定义断言.md"
+    },
+    {
+      "slug": "018-实现-phpunit-framework-testlistener",
+      "title": "实现 PHPUnit_Framework_TestListener_w3cschool",
+      "file": "chapters/018-实现-phpunit-framework-testlistener.md"
+    },
+    {
+      "slug": "019-从-phpunit-extensions-testdecorator-派生子类",
+      "title": "从 PHPUnit_Extensions_TestDecorator 派生子类_w3cschool",
+      "file": "chapters/019-从-phpunit-extensions-testdecorator-派生子类.md"
+    },
+    {
+      "slug": "020-实现-phpunit-framework-test",
+      "title": "实现 PHPUnit_Framework_Test_w3cschool",
+      "file": "chapters/020-实现-phpunit-framework-test.md"
+    },
+    {
+      "slug": "021-a-断言",
+      "title": "A. 断言_w3cschool",
+      "file": "chapters/021-a-断言.md"
+    },
+    {
+      "slug": "022-assertarrayhaskey",
+      "title": "assertArrayHasKey()_w3cschool",
+      "file": "chapters/022-assertarrayhaskey.md"
+    },
+    {
+      "slug": "023-assertclasshasattribute",
+      "title": "assertClassHasAttribute()_w3cschool",
+      "file": "chapters/023-assertclasshasattribute.md"
+    },
+    {
+      "slug": "024-assertarraysubset",
+      "title": "assertArraySubset()_w3cschool",
+      "file": "chapters/024-assertarraysubset.md"
+    },
+    {
+      "slug": "025-assertclasshasstaticattribute",
+      "title": "assertClassHasStaticAttribute()_w3cschool",
+      "file": "chapters/025-assertclasshasstaticattribute.md"
+    },
+    {
+      "slug": "026-group",
+      "title": "@group_w3cschool",
+      "file": "chapters/026-group.md"
+    },
+    {
+      "slug": "027-preserveglobalstate",
+      "title": "@preserveGlobalState_w3cschool",
+      "file": "chapters/027-preserveglobalstate.md"
+    },
+    {
+      "slug": "028-runtestsinseparateprocesses",
+      "title": "@runTestsInSeparateProcesses_w3cschool",
+      "file": "chapters/028-runtestsinseparateprocesses.md"
+    },
+    {
+      "slug": "029-runinseparateprocess",
+      "title": "@runInSeparateProcess_w3cschool",
+      "file": "chapters/029-runinseparateprocess.md"
+    },
+    {
+      "slug": "030-small",
+      "title": "@small_w3cschool",
+      "file": "chapters/030-small.md"
+    },
+    {
+      "slug": "031-testdox",
+      "title": "@testdox_w3cschool",
+      "file": "chapters/031-testdox.md"
+    },
+    {
+      "slug": "032-ticket",
+      "title": "@ticket_w3cschool",
+      "file": "chapters/032-ticket.md"
+    },
+    {
+      "slug": "033-uses",
+      "title": "@uses_PHPUnit5.0中文手册_w3cschool",
+      "file": "chapters/033-uses.md"
+    },
+    {
+      "slug": "034-c-xml-配置文件",
+      "title": "C. XML 配置文件_w3cschool",
+      "file": "chapters/034-c-xml-配置文件.md"
+    },
+    {
+      "slug": "035-phpunit",
+      "title": "PHPUnit_w3cschool",
+      "file": "chapters/035-phpunit.md"
+    },
+    {
+      "slug": "036-测试套件",
+      "title": "测试套件_w3cschool",
+      "file": "chapters/036-测试套件.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "PHPUnit5.0中文手册_w3cschool"
+  "sourceType": "web"
 }

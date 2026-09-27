@@ -3,12 +3,47 @@
   "title": "Node入门：一本全面的Node.js教程",
   "url": "https://www.nodebeginner.org/index-zh-cn.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:43.436Z",
+  "fetchedAt": "2026-09-27T12:01:09.794Z",
   "chapters": [
     {
-      "slug": "001-19",
+      "slug": "001-一本全面的node-js教程",
       "title": "一本全面的Node.js教程",
-      "file": "chapters/001-19.md"
+      "file": "chapters/001-一本全面的node-js教程.md"
+    },
+    {
+      "slug": "002-日本語で読む",
+      "title": "Nodeビギナーズブック » Node.jsチュートリアル",
+      "file": "chapters/002-日本語で読む.md"
+    },
+    {
+      "slug": "003-lee-este-tutorial-en-español",
+      "title": "El Libro para Principiantes en Node.js» Un tutorial completo de node.js",
+      "file": "chapters/003-lee-este-tutorial-en-español.md"
+    },
+    {
+      "slug": "004-이-튜토리얼을-한글로-보세요",
+      "title": "The Node Beginner Book (Korean version)",
+      "file": "chapters/004-이-튜토리얼을-한글로-보세요.md"
+    },
+    {
+      "slug": "005-read-this-tutorial-in-english",
+      "title": "The Node Beginner Book",
+      "file": "chapters/005-read-this-tutorial-in-english.md"
+    },
+    {
+      "slug": "006-閱讀本書繁體中文版",
+      "title": "一本全面的Node.js教學課程",
+      "file": "chapters/006-閱讀本書繁體中文版.md"
+    },
+    {
+      "slug": "007-đọc-bằng-tiếng-việt",
+      "title": "Node.js cho người mới bắt đầu",
+      "file": "chapters/007-đọc-bằng-tiếng-việt.md"
+    },
+    {
+      "slug": "008-imprint-impressum-datenschutz-haftung",
+      "title": "Imprint / Impressum / Datenschutz",
+      "file": "chapters/008-imprint-impressum-datenschutz-haftung.md"
     }
   ],
   "sourceType": "web",

@@ -3,257 +3,332 @@
   "title": "R语言教程",
   "url": "https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:46.190Z",
+  "fetchedAt": "2026-09-27T12:06:30.819Z",
   "chapters": [
     {
-      "slug": "001-23",
+      "slug": "001-前言",
       "title": "R语言教程",
-      "file": "chapters/001-23.md"
+      "file": "chapters/001-前言.md"
     },
     {
-      "slug": "002-23",
+      "slug": "002-1-r语言介绍",
       "title": "1 R语言介绍 | R语言教程",
-      "file": "chapters/002-23.md"
+      "file": "chapters/002-1-r语言介绍.md"
     },
     {
-      "slug": "003-2b",
+      "slug": "003-2-r语言入门运行样例",
       "title": "2 R语言入门运行样例 | R语言教程",
-      "file": "chapters/003-2b.md"
+      "file": "chapters/003-2-r语言入门运行样例.md"
     },
     {
-      "slug": "004-2d",
+      "slug": "004-3-常量与变量",
       "title": "3 常量与变量 | R语言教程",
-      "file": "chapters/004-2d.md"
+      "file": "chapters/004-3-常量与变量.md"
     },
     {
-      "slug": "005-2b",
+      "slug": "005-4-数值型向量及其运算",
       "title": "4 数值型向量及其运算 | R语言教程",
-      "file": "chapters/005-2b.md"
+      "file": "chapters/005-4-数值型向量及其运算.md"
     },
     {
-      "slug": "006-2c",
+      "slug": "006-5-逻辑型向量及其运算",
       "title": "5 逻辑型向量及其运算 | R语言教程",
-      "file": "chapters/006-2c.md"
+      "file": "chapters/006-5-逻辑型向量及其运算.md"
     },
     {
-      "slug": "007-2c",
+      "slug": "007-6-字符型数据及其处理",
       "title": "6 字符型数据及其处理 | R语言教程",
-      "file": "chapters/007-2c.md"
+      "file": "chapters/007-6-字符型数据及其处理.md"
     },
     {
-      "slug": "008-2d",
+      "slug": "008-7-r向量下标和子集",
       "title": "7 R向量下标和子集 | R语言教程",
-      "file": "chapters/008-2d.md"
+      "file": "chapters/008-7-r向量下标和子集.md"
     },
     {
-      "slug": "009-2c",
+      "slug": "009-8-r数据类型的性质",
       "title": "8 R数据类型的性质 | R语言教程",
-      "file": "chapters/009-2c.md"
+      "file": "chapters/009-8-r数据类型的性质.md"
     },
     {
-      "slug": "010-2c",
+      "slug": "010-9-r日期时间",
       "title": "9 R日期时间 | R语言教程",
-      "file": "chapters/010-2c.md"
+      "file": "chapters/010-9-r日期时间.md"
     },
     {
-      "slug": "011-2c",
+      "slug": "011-10-r因子类型",
       "title": "10 R因子类型 | R语言教程",
-      "file": "chapters/011-2c.md"
+      "file": "chapters/011-10-r因子类型.md"
     },
     {
-      "slug": "012-2c",
+      "slug": "012-11-列表类型",
       "title": "11 列表类型 | R语言教程",
-      "file": "chapters/012-2c.md"
+      "file": "chapters/012-11-列表类型.md"
     },
     {
-      "slug": "013-2e",
+      "slug": "013-12-r矩阵和数组",
       "title": "12 R矩阵和数组 | R语言教程",
-      "file": "chapters/013-2e.md"
+      "file": "chapters/013-12-r矩阵和数组.md"
     },
     {
-      "slug": "014-2a",
+      "slug": "014-13-数据框",
       "title": "13 数据框 | R语言教程",
-      "file": "chapters/014-2a.md"
+      "file": "chapters/014-13-数据框.md"
     },
     {
-      "slug": "015-2a",
+      "slug": "015-14-工作空间和变量赋值",
       "title": "14 工作空间和变量赋值 | R语言教程",
-      "file": "chapters/015-2a.md"
+      "file": "chapters/015-14-工作空间和变量赋值.md"
     },
     {
-      "slug": "016-25",
+      "slug": "016-15-r输入输出",
       "title": "15 R输入输出 | R语言教程",
-      "file": "chapters/016-25.md"
+      "file": "chapters/016-15-r输入输出.md"
     },
     {
-      "slug": "017-2a",
+      "slug": "017-16-程序控制结构",
       "title": "16 程序控制结构 | R语言教程",
-      "file": "chapters/017-2a.md"
+      "file": "chapters/017-16-程序控制结构.md"
     },
     {
-      "slug": "018-27",
+      "slug": "018-17-函数",
       "title": "17 函数 | R语言教程",
-      "file": "chapters/018-27.md"
+      "file": "chapters/018-17-函数.md"
     },
     {
-      "slug": "019-27",
+      "slug": "019-18-r程序效率",
       "title": "18 R程序效率 | R语言教程",
-      "file": "chapters/019-27.md"
+      "file": "chapters/019-18-r程序效率.md"
     },
     {
-      "slug": "020-27",
+      "slug": "020-19-函数进阶",
       "title": "19 函数进阶 | R语言教程",
-      "file": "chapters/020-27.md"
+      "file": "chapters/020-19-函数进阶.md"
     },
     {
-      "slug": "021-23",
+      "slug": "021-20-研究项目管理",
       "title": "20 研究项目管理 | R语言教程",
-      "file": "chapters/021-23.md"
+      "file": "chapters/021-20-研究项目管理.md"
     },
     {
-      "slug": "022-26",
+      "slug": "022-21-markdown格式",
       "title": "21 Markdown格式 | R语言教程",
-      "file": "chapters/022-26.md"
+      "file": "chapters/022-21-markdown格式.md"
     },
     {
-      "slug": "023-24",
+      "slug": "023-22-quarto格式文件",
       "title": "22 Quarto格式文件 | R语言教程",
-      "file": "chapters/023-24.md"
+      "file": "chapters/023-22-quarto格式文件.md"
     },
     {
-      "slug": "024-2b",
+      "slug": "024-23-数据整理",
       "title": "23 数据整理 | R语言教程",
-      "file": "chapters/024-2b.md"
+      "file": "chapters/024-23-数据整理.md"
     },
     {
-      "slug": "025-2a",
+      "slug": "025-24-数据汇总",
       "title": "24 数据汇总 | R语言教程",
-      "file": "chapters/025-2a.md"
+      "file": "chapters/025-24-数据汇总.md"
     },
     {
-      "slug": "026-29",
+      "slug": "026-25-函数式编程和数据框列表列",
       "title": "25 函数式编程和数据框列表列 | R语言教程",
-      "file": "chapters/026-29.md"
+      "file": "chapters/026-25-函数式编程和数据框列表列.md"
     },
     {
-      "slug": "027-23",
+      "slug": "027-26-基本r绘图",
       "title": "26 基本R绘图 | R语言教程",
-      "file": "chapters/027-23.md"
+      "file": "chapters/027-26-基本r绘图.md"
     },
     {
-      "slug": "028-25",
+      "slug": "028-27-ggplot作图入门",
       "title": "27 ggplot作图入门 | R语言教程",
-      "file": "chapters/028-25.md"
+      "file": "chapters/028-27-ggplot作图入门.md"
     },
     {
-      "slug": "029-27",
+      "slug": "029-28-ggplot的各种图形",
       "title": "28 ggplot的各种图形 | R语言教程",
-      "file": "chapters/029-27.md"
+      "file": "chapters/029-28-ggplot的各种图形.md"
     },
     {
-      "slug": "030-26",
+      "slug": "030-29-探索性数据分析",
       "title": "29 探索性数据分析 | R语言教程",
-      "file": "chapters/030-26.md"
+      "file": "chapters/030-29-探索性数据分析.md"
     },
     {
-      "slug": "031-29",
+      "slug": "031-30-r初等统计分析",
       "title": "30 R初等统计分析 | R语言教程",
-      "file": "chapters/031-29.md"
+      "file": "chapters/031-30-r初等统计分析.md"
     },
     {
-      "slug": "032-2d",
+      "slug": "032-31-使用infer包进行统计推断",
       "title": "31 使用infer包进行统计推断 | R语言教程",
-      "file": "chapters/032-2d.md"
+      "file": "chapters/032-31-使用infer包进行统计推断.md"
     },
     {
-      "slug": "033-26",
+      "slug": "033-32-r相关与回归",
       "title": "32 R相关与回归 | R语言教程",
-      "file": "chapters/033-26.md"
+      "file": "chapters/033-32-r相关与回归.md"
     },
     {
-      "slug": "034-27",
+      "slug": "034-33-r多元回归",
       "title": "33 R多元回归 | R语言教程",
-      "file": "chapters/034-27.md"
+      "file": "chapters/034-33-r多元回归.md"
     },
     {
-      "slug": "035-2f",
+      "slug": "035-34-r公式界面与设计阵",
       "title": "34 R公式界面与设计阵 | R语言教程",
-      "file": "chapters/035-2f.md"
+      "file": "chapters/035-34-r公式界面与设计阵.md"
     },
     {
-      "slug": "036-2b",
+      "slug": "036-35-r非参数回归",
       "title": "35 R非参数回归 | R语言教程",
-      "file": "chapters/036-2b.md"
+      "file": "chapters/036-35-r非参数回归.md"
     },
     {
-      "slug": "037-26",
+      "slug": "037-36-r方差分析",
       "title": "36 R方差分析 | R语言教程",
-      "file": "chapters/037-26.md"
+      "file": "chapters/037-36-r方差分析.md"
     },
     {
-      "slug": "038-26",
+      "slug": "038-37-线性混合模型",
       "title": "37 线性混合模型 | R语言教程",
-      "file": "chapters/038-26.md"
+      "file": "chapters/038-37-线性混合模型.md"
     },
     {
-      "slug": "039-26",
+      "slug": "039-38-广义线性模型",
       "title": "38 广义线性模型 | R语言教程",
-      "file": "chapters/039-26.md"
+      "file": "chapters/039-38-广义线性模型.md"
     },
     {
-      "slug": "040-26",
+      "slug": "040-39-r时间序列分析",
       "title": "39 R时间序列分析 | R语言教程",
-      "file": "chapters/040-26.md"
+      "file": "chapters/040-39-r时间序列分析.md"
     },
     {
-      "slug": "041-28",
+      "slug": "041-40-随机模拟",
       "title": "40 随机模拟 | R语言教程",
-      "file": "chapters/041-28.md"
+      "file": "chapters/041-40-随机模拟.md"
     },
     {
-      "slug": "042-2e",
+      "slug": "042-41-统计学习介绍",
       "title": "41 统计学习介绍 | R语言教程",
-      "file": "chapters/042-2e.md"
+      "file": "chapters/042-41-统计学习介绍.md"
     },
     {
-      "slug": "043-2e",
+      "slug": "043-42-正则化与惩罚回归",
       "title": "42 正则化与惩罚回归 | R语言教程",
-      "file": "chapters/043-2e.md"
+      "file": "chapters/043-42-正则化与惩罚回归.md"
     },
     {
-      "slug": "044-2d",
+      "slug": "044-43-基于树的方法",
       "title": "43 基于树的方法 | R语言教程",
-      "file": "chapters/044-2d.md"
+      "file": "chapters/044-43-基于树的方法.md"
     },
     {
-      "slug": "045-2c",
+      "slug": "045-44-支持向量机",
       "title": "44 支持向量机 | R语言教程",
-      "file": "chapters/045-2c.md"
+      "file": "chapters/045-44-支持向量机.md"
     },
     {
-      "slug": "046-2c",
+      "slug": "046-45-用h2o包进行统计学习",
       "title": "45 用H2O包进行统计学习 | R语言教程",
-      "file": "chapters/046-2c.md"
+      "file": "chapters/046-45-用h2o包进行统计学习.md"
     },
     {
-      "slug": "047-2d",
+      "slug": "047-46-整洁建模基础",
       "title": "46 整洁建模基础 | R语言教程",
-      "file": "chapters/047-2d.md"
+      "file": "chapters/047-46-整洁建模基础.md"
     },
     {
-      "slug": "048-2f",
+      "slug": "048-47-整洁建模中模型调优",
       "title": "47 整洁建模中模型调优 | R语言教程",
-      "file": "chapters/048-2f.md"
+      "file": "chapters/048-47-整洁建模中模型调优.md"
     },
     {
-      "slug": "049-22",
+      "slug": "049-48-r语言的文本处理",
       "title": "48 R语言的文本处理 | R语言教程",
-      "file": "chapters/049-22.md"
+      "file": "chapters/049-48-r语言的文本处理.md"
     },
     {
-      "slug": "050-23",
+      "slug": "050-49-正则表达式",
       "title": "49 正则表达式 | R语言教程",
-      "file": "chapters/050-23.md"
+      "file": "chapters/050-49-正则表达式.md"
+    },
+    {
+      "slug": "051-50-文本应用",
+      "title": "50 文本应用 | R语言教程",
+      "file": "chapters/051-50-文本应用.md"
+    },
+    {
+      "slug": "052-51-数据库访问",
+      "title": "51 数据库访问 | R语言教程",
+      "file": "chapters/052-51-数据库访问.md"
+    },
+    {
+      "slug": "053-52-rcpp介绍",
+      "title": "52 Rcpp介绍 | R语言教程",
+      "file": "chapters/053-52-rcpp介绍.md"
+    },
+    {
+      "slug": "054-53-r与c-的类型转换",
+      "title": "53 R与C++的类型转换 | R语言教程",
+      "file": "chapters/054-53-r与c-的类型转换.md"
+    },
+    {
+      "slug": "055-54-rcpp-属性",
+      "title": "54 Rcpp 属性 | R语言教程",
+      "file": "chapters/055-54-rcpp-属性.md"
+    },
+    {
+      "slug": "056-55-rcpp提供的c-数据类型",
+      "title": "55 Rcpp提供的C++数据类型 | R语言教程",
+      "file": "chapters/056-55-rcpp提供的c-数据类型.md"
+    },
+    {
+      "slug": "057-56-rcpp糖",
+      "title": "56 Rcpp糖 | R语言教程",
+      "file": "chapters/057-56-rcpp糖.md"
+    },
+    {
+      "slug": "058-57-用rcpp帮助制作r扩展包",
+      "title": "57 用Rcpp帮助制作R扩展包 | R语言教程",
+      "file": "chapters/058-57-用rcpp帮助制作r扩展包.md"
+    },
+    {
+      "slug": "059-58-r编程例子",
+      "title": "58 R编程例子 | R语言教程",
+      "file": "chapters/059-58-r编程例子.md"
+    },
+    {
+      "slug": "060-59-使用经验",
+      "title": "59 使用经验 | R语言教程",
+      "file": "chapters/060-59-使用经验.md"
+    },
+    {
+      "slug": "061-a-r-markdown文件格式",
+      "title": "A R Markdown文件格式 | R语言教程",
+      "file": "chapters/061-a-r-markdown文件格式.md"
+    },
+    {
+      "slug": "062-b-用bookdown制作图书",
+      "title": "B 用bookdown制作图书 | R语言教程",
+      "file": "chapters/062-b-用bookdown制作图书.md"
+    },
+    {
+      "slug": "063-c-用r-markdown制作简易网站",
+      "title": "C 用R Markdown制作简易网站 | R语言教程",
+      "file": "chapters/063-c-用r-markdown制作简易网站.md"
+    },
+    {
+      "slug": "064-d-制作幻灯片",
+      "title": "D 制作幻灯片 | R语言教程",
+      "file": "chapters/064-d-制作幻灯片.md"
+    },
+    {
+      "slug": "065-references",
+      "title": "References | R语言教程",
+      "file": "chapters/065-references.md"
     }
   ],
   "sourceType": "web",

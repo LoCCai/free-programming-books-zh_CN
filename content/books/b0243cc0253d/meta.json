@@ -3,12 +3,12 @@
   "title": "简单易懂的C魔法",
   "url": "http://www.nowamagic.net/librarys/books/contents/c",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:25.695Z",
+  "fetchedAt": "2026-09-27T11:58:21.497Z",
   "chapters": [
     {
-      "slug": "001-1e",
+      "slug": "001-http-www-nowamagic-net-librarys-books-co",
       "title": "http://www.nowamagic.net/librarys/books/contents/c",
-      "file": "chapters/001-1e.md"
+      "file": "chapters/001-http-www-nowamagic-net-librarys-books-co.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,827 @@
   "title": "Django 2.0 文档中文版",
   "url": "https://docs.djangoproject.com/zh-hans/2.0/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:13:49.173Z",
+  "fetchedAt": "2026-09-27T12:06:03.109Z",
   "chapters": [
     {
-      "slug": "001-17",
+      "slug": "001-getting-help",
+      "title": "FAQ:获取帮助 | Django 文档",
+      "file": "chapters/001-getting-help.md"
+    },
+    {
+      "slug": "002-pt-br",
+      "title": "Documentação do Django | Documentação do Django",
+      "file": "chapters/002-pt-br.md"
+    },
+    {
+      "slug": "003-pl",
+      "title": "Dokumentacja Django | Dokumentacja Django",
+      "file": "chapters/003-pl.md"
+    },
+    {
+      "slug": "004-ko",
+      "title": "Django 문서 | Django 문서",
+      "file": "chapters/004-ko.md"
+    },
+    {
+      "slug": "005-ja",
+      "title": "Django ドキュメント | Django ドキュメント",
+      "file": "chapters/005-ja.md"
+    },
+    {
+      "slug": "006-id",
+      "title": "Dokumentasi Django | Dokumentasi Django",
+      "file": "chapters/006-id.md"
+    },
+    {
+      "slug": "007-fr",
+      "title": "Documentation de Django | Documentation de Django",
+      "file": "chapters/007-fr.md"
+    },
+    {
+      "slug": "008-es",
+      "title": "Documentación de Django | Documentación de Django",
+      "file": "chapters/008-es.md"
+    },
+    {
+      "slug": "009-en",
+      "title": "Django documentation | Django documentation",
+      "file": "chapters/009-en.md"
+    },
+    {
+      "slug": "010-el",
+      "title": "Εγχειρίδιο Django | Εγχειρίδιο Django",
+      "file": "chapters/010-el.md"
+    },
+    {
+      "slug": "011-6-1",
       "title": "Django 文档 | Django 文档",
-      "file": "chapters/001-17.md"
+      "file": "chapters/011-6-1.md"
+    },
+    {
+      "slug": "012-6-0",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/012-6-0.md"
+    },
+    {
+      "slug": "013-5-2",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/013-5-2.md"
+    },
+    {
+      "slug": "014-5-1",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/014-5-1.md"
+    },
+    {
+      "slug": "015-5-0",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/015-5-0.md"
+    },
+    {
+      "slug": "016-4-2",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/016-4-2.md"
+    },
+    {
+      "slug": "017-4-1",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/017-4-1.md"
+    },
+    {
+      "slug": "018-4-0",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/018-4-0.md"
+    },
+    {
+      "slug": "019-3-2",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/019-3-2.md"
+    },
+    {
+      "slug": "020-3-1",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/020-3-1.md"
+    },
+    {
+      "slug": "021-3-0",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/021-3-0.md"
+    },
+    {
+      "slug": "022-2-2",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/022-2-2.md"
+    },
+    {
+      "slug": "023-2-1",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/023-2-1.md"
+    },
+    {
+      "slug": "024-django-users",
+      "title": "Mailing lists | Django 文档",
+      "file": "chapters/024-django-users.md"
+    },
+    {
+      "slug": "025-教程",
+      "title": "开始 | Django 文档",
+      "file": "chapters/025-教程.md"
+    },
+    {
+      "slug": "026-概要",
+      "title": "初识 Django | Django 文档",
+      "file": "chapters/026-概要.md"
+    },
+    {
+      "slug": "027-安装",
+      "title": "快速安装指南 | Django 文档",
+      "file": "chapters/027-安装.md"
+    },
+    {
+      "slug": "028-第1节-请求和响应",
+      "title": "编写你的第一个 Django 应用，第 1 部分 | Django 文档",
+      "file": "chapters/028-第1节-请求和响应.md"
+    },
+    {
+      "slug": "029-第2节-模型和-admin-站点",
+      "title": "编写你的第一个 Django 应用，第 2 部分 | Django 文档",
+      "file": "chapters/029-第2节-模型和-admin-站点.md"
+    },
+    {
+      "slug": "030-第3节-视图和模板",
+      "title": "编写你的第一个 Django 应用，第 3 部分 | Django 文档",
+      "file": "chapters/030-第3节-视图和模板.md"
+    },
+    {
+      "slug": "031-第4节-表单和通用视图",
+      "title": "编写你的第一个 Django 应用，第 4 部分 | Django 文档",
+      "file": "chapters/031-第4节-表单和通用视图.md"
+    },
+    {
+      "slug": "032-第5节-测试",
+      "title": "编写你的第一个 Django 应用，第 5 部分 | Django 文档",
+      "file": "chapters/032-第5节-测试.md"
+    },
+    {
+      "slug": "033-第6节-静态文件",
+      "title": "编写你的第一个 Django 应用，第 6 部分 | Django 文档",
+      "file": "chapters/033-第6节-静态文件.md"
+    },
+    {
+      "slug": "034-第7节-自定义-admin-站点",
+      "title": "编写你的第一个 Django 应用，第 7 部分 | Django 文档",
+      "file": "chapters/034-第7节-自定义-admin-站点.md"
+    },
+    {
+      "slug": "035-如何编写可复用的应用",
+      "title": "进阶指南：如何编写可重用程序 | Django 文档",
+      "file": "chapters/035-如何编写可复用的应用.md"
+    },
+    {
+      "slug": "036-提交你的第一个-django-补丁",
+      "title": "编写你的第一个 Django 补丁 | Django 文档",
+      "file": "chapters/036-提交你的第一个-django-补丁.md"
+    },
+    {
+      "slug": "037-模型介绍",
+      "title": "模型 | Django 文档",
+      "file": "chapters/037-模型介绍.md"
+    },
+    {
+      "slug": "038-字段类型",
+      "title": "Model field reference | Django 文档",
+      "file": "chapters/038-字段类型.md"
+    },
+    {
+      "slug": "039-索引",
+      "title": "Model index reference | Django 文档",
+      "file": "chapters/039-索引.md"
+    },
+    {
+      "slug": "040-meta-选项",
+      "title": "Model Meta options | Django 文档",
+      "file": "chapters/040-meta-选项.md"
+    },
+    {
+      "slug": "041-model-类",
+      "title": "Model class reference | Django 文档",
+      "file": "chapters/041-model-类.md"
+    },
+    {
+      "slug": "042-执行查询",
+      "title": "Making queries | Django 文档",
+      "file": "chapters/042-执行查询.md"
+    },
+    {
+      "slug": "043-queryset-方法参考",
+      "title": "QuerySet API reference | Django 文档",
+      "file": "chapters/043-queryset-方法参考.md"
+    },
+    {
+      "slug": "044-查询表达式",
+      "title": "Lookup API reference | Django 文档",
+      "file": "chapters/044-查询表达式.md"
+    },
+    {
+      "slug": "045-实例方法",
+      "title": "Model instance reference | Django 文档",
+      "file": "chapters/045-实例方法.md"
+    },
+    {
+      "slug": "046-访问关联的对象",
+      "title": "Related objects reference | Django 文档",
+      "file": "chapters/046-访问关联的对象.md"
+    },
+    {
+      "slug": "047-迁移概述",
+      "title": "Migrations | Django 文档",
+      "file": "chapters/047-迁移概述.md"
+    },
+    {
+      "slug": "048-操作参考",
+      "title": "Migration Operations | Django 文档",
+      "file": "chapters/048-操作参考.md"
+    },
+    {
+      "slug": "049-schemaeditor",
+      "title": "SchemaEditor | Django 文档",
+      "file": "chapters/049-schemaeditor.md"
+    },
+    {
+      "slug": "050-编写迁移",
+      "title": "Writing database migrations | Django 文档",
+      "file": "chapters/050-编写迁移.md"
+    },
+    {
+      "slug": "051-管理员",
+      "title": "Managers | Django 文档",
+      "file": "chapters/051-管理员.md"
+    },
+    {
+      "slug": "052-原始-sql",
+      "title": "Performing raw SQL queries | Django 文档",
+      "file": "chapters/052-原始-sql.md"
+    },
+    {
+      "slug": "053-事务",
+      "title": "数据库事务 | Django 文档",
+      "file": "chapters/053-事务.md"
+    },
+    {
+      "slug": "054-聚合",
+      "title": "聚合 | Django 文档",
+      "file": "chapters/054-聚合.md"
+    },
+    {
+      "slug": "055-搜索",
+      "title": "Search | Django 文档",
+      "file": "chapters/055-搜索.md"
+    },
+    {
+      "slug": "056-自定义字段",
+      "title": "编写自定义 model fields | Django 文档",
+      "file": "chapters/056-自定义字段.md"
+    },
+    {
+      "slug": "057-多个数据库",
+      "title": "Multiple databases | Django 文档",
+      "file": "chapters/057-多个数据库.md"
+    },
+    {
+      "slug": "058-自定义查询",
+      "title": "自定义查找 | Django 文档",
+      "file": "chapters/058-自定义查询.md"
+    },
+    {
+      "slug": "059-查询表达式",
+      "title": "Query Expressions | Django 文档",
+      "file": "chapters/059-查询表达式.md"
+    },
+    {
+      "slug": "060-条件表达式",
+      "title": "Conditional Expressions | Django 文档",
+      "file": "chapters/060-条件表达式.md"
+    },
+    {
+      "slug": "061-数据库函数",
+      "title": "Database Functions | Django 文档",
+      "file": "chapters/061-数据库函数.md"
+    },
+    {
+      "slug": "062-支持的数据库",
+      "title": "Databases | Django 文档",
+      "file": "chapters/062-支持的数据库.md"
+    },
+    {
+      "slug": "063-旧数据库",
+      "title": "Integrating Django with a legacy database | Django 文档",
+      "file": "chapters/063-旧数据库.md"
+    },
+    {
+      "slug": "064-提供初始化数据",
+      "title": "为模型提供初始化的数据 | Django 文档",
+      "file": "chapters/064-提供初始化数据.md"
+    },
+    {
+      "slug": "065-优化数据库访问",
+      "title": "Database access optimization | Django 文档",
+      "file": "chapters/065-优化数据库访问.md"
+    },
+    {
+      "slug": "066-postgresql-的特定功能",
+      "title": "django.contrib.postgres | Django 文档",
+      "file": "chapters/066-postgresql-的特定功能.md"
+    },
+    {
+      "slug": "067-url配置",
+      "title": "URL调度器 | Django 文档",
+      "file": "chapters/067-url配置.md"
+    },
+    {
+      "slug": "068-视图函数",
+      "title": "Writing views | Django 文档",
+      "file": "chapters/068-视图函数.md"
+    },
+    {
+      "slug": "069-便捷工具",
+      "title": "Django快捷函数 | Django 文档",
+      "file": "chapters/069-便捷工具.md"
+    },
+    {
+      "slug": "070-装饰器",
+      "title": "View decorators | Django 文档",
+      "file": "chapters/070-装饰器.md"
+    },
+    {
+      "slug": "071-内置视图",
+      "title": "Built-in Views | Django 文档",
+      "file": "chapters/071-内置视图.md"
+    },
+    {
+      "slug": "072-request-response-对象",
+      "title": "Request and response objects | Django 文档",
+      "file": "chapters/072-request-response-对象.md"
+    },
+    {
+      "slug": "073-templateresponse-对象",
+      "title": "TemplateResponse and SimpleTemplateResponse | Django 文档",
+      "file": "chapters/073-templateresponse-对象.md"
+    },
+    {
+      "slug": "074-概览",
+      "title": "文件上传 | Django 文档",
+      "file": "chapters/074-概览.md"
+    },
+    {
+      "slug": "075-文件对象",
+      "title": "The File object | Django 文档",
+      "file": "chapters/075-文件对象.md"
+    },
+    {
+      "slug": "076-存储-api",
+      "title": "File storage API | Django 文档",
+      "file": "chapters/076-存储-api.md"
+    },
+    {
+      "slug": "077-管理文件",
+      "title": "Managing files | Django 文档",
+      "file": "chapters/077-管理文件.md"
+    },
+    {
+      "slug": "078-自定义存储",
+      "title": "编写一个自定义存储系统 | Django 文档",
+      "file": "chapters/078-自定义存储.md"
+    },
+    {
+      "slug": "079-概览",
+      "title": "Class-based views | Django 文档",
+      "file": "chapters/079-概览.md"
+    },
+    {
+      "slug": "080-内置显示视图",
+      "title": "Built-in class-based generic views | Django 文档",
+      "file": "chapters/080-内置显示视图.md"
+    },
+    {
+      "slug": "081-内置编辑视图",
+      "title": "Form handling with class-based views | Django 文档",
+      "file": "chapters/081-内置编辑视图.md"
+    },
+    {
+      "slug": "082-使用混入",
+      "title": "Using mixins with class-based views | Django 文档",
+      "file": "chapters/082-使用混入.md"
+    },
+    {
+      "slug": "083-api-参考",
+      "title": "Built-in class-based views API | Django 文档",
+      "file": "chapters/083-api-参考.md"
+    },
+    {
+      "slug": "084-生成-csv",
+      "title": "Outputting CSV with Django | Django 文档",
+      "file": "chapters/084-生成-csv.md"
+    },
+    {
+      "slug": "085-生成-pdf",
+      "title": "Outputting PDFs with Django | Django 文档",
+      "file": "chapters/085-生成-pdf.md"
+    },
+    {
+      "slug": "086-概览",
+      "title": "中间件 | Django 文档",
+      "file": "chapters/086-概览.md"
+    },
+    {
+      "slug": "087-内建的中间件类",
+      "title": "Middleware | Django 文档",
+      "file": "chapters/087-内建的中间件类.md"
+    },
+    {
+      "slug": "088-概述",
+      "title": "模板 | Django 文档",
+      "file": "chapters/088-概述.md"
+    },
+    {
+      "slug": "089-语法概述",
+      "title": "The Django template language | Django 文档",
+      "file": "chapters/089-语法概述.md"
+    },
+    {
+      "slug": "090-内建标签及过滤器-filters",
+      "title": "Built-in template tags and filters | Django 文档",
+      "file": "chapters/090-内建标签及过滤器-filters.md"
+    },
+    {
+      "slug": "091-人性化",
+      "title": "django.contrib.humanize | Django 文档",
+      "file": "chapters/091-人性化.md"
+    },
+    {
+      "slug": "092-模板-api",
+      "title": "The Django template language: for Python programmers | Django 文档",
+      "file": "chapters/092-模板-api.md"
+    },
+    {
+      "slug": "093-自定义标签-tags-和过滤器-filters",
+      "title": "Custom template tags and filters | Django 文档",
+      "file": "chapters/093-自定义标签-tags-和过滤器-filters.md"
+    },
+    {
+      "slug": "094-概览",
+      "title": "使用表单 | Django 文档",
+      "file": "chapters/094-概览.md"
+    },
+    {
+      "slug": "095-表单-api",
+      "title": "The Forms API | Django 文档",
+      "file": "chapters/095-表单-api.md"
+    },
+    {
+      "slug": "096-内建字段",
+      "title": "Form fields | Django 文档",
+      "file": "chapters/096-内建字段.md"
+    },
+    {
+      "slug": "097-内建-widgets",
+      "title": "Widgets | Django 文档",
+      "file": "chapters/097-内建-widgets.md"
+    },
+    {
+      "slug": "098-针对模型的表单",
+      "title": "从模型创建表单 | Django 文档",
+      "file": "chapters/098-针对模型的表单.md"
+    },
+    {
+      "slug": "099-整合媒体",
+      "title": "表单资源（ Media 类） | Django 文档",
+      "file": "chapters/099-整合媒体.md"
+    },
+    {
+      "slug": "100-表单集",
+      "title": "表单集 | Django 文档",
+      "file": "chapters/100-表单集.md"
+    },
+    {
+      "slug": "101-自定义验证",
+      "title": "Form and field validation | Django 文档",
+      "file": "chapters/101-自定义验证.md"
+    },
+    {
+      "slug": "102-概览",
+      "title": "Django settings | Django 文档",
+      "file": "chapters/102-概览.md"
+    },
+    {
+      "slug": "103-完整的设置列表",
+      "title": "Settings | Django 文档",
+      "file": "chapters/103-完整的设置列表.md"
+    },
+    {
+      "slug": "104-概览",
+      "title": "Applications | Django 文档",
+      "file": "chapters/104-概览.md"
+    },
+    {
+      "slug": "105-概览",
+      "title": "Django Exceptions | Django 文档",
+      "file": "chapters/105-概览.md"
+    },
+    {
+      "slug": "106-概览",
+      "title": "django-admin and manage.py | Django 文档",
+      "file": "chapters/106-概览.md"
+    },
+    {
+      "slug": "107-添加自定义命令",
+      "title": "Writing custom django-admin commands | Django 文档",
+      "file": "chapters/107-添加自定义命令.md"
+    },
+    {
+      "slug": "108-介绍",
+      "title": "Testing in Django | Django 文档",
+      "file": "chapters/108-介绍.md"
+    },
+    {
+      "slug": "109-书写并运行测试",
+      "title": "Writing and running tests | Django 文档",
+      "file": "chapters/109-书写并运行测试.md"
+    },
+    {
+      "slug": "110-包含的测试工具",
+      "title": "Testing tools | Django 文档",
+      "file": "chapters/110-包含的测试工具.md"
+    },
+    {
+      "slug": "111-高级主题",
+      "title": "Advanced testing topics | Django 文档",
+      "file": "chapters/111-高级主题.md"
+    },
+    {
+      "slug": "112-概览",
+      "title": "部署Django | Django 文档",
+      "file": "chapters/112-概览.md"
+    },
+    {
+      "slug": "113-wsgi-服务器",
+      "title": "如何使用 WSGI 进行部署 | Django 文档",
+      "file": "chapters/113-wsgi-服务器.md"
+    },
+    {
+      "slug": "114-部署静态文件",
+      "title": "Deploying static files | Django 文档",
+      "file": "chapters/114-部署静态文件.md"
+    },
+    {
+      "slug": "115-用-email-跟踪代码错误",
+      "title": "Error reporting | Django 文档",
+      "file": "chapters/115-用-email-跟踪代码错误.md"
+    },
+    {
+      "slug": "116-管理站点",
+      "title": "The Django admin site | Django 文档",
+      "file": "chapters/116-管理站点.md"
+    },
+    {
+      "slug": "117-管理动作",
+      "title": "Admin actions | Django 文档",
+      "file": "chapters/117-管理动作.md"
+    },
+    {
+      "slug": "118-管理文档生成器",
+      "title": "The Django admin documentation generator | Django 文档",
+      "file": "chapters/118-管理文档生成器.md"
+    },
+    {
+      "slug": "119-安全概览",
+      "title": "Security in Django | Django 文档",
+      "file": "chapters/119-安全概览.md"
+    },
+    {
+      "slug": "120-在-django-中披露的安全问题",
+      "title": "Archive of security issues | Django 文档",
+      "file": "chapters/120-在-django-中披露的安全问题.md"
+    },
+    {
+      "slug": "121-点击劫持保护",
+      "title": "Clickjacking Protection | Django 文档",
+      "file": "chapters/121-点击劫持保护.md"
+    },
+    {
+      "slug": "122-跨站请求伪造-csrf-保护",
+      "title": "Cross Site Request Forgery protection | Django 文档",
+      "file": "chapters/122-跨站请求伪造-csrf-保护.md"
+    },
+    {
+      "slug": "123-登录加密",
+      "title": "Cryptographic signing | Django 文档",
+      "file": "chapters/123-登录加密.md"
+    },
+    {
+      "slug": "124-概览",
+      "title": "国际化和本地化 | Django 文档",
+      "file": "chapters/124-概览.md"
+    },
+    {
+      "slug": "125-国际化",
+      "title": "Translation | Django 文档",
+      "file": "chapters/125-国际化.md"
+    },
+    {
+      "slug": "126-给-web-界面及表单输入进行本地化",
+      "title": "Format localization | Django 文档",
+      "file": "chapters/126-给-web-界面及表单输入进行本地化.md"
+    },
+    {
+      "slug": "127-时区",
+      "title": "Time zones | Django 文档",
+      "file": "chapters/127-时区.md"
+    },
+    {
+      "slug": "128-性能和优化概述",
+      "title": "性能和优化 | Django 文档",
+      "file": "chapters/128-性能和优化概述.md"
+    },
+    {
+      "slug": "129-概述",
+      "title": "Django中的用户认证 | Django 文档",
+      "file": "chapters/129-概述.md"
+    },
+    {
+      "slug": "130-使用认证系统",
+      "title": "使用 Django 的验证系统 | Django 文档",
+      "file": "chapters/130-使用认证系统.md"
+    },
+    {
+      "slug": "131-密码管理",
+      "title": "Django中的密码管理 | Django 文档",
+      "file": "chapters/131-密码管理.md"
+    },
+    {
+      "slug": "132-自定义认证",
+      "title": "Django 中的自定义验证 | Django 文档",
+      "file": "chapters/132-自定义认证.md"
+    },
+    {
+      "slug": "133-api-参考",
+      "title": "django.contrib.auth | Django 文档",
+      "file": "chapters/133-api-参考.md"
+    },
+    {
+      "slug": "134-缓存",
+      "title": "Django's cache framework | Django 文档",
+      "file": "chapters/134-缓存.md"
+    },
+    {
+      "slug": "135-日志",
+      "title": "日志 | Django 文档",
+      "file": "chapters/135-日志.md"
+    },
+    {
+      "slug": "136-发送邮件",
+      "title": "Sending email | Django 文档",
+      "file": "chapters/136-发送邮件.md"
+    },
+    {
+      "slug": "137-资讯聚合-rss-atom",
+      "title": "The syndication feed framework | Django 文档",
+      "file": "chapters/137-资讯聚合-rss-atom.md"
+    },
+    {
+      "slug": "138-分页",
+      "title": "Pagination | Django 文档",
+      "file": "chapters/138-分页.md"
+    },
+    {
+      "slug": "139-消息框架",
+      "title": "The messages framework | Django 文档",
+      "file": "chapters/139-消息框架.md"
+    },
+    {
+      "slug": "140-序列化",
+      "title": "Serializing Django objects | Django 文档",
+      "file": "chapters/140-序列化.md"
+    },
+    {
+      "slug": "141-会话",
+      "title": "How to use sessions | Django 文档",
+      "file": "chapters/141-会话.md"
+    },
+    {
+      "slug": "142-站点地图",
+      "title": "The sitemap framework | Django 文档",
+      "file": "chapters/142-站点地图.md"
+    },
+    {
+      "slug": "143-静态文件管理",
+      "title": "The staticfiles app | Django 文档",
+      "file": "chapters/143-静态文件管理.md"
+    },
+    {
+      "slug": "144-数据验证",
+      "title": "Validators | Django 文档",
+      "file": "chapters/144-数据验证.md"
+    },
+    {
+      "slug": "145-有条件的内容处理",
+      "title": "Conditional View Processing | Django 文档",
+      "file": "chapters/145-有条件的内容处理.md"
+    },
+    {
+      "slug": "146-内容类型和通用关系",
+      "title": "The contenttypes framework | Django 文档",
+      "file": "chapters/146-内容类型和通用关系.md"
+    },
+    {
+      "slug": "147-简单页面",
+      "title": "The flatpages app | Django 文档",
+      "file": "chapters/147-简单页面.md"
+    },
+    {
+      "slug": "148-重定向",
+      "title": "The redirects app | Django 文档",
+      "file": "chapters/148-重定向.md"
+    },
+    {
+      "slug": "149-信号",
+      "title": "信号 | Django 文档",
+      "file": "chapters/149-信号.md"
+    },
+    {
+      "slug": "150-系统检查框架",
+      "title": "系统检查框架 | Django 文档",
+      "file": "chapters/150-系统检查框架.md"
+    },
+    {
+      "slug": "151-站点框架",
+      "title": "The \"sites\" framework | Django 文档",
+      "file": "chapters/151-站点框架.md"
+    },
+    {
+      "slug": "152-django-中的-unicode",
+      "title": "Unicode data | Django 文档",
+      "file": "chapters/152-django-中的-unicode.md"
+    },
+    {
+      "slug": "153-如何参与其中",
+      "title": "建设 Django | Django 文档",
+      "file": "chapters/153-如何参与其中.md"
+    },
+    {
+      "slug": "154-发布进程",
+      "title": "Django's release process | Django 文档",
+      "file": "chapters/154-发布进程.md"
+    },
+    {
+      "slug": "155-团队组织",
+      "title": "Organization of the Django Project | Django 文档",
+      "file": "chapters/155-团队组织.md"
+    },
+    {
+      "slug": "156-django-源代码仓库",
+      "title": "The Django source code repository | Django 文档",
+      "file": "chapters/156-django-源代码仓库.md"
+    },
+    {
+      "slug": "157-安全政策",
+      "title": "Django's security policies | Django 文档",
+      "file": "chapters/157-安全政策.md"
+    },
+    {
+      "slug": "158-概览",
+      "title": "设计理念 | Django 文档",
+      "file": "chapters/158-概览.md"
+    },
+    {
+      "slug": "159-关于本文档",
+      "title": "编写文档 | Django 文档",
+      "file": "chapters/159-关于本文档.md"
+    },
+    {
+      "slug": "160-概览",
+      "title": "Django 的第三方发布包 | Django 文档",
+      "file": "chapters/160-概览.md"
+    },
+    {
+      "slug": "161-api-稳定性",
+      "title": "API 的稳定性 | Django 文档",
+      "file": "chapters/161-api-稳定性.md"
+    },
+    {
+      "slug": "162-发行说明和升级说明",
+      "title": "Release notes | Django 文档",
+      "file": "chapters/162-发行说明和升级说明.md"
+    },
+    {
+      "slug": "163-过时时间表",
+      "title": "Django Deprecation Timeline | Django 文档",
+      "file": "chapters/163-过时时间表.md"
+    },
+    {
+      "slug": "164-django-2-0-文档",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/164-django-2-0-文档.md"
     }
   ],
   "sourceType": "web",

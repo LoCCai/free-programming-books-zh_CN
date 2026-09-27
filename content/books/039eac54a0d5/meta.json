@@ -3,12 +3,87 @@
   "title": "git - 简易指南",
   "url": "http://rogerdudler.github.io/git-guide/index.zh.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:11.261Z",
+  "fetchedAt": "2026-09-27T11:55:04.009Z",
   "chapters": [
     {
-      "slug": "001-1g",
+      "slug": "001-git-the-simple-guide",
       "title": "git - the simple guide",
-      "file": "chapters/001-1g.md"
+      "file": "chapters/001-git-the-simple-guide.md"
+    },
+    {
+      "slug": "002-english",
+      "title": "git - the simple guide",
+      "file": "chapters/002-english.md"
+    },
+    {
+      "slug": "003-deutsch",
+      "title": "git - Der einfache Einstieg",
+      "file": "chapters/003-deutsch.md"
+    },
+    {
+      "slug": "004-español",
+      "title": "git - la guía sencilla",
+      "file": "chapters/004-español.md"
+    },
+    {
+      "slug": "005-français",
+      "title": "git - petit guide - no deep shit!",
+      "file": "chapters/005-français.md"
+    },
+    {
+      "slug": "006-indonesian",
+      "title": "git - panduan ringkas - gak pake ribet!",
+      "file": "chapters/006-indonesian.md"
+    },
+    {
+      "slug": "007-italiano",
+      "title": "git - la guida tascabile",
+      "file": "chapters/007-italiano.md"
+    },
+    {
+      "slug": "008-nederlands",
+      "title": "git - een simpele uitleg",
+      "file": "chapters/008-nederlands.md"
+    },
+    {
+      "slug": "009-polski",
+      "title": "git - prosty przewodnik - nic skomplikowanego!",
+      "file": "chapters/009-polski.md"
+    },
+    {
+      "slug": "010-português",
+      "title": "git - guia prático - sem complicação!",
+      "file": "chapters/010-português.md"
+    },
+    {
+      "slug": "011-русский",
+      "title": "git - the simple guide",
+      "file": "chapters/011-русский.md"
+    },
+    {
+      "slug": "012-türkçe",
+      "title": "git - basit rehber - atla deve değil!",
+      "file": "chapters/012-türkçe.md"
+    },
+    {
+      "slug": "013-မ-န-မ",
+      "title": "git - the simple guide",
+      "file": "chapters/013-မ-န-မ.md"
+    },
+    {
+      "slug": "014-日本語",
+      "title": "git - 簡単ガイド",
+      "file": "chapters/014-日本語.md"
+    },
+    {
+      "slug": "015-한국어",
+      "title": "git - 간편 안내서 - 어렵지 않아요!",
+      "file": "chapters/015-한국어.md"
+    },
+    {
+      "slug": "016-vietnamese",
+      "title": "git - hướng dẫn đơn giản",
+      "file": "chapters/016-vietnamese.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,472 @@
   "title": "Pro Git",
   "url": "http://git-scm.com/book/zh/v2",
   "status": "ok",
-  "fetchedAt": "2026-09-26T19:08:53.905Z",
+  "fetchedAt": "2026-09-27T11:55:58.291Z",
   "chapters": [
     {
-      "slug": "001-t",
+      "slug": "001-git",
       "title": "Git",
-      "file": "chapters/001-t.md"
+      "file": "chapters/001-git.md"
+    },
+    {
+      "slug": "002-起步",
+      "title": "Git - 关于版本控制",
+      "file": "chapters/002-起步.md"
+    },
+    {
+      "slug": "003-git-简史",
+      "title": "Git - Git 简史",
+      "file": "chapters/003-git-简史.md"
+    },
+    {
+      "slug": "004-git-是什么",
+      "title": "Git - Git 是什么？",
+      "file": "chapters/004-git-是什么.md"
+    },
+    {
+      "slug": "005-命令行",
+      "title": "Git - 命令行",
+      "file": "chapters/005-命令行.md"
+    },
+    {
+      "slug": "006-安装-git",
+      "title": "Git - 安装 Git",
+      "file": "chapters/006-安装-git.md"
+    },
+    {
+      "slug": "007-初次运行-git-前的配置",
+      "title": "Git - 初次运行 Git 前的配置",
+      "file": "chapters/007-初次运行-git-前的配置.md"
+    },
+    {
+      "slug": "008-获取帮助",
+      "title": "Git - 获取帮助",
+      "file": "chapters/008-获取帮助.md"
+    },
+    {
+      "slug": "009-git-基础",
+      "title": "Git - 获取 Git 仓库",
+      "file": "chapters/009-git-基础.md"
+    },
+    {
+      "slug": "010-记录每次更新到仓库",
+      "title": "Git - 记录每次更新到仓库",
+      "file": "chapters/010-记录每次更新到仓库.md"
+    },
+    {
+      "slug": "011-查看提交历史",
+      "title": "Git - 查看提交历史",
+      "file": "chapters/011-查看提交历史.md"
+    },
+    {
+      "slug": "012-撤消操作",
+      "title": "Git - 撤消操作",
+      "file": "chapters/012-撤消操作.md"
+    },
+    {
+      "slug": "013-远程仓库的使用",
+      "title": "Git - 远程仓库的使用",
+      "file": "chapters/013-远程仓库的使用.md"
+    },
+    {
+      "slug": "014-打标签",
+      "title": "Git - 打标签",
+      "file": "chapters/014-打标签.md"
+    },
+    {
+      "slug": "015-git-别名",
+      "title": "Git - Git 别名",
+      "file": "chapters/015-git-别名.md"
+    },
+    {
+      "slug": "016-git-分支",
+      "title": "Git - 分支简介",
+      "file": "chapters/016-git-分支.md"
+    },
+    {
+      "slug": "017-分支的新建与合并",
+      "title": "Git - 分支的新建与合并",
+      "file": "chapters/017-分支的新建与合并.md"
+    },
+    {
+      "slug": "018-分支管理",
+      "title": "Git - 分支管理",
+      "file": "chapters/018-分支管理.md"
+    },
+    {
+      "slug": "019-分支开发工作流",
+      "title": "Git - 分支开发工作流",
+      "file": "chapters/019-分支开发工作流.md"
+    },
+    {
+      "slug": "020-远程分支",
+      "title": "Git - 远程分支",
+      "file": "chapters/020-远程分支.md"
+    },
+    {
+      "slug": "021-变基",
+      "title": "Git - 变基",
+      "file": "chapters/021-变基.md"
+    },
+    {
+      "slug": "022-服务器上的-git",
+      "title": "Git - 协议",
+      "file": "chapters/022-服务器上的-git.md"
+    },
+    {
+      "slug": "023-在服务器上搭建-git",
+      "title": "Git - 在服务器上搭建 Git",
+      "file": "chapters/023-在服务器上搭建-git.md"
+    },
+    {
+      "slug": "024-生成-ssh-公钥",
+      "title": "Git - 生成 SSH 公钥",
+      "file": "chapters/024-生成-ssh-公钥.md"
+    },
+    {
+      "slug": "025-配置服务器",
+      "title": "Git - 配置服务器",
+      "file": "chapters/025-配置服务器.md"
+    },
+    {
+      "slug": "026-git-守护进程",
+      "title": "Git - Git 守护进程",
+      "file": "chapters/026-git-守护进程.md"
+    },
+    {
+      "slug": "027-smart-http",
+      "title": "Git - Smart HTTP",
+      "file": "chapters/027-smart-http.md"
+    },
+    {
+      "slug": "028-gitweb",
+      "title": "Git - GitWeb",
+      "file": "chapters/028-gitweb.md"
+    },
+    {
+      "slug": "029-gitlab",
+      "title": "Git - GitLab",
+      "file": "chapters/029-gitlab.md"
+    },
+    {
+      "slug": "030-第三方托管的选择",
+      "title": "Git - 第三方托管的选择",
+      "file": "chapters/030-第三方托管的选择.md"
+    },
+    {
+      "slug": "031-总结",
+      "title": "Git - 总结",
+      "file": "chapters/031-总结.md"
+    },
+    {
+      "slug": "032-分布式-git",
+      "title": "Git - 分布式工作流程",
+      "file": "chapters/032-分布式-git.md"
+    },
+    {
+      "slug": "033-向一个项目贡献",
+      "title": "Git - 向一个项目贡献",
+      "file": "chapters/033-向一个项目贡献.md"
+    },
+    {
+      "slug": "034-维护项目",
+      "title": "Git - 维护项目",
+      "file": "chapters/034-维护项目.md"
+    },
+    {
+      "slug": "035-github",
+      "title": "Git - 账户的创建和配置",
+      "file": "chapters/035-github.md"
+    },
+    {
+      "slug": "036-对项目做出贡献",
+      "title": "Git - 对项目做出贡献",
+      "file": "chapters/036-对项目做出贡献.md"
+    },
+    {
+      "slug": "037-维护项目",
+      "title": "Git - 维护项目",
+      "file": "chapters/037-维护项目.md"
+    },
+    {
+      "slug": "038-管理组织",
+      "title": "Git - 管理组织",
+      "file": "chapters/038-管理组织.md"
+    },
+    {
+      "slug": "039-脚本-github",
+      "title": "Git - 脚本 GitHub",
+      "file": "chapters/039-脚本-github.md"
+    },
+    {
+      "slug": "040-git-工具",
+      "title": "Git - 选择修订版本",
+      "file": "chapters/040-git-工具.md"
+    },
+    {
+      "slug": "041-交互式暂存",
+      "title": "Git - 交互式暂存",
+      "file": "chapters/041-交互式暂存.md"
+    },
+    {
+      "slug": "042-贮藏与清理",
+      "title": "Git - 贮藏与清理",
+      "file": "chapters/042-贮藏与清理.md"
+    },
+    {
+      "slug": "043-签署工作",
+      "title": "Git - 签署工作",
+      "file": "chapters/043-签署工作.md"
+    },
+    {
+      "slug": "044-搜索",
+      "title": "Git - 搜索",
+      "file": "chapters/044-搜索.md"
+    },
+    {
+      "slug": "045-重写历史",
+      "title": "Git - 重写历史",
+      "file": "chapters/045-重写历史.md"
+    },
+    {
+      "slug": "046-重置揭密",
+      "title": "Git - 重置揭密",
+      "file": "chapters/046-重置揭密.md"
+    },
+    {
+      "slug": "047-高级合并",
+      "title": "Git - 高级合并",
+      "file": "chapters/047-高级合并.md"
+    },
+    {
+      "slug": "048-rerere",
+      "title": "Git - Rerere",
+      "file": "chapters/048-rerere.md"
+    },
+    {
+      "slug": "049-使用-git-调试",
+      "title": "Git - 使用 Git 调试",
+      "file": "chapters/049-使用-git-调试.md"
+    },
+    {
+      "slug": "050-子模块",
+      "title": "Git - 子模块",
+      "file": "chapters/050-子模块.md"
+    },
+    {
+      "slug": "051-打包",
+      "title": "Git - 打包",
+      "file": "chapters/051-打包.md"
+    },
+    {
+      "slug": "052-替换",
+      "title": "Git - 替换",
+      "file": "chapters/052-替换.md"
+    },
+    {
+      "slug": "053-凭证存储",
+      "title": "Git - 凭证存储",
+      "file": "chapters/053-凭证存储.md"
+    },
+    {
+      "slug": "054-自定义-git",
+      "title": "Git - 配置 Git",
+      "file": "chapters/054-自定义-git.md"
+    },
+    {
+      "slug": "055-git-属性",
+      "title": "Git - Git 属性",
+      "file": "chapters/055-git-属性.md"
+    },
+    {
+      "slug": "056-git-钩子",
+      "title": "Git - Git 钩子",
+      "file": "chapters/056-git-钩子.md"
+    },
+    {
+      "slug": "057-使用强制策略的一个例子",
+      "title": "Git - 使用强制策略的一个例子",
+      "file": "chapters/057-使用强制策略的一个例子.md"
+    },
+    {
+      "slug": "058-git-与其他系统",
+      "title": "Git - 作为客户端的 Git",
+      "file": "chapters/058-git-与其他系统.md"
+    },
+    {
+      "slug": "059-迁移到-git",
+      "title": "Git - 迁移到 Git",
+      "file": "chapters/059-迁移到-git.md"
+    },
+    {
+      "slug": "060-git-内部原理",
+      "title": "Git - 底层命令与上层命令",
+      "file": "chapters/060-git-内部原理.md"
+    },
+    {
+      "slug": "061-git-对象",
+      "title": "Git - Git 对象",
+      "file": "chapters/061-git-对象.md"
+    },
+    {
+      "slug": "062-git-引用",
+      "title": "Git - Git 引用",
+      "file": "chapters/062-git-引用.md"
+    },
+    {
+      "slug": "063-包文件",
+      "title": "Git - 包文件",
+      "file": "chapters/063-包文件.md"
+    },
+    {
+      "slug": "064-引用规范",
+      "title": "Git - 引用规范",
+      "file": "chapters/064-引用规范.md"
+    },
+    {
+      "slug": "065-传输协议",
+      "title": "Git - 传输协议",
+      "file": "chapters/065-传输协议.md"
+    },
+    {
+      "slug": "066-维护与数据恢复",
+      "title": "Git - 维护与数据恢复",
+      "file": "chapters/066-维护与数据恢复.md"
+    },
+    {
+      "slug": "067-环境变量",
+      "title": "Git - 环境变量",
+      "file": "chapters/067-环境变量.md"
+    },
+    {
+      "slug": "068-总结",
+      "title": "Git - 总结",
+      "file": "chapters/068-总结.md"
+    },
+    {
+      "slug": "069-附录-a-在其它环境中使用-git",
+      "title": "Git - 图形界面",
+      "file": "chapters/069-附录-a-在其它环境中使用-git.md"
+    },
+    {
+      "slug": "070-visual-studio-中的-git",
+      "title": "Git - Visual Studio 中的 Git",
+      "file": "chapters/070-visual-studio-中的-git.md"
+    },
+    {
+      "slug": "071-visual-studio-code-中的-git",
+      "title": "Visual Studio Code 中的 Git",
+      "file": "chapters/071-visual-studio-code-中的-git.md"
+    },
+    {
+      "slug": "072-intellij-pycharm-webstorm-phpstorm-rubym",
+      "title": "Git - IntelliJ / PyCharm / WebStorm / PhpStorm",
+      "file": "chapters/072-intellij-pycharm-webstorm-phpstorm-rubym.md"
+    },
+    {
+      "slug": "073-sublime-text-中的-git",
+      "title": "Git - Sublime Text 中的 Git",
+      "file": "chapters/073-sublime-text-中的-git.md"
+    },
+    {
+      "slug": "074-bash-中的-git",
+      "title": "Git - Bash 中的 Git",
+      "file": "chapters/074-bash-中的-git.md"
+    },
+    {
+      "slug": "075-zsh-中的-git",
+      "title": "Git - Zsh 中的 Git",
+      "file": "chapters/075-zsh-中的-git.md"
+    },
+    {
+      "slug": "076-powershell-中的-git",
+      "title": "Git - PowerShell 中的 Git",
+      "file": "chapters/076-powershell-中的-git.md"
+    },
+    {
+      "slug": "077-附录-b-在你的应用中嵌入-git",
+      "title": "Git - 命令行 Git 方式",
+      "file": "chapters/077-附录-b-在你的应用中嵌入-git.md"
+    },
+    {
+      "slug": "078-libgit2",
+      "title": "Git - Libgit2",
+      "file": "chapters/078-libgit2.md"
+    },
+    {
+      "slug": "079-jgit",
+      "title": "Git - JGit",
+      "file": "chapters/079-jgit.md"
+    },
+    {
+      "slug": "080-go-git",
+      "title": "Git - go-git",
+      "file": "chapters/080-go-git.md"
+    },
+    {
+      "slug": "081-dulwich",
+      "title": "Git - Dulwich",
+      "file": "chapters/081-dulwich.md"
+    },
+    {
+      "slug": "082-附录-c-git-命令",
+      "title": "Git - 设置与配置",
+      "file": "chapters/082-附录-c-git-命令.md"
+    },
+    {
+      "slug": "083-获取与创建项目",
+      "title": "Git - 获取与创建项目",
+      "file": "chapters/083-获取与创建项目.md"
+    },
+    {
+      "slug": "084-快照基础",
+      "title": "Git - 快照基础",
+      "file": "chapters/084-快照基础.md"
+    },
+    {
+      "slug": "085-分支与合并",
+      "title": "Git - 分支与合并",
+      "file": "chapters/085-分支与合并.md"
+    },
+    {
+      "slug": "086-项目分享与更新",
+      "title": "Git - 项目分享与更新",
+      "file": "chapters/086-项目分享与更新.md"
+    },
+    {
+      "slug": "087-检查与比较",
+      "title": "Git - 检查与比较",
+      "file": "chapters/087-检查与比较.md"
+    },
+    {
+      "slug": "088-调试",
+      "title": "Git - 调试",
+      "file": "chapters/088-调试.md"
+    },
+    {
+      "slug": "089-补丁",
+      "title": "Git - 补丁",
+      "file": "chapters/089-补丁.md"
+    },
+    {
+      "slug": "090-邮件",
+      "title": "Git - 邮件",
+      "file": "chapters/090-邮件.md"
+    },
+    {
+      "slug": "091-外部系统",
+      "title": "Git - 外部系统",
+      "file": "chapters/091-外部系统.md"
+    },
+    {
+      "slug": "092-管理",
+      "title": "Git - 管理",
+      "file": "chapters/092-管理.md"
+    },
+    {
+      "slug": "093-底层命令",
+      "title": "Git - 底层命令",
+      "file": "chapters/093-底层命令.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,12 @@
   "title": "深入理解并行编程",
   "url": "http://ifeve.com/perfbook/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:50.045Z",
+  "fetchedAt": "2026-09-27T11:58:02.833Z",
   "chapters": [
     {
-      "slug": "001-q",
+      "slug": "001-网站整改中",
       "title": "网站整改中",
-      "file": "chapters/001-q.md"
+      "file": "chapters/001-网站整改中.md"
     }
   ],
   "sourceType": "web",

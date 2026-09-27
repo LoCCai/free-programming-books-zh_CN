@@ -2,8 +2,135 @@
   "bookId": "189343c5e2dc",
   "title": "Fabric 中文文档",
   "url": "https://fabric-chs.readthedocs.io",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:26:20.566Z",
-  "chapters": [],
-  "error": "HTTP 429"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T12:12:28.856Z",
+  "chapters": [
+    {
+      "slug": "001-欢迎访问-fabric-中文文档-fabric-文档",
+      "title": "欢迎访问 Fabric 中文文档 — Fabric 文档",
+      "file": "chapters/001-欢迎访问-fabric-中文文档-fabric-文档.md"
+    },
+    {
+      "slug": "002-概览-教程",
+      "title": "概览 & 教程 — Fabric 文档",
+      "file": "chapters/002-概览-教程.md"
+    },
+    {
+      "slug": "003-环境字典-env",
+      "title": "环境字典 env — Fabric 文档",
+      "file": "chapters/003-环境字典-env.md"
+    },
+    {
+      "slug": "004-execution-model",
+      "title": "Execution model — Fabric 文档",
+      "file": "chapters/004-execution-model.md"
+    },
+    {
+      "slug": "005-fab-选项和参数",
+      "title": "fab 选项和参数 — Fabric 文档",
+      "file": "chapters/005-fab-选项和参数.md"
+    },
+    {
+      "slug": "006-fabfile-文件的结构和使用",
+      "title": "Fabfile 文件的结构和使用 — Fabric 文档",
+      "file": "chapters/006-fabfile-文件的结构和使用.md"
+    },
+    {
+      "slug": "007-与远程程序集成",
+      "title": "与远程程序集成 — Fabric  文档",
+      "file": "chapters/007-与远程程序集成.md"
+    },
+    {
+      "slug": "008-作为库使用",
+      "title": "作为库使用 — Fabric  文档",
+      "file": "chapters/008-作为库使用.md"
+    },
+    {
+      "slug": "009-输出管理",
+      "title": "输出管理 — Fabric  文档",
+      "file": "chapters/009-输出管理.md"
+    },
+    {
+      "slug": "010-并行执行",
+      "title": "并行执行 — Fabric  文档",
+      "file": "chapters/010-并行执行.md"
+    },
+    {
+      "slug": "011-ssh-行为",
+      "title": "SSH 行为 — Fabric 文档",
+      "file": "chapters/011-ssh-行为.md"
+    },
+    {
+      "slug": "012-定义任务",
+      "title": "定义任务 — Fabric  文档",
+      "file": "chapters/012-定义任务.md"
+    },
+    {
+      "slug": "013-提供彩色输出的函数",
+      "title": "提供彩色输出的函数 — Fabric  文档",
+      "file": "chapters/013-提供彩色输出的函数.md"
+    },
+    {
+      "slug": "014-上下文管理器",
+      "title": "上下文管理器 — Fabric  文档",
+      "file": "chapters/014-上下文管理器.md"
+    },
+    {
+      "slug": "015-装饰器",
+      "title": "装饰器 — Fabric  文档",
+      "file": "chapters/015-装饰器.md"
+    },
+    {
+      "slug": "016-文档助手",
+      "title": "文档助手 — Fabric  文档",
+      "file": "chapters/016-文档助手.md"
+    },
+    {
+      "slug": "017-网络",
+      "title": "网络 — Fabric  文档",
+      "file": "chapters/017-网络.md"
+    },
+    {
+      "slug": "018-业务-operation",
+      "title": "业务（Operation） — Fabric  文档",
+      "file": "chapters/018-业务-operation.md"
+    },
+    {
+      "slug": "019-任务",
+      "title": "任务 — Fabric  文档",
+      "file": "chapters/019-任务.md"
+    },
+    {
+      "slug": "020-实用工具",
+      "title": "实用工具 — Fabric  文档",
+      "file": "chapters/020-实用工具.md"
+    },
+    {
+      "slug": "021-终端输出工具",
+      "title": "终端输出工具 — Fabric  文档",
+      "file": "chapters/021-终端输出工具.md"
+    },
+    {
+      "slug": "022-与-django-集成",
+      "title": "与 Django 集成 — Fabric 文档",
+      "file": "chapters/022-与-django-集成.md"
+    },
+    {
+      "slug": "023-文件和目录管理",
+      "title": "文件和目录管理 — Fabric  文档",
+      "file": "chapters/023-文件和目录管理.md"
+    },
+    {
+      "slug": "024-项目工具",
+      "title": "项目工具 — Fabric  文档",
+      "file": "chapters/024-项目工具.md"
+    },
+    {
+      "slug": "025-运行-fabric-的测试",
+      "title": "运行 Fabric 的测试 — Fabric 文档",
+      "file": "chapters/025-运行-fabric-的测试.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "欢迎访问 Fabric 中文文档 — Fabric 文档"
 }

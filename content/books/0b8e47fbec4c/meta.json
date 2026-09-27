@@ -3,12 +3,767 @@
   "title": "Ruby on Rails 實戰聖經",
   "url": "https://ihower.tw/rails4/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:14.607Z",
+  "fetchedAt": "2026-09-27T12:08:03.789Z",
   "chapters": [
     {
-      "slug": "001-z",
+      "slug": "001-關於-rails-實戰聖經",
       "title": "關於 Rails 實戰聖經",
-      "file": "chapters/001-z.md"
+      "file": "chapters/001-關於-rails-實戰聖經.md"
+    },
+    {
+      "slug": "002-part-1-入門導覽",
+      "title": "Part 1: 入門導覽",
+      "file": "chapters/002-part-1-入門導覽.md"
+    },
+    {
+      "slug": "003-ruby-on-rails-簡介",
+      "title": "Ruby on Rails 簡介",
+      "file": "chapters/003-ruby-on-rails-簡介.md"
+    },
+    {
+      "slug": "004-安裝-rails-開發環境",
+      "title": "安裝 Rails 開發環境",
+      "file": "chapters/004-安裝-rails-開發環境.md"
+    },
+    {
+      "slug": "005-rails-起步走",
+      "title": "Rails 起步走",
+      "file": "chapters/005-rails-起步走.md"
+    },
+    {
+      "slug": "006-ruby-程式語言入門",
+      "title": "Ruby 程式語言入門",
+      "file": "chapters/006-ruby-程式語言入門.md"
+    },
+    {
+      "slug": "007-手工打造-crud-應用程式",
+      "title": "手工打造 CRUD 應用程式",
+      "file": "chapters/007-手工打造-crud-應用程式.md"
+    },
+    {
+      "slug": "008-restful-應用程式",
+      "title": "RESTful 應用程式",
+      "file": "chapters/008-restful-應用程式.md"
+    },
+    {
+      "slug": "009-activerecord-基本操作與關聯設計",
+      "title": "ActiveRecord - 基本操作與關聯設計",
+      "file": "chapters/009-activerecord-基本操作與關聯設計.md"
+    },
+    {
+      "slug": "010-restful-應用實作",
+      "title": "RESTful 應用實作",
+      "file": "chapters/010-restful-應用實作.md"
+    },
+    {
+      "slug": "011-part-2-1-ajax-互動式網頁應用",
+      "title": "Part 2-1: Ajax 互動式網頁應用",
+      "file": "chapters/011-part-2-1-ajax-互動式網頁應用.md"
+    },
+    {
+      "slug": "012-1-jquery-與-ajax-互動式網頁應用",
+      "title": "jQuery 與 Ajax 互動式網頁應用",
+      "file": "chapters/012-1-jquery-與-ajax-互動式網頁應用.md"
+    },
+    {
+      "slug": "013-2-ajax-on-rails-part-1",
+      "title": "Ajax on Rails (Part 1)",
+      "file": "chapters/013-2-ajax-on-rails-part-1.md"
+    },
+    {
+      "slug": "014-3-turbolinks-解說",
+      "title": "Turbolinks 解說",
+      "file": "chapters/014-3-turbolinks-解說.md"
+    },
+    {
+      "slug": "015-4-ajax-on-rails-part-2",
+      "title": "Ajax on Rails (Part 2)",
+      "file": "chapters/015-4-ajax-on-rails-part-2.md"
+    },
+    {
+      "slug": "016-5-unobtrusive-javascript",
+      "title": "Unobtrusive JavaScript",
+      "file": "chapters/016-5-unobtrusive-javascript.md"
+    },
+    {
+      "slug": "017-part-2-2-rails-應用實戰",
+      "title": "Part 2-2: Rails 應用實戰",
+      "file": "chapters/017-part-2-2-rails-應用實戰.md"
+    },
+    {
+      "slug": "018-1-前言與案例準備",
+      "title": "前言與案例準備",
+      "file": "chapters/018-1-前言與案例準備.md"
+    },
+    {
+      "slug": "019-2-自訂-model-網址",
+      "title": "自訂 Model 網址",
+      "file": "chapters/019-2-自訂-model-網址.md"
+    },
+    {
+      "slug": "020-3-多國語系設置",
+      "title": "多國語系設置",
+      "file": "chapters/020-3-多國語系設置.md"
+    },
+    {
+      "slug": "021-4-時區設置",
+      "title": "時區設置",
+      "file": "chapters/021-4-時區設置.md"
+    },
+    {
+      "slug": "022-5-格式化日期時間",
+      "title": "格式化日期時間",
+      "file": "chapters/022-5-格式化日期時間.md"
+    },
+    {
+      "slug": "023-6-表單單選-有限的種類-無額外-model",
+      "title": "表單單選(有限的種類、無額外 Model)",
+      "file": "chapters/023-6-表單單選-有限的種類-無額外-model.md"
+    },
+    {
+      "slug": "024-7-表單單選-有-model",
+      "title": "表單單選(有 Model)",
+      "file": "chapters/024-7-表單單選-有-model.md"
+    },
+    {
+      "slug": "025-8-表單多選-有-model",
+      "title": "表單多選(有 Model)",
+      "file": "chapters/025-8-表單多選-有-model.md"
+    },
+    {
+      "slug": "026-9-表嵌套表單-1-to-1",
+      "title": "表嵌套表單(1-to-1)",
+      "file": "chapters/026-9-表嵌套表單-1-to-1.md"
+    },
+    {
+      "slug": "027-10-嵌套表單-1-to-many",
+      "title": "嵌套表單(1-to-many)",
+      "file": "chapters/027-10-嵌套表單-1-to-many.md"
+    },
+    {
+      "slug": "028-11-選日期時間的-ui",
+      "title": "選日期時間的 UI",
+      "file": "chapters/028-11-選日期時間的-ui.md"
+    },
+    {
+      "slug": "029-12-拆開前後台的-css-和-js",
+      "title": "拆開前後台的 CSS 和 JS",
+      "file": "chapters/029-12-拆開前後台的-css-和-js.md"
+    },
+    {
+      "slug": "030-13-rich-editor-編輯器",
+      "title": "Rich Editor 編輯器",
+      "file": "chapters/030-13-rich-editor-編輯器.md"
+    },
+    {
+      "slug": "031-14-批次編輯",
+      "title": "批次編輯",
+      "file": "chapters/031-14-批次編輯.md"
+    },
+    {
+      "slug": "032-15-自訂列表順序",
+      "title": "自訂列表順序",
+      "file": "chapters/032-15-自訂列表順序.md"
+    },
+    {
+      "slug": "033-16-多步驟表單",
+      "title": "多步驟表單",
+      "file": "chapters/033-16-多步驟表單.md"
+    },
+    {
+      "slug": "034-17-顯示資料驗證錯誤訊息",
+      "title": "顯示資料驗證錯誤訊息",
+      "file": "chapters/034-17-顯示資料驗證錯誤訊息.md"
+    },
+    {
+      "slug": "035-18-資料篩選和搜尋",
+      "title": "資料篩選和搜尋",
+      "file": "chapters/035-18-資料篩選和搜尋.md"
+    },
+    {
+      "slug": "036-19-軟刪除和版本控制",
+      "title": "軟刪除和版本控制",
+      "file": "chapters/036-19-軟刪除和版本控制.md"
+    },
+    {
+      "slug": "037-20-數據匯出",
+      "title": "數據匯出",
+      "file": "chapters/037-20-數據匯出.md"
+    },
+    {
+      "slug": "038-21-多檔案上傳",
+      "title": "多檔案上傳",
+      "file": "chapters/038-21-多檔案上傳.md"
+    },
+    {
+      "slug": "039-22-圖表資料分析",
+      "title": "圖表資料分析",
+      "file": "chapters/039-22-圖表資料分析.md"
+    },
+    {
+      "slug": "040-23-用戶權限控管",
+      "title": "用戶權限控管",
+      "file": "chapters/040-23-用戶權限控管.md"
+    },
+    {
+      "slug": "041-24-html-e-mail-寄送",
+      "title": "HTML E-mail 寄送",
+      "file": "chapters/041-24-html-e-mail-寄送.md"
+    },
+    {
+      "slug": "042-25-數據匯入",
+      "title": "數據匯入",
+      "file": "chapters/042-25-數據匯入.md"
+    },
+    {
+      "slug": "043-26-非同步處理任務",
+      "title": "非同步處理任務",
+      "file": "chapters/043-26-非同步處理任務.md"
+    },
+    {
+      "slug": "044-part-2-3-web-api-設計實作",
+      "title": "Part 2-3: Web API 設計實作",
+      "file": "chapters/044-part-2-3-web-api-設計實作.md"
+    },
+    {
+      "slug": "045-1-web-api-簡介",
+      "title": "Web API 簡介",
+      "file": "chapters/045-1-web-api-簡介.md"
+    },
+    {
+      "slug": "046-2-串接第三方-api-服務",
+      "title": "串接第三方 API 服務",
+      "file": "chapters/046-2-串接第三方-api-服務.md"
+    },
+    {
+      "slug": "047-3-建立-api-伺服器",
+      "title": "建立 API 伺服器",
+      "file": "chapters/047-3-建立-api-伺服器.md"
+    },
+    {
+      "slug": "048-4-實作認證-api",
+      "title": "實作認證 API",
+      "file": "chapters/048-4-實作認證-api.md"
+    },
+    {
+      "slug": "049-5-實作註冊-登入-登出-api",
+      "title": "實作註冊、登入、登出 API",
+      "file": "chapters/049-5-實作註冊-登入-登出-api.md"
+    },
+    {
+      "slug": "050-6-實作用戶更新資料-api",
+      "title": "實作用戶更新資料 API",
+      "file": "chapters/050-6-實作用戶更新資料-api.md"
+    },
+    {
+      "slug": "051-7-jbuilder-用法",
+      "title": "Jbuilder 用法",
+      "file": "chapters/051-7-jbuilder-用法.md"
+    },
+    {
+      "slug": "052-8-oauth-第三方認證",
+      "title": "OAuth 第三方認證",
+      "file": "chapters/052-8-oauth-第三方認證.md"
+    },
+    {
+      "slug": "053-part-2-4-自動化測試",
+      "title": "Part 2-4: 自動化測試",
+      "file": "chapters/053-part-2-4-自動化測試.md"
+    },
+    {
+      "slug": "054-1-rails-自動化測試-簡介",
+      "title": "Rails 自動化測試 簡介",
+      "file": "chapters/054-1-rails-自動化測試-簡介.md"
+    },
+    {
+      "slug": "055-2-停車計費程序-part-1",
+      "title": "停車計費程序 Part 1",
+      "file": "chapters/055-2-停車計費程序-part-1.md"
+    },
+    {
+      "slug": "056-3-停車計費程序-part-2",
+      "title": "停車計費程序 Part 2",
+      "file": "chapters/056-3-停車計費程序-part-2.md"
+    },
+    {
+      "slug": "057-4-用戶驗收測試",
+      "title": "用戶驗收測試",
+      "file": "chapters/057-4-用戶驗收測試.md"
+    },
+    {
+      "slug": "058-5-web-api-自動化測試",
+      "title": "Web API 自動化測試",
+      "file": "chapters/058-5-web-api-自動化測試.md"
+    },
+    {
+      "slug": "059-6-總結與補充",
+      "title": "總結與補充",
+      "file": "chapters/059-6-總結與補充.md"
+    },
+    {
+      "slug": "060-part-2-5-rails-網站安全",
+      "title": "Part 2-5: Rails 網站安全",
+      "file": "chapters/060-part-2-5-rails-網站安全.md"
+    },
+    {
+      "slug": "061-1-rails-網站安全-簡介",
+      "title": "Rails 網站安全 簡介",
+      "file": "chapters/061-1-rails-網站安全-簡介.md"
+    },
+    {
+      "slug": "062-2-xss-跨站腳本攻擊",
+      "title": "XSS 跨站腳本攻擊",
+      "file": "chapters/062-2-xss-跨站腳本攻擊.md"
+    },
+    {
+      "slug": "063-3-csrf-跨站請求偽造",
+      "title": "CSRF 跨站請求偽造",
+      "file": "chapters/063-3-csrf-跨站請求偽造.md"
+    },
+    {
+      "slug": "064-4-sql-injection-資料庫注入攻擊",
+      "title": "SQL Injection 資料庫注入攻擊",
+      "file": "chapters/064-4-sql-injection-資料庫注入攻擊.md"
+    },
+    {
+      "slug": "065-5-大量賦值",
+      "title": "大量賦值",
+      "file": "chapters/065-5-大量賦值.md"
+    },
+    {
+      "slug": "066-6-破解加密-cookie",
+      "title": "破解加密 Cookie",
+      "file": "chapters/066-6-破解加密-cookie.md"
+    },
+    {
+      "slug": "067-7-dos-拒絕服務攻擊",
+      "title": "DoS 拒絕服務攻擊",
+      "file": "chapters/067-7-dos-拒絕服務攻擊.md"
+    },
+    {
+      "slug": "068-8-安全分析工具",
+      "title": "安全分析工具",
+      "file": "chapters/068-8-安全分析工具.md"
+    },
+    {
+      "slug": "069-9-密碼是如何存儲的",
+      "title": "密碼是如何存儲的？",
+      "file": "chapters/069-9-密碼是如何存儲的.md"
+    },
+    {
+      "slug": "070-10-https-加密連線",
+      "title": "HTTPS 加密連線",
+      "file": "chapters/070-10-https-加密連線.md"
+    },
+    {
+      "slug": "071-part-2-6-rails-網站效能",
+      "title": "Part 2-6: Rails 網站效能",
+      "file": "chapters/071-part-2-6-rails-網站效能.md"
+    },
+    {
+      "slug": "072-網站效能-前言",
+      "title": "網站效能 前言",
+      "file": "chapters/072-網站效能-前言.md"
+    },
+    {
+      "slug": "073-前端效能",
+      "title": "前端效能",
+      "file": "chapters/073-前端效能.md"
+    },
+    {
+      "slug": "074-rails-後端效能",
+      "title": "Rails 後端效能",
+      "file": "chapters/074-rails-後端效能.md"
+    },
+    {
+      "slug": "075-part-2-7-rails-重構",
+      "title": "Part 2-7: Rails 重構",
+      "file": "chapters/075-part-2-7-rails-重構.md"
+    },
+    {
+      "slug": "076-rails-代碼重構",
+      "title": "Rails 代碼重構",
+      "file": "chapters/076-rails-代碼重構.md"
+    },
+    {
+      "slug": "077-關於-controller",
+      "title": "關於 Controller",
+      "file": "chapters/077-關於-controller.md"
+    },
+    {
+      "slug": "078-關於-model",
+      "title": "關於 Model",
+      "file": "chapters/078-關於-model.md"
+    },
+    {
+      "slug": "079-關於-view",
+      "title": "關於 View",
+      "file": "chapters/079-關於-view.md"
+    },
+    {
+      "slug": "080-其他補充",
+      "title": "其他補充",
+      "file": "chapters/080-其他補充.md"
+    },
+    {
+      "slug": "081-part-2-8-伺服器部署",
+      "title": "Part 2-8: 伺服器部署",
+      "file": "chapters/081-part-2-8-伺服器部署.md"
+    },
+    {
+      "slug": "082-linux-雲端伺服器部署運維",
+      "title": "Linux 雲端伺服器部署運維",
+      "file": "chapters/082-linux-雲端伺服器部署運維.md"
+    },
+    {
+      "slug": "083-linux-指令入門",
+      "title": "Linux 指令入門",
+      "file": "chapters/083-linux-指令入門.md"
+    },
+    {
+      "slug": "084-網站伺服器安裝",
+      "title": "網站伺服器安裝",
+      "file": "chapters/084-網站伺服器安裝.md"
+    },
+    {
+      "slug": "085-自動化部署-rails",
+      "title": "自動化部署 Rails",
+      "file": "chapters/085-自動化部署-rails.md"
+    },
+    {
+      "slug": "086-linux-基本運維",
+      "title": "Linux 基本運維",
+      "file": "chapters/086-linux-基本運維.md"
+    },
+    {
+      "slug": "087-第三方服務",
+      "title": "第三方服務",
+      "file": "chapters/087-第三方服務.md"
+    },
+    {
+      "slug": "088-域名和-https-設定",
+      "title": "域名和 HTTPS 設定",
+      "file": "chapters/088-域名和-https-設定.md"
+    },
+    {
+      "slug": "089-part-3-元件精要",
+      "title": "Part 3: 元件精要",
+      "file": "chapters/089-part-3-元件精要.md"
+    },
+    {
+      "slug": "090-環境設定與-bundler",
+      "title": "環境設定與 Bundler",
+      "file": "chapters/090-環境設定與-bundler.md"
+    },
+    {
+      "slug": "091-路由-routing",
+      "title": "路由(Routing)",
+      "file": "chapters/091-路由-routing.md"
+    },
+    {
+      "slug": "092-action-controller-控制-http-流程",
+      "title": "Action Controller - 控制 HTTP 流程",
+      "file": "chapters/092-action-controller-控制-http-流程.md"
+    },
+    {
+      "slug": "093-activerecord-query-interface-資料表操作",
+      "title": "ActiveRecord Query Interface - 資料表操作",
+      "file": "chapters/093-activerecord-query-interface-資料表操作.md"
+    },
+    {
+      "slug": "094-active-record-資料庫遷移-migration",
+      "title": "Active Record - 資料庫遷移(Migration)",
+      "file": "chapters/094-active-record-資料庫遷移-migration.md"
+    },
+    {
+      "slug": "095-activerecord-資料表關聯",
+      "title": "ActiveRecord - 資料表關聯",
+      "file": "chapters/095-activerecord-資料表關聯.md"
+    },
+    {
+      "slug": "096-activerecord-資料驗證及回呼",
+      "title": "ActiveRecord - 資料驗證及回呼",
+      "file": "chapters/096-activerecord-資料驗證及回呼.md"
+    },
+    {
+      "slug": "097-activerecord-進階功能",
+      "title": "ActiveRecord - 進階功能",
+      "file": "chapters/097-activerecord-進階功能.md"
+    },
+    {
+      "slug": "098-action-view-樣板設計",
+      "title": "Action View - 樣板設計",
+      "file": "chapters/098-action-view-樣板設計.md"
+    },
+    {
+      "slug": "099-action-view-helpers-方法",
+      "title": "Action View - Helpers 方法",
+      "file": "chapters/099-action-view-helpers-方法.md"
+    },
+    {
+      "slug": "100-ajax-應用程式",
+      "title": "Ajax 應用程式",
+      "file": "chapters/100-ajax-應用程式.md"
+    },
+    {
+      "slug": "101-asset-pipeline",
+      "title": "Asset Pipeline",
+      "file": "chapters/101-asset-pipeline.md"
+    },
+    {
+      "slug": "102-現代前端工程",
+      "title": "現代前端工程",
+      "file": "chapters/102-現代前端工程.md"
+    },
+    {
+      "slug": "103-多國語系及時區",
+      "title": "多國語系及時區",
+      "file": "chapters/103-多國語系及時區.md"
+    },
+    {
+      "slug": "104-actionmailer-e-mail-發送",
+      "title": "ActionMailer - E-mail 發送",
+      "file": "chapters/104-actionmailer-e-mail-發送.md"
+    },
+    {
+      "slug": "105-activesupport-工具函式庫",
+      "title": "ActiveSupport - 工具函式庫",
+      "file": "chapters/105-activesupport-工具函式庫.md"
+    },
+    {
+      "slug": "106-錦囊妙計-後端篇",
+      "title": "錦囊妙計-後端篇",
+      "file": "chapters/106-錦囊妙計-後端篇.md"
+    },
+    {
+      "slug": "107-錦囊妙計-前端篇",
+      "title": "錦囊妙計-前端篇",
+      "file": "chapters/107-錦囊妙計-前端篇.md"
+    },
+    {
+      "slug": "108-使用者認證",
+      "title": "使用者認證",
+      "file": "chapters/108-使用者認證.md"
+    },
+    {
+      "slug": "109-自動化測試",
+      "title": "自動化測試",
+      "file": "chapters/109-自動化測試.md"
+    },
+    {
+      "slug": "110-實作-web-apis",
+      "title": "實作 Web APIs",
+      "file": "chapters/110-實作-web-apis.md"
+    },
+    {
+      "slug": "111-網站效能",
+      "title": "網站效能",
+      "file": "chapters/111-網站效能.md"
+    },
+    {
+      "slug": "112-快取",
+      "title": "快取",
+      "file": "chapters/112-快取.md"
+    },
+    {
+      "slug": "113-網路安全",
+      "title": "網路安全",
+      "file": "chapters/113-網路安全.md"
+    },
+    {
+      "slug": "114-網站佈署",
+      "title": "網站佈署",
+      "file": "chapters/114-網站佈署.md"
+    },
+    {
+      "slug": "115-非同步處理",
+      "title": "非同步處理",
+      "file": "chapters/115-非同步處理.md"
+    },
+    {
+      "slug": "116-action-cable-即時通訊",
+      "title": "Action Cable 即時通訊",
+      "file": "chapters/116-action-cable-即時通訊.md"
+    },
+    {
+      "slug": "117-rails-附錄",
+      "title": "Rails 附錄",
+      "file": "chapters/117-rails-附錄.md"
+    },
+    {
+      "slug": "118-heroku-簡介",
+      "title": "Heroku 簡介",
+      "file": "chapters/118-heroku-簡介.md"
+    },
+    {
+      "slug": "119-rails-範例專案",
+      "title": "Rails 範例專案",
+      "file": "chapters/119-rails-範例專案.md"
+    },
+    {
+      "slug": "120-ruby-和-rails-的生態圈-ecosystem",
+      "title": "Ruby 和 Rails 的生態圈(Ecosystem)",
+      "file": "chapters/120-ruby-和-rails-的生態圈-ecosystem.md"
+    },
+    {
+      "slug": "121-jquery-簡介",
+      "title": "jQuery 簡介",
+      "file": "chapters/121-jquery-簡介.md"
+    },
+    {
+      "slug": "122-繁簡術語差異",
+      "title": "繁簡術語差異",
+      "file": "chapters/122-繁簡術語差異.md"
+    },
+    {
+      "slug": "123-翻譯術語對照",
+      "title": "翻譯術語對照",
+      "file": "chapters/123-翻譯術語對照.md"
+    },
+    {
+      "slug": "124-進階開發環境安裝",
+      "title": "進階開發環境安裝",
+      "file": "chapters/124-進階開發環境安裝.md"
+    },
+    {
+      "slug": "125-git-版本控制",
+      "title": "Git 版本控制",
+      "file": "chapters/125-git-版本控制.md"
+    },
+    {
+      "slug": "126-版本控制系統簡介",
+      "title": "版本控制系統簡介",
+      "file": "chapters/126-版本控制系統簡介.md"
+    },
+    {
+      "slug": "127-git-簡介",
+      "title": "Git 簡介",
+      "file": "chapters/127-git-簡介.md"
+    },
+    {
+      "slug": "128-git-內部原理",
+      "title": "Git 內部原理",
+      "file": "chapters/128-git-內部原理.md"
+    },
+    {
+      "slug": "129-git-基本操作",
+      "title": "Git 基本操作",
+      "file": "chapters/129-git-基本操作.md"
+    },
+    {
+      "slug": "130-git-團隊協同開發指令",
+      "title": "Git 團隊協同開發指令",
+      "file": "chapters/130-git-團隊協同開發指令.md"
+    },
+    {
+      "slug": "131-還沒-push-前可以做的事",
+      "title": "還沒 push 前可以做的事",
+      "file": "chapters/131-還沒-push-前可以做的事.md"
+    },
+    {
+      "slug": "132-應用程式開發基礎",
+      "title": "應用程式開發基礎",
+      "file": "chapters/132-應用程式開發基礎.md"
+    },
+    {
+      "slug": "133-程式設計基礎練習",
+      "title": "程式設計基礎練習",
+      "file": "chapters/133-程式設計基礎練習.md"
+    },
+    {
+      "slug": "134-web-應用程式開發簡介",
+      "title": "Web 應用程式開發簡介",
+      "file": "chapters/134-web-應用程式開發簡介.md"
+    },
+    {
+      "slug": "135-網頁設計基礎",
+      "title": "網頁設計基礎",
+      "file": "chapters/135-網頁設計基礎.md"
+    },
+    {
+      "slug": "136-命令列-cli",
+      "title": "命令列 CLI",
+      "file": "chapters/136-命令列-cli.md"
+    },
+    {
+      "slug": "137-程式語言1-運作原理",
+      "title": "程式語言1: 運作原理",
+      "file": "chapters/137-程式語言1-運作原理.md"
+    },
+    {
+      "slug": "138-程式語言2-語言設計",
+      "title": "程式語言2: 語言設計",
+      "file": "chapters/138-程式語言2-語言設計.md"
+    },
+    {
+      "slug": "139-程式語言3-資料結構和演算法",
+      "title": "程式語言3: 資料結構和演算法",
+      "file": "chapters/139-程式語言3-資料結構和演算法.md"
+    },
+    {
+      "slug": "140-程式語言4-函數式程式設計",
+      "title": "程式語言4: 函數式程式設計",
+      "file": "chapters/140-程式語言4-函數式程式設計.md"
+    },
+    {
+      "slug": "141-程式語言5-物件導向",
+      "title": "程式語言5: 物件導向",
+      "file": "chapters/141-程式語言5-物件導向.md"
+    },
+    {
+      "slug": "142-程式語言6-例外處理",
+      "title": "程式語言6: 例外處理",
+      "file": "chapters/142-程式語言6-例外處理.md"
+    },
+    {
+      "slug": "143-程式語言7-元編程",
+      "title": "程式語言7: 元編程",
+      "file": "chapters/143-程式語言7-元編程.md"
+    },
+    {
+      "slug": "144-程式語言8-其他",
+      "title": "程式語言8: 其他",
+      "file": "chapters/144-程式語言8-其他.md"
+    },
+    {
+      "slug": "145-資料庫1-基礎篇",
+      "title": "資料庫1: 基礎篇",
+      "file": "chapters/145-資料庫1-基礎篇.md"
+    },
+    {
+      "slug": "146-資料庫2-設計篇",
+      "title": "資料庫2: 設計篇",
+      "file": "chapters/146-資料庫2-設計篇.md"
+    },
+    {
+      "slug": "147-資料庫3-進階篇",
+      "title": "資料庫3: 進階篇",
+      "file": "chapters/147-資料庫3-進階篇.md"
+    },
+    {
+      "slug": "148-網路概論1-tcp-ip",
+      "title": "網路概論1: TCP/IP",
+      "file": "chapters/148-網路概論1-tcp-ip.md"
+    },
+    {
+      "slug": "149-網路概論2-dns",
+      "title": "網路概論2: DNS",
+      "file": "chapters/149-網路概論2-dns.md"
+    },
+    {
+      "slug": "150-網路概論3-http",
+      "title": "網路概論3: HTTP",
+      "file": "chapters/150-網路概論3-http.md"
+    },
+    {
+      "slug": "151-web-apis-設計",
+      "title": "Web APIs 設計",
+      "file": "chapters/151-web-apis-設計.md"
+    },
+    {
+      "slug": "152-軟體工程",
+      "title": "軟體工程",
+      "file": "chapters/152-軟體工程.md"
     }
   ],
   "sourceType": "web",

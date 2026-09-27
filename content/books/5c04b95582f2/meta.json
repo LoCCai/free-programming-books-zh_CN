@@ -3,12 +3,72 @@
   "title": "The Twelve-Factor App",
   "url": "http://12factor.net/zh_cn/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:18.217Z",
+  "fetchedAt": "2026-09-27T11:56:31.336Z",
   "chapters": [
     {
-      "slug": "001-q",
+      "slug": "001-the-twelve-factor-app-简体中文",
       "title": "The Twelve-Factor App （简体中文）",
-      "file": "chapters/001-q.md"
+      "file": "chapters/001-the-twelve-factor-app-简体中文.md"
+    },
+    {
+      "slug": "002-i-基准代码",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/002-i-基准代码.md"
+    },
+    {
+      "slug": "003-ii-依赖",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/003-ii-依赖.md"
+    },
+    {
+      "slug": "004-iii-配置",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/004-iii-配置.md"
+    },
+    {
+      "slug": "005-iv-后端服务",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/005-iv-后端服务.md"
+    },
+    {
+      "slug": "006-v-构建-发布-运行",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/006-v-构建-发布-运行.md"
+    },
+    {
+      "slug": "007-vi-进程",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/007-vi-进程.md"
+    },
+    {
+      "slug": "008-vii-端口绑定",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/008-vii-端口绑定.md"
+    },
+    {
+      "slug": "009-viii-并发",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/009-viii-并发.md"
+    },
+    {
+      "slug": "010-ix-易处理",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/010-ix-易处理.md"
+    },
+    {
+      "slug": "011-x-开发环境与线上环境等价",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/011-x-开发环境与线上环境等价.md"
+    },
+    {
+      "slug": "012-xi-日志",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/012-xi-日志.md"
+    },
+    {
+      "slug": "013-xii-管理进程",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/013-xii-管理进程.md"
     }
   ],
   "sourceType": "web",

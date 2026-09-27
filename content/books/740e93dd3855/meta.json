@@ -3,14 +3,23 @@
   "title": "制造开源软件",
   "url": "http://producingoss.com/zh/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:35.791Z",
+  "fetchedAt": "2026-09-27T12:06:56.546Z",
   "chapters": [
     {
-      "slug": "001-r",
+      "slug": "001-name",
       "title": "Index of /zh",
-      "file": "chapters/001-r.md"
+      "file": "chapters/001-name.md"
+    },
+    {
+      "slug": "002-attachment",
+      "title": "Index of /zh/attachment",
+      "file": "chapters/002-attachment.md"
+    },
+    {
+      "slug": "003-drafts",
+      "title": "Index of /zh/drafts",
+      "file": "chapters/003-drafts.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "Index of /zh"
+  "sourceType": "web"
 }

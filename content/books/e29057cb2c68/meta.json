@@ -3,12 +3,42 @@
   "title": "Grunt中文文档",
   "url": "http://www.gruntjs.net/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:24.416Z",
+  "fetchedAt": "2026-09-27T11:57:12.385Z",
   "chapters": [
     {
-      "slug": "001-n",
+      "slug": "001-grunt-javascript-世界的构建工具-grunt中文网",
       "title": "Grunt: JavaScript 世界的构建工具 | Grunt中文网",
-      "file": "chapters/001-n.md"
+      "file": "chapters/001-grunt-javascript-世界的构建工具-grunt中文网.md"
+    },
+    {
+      "slug": "002-grunt-1-4-0-releasedapril-22-2021",
+      "title": "Grunt 1.4.0 released - Grunt: JavaScript 世界的构建工具 | Grunt中文网",
+      "file": "chapters/002-grunt-1-4-0-releasedapril-22-2021.md"
+    },
+    {
+      "slug": "003-grunt-1-2-0-releasedjuly-03-2020",
+      "title": "Grunt 1.2.0 released - Grunt: JavaScript 世界的构建工具 | Grunt中文网",
+      "file": "chapters/003-grunt-1-2-0-releasedjuly-03-2020.md"
+    },
+    {
+      "slug": "004-grunt-1-1-0-releasedmarch-16-2020",
+      "title": "Grunt 1.1.0 released - Grunt: JavaScript 世界的构建工具 | Grunt中文网",
+      "file": "chapters/004-grunt-1-1-0-releasedmarch-16-2020.md"
+    },
+    {
+      "slug": "005-快速入门",
+      "title": "Grunt: JavaScript 世界的构建工具 | Grunt中文网",
+      "file": "chapters/005-快速入门.md"
+    },
+    {
+      "slug": "006-gruntfile-实例",
+      "title": "Gruntfile 实例 - Grunt: JavaScript 世界的构建工具 | Grunt中文网",
+      "file": "chapters/006-gruntfile-实例.md"
+    },
+    {
+      "slug": "007-配置任务",
+      "title": "Grunt: JavaScript 世界的构建工具 | Grunt中文网",
+      "file": "chapters/007-配置任务.md"
     }
   ],
   "sourceType": "web",

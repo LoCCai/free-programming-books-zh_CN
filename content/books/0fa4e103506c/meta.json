@@ -3,12 +3,12 @@
   "title": "Ext4.1.0 中文文档",
   "url": "http://extjs-doc-cn.github.io/ext4api/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:50.810Z",
+  "fetchedAt": "2026-09-27T12:01:15.890Z",
   "chapters": [
     {
-      "slug": "001-12",
+      "slug": "001-sencha-docs-ext-js",
       "title": "Sencha Docs - Ext JS",
-      "file": "chapters/001-12.md"
+      "file": "chapters/001-sencha-docs-ext-js.md"
     }
   ],
   "sourceType": "web",

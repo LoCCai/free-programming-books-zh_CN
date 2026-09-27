@@ -3,257 +3,997 @@
   "title": "Linux C编程一站式学习",
   "url": "http://akaedu.github.io/book/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:24.285Z",
+  "fetchedAt": "2026-09-27T11:59:47.693Z",
   "chapters": [
     {
-      "slug": "001-t",
+      "slug": "001-linux-c编程一站式学习",
       "title": "Linux C编程一站式学习",
-      "file": "chapters/001-t.md"
+      "file": "chapters/001-linux-c编程一站式学习.md"
     },
     {
-      "slug": "002-12",
+      "slug": "002-历史",
       "title": "历史",
-      "file": "chapters/002-12.md"
+      "file": "chapters/002-历史.md"
     },
     {
-      "slug": "003-12",
+      "slug": "003-前言",
       "title": "前言",
-      "file": "chapters/003-12.md"
+      "file": "chapters/003-前言.md"
     },
     {
-      "slug": "004-12",
+      "slug": "004-i-c语言入门",
       "title": "部分 I. C语言入门",
-      "file": "chapters/004-12.md"
+      "file": "chapters/004-i-c语言入门.md"
     },
     {
-      "slug": "005-12",
+      "slug": "005-1-程序的基本概念",
       "title": "第 1 章 程序的基本概念",
-      "file": "chapters/005-12.md"
+      "file": "chapters/005-1-程序的基本概念.md"
     },
     {
-      "slug": "006-1b",
+      "slug": "006-1-程序和编程语言",
       "title": "1. 程序和编程语言",
-      "file": "chapters/006-1b.md"
+      "file": "chapters/006-1-程序和编程语言.md"
     },
     {
-      "slug": "007-1h",
+      "slug": "007-2-自然语言和形式语言",
       "title": "2. 自然语言和形式语言",
-      "file": "chapters/007-1h.md"
+      "file": "chapters/007-2-自然语言和形式语言.md"
     },
     {
-      "slug": "008-15",
+      "slug": "008-3-程序的调试",
       "title": "3. 程序的调试",
-      "file": "chapters/008-15.md"
+      "file": "chapters/008-3-程序的调试.md"
     },
     {
-      "slug": "009-1e",
+      "slug": "009-4-第一个程序",
       "title": "4. 第一个程序",
-      "file": "chapters/009-1e.md"
+      "file": "chapters/009-4-第一个程序.md"
     },
     {
-      "slug": "010-12",
+      "slug": "010-2-常量-变量和表达式",
       "title": "第 2 章 常量、变量和表达式",
-      "file": "chapters/010-12.md"
+      "file": "chapters/010-2-常量-变量和表达式.md"
     },
     {
-      "slug": "011-15",
+      "slug": "011-1-继续hello-world",
       "title": "1. 继续Hello World",
-      "file": "chapters/011-15.md"
+      "file": "chapters/011-1-继续hello-world.md"
     },
     {
-      "slug": "012-15",
+      "slug": "012-2-常量",
       "title": "2. 常量",
-      "file": "chapters/012-15.md"
+      "file": "chapters/012-2-常量.md"
     },
     {
-      "slug": "013-1b",
+      "slug": "013-3-变量",
       "title": "3. 变量",
-      "file": "chapters/013-1b.md"
+      "file": "chapters/013-3-变量.md"
     },
     {
-      "slug": "014-15",
+      "slug": "014-4-赋值",
       "title": "4. 赋值",
-      "file": "chapters/014-15.md"
+      "file": "chapters/014-4-赋值.md"
     },
     {
-      "slug": "015-1d",
+      "slug": "015-5-表达式",
       "title": "5. 表达式",
-      "file": "chapters/015-1d.md"
+      "file": "chapters/015-5-表达式.md"
     },
     {
-      "slug": "016-15",
+      "slug": "016-6-字符类型与字符编码",
       "title": "6. 字符类型与字符编码",
-      "file": "chapters/016-15.md"
+      "file": "chapters/016-6-字符类型与字符编码.md"
     },
     {
-      "slug": "017-12",
+      "slug": "017-3-简单函数",
       "title": "第 3 章 简单函数",
-      "file": "chapters/017-12.md"
+      "file": "chapters/017-3-简单函数.md"
     },
     {
-      "slug": "018-15",
+      "slug": "018-1-数学函数",
       "title": "1. 数学函数",
-      "file": "chapters/018-15.md"
+      "file": "chapters/018-1-数学函数.md"
     },
     {
-      "slug": "019-15",
+      "slug": "019-2-自定义函数",
       "title": "2. 自定义函数",
-      "file": "chapters/019-15.md"
+      "file": "chapters/019-2-自定义函数.md"
     },
     {
-      "slug": "020-15",
+      "slug": "020-3-形参和实参",
       "title": "3. 形参和实参",
-      "file": "chapters/020-15.md"
+      "file": "chapters/020-3-形参和实参.md"
     },
     {
-      "slug": "021-15",
+      "slug": "021-4-全局变量-局部变量和作用域",
       "title": "4. 全局变量、局部变量和作用域",
-      "file": "chapters/021-15.md"
+      "file": "chapters/021-4-全局变量-局部变量和作用域.md"
     },
     {
-      "slug": "022-12",
+      "slug": "022-4-分支语句",
       "title": "第 4 章 分支语句",
-      "file": "chapters/022-12.md"
+      "file": "chapters/022-4-分支语句.md"
     },
     {
-      "slug": "023-15",
+      "slug": "023-1-if语句",
       "title": "1. if语句",
-      "file": "chapters/023-15.md"
+      "file": "chapters/023-1-if语句.md"
     },
     {
-      "slug": "024-15",
+      "slug": "024-2-if-else语句",
       "title": "2. if/else语句",
-      "file": "chapters/024-15.md"
+      "file": "chapters/024-2-if-else语句.md"
     },
     {
-      "slug": "025-15",
+      "slug": "025-3-布尔代数",
       "title": "3. 布尔代数",
-      "file": "chapters/025-15.md"
+      "file": "chapters/025-3-布尔代数.md"
     },
     {
-      "slug": "026-15",
+      "slug": "026-4-switch语句",
       "title": "4. switch语句",
-      "file": "chapters/026-15.md"
+      "file": "chapters/026-4-switch语句.md"
     },
     {
-      "slug": "027-12",
+      "slug": "027-5-深入理解函数",
       "title": "第 5 章 深入理解函数",
-      "file": "chapters/027-12.md"
+      "file": "chapters/027-5-深入理解函数.md"
     },
     {
-      "slug": "028-15",
+      "slug": "028-1-return语句",
       "title": "1. return语句",
-      "file": "chapters/028-15.md"
+      "file": "chapters/028-1-return语句.md"
     },
     {
-      "slug": "029-15",
+      "slug": "029-2-增量式开发",
       "title": "2. 增量式开发",
-      "file": "chapters/029-15.md"
+      "file": "chapters/029-2-增量式开发.md"
     },
     {
-      "slug": "030-15",
+      "slug": "030-3-递归",
       "title": "3. 递归",
-      "file": "chapters/030-15.md"
+      "file": "chapters/030-3-递归.md"
     },
     {
-      "slug": "031-12",
+      "slug": "031-6-循环语句",
       "title": "第 6 章 循环语句",
-      "file": "chapters/031-12.md"
+      "file": "chapters/031-6-循环语句.md"
     },
     {
-      "slug": "032-15",
+      "slug": "032-1-while语句",
       "title": "1. while语句",
-      "file": "chapters/032-15.md"
+      "file": "chapters/032-1-while语句.md"
     },
     {
-      "slug": "033-15",
+      "slug": "033-2-do-while语句",
       "title": "2. do/while语句",
-      "file": "chapters/033-15.md"
+      "file": "chapters/033-2-do-while语句.md"
     },
     {
-      "slug": "034-15",
+      "slug": "034-3-for语句",
       "title": "3. for语句",
-      "file": "chapters/034-15.md"
+      "file": "chapters/034-3-for语句.md"
     },
     {
-      "slug": "035-15",
+      "slug": "035-4-break和continue语句",
       "title": "4. break和continue语句",
-      "file": "chapters/035-15.md"
+      "file": "chapters/035-4-break和continue语句.md"
     },
     {
-      "slug": "036-15",
+      "slug": "036-5-嵌套循环",
       "title": "5. 嵌套循环",
-      "file": "chapters/036-15.md"
+      "file": "chapters/036-5-嵌套循环.md"
     },
     {
-      "slug": "037-15",
+      "slug": "037-6-goto语句和标号",
       "title": "6. goto语句和标号",
-      "file": "chapters/037-15.md"
+      "file": "chapters/037-6-goto语句和标号.md"
     },
     {
-      "slug": "038-12",
+      "slug": "038-7-结构体",
       "title": "第 7 章 结构体",
-      "file": "chapters/038-12.md"
+      "file": "chapters/038-7-结构体.md"
     },
     {
-      "slug": "039-15",
+      "slug": "039-1-复合类型与结构体",
       "title": "1. 复合类型与结构体",
-      "file": "chapters/039-15.md"
+      "file": "chapters/039-1-复合类型与结构体.md"
     },
     {
-      "slug": "040-15",
+      "slug": "040-2-数据抽象",
       "title": "2. 数据抽象",
-      "file": "chapters/040-15.md"
+      "file": "chapters/040-2-数据抽象.md"
     },
     {
-      "slug": "041-15",
+      "slug": "041-3-数据类型标志",
       "title": "3. 数据类型标志",
-      "file": "chapters/041-15.md"
+      "file": "chapters/041-3-数据类型标志.md"
     },
     {
-      "slug": "042-15",
+      "slug": "042-4-嵌套结构体",
       "title": "4. 嵌套结构体",
-      "file": "chapters/042-15.md"
+      "file": "chapters/042-4-嵌套结构体.md"
     },
     {
-      "slug": "043-12",
+      "slug": "043-8-数组",
       "title": "第 8 章 数组",
-      "file": "chapters/043-12.md"
+      "file": "chapters/043-8-数组.md"
     },
     {
-      "slug": "044-15",
+      "slug": "044-1-数组的基本概念",
       "title": "1. 数组的基本概念",
-      "file": "chapters/044-15.md"
+      "file": "chapters/044-1-数组的基本概念.md"
     },
     {
-      "slug": "045-15",
+      "slug": "045-2-数组应用实例-统计随机数",
       "title": "2. 数组应用实例：统计随机数",
-      "file": "chapters/045-15.md"
+      "file": "chapters/045-2-数组应用实例-统计随机数.md"
     },
     {
-      "slug": "046-15",
+      "slug": "046-3-数组应用实例-直方图",
       "title": "3. 数组应用实例：直方图",
-      "file": "chapters/046-15.md"
+      "file": "chapters/046-3-数组应用实例-直方图.md"
     },
     {
-      "slug": "047-15",
+      "slug": "047-4-字符串",
       "title": "4. 字符串",
-      "file": "chapters/047-15.md"
+      "file": "chapters/047-4-字符串.md"
     },
     {
-      "slug": "048-15",
+      "slug": "048-5-多维数组",
       "title": "5. 多维数组",
-      "file": "chapters/048-15.md"
+      "file": "chapters/048-5-多维数组.md"
     },
     {
-      "slug": "049-12",
+      "slug": "049-9-编码风格",
       "title": "第 9 章 编码风格",
-      "file": "chapters/049-12.md"
+      "file": "chapters/049-9-编码风格.md"
     },
     {
-      "slug": "050-15",
+      "slug": "050-1-缩进和空白",
       "title": "1. 缩进和空白",
-      "file": "chapters/050-15.md"
+      "file": "chapters/050-1-缩进和空白.md"
+    },
+    {
+      "slug": "051-2-注释",
+      "title": "2. 注释",
+      "file": "chapters/051-2-注释.md"
+    },
+    {
+      "slug": "052-3-标识符命名",
+      "title": "3. 标识符命名",
+      "file": "chapters/052-3-标识符命名.md"
+    },
+    {
+      "slug": "053-4-函数",
+      "title": "4. 函数",
+      "file": "chapters/053-4-函数.md"
+    },
+    {
+      "slug": "054-5-indent工具",
+      "title": "5. indent工具",
+      "file": "chapters/054-5-indent工具.md"
+    },
+    {
+      "slug": "055-10-gdb",
+      "title": "第 10 章 gdb",
+      "file": "chapters/055-10-gdb.md"
+    },
+    {
+      "slug": "056-1-单步执行和跟踪函数调用",
+      "title": "1. 单步执行和跟踪函数调用",
+      "file": "chapters/056-1-单步执行和跟踪函数调用.md"
+    },
+    {
+      "slug": "057-2-断点",
+      "title": "2. 断点",
+      "file": "chapters/057-2-断点.md"
+    },
+    {
+      "slug": "058-3-观察点",
+      "title": "3. 观察点",
+      "file": "chapters/058-3-观察点.md"
+    },
+    {
+      "slug": "059-4-段错误",
+      "title": "4. 段错误",
+      "file": "chapters/059-4-段错误.md"
+    },
+    {
+      "slug": "060-11-排序与查找",
+      "title": "第 11 章 排序与查找",
+      "file": "chapters/060-11-排序与查找.md"
+    },
+    {
+      "slug": "061-1-算法的概念",
+      "title": "1. 算法的概念",
+      "file": "chapters/061-1-算法的概念.md"
+    },
+    {
+      "slug": "062-2-插入排序",
+      "title": "2. 插入排序",
+      "file": "chapters/062-2-插入排序.md"
+    },
+    {
+      "slug": "063-3-算法的时间复杂度分析",
+      "title": "3. 算法的时间复杂度分析",
+      "file": "chapters/063-3-算法的时间复杂度分析.md"
+    },
+    {
+      "slug": "064-4-归并排序",
+      "title": "4. 归并排序",
+      "file": "chapters/064-4-归并排序.md"
+    },
+    {
+      "slug": "065-5-线性查找",
+      "title": "5. 线性查找",
+      "file": "chapters/065-5-线性查找.md"
+    },
+    {
+      "slug": "066-6-折半查找",
+      "title": "6. 折半查找",
+      "file": "chapters/066-6-折半查找.md"
+    },
+    {
+      "slug": "067-12-栈与队列",
+      "title": "第 12 章 栈与队列",
+      "file": "chapters/067-12-栈与队列.md"
+    },
+    {
+      "slug": "068-1-数据结构的概念",
+      "title": "1. 数据结构的概念",
+      "file": "chapters/068-1-数据结构的概念.md"
+    },
+    {
+      "slug": "069-2-堆栈",
+      "title": "2. 堆栈",
+      "file": "chapters/069-2-堆栈.md"
+    },
+    {
+      "slug": "070-3-深度优先搜索",
+      "title": "3. 深度优先搜索",
+      "file": "chapters/070-3-深度优先搜索.md"
+    },
+    {
+      "slug": "071-4-队列与广度优先搜索",
+      "title": "4. 队列与广度优先搜索",
+      "file": "chapters/071-4-队列与广度优先搜索.md"
+    },
+    {
+      "slug": "072-5-环形队列",
+      "title": "5. 环形队列",
+      "file": "chapters/072-5-环形队列.md"
+    },
+    {
+      "slug": "073-13-本阶段总结",
+      "title": "第 13 章 本阶段总结",
+      "file": "chapters/073-13-本阶段总结.md"
+    },
+    {
+      "slug": "074-ii-c语言本质",
+      "title": "部分 II. C语言本质",
+      "file": "chapters/074-ii-c语言本质.md"
+    },
+    {
+      "slug": "075-14-计算机中数的表示",
+      "title": "第 14 章 计算机中数的表示",
+      "file": "chapters/075-14-计算机中数的表示.md"
+    },
+    {
+      "slug": "076-1-为什么计算机用二进制计数",
+      "title": "1. 为什么计算机用二进制计数",
+      "file": "chapters/076-1-为什么计算机用二进制计数.md"
+    },
+    {
+      "slug": "077-2-不同进制之间的换算",
+      "title": "2. 不同进制之间的换算",
+      "file": "chapters/077-2-不同进制之间的换算.md"
+    },
+    {
+      "slug": "078-3-整数的加减运算",
+      "title": "3. 整数的加减运算",
+      "file": "chapters/078-3-整数的加减运算.md"
+    },
+    {
+      "slug": "079-4-浮点数",
+      "title": "4. 浮点数",
+      "file": "chapters/079-4-浮点数.md"
+    },
+    {
+      "slug": "080-15-数据类型详解",
+      "title": "第 15 章 数据类型详解",
+      "file": "chapters/080-15-数据类型详解.md"
+    },
+    {
+      "slug": "081-1-整型",
+      "title": "1. 整型",
+      "file": "chapters/081-1-整型.md"
+    },
+    {
+      "slug": "082-2-浮点型",
+      "title": "2. 浮点型",
+      "file": "chapters/082-2-浮点型.md"
+    },
+    {
+      "slug": "083-3-类型转换",
+      "title": "3. 类型转换",
+      "file": "chapters/083-3-类型转换.md"
+    },
+    {
+      "slug": "084-16-运算符详解",
+      "title": "第 16 章 运算符详解",
+      "file": "chapters/084-16-运算符详解.md"
+    },
+    {
+      "slug": "085-1-位运算",
+      "title": "1. 位运算",
+      "file": "chapters/085-1-位运算.md"
+    },
+    {
+      "slug": "086-2-其它运算符",
+      "title": "2. 其它运算符",
+      "file": "chapters/086-2-其它运算符.md"
+    },
+    {
+      "slug": "087-3-side-effect与sequence-point",
+      "title": "3. Side Effect与Sequence Point",
+      "file": "chapters/087-3-side-effect与sequence-point.md"
+    },
+    {
+      "slug": "088-4-运算符总结",
+      "title": "4. 运算符总结",
+      "file": "chapters/088-4-运算符总结.md"
+    },
+    {
+      "slug": "089-17-计算机体系结构基础",
+      "title": "第 17 章 计算机体系结构基础",
+      "file": "chapters/089-17-计算机体系结构基础.md"
+    },
+    {
+      "slug": "090-1-内存与地址",
+      "title": "1. 内存与地址",
+      "file": "chapters/090-1-内存与地址.md"
+    },
+    {
+      "slug": "091-2-cpu",
+      "title": "2. CPU",
+      "file": "chapters/091-2-cpu.md"
+    },
+    {
+      "slug": "092-3-设备",
+      "title": "3. 设备",
+      "file": "chapters/092-3-设备.md"
+    },
+    {
+      "slug": "093-4-mmu",
+      "title": "4. MMU",
+      "file": "chapters/093-4-mmu.md"
+    },
+    {
+      "slug": "094-5-memory-hierarchy",
+      "title": "5. Memory Hierarchy",
+      "file": "chapters/094-5-memory-hierarchy.md"
+    },
+    {
+      "slug": "095-18-x86汇编程序基础",
+      "title": "第 18 章 x86汇编程序基础",
+      "file": "chapters/095-18-x86汇编程序基础.md"
+    },
+    {
+      "slug": "096-1-最简单的汇编程序",
+      "title": "1. 最简单的汇编程序",
+      "file": "chapters/096-1-最简单的汇编程序.md"
+    },
+    {
+      "slug": "097-2-x86的寄存器",
+      "title": "2. x86的寄存器",
+      "file": "chapters/097-2-x86的寄存器.md"
+    },
+    {
+      "slug": "098-3-第二个汇编程序",
+      "title": "3. 第二个汇编程序",
+      "file": "chapters/098-3-第二个汇编程序.md"
+    },
+    {
+      "slug": "099-4-寻址方式",
+      "title": "4. 寻址方式",
+      "file": "chapters/099-4-寻址方式.md"
+    },
+    {
+      "slug": "100-5-elf文件",
+      "title": "5. ELF文件",
+      "file": "chapters/100-5-elf文件.md"
+    },
+    {
+      "slug": "101-19-汇编与c之间的关系",
+      "title": "第 19 章 汇编与C之间的关系",
+      "file": "chapters/101-19-汇编与c之间的关系.md"
+    },
+    {
+      "slug": "102-1-函数调用",
+      "title": "1. 函数调用",
+      "file": "chapters/102-1-函数调用.md"
+    },
+    {
+      "slug": "103-2-main函数和启动例程",
+      "title": "2. main函数和启动例程",
+      "file": "chapters/103-2-main函数和启动例程.md"
+    },
+    {
+      "slug": "104-3-变量的存储布局",
+      "title": "3. 变量的存储布局",
+      "file": "chapters/104-3-变量的存储布局.md"
+    },
+    {
+      "slug": "105-4-结构体和联合体",
+      "title": "4. 结构体和联合体",
+      "file": "chapters/105-4-结构体和联合体.md"
+    },
+    {
+      "slug": "106-5-c内联汇编",
+      "title": "5. C内联汇编",
+      "file": "chapters/106-5-c内联汇编.md"
+    },
+    {
+      "slug": "107-6-volatile限定符",
+      "title": "6. volatile限定符",
+      "file": "chapters/107-6-volatile限定符.md"
+    },
+    {
+      "slug": "108-20-链接详解",
+      "title": "第 20 章 链接详解",
+      "file": "chapters/108-20-链接详解.md"
+    },
+    {
+      "slug": "109-1-多目标文件的链接",
+      "title": "1. 多目标文件的链接",
+      "file": "chapters/109-1-多目标文件的链接.md"
+    },
+    {
+      "slug": "110-2-定义和声明",
+      "title": "2. 定义和声明",
+      "file": "chapters/110-2-定义和声明.md"
+    },
+    {
+      "slug": "111-3-静态库",
+      "title": "3. 静态库",
+      "file": "chapters/111-3-静态库.md"
+    },
+    {
+      "slug": "112-4-共享库",
+      "title": "4. 共享库",
+      "file": "chapters/112-4-共享库.md"
+    },
+    {
+      "slug": "113-5-虚拟内存管理",
+      "title": "5. 虚拟内存管理",
+      "file": "chapters/113-5-虚拟内存管理.md"
+    },
+    {
+      "slug": "114-21-预处理",
+      "title": "第 21 章 预处理",
+      "file": "chapters/114-21-预处理.md"
+    },
+    {
+      "slug": "115-1-预处理的步骤",
+      "title": "1. 预处理的步骤",
+      "file": "chapters/115-1-预处理的步骤.md"
+    },
+    {
+      "slug": "116-2-宏定义",
+      "title": "2. 宏定义",
+      "file": "chapters/116-2-宏定义.md"
+    },
+    {
+      "slug": "117-3-条件预处理指示",
+      "title": "3. 条件预处理指示",
+      "file": "chapters/117-3-条件预处理指示.md"
+    },
+    {
+      "slug": "118-4-其它预处理特性",
+      "title": "4. 其它预处理特性",
+      "file": "chapters/118-4-其它预处理特性.md"
+    },
+    {
+      "slug": "119-22-makefile基础",
+      "title": "第 22 章 Makefile基础",
+      "file": "chapters/119-22-makefile基础.md"
+    },
+    {
+      "slug": "120-1-基本规则",
+      "title": "1. 基本规则",
+      "file": "chapters/120-1-基本规则.md"
+    },
+    {
+      "slug": "121-2-隐含规则和模式规则",
+      "title": "2. 隐含规则和模式规则",
+      "file": "chapters/121-2-隐含规则和模式规则.md"
+    },
+    {
+      "slug": "122-3-变量",
+      "title": "3. 变量",
+      "file": "chapters/122-3-变量.md"
+    },
+    {
+      "slug": "123-4-自动处理头文件的依赖关系",
+      "title": "4. 自动处理头文件的依赖关系",
+      "file": "chapters/123-4-自动处理头文件的依赖关系.md"
+    },
+    {
+      "slug": "124-5-常用的make命令行选项",
+      "title": "5. 常用的make命令行选项",
+      "file": "chapters/124-5-常用的make命令行选项.md"
+    },
+    {
+      "slug": "125-23-指针",
+      "title": "第 23 章 指针",
+      "file": "chapters/125-23-指针.md"
+    },
+    {
+      "slug": "126-1-指针的基本概念",
+      "title": "1. 指针的基本概念",
+      "file": "chapters/126-1-指针的基本概念.md"
+    },
+    {
+      "slug": "127-2-指针类型的参数和返回值",
+      "title": "2. 指针类型的参数和返回值",
+      "file": "chapters/127-2-指针类型的参数和返回值.md"
+    },
+    {
+      "slug": "128-3-指针与数组",
+      "title": "3. 指针与数组",
+      "file": "chapters/128-3-指针与数组.md"
+    },
+    {
+      "slug": "129-4-指针与const限定符",
+      "title": "4. 指针与const限定符",
+      "file": "chapters/129-4-指针与const限定符.md"
+    },
+    {
+      "slug": "130-6-指向指针的指针与指针数组",
+      "title": "6. 指向指针的指针与指针数组",
+      "file": "chapters/130-6-指向指针的指针与指针数组.md"
+    },
+    {
+      "slug": "131-7-指向数组的指针与多维数组",
+      "title": "7. 指向数组的指针与多维数组",
+      "file": "chapters/131-7-指向数组的指针与多维数组.md"
+    },
+    {
+      "slug": "132-8-函数类型和函数指针类型",
+      "title": "8. 函数类型和函数指针类型",
+      "file": "chapters/132-8-函数类型和函数指针类型.md"
+    },
+    {
+      "slug": "133-9-不完全类型和复杂声明",
+      "title": "9. 不完全类型和复杂声明",
+      "file": "chapters/133-9-不完全类型和复杂声明.md"
+    },
+    {
+      "slug": "134-24-函数接口",
+      "title": "第 24 章 函数接口",
+      "file": "chapters/134-24-函数接口.md"
+    },
+    {
+      "slug": "135-1-本章的预备知识",
+      "title": "1. 本章的预备知识",
+      "file": "chapters/135-1-本章的预备知识.md"
+    },
+    {
+      "slug": "136-2-传入参数与传出参数",
+      "title": "2. 传入参数与传出参数",
+      "file": "chapters/136-2-传入参数与传出参数.md"
+    },
+    {
+      "slug": "137-3-两层指针的参数",
+      "title": "3. 两层指针的参数",
+      "file": "chapters/137-3-两层指针的参数.md"
+    },
+    {
+      "slug": "138-4-返回值是指针的情况",
+      "title": "4. 返回值是指针的情况",
+      "file": "chapters/138-4-返回值是指针的情况.md"
+    },
+    {
+      "slug": "139-5-回调函数",
+      "title": "5. 回调函数",
+      "file": "chapters/139-5-回调函数.md"
+    },
+    {
+      "slug": "140-6-可变参数",
+      "title": "6. 可变参数",
+      "file": "chapters/140-6-可变参数.md"
+    },
+    {
+      "slug": "141-25-c标准库",
+      "title": "第 25 章 C标准库",
+      "file": "chapters/141-25-c标准库.md"
+    },
+    {
+      "slug": "142-1-字符串操作函数",
+      "title": "1. 字符串操作函数",
+      "file": "chapters/142-1-字符串操作函数.md"
+    },
+    {
+      "slug": "143-2-标准i-o库函数",
+      "title": "2. 标准I/O库函数",
+      "file": "chapters/143-2-标准i-o库函数.md"
+    },
+    {
+      "slug": "144-3-数值字符串转换函数",
+      "title": "3. 数值字符串转换函数",
+      "file": "chapters/144-3-数值字符串转换函数.md"
+    },
+    {
+      "slug": "145-4-分配内存的函数",
+      "title": "4. 分配内存的函数",
+      "file": "chapters/145-4-分配内存的函数.md"
+    },
+    {
+      "slug": "146-26-链表-二叉树和哈希表",
+      "title": "第 26 章 链表、二叉树和哈希表",
+      "file": "chapters/146-26-链表-二叉树和哈希表.md"
+    },
+    {
+      "slug": "147-1-链表",
+      "title": "1. 链表",
+      "file": "chapters/147-1-链表.md"
+    },
+    {
+      "slug": "148-2-二叉树",
+      "title": "2. 二叉树",
+      "file": "chapters/148-2-二叉树.md"
+    },
+    {
+      "slug": "149-3-哈希表",
+      "title": "3. 哈希表",
+      "file": "chapters/149-3-哈希表.md"
+    },
+    {
+      "slug": "150-27-本阶段总结",
+      "title": "第 27 章 本阶段总结",
+      "file": "chapters/150-27-本阶段总结.md"
+    },
+    {
+      "slug": "151-iii-linux系统编程",
+      "title": "部分 III. Linux系统编程",
+      "file": "chapters/151-iii-linux系统编程.md"
+    },
+    {
+      "slug": "152-28-文件与i-o",
+      "title": "第 28 章 文件与I/O",
+      "file": "chapters/152-28-文件与i-o.md"
+    },
+    {
+      "slug": "153-1-汇编程序的hello-world",
+      "title": "1. 汇编程序的Hello world",
+      "file": "chapters/153-1-汇编程序的hello-world.md"
+    },
+    {
+      "slug": "154-2-c标准i-o库函数与unbuffered-i-o函数",
+      "title": "2. C标准I/O库函数与Unbuffered I/O函数",
+      "file": "chapters/154-2-c标准i-o库函数与unbuffered-i-o函数.md"
+    },
+    {
+      "slug": "155-3-open-close",
+      "title": "3. open/close",
+      "file": "chapters/155-3-open-close.md"
+    },
+    {
+      "slug": "156-4-read-write",
+      "title": "4. read/write",
+      "file": "chapters/156-4-read-write.md"
+    },
+    {
+      "slug": "157-5-lseek",
+      "title": "5. lseek",
+      "file": "chapters/157-5-lseek.md"
+    },
+    {
+      "slug": "158-6-fcntl",
+      "title": "6. fcntl",
+      "file": "chapters/158-6-fcntl.md"
+    },
+    {
+      "slug": "159-7-ioctl",
+      "title": "7. ioctl",
+      "file": "chapters/159-7-ioctl.md"
+    },
+    {
+      "slug": "160-8-mmap",
+      "title": "8. mmap",
+      "file": "chapters/160-8-mmap.md"
+    },
+    {
+      "slug": "161-29-文件系统",
+      "title": "第 29 章 文件系统",
+      "file": "chapters/161-29-文件系统.md"
+    },
+    {
+      "slug": "162-1-引言",
+      "title": "1. 引言",
+      "file": "chapters/162-1-引言.md"
+    },
+    {
+      "slug": "163-2-ext2文件系统",
+      "title": "2. ext2文件系统",
+      "file": "chapters/163-2-ext2文件系统.md"
+    },
+    {
+      "slug": "164-3-vfs",
+      "title": "3. VFS",
+      "file": "chapters/164-3-vfs.md"
+    },
+    {
+      "slug": "165-30-进程",
+      "title": "第 30 章 进程",
+      "file": "chapters/165-30-进程.md"
+    },
+    {
+      "slug": "166-1-引言",
+      "title": "1. 引言",
+      "file": "chapters/166-1-引言.md"
+    },
+    {
+      "slug": "167-2-环境变量",
+      "title": "2. 环境变量",
+      "file": "chapters/167-2-环境变量.md"
+    },
+    {
+      "slug": "168-3-进程控制",
+      "title": "3. 进程控制",
+      "file": "chapters/168-3-进程控制.md"
+    },
+    {
+      "slug": "169-4-进程间通信",
+      "title": "4. 进程间通信",
+      "file": "chapters/169-4-进程间通信.md"
+    },
+    {
+      "slug": "170-5-练习-实现简单的shell",
+      "title": "5. 练习：实现简单的Shell",
+      "file": "chapters/170-5-练习-实现简单的shell.md"
+    },
+    {
+      "slug": "171-31-shell脚本",
+      "title": "第 31 章 Shell脚本",
+      "file": "chapters/171-31-shell脚本.md"
+    },
+    {
+      "slug": "172-1-shell的历史",
+      "title": "1. Shell的历史",
+      "file": "chapters/172-1-shell的历史.md"
+    },
+    {
+      "slug": "173-2-shell如何执行命令",
+      "title": "2. Shell如何执行命令",
+      "file": "chapters/173-2-shell如何执行命令.md"
+    },
+    {
+      "slug": "174-3-shell的基本语法",
+      "title": "3. Shell的基本语法",
+      "file": "chapters/174-3-shell的基本语法.md"
+    },
+    {
+      "slug": "175-4-bash启动脚本",
+      "title": "4. bash启动脚本",
+      "file": "chapters/175-4-bash启动脚本.md"
+    },
+    {
+      "slug": "176-5-shell脚本语法",
+      "title": "5. Shell脚本语法",
+      "file": "chapters/176-5-shell脚本语法.md"
+    },
+    {
+      "slug": "177-6-shell脚本的调试方法",
+      "title": "6. Shell脚本的调试方法",
+      "file": "chapters/177-6-shell脚本的调试方法.md"
+    },
+    {
+      "slug": "178-32-正则表达式",
+      "title": "第 32 章 正则表达式",
+      "file": "chapters/178-32-正则表达式.md"
+    },
+    {
+      "slug": "179-1-引言",
+      "title": "1. 引言",
+      "file": "chapters/179-1-引言.md"
+    },
+    {
+      "slug": "180-2-基本语法",
+      "title": "2. 基本语法",
+      "file": "chapters/180-2-基本语法.md"
+    },
+    {
+      "slug": "181-3-sed",
+      "title": "3. sed",
+      "file": "chapters/181-3-sed.md"
+    },
+    {
+      "slug": "182-4-awk",
+      "title": "4. awk",
+      "file": "chapters/182-4-awk.md"
+    },
+    {
+      "slug": "183-33-信号",
+      "title": "第 33 章 信号",
+      "file": "chapters/183-33-信号.md"
+    },
+    {
+      "slug": "184-1-信号的基本概念",
+      "title": "1. 信号的基本概念",
+      "file": "chapters/184-1-信号的基本概念.md"
+    },
+    {
+      "slug": "185-2-产生信号",
+      "title": "2. 产生信号",
+      "file": "chapters/185-2-产生信号.md"
+    },
+    {
+      "slug": "186-3-阻塞信号",
+      "title": "3. 阻塞信号",
+      "file": "chapters/186-3-阻塞信号.md"
+    },
+    {
+      "slug": "187-4-捕捉信号",
+      "title": "4. 捕捉信号",
+      "file": "chapters/187-4-捕捉信号.md"
+    },
+    {
+      "slug": "188-34-终端-作业控制与守护进程",
+      "title": "第 34 章 终端、作业控制与守护进程",
+      "file": "chapters/188-34-终端-作业控制与守护进程.md"
+    },
+    {
+      "slug": "189-1-终端",
+      "title": "1. 终端",
+      "file": "chapters/189-1-终端.md"
+    },
+    {
+      "slug": "190-2-作业控制",
+      "title": "2. 作业控制",
+      "file": "chapters/190-2-作业控制.md"
+    },
+    {
+      "slug": "191-3-守护进程",
+      "title": "3. 守护进程",
+      "file": "chapters/191-3-守护进程.md"
+    },
+    {
+      "slug": "192-35-线程",
+      "title": "第 35 章 线程",
+      "file": "chapters/192-35-线程.md"
+    },
+    {
+      "slug": "193-1-线程的概念",
+      "title": "1. 线程的概念",
+      "file": "chapters/193-1-线程的概念.md"
+    },
+    {
+      "slug": "194-2-线程控制",
+      "title": "2. 线程控制",
+      "file": "chapters/194-2-线程控制.md"
+    },
+    {
+      "slug": "195-3-线程间同步",
+      "title": "3. 线程间同步",
+      "file": "chapters/195-3-线程间同步.md"
+    },
+    {
+      "slug": "196-4-编程练习",
+      "title": "4. 编程练习",
+      "file": "chapters/196-4-编程练习.md"
+    },
+    {
+      "slug": "197-36-tcp-ip协议基础",
+      "title": "第 36 章 TCP/IP协议基础",
+      "file": "chapters/197-36-tcp-ip协议基础.md"
+    },
+    {
+      "slug": "198-1-tcp-ip协议栈与数据包封装",
+      "title": "1. TCP/IP协议栈与数据包封装",
+      "file": "chapters/198-1-tcp-ip协议栈与数据包封装.md"
     }
   ],
   "sourceType": "web",

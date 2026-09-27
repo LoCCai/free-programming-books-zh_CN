@@ -32,6 +32,9 @@ export async function fetchOne(book, { workDir }) {
     fetchedAt: startedAt,
     chapters: [],
   };
+  // 重抓保护:已有 ok 内容时,新结果不劣于旧(章节数不少于)才覆盖;
+  // 抓取失败则完整保留旧内容,避免"目录发现退化"造成倒退
+  const prevMeta = readPrevMeta(outDir);
   try {
     let result;
     if (/github\.com/i.test(book.url)) {
@@ -51,6 +54,13 @@ export async function fetchOne(book, { workDir }) {
       meta.sourceType = 'web';
     }
     if (!result.chapters.length) throw new Error('没有可用章节');
+    if (prevMeta?.status === 'ok' && result.chapters.length < prevMeta.chapters.length) {
+      meta.status = 'failed';
+      meta.error = `新抓取 ${result.chapters.length} 章少于既有 ${prevMeta.chapters.length} 章,保留旧内容`;
+      meta.fetchedAt = new Date().toISOString();
+      meta.keptPrev = true;
+      return meta;
+    }
 
     rmSync(outDir, { recursive: true, force: true });
     mkdirSync(join(outDir, 'chapters'), { recursive: true });
@@ -68,6 +78,11 @@ export async function fetchOne(book, { workDir }) {
     meta.status = 'failed';
     meta.error = String(e.message || e).slice(0, 200);
     meta.fetchedAt = new Date().toISOString();
+    if (prevMeta?.status === 'ok' && prevMeta.chapters.length > 0) {
+      // 保留既有 ok 内容,不落盘 failed meta
+      meta.keptPrev = true;
+      return meta;
+    }
     // failed:清理半成品,详情页走外链降级
     rmSync(outDir, { recursive: true, force: true });
   }
@@ -80,6 +95,14 @@ export async function fetchOne(book, { workDir }) {
     writeJson(join(CONTENT_DIR, book.id, 'meta.json'), meta);
   }
   return meta;
+}
+
+function readPrevMeta(outDir) {
+  try {
+    return JSON.parse(readFileSync(join(outDir, 'meta.json'), 'utf8'));
+  } catch {
+    return null;
+  }
 }
 
 function writeJson(p, data) {

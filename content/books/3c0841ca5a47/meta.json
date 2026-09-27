@@ -3,12 +3,27 @@
   "title": "Google Java编程风格指南",
   "url": "https://hawstein.com/2014/01/20/google-java-style/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:25.151Z",
+  "fetchedAt": "2026-09-27T12:00:20.801Z",
   "chapters": [
     {
-      "slug": "001-1e",
+      "slug": "001-google-java-编程风格指南-hawstein-的博客",
       "title": "Google Java 编程风格指南 - Hawstein 的博客",
-      "file": "chapters/001-1e.md"
+      "file": "chapters/001-google-java-编程风格指南-hawstein-的博客.md"
+    },
+    {
+      "slug": "002-hawstein",
+      "title": "Hawstein's Blog - Hawstein 的博客",
+      "file": "chapters/002-hawstein.md"
+    },
+    {
+      "slug": "003-thoughts",
+      "title": "Thoughts - Hawstein 的博客",
+      "file": "chapters/003-thoughts.md"
+    },
+    {
+      "slug": "004-about",
+      "title": "About Hawstein - Hawstein 的博客",
+      "file": "chapters/004-about.md"
     }
   ],
   "sourceType": "web",

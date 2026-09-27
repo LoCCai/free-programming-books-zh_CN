@@ -3,12 +3,37 @@
   "title": "Apache 中文手册",
   "url": "https://www.jinbuguo.com/apache/manual/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:07.415Z",
+  "fetchedAt": "2026-09-27T11:54:43.836Z",
   "chapters": [
     {
-      "slug": "001-1d",
+      "slug": "001-apache-http-server-version-2-2-文档-apache",
       "title": "Apache HTTP Server Version 2.2 文档 － Apache 2.2 中文手册 [金步国]",
-      "file": "chapters/001-1d.md"
+      "file": "chapters/001-apache-http-server-version-2-2-文档-apache.md"
+    },
+    {
+      "slug": "002-模块索引",
+      "title": "模块索引 － Apache 2.2 中文手册 [金步国]",
+      "file": "chapters/002-模块索引.md"
+    },
+    {
+      "slug": "003-指令索引",
+      "title": "指令索引 － Apache 2.2 中文手册 [金步国]",
+      "file": "chapters/003-指令索引.md"
+    },
+    {
+      "slug": "004-常见问题",
+      "title": "经常问到的问题 － Apache 2.2 中文手册 [金步国]",
+      "file": "chapters/004-常见问题.md"
+    },
+    {
+      "slug": "005-词汇表",
+      "title": "词汇表 － Apache 2.2 中文手册 [金步国]",
+      "file": "chapters/005-词汇表.md"
+    },
+    {
+      "slug": "006-站点导航",
+      "title": "站点导航 － Apache 2.2 中文手册 [金步国]",
+      "file": "chapters/006-站点导航.md"
     }
   ],
   "sourceType": "web",

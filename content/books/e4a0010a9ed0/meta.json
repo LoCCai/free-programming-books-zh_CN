@@ -3,12 +3,997 @@
   "title": "MDN JavaScript 中文文档",
   "url": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:37.239Z",
+  "fetchedAt": "2026-09-27T12:03:22.227Z",
   "chapters": [
     {
-      "slug": "001-1j",
+      "slug": "001-了解更多并加入-mdn-web-docs-社区",
+      "title": "MDN Web 文档的本地化 - MDN Web 文档项目 | MDN",
+      "file": "chapters/001-了解更多并加入-mdn-web-docs-社区.md"
+    },
+    {
+      "slug": "002-函数优先",
+      "title": "头等函数 - MDN Web 文档术语表：Web 相关术语的定义 | MDN",
+      "file": "chapters/002-函数优先.md"
+    },
+    {
+      "slug": "003-基于原型",
+      "title": "基于原型编程 - MDN Web 文档术语表：Web 相关术语的定义 | MDN",
+      "file": "chapters/003-基于原型.md"
+    },
+    {
+      "slug": "004-单线程",
+      "title": "线程 - MDN Web 文档术语表：Web 相关术语的定义 | MDN",
+      "file": "chapters/004-单线程.md"
+    },
+    {
+      "slug": "005-动态",
+      "title": "动态类型 - MDN Web 文档术语表：Web 相关术语的定义 | MDN",
+      "file": "chapters/005-动态.md"
+    },
+    {
+      "slug": "006-eval",
+      "title": "eval() - JavaScript | MDN",
+      "file": "chapters/006-eval.md"
+    },
+    {
+      "slug": "007-for-in",
+      "title": "for...in - JavaScript | MDN",
+      "file": "chapters/007-for-in.md"
+    },
+    {
+      "slug": "008-object-工具方法",
+      "title": "Object - JavaScript | MDN",
+      "file": "chapters/008-object-工具方法.md"
+    },
+    {
+      "slug": "009-tostring",
+      "title": "Function.prototype.toString() - JavaScript | MDN",
+      "file": "chapters/009-tostring.md"
+    },
+    {
+      "slug": "010-api",
+      "title": "API - MDN Web 文档术语表：Web 相关术语的定义 | MDN",
+      "file": "chapters/010-api.md"
+    },
+    {
+      "slug": "011-dom",
+      "title": "文档对象模型 - MDN Web 文档术语表：Web 相关术语的定义 | MDN",
+      "file": "chapters/011-dom.md"
+    },
+    {
+      "slug": "012-ecmascript",
+      "title": "JavaScript 技术概览 - JavaScript | MDN",
+      "file": "chapters/012-ecmascript.md"
+    },
+    {
+      "slug": "013-javascript-指南",
+      "title": "JavaScript 指南 - JavaScript | MDN",
+      "file": "chapters/013-javascript-指南.md"
+    },
+    {
+      "slug": "014-javascript-参考",
+      "title": "JavaScript 参考 - JavaScript | MDN",
+      "file": "chapters/014-javascript-参考.md"
+    },
+    {
+      "slug": "015-javascript-主题学习区",
+      "title": "创建 JavaScript 代码块 - 学习 Web 开发 | MDN",
+      "file": "chapters/015-javascript-主题学习区.md"
+    },
+    {
+      "slug": "016-介绍-javascript-对象",
+      "title": "JavaScript 对象入门 - 学习 Web 开发 | MDN",
+      "file": "chapters/016-介绍-javascript-对象.md"
+    },
+    {
+      "slug": "017-异步-javascript",
+      "title": "异步 JavaScript - 学习 Web 开发 | MDN",
+      "file": "chapters/017-异步-javascript.md"
+    },
+    {
+      "slug": "018-客户端-web-api",
+      "title": "客户端 Web API - 学习 Web 开发 | MDN",
+      "file": "chapters/018-客户端-web-api.md"
+    },
+    {
+      "slug": "019-理解客户端-javascript-框架",
+      "title": "JavaScript 客户端和函数库 - 学习 Web 开发 | MDN",
+      "file": "chapters/019-理解客户端-javascript-框架.md"
+    },
+    {
+      "slug": "020-javascript-语言概述",
+      "title": "JavaScript 语言概览 - JavaScript | MDN",
+      "file": "chapters/020-javascript-语言概述.md"
+    },
+    {
+      "slug": "021-javascript-数据结构",
+      "title": "JavaScript 数据类型和数据结构 - JavaScript | MDN",
+      "file": "chapters/021-javascript-数据结构.md"
+    },
+    {
+      "slug": "022-相等比较和相同",
+      "title": "相等比较和相同 - JavaScript | MDN",
+      "file": "chapters/022-相等比较和相同.md"
+    },
+    {
+      "slug": "023-object-is",
+      "title": "Object.is() - JavaScript | MDN",
+      "file": "chapters/023-object-is.md"
+    },
+    {
+      "slug": "024-属性的可枚举性和所有权",
+      "title": "属性的可枚举性和所有权 - JavaScript | MDN",
+      "file": "chapters/024-属性的可枚举性和所有权.md"
+    },
+    {
+      "slug": "025-闭包",
+      "title": "闭包 - JavaScript | MDN",
+      "file": "chapters/025-闭包.md"
+    },
+    {
+      "slug": "026-继承与原型链",
+      "title": "继承与原型链 - JavaScript | MDN",
+      "file": "chapters/026-继承与原型链.md"
+    },
+    {
+      "slug": "027-内存管理",
+      "title": "内存管理 - JavaScript | MDN",
+      "file": "chapters/027-内存管理.md"
+    },
+    {
+      "slug": "028-事件循环",
+      "title": "JavaScript 执行模型 - JavaScript | MDN",
+      "file": "chapters/028-事件循环.md"
+    },
+    {
+      "slug": "029-标准对象",
+      "title": "JavaScript 标准内置对象 - JavaScript | MDN",
+      "file": "chapters/029-标准对象.md"
+    },
+    {
+      "slug": "030-array",
+      "title": "Array - JavaScript | MDN",
+      "file": "chapters/030-array.md"
+    },
+    {
+      "slug": "031-boolean",
+      "title": "Boolean - JavaScript | MDN",
+      "file": "chapters/031-boolean.md"
+    },
+    {
+      "slug": "032-date",
+      "title": "Date - JavaScript | MDN",
+      "file": "chapters/032-date.md"
+    },
+    {
+      "slug": "033-error",
+      "title": "Error - JavaScript | MDN",
+      "file": "chapters/033-error.md"
+    },
+    {
+      "slug": "034-function",
+      "title": "Function - JavaScript | MDN",
+      "file": "chapters/034-function.md"
+    },
+    {
+      "slug": "035-json",
+      "title": "JSON - JavaScript | MDN",
+      "file": "chapters/035-json.md"
+    },
+    {
+      "slug": "036-math",
+      "title": "Math - JavaScript | MDN",
+      "file": "chapters/036-math.md"
+    },
+    {
+      "slug": "037-number",
+      "title": "Number - JavaScript | MDN",
+      "file": "chapters/037-number.md"
+    },
+    {
+      "slug": "038-regexp",
+      "title": "RegExp - JavaScript | MDN",
+      "file": "chapters/038-regexp.md"
+    },
+    {
+      "slug": "039-string",
+      "title": "String - JavaScript | MDN",
+      "file": "chapters/039-string.md"
+    },
+    {
+      "slug": "040-map",
+      "title": "Map - JavaScript | MDN",
+      "file": "chapters/040-map.md"
+    },
+    {
+      "slug": "041-set",
+      "title": "Set - JavaScript | MDN",
+      "file": "chapters/041-set.md"
+    },
+    {
+      "slug": "042-weakmap",
+      "title": "WeakMap - JavaScript | MDN",
+      "file": "chapters/042-weakmap.md"
+    },
+    {
+      "slug": "043-weakset",
+      "title": "WeakSet - JavaScript | MDN",
+      "file": "chapters/043-weakset.md"
+    },
+    {
+      "slug": "044-表达式和运算符",
+      "title": "表达式和运算符 - JavaScript | MDN",
+      "file": "chapters/044-表达式和运算符.md"
+    },
+    {
+      "slug": "045-instanceof",
+      "title": "instanceof - JavaScript | MDN",
+      "file": "chapters/045-instanceof.md"
+    },
+    {
+      "slug": "046-typeof",
+      "title": "typeof - JavaScript | MDN",
+      "file": "chapters/046-typeof.md"
+    },
+    {
+      "slug": "047-new",
+      "title": "new - JavaScript | MDN",
+      "file": "chapters/047-new.md"
+    },
+    {
+      "slug": "048-this",
+      "title": "this - JavaScript | MDN",
+      "file": "chapters/048-this.md"
+    },
+    {
+      "slug": "049-运算符优先级",
+      "title": "运算符优先级 - JavaScript | MDN",
+      "file": "chapters/049-运算符优先级.md"
+    },
+    {
+      "slug": "050-语句和声明",
+      "title": "语句和声明 - JavaScript | MDN",
+      "file": "chapters/050-语句和声明.md"
+    },
+    {
+      "slug": "051-do-while",
+      "title": "do...while - JavaScript | MDN",
+      "file": "chapters/051-do-while.md"
+    },
+    {
+      "slug": "052-for-of",
+      "title": "for...of - JavaScript | MDN",
+      "file": "chapters/052-for-of.md"
+    },
+    {
+      "slug": "053-try-catch",
+      "title": "try...catch - JavaScript | MDN",
+      "file": "chapters/053-try-catch.md"
+    },
+    {
+      "slug": "054-let",
+      "title": "let - JavaScript | MDN",
+      "file": "chapters/054-let.md"
+    },
+    {
+      "slug": "055-var",
+      "title": "var - JavaScript | MDN",
+      "file": "chapters/055-var.md"
+    },
+    {
+      "slug": "056-const",
+      "title": "const - JavaScript | MDN",
+      "file": "chapters/056-const.md"
+    },
+    {
+      "slug": "057-if-else",
+      "title": "if...else - JavaScript | MDN",
+      "file": "chapters/057-if-else.md"
+    },
+    {
+      "slug": "058-switch",
+      "title": "switch - JavaScript | MDN",
+      "file": "chapters/058-switch.md"
+    },
+    {
+      "slug": "059-函数",
+      "title": "函数 - JavaScript | MDN",
+      "file": "chapters/059-函数.md"
+    },
+    {
+      "slug": "060-类",
+      "title": "类 - JavaScript | MDN",
+      "file": "chapters/060-类.md"
+    },
+    {
+      "slug": "061-了解如何参与贡献",
+      "title": "初识 MDN Web 文档 - MDN Web 文档项目 | MDN",
+      "file": "chapters/061-了解如何参与贡献.md"
+    },
+    {
+      "slug": "062-javascript",
       "title": "JavaScript | MDN",
-      "file": "chapters/001-1j.md"
+      "file": "chapters/062-javascript.md"
+    },
+    {
+      "slug": "063-介绍",
+      "title": "介绍 - JavaScript | MDN",
+      "file": "chapters/063-介绍.md"
+    },
+    {
+      "slug": "064-语法和数据类型",
+      "title": "语法与类型 - JavaScript | MDN",
+      "file": "chapters/064-语法和数据类型.md"
+    },
+    {
+      "slug": "065-流程控制与错误处理",
+      "title": "控制流与错误处理 - JavaScript | MDN",
+      "file": "chapters/065-流程控制与错误处理.md"
+    },
+    {
+      "slug": "066-循环与迭代",
+      "title": "循环与迭代 - JavaScript | MDN",
+      "file": "chapters/066-循环与迭代.md"
+    },
+    {
+      "slug": "067-函数",
+      "title": "函数 - JavaScript | MDN",
+      "file": "chapters/067-函数.md"
+    },
+    {
+      "slug": "068-表达式与运算符",
+      "title": "表达式与运算符 - JavaScript | MDN",
+      "file": "chapters/068-表达式与运算符.md"
+    },
+    {
+      "slug": "069-数字与字符串",
+      "title": "数值和字符串 - JavaScript | MDN",
+      "file": "chapters/069-数字与字符串.md"
+    },
+    {
+      "slug": "070-表达日期与时间",
+      "title": "表达日期与时间 - JavaScript | MDN",
+      "file": "chapters/070-表达日期与时间.md"
+    },
+    {
+      "slug": "071-正则表达式",
+      "title": "正则表达式 - JavaScript | MDN",
+      "file": "chapters/071-正则表达式.md"
+    },
+    {
+      "slug": "072-索引集合类",
+      "title": "索引集合 - JavaScript | MDN",
+      "file": "chapters/072-索引集合类.md"
+    },
+    {
+      "slug": "073-带键的集合",
+      "title": "带键的集合 - JavaScript | MDN",
+      "file": "chapters/073-带键的集合.md"
+    },
+    {
+      "slug": "074-使用对象",
+      "title": "使用对象 - JavaScript | MDN",
+      "file": "chapters/074-使用对象.md"
+    },
+    {
+      "slug": "075-使用类",
+      "title": "使用类 - JavaScript | MDN",
+      "file": "chapters/075-使用类.md"
+    },
+    {
+      "slug": "076-使用-promise",
+      "title": "使用 Promise - JavaScript | MDN",
+      "file": "chapters/076-使用-promise.md"
+    },
+    {
+      "slug": "077-javascript-类型化数组",
+      "title": "JavaScript 类型化数组 - JavaScript | MDN",
+      "file": "chapters/077-javascript-类型化数组.md"
+    },
+    {
+      "slug": "078-迭代器和生成器",
+      "title": "迭代器和生成器 - JavaScript | MDN",
+      "file": "chapters/078-迭代器和生成器.md"
+    },
+    {
+      "slug": "079-资源管理",
+      "title": "JavaScript resource management - JavaScript | MDN",
+      "file": "chapters/079-资源管理.md"
+    },
+    {
+      "slug": "080-国际化",
+      "title": "Internationalization - JavaScript | MDN",
+      "file": "chapters/080-国际化.md"
+    },
+    {
+      "slug": "081-javascript-模块",
+      "title": "JavaScript 模块 - JavaScript | MDN",
+      "file": "chapters/081-javascript-模块.md"
+    },
+    {
+      "slug": "082-元编程",
+      "title": "元编程 - JavaScript | MDN",
+      "file": "chapters/082-元编程.md"
+    },
+    {
+      "slug": "083-abstractmodulesource",
+      "title": "AbstractModuleSource - JavaScript | MDN",
+      "file": "chapters/083-abstractmodulesource.md"
+    },
+    {
+      "slug": "084-aggregateerror",
+      "title": "AggregateError - JavaScript | MDN",
+      "file": "chapters/084-aggregateerror.md"
+    },
+    {
+      "slug": "085-arraybuffer",
+      "title": "ArrayBuffer - JavaScript | MDN",
+      "file": "chapters/085-arraybuffer.md"
+    },
+    {
+      "slug": "086-asyncdisposablestack",
+      "title": "AsyncDisposableStack - JavaScript | MDN",
+      "file": "chapters/086-asyncdisposablestack.md"
+    },
+    {
+      "slug": "087-asyncfunction",
+      "title": "AsyncFunction - JavaScript | MDN",
+      "file": "chapters/087-asyncfunction.md"
+    },
+    {
+      "slug": "088-asyncgenerator",
+      "title": "AsyncGenerator - JavaScript | MDN",
+      "file": "chapters/088-asyncgenerator.md"
+    },
+    {
+      "slug": "089-asyncgeneratorfunction",
+      "title": "AsyncGeneratorFunction - JavaScript | MDN",
+      "file": "chapters/089-asyncgeneratorfunction.md"
+    },
+    {
+      "slug": "090-asynciterator",
+      "title": "AsyncIterator - JavaScript | MDN",
+      "file": "chapters/090-asynciterator.md"
+    },
+    {
+      "slug": "091-atomics",
+      "title": "Atomics - JavaScript | MDN",
+      "file": "chapters/091-atomics.md"
+    },
+    {
+      "slug": "092-bigint",
+      "title": "BigInt - JavaScript | MDN",
+      "file": "chapters/092-bigint.md"
+    },
+    {
+      "slug": "093-bigint64array",
+      "title": "BigInt64Array - JavaScript | MDN",
+      "file": "chapters/093-bigint64array.md"
+    },
+    {
+      "slug": "094-biguint64array",
+      "title": "BigUint64Array - JavaScript | MDN",
+      "file": "chapters/094-biguint64array.md"
+    },
+    {
+      "slug": "095-dataview",
+      "title": "DataView - JavaScript | MDN",
+      "file": "chapters/095-dataview.md"
+    },
+    {
+      "slug": "096-decodeuri",
+      "title": "decodeURI() - JavaScript | MDN",
+      "file": "chapters/096-decodeuri.md"
+    },
+    {
+      "slug": "097-decodeuricomponent",
+      "title": "decodeURIComponent() - JavaScript | MDN",
+      "file": "chapters/097-decodeuricomponent.md"
+    },
+    {
+      "slug": "098-disposablestack",
+      "title": "DisposableStack - JavaScript | MDN",
+      "file": "chapters/098-disposablestack.md"
+    },
+    {
+      "slug": "099-encodeuri",
+      "title": "encodeURI() - JavaScript | MDN",
+      "file": "chapters/099-encodeuri.md"
+    },
+    {
+      "slug": "100-encodeuricomponent",
+      "title": "encodeURIComponent() - JavaScript | MDN",
+      "file": "chapters/100-encodeuricomponent.md"
+    },
+    {
+      "slug": "101-escape",
+      "title": "escape() - JavaScript | MDN",
+      "file": "chapters/101-escape.md"
+    },
+    {
+      "slug": "102-evalerror",
+      "title": "EvalError - JavaScript | MDN",
+      "file": "chapters/102-evalerror.md"
+    },
+    {
+      "slug": "103-finalizationregistry",
+      "title": "FinalizationRegistry - JavaScript | MDN",
+      "file": "chapters/103-finalizationregistry.md"
+    },
+    {
+      "slug": "104-float16array",
+      "title": "Float16Array - JavaScript | MDN",
+      "file": "chapters/104-float16array.md"
+    },
+    {
+      "slug": "105-float32array",
+      "title": "Float32Array - JavaScript | MDN",
+      "file": "chapters/105-float32array.md"
+    },
+    {
+      "slug": "106-float64array",
+      "title": "Float64Array - JavaScript | MDN",
+      "file": "chapters/106-float64array.md"
+    },
+    {
+      "slug": "107-generator",
+      "title": "Generator - JavaScript | MDN",
+      "file": "chapters/107-generator.md"
+    },
+    {
+      "slug": "108-generatorfunction",
+      "title": "GeneratorFunction - JavaScript | MDN",
+      "file": "chapters/108-generatorfunction.md"
+    },
+    {
+      "slug": "109-globalthis",
+      "title": "globalThis - JavaScript | MDN",
+      "file": "chapters/109-globalthis.md"
+    },
+    {
+      "slug": "110-infinity",
+      "title": "Infinity - JavaScript | MDN",
+      "file": "chapters/110-infinity.md"
+    },
+    {
+      "slug": "111-int8array",
+      "title": "Int8Array - JavaScript | MDN",
+      "file": "chapters/111-int8array.md"
+    },
+    {
+      "slug": "112-int16array",
+      "title": "Int16Array - JavaScript | MDN",
+      "file": "chapters/112-int16array.md"
+    },
+    {
+      "slug": "113-int32array",
+      "title": "Int32Array - JavaScript | MDN",
+      "file": "chapters/113-int32array.md"
+    },
+    {
+      "slug": "114-internalerror",
+      "title": "InternalError - JavaScript | MDN",
+      "file": "chapters/114-internalerror.md"
+    },
+    {
+      "slug": "115-intl",
+      "title": "Intl - JavaScript | MDN",
+      "file": "chapters/115-intl.md"
+    },
+    {
+      "slug": "116-isfinite",
+      "title": "isFinite() - JavaScript | MDN",
+      "file": "chapters/116-isfinite.md"
+    },
+    {
+      "slug": "117-isnan",
+      "title": "isNaN() - JavaScript | MDN",
+      "file": "chapters/117-isnan.md"
+    },
+    {
+      "slug": "118-iterator",
+      "title": "Iterator - JavaScript | MDN",
+      "file": "chapters/118-iterator.md"
+    },
+    {
+      "slug": "119-nan",
+      "title": "NaN - JavaScript | MDN",
+      "file": "chapters/119-nan.md"
+    },
+    {
+      "slug": "120-parsefloat",
+      "title": "parseFloat - JavaScript | MDN",
+      "file": "chapters/120-parsefloat.md"
+    },
+    {
+      "slug": "121-parseint",
+      "title": "parseInt - JavaScript | MDN",
+      "file": "chapters/121-parseint.md"
+    },
+    {
+      "slug": "122-promise",
+      "title": "Promise - JavaScript | MDN",
+      "file": "chapters/122-promise.md"
+    },
+    {
+      "slug": "123-proxy",
+      "title": "Proxy - JavaScript | MDN",
+      "file": "chapters/123-proxy.md"
+    },
+    {
+      "slug": "124-rangeerror",
+      "title": "RangeError - JavaScript | MDN",
+      "file": "chapters/124-rangeerror.md"
+    },
+    {
+      "slug": "125-referenceerror",
+      "title": "ReferenceError - JavaScript | MDN",
+      "file": "chapters/125-referenceerror.md"
+    },
+    {
+      "slug": "126-reflect",
+      "title": "Reflect - JavaScript | MDN",
+      "file": "chapters/126-reflect.md"
+    },
+    {
+      "slug": "127-sharedarraybuffer",
+      "title": "SharedArrayBuffer - JavaScript | MDN",
+      "file": "chapters/127-sharedarraybuffer.md"
+    },
+    {
+      "slug": "128-suppressederror",
+      "title": "SuppressedError - JavaScript | MDN",
+      "file": "chapters/128-suppressederror.md"
+    },
+    {
+      "slug": "129-symbol",
+      "title": "Symbol - JavaScript | MDN",
+      "file": "chapters/129-symbol.md"
+    },
+    {
+      "slug": "130-syntaxerror",
+      "title": "SyntaxError - JavaScript | MDN",
+      "file": "chapters/130-syntaxerror.md"
+    },
+    {
+      "slug": "131-temporal",
+      "title": "Temporal - JavaScript | MDN",
+      "file": "chapters/131-temporal.md"
+    },
+    {
+      "slug": "132-typedarray",
+      "title": "TypedArray - JavaScript | MDN",
+      "file": "chapters/132-typedarray.md"
+    },
+    {
+      "slug": "133-typeerror",
+      "title": "TypeError - JavaScript | MDN",
+      "file": "chapters/133-typeerror.md"
+    },
+    {
+      "slug": "134-uint8array",
+      "title": "Uint8Array - JavaScript | MDN",
+      "file": "chapters/134-uint8array.md"
+    },
+    {
+      "slug": "135-uint8clampedarray",
+      "title": "Uint8ClampedArray - JavaScript | MDN",
+      "file": "chapters/135-uint8clampedarray.md"
+    },
+    {
+      "slug": "136-uint16array",
+      "title": "Uint16Array - JavaScript | MDN",
+      "file": "chapters/136-uint16array.md"
+    },
+    {
+      "slug": "137-uint32array",
+      "title": "Uint32Array - JavaScript | MDN",
+      "file": "chapters/137-uint32array.md"
+    },
+    {
+      "slug": "138-undefined",
+      "title": "undefined - JavaScript | MDN",
+      "file": "chapters/138-undefined.md"
+    },
+    {
+      "slug": "139-unescape",
+      "title": "unescape() - JavaScript | MDN",
+      "file": "chapters/139-unescape.md"
+    },
+    {
+      "slug": "140-urierror",
+      "title": "URIError - JavaScript | MDN",
+      "file": "chapters/140-urierror.md"
+    },
+    {
+      "slug": "141-weakref",
+      "title": "WeakRef - JavaScript | MDN",
+      "file": "chapters/141-weakref.md"
+    },
+    {
+      "slug": "142-加法",
+      "title": "加法（+） - JavaScript | MDN",
+      "file": "chapters/142-加法.md"
+    },
+    {
+      "slug": "143-加法赋值",
+      "title": "加法赋值（+=） - JavaScript | MDN",
+      "file": "chapters/143-加法赋值.md"
+    },
+    {
+      "slug": "144-赋值",
+      "title": "赋值（=） - JavaScript | MDN",
+      "file": "chapters/144-赋值.md"
+    },
+    {
+      "slug": "145-异步函数-async-function-表达式",
+      "title": "异步函数（async function）表达式 - JavaScript | MDN",
+      "file": "chapters/145-异步函数-async-function-表达式.md"
+    },
+    {
+      "slug": "146-async-function-表达式",
+      "title": "async function* 表达式 - JavaScript | MDN",
+      "file": "chapters/146-async-function-表达式.md"
+    },
+    {
+      "slug": "147-await",
+      "title": "await - JavaScript | MDN",
+      "file": "chapters/147-await.md"
+    },
+    {
+      "slug": "148-按位与",
+      "title": "按位与（&） - JavaScript | MDN",
+      "file": "chapters/148-按位与.md"
+    },
+    {
+      "slug": "149-按位与赋值",
+      "title": "按位与赋值（&=） - JavaScript | MDN",
+      "file": "chapters/149-按位与赋值.md"
+    },
+    {
+      "slug": "150-按位非",
+      "title": "按位非（~） - JavaScript | MDN",
+      "file": "chapters/150-按位非.md"
+    },
+    {
+      "slug": "151-按位或",
+      "title": "按位或（|） - JavaScript | MDN",
+      "file": "chapters/151-按位或.md"
+    },
+    {
+      "slug": "152-按位或赋值",
+      "title": "按位或赋值（|=） - JavaScript | MDN",
+      "file": "chapters/152-按位或赋值.md"
+    },
+    {
+      "slug": "153-按位异或",
+      "title": "按位异或（^） - JavaScript | MDN",
+      "file": "chapters/153-按位异或.md"
+    },
+    {
+      "slug": "154-按位异或赋值",
+      "title": "按位异或赋值 (^=) - JavaScript | MDN",
+      "file": "chapters/154-按位异或赋值.md"
+    },
+    {
+      "slug": "155-类表达式",
+      "title": "类表达式 - JavaScript | MDN",
+      "file": "chapters/155-类表达式.md"
+    },
+    {
+      "slug": "156-逗号运算符",
+      "title": "逗号运算符（,） - JavaScript | MDN",
+      "file": "chapters/156-逗号运算符.md"
+    },
+    {
+      "slug": "157-条件-三元-运算符",
+      "title": "条件（三元）运算符 - JavaScript | MDN",
+      "file": "chapters/157-条件-三元-运算符.md"
+    },
+    {
+      "slug": "158-自减",
+      "title": "自减（--） - JavaScript | MDN",
+      "file": "chapters/158-自减.md"
+    },
+    {
+      "slug": "159-delete-运算符",
+      "title": "delete 运算符 - JavaScript | MDN",
+      "file": "chapters/159-delete-运算符.md"
+    },
+    {
+      "slug": "160-解构",
+      "title": "解构 - JavaScript | MDN",
+      "file": "chapters/160-解构.md"
+    },
+    {
+      "slug": "161-除法",
+      "title": "除法（/） - JavaScript | MDN",
+      "file": "chapters/161-除法.md"
+    },
+    {
+      "slug": "162-除法赋值",
+      "title": "除法赋值（/=） - JavaScript | MDN",
+      "file": "chapters/162-除法赋值.md"
+    },
+    {
+      "slug": "163-相等",
+      "title": "相等（==） - JavaScript | MDN",
+      "file": "chapters/163-相等.md"
+    },
+    {
+      "slug": "164-幂",
+      "title": "幂（**） - JavaScript | MDN",
+      "file": "chapters/164-幂.md"
+    },
+    {
+      "slug": "165-幂赋值",
+      "title": "幂赋值（**=） - JavaScript | MDN",
+      "file": "chapters/165-幂赋值.md"
+    },
+    {
+      "slug": "166-函数表达式",
+      "title": "函数表达式 - JavaScript | MDN",
+      "file": "chapters/166-函数表达式.md"
+    },
+    {
+      "slug": "167-function-表达式",
+      "title": "function* 表达式 - JavaScript | MDN",
+      "file": "chapters/167-function-表达式.md"
+    },
+    {
+      "slug": "168-大于",
+      "title": "大于（>） - JavaScript | MDN",
+      "file": "chapters/168-大于.md"
+    },
+    {
+      "slug": "169-大于等于",
+      "title": "大于等于（>=） - JavaScript | MDN",
+      "file": "chapters/169-大于等于.md"
+    },
+    {
+      "slug": "170-圆括号运算符",
+      "title": "圆括号运算符 - JavaScript | MDN",
+      "file": "chapters/170-圆括号运算符.md"
+    },
+    {
+      "slug": "171-import-meta",
+      "title": "import.meta - JavaScript | MDN",
+      "file": "chapters/171-import-meta.md"
+    },
+    {
+      "slug": "172-import-meta-resolve",
+      "title": "import.meta.resolve() - JavaScript | MDN",
+      "file": "chapters/172-import-meta-resolve.md"
+    },
+    {
+      "slug": "173-import",
+      "title": "import() - JavaScript | MDN",
+      "file": "chapters/173-import.md"
+    },
+    {
+      "slug": "174-import-defer",
+      "title": "import.defer() - JavaScript | MDN",
+      "file": "chapters/174-import-defer.md"
+    },
+    {
+      "slug": "175-import-source",
+      "title": "import.source() - JavaScript | MDN",
+      "file": "chapters/175-import-source.md"
+    },
+    {
+      "slug": "176-in",
+      "title": "in - JavaScript | MDN",
+      "file": "chapters/176-in.md"
+    },
+    {
+      "slug": "177-自增",
+      "title": "自增（++） - JavaScript | MDN",
+      "file": "chapters/177-自增.md"
+    },
+    {
+      "slug": "178-不相等",
+      "title": "不相等（!=） - JavaScript | MDN",
+      "file": "chapters/178-不相等.md"
+    },
+    {
+      "slug": "179-左移",
+      "title": "左移 (<<) - JavaScript | MDN",
+      "file": "chapters/179-左移.md"
+    },
+    {
+      "slug": "180-左移赋值",
+      "title": "左移赋值（<<=） - JavaScript | MDN",
+      "file": "chapters/180-左移赋值.md"
+    },
+    {
+      "slug": "181-小于",
+      "title": "小于（<） - JavaScript | MDN",
+      "file": "chapters/181-小于.md"
+    },
+    {
+      "slug": "182-小于等于",
+      "title": "小于等于（<=） - JavaScript | MDN",
+      "file": "chapters/182-小于等于.md"
+    },
+    {
+      "slug": "183-逻辑与",
+      "title": "逻辑与（&&） - JavaScript | MDN",
+      "file": "chapters/183-逻辑与.md"
+    },
+    {
+      "slug": "184-逻辑与赋值",
+      "title": "逻辑与赋值（&&=） - JavaScript | MDN",
+      "file": "chapters/184-逻辑与赋值.md"
+    },
+    {
+      "slug": "185-逻辑非",
+      "title": "逻辑非（!） - JavaScript | MDN",
+      "file": "chapters/185-逻辑非.md"
+    },
+    {
+      "slug": "186-逻辑或",
+      "title": "逻辑或（||） - JavaScript | MDN",
+      "file": "chapters/186-逻辑或.md"
+    },
+    {
+      "slug": "187-逻辑或赋值",
+      "title": "逻辑或赋值（||=） - JavaScript | MDN",
+      "file": "chapters/187-逻辑或赋值.md"
+    },
+    {
+      "slug": "188-乘法",
+      "title": "乘法（*） - JavaScript | MDN",
+      "file": "chapters/188-乘法.md"
+    },
+    {
+      "slug": "189-乘法赋值",
+      "title": "乘法赋值（*=） - JavaScript | MDN",
+      "file": "chapters/189-乘法赋值.md"
+    },
+    {
+      "slug": "190-new-target",
+      "title": "new.target - JavaScript | MDN",
+      "file": "chapters/190-new-target.md"
+    },
+    {
+      "slug": "191-null",
+      "title": "null - JavaScript | MDN",
+      "file": "chapters/191-null.md"
+    },
+    {
+      "slug": "192-逻辑空赋值",
+      "title": "逻辑空赋值（??=） - JavaScript | MDN",
+      "file": "chapters/192-逻辑空赋值.md"
+    },
+    {
+      "slug": "193-空值合并运算符",
+      "title": "空值合并运算符（??） - JavaScript | MDN",
+      "file": "chapters/193-空值合并运算符.md"
+    },
+    {
+      "slug": "194-对象初始化器",
+      "title": "对象初始化器 - JavaScript | MDN",
+      "file": "chapters/194-对象初始化器.md"
+    },
+    {
+      "slug": "195-可选链运算符",
+      "title": "可选链运算符（?.） - JavaScript | MDN",
+      "file": "chapters/195-可选链运算符.md"
+    },
+    {
+      "slug": "196-属性访问器",
+      "title": "属性访问器 - JavaScript | MDN",
+      "file": "chapters/196-属性访问器.md"
+    },
+    {
+      "slug": "197-取余",
+      "title": "取余（%） - JavaScript | MDN",
+      "file": "chapters/197-取余.md"
+    },
+    {
+      "slug": "198-取余赋值",
+      "title": "取余赋值（%=） - JavaScript | MDN",
+      "file": "chapters/198-取余赋值.md"
     }
   ],
   "sourceType": "web",

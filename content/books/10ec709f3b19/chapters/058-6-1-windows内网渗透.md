@@ -1,0 +1,48 @@
+-   [Docs](https://websec.readthedocs.io/zh/latest/index.html) »
+-   [6\. 内网渗透](https://websec.readthedocs.io/zh/latest/intranet/index.html) »
+-   6.1. Windows内网渗透
+-   [Edit on GitHub](https://github.com/LyleMi/Learn-Web-Hacking/blob/master/source/intranet/windows/index.rst)
+
+* * *
+
+内容索引:
+
+-   [6.1.1. 信息收集](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html)
+    -   [6.1.1.1. 基本命令](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-2)
+    -   [6.1.1.2. 域信息](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-3)
+    -   [6.1.1.3. 用户信息](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-4)
+    -   [6.1.1.4. 网络信息](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-5)
+    -   [6.1.1.5. 防火墙](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-6)
+    -   [6.1.1.6. 密码信息](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-7)
+    -   [6.1.1.7. 票据信息](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-8)
+    -   [6.1.1.8. 特殊文件](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-9)
+    -   [6.1.1.9. 局域网存活主机](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-10)
+    -   [6.1.1.10. 其他](https://websec.readthedocs.io/zh/latest/intranet/windows/info.html#section-11)
+-   [6.1.2. 持久化](https://websec.readthedocs.io/zh/latest/intranet/windows/persistence.html)
+    -   [6.1.2.1. 隐藏文件](https://websec.readthedocs.io/zh/latest/intranet/windows/persistence.html#section-2)
+    -   [6.1.2.2. 后门](https://websec.readthedocs.io/zh/latest/intranet/windows/persistence.html#section-3)
+    -   [6.1.2.3. 自启动](https://websec.readthedocs.io/zh/latest/intranet/windows/persistence.html#section-9)
+-   [6.1.3. 权限](https://websec.readthedocs.io/zh/latest/intranet/windows/privilege.html)
+    -   [6.1.3.1. UAC](https://websec.readthedocs.io/zh/latest/intranet/windows/privilege.html#uac)
+    -   [6.1.3.2. 权限提升](https://websec.readthedocs.io/zh/latest/intranet/windows/privilege.html#section-3)
+-   [6.1.4. 痕迹清理](https://websec.readthedocs.io/zh/latest/intranet/windows/trace.html)
+    -   [6.1.4.1. 日志](https://websec.readthedocs.io/zh/latest/intranet/windows/trace.html#section-2)
+    -   [6.1.4.2. 注册表](https://websec.readthedocs.io/zh/latest/intranet/windows/trace.html#section-3)
+    -   [6.1.4.3. 文件](https://websec.readthedocs.io/zh/latest/intranet/windows/trace.html#section-5)
+    -   [6.1.4.4. 时间轴](https://websec.readthedocs.io/zh/latest/intranet/windows/trace.html#section-6)
+    -   [6.1.4.5. 彻底删除](https://websec.readthedocs.io/zh/latest/intranet/windows/trace.html#section-7)
+-   [6.1.5. 横向移动](https://websec.readthedocs.io/zh/latest/intranet/windows/lateral.html)
+    -   [6.1.5.1. 常见入口](https://websec.readthedocs.io/zh/latest/intranet/windows/lateral.html#section-2)
+    -   [6.1.5.2. LOLBAS](https://websec.readthedocs.io/zh/latest/intranet/windows/lateral.html#lolbas)
+-   [6.1.6. MSPRC](https://websec.readthedocs.io/zh/latest/intranet/windows/msrpc.html)
+-   [6.1.7. 域渗透](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/index.html)
+    -   [6.1.7.1. 用户](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/user.html)
+    -   [6.1.7.2. 内网常用协议](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/proto.html)
+    -   [6.1.7.3. 域](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/domain.html)
+    -   [6.1.7.4. Active Directory](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/ad.html)
+    -   [6.1.7.5. ADCS](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/adcs.html)
+    -   [6.1.7.6. 组策略](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/gp.html)
+    -   [6.1.7.7. Kerberos的Windows实现](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/winkerberos.html)
+    -   [6.1.7.8. 域内攻击思路](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/atkmap.html)
+    -   [6.1.7.9. 攻击类型](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/attack.html)
+    -   [6.1.7.10. 防护](https://websec.readthedocs.io/zh/latest/intranet/windows/domain/defense.html)

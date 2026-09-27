@@ -3,12 +3,12 @@
   "title": "Boost 库中文教程",
   "url": "http://zh.highscore.de/cpp/boost/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:33.456Z",
+  "fetchedAt": "2026-09-27T11:58:34.836Z",
   "chapters": [
     {
-      "slug": "001-x",
+      "slug": "001-highscore-the-boost-c-libraries",
       "title": "Highscore - The Boost C++ Libraries",
-      "file": "chapters/001-x.md"
+      "file": "chapters/001-highscore-the-boost-c-libraries.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,12 @@
   "title": "笨办法学 Python",
   "url": "http://liam0205.me/attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:29.713Z",
+  "fetchedAt": "2026-09-27T12:02:52.945Z",
   "chapters": [
     {
-      "slug": "001-2a",
+      "slug": "001-liam0205-me",
       "title": "liam0205.me",
-      "file": "chapters/001-2a.md"
+      "file": "chapters/001-liam0205-me.md"
     }
   ],
   "sourceType": "web",

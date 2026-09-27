@@ -3,12 +3,32 @@
   "title": "鸟哥的Linux私房菜",
   "url": "http://linux.vbird.org/",
   "status": "ok",
-  "fetchedAt": "2026-09-26T19:08:32.785Z",
+  "fetchedAt": "2026-09-27T11:54:13.335Z",
   "chapters": [
     {
-      "slug": "001-n",
+      "slug": "001-鳥站",
       "title": "鳥哥私房菜 - 鳥哥的首頁",
-      "file": "chapters/001-n.md"
+      "file": "chapters/001-鳥站.md"
+    },
+    {
+      "slug": "002-基礎篇",
+      "title": "鳥哥私房菜 - Linux 基礎學習篇各年份各版本的學習資料",
+      "file": "chapters/002-基礎篇.md"
+    },
+    {
+      "slug": "003-訓練教材",
+      "title": "鳥哥私房菜 - Linux 基礎訓練篇各年份各版本的學習資料",
+      "file": "chapters/003-訓練教材.md"
+    },
+    {
+      "slug": "004-伺服器篇",
+      "title": "鳥哥私房菜 - Linux 伺服器篇各年份各版本的學習資料",
+      "file": "chapters/004-伺服器篇.md"
+    },
+    {
+      "slug": "005-環工篇",
+      "title": "鳥哥私房菜 - 關於環境工程",
+      "file": "chapters/005-環工篇.md"
     }
   ],
   "sourceType": "web",

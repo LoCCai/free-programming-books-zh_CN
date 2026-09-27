@@ -3,12 +3,112 @@
   "title": "Fortran77和90/95编程入门",
   "url": "http://micro.ustc.edu.cn/Fortran/ZJDing/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:47.517Z",
+  "fetchedAt": "2026-09-27T11:59:22.944Z",
   "chapters": [
     {
-      "slug": "001-14",
+      "slug": "001-fortran",
       "title": "FORTRAN",
-      "file": "chapters/001-14.md"
+      "file": "chapters/001-fortran.md"
+    },
+    {
+      "slug": "002-fortran语言发展概况",
+      "title": "Sec1-1",
+      "file": "chapters/002-fortran语言发展概况.md"
+    },
+    {
+      "slug": "003-fortran程序简例",
+      "title": "Sec1-2",
+      "file": "chapters/003-fortran程序简例.md"
+    },
+    {
+      "slug": "004-fortran程序的基本组成",
+      "title": "Sec1-3",
+      "file": "chapters/004-fortran程序的基本组成.md"
+    },
+    {
+      "slug": "005-数学运算",
+      "title": "Sec1-4",
+      "file": "chapters/005-数学运算.md"
+    },
+    {
+      "slug": "006-compaq-visual-fortran软件的使用",
+      "title": "Sec1-5",
+      "file": "chapters/006-compaq-visual-fortran软件的使用.md"
+    },
+    {
+      "slug": "007-算法和流程图",
+      "title": "Sec2-1",
+      "file": "chapters/007-算法和流程图.md"
+    },
+    {
+      "slug": "008-逻辑运算",
+      "title": "Sec2-2",
+      "file": "chapters/008-逻辑运算.md"
+    },
+    {
+      "slug": "009-选择结构",
+      "title": "Sec2-3",
+      "file": "chapters/009-选择结构.md"
+    },
+    {
+      "slug": "010-单纯循环",
+      "title": "Sec3-1",
+      "file": "chapters/010-单纯循环.md"
+    },
+    {
+      "slug": "011-条件循环",
+      "title": "Sec3-2",
+      "file": "chapters/011-条件循环.md"
+    },
+    {
+      "slug": "012-数据类型和属性",
+      "title": "Sec4-1",
+      "file": "chapters/012-数据类型和属性.md"
+    },
+    {
+      "slug": "013-非数值型数据",
+      "title": "Sec4-2",
+      "file": "chapters/013-非数值型数据.md"
+    },
+    {
+      "slug": "014-派生数据类型",
+      "title": "Sec4-3",
+      "file": "chapters/014-派生数据类型.md"
+    },
+    {
+      "slug": "015-数组定义与类型",
+      "title": "Sec5-1",
+      "file": "chapters/015-数组定义与类型.md"
+    },
+    {
+      "slug": "016-数组赋值与运算",
+      "title": "Sec5-2",
+      "file": "chapters/016-数组赋值与运算.md"
+    },
+    {
+      "slug": "017-程序单元结构",
+      "title": "Sec6-1",
+      "file": "chapters/017-程序单元结构.md"
+    },
+    {
+      "slug": "018-过程",
+      "title": "Sec6-2",
+      "file": "chapters/018-过程.md"
+    },
+    {
+      "slug": "019-模块",
+      "title": "Sec6-3",
+      "file": "chapters/019-模块.md"
+    },
+    {
+      "slug": "020-输入输出编辑",
+      "title": "Sec7-1",
+      "file": "chapters/020-输入输出编辑.md"
+    },
+    {
+      "slug": "021-文件的存取",
+      "title": "Sec7-2",
+      "file": "chapters/021-文件的存取.md"
     }
   ],
   "sourceType": "web",

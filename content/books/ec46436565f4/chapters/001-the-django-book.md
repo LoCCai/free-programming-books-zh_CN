@@ -1,0 +1,35 @@
+[About](http://new.djangobook.com/about/) | [Comment help](http://new.djangobook.com/about/comments/) | [Contact us](http://new.djangobook.com/contact/) | [Errata](http://new.djangobook.com/errata/) | [Buy the print version on Amazon.com](http://www.amazon.com/gp/product/1590597257?ie=UTF8&tag=jacobianorg-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=1590597257)
+
+## Table of contents
+
+## 2.0, English -> Chinese
+
+1.  Django book 2.0 的中文翻译。
+2.  [最近更新](https://djangobook.py3k.cn/2.0/changelog/) - [贡献者](https://djangobook.py3k.cn/2.0/hero/)
+3.  方便自己也方便大家，敬请积极参与翻译！
+4.  [第一章：介紹Django 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter01/) [阅读](https://djangobook.py3k.cn/2.0/chapter01/) [翻译](https://djangobook.py3k.cn/2.0/chapter01/translate/)
+5.  [第二章 入门 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter02/) [阅读](https://djangobook.py3k.cn/2.0/chapter02/) [翻译](https://djangobook.py3k.cn/2.0/chapter02/translate/)
+6.  [第三章 视图和URL配置 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter03/) [阅读](https://djangobook.py3k.cn/2.0/chapter03/) [翻译](https://djangobook.py3k.cn/2.0/chapter03/translate/)
+7.  [第四章：模版 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter04/) [阅读](https://djangobook.py3k.cn/2.0/chapter04/) [翻译](https://djangobook.py3k.cn/2.0/chapter04/translate/)
+8.  [第五章：模型 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter05/) [阅读](https://djangobook.py3k.cn/2.0/chapter05/) [翻译](https://djangobook.py3k.cn/2.0/chapter05/translate/)
+9.  [第六章：Admin 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter06/) [阅读](https://djangobook.py3k.cn/2.0/chapter06/) [翻译](https://djangobook.py3k.cn/2.0/chapter06/translate/)
+10.  [第七章：表单 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter07/) [阅读](https://djangobook.py3k.cn/2.0/chapter07/) [翻译](https://djangobook.py3k.cn/2.0/chapter07/translate/)
+11.  [第八章 高级视图和URL配置 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter08/) [阅读](https://djangobook.py3k.cn/2.0/chapter08/) [翻译](https://djangobook.py3k.cn/2.0/chapter08/translate/)
+12.  [第九章：模版高级进阶 完成度 99.74%](https://djangobook.py3k.cn/2.0/chapter09/) [阅读](https://djangobook.py3k.cn/2.0/chapter09/) [翻译](https://djangobook.py3k.cn/2.0/chapter09/translate/)
+13.  [第十章 模型高级进阶 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter10/) [阅读](https://djangobook.py3k.cn/2.0/chapter10/) [翻译](https://djangobook.py3k.cn/2.0/chapter10/translate/)
+14.  [第十一章：通用视图 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter11/) [阅读](https://djangobook.py3k.cn/2.0/chapter11/) [翻译](https://djangobook.py3k.cn/2.0/chapter11/translate/)
+15.  [第二十章： 部署Django 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter12/) [阅读](https://djangobook.py3k.cn/2.0/chapter12/) [翻译](https://djangobook.py3k.cn/2.0/chapter12/translate/)
+16.  [第十三章： 输出非HTML内容 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter13/) [阅读](https://djangobook.py3k.cn/2.0/chapter13/) [翻译](https://djangobook.py3k.cn/2.0/chapter13/translate/)
+17.  [第十四章： 会话、用户和注册 完成度 86.16%](https://djangobook.py3k.cn/2.0/chapter14/) [阅读](https://djangobook.py3k.cn/2.0/chapter14/) [翻译](https://djangobook.py3k.cn/2.0/chapter14/translate/)
+18.  [第十五章： 缓存机制 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter15/) [阅读](https://djangobook.py3k.cn/2.0/chapter15/) [翻译](https://djangobook.py3k.cn/2.0/chapter15/translate/)
+19.  [第十四章 集成的子框架 django.contrib 完成度 99.72%](https://djangobook.py3k.cn/2.0/chapter16/) [阅读](https://djangobook.py3k.cn/2.0/chapter16/) [翻译](https://djangobook.py3k.cn/2.0/chapter16/translate/)
+20.  [第十七章： 中间件 完成度 95.08%](https://djangobook.py3k.cn/2.0/chapter17/) [阅读](https://djangobook.py3k.cn/2.0/chapter17/) [翻译](https://djangobook.py3k.cn/2.0/chapter17/translate/)
+21.  [第十八章： 集成已有的数据库和应用 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter18/) [阅读](https://djangobook.py3k.cn/2.0/chapter18/) [翻译](https://djangobook.py3k.cn/2.0/chapter18/translate/)
+22.  [第十九章： 国际化 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter19/) [阅读](https://djangobook.py3k.cn/2.0/chapter19/) [翻译](https://djangobook.py3k.cn/2.0/chapter19/translate/)
+23.  [第二十章： 安全 完成度 100.00%](https://djangobook.py3k.cn/2.0/chapter20/) [阅读](https://djangobook.py3k.cn/2.0/chapter20/) [翻译](https://djangobook.py3k.cn/2.0/chapter20/translate/)
+24.  本站由[VCC](http://djangopeople.com/vcc/)使用[Django](http://www.djangoproject.com/)搭建。
+
+Copyright 2006 Adrian Holovaty and Jacob Kaplan-Moss.  
+This work is licensed under the [GNU Free Document License](http://new.djangobook.com/license/).  
+Hosting graciously provided by [![media temple](https://djangobook.py3k.cn/sitemedia/mt.png)](http://mediatemple.net/)  
+Chinese translate hosting by [py3k.cn](mailto:info@py3k.cn).

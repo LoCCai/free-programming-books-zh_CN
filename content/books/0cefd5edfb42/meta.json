@@ -3,12 +3,12 @@
   "title": "前端代码规范",
   "url": "http://alloyteam.github.io/CodeGuide/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:44.769Z",
+  "fetchedAt": "2026-09-27T11:58:55.859Z",
   "chapters": [
     {
-      "slug": "001-11",
+      "slug": "001-code-guide-by-alloyteam",
       "title": "Code Guide by @AlloyTeam",
-      "file": "chapters/001-11.md"
+      "file": "chapters/001-code-guide-by-alloyteam.md"
     }
   ],
   "sourceType": "web",

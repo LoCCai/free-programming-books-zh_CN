@@ -3,12 +3,47 @@
   "title": "express.js 中文文档",
   "url": "http://expressjs.jser.us/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:39.642Z",
+  "fetchedAt": "2026-09-27T12:01:04.237Z",
   "chapters": [
     {
-      "slug": "001-p",
+      "slug": "001-首页",
       "title": "Express - 中文文档( node.js Web应用框架 )",
-      "file": "chapters/001-p.md"
+      "file": "chapters/001-首页.md"
+    },
+    {
+      "slug": "002-api-参考",
+      "title": "Express - api参考",
+      "file": "chapters/002-api-参考.md"
+    },
+    {
+      "slug": "003-新手指南",
+      "title": "Express - 新手指南",
+      "file": "chapters/003-新手指南.md"
+    },
+    {
+      "slug": "004-应用展示",
+      "title": "Express - 应用展示",
+      "file": "chapters/004-应用展示.md"
+    },
+    {
+      "slug": "005-社区",
+      "title": "Express - 社区",
+      "file": "chapters/005-社区.md"
+    },
+    {
+      "slug": "006-问答",
+      "title": "Express - 问答",
+      "file": "chapters/006-问答.md"
+    },
+    {
+      "slug": "007-jade文档",
+      "title": "http://expressjs.jser.us/jade.html",
+      "file": "chapters/007-jade文档.md"
+    },
+    {
+      "slug": "008-4-x文档",
+      "title": "Express - api参考",
+      "file": "chapters/008-4-x文档.md"
     }
   ],
   "sourceType": "web",

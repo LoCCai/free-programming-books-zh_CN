@@ -3,12 +3,22 @@
   "title": "学习CSS布局",
   "url": "http://zh.learnlayout.com/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:43.731Z",
+  "fetchedAt": "2026-09-27T11:58:40.452Z",
   "chapters": [
     {
-      "slug": "001-q",
+      "slug": "001-学习css布局",
       "title": "学习CSS布局",
-      "file": "chapters/001-q.md"
+      "file": "chapters/001-学习css布局.md"
+    },
+    {
+      "slug": "002-目录",
+      "title": "学习CSS布局",
+      "file": "chapters/002-目录.md"
+    },
+    {
+      "slug": "003-开始",
+      "title": "学习CSS布局",
+      "file": "chapters/003-开始.md"
     }
   ],
   "sourceType": "web",

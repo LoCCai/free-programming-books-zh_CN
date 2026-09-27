@@ -1,0 +1,3 @@
+[Home](https://django-chinese-docs.readthedocs.io/en/latest/index.html "Home page") | [Table of contents](https://django-chinese-docs.readthedocs.io/en/latest/contents.html "Table of contents") | [Index](https://django-chinese-docs.readthedocs.io/en/latest/genindex.html "Global index") | [Modules](https://django-chinese-docs.readthedocs.io/en/latest/py-modindex.html "Module index")
+
+« [previous](https://django-chinese-docs.readthedocs.io/en/latest/ref/contrib/formtools/form-wizard.html "Form wizard") | [up](https://django-chinese-docs.readthedocs.io/en/latest/ref/index.html "API 参考") | [next](https://django-chinese-docs.readthedocs.io/en/latest/ref/contrib/gis/tutorial.html "GeoDjango Tutorial") »

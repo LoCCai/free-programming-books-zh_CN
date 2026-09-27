@@ -3,12 +3,997 @@
   "title": "现代 Javascript 教程",
   "url": "https://zh.javascript.info/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:32.983Z",
+  "fetchedAt": "2026-09-27T11:52:20.382Z",
   "chapters": [
     {
-      "slug": "001-r",
+      "slug": "001-zh简体中文",
       "title": "现代 JavaScript 教程",
-      "file": "chapters/001-r.md"
+      "file": "chapters/001-zh简体中文.md"
+    },
+    {
+      "slug": "002-简介",
+      "title": "简介",
+      "file": "chapters/002-简介.md"
+    },
+    {
+      "slug": "003-javascript-简介",
+      "title": "JavaScript 简介",
+      "file": "chapters/003-javascript-简介.md"
+    },
+    {
+      "slug": "004-手册与规范",
+      "title": "手册与规范",
+      "file": "chapters/004-手册与规范.md"
+    },
+    {
+      "slug": "005-代码编辑器",
+      "title": "代码编辑器",
+      "file": "chapters/005-代码编辑器.md"
+    },
+    {
+      "slug": "006-开发者控制台",
+      "title": "开发者控制台",
+      "file": "chapters/006-开发者控制台.md"
+    },
+    {
+      "slug": "007-javascript-基础知识",
+      "title": "JavaScript 基础知识",
+      "file": "chapters/007-javascript-基础知识.md"
+    },
+    {
+      "slug": "008-hello-world",
+      "title": "Hello, world!",
+      "file": "chapters/008-hello-world.md"
+    },
+    {
+      "slug": "009-代码结构",
+      "title": "代码结构",
+      "file": "chapters/009-代码结构.md"
+    },
+    {
+      "slug": "010-现代模式-use-strict",
+      "title": "现代模式，\"use strict\"",
+      "file": "chapters/010-现代模式-use-strict.md"
+    },
+    {
+      "slug": "011-变量",
+      "title": "变量",
+      "file": "chapters/011-变量.md"
+    },
+    {
+      "slug": "012-数据类型",
+      "title": "数据类型",
+      "file": "chapters/012-数据类型.md"
+    },
+    {
+      "slug": "013-交互-alert-prompt-和-confirm",
+      "title": "交互：alert、prompt 和 confirm",
+      "file": "chapters/013-交互-alert-prompt-和-confirm.md"
+    },
+    {
+      "slug": "014-类型转换",
+      "title": "类型转换",
+      "file": "chapters/014-类型转换.md"
+    },
+    {
+      "slug": "015-基础运算符-数学运算",
+      "title": "基础运算符，数学运算",
+      "file": "chapters/015-基础运算符-数学运算.md"
+    },
+    {
+      "slug": "016-值的比较",
+      "title": "值的比较",
+      "file": "chapters/016-值的比较.md"
+    },
+    {
+      "slug": "017-条件分支-if-和",
+      "title": "条件分支：if 和 '?'",
+      "file": "chapters/017-条件分支-if-和.md"
+    },
+    {
+      "slug": "018-逻辑运算符",
+      "title": "逻辑运算符",
+      "file": "chapters/018-逻辑运算符.md"
+    },
+    {
+      "slug": "019-空值合并运算符",
+      "title": "空值合并运算符 '??'",
+      "file": "chapters/019-空值合并运算符.md"
+    },
+    {
+      "slug": "020-循环-while-和-for",
+      "title": "循环：while 和 for",
+      "file": "chapters/020-循环-while-和-for.md"
+    },
+    {
+      "slug": "021-switch-语句",
+      "title": "\"switch\" 语句",
+      "file": "chapters/021-switch-语句.md"
+    },
+    {
+      "slug": "022-函数",
+      "title": "函数",
+      "file": "chapters/022-函数.md"
+    },
+    {
+      "slug": "023-函数表达式",
+      "title": "函数表达式",
+      "file": "chapters/023-函数表达式.md"
+    },
+    {
+      "slug": "024-箭头函数-基础知识",
+      "title": "箭头函数，基础知识",
+      "file": "chapters/024-箭头函数-基础知识.md"
+    },
+    {
+      "slug": "025-javascript-特性",
+      "title": "JavaScript 特性",
+      "file": "chapters/025-javascript-特性.md"
+    },
+    {
+      "slug": "026-代码质量",
+      "title": "代码质量",
+      "file": "chapters/026-代码质量.md"
+    },
+    {
+      "slug": "027-在浏览器中调试",
+      "title": "在浏览器中调试",
+      "file": "chapters/027-在浏览器中调试.md"
+    },
+    {
+      "slug": "028-代码风格",
+      "title": "代码风格",
+      "file": "chapters/028-代码风格.md"
+    },
+    {
+      "slug": "029-注释",
+      "title": "注释",
+      "file": "chapters/029-注释.md"
+    },
+    {
+      "slug": "030-忍者代码",
+      "title": "忍者代码",
+      "file": "chapters/030-忍者代码.md"
+    },
+    {
+      "slug": "031-使用-mocha-进行自动化测试",
+      "title": "使用 Mocha 进行自动化测试",
+      "file": "chapters/031-使用-mocha-进行自动化测试.md"
+    },
+    {
+      "slug": "032-polyfill-和转译器",
+      "title": "Polyfill 和转译器",
+      "file": "chapters/032-polyfill-和转译器.md"
+    },
+    {
+      "slug": "033-object-对象-基础知识",
+      "title": "Object（对象）：基础知识",
+      "file": "chapters/033-object-对象-基础知识.md"
+    },
+    {
+      "slug": "034-对象",
+      "title": "对象",
+      "file": "chapters/034-对象.md"
+    },
+    {
+      "slug": "035-对象引用和复制",
+      "title": "对象引用和复制",
+      "file": "chapters/035-对象引用和复制.md"
+    },
+    {
+      "slug": "036-垃圾回收",
+      "title": "垃圾回收",
+      "file": "chapters/036-垃圾回收.md"
+    },
+    {
+      "slug": "037-对象方法-this",
+      "title": "对象方法，\"this\"",
+      "file": "chapters/037-对象方法-this.md"
+    },
+    {
+      "slug": "038-构造器和操作符-new",
+      "title": "构造器和操作符 \"new\"",
+      "file": "chapters/038-构造器和操作符-new.md"
+    },
+    {
+      "slug": "039-可选链",
+      "title": "可选链 \"?.\"",
+      "file": "chapters/039-可选链.md"
+    },
+    {
+      "slug": "040-symbol-类型",
+      "title": "symbol 类型",
+      "file": "chapters/040-symbol-类型.md"
+    },
+    {
+      "slug": "041-对象-原始值转换",
+      "title": "对象 —— 原始值转换",
+      "file": "chapters/041-对象-原始值转换.md"
+    },
+    {
+      "slug": "042-数据类型",
+      "title": "数据类型",
+      "file": "chapters/042-数据类型.md"
+    },
+    {
+      "slug": "043-原始类型的方法",
+      "title": "原始类型的方法",
+      "file": "chapters/043-原始类型的方法.md"
+    },
+    {
+      "slug": "044-数字类型",
+      "title": "数字类型",
+      "file": "chapters/044-数字类型.md"
+    },
+    {
+      "slug": "045-字符串",
+      "title": "字符串",
+      "file": "chapters/045-字符串.md"
+    },
+    {
+      "slug": "046-数组",
+      "title": "数组",
+      "file": "chapters/046-数组.md"
+    },
+    {
+      "slug": "047-数组方法",
+      "title": "数组方法",
+      "file": "chapters/047-数组方法.md"
+    },
+    {
+      "slug": "048-iterable-object-可迭代对象",
+      "title": "Iterable object（可迭代对象）",
+      "file": "chapters/048-iterable-object-可迭代对象.md"
+    },
+    {
+      "slug": "049-map-and-set-映射和集合",
+      "title": "Map and Set（映射和集合）",
+      "file": "chapters/049-map-and-set-映射和集合.md"
+    },
+    {
+      "slug": "050-weakmap-and-weakset-弱映射和弱集合",
+      "title": "WeakMap and WeakSet（弱映射和弱集合）",
+      "file": "chapters/050-weakmap-and-weakset-弱映射和弱集合.md"
+    },
+    {
+      "slug": "051-object-keys-values-entries",
+      "title": "Object.keys，values，entries",
+      "file": "chapters/051-object-keys-values-entries.md"
+    },
+    {
+      "slug": "052-解构赋值",
+      "title": "解构赋值",
+      "file": "chapters/052-解构赋值.md"
+    },
+    {
+      "slug": "053-日期和时间",
+      "title": "日期和时间",
+      "file": "chapters/053-日期和时间.md"
+    },
+    {
+      "slug": "054-json-方法-tojson",
+      "title": "JSON 方法，toJSON",
+      "file": "chapters/054-json-方法-tojson.md"
+    },
+    {
+      "slug": "055-函数进阶内容",
+      "title": "函数进阶内容",
+      "file": "chapters/055-函数进阶内容.md"
+    },
+    {
+      "slug": "056-递归和堆栈",
+      "title": "递归和堆栈",
+      "file": "chapters/056-递归和堆栈.md"
+    },
+    {
+      "slug": "057-rest-参数与-spread-语法",
+      "title": "Rest 参数与 Spread 语法",
+      "file": "chapters/057-rest-参数与-spread-语法.md"
+    },
+    {
+      "slug": "058-变量作用域-闭包",
+      "title": "变量作用域，闭包",
+      "file": "chapters/058-变量作用域-闭包.md"
+    },
+    {
+      "slug": "059-老旧的-var",
+      "title": "老旧的 \"var\"",
+      "file": "chapters/059-老旧的-var.md"
+    },
+    {
+      "slug": "060-全局对象",
+      "title": "全局对象",
+      "file": "chapters/060-全局对象.md"
+    },
+    {
+      "slug": "061-函数对象-nfe",
+      "title": "函数对象，NFE",
+      "file": "chapters/061-函数对象-nfe.md"
+    },
+    {
+      "slug": "062-new-function-语法",
+      "title": "\"new Function\" 语法",
+      "file": "chapters/062-new-function-语法.md"
+    },
+    {
+      "slug": "063-调度-settimeout-和-setinterval",
+      "title": "调度：setTimeout 和 setInterval",
+      "file": "chapters/063-调度-settimeout-和-setinterval.md"
+    },
+    {
+      "slug": "064-装饰器模式和转发-call-apply",
+      "title": "装饰器模式和转发，call/apply",
+      "file": "chapters/064-装饰器模式和转发-call-apply.md"
+    },
+    {
+      "slug": "065-函数绑定",
+      "title": "函数绑定",
+      "file": "chapters/065-函数绑定.md"
+    },
+    {
+      "slug": "066-深入理解箭头函数",
+      "title": "深入理解箭头函数",
+      "file": "chapters/066-深入理解箭头函数.md"
+    },
+    {
+      "slug": "067-对象属性配置",
+      "title": "对象属性配置",
+      "file": "chapters/067-对象属性配置.md"
+    },
+    {
+      "slug": "068-属性标志和属性描述符",
+      "title": "属性标志和属性描述符",
+      "file": "chapters/068-属性标志和属性描述符.md"
+    },
+    {
+      "slug": "069-属性的-getter-和-setter",
+      "title": "属性的 getter 和 setter",
+      "file": "chapters/069-属性的-getter-和-setter.md"
+    },
+    {
+      "slug": "070-原型-继承",
+      "title": "原型，继承",
+      "file": "chapters/070-原型-继承.md"
+    },
+    {
+      "slug": "071-原型继承",
+      "title": "原型继承",
+      "file": "chapters/071-原型继承.md"
+    },
+    {
+      "slug": "072-f-prototype",
+      "title": "F.prototype",
+      "file": "chapters/072-f-prototype.md"
+    },
+    {
+      "slug": "073-原生的原型",
+      "title": "原生的原型",
+      "file": "chapters/073-原生的原型.md"
+    },
+    {
+      "slug": "074-原型方法-没有-proto-的对象",
+      "title": "原型方法，没有 __proto__ 的对象",
+      "file": "chapters/074-原型方法-没有-proto-的对象.md"
+    },
+    {
+      "slug": "075-类",
+      "title": "类",
+      "file": "chapters/075-类.md"
+    },
+    {
+      "slug": "076-class-基本语法",
+      "title": "Class 基本语法",
+      "file": "chapters/076-class-基本语法.md"
+    },
+    {
+      "slug": "077-类继承",
+      "title": "类继承",
+      "file": "chapters/077-类继承.md"
+    },
+    {
+      "slug": "078-静态属性和静态方法",
+      "title": "静态属性和静态方法",
+      "file": "chapters/078-静态属性和静态方法.md"
+    },
+    {
+      "slug": "079-私有的和受保护的属性和方法",
+      "title": "私有的和受保护的属性和方法",
+      "file": "chapters/079-私有的和受保护的属性和方法.md"
+    },
+    {
+      "slug": "080-扩展内建类",
+      "title": "扩展内建类",
+      "file": "chapters/080-扩展内建类.md"
+    },
+    {
+      "slug": "081-类检查-instanceof",
+      "title": "类检查：\"instanceof\"",
+      "file": "chapters/081-类检查-instanceof.md"
+    },
+    {
+      "slug": "082-mixin-模式",
+      "title": "Mixin 模式",
+      "file": "chapters/082-mixin-模式.md"
+    },
+    {
+      "slug": "083-错误处理",
+      "title": "错误处理",
+      "file": "chapters/083-错误处理.md"
+    },
+    {
+      "slug": "084-错误处理-try-catch",
+      "title": "错误处理，\"try...catch\"",
+      "file": "chapters/084-错误处理-try-catch.md"
+    },
+    {
+      "slug": "085-自定义-error-扩展-error",
+      "title": "自定义 Error，扩展 Error",
+      "file": "chapters/085-自定义-error-扩展-error.md"
+    },
+    {
+      "slug": "086-promise-async-await",
+      "title": "Promise，async/await",
+      "file": "chapters/086-promise-async-await.md"
+    },
+    {
+      "slug": "087-简介-回调",
+      "title": "简介：回调",
+      "file": "chapters/087-简介-回调.md"
+    },
+    {
+      "slug": "088-promise",
+      "title": "Promise",
+      "file": "chapters/088-promise.md"
+    },
+    {
+      "slug": "089-promise-链",
+      "title": "Promise 链",
+      "file": "chapters/089-promise-链.md"
+    },
+    {
+      "slug": "090-使用-promise-进行错误处理",
+      "title": "使用 promise 进行错误处理",
+      "file": "chapters/090-使用-promise-进行错误处理.md"
+    },
+    {
+      "slug": "091-promise-api",
+      "title": "Promise API",
+      "file": "chapters/091-promise-api.md"
+    },
+    {
+      "slug": "092-promisification",
+      "title": "Promisification",
+      "file": "chapters/092-promisification.md"
+    },
+    {
+      "slug": "093-微任务-microtask",
+      "title": "微任务（Microtask）",
+      "file": "chapters/093-微任务-microtask.md"
+    },
+    {
+      "slug": "094-async-await",
+      "title": "async/await",
+      "file": "chapters/094-async-await.md"
+    },
+    {
+      "slug": "095-generator-高级-iteration",
+      "title": "Generator，高级 iteration",
+      "file": "chapters/095-generator-高级-iteration.md"
+    },
+    {
+      "slug": "096-generator",
+      "title": "generator",
+      "file": "chapters/096-generator.md"
+    },
+    {
+      "slug": "097-异步迭代和-generator",
+      "title": "异步迭代和 generator",
+      "file": "chapters/097-异步迭代和-generator.md"
+    },
+    {
+      "slug": "098-模块",
+      "title": "模块",
+      "file": "chapters/098-模块.md"
+    },
+    {
+      "slug": "099-模块-module-简介",
+      "title": "模块 (Module) 简介",
+      "file": "chapters/099-模块-module-简介.md"
+    },
+    {
+      "slug": "100-导出和导入",
+      "title": "导出和导入",
+      "file": "chapters/100-导出和导入.md"
+    },
+    {
+      "slug": "101-动态导入",
+      "title": "动态导入",
+      "file": "chapters/101-动态导入.md"
+    },
+    {
+      "slug": "102-杂项",
+      "title": "杂项",
+      "file": "chapters/102-杂项.md"
+    },
+    {
+      "slug": "103-proxy-和-reflect",
+      "title": "Proxy 和 Reflect",
+      "file": "chapters/103-proxy-和-reflect.md"
+    },
+    {
+      "slug": "104-eval-执行代码字符串",
+      "title": "Eval：执行代码字符串",
+      "file": "chapters/104-eval-执行代码字符串.md"
+    },
+    {
+      "slug": "105-柯里化-currying",
+      "title": "柯里化（Currying）",
+      "file": "chapters/105-柯里化-currying.md"
+    },
+    {
+      "slug": "106-reference-type",
+      "title": "Reference Type",
+      "file": "chapters/106-reference-type.md"
+    },
+    {
+      "slug": "107-bigint",
+      "title": "BigInt",
+      "file": "chapters/107-bigint.md"
+    },
+    {
+      "slug": "108-unicode-字符串内幕",
+      "title": "Unicode —— 字符串内幕",
+      "file": "chapters/108-unicode-字符串内幕.md"
+    },
+    {
+      "slug": "109-document",
+      "title": "Document",
+      "file": "chapters/109-document.md"
+    },
+    {
+      "slug": "110-浏览器环境-规格",
+      "title": "浏览器环境，规格",
+      "file": "chapters/110-浏览器环境-规格.md"
+    },
+    {
+      "slug": "111-dom-树",
+      "title": "DOM 树",
+      "file": "chapters/111-dom-树.md"
+    },
+    {
+      "slug": "112-遍历-dom",
+      "title": "遍历 DOM",
+      "file": "chapters/112-遍历-dom.md"
+    },
+    {
+      "slug": "113-搜索-getelement-queryselector",
+      "title": "搜索：getElement*，querySelector*",
+      "file": "chapters/113-搜索-getelement-queryselector.md"
+    },
+    {
+      "slug": "114-节点属性-type-tag-和-content",
+      "title": "节点属性：type，tag 和 content",
+      "file": "chapters/114-节点属性-type-tag-和-content.md"
+    },
+    {
+      "slug": "115-特性和属性-attributes-and-properties",
+      "title": "特性和属性（Attributes and properties）",
+      "file": "chapters/115-特性和属性-attributes-and-properties.md"
+    },
+    {
+      "slug": "116-修改文档-document",
+      "title": "修改文档（document）",
+      "file": "chapters/116-修改文档-document.md"
+    },
+    {
+      "slug": "117-样式和类",
+      "title": "样式和类",
+      "file": "chapters/117-样式和类.md"
+    },
+    {
+      "slug": "118-元素大小和滚动",
+      "title": "元素大小和滚动",
+      "file": "chapters/118-元素大小和滚动.md"
+    },
+    {
+      "slug": "119-window-大小和滚动",
+      "title": "Window 大小和滚动",
+      "file": "chapters/119-window-大小和滚动.md"
+    },
+    {
+      "slug": "120-坐标",
+      "title": "坐标",
+      "file": "chapters/120-坐标.md"
+    },
+    {
+      "slug": "121-事件简介",
+      "title": "事件简介",
+      "file": "chapters/121-事件简介.md"
+    },
+    {
+      "slug": "122-浏览器事件简介",
+      "title": "浏览器事件简介",
+      "file": "chapters/122-浏览器事件简介.md"
+    },
+    {
+      "slug": "123-冒泡和捕获",
+      "title": "冒泡和捕获",
+      "file": "chapters/123-冒泡和捕获.md"
+    },
+    {
+      "slug": "124-事件委托",
+      "title": "事件委托",
+      "file": "chapters/124-事件委托.md"
+    },
+    {
+      "slug": "125-浏览器默认行为",
+      "title": "浏览器默认行为",
+      "file": "chapters/125-浏览器默认行为.md"
+    },
+    {
+      "slug": "126-创建自定义事件",
+      "title": "创建自定义事件",
+      "file": "chapters/126-创建自定义事件.md"
+    },
+    {
+      "slug": "127-ui-事件",
+      "title": "UI 事件",
+      "file": "chapters/127-ui-事件.md"
+    },
+    {
+      "slug": "128-鼠标事件",
+      "title": "鼠标事件",
+      "file": "chapters/128-鼠标事件.md"
+    },
+    {
+      "slug": "129-移动鼠标-mouseover-out-mouseenter-leave",
+      "title": "移动鼠标：mouseover/out，mouseenter/leave",
+      "file": "chapters/129-移动鼠标-mouseover-out-mouseenter-leave.md"
+    },
+    {
+      "slug": "130-鼠标拖放事件",
+      "title": "鼠标拖放事件",
+      "file": "chapters/130-鼠标拖放事件.md"
+    },
+    {
+      "slug": "131-指针事件",
+      "title": "指针事件",
+      "file": "chapters/131-指针事件.md"
+    },
+    {
+      "slug": "132-键盘-keydown-和-keyup",
+      "title": "键盘：keydown 和 keyup",
+      "file": "chapters/132-键盘-keydown-和-keyup.md"
+    },
+    {
+      "slug": "133-滚动",
+      "title": "滚动",
+      "file": "chapters/133-滚动.md"
+    },
+    {
+      "slug": "134-表单-控件",
+      "title": "表单，控件",
+      "file": "chapters/134-表单-控件.md"
+    },
+    {
+      "slug": "135-表单属性和方法",
+      "title": "表单属性和方法",
+      "file": "chapters/135-表单属性和方法.md"
+    },
+    {
+      "slug": "136-聚焦-focus-blur",
+      "title": "聚焦：focus/blur",
+      "file": "chapters/136-聚焦-focus-blur.md"
+    },
+    {
+      "slug": "137-事件-change-input-cut-copy-paste",
+      "title": "事件：change，input，cut，copy，paste",
+      "file": "chapters/137-事件-change-input-cut-copy-paste.md"
+    },
+    {
+      "slug": "138-表单-事件和方法提交",
+      "title": "表单：事件和方法提交",
+      "file": "chapters/138-表单-事件和方法提交.md"
+    },
+    {
+      "slug": "139-加载文档和其他资源",
+      "title": "加载文档和其他资源",
+      "file": "chapters/139-加载文档和其他资源.md"
+    },
+    {
+      "slug": "140-页面生命周期-domcontentloaded-load-beforeunloa",
+      "title": "页面生命周期：DOMContentLoaded，load，beforeunload，unload",
+      "file": "chapters/140-页面生命周期-domcontentloaded-load-beforeunloa.md"
+    },
+    {
+      "slug": "141-脚本-async-defer",
+      "title": "脚本：async，defer",
+      "file": "chapters/141-脚本-async-defer.md"
+    },
+    {
+      "slug": "142-资源加载-onload-onerror",
+      "title": "资源加载：onload，onerror",
+      "file": "chapters/142-资源加载-onload-onerror.md"
+    },
+    {
+      "slug": "143-杂项",
+      "title": "杂项",
+      "file": "chapters/143-杂项.md"
+    },
+    {
+      "slug": "144-dom-变动观察器-mutation-observer",
+      "title": "DOM 变动观察器（Mutation observer）",
+      "file": "chapters/144-dom-变动观察器-mutation-observer.md"
+    },
+    {
+      "slug": "145-选择-selection-和范围-range",
+      "title": "选择（Selection）和范围（Range）",
+      "file": "chapters/145-选择-selection-和范围-range.md"
+    },
+    {
+      "slug": "146-事件循环-微任务和宏任务",
+      "title": "事件循环：微任务和宏任务",
+      "file": "chapters/146-事件循环-微任务和宏任务.md"
+    },
+    {
+      "slug": "147-frame-和-window",
+      "title": "Frame 和 window",
+      "file": "chapters/147-frame-和-window.md"
+    },
+    {
+      "slug": "148-弹窗和-window-的方法",
+      "title": "弹窗和 window 的方法",
+      "file": "chapters/148-弹窗和-window-的方法.md"
+    },
+    {
+      "slug": "149-跨窗口通信",
+      "title": "跨窗口通信",
+      "file": "chapters/149-跨窗口通信.md"
+    },
+    {
+      "slug": "150-点击劫持攻击",
+      "title": "点击劫持攻击",
+      "file": "chapters/150-点击劫持攻击.md"
+    },
+    {
+      "slug": "151-二进制数据-文件",
+      "title": "二进制数据，文件",
+      "file": "chapters/151-二进制数据-文件.md"
+    },
+    {
+      "slug": "152-arraybuffer-二进制数组",
+      "title": "ArrayBuffer，二进制数组",
+      "file": "chapters/152-arraybuffer-二进制数组.md"
+    },
+    {
+      "slug": "153-textdecoder-和-textencoder",
+      "title": "TextDecoder 和 TextEncoder",
+      "file": "chapters/153-textdecoder-和-textencoder.md"
+    },
+    {
+      "slug": "154-blob",
+      "title": "Blob",
+      "file": "chapters/154-blob.md"
+    },
+    {
+      "slug": "155-file-和-filereader",
+      "title": "File 和 FileReader",
+      "file": "chapters/155-file-和-filereader.md"
+    },
+    {
+      "slug": "156-网络请求",
+      "title": "网络请求",
+      "file": "chapters/156-网络请求.md"
+    },
+    {
+      "slug": "157-fetch",
+      "title": "Fetch",
+      "file": "chapters/157-fetch.md"
+    },
+    {
+      "slug": "158-formdata",
+      "title": "FormData",
+      "file": "chapters/158-formdata.md"
+    },
+    {
+      "slug": "159-fetch-下载进度",
+      "title": "Fetch：下载进度",
+      "file": "chapters/159-fetch-下载进度.md"
+    },
+    {
+      "slug": "160-fetch-中止-abort",
+      "title": "Fetch：中止（Abort）",
+      "file": "chapters/160-fetch-中止-abort.md"
+    },
+    {
+      "slug": "161-fetch-跨源请求",
+      "title": "Fetch：跨源请求",
+      "file": "chapters/161-fetch-跨源请求.md"
+    },
+    {
+      "slug": "162-fetch-api",
+      "title": "Fetch API",
+      "file": "chapters/162-fetch-api.md"
+    },
+    {
+      "slug": "163-url-对象",
+      "title": "URL 对象",
+      "file": "chapters/163-url-对象.md"
+    },
+    {
+      "slug": "164-xmlhttprequest",
+      "title": "XMLHttpRequest",
+      "file": "chapters/164-xmlhttprequest.md"
+    },
+    {
+      "slug": "165-可恢复的文件上传",
+      "title": "可恢复的文件上传",
+      "file": "chapters/165-可恢复的文件上传.md"
+    },
+    {
+      "slug": "166-长轮询-long-polling",
+      "title": "长轮询（Long polling）",
+      "file": "chapters/166-长轮询-long-polling.md"
+    },
+    {
+      "slug": "167-websocket",
+      "title": "WebSocket",
+      "file": "chapters/167-websocket.md"
+    },
+    {
+      "slug": "168-server-sent-events",
+      "title": "Server Sent Events",
+      "file": "chapters/168-server-sent-events.md"
+    },
+    {
+      "slug": "169-在浏览器中存储数据",
+      "title": "在浏览器中存储数据",
+      "file": "chapters/169-在浏览器中存储数据.md"
+    },
+    {
+      "slug": "170-cookie-document-cookie",
+      "title": "Cookie，document.cookie",
+      "file": "chapters/170-cookie-document-cookie.md"
+    },
+    {
+      "slug": "171-localstorage-sessionstorage",
+      "title": "LocalStorage，sessionStorage",
+      "file": "chapters/171-localstorage-sessionstorage.md"
+    },
+    {
+      "slug": "172-indexeddb",
+      "title": "IndexedDB",
+      "file": "chapters/172-indexeddb.md"
+    },
+    {
+      "slug": "173-动画",
+      "title": "动画",
+      "file": "chapters/173-动画.md"
+    },
+    {
+      "slug": "174-贝塞尔曲线",
+      "title": "贝塞尔曲线",
+      "file": "chapters/174-贝塞尔曲线.md"
+    },
+    {
+      "slug": "175-css-动画",
+      "title": "CSS 动画",
+      "file": "chapters/175-css-动画.md"
+    },
+    {
+      "slug": "176-javascript-动画",
+      "title": "JavaScript 动画",
+      "file": "chapters/176-javascript-动画.md"
+    },
+    {
+      "slug": "177-web-components",
+      "title": "Web components",
+      "file": "chapters/177-web-components.md"
+    },
+    {
+      "slug": "178-从星球轨道的高度讲起",
+      "title": "从星球轨道的高度讲起",
+      "file": "chapters/178-从星球轨道的高度讲起.md"
+    },
+    {
+      "slug": "179-custom-elements",
+      "title": "Custom elements",
+      "file": "chapters/179-custom-elements.md"
+    },
+    {
+      "slug": "180-影子-dom-shadow-dom",
+      "title": "影子 DOM（Shadow DOM）",
+      "file": "chapters/180-影子-dom-shadow-dom.md"
+    },
+    {
+      "slug": "181-模板元素",
+      "title": "模板元素",
+      "file": "chapters/181-模板元素.md"
+    },
+    {
+      "slug": "182-shadow-dom-插槽-组成",
+      "title": "Shadow DOM 插槽，组成",
+      "file": "chapters/182-shadow-dom-插槽-组成.md"
+    },
+    {
+      "slug": "183-给-shadow-dom-添加样式",
+      "title": "给 Shadow DOM 添加样式",
+      "file": "chapters/183-给-shadow-dom-添加样式.md"
+    },
+    {
+      "slug": "184-shadow-dom-和事件-events",
+      "title": "Shadow DOM 和事件（events）",
+      "file": "chapters/184-shadow-dom-和事件-events.md"
+    },
+    {
+      "slug": "185-正则表达式",
+      "title": "正则表达式",
+      "file": "chapters/185-正则表达式.md"
+    },
+    {
+      "slug": "186-模式-patterns-和修饰符-flags",
+      "title": "模式（Patterns）和修饰符（flags）",
+      "file": "chapters/186-模式-patterns-和修饰符-flags.md"
+    },
+    {
+      "slug": "187-字符类",
+      "title": "字符类",
+      "file": "chapters/187-字符类.md"
+    },
+    {
+      "slug": "188-unicode-修饰符-u-和类-p",
+      "title": "Unicode：修饰符 \"u\" 和类 \\p{...}",
+      "file": "chapters/188-unicode-修饰符-u-和类-p.md"
+    },
+    {
+      "slug": "189-锚点-字符串开始-和末尾",
+      "title": "锚点：字符串开始 ^ 和末尾 $",
+      "file": "chapters/189-锚点-字符串开始-和末尾.md"
+    },
+    {
+      "slug": "190-锚点-的多行模式-修饰符-m",
+      "title": "锚点 ^ $ 的多行模式，修饰符 \"m\"",
+      "file": "chapters/190-锚点-的多行模式-修饰符-m.md"
+    },
+    {
+      "slug": "191-词边界-b",
+      "title": "词边界：\\b",
+      "file": "chapters/191-词边界-b.md"
+    },
+    {
+      "slug": "192-转义-特殊字符",
+      "title": "转义，特殊字符",
+      "file": "chapters/192-转义-特殊字符.md"
+    },
+    {
+      "slug": "193-集合和范围",
+      "title": "集合和范围 [...]",
+      "file": "chapters/193-集合和范围.md"
+    },
+    {
+      "slug": "194-量词-和-n",
+      "title": "量词 +, *, ? 和 {n}",
+      "file": "chapters/194-量词-和-n.md"
+    },
+    {
+      "slug": "195-贪婪量词和惰性量词",
+      "title": "贪婪量词和惰性量词",
+      "file": "chapters/195-贪婪量词和惰性量词.md"
+    },
+    {
+      "slug": "196-捕获组",
+      "title": "捕获组",
+      "file": "chapters/196-捕获组.md"
+    },
+    {
+      "slug": "197-模式中的反向引用-n-和-k-name",
+      "title": "模式中的反向引用：\\N 和 \\k<name>",
+      "file": "chapters/197-模式中的反向引用-n-和-k-name.md"
+    },
+    {
+      "slug": "198-选择-or",
+      "title": "选择 (OR) |",
+      "file": "chapters/198-选择-or.md"
     }
   ],
   "sourceType": "web",

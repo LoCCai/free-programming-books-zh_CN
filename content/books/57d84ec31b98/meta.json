@@ -3,12 +3,132 @@
   "title": "SAN 管理入门系列",
   "url": "https://community.emc.com/docs/DOC-16067",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:49.894Z",
+  "fetchedAt": "2026-09-27T11:58:20.844Z",
   "chapters": [
     {
-      "slug": "001-14",
+      "slug": "001-支持主页-dell-中国",
       "title": "支持主页 | Dell 中国",
-      "file": "chapters/001-14.md"
+      "file": "chapters/001-支持主页-dell-中国.md"
+    },
+    {
+      "slug": "002-我的帐户",
+      "title": "Sign In | Dell US",
+      "file": "chapters/002-我的帐户.md"
+    },
+    {
+      "slug": "003-订单状态",
+      "title": "Sign In | Dell US",
+      "file": "chapters/003-订单状态.md"
+    },
+    {
+      "slug": "004-个人资料设置",
+      "title": "Sign In | Dell US",
+      "file": "chapters/004-个人资料设置.md"
+    },
+    {
+      "slug": "005-支持主页",
+      "title": "支持主页 | Dell 中国",
+      "file": "chapters/005-支持主页.md"
+    },
+    {
+      "slug": "006-联系技术支持",
+      "title": "联系技术支持 | Dell 中国",
+      "file": "chapters/006-联系技术支持.md"
+    },
+    {
+      "slug": "007-社区",
+      "title": "戴尔社区 | DELL Technologies",
+      "file": "chapters/007-社区.md"
+    },
+    {
+      "slug": "008-联系我们",
+      "title": "联系戴尔专家在线咨询 | Dell 中国大陆",
+      "file": "chapters/008-联系我们.md"
+    },
+    {
+      "slug": "009-人工智能",
+      "title": "人工智能解决方案 | Dell 中国大陆",
+      "file": "chapters/009-人工智能.md"
+    },
+    {
+      "slug": "010-产品",
+      "title": "戴尔笔记本电脑_台式电脑_服务器_电脑配件_戴尔官方网站 | Dell 中国大陆",
+      "file": "chapters/010-产品.md"
+    },
+    {
+      "slug": "011-解决方案",
+      "title": "Dell Technologies 解决方案产品组合 | Dell 中国大陆",
+      "file": "chapters/011-解决方案.md"
+    },
+    {
+      "slug": "012-服务",
+      "title": "查看所有服务 | Dell 中国大陆",
+      "file": "chapters/012-服务.md"
+    },
+    {
+      "slug": "013-特惠",
+      "title": "戴尔优惠-笔记本/台式机/显示器特惠 | Dell 中国大陆",
+      "file": "chapters/013-特惠.md"
+    },
+    {
+      "slug": "014-我们的定位",
+      "title": "我们是谁 | Dell 中国大陆",
+      "file": "chapters/014-我们的定位.md"
+    },
+    {
+      "slug": "015-新闻编辑室",
+      "title": "新闻室 | Dell 中国",
+      "file": "chapters/015-新闻编辑室.md"
+    },
+    {
+      "slug": "016-回收",
+      "title": "负责任的回收和再利用消费者解决方案 | Dell 中国大陆",
+      "file": "chapters/016-回收.md"
+    },
+    {
+      "slug": "017-企业影响",
+      "title": "企业影响 | Dell 中国大陆",
+      "file": "chapters/017-企业影响.md"
+    },
+    {
+      "slug": "018-客户案例",
+      "title": "客户案例 | Dell 中国大陆",
+      "file": "chapters/018-客户案例.md"
+    },
+    {
+      "slug": "019-oem-解决方案",
+      "title": "原始设备制造商 (OEM) 解决方案 | Dell 中国大陆",
+      "file": "chapters/019-oem-解决方案.md"
+    },
+    {
+      "slug": "020-博客",
+      "title": "Blog | Dell",
+      "file": "chapters/020-博客.md"
+    },
+    {
+      "slug": "021-活动",
+      "title": "Events | Dell 中国",
+      "file": "chapters/021-活动.md"
+    },
+    {
+      "slug": "022-邮件订阅",
+      "title": "统一注册 | Dell 中国",
+      "file": "chapters/022-邮件订阅.md"
+    },
+    {
+      "slug": "023-隐私中心",
+      "title": "Dell Technologies 隐私中心 | Dell 中国大陆",
+      "file": "chapters/023-隐私中心.md"
+    },
+    {
+      "slug": "024-安全和信任中心",
+      "title": "安全和信任中心 | Dell 中国大陆",
+      "file": "chapters/024-安全和信任中心.md"
+    },
+    {
+      "slug": "025-试用版软件下载",
+      "title": "IT 基础架构试用版软件下载 | Dell 中国大陆",
+      "file": "chapters/025-试用版软件下载.md"
     }
   ],
   "sourceType": "web",

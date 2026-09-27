@@ -3,17 +3,47 @@
   "title": "Composer 中文网",
   "url": "http://www.phpcomposer.com",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:13.281Z",
+  "fetchedAt": "2026-09-27T12:02:16.950Z",
   "chapters": [
     {
-      "slug": "001-q",
+      "slug": "001-packagist中国全量镜像",
       "title": "Packagist中国全量镜像",
-      "file": "chapters/001-q.md"
+      "file": "chapters/001-packagist中国全量镜像.md"
     },
     {
-      "slug": "002-y",
+      "slug": "002-packagist-org-对-composer-1-x-的支持即将关闭",
+      "title": "Packagist.org 对 Composer 1.x 的支持即将关闭",
+      "file": "chapters/002-packagist-org-对-composer-1-x-的支持即将关闭.md"
+    },
+    {
+      "slug": "003-显著改进",
+      "title": "Composer 2.0 正式发布",
+      "file": "chapters/003-显著改进.md"
+    },
+    {
+      "slug": "004-packagist-org-明确了-composer-1-x-被弃用的时间表",
+      "title": "Packagist.org 明确了 Composer 1.x 被弃用的时间表",
+      "file": "chapters/004-packagist-org-明确了-composer-1-x-被弃用的时间表.md"
+    },
+    {
+      "slug": "005-composer-v1-6-版本发布",
+      "title": "Composer v1.6 版本发布",
+      "file": "chapters/005-composer-v1-6-版本发布.md"
+    },
+    {
+      "slug": "006-这半个月我们更换了镜像服务器-全面检查了所有文件-把同步间隔降到了一分钟",
+      "title": "这半个月我们更换了镜像服务器、全面检查了所有文件、把同步间隔降到了一分钟",
+      "file": "chapters/006-这半个月我们更换了镜像服务器-全面检查了所有文件-把同步间隔降到了一分钟.md"
+    },
+    {
+      "slug": "007-composer-终于走到了-v1-0-版本",
+      "title": "Composer 终于走到了 v1.0 版本",
+      "file": "chapters/007-composer-终于走到了-v1-0-版本.md"
+    },
+    {
+      "slug": "008-packagist中国全量镜像",
       "title": "Packagist中国全量镜像",
-      "file": "chapters/002-y.md"
+      "file": "chapters/008-packagist中国全量镜像.md"
     }
   ],
   "sourceType": "web",

@@ -3,257 +3,392 @@
   "title": "Tornado 4.3 文档中文版",
   "url": "https://tornado-zh.readthedocs.io/zh/latest/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:31.499Z",
+  "fetchedAt": "2026-09-27T12:06:25.545Z",
   "chapters": [
     {
-      "slug": "001-18",
+      "slug": "001-tornado-web-server-tornado-4-3-文档",
       "title": "Tornado Web Server — Tornado 4.3 文档",
-      "file": "chapters/001-18.md"
+      "file": "chapters/001-tornado-web-server-tornado-4-3-文档.md"
     },
     {
-      "slug": "002-1i",
+      "slug": "002-用户指南",
       "title": "用户指南 — Tornado 4.3 文档",
-      "file": "chapters/002-1i.md"
+      "file": "chapters/002-用户指南.md"
     },
     {
-      "slug": "003-1o",
+      "slug": "003-介绍",
       "title": "介绍 — Tornado 4.3 文档",
-      "file": "chapters/003-1o.md"
+      "file": "chapters/003-介绍.md"
     },
     {
-      "slug": "004-1o",
+      "slug": "004-异步和非阻塞i-o",
       "title": "异步和非阻塞I/O — Tornado 4.3 文档",
-      "file": "chapters/004-1o.md"
+      "file": "chapters/004-异步和非阻塞i-o.md"
     },
     {
-      "slug": "005-1t",
+      "slug": "005-协程",
       "title": "协程 — Tornado 4.3 文档",
-      "file": "chapters/005-1t.md"
+      "file": "chapters/005-协程.md"
     },
     {
-      "slug": "006-1p",
+      "slug": "006-queue-示例-一个并发网络爬虫",
       "title": "一个并发网络爬虫 — Tornado 4.3 文档",
-      "file": "chapters/006-1p.md"
+      "file": "chapters/006-queue-示例-一个并发网络爬虫.md"
     },
     {
-      "slug": "007-1s",
+      "slug": "007-tornado-web应用的结构",
       "title": "Tornado web应用的结构 — Tornado 4.3 文档",
-      "file": "chapters/007-1s.md"
+      "file": "chapters/007-tornado-web应用的结构.md"
     },
     {
-      "slug": "008-1s",
+      "slug": "008-模板和ui",
       "title": "模板和UI — Tornado 4.3 文档",
-      "file": "chapters/008-1s.md"
+      "file": "chapters/008-模板和ui.md"
     },
     {
-      "slug": "009-1r",
+      "slug": "009-认证和安全",
       "title": "认证和安全 — Tornado 4.3 文档",
-      "file": "chapters/009-1r.md"
+      "file": "chapters/009-认证和安全.md"
     },
     {
-      "slug": "010-1q",
+      "slug": "010-运行和部署",
       "title": "运行和部署 — Tornado 4.3 文档",
-      "file": "chapters/010-1q.md"
+      "file": "chapters/010-运行和部署.md"
     },
     {
-      "slug": "011-1p",
+      "slug": "011-web框架",
       "title": "web框架 — Tornado 4.3 文档",
-      "file": "chapters/011-1p.md"
+      "file": "chapters/011-web框架.md"
     },
     {
-      "slug": "012-1g",
+      "slug": "012-tornado-web-requesthandler-和-application",
       "title": "tornado.web — RequestHandler 和 Application 类 — Tornado 4.3 文档",
-      "file": "chapters/012-1g.md"
+      "file": "chapters/012-tornado-web-requesthandler-和-application.md"
     },
     {
-      "slug": "013-1l",
+      "slug": "013-tornado-template-产生灵活的输出",
       "title": "tornado.template — 产生灵活的输出 — Tornado 4.3 文档",
-      "file": "chapters/013-1l.md"
+      "file": "chapters/013-tornado-template-产生灵活的输出.md"
     },
     {
-      "slug": "014-1j",
+      "slug": "014-tornado-escape-转义和字符串操作",
       "title": "tornado.escape — 转义和字符串操作 — Tornado 4.3 文档",
-      "file": "chapters/014-1j.md"
+      "file": "chapters/014-tornado-escape-转义和字符串操作.md"
     },
     {
-      "slug": "015-1j",
+      "slug": "015-tornado-locale-国际化支持",
       "title": "tornado.locale — 国际化支持 — Tornado 4.3 文档",
-      "file": "chapters/015-1j.md"
+      "file": "chapters/015-tornado-locale-国际化支持.md"
     },
     {
-      "slug": "016-1m",
+      "slug": "016-tornado-websocket-浏览器与服务器双向通信",
       "title": "tornado.websocket — 浏览器与服务器双向通信 — Tornado 4.3 文档",
-      "file": "chapters/016-1m.md"
+      "file": "chapters/016-tornado-websocket-浏览器与服务器双向通信.md"
     },
     {
-      "slug": "017-1h",
+      "slug": "017-http-servers-and-clients",
       "title": "HTTP servers and clients — Tornado 4.3 文档",
-      "file": "chapters/017-1h.md"
+      "file": "chapters/017-http-servers-and-clients.md"
     },
     {
-      "slug": "018-1n",
+      "slug": "018-tornado-httpserver-非阻塞-http-server",
       "title": "tornado.httpserver — 非阻塞 HTTP server — Tornado 4.3 文档",
-      "file": "chapters/018-1n.md"
+      "file": "chapters/018-tornado-httpserver-非阻塞-http-server.md"
     },
     {
-      "slug": "019-1n",
+      "slug": "019-tornado-httpclient-异步-http-客户端",
       "title": "tornado.httpclient — 异步 HTTP 客户端 — Tornado 4.3 文档",
-      "file": "chapters/019-1n.md"
+      "file": "chapters/019-tornado-httpclient-异步-http-客户端.md"
     },
     {
-      "slug": "020-1l",
+      "slug": "020-tornado-httputil-manipulate-http-headers",
       "title": "tornado.httputil — Manipulate HTTP headers and URLs — Tornado 4.3 文档",
-      "file": "chapters/020-1l.md"
+      "file": "chapters/020-tornado-httputil-manipulate-http-headers.md"
     },
     {
-      "slug": "021-1s",
+      "slug": "021-tornado-http1connection-http-1-x-client-",
       "title": "tornado.http1connection – HTTP/1.x client/server implementation — Tornado 4.3 文档",
-      "file": "chapters/021-1s.md"
+      "file": "chapters/021-tornado-http1connection-http-1-x-client-.md"
     },
     {
-      "slug": "022-1n",
+      "slug": "022-异步网络",
       "title": "异步网络 — Tornado 4.3 文档",
-      "file": "chapters/022-1n.md"
+      "file": "chapters/022-异步网络.md"
     },
     {
-      "slug": "023-1j",
+      "slug": "023-tornado-ioloop-main-event-loop",
       "title": "tornado.ioloop — Main event loop — Tornado 4.3 文档",
-      "file": "chapters/023-1j.md"
+      "file": "chapters/023-tornado-ioloop-main-event-loop.md"
     },
     {
-      "slug": "024-1l",
+      "slug": "024-tornado-iostream-convenient-wrappers-for",
       "title": "tornado.iostream — Convenient wrappers for non-blocking sockets — Tornado 4.3 文档",
-      "file": "chapters/024-1l.md"
+      "file": "chapters/024-tornado-iostream-convenient-wrappers-for.md"
     },
     {
-      "slug": "025-1k",
+      "slug": "025-tornado-netutil-miscellaneous-network-ut",
       "title": "tornado.netutil — Miscellaneous network utilities — Tornado 4.3 文档",
-      "file": "chapters/025-1k.md"
+      "file": "chapters/025-tornado-netutil-miscellaneous-network-ut.md"
     },
     {
-      "slug": "026-1m",
+      "slug": "026-tornado-tcpclient-iostream-connection-fa",
       "title": "tornado.tcpclient — IOStream connection factory — Tornado 4.3 文档",
-      "file": "chapters/026-1m.md"
+      "file": "chapters/026-tornado-tcpclient-iostream-connection-fa.md"
     },
     {
-      "slug": "027-1m",
+      "slug": "027-tornado-tcpserver-基于-iostream-的基础-tcp-服务",
       "title": "tornado.tcpserver — 基于 IOStream 的基础 TCP 服务 — Tornado 4.3 文档",
-      "file": "chapters/027-1m.md"
+      "file": "chapters/027-tornado-tcpserver-基于-iostream-的基础-tcp-服务.md"
     },
     {
-      "slug": "028-1m",
+      "slug": "028-协程和并发",
       "title": "协程和并发 — Tornado 4.3 文档",
-      "file": "chapters/028-1m.md"
+      "file": "chapters/028-协程和并发.md"
     },
     {
-      "slug": "029-1g",
+      "slug": "029-tornado-gen-simplify-asynchronous-code",
       "title": "tornado.gen — Simplify asynchronous code — Tornado 4.3 文档",
-      "file": "chapters/029-1g.md"
+      "file": "chapters/029-tornado-gen-simplify-asynchronous-code.md"
     },
     {
-      "slug": "030-1n",
+      "slug": "030-tornado-concurrent-work-with-threads-and",
       "title": "tornado.concurrent — Work with threads and futures — Tornado 4.3 文档",
-      "file": "chapters/030-1n.md"
+      "file": "chapters/030-tornado-concurrent-work-with-threads-and.md"
     },
     {
-      "slug": "031-1i",
+      "slug": "031-tornado-locks-同步原语",
       "title": "tornado.locks – 同步原语 — Tornado 4.3 文档",
-      "file": "chapters/031-1i.md"
+      "file": "chapters/031-tornado-locks-同步原语.md"
     },
     {
-      "slug": "032-1j",
+      "slug": "032-tornado-queues-协程的队列",
       "title": "tornado.queues – 协程的队列 — Tornado 4.3 文档",
-      "file": "chapters/032-1j.md"
+      "file": "chapters/032-tornado-queues-协程的队列.md"
     },
     {
-      "slug": "033-1k",
+      "slug": "033-tornado-process-utilities-for-multiple-p",
       "title": "tornado.process — Utilities for multiple processes — Tornado 4.3 文档",
-      "file": "chapters/033-1k.md"
+      "file": "chapters/033-tornado-process-utilities-for-multiple-p.md"
     },
     {
-      "slug": "034-1o",
+      "slug": "034-与其他服务集成",
       "title": "与其他服务集成 — Tornado 4.3 文档",
-      "file": "chapters/034-1o.md"
+      "file": "chapters/034-与其他服务集成.md"
     },
     {
-      "slug": "035-1h",
+      "slug": "035-tornado-auth-third-party-login-with-open",
       "title": "tornado.auth — Third-party login with OpenID and OAuth — Tornado 4.3 文档",
-      "file": "chapters/035-1h.md"
+      "file": "chapters/035-tornado-auth-third-party-login-with-open.md"
     },
     {
-      "slug": "036-1h",
+      "slug": "036-tornado-wsgi-interoperability-with-other",
       "title": "tornado.wsgi — Interoperability with other Python frameworks and servers — Tornado 4.3 文档",
-      "file": "chapters/036-1h.md"
+      "file": "chapters/036-tornado-wsgi-interoperability-with-other.md"
     },
     {
-      "slug": "037-1k",
+      "slug": "037-tornado-platform-asyncio-bridge-between-",
       "title": "tornado.platform.asyncio — Bridge between asyncio and Tornado — Tornado 4.3 文档",
-      "file": "chapters/037-1k.md"
+      "file": "chapters/037-tornado-platform-asyncio-bridge-between-.md"
     },
     {
-      "slug": "038-1q",
+      "slug": "038-tornado-platform-caresresolver-asynchron",
       "title": "tornado.platform.caresresolver — Asynchronous DNS Resolver using C-Ares — Tornado 4.3 文档",
-      "file": "chapters/038-1q.md"
+      "file": "chapters/038-tornado-platform-caresresolver-asynchron.md"
     },
     {
-      "slug": "039-1k",
+      "slug": "039-tornado-platform-twisted-bridges-between",
       "title": "tornado.platform.twisted — Bridges between Twisted and Tornado — Tornado 4.3 文档",
-      "file": "chapters/039-1k.md"
+      "file": "chapters/039-tornado-platform-twisted-bridges-between.md"
     },
     {
-      "slug": "040-1m",
+      "slug": "040-通用工具",
       "title": "通用工具 — Tornado 4.3 文档",
-      "file": "chapters/040-1m.md"
+      "file": "chapters/040-通用工具.md"
     },
     {
-      "slug": "041-1n",
+      "slug": "041-tornado-autoreload-automatically-detect-",
       "title": "tornado.autoreload — Automatically detect code changes in development — Tornado 4.3 文档",
-      "file": "chapters/041-1n.md"
+      "file": "chapters/041-tornado-autoreload-automatically-detect-.md"
     },
     {
-      "slug": "042-1g",
+      "slug": "042-tornado-log-logging-support",
       "title": "tornado.log — Logging support — Tornado 4.3 文档",
-      "file": "chapters/042-1g.md"
+      "file": "chapters/042-tornado-log-logging-support.md"
     },
     {
-      "slug": "043-1k",
+      "slug": "043-tornado-options-command-line-parsing",
       "title": "tornado.options — Command-line parsing — Tornado 4.3 文档",
-      "file": "chapters/043-1k.md"
+      "file": "chapters/043-tornado-options-command-line-parsing.md"
     },
     {
-      "slug": "044-1q",
+      "slug": "044-tornado-stack-context-exception-handling",
       "title": "tornado.stack_context — Exception handling across asynchronous callbacks — Tornado 4.3 文档",
-      "file": "chapters/044-1q.md"
+      "file": "chapters/044-tornado-stack-context-exception-handling.md"
     },
     {
-      "slug": "045-1k",
+      "slug": "045-tornado-testing-unit-testing-support-for",
       "title": "tornado.testing — Unit testing support for asynchronous code — Tornado 4.3 文档",
-      "file": "chapters/045-1k.md"
+      "file": "chapters/045-tornado-testing-unit-testing-support-for.md"
     },
     {
-      "slug": "046-1h",
+      "slug": "046-tornado-util-general-purpose-utilities",
       "title": "tornado.util — General-purpose utilities — Tornado 4.3 文档",
-      "file": "chapters/046-1h.md"
+      "file": "chapters/046-tornado-util-general-purpose-utilities.md"
     },
     {
-      "slug": "047-1g",
+      "slug": "047-常见问题",
       "title": "常见问题 — Tornado 4.3 文档",
-      "file": "chapters/047-1g.md"
+      "file": "chapters/047-常见问题.md"
     },
     {
-      "slug": "048-1l",
+      "slug": "048-版本记录",
       "title": "版本记录 — Tornado 4.3 文档",
-      "file": "chapters/048-1l.md"
+      "file": "chapters/048-版本记录.md"
     },
     {
-      "slug": "049-1s",
+      "slug": "049-what-s-new-in-tornado-4-3",
       "title": "What’s new in Tornado 4.3 — Tornado 4.3 文档",
-      "file": "chapters/049-1s.md"
+      "file": "chapters/049-what-s-new-in-tornado-4-3.md"
     },
     {
-      "slug": "050-1s",
+      "slug": "050-what-s-new-in-tornado-4-2-1",
       "title": "What’s new in Tornado 4.2.1 — Tornado 4.3 文档",
-      "file": "chapters/050-1s.md"
+      "file": "chapters/050-what-s-new-in-tornado-4-2-1.md"
+    },
+    {
+      "slug": "051-what-s-new-in-tornado-4-2",
+      "title": "What’s new in Tornado 4.2 — Tornado 4.3 文档",
+      "file": "chapters/051-what-s-new-in-tornado-4-2.md"
+    },
+    {
+      "slug": "052-what-s-new-in-tornado-4-1",
+      "title": "What’s new in Tornado 4.1 — Tornado 4.3 文档",
+      "file": "chapters/052-what-s-new-in-tornado-4-1.md"
+    },
+    {
+      "slug": "053-what-s-new-in-tornado-4-0-2",
+      "title": "What’s new in Tornado 4.0.2 — Tornado 4.3 文档",
+      "file": "chapters/053-what-s-new-in-tornado-4-0-2.md"
+    },
+    {
+      "slug": "054-what-s-new-in-tornado-4-0-1",
+      "title": "What’s new in Tornado 4.0.1 — Tornado 4.3 文档",
+      "file": "chapters/054-what-s-new-in-tornado-4-0-1.md"
+    },
+    {
+      "slug": "055-what-s-new-in-tornado-4-0",
+      "title": "What’s new in Tornado 4.0 — Tornado 4.3 文档",
+      "file": "chapters/055-what-s-new-in-tornado-4-0.md"
+    },
+    {
+      "slug": "056-what-s-new-in-tornado-3-2-2",
+      "title": "What’s new in Tornado 3.2.2 — Tornado 4.3 文档",
+      "file": "chapters/056-what-s-new-in-tornado-3-2-2.md"
+    },
+    {
+      "slug": "057-what-s-new-in-tornado-3-2-1",
+      "title": "What’s new in Tornado 3.2.1 — Tornado 4.3 文档",
+      "file": "chapters/057-what-s-new-in-tornado-3-2-1.md"
+    },
+    {
+      "slug": "058-what-s-new-in-tornado-3-2",
+      "title": "What’s new in Tornado 3.2 — Tornado 4.3 文档",
+      "file": "chapters/058-what-s-new-in-tornado-3-2.md"
+    },
+    {
+      "slug": "059-what-s-new-in-tornado-3-1-1",
+      "title": "What’s new in Tornado 3.1.1 — Tornado 4.3 文档",
+      "file": "chapters/059-what-s-new-in-tornado-3-1-1.md"
+    },
+    {
+      "slug": "060-what-s-new-in-tornado-3-1",
+      "title": "What’s new in Tornado 3.1 — Tornado 4.3 文档",
+      "file": "chapters/060-what-s-new-in-tornado-3-1.md"
+    },
+    {
+      "slug": "061-what-s-new-in-tornado-3-0-2",
+      "title": "What’s new in Tornado 3.0.2 — Tornado 4.3 文档",
+      "file": "chapters/061-what-s-new-in-tornado-3-0-2.md"
+    },
+    {
+      "slug": "062-what-s-new-in-tornado-3-0-1",
+      "title": "What’s new in Tornado 3.0.1 — Tornado 4.3 文档",
+      "file": "chapters/062-what-s-new-in-tornado-3-0-1.md"
+    },
+    {
+      "slug": "063-what-s-new-in-tornado-3-0",
+      "title": "What’s new in Tornado 3.0 — Tornado 4.3 文档",
+      "file": "chapters/063-what-s-new-in-tornado-3-0.md"
+    },
+    {
+      "slug": "064-what-s-new-in-tornado-2-4-1",
+      "title": "What’s new in Tornado 2.4.1 — Tornado 4.3 文档",
+      "file": "chapters/064-what-s-new-in-tornado-2-4-1.md"
+    },
+    {
+      "slug": "065-what-s-new-in-tornado-2-4",
+      "title": "What’s new in Tornado 2.4 — Tornado 4.3 文档",
+      "file": "chapters/065-what-s-new-in-tornado-2-4.md"
+    },
+    {
+      "slug": "066-what-s-new-in-tornado-2-3",
+      "title": "What’s new in Tornado 2.3 — Tornado 4.3 文档",
+      "file": "chapters/066-what-s-new-in-tornado-2-3.md"
+    },
+    {
+      "slug": "067-what-s-new-in-tornado-2-2-1",
+      "title": "What’s new in Tornado 2.2.1 — Tornado 4.3 文档",
+      "file": "chapters/067-what-s-new-in-tornado-2-2-1.md"
+    },
+    {
+      "slug": "068-what-s-new-in-tornado-2-2",
+      "title": "What’s new in Tornado 2.2 — Tornado 4.3 文档",
+      "file": "chapters/068-what-s-new-in-tornado-2-2.md"
+    },
+    {
+      "slug": "069-what-s-new-in-tornado-2-1-1",
+      "title": "What’s new in Tornado 2.1.1 — Tornado 4.3 文档",
+      "file": "chapters/069-what-s-new-in-tornado-2-1-1.md"
+    },
+    {
+      "slug": "070-what-s-new-in-tornado-2-1",
+      "title": "What’s new in Tornado 2.1 — Tornado 4.3 文档",
+      "file": "chapters/070-what-s-new-in-tornado-2-1.md"
+    },
+    {
+      "slug": "071-what-s-new-in-tornado-2-0",
+      "title": "What’s new in Tornado 2.0 — Tornado 4.3 文档",
+      "file": "chapters/071-what-s-new-in-tornado-2-0.md"
+    },
+    {
+      "slug": "072-what-s-new-in-tornado-1-2-1",
+      "title": "What’s new in Tornado 1.2.1 — Tornado 4.3 文档",
+      "file": "chapters/072-what-s-new-in-tornado-1-2-1.md"
+    },
+    {
+      "slug": "073-what-s-new-in-tornado-1-2",
+      "title": "What’s new in Tornado 1.2 — Tornado 4.3 文档",
+      "file": "chapters/073-what-s-new-in-tornado-1-2.md"
+    },
+    {
+      "slug": "074-what-s-new-in-tornado-1-1-1",
+      "title": "What’s new in Tornado 1.1.1 — Tornado 4.3 文档",
+      "file": "chapters/074-what-s-new-in-tornado-1-1-1.md"
+    },
+    {
+      "slug": "075-what-s-new-in-tornado-1-1",
+      "title": "What’s new in Tornado 1.1 — Tornado 4.3 文档",
+      "file": "chapters/075-what-s-new-in-tornado-1-1.md"
+    },
+    {
+      "slug": "076-what-s-new-in-tornado-1-0-1",
+      "title": "What’s new in Tornado 1.0.1 — Tornado 4.3 文档",
+      "file": "chapters/076-what-s-new-in-tornado-1-0-1.md"
+    },
+    {
+      "slug": "077-what-s-new-in-tornado-1-0",
+      "title": "What’s new in Tornado 1.0 — Tornado 4.3 文档",
+      "file": "chapters/077-what-s-new-in-tornado-1-0.md"
     }
   ],
   "sourceType": "web",

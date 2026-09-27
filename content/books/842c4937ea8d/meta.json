@@ -3,12 +3,102 @@
   "title": "Python 正则表达式操作指南",
   "url": "http://wiki.ubuntu.org.cn/Python正则表达式操作指南",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:17:06.233Z",
+  "fetchedAt": "2026-09-27T12:05:56.713Z",
   "chapters": [
     {
-      "slug": "001-15",
+      "slug": "001-leal",
+      "title": "用户:Leal - Ubuntu中文",
+      "file": "chapters/001-leal.md"
+    },
+    {
+      "slug": "002-分类",
+      "title": "分类 - Ubuntu中文",
+      "file": "chapters/002-分类.md"
+    },
+    {
+      "slug": "003-程序开发",
+      "title": "分类:程序开发 - Ubuntu中文",
+      "file": "chapters/003-程序开发.md"
+    },
+    {
+      "slug": "004-页面",
       "title": "Python正则表达式操作指南 - Ubuntu中文",
-      "file": "chapters/001-15.md"
+      "file": "chapters/004-页面.md"
+    },
+    {
+      "slug": "005-ubuntu中文",
+      "title": "Ubuntu中文",
+      "file": "chapters/005-ubuntu中文.md"
+    },
+    {
+      "slug": "006-随机页面",
+      "title": "上游项目/Mozilla - Ubuntu中文",
+      "file": "chapters/006-随机页面.md"
+    },
+    {
+      "slug": "007-页面分类",
+      "title": "分类:页面分类 - Ubuntu中文",
+      "file": "chapters/007-页面分类.md"
+    },
+    {
+      "slug": "008-编辑指南",
+      "title": "Wiki使用方法 - Ubuntu中文",
+      "file": "chapters/008-编辑指南.md"
+    },
+    {
+      "slug": "009-沙盒",
+      "title": "沙盒 - Ubuntu中文",
+      "file": "chapters/009-沙盒.md"
+    },
+    {
+      "slug": "010-字词处理",
+      "title": "MediaWiki:Conversiontable/zh-hant - Ubuntu中文",
+      "file": "chapters/010-字词处理.md"
+    },
+    {
+      "slug": "011-链入页面",
+      "title": "链接至“Python正则表达式操作指南”的页面 - Ubuntu中文",
+      "file": "chapters/011-链入页面.md"
+    },
+    {
+      "slug": "012-特殊页面",
+      "title": "特殊页面 - Ubuntu中文",
+      "file": "chapters/012-特殊页面.md"
+    },
+    {
+      "slug": "013-180-166-23-5",
+      "title": "180.166.23.5的用户贡献 - Ubuntu中文",
+      "file": "chapters/013-180-166-23-5.md"
+    },
+    {
+      "slug": "014-121-33-190-182",
+      "title": "121.33.190.182的用户贡献 - Ubuntu中文",
+      "file": "chapters/014-121-33-190-182.md"
+    },
+    {
+      "slug": "015-61-141-158-178",
+      "title": "61.141.158.178的用户贡献 - Ubuntu中文",
+      "file": "chapters/015-61-141-158-178.md"
+    },
+    {
+      "slug": "016-1-62-246-131",
+      "title": "1.62.246.131的用户贡献 - Ubuntu中文",
+      "file": "chapters/016-1-62-246-131.md"
+    },
+    {
+      "slug": "017-182-91-234-199",
+      "title": "182.91.234.199的用户贡献 - Ubuntu中文",
+      "file": "chapters/017-182-91-234-199.md"
+    },
+    {
+      "slug": "018-关于ubuntu中文",
+      "title": "Ubuntu中文:社区 - Ubuntu中文",
+      "file": "chapters/018-关于ubuntu中文.md"
+    },
+    {
+      "slug": "019-免责声明",
+      "title": "免责声明 - Ubuntu中文",
+      "file": "chapters/019-免责声明.md"
     }
   ],
   "sourceType": "web",

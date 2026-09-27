@@ -3,12 +3,17 @@
   "title": "零基础学 Python 第一版",
   "url": "http://www.kancloud.cn/kancloud/python-basic",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:16.829Z",
+  "fetchedAt": "2026-09-27T12:02:49.850Z",
   "chapters": [
     {
-      "slug": "001-18",
+      "slug": "001-零基础学python-第一版-看云",
       "title": "零基础学Python（第一版） · 看云",
-      "file": "chapters/001-18.md"
+      "file": "chapters/001-零基础学python-第一版-看云.md"
+    },
+    {
+      "slug": "002-第零部分-独上高楼-望尽天涯路",
+      "title": "第零部分 独上高楼，望尽天涯路 · 零基础学Python（第一版） · 看云",
+      "file": "chapters/002-第零部分-独上高楼-望尽天涯路.md"
     }
   ],
   "sourceType": "web",

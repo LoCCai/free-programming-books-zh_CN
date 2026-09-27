@@ -3,12 +3,12 @@
   "title": "Node debug 三法三例",
   "url": "http://i5ting.github.io/node-debug-tutorial/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:41.395Z",
+  "fetchedAt": "2026-09-27T12:01:03.633Z",
   "chapters": [
     {
-      "slug": "001-18",
+      "slug": "001-readme",
       "title": "README",
-      "file": "chapters/001-18.md"
+      "file": "chapters/001-readme.md"
     }
   ],
   "sourceType": "web",

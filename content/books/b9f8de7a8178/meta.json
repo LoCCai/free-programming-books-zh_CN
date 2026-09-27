@@ -3,12 +3,12 @@
   "title": "Laravel 5.1 LTS 速查表",
   "url": "https://learninglaravel.net/cheatsheet-chinese",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:07.240Z",
+  "fetchedAt": "2026-09-27T12:02:03.311Z",
   "chapters": [
     {
-      "slug": "001-1a",
+      "slug": "001-laravel-5-1-lts-速查表",
       "title": "Laravel 5.1 LTS 速查表",
-      "file": "chapters/001-1a.md"
+      "file": "chapters/001-laravel-5-1-lts-速查表.md"
     }
   ],
   "sourceType": "web",

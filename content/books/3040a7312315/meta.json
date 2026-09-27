@@ -3,12 +3,52 @@
   "title": "Chrome扩展开发文档",
   "url": "http://open.chrome.360.cn/extension_dev/overview.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:23.895Z",
+  "fetchedAt": "2026-09-27T11:57:09.412Z",
   "chapters": [
     {
-      "slug": "001-1h",
+      "slug": "001-综述-扩展开发文档",
       "title": "综述--扩展开发文档",
-      "file": "chapters/001-1h.md"
+      "file": "chapters/001-综述-扩展开发文档.md"
+    },
+    {
+      "slug": "002-manifest-files",
+      "title": "清单文件--扩展开发文档",
+      "file": "chapters/002-manifest-files.md"
+    },
+    {
+      "slug": "003-browser-actions",
+      "title": "Browser Actions --扩展开发文档",
+      "file": "chapters/003-browser-actions.md"
+    },
+    {
+      "slug": "004-content-scripts",
+      "title": "Content Scripts--扩展开发文档",
+      "file": "chapters/004-content-scripts.md"
+    },
+    {
+      "slug": "005-chrome-extension",
+      "title": "开发文档",
+      "file": "chapters/005-chrome-extension.md"
+    },
+    {
+      "slug": "006-入门指南",
+      "title": "Hello World --扩展开发文档",
+      "file": "chapters/006-入门指南.md"
+    },
+    {
+      "slug": "007-调试指南",
+      "title": "调试--扩展开发文档",
+      "file": "chapters/007-调试指南.md"
+    },
+    {
+      "slug": "008-开发指南",
+      "title": "分类索引--扩展开发文档",
+      "file": "chapters/008-开发指南.md"
+    },
+    {
+      "slug": "009-代码例子",
+      "title": "开发文档",
+      "file": "chapters/009-代码例子.md"
     }
   ],
   "sourceType": "web",

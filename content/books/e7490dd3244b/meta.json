@@ -3,12 +3,142 @@
   "title": "backbone.js入门教程",
   "url": "http://www.the5fire.com/backbone-js-tutorials-pdf-download.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:44.223Z",
+  "fetchedAt": "2026-09-27T12:01:18.170Z",
   "chapters": [
     {
-      "slug": "001-1r",
+      "slug": "001-python项目练习一-即时标记",
+      "title": "python项目练习一：即时标记 | the5fire",
+      "file": "chapters/001-python项目练习一-即时标记.md"
+    },
+    {
+      "slug": "002-知乎回答-程序员应该怎么提高自己",
+      "title": "知乎回答：程序员应该怎么提高自己 | the5fire",
+      "file": "chapters/002-知乎回答-程序员应该怎么提高自己.md"
+    },
+    {
+      "slug": "003-python项目练习十-diy街机游戏",
+      "title": "python项目练习十：DIY街机游戏 | the5fire",
+      "file": "chapters/003-python项目练习十-diy街机游戏.md"
+    },
+    {
+      "slug": "004-python项目练习二-画幅好画",
+      "title": "python项目练习二：画幅好画 | the5fire",
+      "file": "chapters/004-python项目练习二-画幅好画.md"
+    },
+    {
+      "slug": "005-自动化工具-ansible中文指南",
+      "title": "自动化工具——ansible中文指南 | the5fire",
+      "file": "chapters/005-自动化工具-ansible中文指南.md"
+    },
+    {
+      "slug": "006-bootstrap入门-做一个简单的页面",
+      "title": "bootstrap入门-做一个简单的页面 | the5fire",
+      "file": "chapters/006-bootstrap入门-做一个简单的页面.md"
+    },
+    {
+      "slug": "007-python对list去重的各种方法",
+      "title": "python对list去重的各种方法 | the5fire",
+      "file": "chapters/007-python对list去重的各种方法.md"
+    },
+    {
+      "slug": "008-动手实现m3u8的浏览器播放器",
+      "title": "动手实现m3u8的浏览器播放器 | the5fire",
+      "file": "chapters/008-动手实现m3u8的浏览器播放器.md"
+    },
+    {
+      "slug": "009-知乎回答-你是如何学习django的",
+      "title": "知乎回答：你是如何学习Django的 | the5fire",
+      "file": "chapters/009-知乎回答-你是如何学习django的.md"
+    },
+    {
+      "slug": "010-终于录完了-112g的django视频教程",
+      "title": "终于录完了，112G的Django视频教程 | the5fire",
+      "file": "chapters/010-终于录完了-112g的django视频教程.md"
+    },
+    {
+      "slug": "011-置顶-django企业开发实战-勘误",
+      "title": "【置顶】《Django企业开发实战》「勘误」 | the5fire",
+      "file": "chapters/011-置顶-django企业开发实战-勘误.md"
+    },
+    {
+      "slug": "012-使用virtualenv创建虚拟python环境",
+      "title": "使用virtualenv创建虚拟python环境 | the5fire",
+      "file": "chapters/012-使用virtualenv创建虚拟python环境.md"
+    },
+    {
+      "slug": "013-python项目练习四-新闻聚合",
+      "title": "python项目练习四：新闻聚合 | the5fire",
+      "file": "chapters/013-python项目练习四-新闻聚合.md"
+    },
+    {
+      "slug": "014-backbone-js入门教程pdf下载",
       "title": "backbone.js入门教程PDF下载 | the5fire",
-      "file": "chapters/001-1r.md"
+      "file": "chapters/014-backbone-js入门教程pdf下载.md"
+    },
+    {
+      "slug": "015-backbone-js入门学习笔记目录",
+      "title": "Backbone.js入门学习笔记目录 | the5fire",
+      "file": "chapters/015-backbone-js入门学习笔记目录.md"
+    },
+    {
+      "slug": "016-python实战",
+      "title": "python实战 | the5fire",
+      "file": "chapters/016-python实战.md"
+    },
+    {
+      "slug": "017-webservice深入学习",
+      "title": "webservice深入学习 | the5fire",
+      "file": "chapters/017-webservice深入学习.md"
+    },
+    {
+      "slug": "018-backbone-js入门笔记",
+      "title": "backbone.js入门 | the5fire",
+      "file": "chapters/018-backbone-js入门笔记.md"
+    },
+    {
+      "slug": "019-读书计划",
+      "title": "读书 | the5fire",
+      "file": "chapters/019-读书计划.md"
+    },
+    {
+      "slug": "020-python面试记",
+      "title": "the5fire",
+      "file": "chapters/020-python面试记.md"
+    },
+    {
+      "slug": "021-通过github-actions部署aws-lambda记录-s3部署-ecr部",
+      "title": "通过github actions部署aws lambda记录 - s3部署、ECR部署 以及固定出口IP",
+      "file": "chapters/021-通过github-actions部署aws-lambda记录-s3部署-ecr部.md"
+    },
+    {
+      "slug": "022-no-more-authentication-methods-to-try-pe",
+      "title": "No more authentication methods to try,Permission denied (publickey)",
+      "file": "chapters/022-no-more-authentication-methods-to-try-pe.md"
+    },
+    {
+      "slug": "023-创作者滞后的快乐",
+      "title": "创作者滞后的快乐 | the5fire",
+      "file": "chapters/023-创作者滞后的快乐.md"
+    },
+    {
+      "slug": "024-django源码解析第一季-剧终",
+      "title": "Django源码解析第一季 剧终 | the5fire",
+      "file": "chapters/024-django源码解析第一季-剧终.md"
+    },
+    {
+      "slug": "025-django源码阅读-django-自定义异常处理页面源码解读",
+      "title": "【Django源码阅读】Django 自定义异常处理页面源码解读 | the5fire",
+      "file": "chapters/025-django源码阅读-django-自定义异常处理页面源码解读.md"
+    },
+    {
+      "slug": "026-个人回忆录之年度总结索引",
+      "title": "个人回忆录之年度总结索引 | the5fire",
+      "file": "chapters/026-个人回忆录之年度总结索引.md"
+    },
+    {
+      "slug": "027-程序员和音乐家",
+      "title": "程序员和音乐家 | the5fire",
+      "file": "chapters/027-程序员和音乐家.md"
     }
   ],
   "sourceType": "web",

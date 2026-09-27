@@ -1,0 +1,1038 @@
+* * *
+
+本篇主题内容是.NET GDI+图形图像编程系列的教程，不要被这个滚动条吓到，为了查找方便，我没有分开写，上面加了目录了，而且很多都是源码和图片~
+
+(\*^\_^\*) 本人也为了学习深刻，另一方面也是为了分享给大家，纯手工码了好几天的字，喜欢的表忘了点赞哦~给点小小的动力~
+
+* * *
+
+## 超全面的.NET GDI+图形图像编程教程
+
+**目录：**
+
+> **《[GDI+绘图基础](#LonelyShadow1)》  
+> **
+> 
+> 1 [GDI+概述](#LonelyShadow1.1)
+> 
+> 2 [Graphics类](#LonelyShadow1.2)
+> 
+> 2.1 [Graphics类的方法成员](#LonelyShadow1.2.1)
+> 
+> 2.2 [引用命名空间](#LonelyShadow1.2.2)
+> 
+> 3 [常用画图对象](#LonelyShadow1.3)
+> 
+> 3.1 [Pen类](#LonelyShadow1.3.1)
+> 
+> 3.2 [Color结构](#LonelyShadow1.3.2)
+> 
+> 3.3 [Font类](#LonelyShadow1.3.3)
+> 
+> 3.4 [Brush类](#LonelyShadow1.3.4)
+> 
+> 3.5 [Rectangle类](#LonelySahdow1.3.5)
+> 
+> 4 [基本图形绘制举例](#LonelyShadow1.4)
+> 
+> 4.1 [画一个矩形](#LonelyShadow1.4.1)
+> 
+> 4.2 [画一个弧](#LonelyShadow1.4.2)
+> 
+> 4.3 [画线](#LonelyShadow1.4.3)
+> 
+> 4.4 [画椭圆](#LonelyShadow1.4.4)
+> 
+> 4.5 [输出文本](#LonelyShadow1.4.5)
+> 
+> 4.6 [填充路径](#LonelyShadow1.4.6)
+> 
+> 5 [画刷和画刷类型](#LonelyShadow1.5)
+> 
+> 5.1 [SolidBrush(单色画刷)](#LonelyShadow1.5.1)
+> 
+> 5.2 [HatchBrush(阴影画刷)](#LonelyShadow1.5.2)
+> 
+> 5.3 [TextureBrush(纹理笔刷)](#LonelyShadow1.5.3)
+> 
+> 5.4 [LinearGradientBrush 和 PathGradientBrush(渐变笔刷)](#LonelyShadow1.5.4)
+> 
+> 5.4.1 [LinearGradientBrush类](#LonelyShadow1.5.4.1)
+> 
+> 5.4.2 [PathGradientBrush类](#LonelyShadow1.5.4.2)
+
+## **GDI+绘图基础**
+
+　　编写图形程序时需要使用GDI(Graphics Device Interface，图形设备接口)。
+
+　　从程序设计的角度看，GDI包括两部分：GDI对象和GDI函数。GDI对象定义了GDI函数使用的工具和环境变量；而GDI函数使用GDI对象绘制各种图形。
+
+　　在C#中，进行图形程序编写时用到的是GDI+(Graphics Device Interface Plus，图形设备接口)版本，GDI+是GDI的进一步扩展，它使我们编程更加方便。
+
+## **1 GDI+概述**
+
+　　GDI+是微软在Windows 2000以后操作系统中提供的新的图形设备接口，其通过一套部署为托管代码的类来实现，这套类被称为GDI+的“托管类接口”。
+
+　　GDI+主要提供了一下三类服务：
+
+1.  1.  二维矢量图形：GDI+提供了存储图形基元自身信息的类(或结构体)、存储图形基元绘制方式信息的类以及实际进行绘制的类。
+    2.  图像处理：大多数图片都难以划定为直线和曲线的集合，无法使用二维矢量图形方式进行处理。因此，GDI+为我们提供了Bitmap、Image等类，它们可用于显示、操作和奥村BMP、JPG、GIF等图像格式。
+    3.  文字显示：GDI+支持使用各种字体、字号和样式来显示文本。
+
+　　我们要进行图形编程，就必须先讲解Graphics类，同时我们还必须掌握Pen、Brush和Rectangle这几种类。
+
+　　GDI+比GDI优越主要表现在两个方面：
+
+1.  1.  GDI+通过提供新功能(例如：渐变画笔和Alpha混合)扩展了GDI的功能；
+    2.  修订了编程模型，是图形编程更加简易灵活。
+
+##  **2 Graphics类**
+
+　　Graphics类封装一个GDI+绘图图面，提供将对象绘制到现实设备的方法，Graphics与特定的设备上下文关联。
+
+　　画图方法都被包括在Graphics类中国，在画任何对象(例如：Circle Rectangle)时，我们首先要创建一个Graphics类实例，这个实例相当于建立了一块画布，有了画布才可以用各种画图方法进行绘图。
+
+　　绘图程序的设计过程一般分为两个步骤：1.创建Graphics；2.使用Graphics对象的方法绘图、显示文本或处理图像。
+
+　　通常我们使用下述三种方法来创建一个Graphics对象：
+
+　　**方法一：**利用控件或窗体的Paint事件中的PaintEventArgs
+
+　　在窗体或控件的Paint事件中接受对图形对象的引用，作为PaintEventArgs(PaintEventArgs指定绘制控件所用的Graphics)的一部分，在为控件创建绘制代码时，通常会使用此方法来获取对图形对象的引用。例如：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1 // 窗体的Paint事件的响应方法
+ 2 private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 3 {
+ 4     Graphics \_Graphics = e.Graphics; 5 }
+ 6 
+ 7 // 也可以直接重载控件或窗体的OnPaint方法
+ 8 protected override void OnPaint(PaintEventArgs e) 9 {
+10     Graphics \_Graphics = e.Graphics;
+11 }
+
+创建Graphics对象的两种方法
+
+　　Paint事件在重绘控件时发生。
+
+　　**方法二：**调用某控件或窗体的CreateGraphics方法
+
+　　调用某控件或窗体的CreateGraphics方法以获取对Graphics对象的引用，该对象表示该控件或窗体的绘图图面。
+
+　　如果想在已存在的窗体或控件上绘图，通常会使用此方法，例如：
+
+1 Graphics \_Graphics = this.CreateGraphics();    // 在当前窗体上创建Graphics对象
+
+　　**方法三：**调用Graphics类的FromImage静态方法
+
+　　由从Image集成的任何对象创建Graphics对象。在需要更改已存在的图像时，通常会使用此方法。例如：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+1 Image img = Image.FromFile("孤影.jpg");   // 建立Image对象
+2 Graphics \_Graphics = Graphics.FromImage(img);   // 创建Graphics对象
+
+使用Graphics.FromImage()方法 创建Graphics对象
+
+## 　　**_2.1 Graphics类的方法成员_**
+
+　　有了一个Graphics的对象引用后，就可以利用该对象的成员进行各种各样图形的绘制，下面表格列出了Graphics类的常用方法成员：
+
+<table><caption>Graphics类常用方法成员</caption><tbody><tr><td><strong>名称</strong></td><td><strong>说明</strong></td><td><strong>名称</strong></td><td><strong>说明</strong></td></tr><tr><td>DrawArc</td><td>画弧</td><td>DrawBezier</td><td>画立体的贝尔塞曲线</td></tr><tr><td>DrawBeziers</td><td>画连续立体的贝尔塞曲线</td><td>DrawClosedCurve</td><td>画闭合曲线</td></tr><tr><td>DrawCurve</td><td>画曲线</td><td>DrawEllipse</td><td>画椭圆</td></tr><tr><td>DrawImage</td><td>画图像</td><td>DrawLine</td><td>画线</td></tr><tr><td>DrawPath</td><td>通过路径画线和曲线</td><td>DrawPie</td><td>画饼形</td></tr><tr><td>DrawPolygon</td><td>画多边形</td><td>DrawRectangle</td><td>画矩形</td></tr><tr><td>DrawString</td><td>绘制文字</td><td>FillEllipse</td><td>填充椭圆</td></tr><tr><td>FillPath</td><td>填充路径</td><td>FillPie</td><td>填充饼图</td></tr><tr><td>FillPolygon</td><td>填充多边形</td><td>FillRectangle</td><td>填充矩形</td></tr><tr><td>FillRectangles</td><td>填充矩形组</td><td>FillRegion</td><td>填充区域</td></tr></tbody></table>
+
+　　在.NET中，GDI+的所有绘图功能都包括在System、System.Drawimg、System.Drawimg.Imaging、System.Drawimg.Drawimg2D和System.Drawimg.Text等命名空间中，因此开始用GDI+类之前，需要先引用相应的命名空间。
+
+## 　　**_2.2 引用命名空间_**
+
+　　在C#应用程序中使用using命令引用给定的命名空间或类，下面是一个C#应用程序引用命名空间的例子：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+1 using System;
+2 using System.Collections.Generic;
+3 using System.Data;
+4 using System.ComponentModel;
+5 using System.Drawing;
+6 using System.Drawing.Drawing2D;
+7 using System.Drawing.Imaging;
+
+引用命名空间
+
+## **3 常用画图对象**
+
+　　在创建了Graphics对象后，就可以用它开始绘图了，可以画线、填充图形、显示文本等等，其中主要用到的对象还有：
+
+-   Pen：用来用patterns、colors或者bitmaps进行填充
+-   Color：用来画线和多边形，包括矩形、圆和饼形
+-   Font：用来给文字设置字体格式
+-   Brush：用来描述颜色
+-   Rectangle：矩形结构通常用来在窗体上画矩形
+-   Point：描述一对有序的x,y两个坐标值
+
+## 　　_**3.1 Pen类**_
+
+　　Pen类用来绘制指定宽度和样式的直线。使用DashStyle属性绘制几种虚线，可以使用各种各样填充样式(包括纯色和纹理)来填充Pen绘制的直线，填充模式取决于画笔或用作填充对象的纹理。
+
+　　使用画笔时，需要先实例化一个画笔对象，主要有以下几种方法：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1 // 用指定的颜色实例化一只画笔
+ 2 public Pen(Color); 3 
+ 4 // 用指定的画刷实例化一只画笔
+ 5 public Pen(Brush); 6 
+ 7 // 用指定的画刷和宽度实例化一只画笔
+ 8 public Pen(Brush, float);
+ 9 
+10 // 用指定的颜色和宽度实例化一只画笔
+11 public Pen(Color, float);
+12 
+13 // 实例化画笔格式如下：
+14 Pen pen = new Pen(Color.Blue);
+15 // 或者：
+16 Pen pen = new Pen(Color.Blue, 100);
+
+实例化画笔对象
+
+　　Pen常用的属性如下：
+
+<table><caption>Pen常用属性</caption><tbody><tr><td><strong>名称</strong></td><td><strong>说明</strong></td><td><strong>名称</strong></td><td><strong>说明</strong></td></tr><tr><td>Alignment</td><td>获得或者设置画笔的对齐方式</td><td>Brush</td><td>获得或者设置画笔的属性</td></tr><tr><td>Color</td><td>获得或者设置画笔的颜色</td><td>Width</td><td>获得或者设置画笔的宽度</td></tr></tbody></table>
+
+## 　　_**3.2 Color结构**_
+
+　　在自然界中，颜色大都由透明度(A)和三基色(R,G,B)所组成。在GDI+中，通过Color结构封装对颜色的定义，Color结构中，除了提供(A,R,G,B)以外，还提供许多系统定义的颜色，如Pink(粉色)。另外，还提供许多静态成员，用户对颜色进行操作。
+
+　　_**Color结构的基本属性如下表：**_
+
+<table><caption>颜色的基本属性</caption><tbody><tr><td><strong>名称</strong></td><td><strong>说明</strong></td></tr><tr><td>A</td><td>获取此Color结构的Alpha分量值，取值(0~255)</td></tr><tr><td>R</td><td>获取此Color结构的红色分量值，取值(0~255)</td></tr><tr><td>G</td><td>获取此Color结构的绿色分量值，取值(0~255)</td></tr><tr><td>B</td><td>获取此Color结构的蓝色分量值，取值(0~255)</td></tr><tr><td>Name</td><td><p>获取此Color结构的名称，这将返回用户定义的颜色的名称或已知颜色的名称(如果该颜色是从某个名称创建的)。</p><p>对于自定义的颜色，这将返回RGB值。</p></td></tr></tbody></table>
+
+　　_**Color结构的基本(静态)方法如下表：**_
+
+<table><caption>颜色的基本方法</caption><tbody><tr><td><strong>名称</strong></td><td><strong>说明</strong></td></tr><tr><td>FromArgb</td><td>从四个8位的ARGB分量(Alpha、红色、绿色和蓝色)值创建Color结构</td></tr><tr><td>FromKnowColor</td><td>从指定饿预定义颜色创建一个Color结构</td></tr><tr><td>FromName</td><td>从预定义颜色的指定名称创建一个Color结构。</td></tr></tbody></table>
+
+　　Color结构变量可以通过已有颜色构造，也可以通过RGB建立，例如：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+1 Color color1 = Color.FromArgb(96, 06, 25);
+2 Color color2 = Color.FromKnownColor(KnownColor.Blue);   // KnowColor为枚举类型
+3 Color color3 = Color.FromName("LightBlue");
+
+创建Color构造对象
+
+ 　　在图像处理中一般需要获取或设置像素的颜色值，获取一幅图像的某个像素颜色值得具体步骤如下：
+
+1.  定义Bitmap  
+     Bitmap bitmap = new Bitmap("D:\\\\孤影\\\\LonelyShadow.bmp"); 
+2.  定义一个颜色变量，把在指定位置所取得的像素值存入颜色变量中  
+    
+    1 Color color = new Color();
+    2 color = bitmap.GetPixel(10, 10); // 获取此Bitmap中指定像素的颜色
+    
+3.  将颜色值分解出单色分量值  
+    
+    1 int r, g, b;
+    2 r = color.R;
+    3 g = color.G;
+    4 b = color.B;
+    
+
+## 　　_**3.3 Font类**_
+
+　　Font类定义特定文本格式，包括字体、字号和字形属性。Font类的常用构造函数是：
+
+ public Font(string 字体名, float 字号, FontStyle 字形){} 其中字号和字体为可选项
+
+ public Font(string 字体名, float 字号) 其中字体名为Font的FontFamily的字符串表示形式
+
+　　下面是定义一个F哦你团队相爱难过的示例代码：
+
+1 FontFamily fontFamily = new FontFamily("Arial");
+2 Font font = new Font(fontFamily, 16, FontStyle.Regular, GraphicsUnit.Pixel);
+
+ 　　**字体常用属性如下表：**
+
+<table><caption>字体的常用属性</caption><tbody><tr><td><strong>名称</strong></td><td><strong>说明</strong></td><td><strong>名称</strong></td><td><strong>说明</strong></td></tr><tr><td>Bold</td><td>是否为粗体</td><td>FontFamily</td><td>字体成员</td></tr><tr><td>Height</td><td>字体高</td><td>Italic</td><td>是否为斜体</td></tr><tr><td>Name</td><td>字体名称</td><td>Size</td><td>字体尺寸</td></tr><tr><td>SizeInPoints</td><td>获取此Font对象的字号，以磅为单位</td><td>Strikeout</td><td>是否有删除线</td></tr><tr><td>Style</td><td>字体类型</td><td>Underline</td><td>Unit</td></tr><tr><td>Unit</td><td>字体尺寸单位</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+
+## 　　_**3.4 Brush类**_
+
+　　Brush类是一个抽象的基类，因此它不能被实例化，我们总是用它的派生类进行实例化一个画刷的对象，当我们对图形内部进行填充操作时就会用到画刷，关于画刷在 \[1.5\] 中有详细的讲解。
+
+## 　　_**3.5 Rectangle结构**_
+
+　　存储一组整数，共四个，表示一个矩形的位置和大小。
+
+　　矩形结构通常用来在窗体上画矩形，除了利用它的构造函数矩形对象外，还可以利用Rectangle结构的属性成员，其属性成员如下表：
+
+<table><caption>Rectangle结构属性</caption><tbody><tr><td><strong>名称</strong></td><td><strong>说明</strong></td><td><strong>名称</strong></td><td><strong>索命</strong></td></tr><tr><td>Bottom</td><td>底端坐标</td><td>Height</td><td>矩形高</td></tr><tr><td>IsEmpty</td><td>测试矩形宽和高是否为0</td><td>Left</td><td>矩形左边坐标</td></tr><tr><td>Location</td><td>矩形的位置</td><td>Right</td><td>矩形右边坐标</td></tr><tr><td>Size</td><td>矩形尺寸</td><td>Top</td><td>矩形顶端坐标</td></tr><tr><td>Width</td><td>矩形宽</td><td>X</td><td>矩形左上角顶点X坐标</td></tr><tr><td>Y</td><td>矩形左上角顶点Y坐标</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
+
+　　Rectangle结构的构造函数有以下两个：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+1 // 用指定的位置和大小初始化Rectangle类的新实例
+2 public Rectangle(Point, Size);  // Size结构存储一个有序整数对，通常为矩形的宽度和高度
+3 public Rectangle(int, int, int, int);
+
+Rectangle结构的构造函数
+
+　　1.3.6 Point结构
+
+　　用指定坐标初始化Point类的新实例，这个结构很像C++的Point结构，它描述了一对有序的x,y两个坐标值，其构造函数为：
+
+　　 public Point(int x, int y); 其中x为该点的水平位置；y为该点的垂直位置。
+
+　　下面是构造Point对象的示例代码：
+
+1 Point pt1 = new Point(30, 30);
+2 Point pt2 = new Point(110, 110);
+
+## **4 基本图形绘制举例**
+
+## 　　_**4.1 画一个矩形**_
+
+　　建一个C#.NET WinForms窗体应用程序，通过在窗体的OnPaint事件中绘制一个填充的渐变矩形：
+
+　　填充矩形方法FillRectangle()的语法帮助定义如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         //
+ 2         // 摘要: 3         //     填充 System.Drawing.Rectangle 结构指定的矩形的内部。 4         //
+ 5         // 参数: 6         //   brush: 7         //     确定填充特性的 System.Drawing.Brush。 8         //
+ 9         //   rect:
+10         //     System.Drawing.Rectangle 结构，它表示要填充的矩形。
+11         //
+12         // 异常: 
+13         //   System.ArgumentNullException:
+14         //     brush 为 null。
+15         public void FillRectangle(Brush brush, Rectangle rect);
+16         //
+17         // 摘要: 
+18         //     填充 System.Drawing.RectangleF 结构指定的矩形的内部。
+19         //
+20         // 参数: 
+21         //   brush:
+22         //     确定填充特性的 System.Drawing.Brush。
+23         //
+24         //   rect:
+25         //     System.Drawing.RectangleF 结构，它表示要填充的矩形。
+26         //
+27         // 异常: 
+28         //   System.ArgumentNullException:
+29         //     brush 为 null。
+30         public void FillRectangle(Brush brush, RectangleF rect);
+31         //
+32         // 摘要: 
+33         //     填充由一对坐标、一个宽度和一个高度指定的矩形的内部。
+34         //
+35         // 参数: 
+36         //   brush:
+37         //     确定填充特性的 System.Drawing.Brush。
+38         //
+39         //   x:
+40         //     要填充的矩形的左上角的 x 坐标。
+41         //
+42         //   y:
+43         //     要填充的矩形的左上角的 y 坐标。
+44         //
+45         //   width:
+46         //     要填充的矩形的宽度。
+47         //
+48         //   height:
+49         //     要填充的矩形的高度。
+50         //
+51         // 异常: 
+52         //   System.ArgumentNullException:
+53         //     brush 为 null。
+54         public void FillRectangle(Brush brush, float x, float y, float width, float height);
+55         //
+56         // 摘要: 
+57         //     填充由一对坐标、一个宽度和一个高度指定的矩形的内部。
+58         //
+59         // 参数: 
+60         //   brush:
+61         //     确定填充特性的 System.Drawing.Brush。
+62         //
+63         //   x:
+64         //     要填充的矩形的左上角的 x 坐标。
+65         //
+66         //   y:
+67         //     要填充的矩形的左上角的 y 坐标。
+68         //
+69         //   width:
+70         //     要填充的矩形的宽度。
+71         //
+72         //   height:
+73         //     要填充的矩形的高度。
+74         //
+75         // 异常: 
+76         //   System.ArgumentNullException:
+77         //     brush 为 null。
+78         public void FillRectangle(Brush brush, int x, int y, int width, int height);
+
+填充矩形的方法FillRectangle() 语法定义
+
+　　我们在这里只使用第一种定义，演示填充矩形，示例代码如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics g = e.Graphics;    // 创建当前窗体的Graphics对象
+ 9             Rectangle rect = new Rectangle(50, 30, 100, 100);   // 创建一个矩形(x,y,width,height)
+10             // 创建线性渐变画刷(画刷界限, 起始颜色, 结束颜色, 渐变角度)
+11             LinearGradientBrush lBrush = new LinearGradientBrush(rect, Color.Purple, Color.LightBlue, LinearGradientMode.BackwardDiagonal);
+12             g.FillRectangle(lBrush, rect);  // 走起~
+13         }
+
+画一个颜色渐变的矩形
+
+　　上述代码运行效果如下： 
+
+![](https://images0.cnblogs.com/blog/541982/201412/141344520404261.jpg)
+
+## 　　_**4.2 画一个弧**_
+
+　　画弧线的语法定义如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         //
+ 2         // 摘要: 3         //     绘制一段弧线，它表示 System.Drawing.Rectangle 结构指定的椭圆的一部分。 4         //
+ 5         // 参数: 6         //   pen: 7         //     System.Drawing.Pen，它确定弧线的颜色、宽度和样式。 8         //
+ 9         //   rect:
+10         //     System.Drawing.RectangleF 结构，它定义椭圆的边界。
+11         //
+12         //   startAngle:
+13         //     从 x 轴到弧线的起始点沿顺时针方向度量的角（以度为单位）。
+14         //
+15         //   sweepAngle:
+16         //     从 startAngle 参数到弧线的结束点沿顺时针方向度量的角（以度为单位）。
+17         //
+18         // 异常: 
+19         //   System.ArgumentNullException:
+20         //     pen 为 null。
+21         public void DrawArc(Pen pen, Rectangle rect, float startAngle, float sweepAngle);
+
+画弧线方法DrawArc()的定义
+
+　　参照定义的帮助，可写出如下画弧线的代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; 9             Pen pen = new Pen(Color.Blue);
+10             Rectangle rect = new Rectangle(50,50,200,100);
+11             graphics.DrawArc(pen, rect, 12, 84);
+12         }
+
+画弧线示例代码
+
+　　上述代码运行结果如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141356033061103.jpg)
+
+## 　　_**4.3 画线**_
+
+　　画线DrawLine()方法的语法定义如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         //
+ 2         // 摘要: 3         //     绘制一条连接两个 System.Drawing.Point 结构的线。 4         //
+ 5         // 参数: 6         //   pen: 7         //     System.Drawing.Pen，它确定线条的颜色、宽度和样式。 8         //
+ 9         //   pt1:
+10         //     System.Drawing.Point 结构，它表示要连接的第一个点。
+11         //
+12         //   pt2:
+13         //     System.Drawing.Point 结构，它表示要连接的第二个点。
+14         //
+15         // 异常: 
+16         //   System.ArgumentNullException:
+17         //     pen 为 null。
+18         public void DrawLine(Pen pen, Point pt1, Point pt2);
+19         //
+20         // 摘要: 
+21         //     绘制一条连接两个 System.Drawing.PointF 结构的线。
+22         //
+23         // 参数: 
+24         //   pen:
+25         //     System.Drawing.Pen，它确定线条的颜色、宽度和样式。
+26         //
+27         //   pt1:
+28         //     System.Drawing.PointF 结构，它表示要连接的第一个点。
+29         //
+30         //   pt2:
+31         //     System.Drawing.PointF 结构，它表示要连接的第二个点。
+32         //
+33         // 异常: 
+34         //   System.ArgumentNullException:
+35         //     pen 为 null。
+36         public void DrawLine(Pen pen, PointF pt1, PointF pt2);
+37         //
+38         // 摘要: 
+39         //     绘制一条连接由坐标对指定的两个点的线条。
+40         //
+41         // 参数: 
+42         //   pen:
+43         //     System.Drawing.Pen，它确定线条的颜色、宽度和样式。
+44         //
+45         //   x1:
+46         //     第一个点的 x 坐标。
+47         //
+48         //   y1:
+49         //     第一个点的 y 坐标。
+50         //
+51         //   x2:
+52         //     第二个点的 x 坐标。
+53         //
+54         //   y2:
+55         //     第二个点的 y 坐标。
+56         //
+57         // 异常: 
+58         //   System.ArgumentNullException:
+59         //     pen 为 null。
+60         public void DrawLine(Pen pen, float x1, float y1, float x2, float y2);
+61         //
+62         // 摘要: 
+63         //     绘制一条连接由坐标对指定的两个点的线条。
+64         //
+65         // 参数: 
+66         //   pen:
+67         //     System.Drawing.Pen，它确定线条的颜色、宽度和样式。
+68         //
+69         //   x1:
+70         //     第一个点的 x 坐标。
+71         //
+72         //   y1:
+73         //     第一个点的 y 坐标。
+74         //
+75         //   x2:
+76         //     第二个点的 x 坐标。
+77         //
+78         //   y2:
+79         //     第二个点的 y 坐标。
+80         //
+81         // 异常: 
+82         //   System.ArgumentNullException:
+83         //     pen 为 null。
+84         public void DrawLine(Pen pen, int x1, int y1, int x2, int y2);
+
+DrawLine()语法定义
+
+　　根据定义的帮助，我们以第一种语法 可以写出如下示例代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+ 9             Pen pen = new Pen(Color.Blue);  // 创建蓝色画笔对象
+10             Point pointStart = new Point(30, 30);   // 创建起始点
+11             Point pointEnd = new Point(150, 150);   // 创建结束点
+12             graphics.DrawLine(pen, pointStart, pointEnd);   // 画线
+13         }
+
+画线DrawLine()函数示例代码
+
+　　上述代码运行效果图如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141444072433863.jpg)
+
+## 　　_**4.4 画椭圆**_
+
+　　还是先看一下DrawEllipse()画椭圆的语法定义：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         //
+ 2         // 摘要: 3         //     绘制边界 System.Drawing.Rectangle 结构指定的椭圆。 4         //
+ 5         // 参数: 6         //   pen: 7         //     System.Drawing.Pen，它确定曲线的颜色、宽度和样式。 8         //
+ 9         //   rect:
+10         //     System.Drawing.Rectangle 结构，它定义椭圆的边界。
+11         //
+12         // 异常: 
+13         //   System.ArgumentNullException:
+14         //     pen 为 null。
+15         public void DrawEllipse(Pen pen, Rectangle rect);
+16         //
+17         // 摘要: 
+18         //     绘制边界 System.Drawing.RectangleF 定义的椭圆。
+19         //
+20         // 参数: 
+21         //   pen:
+22         //     System.Drawing.Pen，它确定曲线的颜色、宽度和样式。
+23         //
+24         //   rect:
+25         //     System.Drawing.RectangleF 结构，它定义椭圆的边界。
+26         //
+27         // 异常: 
+28         //   System.ArgumentNullException:
+29         //     pen 为 null。
+30         public void DrawEllipse(Pen pen, RectangleF rect);
+31         //
+32         // 摘要: 
+33         //     绘制一个由边框（该边框由一对坐标、高度和宽度指定）定义的椭圆。
+34         //
+35         // 参数: 
+36         //   pen:
+37         //     System.Drawing.Pen，它确定曲线的颜色、宽度和样式。
+38         //
+39         //   x:
+40         //     定义椭圆的边框的左上角的 X 坐标。
+41         //
+42         //   y:
+43         //     定义椭圆的边框的左上角的 Y 坐标。
+44         //
+45         //   width:
+46         //     定义椭圆的边框的宽度。
+47         //
+48         //   height:
+49         //     定义椭圆的边框的高度。
+50         //
+51         // 异常: 
+52         //   System.ArgumentNullException:
+53         //     pen 为 null。
+54         public void DrawEllipse(Pen pen, float x, float y, float width, float height);
+55         //
+56         // 摘要: 
+57         //     绘制一个由边框定义的椭圆，该边框由矩形的左上角坐标、高度和宽度指定。
+58         //
+59         // 参数: 
+60         //   pen:
+61         //     System.Drawing.Pen，它确定曲线的颜色、宽度和样式。
+62         //
+63         //   x:
+64         //     定义椭圆的边框的左上角的 X 坐标。
+65         //
+66         //   y:
+67         //     定义椭圆的边框的左上角的 Y 坐标。
+68         //
+69         //   width:
+70         //     定义椭圆的边框的宽度。
+71         //
+72         //   height:
+73         //     定义椭圆的边框的高度。
+74         //
+75         // 异常: 
+76         //   System.ArgumentNullException:
+77         //     pen 为 null。
+78         public void DrawEllipse(Pen pen, int x, int y, int width, int height);
+
+画椭圆方法 DrawEllipse()语法定义
+
+　　参照上面的语法定义，我们根据第一种语法，可以写出如下示例代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+ 9             Pen pen = new Pen(Color.Blue, 100);  // 创建蓝色 粗细为100的画笔对象
+10             Rectangle rect = new Rectangle(50, 50, 200, 100);   // 创建椭圆所在的矩形范围
+11             graphics.DrawEllipse(pen, rect);    // 在指定的范围内画椭圆
+12         }
+
+画椭圆DrawEllipse()函数示例代码
+
+　　上述代码运行结果如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141450403845569.jpg)
+
+## 　　_**4.5 输出文本**_
+
+　　输出文本用到的是Graphics对象的DrawString()方法，语法定义如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+  1         //
+  2         // 摘要:  3         //     在指定位置并且用指定的 System.Drawing.Brush 和 System.Drawing.Font 对象绘制指定的文本字符串。  4         //
+  5         // 参数:  6         //   s:  7         //     要绘制的字符串。  8         //
+  9         //   font: 10         //     System.Drawing.Font，它定义字符串的文本格式。 11         //
+ 12         //   brush: 13         //     System.Drawing.Brush，它确定所绘制文本的颜色和纹理。 14         //
+ 15         //   point: 16         //     System.Drawing.PointF 结构，它指定所绘制文本的左上角。 17         //
+ 18         // 异常: 19         //   System.ArgumentNullException: 20         //     brush 为 null。 - 或 - s 为 null。
+ 21         public void DrawString(string s, Font font, Brush brush, PointF point); 22         //
+ 23         // 摘要: 24         //     在指定矩形并且用指定的 System.Drawing.Brush 和 System.Drawing.Font 对象绘制指定的文本字符串。 25         //
+ 26         // 参数: 27         //   s: 28         //     要绘制的字符串。 29         //
+ 30         //   font: 31         //     System.Drawing.Font，它定义字符串的文本格式。 32         //
+ 33         //   brush: 34         //     System.Drawing.Brush，它确定所绘制文本的颜色和纹理。 35         //
+ 36         //   layoutRectangle: 37         //     System.Drawing.RectangleF 结构，它指定所绘制文本的位置。 38         //
+ 39         // 异常: 40         //   System.ArgumentNullException: 41         //     brush 为 null。 - 或 - s 为 null。
+ 42         public void DrawString(string s, Font font, Brush brush, RectangleF layoutRectangle); 43         //
+ 44         // 摘要: 45         //     在指定位置并且用指定的 System.Drawing.Brush 和 System.Drawing.Font 对象绘制指定的文本字符串。 46         //
+ 47         // 参数: 48         //   s: 49         //     要绘制的字符串。 50         //
+ 51         //   font: 52         //     System.Drawing.Font，它定义字符串的文本格式。 53         //
+ 54         //   brush: 55         //     System.Drawing.Brush，它确定所绘制文本的颜色和纹理。 56         //
+ 57         //   x: 58         //     所绘制文本的左上角的 x 坐标。 59         //
+ 60         //   y: 61         //     所绘制文本的左上角的 y 坐标。 62         //
+ 63         // 异常: 64         //   System.ArgumentNullException: 65         //     brush 为 null。 - 或 - s 为 null。
+ 66         public void DrawString(string s, Font font, Brush brush, float x, float y); 67         //
+ 68         // 摘要: 69         //     使用指定 System.Drawing.StringFormat 的格式化特性，用指定的 System.Drawing.Brush 和 System.Drawing.Font 70         //     对象在指定的位置绘制指定的文本字符串。 71         //
+ 72         // 参数: 73         //   s: 74         //     要绘制的字符串。 75         //
+ 76         //   font: 77         //     System.Drawing.Font，它定义字符串的文本格式。 78         //
+ 79         //   brush: 80         //     System.Drawing.Brush，它确定所绘制文本的颜色和纹理。 81         //
+ 82         //   point: 83         //     System.Drawing.PointF 结构，它指定所绘制文本的左上角。 84         //
+ 85         //   format: 86         //     System.Drawing.StringFormat，它指定应用于所绘制文本的格式化特性（如行距和对齐方式）。 87         //
+ 88         // 异常: 89         //   System.ArgumentNullException: 90         //     brush 为 null。 - 或 - s 为 null。
+ 91         public void DrawString(string s, Font font, Brush brush, PointF point, StringFormat format); 92         //
+ 93         // 摘要: 94         //     使用指定 System.Drawing.StringFormat 的格式化特性，用指定的 System.Drawing.Brush 和 System.Drawing.Font 95         //     对象在指定的矩形绘制指定的文本字符串。 96         //
+ 97         // 参数: 98         //   s: 99         //     要绘制的字符串。
+100         //
+101         //   font:
+102         //     System.Drawing.Font，它定义字符串的文本格式。
+103         //
+104         //   brush:
+105         //     System.Drawing.Brush，它确定所绘制文本的颜色和纹理。
+106         //
+107         //   layoutRectangle:
+108         //     System.Drawing.RectangleF 结构，它指定所绘制文本的位置。
+109         //
+110         //   format:
+111         //     System.Drawing.StringFormat，它指定应用于所绘制文本的格式化特性（如行距和对齐方式）。
+112         //
+113         // 异常: 
+114         //   System.ArgumentNullException:
+115         //     brush 为 null。 - 或 - s 为 null。
+116         public void DrawString(string s, Font font, Brush brush, RectangleF layoutRectangle, StringFormat format);
+117         //
+118         // 摘要: 
+119         //     使用指定 System.Drawing.StringFormat 的格式化特性，用指定的 System.Drawing.Brush 和 System.Drawing.Font
+120         //     对象在指定的位置绘制指定的文本字符串。
+121         //
+122         // 参数: 
+123         //   s:
+124         //     要绘制的字符串。
+125         //
+126         //   font:
+127         //     System.Drawing.Font，它定义字符串的文本格式。
+128         //
+129         //   brush:
+130         //     System.Drawing.Brush，它确定所绘制文本的颜色和纹理。
+131         //
+132         //   x:
+133         //     所绘制文本的左上角的 x 坐标。
+134         //
+135         //   y:
+136         //     所绘制文本的左上角的 y 坐标。
+137         //
+138         //   format:
+139         //     System.Drawing.StringFormat，它指定应用于所绘制文本的格式化特性（如行距和对齐方式）。
+140         //
+141         // 异常: 
+142         //   System.ArgumentNullException:
+143         //     brush 为 null。 - 或 - s 为 null。
+144         public void DrawString(string s, Font font, Brush brush, float x, float y, StringFormat format);
+
+输出文本DrawString()函数语法定义
+
+　　根据上述定义，我们以 public void DrawString(string s, Font font, Brush brush, float x, float y); 语法可以写出如下示例代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Font font = new Font("华文行楷", 40); // 创建Font字体对象
+ 9             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+10             graphics.DrawString("孤影'Blog 欢迎您！", font, new SolidBrush(Color.Black), 30, 60);
+11         }
+
+输出文本DrawString()函数示例代码
+
+　　上述代码运行结果如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141507136033538.jpg)
+
+## 　　_**4.6 填充路径**_
+
+ 　　填充路径的语法定义如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         //
+ 2         // 摘要: 3         //     填充 System.Drawing.Drawing2D.GraphicsPath 的内部。 4         //
+ 5         // 参数: 6         //   brush: 7         //     确定填充特性的 System.Drawing.Brush。 8         //
+ 9         //   path:
+10         //     System.Drawing.Drawing2D.GraphicsPath，它表示要填充的路径。
+11         //
+12         // 异常: 
+13         //   System.ArgumentNullException:
+14         //     brush 为 null。 - 或 - path 为 null。
+15         public void FillPath(Brush brush, GraphicsPath path);
+
+填充路径FillPath()函数语法定义
+
+　　根据上述语法定义，可写出如下示例代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+ 9             graphics.FillRectangle(new SolidBrush(Color.White), this.ClientRectangle);  // 以白色画刷填充当前窗体
+10             // 创建线组
+11             GraphicsPath path = new GraphicsPath(new Point\[\] {
+12                 new Point(40,140),
+13                 new Point(275,200),
+14                 new Point(105,225),
+15                 new Point(190,300),
+16                 new Point(50,350),
+17                 new Point(20,180)
+18             }, new byte\[\] { 
+19                 (byte)PathPointType.Start,
+20                 (byte)PathPointType.Bezier,
+21                 (byte)PathPointType.Bezier,
+22                 (byte)PathPointType.Bezier,
+23                 (byte)PathPointType.Line,
+24                 (byte)PathPointType.Line
+25 });
+26             // 路径笔刷
+27             PathGradientBrush pathGradientBrush = new PathGradientBrush(path);
+28             // 设置路径中的点对应的颜色数组
+29             pathGradientBrush.SurroundColors = new Color\[\] { Color.Green, Color.Yellow, Color.Red, Color.Blue, Color.Orange, Color.White };
+30             graphics.FillPath(pathGradientBrush, path); // 填充路径
+31         }
+
+填充路径示例代码
+
+　　上述代码运行结果如下：
+
+ ![](https://images0.cnblogs.com/blog/541982/201412/141522291968189.jpg)
+
+> **注意：**GraphicsPath类位于命名空间“System.Drawimg.Drawimg2D”中，表示一系列相互连接的直线和曲线。
+
+## **5 画刷和画刷类型**
+
+　　Brush类型是一个抽象类，所以它不能被实例化，也就是不能直接应用，但是我们可以利用他的派生类，如：HatchBrush、SolidBrush和TextureBrush等。
+
+　　画刷类型一般在“System.Drawing”命名空间中，如果应用HatchBrush和GradientBrush画刷，需要在程序中引入“System.Drawing2D”命名空间。
+
+## 　　_**5.1 SolidBrush(单色画刷)**_
+
+　　它是一种一般的画刷，通常只用一种颜色去填充GDI+图形，例如如下示例代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+ 9             SolidBrush solidBrushR = new SolidBrush(Color.Red); // 红色画刷
+10             SolidBrush solidBrushG = new SolidBrush(Color.Green);   // 绿色画刷
+11             SolidBrush solidBrushB = new SolidBrush(Color.Blue);    // 蓝色画刷
+12 
+13             graphics.FillEllipse(solidBrushG, 20, 40, 60, 70);  // 用绿色画刷填充一个椭圆
+14 
+15             Rectangle rect = new Rectangle(0, 0, 200, 100);     // 矩形
+16             graphics.FillPie(solidBrushB, 0, 0, 200, 40, 0.0f, 30.0f);  // 填充饼图
+17 
+18             // 组成多边形的点
+19             PointF point1 = new PointF(50.0f, 250.0f);
+20             PointF point2 = new PointF(100.0f, 25.0f);
+21             PointF point3 = new PointF(150.0f, 40.0f);
+22             PointF point4 = new PointF(200.0f, 50.0f);
+23             PointF point5 = new PointF(250.0f, 100.0f);
+24             PointF\[\] curvePoints = { point1, point2, point3, point4, point5 };
+25             graphics.FillPolygon(solidBrushR, curvePoints);  // 填充多边形
+26         }
+
+SolidBrush单色笔刷使用示例代码
+
+　　运行效果如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141547378849967.jpg)
+
+## 　　_**5.2 HatchBrush(阴影画刷)**_
+
+　　HatchBrush类位于“System.Drawing.Drawing2D”命名空间中。阴影画刷有两种颜色：前景色和背景色，以及6种阴影。前景色定义线条的颜色，背景色定义线条之间间隙的颜色。
+
+　　HatchBrush类有两个构造函数：
+
+1.  1.  public HatchBrush(HatchStyle, Color foreColor);
+    2.  public HatchBrush(HatchStyle, Color foreColor, Color backColor);
+
+　　HatchStyle枚举值指定可用于HatchBrush对象的不同图案，主要成员如下：
+
+<table><caption><span><strong>HatchStyle枚举图案主要成员</strong></span></caption><tbody><tr><td><span><strong>名称</strong></span></td><td><span><strong>说明</strong></span></td><td><span><strong>名称</strong></span></td><td><span><strong>说明</strong></span></td></tr><tr><td><strong>BackwardDiagonal</strong></td><td>从右上到左下的对角线的线条图案</td><td><strong>Cross</strong></td><td>指定交叉的水平线和垂直线</td></tr><tr><td><strong>DarkDownwardDiagonal</strong></td><td>指定从顶点到底点向右倾斜的对角线，其两边夹角比ForwardDiagonal小50%，宽度是其两倍。此阴影图案不是锯齿消除的</td><td><strong>DarkHorizontal</strong></td><td>指定水平线的两边夹角比Horizontal小50%，并且宽度是Horizontal的两倍</td></tr><tr><td><strong>DarkUpwardDiagonal</strong></td><td>指定从顶点到底点向左倾斜的对角线，其两边夹角比BackwardDiagonal小50%，宽度是其两倍，但这些直线不是锯齿消除的</td><td><strong>DarkVertical</strong></td><td>指定垂直线的两边夹角比Vertical小50%，并且宽度是其两倍</td></tr><tr><td><strong>DashedDownwardDiagonal</strong></td><td>指定虚线对角线，这些对角线从顶点到底点向右倾斜</td><td><strong>DashedHorizontal</strong></td><td>指定虚线水平线</td></tr><tr><td><strong>DashedUpwardDiagonal</strong></td><td>指定虚线对角线，这些对角线从顶点到底点向左倾斜</td><td><strong>DashedVertical</strong></td><td>指定虚线垂直线</td></tr><tr><td><strong>DiagonalBrick</strong></td><td>指定具有分层砖块外观的阴影，它从顶点到底点向左倾斜</td><td><strong>DiagonalCross</strong></td><td>交叉对角线的图案</td></tr><tr><td><strong>Divot</strong></td><td>指定具有草皮层外观的阴影</td><td><strong>ForwardDiagonal</strong></td><td>从坐上到右下分层砖块外观的阴影</td></tr><tr><td><strong>Horizontal</strong></td><td>水平线的图案</td><td><strong>HorizontalBrick</strong></td><td>指定具有水平分层砖块外观的阴影</td></tr><tr><td><strong>LargeGrid</strong></td><td>指定阴影样式Cross</td><td><strong>LightHorizontal</strong></td><td>指定水平线，其两边夹角比Horizontal小50%</td></tr><tr><td><strong>LightVertical</strong></td><td>指定垂直线的两边夹角比Vertical小50%</td><td><strong>Max</strong></td><td>指定阴影样式SolidDiamond</td></tr><tr><td><strong>Min</strong></td><td>指定阴影样式Horizontal</td><td><strong>NarrowHorizontal</strong></td><td>指定水平线的两边夹角比阴影样式Horizontal小75%(或者比LightHorizontal小25%)</td></tr><tr><td><strong>NarrowVertical</strong></td><td>指定垂直线的两边夹角比阴影样式Vertical小75%(或者比LightVertical小25%)</td><td><strong>OutlineDiamond</strong></td><td>指定互相交叉的正向对角线和反向对角线，但这些对角线不是锯齿消除的</td></tr><tr><td><strong>Percent05</strong></td><td>指定5%阴影，前景色与背景色的比例为5:100</td><td><strong>Percent90</strong></td><td>指定90%阴影，前景色与背景色的比例为90:100</td></tr><tr><td><strong>Plaid</strong></td><td>指定具有格子花呢材料外观的阴影</td><td><strong>Shingle</strong></td><td>指定带有对角分层鹅卵石外观的阴影，它从顶点到底点向右倾斜</td></tr><tr><td><strong>SmallCheckerBoard</strong></td><td>指定带有期盼外观的阴影</td><td><strong>SmallDiamond</strong></td><td>指定具有对角放置的棋盘外观的阴影</td></tr><tr><td><strong>Sphere</strong></td><td>指定具有球体彼此相邻放置的外观的阴影</td><td><strong>Trellis</strong></td><td>指定具有格架外观的阴影</td></tr><tr><td><strong>Vertical</strong></td><td>垂直线的图案</td><td><strong>Wave</strong></td><td>指定由代字号"~"构成的水平线</td></tr><tr><td><strong>Weave</strong></td><td>指定具有织物外观的阴影</td><td><strong>&nbsp;</strong></td><td>&nbsp;</td></tr></tbody></table>
+
+　　我们随便挑选三个样式，如下示例代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象 9             // 创建用于画三种不同样式图形的阴影画笔
+10             HatchBrush hatchBrushR = new HatchBrush(HatchStyle.DiagonalCross, Color.Chocolate, Color.Red);
+11             HatchBrush hatchBrushG = new HatchBrush(HatchStyle.DashedHorizontal, Color.Green, Color.Black);
+12             HatchBrush hatchBrushB = new HatchBrush(HatchStyle.Weave, Color.BlueViolet, Color.Blue);
+13 
+14             graphics.FillEllipse(hatchBrushR, 20, 80, 60, 20);  // 填充椭圆
+15 
+16             // 填充饼图
+17             Rectangle rect = new Rectangle(0, 0, 200, 100); 
+18             graphics.FillPie(hatchBrushB, 0, 0, 200, 40, 0.0f, 30.0f);
+19 
+20             // 填充自定义图形
+21             PointF point1 = new PointF(50.0f, 250.0f);
+22             PointF point2 = new PointF(100.0f, 25.0f);
+23             PointF point3 = new PointF(150.0f, 40.0f);
+24             PointF point4 = new PointF(250.0f, 50.0f);
+25             PointF point5 = new PointF(300.0f, 100.0f);
+26             PointF\[\] curvePoints = { point1, point2, point3, point4, point5 };
+27 graphics.FillPolygon(hatchBrushG, curvePoints);
+28         }
+
+HatchBrush阴影画笔的使用示例代码
+
+　　上述代码运行结果如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141631548683659.jpg)
+
+## 　　_**5.3 TextureBrush(纹理画刷)**_
+
+　　纹理画刷拥有图案，并且通常使用它来填充封闭的图形。为了对它初始化，可以使用一个已经存在的别人设计好了的图案，或使用常用的设计程序设计的自己的图案，同时应该使图案存储为常用图形文件格式，如BMP格式文件，这有一个设计好的位图：“LonelyShadow.bmp”文件，纹理画刷使用的示例代码如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+ 9             Bitmap bitmap = new Bitmap("LonelyShadow.bmp"); // 根据文件创建原始大小的Bitmap对象
+10             bitmap = new Bitmap(bitmap, this.ClientRectangle.Size);  // 缩放到窗体大小
+11             TextureBrush textureBrush = new TextureBrush(bitmap);
+12             graphics.FillEllipse(textureBrush, this.ClientRectangle);
+13         }
+
+纹理笔刷使用示例代码
+
+　　上述代码运行效果如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141835562754851.jpg)
+
+## 　　_**5.4 LinearGradientBrush 和 PathGradientBrush(渐变画刷)**_
+
+ 　　渐变画刷类似于实心画刷，因为他也是基于颜色的，与实心画刷不同的是：渐变画刷使用两种颜色，它的主要特点是：在使用过程中，一种颜色在一段，而另外一种颜色在另一端，在中间，两种颜色融合产生过度或衰减的效果。
+
+　　渐变画刷有两种：线性画刷和路径画刷(LinearGradientBrush 和 PathGradientBrush)。
+
+　　其中LinearGradientBrush可以显示线性渐变效果，而PathGradientBrush是路径渐变的可以显示比较具有弹性的渐变效果。
+
+### 　　_**5.4.1 LinearGradientBrush类**_
+
+　　LinearGradientBrush类构造函数如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+1 public LinerGradientBrush(Point point1, Point point2, Color color1, Color color2)
+2 
+3 // point1: 表示线性渐变的起始点的Point结构
+4 
+5 // point2: 表示线性渐变的终结点的Point结构
+6 
+7 // color1: 表示线性渐变的起始颜色的Color结构
+8 
+9 // color2: 表示线性渐变的结束颜色的Color结构
+
+LinearGradientBrush构造函数定义
+
+　　我们可以写出如下示例代码：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+ 9             LinearGradientBrush linearGradientBrush = new LinearGradientBrush(this.ClientRectangle, Color.White, Color.Blue, LinearGradientMode.Vertical);
+10             graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
+11         }
+
+LinearGradientBrush线性画刷使用示例代码
+
+　　上述代码运行效果如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141848212594646.jpg)
+
+### 　　_**5.4.2 PathGradientBrush类**_
+
+　　 PathGradientBrush类的构造函数如下：public PathGradientBrush(GraphicsPath path); // path: GraphicsPath，定义此PathGradientBrush填充区域 
+
+　　PathGradientBrush使用的示例代码如下：
+
+![](https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif)
+
+ 1         /// <summary>
+ 2         /// 窗体的Paint事件的响应方法 3         /// </summary>
+ 4         /// <param name="sender">当前事件触发者(当前窗体)</param>
+ 5         /// <param name="e">附带的事件参数</param>
+ 6         private void Frm\_Demo\_Paint(object sender, PaintEventArgs e) 7         {
+ 8             Graphics graphics = e.Graphics; // 创建当前窗体的Graphics对象
+ 9             Point centerPoint = new Point(150, 100);
+10             int R = 60;
+11             GraphicsPath path = new GraphicsPath();
+12             path.AddEllipse(centerPoint.X - R, centerPoint.Y - R, R \* 2, R \* 2);
+13             PathGradientBrush brush = new PathGradientBrush(path);
+14             brush.CenterPoint = centerPoint;    // 指定路径中心点
+15             brush.CenterColor = Color.Red;  // 指定路径中心的颜色
+16             brush.SurroundColors = new Color\[\] { Color.Plum };
+17             graphics.FillEllipse(brush, centerPoint.X - R, centerPoint.Y - R, R \* 2, R \* 2);
+18             centerPoint = new Point(350, 100);
+19             R = 20;
+20             path = new GraphicsPath();
+21             path.AddEllipse(centerPoint.X - R, centerPoint.Y - R, R \* 2, R \* 2);
+22             path.AddEllipse(centerPoint.X - R \* 2, centerPoint.Y - R \* 2, R \* 4, R \* 4);
+23             path.AddEllipse(centerPoint.X - R \* 3, centerPoint.Y - R \* 3, R \* 6, R \* 6);
+24             brush = new PathGradientBrush(path);
+25             brush.CenterPoint = centerPoint;
+26             brush.CenterColor = Color.Red;
+27             brush.SurroundColors = new Color\[\] { Color.Black, Color.Blue, Color.Green };
+28 graphics.FillPath(brush, path);
+29         }
+
+PathGradientBrush使用示例代码
+
+　　上述代码运行效果图如下：
+
+![](https://images0.cnblogs.com/blog/541982/201412/141858036037123.jpg)
+
+* * *
+
+哈哈，看到这里，本篇的内容也就讲完了，文章看似很长，其实内容主题也就是GDI+绘图编程了，只是示例代码多了一点点。
+
+这段时间码字真的很累的。觉得还不错的，请留言或点个赞支持我一下~
+
+亲们也可以点击关注我，博客大部分都是原创，后期我还会发GDI+示例文章，经常来我的博客哦~
+
+有什么问题或建议也可以留言哦~谢谢亲们的支持。mua~
+
+* * *

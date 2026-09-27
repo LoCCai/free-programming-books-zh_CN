@@ -3,12 +3,12 @@
   "title": "Lua 5.1 参考手册 中文翻译",
   "url": "http://www.codingnow.com/2000/download/lua_manual.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:59.229Z",
+  "fetchedAt": "2026-09-27T12:01:47.901Z",
   "chapters": [
     {
-      "slug": "001-1i",
+      "slug": "001-lua-5-1-ο",
       "title": "Lua 5.1 �ο��ֲ�",
-      "file": "chapters/001-1i.md"
+      "file": "chapters/001-lua-5-1-ο.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,62 @@
   "title": "gulp中文文档",
   "url": "http://www.gulpjs.com.cn/docs/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:24.922Z",
+  "fetchedAt": "2026-09-27T11:57:16.700Z",
   "chapters": [
     {
-      "slug": "001-u",
+      "slug": "001-入门指南",
       "title": "快速入门 | gulp.js中文网",
-      "file": "chapters/001-u.md"
+      "file": "chapters/001-入门指南.md"
+    },
+    {
+      "slug": "002-javascript-和-gulpfile",
+      "title": "JavaScript 和 Gulpfile | gulp.js中文网",
+      "file": "chapters/002-javascript-和-gulpfile.md"
+    },
+    {
+      "slug": "003-创建任务-task",
+      "title": "创建任务（task） | gulp.js中文网",
+      "file": "chapters/003-创建任务-task.md"
+    },
+    {
+      "slug": "004-异步执行",
+      "title": "异步执行 | gulp.js中文网",
+      "file": "chapters/004-异步执行.md"
+    },
+    {
+      "slug": "005-处理文件",
+      "title": "处理文件 | gulp.js中文网",
+      "file": "chapters/005-处理文件.md"
+    },
+    {
+      "slug": "006-glob-详解",
+      "title": "Glob 详解 | gulp.js中文网",
+      "file": "chapters/006-glob-详解.md"
+    },
+    {
+      "slug": "007-使用插件",
+      "title": "使用插件 | gulp.js中文网",
+      "file": "chapters/007-使用插件.md"
+    },
+    {
+      "slug": "008-文件监控",
+      "title": "文件监控 | gulp.js中文网",
+      "file": "chapters/008-文件监控.md"
+    },
+    {
+      "slug": "009-进阶",
+      "title": "创建自定义注册表 | gulp.js中文网",
+      "file": "chapters/009-进阶.md"
+    },
+    {
+      "slug": "010-api",
+      "title": "API 概念 | gulp.js中文网",
+      "file": "chapters/010-api.md"
+    },
+    {
+      "slug": "011-支持我们",
+      "title": "For enterprise | gulp.js中文网",
+      "file": "chapters/011-支持我们.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,12 @@
   "title": "ECMAScript 5.1 中文版",
   "url": "http://yanhaijing.com/es5",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:36.436Z",
+  "fetchedAt": "2026-09-27T12:00:32.458Z",
   "chapters": [
     {
-      "slug": "001-p",
+      "slug": "001-ecmascript5-1中文版-ecmascript3-ecmascript-",
       "title": "ECMAScript5.1中文版 + ECMAScript3 + ECMAScript（合集）",
-      "file": "chapters/001-p.md"
+      "file": "chapters/001-ecmascript5-1中文版-ecmascript3-ecmascript-.md"
     }
   ],
   "sourceType": "web",

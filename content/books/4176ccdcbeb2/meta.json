@@ -3,12 +3,122 @@
   "title": "git-flow 备忘清单",
   "url": "http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:39.698Z",
+  "fetchedAt": "2026-09-27T11:56:05.799Z",
   "chapters": [
     {
-      "slug": "001-1u",
+      "slug": "001-git-flow-备忘清单",
       "title": "git-flow 备忘清单",
-      "file": "chapters/001-1u.md"
+      "file": "chapters/001-git-flow-备忘清单.md"
+    },
+    {
+      "slug": "002-english",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/002-english.md"
+    },
+    {
+      "slug": "003-castellano",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/003-castellano.md"
+    },
+    {
+      "slug": "004-brazilian-portugues",
+      "title": "cheatsheet do git-flow",
+      "file": "chapters/004-brazilian-portugues.md"
+    },
+    {
+      "slug": "005-繁體中文-traditional-chinese",
+      "title": "git-flow 備忘清單",
+      "file": "chapters/005-繁體中文-traditional-chinese.md"
+    },
+    {
+      "slug": "006-日本語",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/006-日本語.md"
+    },
+    {
+      "slug": "007-türkçe",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/007-türkçe.md"
+    },
+    {
+      "slug": "008-한국어-korean",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/008-한국어-korean.md"
+    },
+    {
+      "slug": "009-français",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/009-français.md"
+    },
+    {
+      "slug": "010-magyar-hungarian",
+      "title": "git-flow puska",
+      "file": "chapters/010-magyar-hungarian.md"
+    },
+    {
+      "slug": "011-italiano",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/011-italiano.md"
+    },
+    {
+      "slug": "012-nederlands",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/012-nederlands.md"
+    },
+    {
+      "slug": "013-русский-russian",
+      "title": "Шпаргалка по git-flow",
+      "file": "chapters/013-русский-russian.md"
+    },
+    {
+      "slug": "014-deutsch-german",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/014-deutsch-german.md"
+    },
+    {
+      "slug": "015-română-romanian",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/015-română-romanian.md"
+    },
+    {
+      "slug": "016-ελληνικά-greek",
+      "title": "git-flow Φύλλο αναφοράς",
+      "file": "chapters/016-ελληνικά-greek.md"
+    },
+    {
+      "slug": "017-українська-ukrainian",
+      "title": "Шпаргалка по git-flow",
+      "file": "chapters/017-українська-ukrainian.md"
+    },
+    {
+      "slug": "018-tiếng-việt-vietnamese",
+      "title": "Tóm tắt Git-Flow",
+      "file": "chapters/018-tiếng-việt-vietnamese.md"
+    },
+    {
+      "slug": "019-polski",
+      "title": "ściągawka do git-flow",
+      "file": "chapters/019-polski.md"
+    },
+    {
+      "slug": "020-العربية",
+      "title": "git-flow cheatsheet",
+      "file": "chapters/020-العربية.md"
+    },
+    {
+      "slug": "021-فارسی",
+      "title": "راهنمای git-flow",
+      "file": "chapters/021-فارسی.md"
+    },
+    {
+      "slug": "022-azərbaycanca-azerbaijani",
+      "title": "git-flow soraqçası",
+      "file": "chapters/022-azərbaycanca-azerbaijani.md"
+    },
+    {
+      "slug": "023-bahasa-indonesia",
+      "title": "Rujukan git-flow",
+      "file": "chapters/023-bahasa-indonesia.md"
     }
   ],
   "sourceType": "web",

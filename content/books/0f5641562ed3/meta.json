@@ -3,12 +3,92 @@
   "title": "UNIX TOOLBOX",
   "url": "http://cb.vu/unixtoolbox_zh_CN.xhtml",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:07:32.588Z",
+  "fetchedAt": "2026-09-27T11:54:24.011Z",
   "chapters": [
     {
-      "slug": "001-10",
+      "slug": "001-cb-vu-linux-unix-webmaster-resources",
       "title": "CB.VU - Linux, Unix & Webmaster Resources",
-      "file": "chapters/001-10.md"
+      "file": "chapters/001-cb-vu-linux-unix-webmaster-resources.md"
+    },
+    {
+      "slug": "002-cb-vu",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/002-cb-vu.md"
+    },
+    {
+      "slug": "003-linux",
+      "title": "Linux System Administration: The Complete Guide | CB.VU",
+      "file": "chapters/003-linux.md"
+    },
+    {
+      "slug": "004-networking",
+      "title": "Linux Networking: Configuration, Troubleshooting, and Security | CB.VU",
+      "file": "chapters/004-networking.md"
+    },
+    {
+      "slug": "005-security",
+      "title": "Linux Security Hardening: A Comprehensive Guide | CB.VU",
+      "file": "chapters/005-security.md"
+    },
+    {
+      "slug": "006-shell-scripting",
+      "title": "Bash and Shell Scripting: From Beginner to Production | CB.VU",
+      "file": "chapters/006-shell-scripting.md"
+    },
+    {
+      "slug": "007-devops",
+      "title": "DevOps for Linux: Tools, Practices, and Workflows | CB.VU",
+      "file": "chapters/007-devops.md"
+    },
+    {
+      "slug": "008-web-servers",
+      "title": "Web Server Administration: Nginx, Apache, and Beyond | CB.VU",
+      "file": "chapters/008-web-servers.md"
+    },
+    {
+      "slug": "009-vpn-ssh",
+      "title": "VPN and SSH: Secure Remote Access and Tunneling | CB.VU",
+      "file": "chapters/009-vpn-ssh.md"
+    },
+    {
+      "slug": "010-esim-travel",
+      "title": "eSIM and Travel Security: The Digital Nomad Guide | CB.VU",
+      "file": "chapters/010-esim-travel.md"
+    },
+    {
+      "slug": "011-graphics-web-design",
+      "title": "Graphics and Web Design for Developers | CB.VU",
+      "file": "chapters/011-graphics-web-design.md"
+    },
+    {
+      "slug": "012-unix-toolbox",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/012-unix-toolbox.md"
+    },
+    {
+      "slug": "013-bulgarian",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/013-bulgarian.md"
+    },
+    {
+      "slug": "014-spanish",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/014-spanish.md"
+    },
+    {
+      "slug": "015-polish",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/015-polish.md"
+    },
+    {
+      "slug": "016-portuguese",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/016-portuguese.md"
+    },
+    {
+      "slug": "017-chinese",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/017-chinese.md"
     }
   ],
   "sourceType": "web",

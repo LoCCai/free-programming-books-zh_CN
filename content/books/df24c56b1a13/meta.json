@@ -2,8 +2,355 @@
   "bookId": "df24c56b1a13",
   "title": "LeetCode题解",
   "url": "https://siddontang.gitbooks.io/leetcode-solution/content/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:26:28.163Z",
-  "chapters": [],
-  "error": "HTTP 401"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T12:13:26.742Z",
+  "chapters": [
+    {
+      "slug": "001-introduction",
+      "title": "Introduction · LeetCode题解",
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-array",
+      "title": "Array · LeetCode题解",
+      "file": "chapters/002-array.md"
+    },
+    {
+      "slug": "003-remove-element",
+      "title": "Remove Element · LeetCode题解",
+      "file": "chapters/003-remove-element.md"
+    },
+    {
+      "slug": "004-remove-duplicates-from-sorted-array",
+      "title": "Remove Duplicates from Sorted Array · LeetCode题解",
+      "file": "chapters/004-remove-duplicates-from-sorted-array.md"
+    },
+    {
+      "slug": "005-plus-one",
+      "title": "Plus One · LeetCode题解",
+      "file": "chapters/005-plus-one.md"
+    },
+    {
+      "slug": "006-pascal-s-triangle",
+      "title": "Pascal's Triangle · LeetCode题解",
+      "file": "chapters/006-pascal-s-triangle.md"
+    },
+    {
+      "slug": "007-merge-sorted-array",
+      "title": "Merge Sorted Array · LeetCode题解",
+      "file": "chapters/007-merge-sorted-array.md"
+    },
+    {
+      "slug": "008-sum",
+      "title": "Sum · LeetCode题解",
+      "file": "chapters/008-sum.md"
+    },
+    {
+      "slug": "009-find-minimum-in-rotated-sorted-array",
+      "title": "Find Minimum in Rotated Sorted Array · LeetCode题解",
+      "file": "chapters/009-find-minimum-in-rotated-sorted-array.md"
+    },
+    {
+      "slug": "010-largest-rectangle-in-histogram",
+      "title": "Largest Rectangle in Histogram · LeetCode题解",
+      "file": "chapters/010-largest-rectangle-in-histogram.md"
+    },
+    {
+      "slug": "011-maximal-rectangle",
+      "title": "Maximal Rectangle · LeetCode题解",
+      "file": "chapters/011-maximal-rectangle.md"
+    },
+    {
+      "slug": "012-palindrome-number",
+      "title": "Palindrome Number · LeetCode题解",
+      "file": "chapters/012-palindrome-number.md"
+    },
+    {
+      "slug": "013-search-a-2d-matrix",
+      "title": "Search a 2D Matrix · LeetCode题解",
+      "file": "chapters/013-search-a-2d-matrix.md"
+    },
+    {
+      "slug": "014-search-for-a-range",
+      "title": "Search for a Range · LeetCode题解",
+      "file": "chapters/014-search-for-a-range.md"
+    },
+    {
+      "slug": "015-search-insert-position",
+      "title": "Search Insert Position · LeetCode题解",
+      "file": "chapters/015-search-insert-position.md"
+    },
+    {
+      "slug": "016-find-peak-element",
+      "title": "Find Peak Element · LeetCode题解",
+      "file": "chapters/016-find-peak-element.md"
+    },
+    {
+      "slug": "017-bit-manipulation",
+      "title": "Bit Manipulation · LeetCode题解",
+      "file": "chapters/017-bit-manipulation.md"
+    },
+    {
+      "slug": "018-missing-number",
+      "title": "Missing Number · LeetCode题解",
+      "file": "chapters/018-missing-number.md"
+    },
+    {
+      "slug": "019-power-of-two",
+      "title": "Power of Two · LeetCode题解",
+      "file": "chapters/019-power-of-two.md"
+    },
+    {
+      "slug": "020-number-of-1-bits",
+      "title": "Number of 1 Bits · LeetCode题解",
+      "file": "chapters/020-number-of-1-bits.md"
+    },
+    {
+      "slug": "021-tree",
+      "title": "Tree · LeetCode题解",
+      "file": "chapters/021-tree.md"
+    },
+    {
+      "slug": "022-depth-of-binary-tree",
+      "title": "Depth of Binary Tree · LeetCode题解",
+      "file": "chapters/022-depth-of-binary-tree.md"
+    },
+    {
+      "slug": "023-construct-binary-tree",
+      "title": "Construct Binary Tree · LeetCode题解",
+      "file": "chapters/023-construct-binary-tree.md"
+    },
+    {
+      "slug": "024-binary-tree-level-order-traversal",
+      "title": "Binary Tree Level Order Traversal · LeetCode题解",
+      "file": "chapters/024-binary-tree-level-order-traversal.md"
+    },
+    {
+      "slug": "025-symmetric-tree",
+      "title": "Symmetric Tree · LeetCode题解",
+      "file": "chapters/025-symmetric-tree.md"
+    },
+    {
+      "slug": "026-same-tree",
+      "title": "Same Tree · LeetCode题解",
+      "file": "chapters/026-same-tree.md"
+    },
+    {
+      "slug": "027-balanced-binary-tree",
+      "title": "Balanced Binary Tree · LeetCode题解",
+      "file": "chapters/027-balanced-binary-tree.md"
+    },
+    {
+      "slug": "028-path-sum",
+      "title": "Path Sum · LeetCode题解",
+      "file": "chapters/028-path-sum.md"
+    },
+    {
+      "slug": "029-binary-tree-depth-order-traversal",
+      "title": "Binary Tree Depth Order Traversal · LeetCode题解",
+      "file": "chapters/029-binary-tree-depth-order-traversal.md"
+    },
+    {
+      "slug": "030-populating-next-right-pointers-in-each-n",
+      "title": "Populating Next Right Pointers in Each Node · LeetCode题解",
+      "file": "chapters/030-populating-next-right-pointers-in-each-n.md"
+    },
+    {
+      "slug": "031-convert-sorted-list-array-to-binary-sear",
+      "title": "Convert Sorted List/Array to Binary Search Tree · LeetCode题解",
+      "file": "chapters/031-convert-sorted-list-array-to-binary-sear.md"
+    },
+    {
+      "slug": "032-path-sum-ii",
+      "title": "Path Sum II · LeetCode题解",
+      "file": "chapters/032-path-sum-ii.md"
+    },
+    {
+      "slug": "033-flatten-binary-tree-to-linked-list",
+      "title": "Flatten Binary Tree to Linked List · LeetCode题解",
+      "file": "chapters/033-flatten-binary-tree-to-linked-list.md"
+    },
+    {
+      "slug": "034-validate-binary-search-tree",
+      "title": "Validate Binary Search Tree · LeetCode题解",
+      "file": "chapters/034-validate-binary-search-tree.md"
+    },
+    {
+      "slug": "035-recover-binary-search-tree",
+      "title": "Recover Binary Search Tree · LeetCode题解",
+      "file": "chapters/035-recover-binary-search-tree.md"
+    },
+    {
+      "slug": "036-binary-tree-path",
+      "title": "Binary Tree Path · LeetCode题解",
+      "file": "chapters/036-binary-tree-path.md"
+    },
+    {
+      "slug": "037-sum-root-to-leaf-numbers",
+      "title": "Sum Root to Leaf Numbers · LeetCode题解",
+      "file": "chapters/037-sum-root-to-leaf-numbers.md"
+    },
+    {
+      "slug": "038-dynamic-programming",
+      "title": "Dynamic Programming · LeetCode题解",
+      "file": "chapters/038-dynamic-programming.md"
+    },
+    {
+      "slug": "039-best-time-to-buy-and-sell-stock",
+      "title": "Best Time To Buy And Sell Stock · LeetCode题解",
+      "file": "chapters/039-best-time-to-buy-and-sell-stock.md"
+    },
+    {
+      "slug": "040-unique-paths",
+      "title": "Unique Paths  · LeetCode题解",
+      "file": "chapters/040-unique-paths.md"
+    },
+    {
+      "slug": "041-maximum-subarray",
+      "title": "Maximum Subarray · LeetCode题解",
+      "file": "chapters/041-maximum-subarray.md"
+    },
+    {
+      "slug": "042-climbing-stairs",
+      "title": "Climbing Stairs  · LeetCode题解",
+      "file": "chapters/042-climbing-stairs.md"
+    },
+    {
+      "slug": "043-triangle",
+      "title": "Triangle · LeetCode题解",
+      "file": "chapters/043-triangle.md"
+    },
+    {
+      "slug": "044-unique-binary-search-trees",
+      "title": "Unique Binary Search Trees · LeetCode题解",
+      "file": "chapters/044-unique-binary-search-trees.md"
+    },
+    {
+      "slug": "045-perfect-squares",
+      "title": "Perfect Squares · LeetCode题解",
+      "file": "chapters/045-perfect-squares.md"
+    },
+    {
+      "slug": "046-backtracking",
+      "title": "Backtracking · LeetCode题解",
+      "file": "chapters/046-backtracking.md"
+    },
+    {
+      "slug": "047-combination",
+      "title": "Combination · LeetCode题解",
+      "file": "chapters/047-combination.md"
+    },
+    {
+      "slug": "048-subsets",
+      "title": "Subsets · LeetCode题解",
+      "file": "chapters/048-subsets.md"
+    },
+    {
+      "slug": "049-permutation",
+      "title": "Permutation · LeetCode题解",
+      "file": "chapters/049-permutation.md"
+    },
+    {
+      "slug": "050-greedy",
+      "title": "Greedy · LeetCode题解",
+      "file": "chapters/050-greedy.md"
+    },
+    {
+      "slug": "051-jump-game",
+      "title": "Jump Game · LeetCode题解",
+      "file": "chapters/051-jump-game.md"
+    },
+    {
+      "slug": "052-gas-station",
+      "title": "Gas Station · LeetCode题解",
+      "file": "chapters/052-gas-station.md"
+    },
+    {
+      "slug": "053-candy",
+      "title": "Candy · LeetCode题解",
+      "file": "chapters/053-candy.md"
+    },
+    {
+      "slug": "054-word-break",
+      "title": "Word Break · LeetCode题解",
+      "file": "chapters/054-word-break.md"
+    },
+    {
+      "slug": "055-linked-list",
+      "title": "Linked List · LeetCode题解",
+      "file": "chapters/055-linked-list.md"
+    },
+    {
+      "slug": "056-linked-list-cycle",
+      "title": "Linked List Cycle · LeetCode题解",
+      "file": "chapters/056-linked-list-cycle.md"
+    },
+    {
+      "slug": "057-remove-duplicates-from-sorted-list",
+      "title": "Remove Duplicates from Sorted List · LeetCode题解",
+      "file": "chapters/057-remove-duplicates-from-sorted-list.md"
+    },
+    {
+      "slug": "058-merge-sorted-lists",
+      "title": "Merge Sorted Lists · LeetCode题解",
+      "file": "chapters/058-merge-sorted-lists.md"
+    },
+    {
+      "slug": "059-reverse-linked-list",
+      "title": "Reverse Linked List · LeetCode题解",
+      "file": "chapters/059-reverse-linked-list.md"
+    },
+    {
+      "slug": "060-swap-nodes-in-pairs",
+      "title": "Swap Nodes in Pairs · LeetCode题解",
+      "file": "chapters/060-swap-nodes-in-pairs.md"
+    },
+    {
+      "slug": "061-sort-list",
+      "title": "Sort List · LeetCode题解",
+      "file": "chapters/061-sort-list.md"
+    },
+    {
+      "slug": "062-rotate-list",
+      "title": "Rotate List · LeetCode题解",
+      "file": "chapters/062-rotate-list.md"
+    },
+    {
+      "slug": "063-reorder-list",
+      "title": "Reorder List  · LeetCode题解",
+      "file": "chapters/063-reorder-list.md"
+    },
+    {
+      "slug": "064-partition-list",
+      "title": "Partition List  · LeetCode题解",
+      "file": "chapters/064-partition-list.md"
+    },
+    {
+      "slug": "065-add-two-numbers",
+      "title": "Add Two Numbers · LeetCode题解",
+      "file": "chapters/065-add-two-numbers.md"
+    },
+    {
+      "slug": "066-copy-list-with-random-pointer",
+      "title": "Copy List with Random Pointer · LeetCode题解",
+      "file": "chapters/066-copy-list-with-random-pointer.md"
+    },
+    {
+      "slug": "067-reverse-integer",
+      "title": "Reverse Integer · LeetCode题解",
+      "file": "chapters/067-reverse-integer.md"
+    },
+    {
+      "slug": "068-add-binary",
+      "title": "Add Binary · LeetCode题解",
+      "file": "chapters/068-add-binary.md"
+    },
+    {
+      "slug": "069-basic-calculator-ii",
+      "title": "Basic Calculator II · LeetCode题解",
+      "file": "chapters/069-basic-calculator-ii.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction · LeetCode题解"
 }

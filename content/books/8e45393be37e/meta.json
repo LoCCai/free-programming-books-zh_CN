@@ -3,12 +3,92 @@
   "title": "ThinkPHP3.2.3完全开发手册",
   "url": "https://www.kancloud.cn/manual/thinkphp",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:15.019Z",
+  "fetchedAt": "2026-09-27T12:02:44.648Z",
   "chapters": [
     {
-      "slug": "001-13",
+      "slug": "001-thinkphp3-2-3完全开发手册-看云",
       "title": "ThinkPHP3.2.3完全开发手册 · 看云",
-      "file": "chapters/001-13.md"
+      "file": "chapters/001-thinkphp3-2-3完全开发手册-看云.md"
+    },
+    {
+      "slug": "002-序言",
+      "title": "序言 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/002-序言.md"
+    },
+    {
+      "slug": "003-基础",
+      "title": "基础 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/003-基础.md"
+    },
+    {
+      "slug": "004-配置",
+      "title": "配置 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/004-配置.md"
+    },
+    {
+      "slug": "005-架构",
+      "title": "架构 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/005-架构.md"
+    },
+    {
+      "slug": "006-路由",
+      "title": "路由 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/006-路由.md"
+    },
+    {
+      "slug": "007-控制器",
+      "title": "控制器 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/007-控制器.md"
+    },
+    {
+      "slug": "008-模型",
+      "title": "模型 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/008-模型.md"
+    },
+    {
+      "slug": "009-视图",
+      "title": "视图 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/009-视图.md"
+    },
+    {
+      "slug": "010-模板",
+      "title": "模板 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/010-模板.md"
+    },
+    {
+      "slug": "011-调试",
+      "title": "调试 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/011-调试.md"
+    },
+    {
+      "slug": "012-缓存",
+      "title": "缓存 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/012-缓存.md"
+    },
+    {
+      "slug": "013-安全",
+      "title": "安全 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/013-安全.md"
+    },
+    {
+      "slug": "014-扩展",
+      "title": "扩展 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/014-扩展.md"
+    },
+    {
+      "slug": "015-部署",
+      "title": "部署 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/015-部署.md"
+    },
+    {
+      "slug": "016-专题",
+      "title": "专题 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/016-专题.md"
+    },
+    {
+      "slug": "017-附录",
+      "title": "附录 · ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/017-附录.md"
     }
   ],
   "sourceType": "web",

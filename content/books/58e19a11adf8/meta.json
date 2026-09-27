@@ -3,257 +3,1007 @@
   "title": "svn 手册",
   "url": "http://svnbook.red-bean.com/nightly/zh/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:09.583Z",
+  "fetchedAt": "2026-09-27T11:57:26.949Z",
   "chapters": [
     {
-      "slug": "001-1d",
+      "slug": "001-subversion-版本控制-草稿",
       "title": "Subversion 版本控制 [草稿]",
-      "file": "chapters/001-1d.md"
+      "file": "chapters/001-subversion-版本控制-草稿.md"
     },
     {
-      "slug": "002-1k",
+      "slug": "002-写在前面",
       "title": "写在前面",
-      "file": "chapters/002-1k.md"
+      "file": "chapters/002-写在前面.md"
     },
     {
-      "slug": "003-1j",
+      "slug": "003-前言",
       "title": "前言",
-      "file": "chapters/003-1j.md"
+      "file": "chapters/003-前言.md"
     },
     {
-      "slug": "004-1o",
+      "slug": "004-什么是-subversion",
       "title": "什么是 Subversion?",
-      "file": "chapters/004-1o.md"
+      "file": "chapters/004-什么是-subversion.md"
     },
     {
-      "slug": "005-1s",
+      "slug": "005-目标听众",
       "title": "目标听众",
-      "file": "chapters/005-1s.md"
+      "file": "chapters/005-目标听众.md"
     },
     {
-      "slug": "006-1r",
+      "slug": "006-如何阅读本书",
       "title": "如何阅读本书",
-      "file": "chapters/006-1r.md"
+      "file": "chapters/006-如何阅读本书.md"
     },
     {
-      "slug": "007-1w",
+      "slug": "007-本书组织",
       "title": "本书组织",
-      "file": "chapters/007-1w.md"
+      "file": "chapters/007-本书组织.md"
     },
     {
-      "slug": "008-1o",
+      "slug": "008-本书是免费的",
       "title": "本书是免费的",
-      "file": "chapters/008-1o.md"
+      "file": "chapters/008-本书是免费的.md"
     },
     {
-      "slug": "009-1o",
+      "slug": "009-致谢",
       "title": "致谢",
-      "file": "chapters/009-1o.md"
+      "file": "chapters/009-致谢.md"
     },
     {
-      "slug": "010-1j",
+      "slug": "010-i-初识-subversion",
       "title": "部分 I. 初识 Subversion",
-      "file": "chapters/010-1j.md"
+      "file": "chapters/010-i-初识-subversion.md"
     },
     {
-      "slug": "011-1h",
+      "slug": "011-1-基本概念",
       "title": "第 1 章 基本概念",
-      "file": "chapters/011-1h.md"
+      "file": "chapters/011-1-基本概念.md"
     },
     {
-      "slug": "012-24",
+      "slug": "012-版本控制基础",
       "title": "版本控制基础",
-      "file": "chapters/012-24.md"
+      "file": "chapters/012-版本控制基础.md"
     },
     {
-      "slug": "013-1r",
+      "slug": "013-subversion-的版本控制方法",
       "title": "Subversion 的版本控制方法",
-      "file": "chapters/013-1r.md"
+      "file": "chapters/013-subversion-的版本控制方法.md"
     },
     {
-      "slug": "014-1p",
+      "slug": "014-小结",
       "title": "小结",
-      "file": "chapters/014-1p.md"
+      "file": "chapters/014-小结.md"
     },
     {
-      "slug": "015-1g",
+      "slug": "015-2-基本用法",
       "title": "第 2 章 基本用法",
-      "file": "chapters/015-1g.md"
+      "file": "chapters/015-2-基本用法.md"
     },
     {
-      "slug": "016-1l",
+      "slug": "016-帮助",
       "title": "帮助!",
-      "file": "chapters/016-1l.md"
+      "file": "chapters/016-帮助.md"
     },
     {
-      "slug": "017-1q",
+      "slug": "017-往仓库中添加数据",
       "title": "往仓库中添加数据",
-      "file": "chapters/017-1q.md"
+      "file": "chapters/017-往仓库中添加数据.md"
     },
     {
-      "slug": "018-1o",
+      "slug": "018-创建工作副本",
       "title": "创建工作副本",
-      "file": "chapters/018-1o.md"
+      "file": "chapters/018-创建工作副本.md"
     },
     {
-      "slug": "019-1m",
+      "slug": "019-基本工作周期",
       "title": "基本工作周期",
-      "file": "chapters/019-1m.md"
+      "file": "chapters/019-基本工作周期.md"
     },
     {
-      "slug": "020-1o",
+      "slug": "020-检查历史",
       "title": "检查历史",
-      "file": "chapters/020-1o.md"
+      "file": "chapters/020-检查历史.md"
     },
     {
-      "slug": "021-1o",
+      "slug": "021-有时候你需要的只是清理一下",
       "title": "有时候你需要的只是清理一下",
-      "file": "chapters/021-1o.md"
+      "file": "chapters/021-有时候你需要的只是清理一下.md"
     },
     {
-      "slug": "022-1u",
+      "slug": "022-处理目录冲突",
       "title": "处理目录冲突",
-      "file": "chapters/022-1u.md"
+      "file": "chapters/022-处理目录冲突.md"
     },
     {
-      "slug": "023-1o",
+      "slug": "023-小结",
       "title": "小结",
-      "file": "chapters/023-1o.md"
+      "file": "chapters/023-小结.md"
     },
     {
-      "slug": "024-1k",
+      "slug": "024-3-高级主题",
       "title": "第 3 章 高级主题",
-      "file": "chapters/024-1k.md"
+      "file": "chapters/024-3-高级主题.md"
     },
     {
-      "slug": "025-1w",
+      "slug": "025-版本号指示器",
       "title": "版本号指示器",
-      "file": "chapters/025-1w.md"
+      "file": "chapters/025-版本号指示器.md"
     },
     {
-      "slug": "026-1s",
+      "slug": "026-限定版本号与实施版本号",
       "title": "限定版本号与实施版本号",
-      "file": "chapters/026-1s.md"
+      "file": "chapters/026-限定版本号与实施版本号.md"
     },
     {
-      "slug": "027-1q",
+      "slug": "027-属性",
       "title": "属性",
-      "file": "chapters/027-1q.md"
+      "file": "chapters/027-属性.md"
     },
     {
-      "slug": "028-27",
+      "slug": "028-文件的可移植性",
       "title": "文件的可移植性",
-      "file": "chapters/028-27.md"
+      "file": "chapters/028-文件的可移植性.md"
     },
     {
-      "slug": "029-25",
+      "slug": "029-忽略未被版本控制的项",
       "title": "忽略未被版本控制的项",
-      "file": "chapters/029-25.md"
+      "file": "chapters/029-忽略未被版本控制的项.md"
     },
     {
-      "slug": "030-27",
+      "slug": "030-关键字替换",
       "title": "关键字替换",
-      "file": "chapters/030-27.md"
+      "file": "chapters/030-关键字替换.md"
     },
     {
-      "slug": "031-1v",
+      "slug": "031-稀疏目录",
       "title": "稀疏目录",
-      "file": "chapters/031-1v.md"
+      "file": "chapters/031-稀疏目录.md"
     },
     {
-      "slug": "032-1s",
+      "slug": "032-锁",
       "title": "锁",
-      "file": "chapters/032-1s.md"
+      "file": "chapters/032-锁.md"
     },
     {
-      "slug": "033-1u",
+      "slug": "033-外部定义",
       "title": "外部定义",
-      "file": "chapters/033-1u.md"
+      "file": "chapters/033-外部定义.md"
     },
     {
-      "slug": "034-1w",
+      "slug": "034-变更列表",
       "title": "变更列表",
-      "file": "chapters/034-1w.md"
+      "file": "chapters/034-变更列表.md"
     },
     {
-      "slug": "035-1x",
+      "slug": "035-网络模型",
       "title": "网络模型",
-      "file": "chapters/035-1x.md"
+      "file": "chapters/035-网络模型.md"
     },
     {
-      "slug": "036-25",
+      "slug": "036-在没有工作副本的情况下工作",
       "title": "在没有工作副本的情况下工作",
-      "file": "chapters/036-25.md"
+      "file": "chapters/036-在没有工作副本的情况下工作.md"
     },
     {
-      "slug": "037-1s",
+      "slug": "037-小结",
       "title": "小结",
-      "file": "chapters/037-1s.md"
+      "file": "chapters/037-小结.md"
     },
     {
-      "slug": "038-1n",
+      "slug": "038-4-分支与合并",
       "title": "第 4 章 分支与合并",
-      "file": "chapters/038-1n.md"
+      "file": "chapters/038-4-分支与合并.md"
     },
     {
-      "slug": "039-1u",
+      "slug": "039-什么是分支",
       "title": "什么是分支",
-      "file": "chapters/039-1u.md"
+      "file": "chapters/039-什么是分支.md"
     },
     {
-      "slug": "040-1t",
+      "slug": "040-使用分支",
       "title": "使用分支",
-      "file": "chapters/040-1t.md"
+      "file": "chapters/040-使用分支.md"
     },
     {
-      "slug": "041-20",
+      "slug": "041-基本合并",
       "title": "基本合并",
-      "file": "chapters/041-20.md"
+      "file": "chapters/041-基本合并.md"
     },
     {
-      "slug": "042-1w",
+      "slug": "042-高级合并",
       "title": "高级合并",
-      "file": "chapters/042-1w.md"
+      "file": "chapters/042-高级合并.md"
     },
     {
-      "slug": "043-1w",
+      "slug": "043-遍历分支",
       "title": "遍历分支",
-      "file": "chapters/043-1w.md"
+      "file": "chapters/043-遍历分支.md"
     },
     {
-      "slug": "044-1s",
+      "slug": "044-标签",
       "title": "标签",
-      "file": "chapters/044-1s.md"
+      "file": "chapters/044-标签.md"
     },
     {
-      "slug": "045-1t",
+      "slug": "045-分支维护",
       "title": "分支维护",
-      "file": "chapters/045-1t.md"
+      "file": "chapters/045-分支维护.md"
     },
     {
-      "slug": "046-22",
+      "slug": "046-常见的分支模式",
       "title": "常见的分支模式",
-      "file": "chapters/046-22.md"
+      "file": "chapters/046-常见的分支模式.md"
     },
     {
-      "slug": "047-1t",
+      "slug": "047-供方分支",
       "title": "供方分支",
-      "file": "chapters/047-1t.md"
+      "file": "chapters/047-供方分支.md"
     },
     {
-      "slug": "048-1s",
+      "slug": "048-分支-还是不分支",
       "title": "分支, 还是不分支?",
-      "file": "chapters/048-1s.md"
+      "file": "chapters/048-分支-还是不分支.md"
     },
     {
-      "slug": "049-1v",
+      "slug": "049-小结",
       "title": "小结",
-      "file": "chapters/049-1v.md"
+      "file": "chapters/049-小结.md"
     },
     {
-      "slug": "050-1m",
+      "slug": "050-5-仓库管理",
       "title": "第 5 章 仓库管理",
-      "file": "chapters/050-1m.md"
+      "file": "chapters/050-5-仓库管理.md"
+    },
+    {
+      "slug": "051-仓库的定义",
+      "title": "仓库的定义",
+      "file": "chapters/051-仓库的定义.md"
+    },
+    {
+      "slug": "052-仓库部署策略",
+      "title": "仓库部署策略",
+      "file": "chapters/052-仓库部署策略.md"
+    },
+    {
+      "slug": "053-创建与配置仓库",
+      "title": "创建与配置仓库",
+      "file": "chapters/053-创建与配置仓库.md"
+    },
+    {
+      "slug": "054-仓库维护",
+      "title": "仓库维护",
+      "file": "chapters/054-仓库维护.md"
+    },
+    {
+      "slug": "055-移动与删除仓库",
+      "title": "移动与删除仓库",
+      "file": "chapters/055-移动与删除仓库.md"
+    },
+    {
+      "slug": "056-小结",
+      "title": "小结",
+      "file": "chapters/056-小结.md"
+    },
+    {
+      "slug": "057-6-服务器配置",
+      "title": "第 6 章 服务器配置",
+      "file": "chapters/057-6-服务器配置.md"
+    },
+    {
+      "slug": "058-概览",
+      "title": "概览",
+      "file": "chapters/058-概览.md"
+    },
+    {
+      "slug": "059-选择一种服务器配置",
+      "title": "选择一种服务器配置",
+      "file": "chapters/059-选择一种服务器配置.md"
+    },
+    {
+      "slug": "060-svnserve-一个定制化的服务器",
+      "title": "svnserve, 一个定制化的服务器",
+      "file": "chapters/060-svnserve-一个定制化的服务器.md"
+    },
+    {
+      "slug": "061-httpd-apache-http-服务器",
+      "title": "httpd, Apache HTTP 服务器",
+      "file": "chapters/061-httpd-apache-http-服务器.md"
+    },
+    {
+      "slug": "062-基于路径的授权",
+      "title": "基于路径的授权",
+      "file": "chapters/062-基于路径的授权.md"
+    },
+    {
+      "slug": "063-高层日志记录",
+      "title": "高层日志记录",
+      "file": "chapters/063-高层日志记录.md"
+    },
+    {
+      "slug": "064-服务器优化",
+      "title": "服务器优化",
+      "file": "chapters/064-服务器优化.md"
+    },
+    {
+      "slug": "065-支持多种仓库访问方法",
+      "title": "支持多种仓库访问方法",
+      "file": "chapters/065-支持多种仓库访问方法.md"
+    },
+    {
+      "slug": "066-7-定制自己的-subversion-体验",
+      "title": "第 7 章 定制自己的 Subversion 体验",
+      "file": "chapters/066-7-定制自己的-subversion-体验.md"
+    },
+    {
+      "slug": "067-运行时配置区域",
+      "title": "运行时配置区域",
+      "file": "chapters/067-运行时配置区域.md"
+    },
+    {
+      "slug": "068-本地化",
+      "title": "本地化",
+      "file": "chapters/068-本地化.md"
+    },
+    {
+      "slug": "069-使用外部编辑器",
+      "title": "使用外部编辑器",
+      "file": "chapters/069-使用外部编辑器.md"
+    },
+    {
+      "slug": "070-使用外部差异比较与合并工具",
+      "title": "使用外部差异比较与合并工具",
+      "file": "chapters/070-使用外部差异比较与合并工具.md"
+    },
+    {
+      "slug": "071-小结",
+      "title": "小结",
+      "file": "chapters/071-小结.md"
+    },
+    {
+      "slug": "072-8-嵌入-subversion",
+      "title": "第 8 章 嵌入 Subversion",
+      "file": "chapters/072-8-嵌入-subversion.md"
+    },
+    {
+      "slug": "073-层次化的函数库设计",
+      "title": "层次化的函数库设计",
+      "file": "chapters/073-层次化的函数库设计.md"
+    },
+    {
+      "slug": "074-使用-api",
+      "title": "使用 API",
+      "file": "chapters/074-使用-api.md"
+    },
+    {
+      "slug": "075-小结",
+      "title": "小结",
+      "file": "chapters/075-小结.md"
+    },
+    {
+      "slug": "076-ii-subversion-命令行参考手册",
+      "title": "部分 II. Subversion 命令行参考手册",
+      "file": "chapters/076-ii-subversion-命令行参考手册.md"
+    },
+    {
+      "slug": "077-i-svn-参考手册-subversion-命令行客户端",
+      "title": "svn 参考手册—Subversion 命令行客户端",
+      "file": "chapters/077-i-svn-参考手册-subversion-命令行客户端.md"
+    },
+    {
+      "slug": "078-svn-add",
+      "title": "svn add",
+      "file": "chapters/078-svn-add.md"
+    },
+    {
+      "slug": "079-svn-blame-praise-annotate-ann",
+      "title": "svn blame (praise, annotate, ann)",
+      "file": "chapters/079-svn-blame-praise-annotate-ann.md"
+    },
+    {
+      "slug": "080-svn-cat",
+      "title": "svn cat",
+      "file": "chapters/080-svn-cat.md"
+    },
+    {
+      "slug": "081-svn-changelist-cl",
+      "title": "svn changelist (cl)",
+      "file": "chapters/081-svn-changelist-cl.md"
+    },
+    {
+      "slug": "082-svn-checkout-co",
+      "title": "svn checkout (co)",
+      "file": "chapters/082-svn-checkout-co.md"
+    },
+    {
+      "slug": "083-svn-cleanup",
+      "title": "svn cleanup",
+      "file": "chapters/083-svn-cleanup.md"
+    },
+    {
+      "slug": "084-svn-commit-ci",
+      "title": "svn commit (ci)",
+      "file": "chapters/084-svn-commit-ci.md"
+    },
+    {
+      "slug": "085-svn-copy-cp",
+      "title": "svn copy (cp)",
+      "file": "chapters/085-svn-copy-cp.md"
+    },
+    {
+      "slug": "086-svn-delete-del-remove-rm",
+      "title": "svn delete (del, remove, rm)",
+      "file": "chapters/086-svn-delete-del-remove-rm.md"
+    },
+    {
+      "slug": "087-svn-diff-di",
+      "title": "svn diff (di)",
+      "file": "chapters/087-svn-diff-di.md"
+    },
+    {
+      "slug": "088-svn-export",
+      "title": "svn export",
+      "file": "chapters/088-svn-export.md"
+    },
+    {
+      "slug": "089-svn-help-h",
+      "title": "svn help (h, ?)",
+      "file": "chapters/089-svn-help-h.md"
+    },
+    {
+      "slug": "090-svn-import",
+      "title": "svn import",
+      "file": "chapters/090-svn-import.md"
+    },
+    {
+      "slug": "091-svn-info",
+      "title": "svn info",
+      "file": "chapters/091-svn-info.md"
+    },
+    {
+      "slug": "092-svn-list-ls",
+      "title": "svn list (ls)",
+      "file": "chapters/092-svn-list-ls.md"
+    },
+    {
+      "slug": "093-svn-lock",
+      "title": "svn lock",
+      "file": "chapters/093-svn-lock.md"
+    },
+    {
+      "slug": "094-svn-log",
+      "title": "svn log",
+      "file": "chapters/094-svn-log.md"
+    },
+    {
+      "slug": "095-svn-merge",
+      "title": "svn merge",
+      "file": "chapters/095-svn-merge.md"
+    },
+    {
+      "slug": "096-svn-mergeinfo",
+      "title": "svn mergeinfo",
+      "file": "chapters/096-svn-mergeinfo.md"
+    },
+    {
+      "slug": "097-svn-mkdir",
+      "title": "svn mkdir",
+      "file": "chapters/097-svn-mkdir.md"
+    },
+    {
+      "slug": "098-svn-move-mv",
+      "title": "svn move (mv)",
+      "file": "chapters/098-svn-move-mv.md"
+    },
+    {
+      "slug": "099-svn-patch",
+      "title": "svn patch",
+      "file": "chapters/099-svn-patch.md"
+    },
+    {
+      "slug": "100-svn-propdel-pdel-pd",
+      "title": "svn propdel (pdel, pd)",
+      "file": "chapters/100-svn-propdel-pdel-pd.md"
+    },
+    {
+      "slug": "101-svn-propedit-pedit-pe",
+      "title": "svn propedit (pedit, pe)",
+      "file": "chapters/101-svn-propedit-pedit-pe.md"
+    },
+    {
+      "slug": "102-svn-propget-pget-pg",
+      "title": "svn propget (pget, pg)",
+      "file": "chapters/102-svn-propget-pget-pg.md"
+    },
+    {
+      "slug": "103-svn-proplist-plist-pl",
+      "title": "svn proplist (plist, pl)",
+      "file": "chapters/103-svn-proplist-plist-pl.md"
+    },
+    {
+      "slug": "104-svn-propset-pset-ps",
+      "title": "svn propset (pset, ps)",
+      "file": "chapters/104-svn-propset-pset-ps.md"
+    },
+    {
+      "slug": "105-svn-relocate",
+      "title": "svn relocate",
+      "file": "chapters/105-svn-relocate.md"
+    },
+    {
+      "slug": "106-svn-resolve",
+      "title": "svn resolve",
+      "file": "chapters/106-svn-resolve.md"
+    },
+    {
+      "slug": "107-svn-resolved",
+      "title": "svn resolved",
+      "file": "chapters/107-svn-resolved.md"
+    },
+    {
+      "slug": "108-svn-revert",
+      "title": "svn revert",
+      "file": "chapters/108-svn-revert.md"
+    },
+    {
+      "slug": "109-svn-status-stat-st",
+      "title": "svn status (stat, st)",
+      "file": "chapters/109-svn-status-stat-st.md"
+    },
+    {
+      "slug": "110-svn-switch-sw",
+      "title": "svn switch (sw)",
+      "file": "chapters/110-svn-switch-sw.md"
+    },
+    {
+      "slug": "111-svn-unlock",
+      "title": "svn unlock",
+      "file": "chapters/111-svn-unlock.md"
+    },
+    {
+      "slug": "112-svn-update-up",
+      "title": "svn update (up)",
+      "file": "chapters/112-svn-update-up.md"
+    },
+    {
+      "slug": "113-svn-upgrade",
+      "title": "svn upgrade",
+      "file": "chapters/113-svn-upgrade.md"
+    },
+    {
+      "slug": "114-ii-svnadmin-参考手册-subversion-仓库管理工具",
+      "title": "svnadmin 参考手册—Subversion 仓库管理工具",
+      "file": "chapters/114-ii-svnadmin-参考手册-subversion-仓库管理工具.md"
+    },
+    {
+      "slug": "115-svnadmin-crashtest",
+      "title": "svnadmin crashtest",
+      "file": "chapters/115-svnadmin-crashtest.md"
+    },
+    {
+      "slug": "116-svnadmin-create",
+      "title": "svnadmin create",
+      "file": "chapters/116-svnadmin-create.md"
+    },
+    {
+      "slug": "117-svnadmin-deltify",
+      "title": "svnadmin deltify",
+      "file": "chapters/117-svnadmin-deltify.md"
+    },
+    {
+      "slug": "118-svnadmin-dump",
+      "title": "svnadmin dump",
+      "file": "chapters/118-svnadmin-dump.md"
+    },
+    {
+      "slug": "119-svnadmin-freeze",
+      "title": "svnadmin freeze",
+      "file": "chapters/119-svnadmin-freeze.md"
+    },
+    {
+      "slug": "120-svnadmin-help-h",
+      "title": "svnadmin help (h, ?)",
+      "file": "chapters/120-svnadmin-help-h.md"
+    },
+    {
+      "slug": "121-svnadmin-hotcopy",
+      "title": "svnadmin hotcopy",
+      "file": "chapters/121-svnadmin-hotcopy.md"
+    },
+    {
+      "slug": "122-svnadmin-list-dblogs",
+      "title": "svnadmin list-dblogs",
+      "file": "chapters/122-svnadmin-list-dblogs.md"
+    },
+    {
+      "slug": "123-svnadmin-list-unused-dblogs",
+      "title": "svnadmin list-unused-dblogs",
+      "file": "chapters/123-svnadmin-list-unused-dblogs.md"
+    },
+    {
+      "slug": "124-svnadmin-load",
+      "title": "svnadmin load",
+      "file": "chapters/124-svnadmin-load.md"
+    },
+    {
+      "slug": "125-svnadmin-lock",
+      "title": "svnadmin lock",
+      "file": "chapters/125-svnadmin-lock.md"
+    },
+    {
+      "slug": "126-svnadmin-lslocks",
+      "title": "svnadmin lslocks",
+      "file": "chapters/126-svnadmin-lslocks.md"
+    },
+    {
+      "slug": "127-svnadmin-lstxns",
+      "title": "svnadmin lstxns",
+      "file": "chapters/127-svnadmin-lstxns.md"
+    },
+    {
+      "slug": "128-svnadmin-pack",
+      "title": "svnadmin pack",
+      "file": "chapters/128-svnadmin-pack.md"
+    },
+    {
+      "slug": "129-svnadmin-recover",
+      "title": "svnadmin recover",
+      "file": "chapters/129-svnadmin-recover.md"
+    },
+    {
+      "slug": "130-svnadmin-rmlocks",
+      "title": "svnadmin rmlocks",
+      "file": "chapters/130-svnadmin-rmlocks.md"
+    },
+    {
+      "slug": "131-svnadmin-rmtxns",
+      "title": "svnadmin rmtxns",
+      "file": "chapters/131-svnadmin-rmtxns.md"
+    },
+    {
+      "slug": "132-svnadmin-setlog",
+      "title": "svnadmin setlog",
+      "file": "chapters/132-svnadmin-setlog.md"
+    },
+    {
+      "slug": "133-svnadmin-setrevprop",
+      "title": "svnadmin setrevprop",
+      "file": "chapters/133-svnadmin-setrevprop.md"
+    },
+    {
+      "slug": "134-svnadmin-setuuid",
+      "title": "svnadmin setuuid",
+      "file": "chapters/134-svnadmin-setuuid.md"
+    },
+    {
+      "slug": "135-svnadmin-unlock",
+      "title": "svnadmin unlock",
+      "file": "chapters/135-svnadmin-unlock.md"
+    },
+    {
+      "slug": "136-svnadmin-upgrade",
+      "title": "svnadmin upgrade",
+      "file": "chapters/136-svnadmin-upgrade.md"
+    },
+    {
+      "slug": "137-svnadmin-verify",
+      "title": "svnadmin verify",
+      "file": "chapters/137-svnadmin-verify.md"
+    },
+    {
+      "slug": "138-iii-svnlook-参考手册-subversion-仓库检查工具",
+      "title": "svnlook 参考手册—Subversion 仓库检查工具",
+      "file": "chapters/138-iii-svnlook-参考手册-subversion-仓库检查工具.md"
+    },
+    {
+      "slug": "139-svnlook-author",
+      "title": "svnlook author",
+      "file": "chapters/139-svnlook-author.md"
+    },
+    {
+      "slug": "140-svnlook-cat",
+      "title": "svnlook cat",
+      "file": "chapters/140-svnlook-cat.md"
+    },
+    {
+      "slug": "141-svnlook-changed",
+      "title": "svnlook changed",
+      "file": "chapters/141-svnlook-changed.md"
+    },
+    {
+      "slug": "142-svnlook-date",
+      "title": "svnlook date",
+      "file": "chapters/142-svnlook-date.md"
+    },
+    {
+      "slug": "143-svnlook-diff",
+      "title": "svnlook diff",
+      "file": "chapters/143-svnlook-diff.md"
+    },
+    {
+      "slug": "144-svnlook-dirs-changed",
+      "title": "svnlook dirs-changed",
+      "file": "chapters/144-svnlook-dirs-changed.md"
+    },
+    {
+      "slug": "145-svnlook-filesize",
+      "title": "svnlook filesize",
+      "file": "chapters/145-svnlook-filesize.md"
+    },
+    {
+      "slug": "146-svnlook-help-h",
+      "title": "svnlook help (h, ?)",
+      "file": "chapters/146-svnlook-help-h.md"
+    },
+    {
+      "slug": "147-svnlook-history",
+      "title": "svnlook history",
+      "file": "chapters/147-svnlook-history.md"
+    },
+    {
+      "slug": "148-svnlook-info",
+      "title": "svnlook info",
+      "file": "chapters/148-svnlook-info.md"
+    },
+    {
+      "slug": "149-svnlook-lock",
+      "title": "svnlook lock",
+      "file": "chapters/149-svnlook-lock.md"
+    },
+    {
+      "slug": "150-svnlook-log",
+      "title": "svnlook log",
+      "file": "chapters/150-svnlook-log.md"
+    },
+    {
+      "slug": "151-svnlook-propget-pget-pg",
+      "title": "svnlook propget (pget, pg)",
+      "file": "chapters/151-svnlook-propget-pget-pg.md"
+    },
+    {
+      "slug": "152-svnlook-proplist-plist-pl",
+      "title": "svnlook proplist (plist, pl)",
+      "file": "chapters/152-svnlook-proplist-plist-pl.md"
+    },
+    {
+      "slug": "153-svnlook-tree",
+      "title": "svnlook tree",
+      "file": "chapters/153-svnlook-tree.md"
+    },
+    {
+      "slug": "154-svnlook-uuid",
+      "title": "svnlook uuid",
+      "file": "chapters/154-svnlook-uuid.md"
+    },
+    {
+      "slug": "155-svnlook-youngest",
+      "title": "svnlook youngest",
+      "file": "chapters/155-svnlook-youngest.md"
+    },
+    {
+      "slug": "156-iv-svnserve-参考手册-定制化的-subversion-服务器",
+      "title": "svnserve 参考手册—定制化的 Subversion 服务器",
+      "file": "chapters/156-iv-svnserve-参考手册-定制化的-subversion-服务器.md"
+    },
+    {
+      "slug": "157-svnserve",
+      "title": "svnserve",
+      "file": "chapters/157-svnserve.md"
+    },
+    {
+      "slug": "158-v-svnversion-参考手册-subversion-工作副本版本信息",
+      "title": "svnversion 参考手册—Subversion 工作副本版本信息",
+      "file": "chapters/158-v-svnversion-参考手册-subversion-工作副本版本信息.md"
+    },
+    {
+      "slug": "159-svnversion",
+      "title": "svnversion",
+      "file": "chapters/159-svnversion.md"
+    },
+    {
+      "slug": "160-vi-svnsync-参考手册-subversion-仓库镜像工具",
+      "title": "svnsync 参考手册—Subversion 仓库镜像工具",
+      "file": "chapters/160-vi-svnsync-参考手册-subversion-仓库镜像工具.md"
+    },
+    {
+      "slug": "161-svnsync-copy-revprops",
+      "title": "svnsync copy-revprops",
+      "file": "chapters/161-svnsync-copy-revprops.md"
+    },
+    {
+      "slug": "162-svnsync-help",
+      "title": "svnsync help",
+      "file": "chapters/162-svnsync-help.md"
+    },
+    {
+      "slug": "163-svnsync-info",
+      "title": "svnsync info",
+      "file": "chapters/163-svnsync-info.md"
+    },
+    {
+      "slug": "164-svnsync-initialize-init",
+      "title": "svnsync initialize (init)",
+      "file": "chapters/164-svnsync-initialize-init.md"
+    },
+    {
+      "slug": "165-svnsync-synchronize-sync",
+      "title": "svnsync synchronize (sync)",
+      "file": "chapters/165-svnsync-synchronize-sync.md"
+    },
+    {
+      "slug": "166-vii-svnrdump-参考手册-subversion-远程仓库数据迁移",
+      "title": "svnrdump 参考手册—Subversion 远程仓库数据迁移",
+      "file": "chapters/166-vii-svnrdump-参考手册-subversion-远程仓库数据迁移.md"
+    },
+    {
+      "slug": "167-svnrdump-dump",
+      "title": "svnrdump dump",
+      "file": "chapters/167-svnrdump-dump.md"
+    },
+    {
+      "slug": "168-svnrdump-help",
+      "title": "svnrdump help",
+      "file": "chapters/168-svnrdump-help.md"
+    },
+    {
+      "slug": "169-svnrdump-load",
+      "title": "svnrdump load",
+      "file": "chapters/169-svnrdump-load.md"
+    },
+    {
+      "slug": "170-viii-svndumpfilter-参考手册-subversion-历史过滤工",
+      "title": "svndumpfilter 参考手册—Subversion 历史过滤工具",
+      "file": "chapters/170-viii-svndumpfilter-参考手册-subversion-历史过滤工.md"
+    },
+    {
+      "slug": "171-svndumpfilter-exclude",
+      "title": "svndumpfilter exclude",
+      "file": "chapters/171-svndumpfilter-exclude.md"
+    },
+    {
+      "slug": "172-svndumpfilter-include",
+      "title": "svndumpfilter include",
+      "file": "chapters/172-svndumpfilter-include.md"
+    },
+    {
+      "slug": "173-svndumpfilter-help",
+      "title": "svndumpfilter help",
+      "file": "chapters/173-svndumpfilter-help.md"
+    },
+    {
+      "slug": "174-ix-svnmucc-参考手册-subversion-多-url-命令行客户端",
+      "title": "svnmucc 参考手册—Subversion 多 URL 命令行客户端",
+      "file": "chapters/174-ix-svnmucc-参考手册-subversion-多-url-命令行客户端.md"
+    },
+    {
+      "slug": "175-svnmucc",
+      "title": "svnmucc",
+      "file": "chapters/175-svnmucc.md"
+    },
+    {
+      "slug": "176-x-subversion-仓库钩子参考手册",
+      "title": "Subversion 仓库钩子参考手册",
+      "file": "chapters/176-x-subversion-仓库钩子参考手册.md"
+    },
+    {
+      "slug": "177-start-commit",
+      "title": "start-commit",
+      "file": "chapters/177-start-commit.md"
+    },
+    {
+      "slug": "178-pre-commit",
+      "title": "pre-commit",
+      "file": "chapters/178-pre-commit.md"
+    },
+    {
+      "slug": "179-post-commit",
+      "title": "post-commit",
+      "file": "chapters/179-post-commit.md"
+    },
+    {
+      "slug": "180-pre-revprop-change",
+      "title": "pre-revprop-change",
+      "file": "chapters/180-pre-revprop-change.md"
+    },
+    {
+      "slug": "181-post-revprop-change",
+      "title": "post-revprop-change",
+      "file": "chapters/181-post-revprop-change.md"
+    },
+    {
+      "slug": "182-pre-lock",
+      "title": "pre-lock",
+      "file": "chapters/182-pre-lock.md"
+    },
+    {
+      "slug": "183-post-lock",
+      "title": "post-lock",
+      "file": "chapters/183-post-lock.md"
+    },
+    {
+      "slug": "184-pre-unlock",
+      "title": "pre-unlock",
+      "file": "chapters/184-pre-unlock.md"
+    },
+    {
+      "slug": "185-post-unlock",
+      "title": "post-unlock",
+      "file": "chapters/185-post-unlock.md"
+    },
+    {
+      "slug": "186-iii-附录",
+      "title": "部分 III. 附录",
+      "file": "chapters/186-iii-附录.md"
+    },
+    {
+      "slug": "187-a-subversion-快速入门",
+      "title": "附录 A. Subversion 快速入门",
+      "file": "chapters/187-a-subversion-快速入门.md"
+    },
+    {
+      "slug": "188-安装-subversion",
+      "title": "安装 Subversion",
+      "file": "chapters/188-安装-subversion.md"
+    },
+    {
+      "slug": "189-快速入门教程",
+      "title": "快速入门教程",
+      "file": "chapters/189-快速入门教程.md"
+    },
+    {
+      "slug": "190-b-针对-cvs-用户的-subversion-介绍",
+      "title": "附录 B. 针对 CVS 用户的 Subversion 介绍",
+      "file": "chapters/190-b-针对-cvs-用户的-subversion-介绍.md"
+    },
+    {
+      "slug": "191-版本号的编号不再相同",
+      "title": "版本号的编号不再相同",
+      "file": "chapters/191-版本号的编号不再相同.md"
+    },
+    {
+      "slug": "192-目录的版本",
+      "title": "目录的版本",
+      "file": "chapters/192-目录的版本.md"
+    },
+    {
+      "slug": "193-更多的无连接操作",
+      "title": "更多的无连接操作",
+      "file": "chapters/193-更多的无连接操作.md"
+    },
+    {
+      "slug": "194-状态与更新的区别",
+      "title": "状态与更新的区别",
+      "file": "chapters/194-状态与更新的区别.md"
+    },
+    {
+      "slug": "195-分支与标签",
+      "title": "分支与标签",
+      "file": "chapters/195-分支与标签.md"
+    },
+    {
+      "slug": "196-元数据属性",
+      "title": "元数据属性",
+      "file": "chapters/196-元数据属性.md"
+    },
+    {
+      "slug": "197-冲突解决",
+      "title": "冲突解决",
+      "file": "chapters/197-冲突解决.md"
+    },
+    {
+      "slug": "198-二进制文件与转换",
+      "title": "二进制文件与转换",
+      "file": "chapters/198-二进制文件与转换.md"
+    },
+    {
+      "slug": "199-版本化的模块",
+      "title": "版本化的模块",
+      "file": "chapters/199-版本化的模块.md"
+    },
+    {
+      "slug": "200-认证",
+      "title": "认证",
+      "file": "chapters/200-认证.md"
     }
   ],
   "sourceType": "web",

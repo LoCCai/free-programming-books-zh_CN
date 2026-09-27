@@ -3,14 +3,63 @@
   "title": "Git 参考手册",
   "url": "http://gitref.justjavac.com",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:14.765Z",
+  "fetchedAt": "2026-09-27T11:55:10.994Z",
   "chapters": [
     {
-      "slug": "001-r",
+      "slug": "001-参考手册",
       "title": "Git 参考手册",
-      "file": "chapters/001-r.md"
+      "file": "chapters/001-参考手册.md"
+    },
+    {
+      "slug": "002-获取与创建项目",
+      "title": "Git 参考手册",
+      "file": "chapters/002-获取与创建项目.md"
+    },
+    {
+      "slug": "003-init",
+      "title": "Git 参考手册",
+      "file": "chapters/003-init.md"
+    },
+    {
+      "slug": "004-基本的快照",
+      "title": "Git 参考手册",
+      "file": "chapters/004-基本的快照.md"
+    },
+    {
+      "slug": "005-add",
+      "title": "Git 参考手册",
+      "file": "chapters/005-add.md"
+    },
+    {
+      "slug": "006-分支与合并",
+      "title": "Git 参考手册",
+      "file": "chapters/006-分支与合并.md"
+    },
+    {
+      "slug": "007-branch",
+      "title": "Git 参考手册",
+      "file": "chapters/007-branch.md"
+    },
+    {
+      "slug": "008-分享与更新项目",
+      "title": "Git 参考手册",
+      "file": "chapters/008-分享与更新项目.md"
+    },
+    {
+      "slug": "009-fetch-pull",
+      "title": "Git 参考手册",
+      "file": "chapters/009-fetch-pull.md"
+    },
+    {
+      "slug": "010-检查与比较",
+      "title": "Git 参考手册",
+      "file": "chapters/010-检查与比较.md"
+    },
+    {
+      "slug": "011-log",
+      "title": "Git 参考手册",
+      "file": "chapters/011-log.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "Git 参考手册"
+  "sourceType": "web"
 }

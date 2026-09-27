@@ -3,257 +3,367 @@
   "title": "Git权威指南",
   "url": "http://www.worldhello.net/gotgit/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:48.759Z",
+  "fetchedAt": "2026-09-27T11:56:15.243Z",
   "chapters": [
     {
-      "slug": "001-x",
+      "slug": "001-git权威指南-gotgit",
       "title": "Git权威指南 — GotGit",
-      "file": "chapters/001-x.md"
+      "file": "chapters/001-git权威指南-gotgit.md"
     },
     {
-      "slug": "002-1j",
+      "slug": "002-1-初识git",
       "title": "1. 初识Git — GotGit",
-      "file": "chapters/002-1j.md"
+      "file": "chapters/002-1-初识git.md"
     },
     {
-      "slug": "003-1t",
+      "slug": "003-1-1-版本控制的前世和今生",
       "title": "1.1. 版本控制的前世和今生 — GotGit",
-      "file": "chapters/003-1t.md"
+      "file": "chapters/003-1-1-版本控制的前世和今生.md"
     },
     {
-      "slug": "004-1q",
+      "slug": "004-1-2-爱上git的理由",
       "title": "1.2. 爱上Git的理由 — GotGit",
-      "file": "chapters/004-1q.md"
+      "file": "chapters/004-1-2-爱上git的理由.md"
     },
     {
-      "slug": "005-1u",
+      "slug": "005-1-3-安装git",
       "title": "1.3. 安装Git — GotGit",
-      "file": "chapters/005-1u.md"
+      "file": "chapters/005-1-3-安装git.md"
     },
     {
-      "slug": "006-1y",
+      "slug": "006-1-3-1-linux下安装和使用git",
       "title": "1.3.1. Linux下安装和使用Git — GotGit",
-      "file": "chapters/006-1y.md"
+      "file": "chapters/006-1-3-1-linux下安装和使用git.md"
     },
     {
-      "slug": "007-1w",
+      "slug": "007-1-3-2-mac-os-x下安装和使用git",
       "title": "1.3.2. Mac OS X下安装和使用Git — GotGit",
-      "file": "chapters/007-1w.md"
+      "file": "chapters/007-1-3-2-mac-os-x下安装和使用git.md"
     },
     {
-      "slug": "008-27",
+      "slug": "008-1-3-3-windows下安装和使用git-cygwin篇",
       "title": "1.3.3. Windows下安装和使用Git（Cygwin篇） — GotGit",
-      "file": "chapters/008-27.md"
+      "file": "chapters/008-1-3-3-windows下安装和使用git-cygwin篇.md"
     },
     {
-      "slug": "009-28",
+      "slug": "009-1-3-4-windows下安装和使用git-msysgit篇",
       "title": "1.3.4. Windows下安装和使用Git（msysGit篇） — GotGit",
-      "file": "chapters/009-28.md"
+      "file": "chapters/009-1-3-4-windows下安装和使用git-msysgit篇.md"
     },
     {
-      "slug": "010-1j",
+      "slug": "010-2-git独奏",
       "title": "2. Git独奏 — GotGit",
-      "file": "chapters/010-1j.md"
+      "file": "chapters/010-2-git独奏.md"
     },
     {
-      "slug": "011-1q",
+      "slug": "011-2-1-git初始化",
       "title": "2.1. Git初始化 — GotGit",
-      "file": "chapters/011-1q.md"
+      "file": "chapters/011-2-1-git初始化.md"
     },
     {
-      "slug": "012-1r",
+      "slug": "012-2-2-git暂存区",
       "title": "2.2. Git暂存区 — GotGit",
-      "file": "chapters/012-1r.md"
+      "file": "chapters/012-2-2-git暂存区.md"
     },
     {
-      "slug": "013-25",
+      "slug": "013-2-3-git对象",
       "title": "2.3. Git对象 — GotGit",
-      "file": "chapters/013-25.md"
+      "file": "chapters/013-2-3-git对象.md"
     },
     {
-      "slug": "014-1r",
+      "slug": "014-2-4-git重置",
       "title": "2.4. Git重置 — GotGit",
-      "file": "chapters/014-1r.md"
+      "file": "chapters/014-2-4-git重置.md"
     },
     {
-      "slug": "015-1u",
+      "slug": "015-2-5-git检出",
       "title": "2.5. Git检出 — GotGit",
-      "file": "chapters/015-1u.md"
+      "file": "chapters/015-2-5-git检出.md"
     },
     {
-      "slug": "016-1z",
+      "slug": "016-2-6-恢复进度",
       "title": "2.6. 恢复进度 — GotGit",
-      "file": "chapters/016-1z.md"
+      "file": "chapters/016-2-6-恢复进度.md"
     },
     {
-      "slug": "017-1r",
+      "slug": "017-2-7-git基本操作",
       "title": "2.7. Git基本操作 — GotGit",
-      "file": "chapters/017-1r.md"
+      "file": "chapters/017-2-7-git基本操作.md"
     },
     {
-      "slug": "018-20",
+      "slug": "018-2-8-历史穿梭",
       "title": "2.8. 历史穿梭 — GotGit",
-      "file": "chapters/018-20.md"
+      "file": "chapters/018-2-8-历史穿梭.md"
     },
     {
-      "slug": "019-1w",
+      "slug": "019-2-9-改变历史",
       "title": "2.9. 改变历史 — GotGit",
-      "file": "chapters/019-1w.md"
+      "file": "chapters/019-2-9-改变历史.md"
     },
     {
-      "slug": "020-1r",
+      "slug": "020-2-10-git克隆",
       "title": "2.10. Git克隆 — GotGit",
-      "file": "chapters/020-1r.md"
+      "file": "chapters/020-2-10-git克隆.md"
     },
     {
-      "slug": "021-1r",
+      "slug": "021-2-11-git库管理",
       "title": "2.11. Git库管理 — GotGit",
-      "file": "chapters/021-1r.md"
+      "file": "chapters/021-2-11-git库管理.md"
     },
     {
-      "slug": "022-1m",
+      "slug": "022-3-git和声",
       "title": "3. Git和声 — GotGit",
-      "file": "chapters/022-1m.md"
+      "file": "chapters/022-3-git和声.md"
     },
     {
-      "slug": "023-1t",
+      "slug": "023-3-1-git协议与工作协同",
       "title": "3.1. Git协议与工作协同 — GotGit",
-      "file": "chapters/023-1t.md"
+      "file": "chapters/023-3-1-git协议与工作协同.md"
     },
     {
-      "slug": "024-1t",
+      "slug": "024-3-2-冲突解决",
       "title": "3.2. 冲突解决 — GotGit",
-      "file": "chapters/024-1t.md"
+      "file": "chapters/024-3-2-冲突解决.md"
     },
     {
-      "slug": "025-1s",
+      "slug": "025-3-3-git里程碑",
       "title": "3.3. Git里程碑 — GotGit",
-      "file": "chapters/025-1s.md"
+      "file": "chapters/025-3-3-git里程碑.md"
     },
     {
-      "slug": "026-1v",
+      "slug": "026-3-4-git分支",
       "title": "3.4. Git分支 — GotGit",
-      "file": "chapters/026-1v.md"
+      "file": "chapters/026-3-4-git分支.md"
     },
     {
-      "slug": "027-1v",
+      "slug": "027-3-5-远程版本库",
       "title": "3.5. 远程版本库 — GotGit",
-      "file": "chapters/027-1v.md"
+      "file": "chapters/027-3-5-远程版本库.md"
     },
     {
-      "slug": "028-1w",
+      "slug": "028-3-6-补丁文件交互",
       "title": "3.6. 补丁文件交互 — GotGit",
-      "file": "chapters/028-1w.md"
+      "file": "chapters/028-3-6-补丁文件交互.md"
     },
     {
-      "slug": "029-1k",
+      "slug": "029-4-git协同模型",
       "title": "4. Git协同模型 — GotGit",
-      "file": "chapters/029-1k.md"
+      "file": "chapters/029-4-git协同模型.md"
     },
     {
-      "slug": "030-1w",
+      "slug": "030-4-1-经典git协同模型",
       "title": "4.1. 经典Git协同模型 — GotGit",
-      "file": "chapters/030-1w.md"
+      "file": "chapters/030-4-1-经典git协同模型.md"
     },
     {
-      "slug": "031-1z",
+      "slug": "031-4-2-金字塔式协同模型",
       "title": "4.2. 金字塔式协同模型 — GotGit",
-      "file": "chapters/031-1z.md"
+      "file": "chapters/031-4-2-金字塔式协同模型.md"
     },
     {
-      "slug": "032-1v",
+      "slug": "032-4-3-topgit协同模型",
       "title": "4.3. Topgit协同模型 — GotGit",
-      "file": "chapters/032-1v.md"
+      "file": "chapters/032-4-3-topgit协同模型.md"
     },
     {
-      "slug": "033-1y",
+      "slug": "033-4-4-子模组协同模型",
       "title": "4.4. 子模组协同模型 — GotGit",
-      "file": "chapters/033-1y.md"
+      "file": "chapters/033-4-4-子模组协同模型.md"
     },
     {
-      "slug": "034-1w",
+      "slug": "034-4-5-子树合并",
       "title": "4.5. 子树合并 — GotGit",
-      "file": "chapters/034-1w.md"
+      "file": "chapters/034-4-5-子树合并.md"
     },
     {
-      "slug": "035-1w",
+      "slug": "035-4-6-android式多版本库协同",
       "title": "4.6. Android式多版本库协同 — GotGit",
-      "file": "chapters/035-1w.md"
+      "file": "chapters/035-4-6-android式多版本库协同.md"
     },
     {
-      "slug": "036-1q",
+      "slug": "036-4-7-git和svn协同模型",
       "title": "4.7. Git和SVN协同模型 — GotGit",
-      "file": "chapters/036-1q.md"
+      "file": "chapters/036-4-7-git和svn协同模型.md"
     },
     {
-      "slug": "037-1l",
+      "slug": "037-5-搭建git服务器",
       "title": "5. 搭建Git服务器 — GotGit",
-      "file": "chapters/037-1l.md"
+      "file": "chapters/037-5-搭建git服务器.md"
     },
     {
-      "slug": "038-1o",
+      "slug": "038-5-1-使用http协议",
       "title": "5.1. 使用HTTP协议 — GotGit",
-      "file": "chapters/038-1o.md"
+      "file": "chapters/038-5-1-使用http协议.md"
     },
     {
-      "slug": "039-1n",
+      "slug": "039-5-2-使用git协议",
       "title": "5.2. 使用Git协议 — GotGit",
-      "file": "chapters/039-1n.md"
+      "file": "chapters/039-5-2-使用git协议.md"
     },
     {
-      "slug": "040-1n",
+      "slug": "040-5-3-使用ssh协议",
       "title": "5.3. 使用SSH协议 — GotGit",
-      "file": "chapters/040-1n.md"
+      "file": "chapters/040-5-3-使用ssh协议.md"
     },
     {
-      "slug": "041-1s",
+      "slug": "041-5-4-gitolite服务架设",
       "title": "5.4. Gitolite服务架设 — GotGit",
-      "file": "chapters/041-1s.md"
+      "file": "chapters/041-5-4-gitolite服务架设.md"
     },
     {
-      "slug": "042-1r",
+      "slug": "042-5-5-gitosis服务架设",
       "title": "5.5. Gitosis服务架设 — GotGit",
-      "file": "chapters/042-1r.md"
+      "file": "chapters/042-5-5-gitosis服务架设.md"
     },
     {
-      "slug": "043-1q",
+      "slug": "043-5-6-gerrit代码审核服务器",
       "title": "5.6. Gerrit代码审核服务器 — GotGit",
-      "file": "chapters/043-1q.md"
+      "file": "chapters/043-5-6-gerrit代码审核服务器.md"
     },
     {
-      "slug": "044-1v",
+      "slug": "044-5-7-git版本库托管",
       "title": "5.7. Git版本库托管 — GotGit",
-      "file": "chapters/044-1v.md"
+      "file": "chapters/044-5-7-git版本库托管.md"
     },
     {
-      "slug": "045-1i",
+      "slug": "045-6-迁移到git",
       "title": "6. 迁移到Git — GotGit",
-      "file": "chapters/045-1i.md"
+      "file": "chapters/045-6-迁移到git.md"
     },
     {
-      "slug": "046-1k",
+      "slug": "046-6-1-cvs版本库到git的迁移",
       "title": "6.1. CVS版本库到Git的迁移 — GotGit",
-      "file": "chapters/046-1k.md"
+      "file": "chapters/046-6-1-cvs版本库到git的迁移.md"
     },
     {
-      "slug": "047-1n",
+      "slug": "047-6-2-更多版本控制系统的迁移",
       "title": "6.2. 更多版本控制系统的迁移 — GotGit",
-      "file": "chapters/047-1n.md"
+      "file": "chapters/047-6-2-更多版本控制系统的迁移.md"
     },
     {
-      "slug": "048-1k",
+      "slug": "048-6-2-1-svn版本库到git的迁移",
       "title": "6.2.1. SVN版本库到Git的迁移 — GotGit",
-      "file": "chapters/048-1k.md"
+      "file": "chapters/048-6-2-1-svn版本库到git的迁移.md"
     },
     {
-      "slug": "049-1j",
+      "slug": "049-6-2-2-hg版本库到git的迁移",
       "title": "6.2.2. Hg版本库到Git的迁移 — GotGit",
-      "file": "chapters/049-1j.md"
+      "file": "chapters/049-6-2-2-hg版本库到git的迁移.md"
     },
     {
-      "slug": "050-1n",
+      "slug": "050-6-2-3-通用版本库迁移",
       "title": "6.2.3. 通用版本库迁移 — GotGit",
-      "file": "chapters/050-1n.md"
+      "file": "chapters/050-6-2-3-通用版本库迁移.md"
+    },
+    {
+      "slug": "051-6-2-4-git版本库整理",
+      "title": "6.2.4. Git版本库整理 — GotGit",
+      "file": "chapters/051-6-2-4-git版本库整理.md"
+    },
+    {
+      "slug": "052-7-git的其它应用",
+      "title": "7. Git的其它应用 — GotGit",
+      "file": "chapters/052-7-git的其它应用.md"
+    },
+    {
+      "slug": "053-7-1-etckeeper",
+      "title": "7.1. etckeeper — GotGit",
+      "file": "chapters/053-7-1-etckeeper.md"
+    },
+    {
+      "slug": "054-7-2-gistore",
+      "title": "7.2. Gistore — GotGit",
+      "file": "chapters/054-7-2-gistore.md"
+    },
+    {
+      "slug": "055-7-3-补丁中的二进制文件",
+      "title": "7.3. 补丁中的二进制文件 — GotGit",
+      "file": "chapters/055-7-3-补丁中的二进制文件.md"
+    },
+    {
+      "slug": "056-7-4-云存储",
+      "title": "7.4. 云存储 — GotGit",
+      "file": "chapters/056-7-4-云存储.md"
+    },
+    {
+      "slug": "057-8-git杂谈",
+      "title": "8. Git杂谈 — GotGit",
+      "file": "chapters/057-8-git杂谈.md"
+    },
+    {
+      "slug": "058-8-1-跨平台操作git",
+      "title": "8.1. 跨平台操作Git — GotGit",
+      "file": "chapters/058-8-1-跨平台操作git.md"
+    },
+    {
+      "slug": "059-8-1-1-字符集问题",
+      "title": "8.1.1. 字符集问题 — GotGit",
+      "file": "chapters/059-8-1-1-字符集问题.md"
+    },
+    {
+      "slug": "060-8-1-2-文件名大小写问题",
+      "title": "8.1.2. 文件名大小写问题 — GotGit",
+      "file": "chapters/060-8-1-2-文件名大小写问题.md"
+    },
+    {
+      "slug": "061-8-1-3-换行符问题",
+      "title": "8.1.3. 换行符问题 — GotGit",
+      "file": "chapters/061-8-1-3-换行符问题.md"
+    },
+    {
+      "slug": "062-8-2-git-的其他特性",
+      "title": "8.2. Git 的其他特性 — GotGit",
+      "file": "chapters/062-8-2-git-的其他特性.md"
+    },
+    {
+      "slug": "063-8-2-1-属性",
+      "title": "8.2.1. 属性 — GotGit",
+      "file": "chapters/063-8-2-1-属性.md"
+    },
+    {
+      "slug": "064-8-2-2-钩子和模板",
+      "title": "8.2.2. 钩子和模板 — GotGit",
+      "file": "chapters/064-8-2-2-钩子和模板.md"
+    },
+    {
+      "slug": "065-8-2-3-稀疏检出和浅克隆",
+      "title": "8.2.3. 稀疏检出和浅克隆 — GotGit",
+      "file": "chapters/065-8-2-3-稀疏检出和浅克隆.md"
+    },
+    {
+      "slug": "066-8-2-4-嫁接和替换",
+      "title": "8.2.4. 嫁接和替换 — GotGit",
+      "file": "chapters/066-8-2-4-嫁接和替换.md"
+    },
+    {
+      "slug": "067-8-2-5-git评注",
+      "title": "8.2.5. Git评注 — GotGit",
+      "file": "chapters/067-8-2-5-git评注.md"
+    },
+    {
+      "slug": "068-9-附录",
+      "title": "9. 附录 — GotGit",
+      "file": "chapters/068-9-附录.md"
+    },
+    {
+      "slug": "069-9-1-a-git命令索引",
+      "title": "9.1. A. Git命令索引 — GotGit",
+      "file": "chapters/069-9-1-a-git命令索引.md"
+    },
+    {
+      "slug": "070-9-2-git与cvs面对面",
+      "title": "9.2. Git与CVS面对面 — GotGit",
+      "file": "chapters/070-9-2-git与cvs面对面.md"
+    },
+    {
+      "slug": "071-9-3-git和svn面对面",
+      "title": "9.3. Git和SVN面对面 — GotGit",
+      "file": "chapters/071-9-3-git和svn面对面.md"
+    },
+    {
+      "slug": "072-9-4-git和hg面对面",
+      "title": "9.4. Git和Hg面对面 — GotGit",
+      "file": "chapters/072-9-4-git和hg面对面.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,97 @@
   "title": "从零开始的Nodejs系列文章",
   "url": "http://blog.fens.me/series-nodejs/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:45.802Z",
+  "fetchedAt": "2026-09-27T12:01:45.516Z",
   "chapters": [
     {
-      "slug": "001-y",
+      "slug": "001-r的极客理想系列文章",
+      "title": "R的极客理想系列文章 | 粉丝日志",
+      "file": "chapters/001-r的极客理想系列文章.md"
+    },
+    {
+      "slug": "002-跨界知识聚会系列文章",
+      "title": "跨界知识聚会系列文章 | 粉丝日志",
+      "file": "chapters/002-跨界知识聚会系列文章.md"
+    },
+    {
+      "slug": "003-算法为王系列文章",
+      "title": "算法为王系列文章 | 粉丝日志",
+      "file": "chapters/003-算法为王系列文章.md"
+    },
+    {
+      "slug": "004-大模型探索和知识储备",
+      "title": "大模型探索和知识储备 | 粉丝日志",
+      "file": "chapters/004-大模型探索和知识储备.md"
+    },
+    {
+      "slug": "005-用it技术玩金融系列文章",
+      "title": "用IT技术玩金融系列文章 | 粉丝日志",
+      "file": "chapters/005-用it技术玩金融系列文章.md"
+    },
+    {
+      "slug": "006-经济拼图系列文章",
+      "title": "经济拼图系列文章 | 粉丝日志",
+      "file": "chapters/006-经济拼图系列文章.md"
+    },
+    {
+      "slug": "007-从零开始nodejs系列文章",
       "title": "从零开始nodejs系列文章 | 粉丝日志",
-      "file": "chapters/001-y.md"
+      "file": "chapters/007-从零开始nodejs系列文章.md"
+    },
+    {
+      "slug": "008-架构师的信仰系列文章",
+      "title": "架构师的信仰系列文章 | 粉丝日志",
+      "file": "chapters/008-架构师的信仰系列文章.md"
+    },
+    {
+      "slug": "009-hadoop家族系列文章",
+      "title": "Hadoop家族系列文章 | 粉丝日志",
+      "file": "chapters/009-hadoop家族系列文章.md"
+    },
+    {
+      "slug": "010-rhadoop实践系列文章",
+      "title": "RHadoop实践系列文章 | 粉丝日志",
+      "file": "chapters/010-rhadoop实践系列文章.md"
+    },
+    {
+      "slug": "011-r利剑nosql系列文章",
+      "title": "R利剑NoSQL系列文章 | 粉丝日志",
+      "file": "chapters/011-r利剑nosql系列文章.md"
+    },
+    {
+      "slug": "012-创业者的囧境系列文章",
+      "title": "创业者的囧境系列文章 | 粉丝日志",
+      "file": "chapters/012-创业者的囧境系列文章.md"
+    },
+    {
+      "slug": "013-prolog语言知识推理系列文章",
+      "title": "Prolog语言知识推理系列文章 | 粉丝日志",
+      "file": "chapters/013-prolog语言知识推理系列文章.md"
+    },
+    {
+      "slug": "014-angularjs体验式编程系列文章",
+      "title": "AngularJS体验式编程系列文章 | 粉丝日志",
+      "file": "chapters/014-angularjs体验式编程系列文章.md"
+    },
+    {
+      "slug": "015-ubuntu实用工具系列文章",
+      "title": "ubuntu实用工具系列文章 | 粉丝日志",
+      "file": "chapters/015-ubuntu实用工具系列文章.md"
+    },
+    {
+      "slug": "016-比特币吸金之道系列文章",
+      "title": "比特币吸金之道系列文章 | 粉丝日志",
+      "file": "chapters/016-比特币吸金之道系列文章.md"
+    },
+    {
+      "slug": "017-解构数据平台系列文章",
+      "title": "解构数据平台系列文章 | 粉丝日志",
+      "file": "chapters/017-解构数据平台系列文章.md"
+    },
+    {
+      "slug": "018-关于站长",
+      "title": "关于站长 | 粉丝日志",
+      "file": "chapters/018-关于站长.md"
     }
   ],
   "sourceType": "web",

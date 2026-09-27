@@ -3,12 +3,37 @@
   "title": "笨办法学Prolog",
   "url": "http://fengdidi.github.io/blog/2011/11/15/qian-yan/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:15.471Z",
+  "fetchedAt": "2026-09-27T12:02:47.757Z",
   "chapters": [
     {
-      "slug": "001-1f",
+      "slug": "001-learn-prolog-the-hard-way",
       "title": "Learn Prolog The Hard Way",
-      "file": "chapters/001-1f.md"
+      "file": "chapters/001-learn-prolog-the-hard-way.md"
+    },
+    {
+      "slug": "002-第4章-prolog程序的两种意义",
+      "title": "Learn Prolog The Hard Way",
+      "file": "chapters/002-第4章-prolog程序的两种意义.md"
+    },
+    {
+      "slug": "003-第3章-prolog是如何回答问题的",
+      "title": "Learn Prolog The Hard Way",
+      "file": "chapters/003-第3章-prolog是如何回答问题的.md"
+    },
+    {
+      "slug": "004-第2章-谁是谁的爸爸",
+      "title": "Learn Prolog The Hard Way",
+      "file": "chapters/004-第2章-谁是谁的爸爸.md"
+    },
+    {
+      "slug": "005-第1章-配置开发环境",
+      "title": "Learn Prolog The Hard Way",
+      "file": "chapters/005-第1章-配置开发环境.md"
+    },
+    {
+      "slug": "006-第0章-为什么要学习prolog",
+      "title": "Learn Prolog The Hard Way",
+      "file": "chapters/006-第0章-为什么要学习prolog.md"
     }
   ],
   "sourceType": "web",

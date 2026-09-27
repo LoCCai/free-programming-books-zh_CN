@@ -3,12 +3,12 @@
   "title": "Lua 5.3 参考手册 中文翻译",
   "url": "http://cloudwu.github.io/lua53doc/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:59.793Z",
+  "fetchedAt": "2026-09-27T12:01:48.418Z",
   "chapters": [
     {
-      "slug": "001-y",
+      "slug": "001-lua-5-3-readme",
       "title": "Lua 5.3 readme",
-      "file": "chapters/001-y.md"
+      "file": "chapters/001-lua-5-3-readme.md"
     }
   ],
   "sourceType": "web",

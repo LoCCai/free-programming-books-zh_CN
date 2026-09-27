@@ -1,0 +1,56 @@
+## A1.8 附录 A: 在其它环境中使用 Git - PowerShell 中的 Git
+
+## PowerShell 中的 Git
+
+Windows 中早期的命令行终端 `cmd.exe` 无法自定义 Git 使用体验，但是如果你正在使用 Powershell，那么你就十分幸运了。 这种方法同样适用于 Linux 或 macOS 上运行的 PowerShell Core。 一个名为 posh-git ([https://github.com/dahlbyk/posh-git](https://github.com/dahlbyk/posh-git)) 的扩展包提供了强大的 tab 补全功能，并针对提示符进行了增强，以帮助你聚焦于你的仓库状态。 它看起来像：
+
+![附带了 posh-git 扩展包的 Powershell](https://git-scm.com/book/zh/v2/images/posh-git.png)
+
+Figure 162. 附带了 posh-git 扩展包的 Powershell。
+
+### 安装
+
+#### 前提需求（仅限 Windows）
+
+在可以运行 PowerShell 脚本之前，你需要将本地的 `ExecutionPolicy` 设置为 `RemoteSigned`（可以说是允许除了 `Undefined` 和 `Restricted` 之外的任何内容）。 如果你选择了 `AllSigned` 而非 `RemoteSigned`，那么你的本地脚本还需要数字签名后才能执行。 如果设置为 `RemoteSigned`，那么只有 `ZoneIdentifier` 设置为 `Internet`，即从 Web 上下载的脚本才需要签名，其它则不需要。 如果你是管理员，想要为本机上的所有用户设置它，请使用 `-Scope LocalMachine`。 如果你是没有管理权限的普通用户，可使用 `-Scope CurrentUser` 来只为自己设置它。
+
+对于所有用户使用以下命令来设置 `ExecutionPolicy` 为 `RemoteSigned`：
+
+```
+> Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy RemoteSigned -Force
+```
+
+#### PowerShell Gallery
+
+如果你有 PowerShell 5 以上或安装了 PackageManagement 的 PowerShell 4，那么可以用包管理器来安装 posh-git。
+
+```
+> Install-Module posh-git -Scope CurrentUser -Force
+> Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force # 带有 PowerShell Core 支持的更新的 beta 版
+```
+
+如果你想为所有的用户安装 posh-git，请使用 `-Scope AllUsers` 并在管理员权限启动的 PowerShell 控制台中执行。 如果第二条命令执行失败并出现类似 `Module 'PowerShellGet' was not installed by using Install-Module` 这样的错误，那么你需要先运行另一条命令：
+
+```
+> Install-Module PowerShellGet -Force -SkipPublisherCheck
+```
+
+之后你可以再试一遍。 出现这个错误的原因是 Windows PowerShell 搭载的模块是以不同的发布证书签名的。
+
+#### 更新 PowerShell 提示符
+
+要在你的提示符中包含 Git 信息，那么需要导入 posh-git 模块。 要让 PowerShell 在每次启动时都导入 posh-git，请执行 `Add-PoshGitToProfile` 命令，它会在你的 `$profile` 脚本中添加导入语句。 此脚本会在每次打开新的 PowerShell 终端时执行。 注意，存在多个 `$profile` 脚本。 例如，其中一个是控制台的，另一个则属于 ISE。
+
+```
+> Import-Module posh-git
+> Add-PoshGitToProfile -AllHosts
+```
+
+#### 从源码安装
+
+```
+> Import-Module <path-to-uncompress-folder>\src\posh-git.psd1
+> Add-PoshGitToProfile -AllHosts
+```
+
+它将会向你的 `profile.ps1` 文件添加适当的内容，posh-git 将会在下次打开 PowerShell 时启用。

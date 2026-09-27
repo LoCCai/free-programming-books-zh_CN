@@ -3,12 +3,62 @@
   "title": "DevBean的《Qt学习之路2》(Qt5)",
   "url": "http://www.devbean.net/category/qt-study-road-2/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:30.252Z",
+  "fetchedAt": "2026-09-27T11:58:35.583Z",
   "chapters": [
     {
-      "slug": "001-1c",
+      "slug": "001-首页",
+      "title": "Soledad Homepage",
+      "file": "chapters/001-首页.md"
+    },
+    {
+      "slug": "002-qt",
+      "title": "Qt - DevBean Tech World",
+      "file": "chapters/002-qt.md"
+    },
+    {
+      "slug": "003-qt-学习之路-2",
       "title": "Qt 学习之路 2 - DevBean Tech World",
-      "file": "chapters/001-1c.md"
+      "file": "chapters/003-qt-学习之路-2.md"
+    },
+    {
+      "slug": "004-qtcreator",
+      "title": "QtCreator - DevBean Tech World",
+      "file": "chapters/004-qtcreator.md"
+    },
+    {
+      "slug": "005-qt-creator-源码学习",
+      "title": "Qt Creator 源码学习 - DevBean Tech World",
+      "file": "chapters/005-qt-creator-源码学习.md"
+    },
+    {
+      "slug": "006-前端",
+      "title": "前端 - DevBean Tech World",
+      "file": "chapters/006-前端.md"
+    },
+    {
+      "slug": "007-angular",
+      "title": "Angular - DevBean Tech World",
+      "file": "chapters/007-angular.md"
+    },
+    {
+      "slug": "008-typescript",
+      "title": "typescript - DevBean Tech World",
+      "file": "chapters/008-typescript.md"
+    },
+    {
+      "slug": "009-html5",
+      "title": "HTML5 - DevBean Tech World",
+      "file": "chapters/009-html5.md"
+    },
+    {
+      "slug": "010-数据库",
+      "title": "数据库 - DevBean Tech World",
+      "file": "chapters/010-数据库.md"
+    },
+    {
+      "slug": "011-objective-c",
+      "title": "Objective-C - DevBean Tech World",
+      "file": "chapters/011-objective-c.md"
     }
   ],
   "sourceType": "web",

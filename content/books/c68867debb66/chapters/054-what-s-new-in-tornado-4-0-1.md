@@ -1,0 +1,8 @@
+## Aug 12, 2014[¶](#aug-12-2014 "永久链接至标题")
+
+-   The build will now fall back to pure-python mode if the C extension fails to build for any reason (previously it would fall back for some errors but not others).
+-   [`IOLoop.call_at`](https://tornado-zh.readthedocs.io/zh/latest/ioloop.html#tornado.ioloop.IOLoop.call_at "tornado.ioloop.IOLoop.call_at") and [`IOLoop.call_later`](https://tornado-zh.readthedocs.io/zh/latest/ioloop.html#tornado.ioloop.IOLoop.call_later "tornado.ioloop.IOLoop.call_later") now always return a timeout handle for use with [`IOLoop.remove_timeout`](https://tornado-zh.readthedocs.io/zh/latest/ioloop.html#tornado.ioloop.IOLoop.remove_timeout "tornado.ioloop.IOLoop.remove_timeout").
+-   If any callback of a [`PeriodicCallback`](https://tornado-zh.readthedocs.io/zh/latest/ioloop.html#tornado.ioloop.PeriodicCallback "tornado.ioloop.PeriodicCallback") or [`IOStream`](https://tornado-zh.readthedocs.io/zh/latest/iostream.html#tornado.iostream.IOStream "tornado.iostream.IOStream") returns a [`Future`](https://tornado-zh.readthedocs.io/zh/latest/concurrent.html#tornado.concurrent.Future "tornado.concurrent.Future"), any error raised in that future will now be logged (similar to the behavior of [`IOLoop.add_callback`](https://tornado-zh.readthedocs.io/zh/latest/ioloop.html#tornado.ioloop.IOLoop.add_callback "tornado.ioloop.IOLoop.add_callback")).
+-   Fixed an exception in client-side websocket connections when the connection is closed.
+-   `simple_httpclient` once again correctly handles 204 status codes with no content-length header.
+-   Fixed a regression in `simple_httpclient` that would result in timeouts for certain kinds of errors.

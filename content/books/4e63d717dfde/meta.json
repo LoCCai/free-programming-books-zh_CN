@@ -3,14 +3,14 @@
   "title": "The Swift Programming Language 中文版",
   "url": "https://swiftggteam.github.io/the-swift-programming-language-in-chinese/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:29.143Z",
+  "fetchedAt": "2026-09-27T12:06:46.783Z",
   "chapters": [
     {
-      "slug": "001-20",
-      "title": "https://swiftggteam.github.io/the-swift-programming-language-in-chinese/",
-      "file": "chapters/001-20.md"
+      "slug": "001-https-doc-swiftgg-team",
+      "title": "https://doc.swiftgg.team/",
+      "file": "chapters/001-https-doc-swiftgg-team.md"
     }
   ],
   "sourceType": "web",
-  "sourceTitle": "https://swiftggteam.github.io/the-swift-programming-language-in-chinese/"
+  "sourceTitle": "https://doc.swiftgg.team/"
 }

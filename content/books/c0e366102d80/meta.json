@@ -3,12 +3,132 @@
   "title": "猴子都能懂的GIT入门",
   "url": "http://backlogtool.com/git-guide/cn/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:14.097Z",
+  "fetchedAt": "2026-09-27T11:55:32.921Z",
   "chapters": [
     {
-      "slug": "001-10",
+      "slug": "001-simple-git-tutorial-for-beginners-nulab",
       "title": "Simple Git tutorial for beginners | Nulab",
-      "file": "chapters/001-10.md"
+      "file": "chapters/001-simple-git-tutorial-for-beginners-nulab.md"
+    },
+    {
+      "slug": "002-backlogall-in-one-project-management",
+      "title": "Backlog | Project Management Software for Virtual Teams",
+      "file": "chapters/002-backlogall-in-one-project-management.md"
+    },
+    {
+      "slug": "003-cacooreal-time-visual-collaboration",
+      "title": "Cacoo | Online diagramming tool for collaborative diagramming",
+      "file": "chapters/003-cacooreal-time-visual-collaboration.md"
+    },
+    {
+      "slug": "004-integrations",
+      "title": "Backlog API Integrations",
+      "file": "chapters/004-integrations.md"
+    },
+    {
+      "slug": "005-security",
+      "title": "Basic Policy on Information Security | Nulab",
+      "file": "chapters/005-security.md"
+    },
+    {
+      "slug": "006-customer-stories",
+      "title": "Case Studies | Success with PM Software | Nulab",
+      "file": "chapters/006-customer-stories.md"
+    },
+    {
+      "slug": "007-ai",
+      "title": "Project management, supercharged with AI",
+      "file": "chapters/007-ai.md"
+    },
+    {
+      "slug": "008-development",
+      "title": "Software Development Tracking Tool for Teams | Nulab",
+      "file": "chapters/008-development.md"
+    },
+    {
+      "slug": "009-ux-design",
+      "title": "UX Project Management & Design Workflow Tools | Nulab",
+      "file": "chapters/009-ux-design.md"
+    },
+    {
+      "slug": "010-product-management",
+      "title": "Product Management Tools for Product Roadmapping | Nulab",
+      "file": "chapters/010-product-management.md"
+    },
+    {
+      "slug": "011-small-businesses-startups",
+      "title": "Virtual Office Management & Startup Tools | Nulab",
+      "file": "chapters/011-small-businesses-startups.md"
+    },
+    {
+      "slug": "012-marketing",
+      "title": "Marketing Campaign Management Tools for Teams | Nulab",
+      "file": "chapters/012-marketing.md"
+    },
+    {
+      "slug": "013-view-all-teams",
+      "title": "Productivity Toolset for Every Team | Nulab",
+      "file": "chapters/013-view-all-teams.md"
+    },
+    {
+      "slug": "014-backlogall-in-one-project-management",
+      "title": "Backlog PM Software Pricing | Compare Plans | Nulab",
+      "file": "chapters/014-backlogall-in-one-project-management.md"
+    },
+    {
+      "slug": "015-cacooreal-time-visual-collaboration",
+      "title": "Cacoo Diagramming Software Pricing | Choose a Plan | Nulab",
+      "file": "chapters/015-cacooreal-time-visual-collaboration.md"
+    },
+    {
+      "slug": "016-nulab-passenterprise-grade-security",
+      "title": "Nulab Pass Pricing | Security Add-On | Nulab",
+      "file": "chapters/016-nulab-passenterprise-grade-security.md"
+    },
+    {
+      "slug": "017-cacoo",
+      "title": "Whiteboard Software for Online Teaching | Cacoo",
+      "file": "chapters/017-cacoo.md"
+    },
+    {
+      "slug": "018-view-all-topics",
+      "title": "Learn | Nulab",
+      "file": "chapters/018-view-all-topics.md"
+    },
+    {
+      "slug": "019-company",
+      "title": "Company & Leadership | Nulab",
+      "file": "chapters/019-company.md"
+    },
+    {
+      "slug": "020-careers",
+      "title": "Job Openings & Career Support at Nulab",
+      "file": "chapters/020-careers.md"
+    },
+    {
+      "slug": "021-events",
+      "title": "Company Events | Nulab",
+      "file": "chapters/021-events.md"
+    },
+    {
+      "slug": "022-contact-us",
+      "title": "Contact Us | Live Chat & Email Support | Nulab",
+      "file": "chapters/022-contact-us.md"
+    },
+    {
+      "slug": "023-const-t-undefined-typeof-htmlimageelemen",
+      "title": "The definitive guide to issue tracking software | Nulab",
+      "file": "chapters/023-const-t-undefined-typeof-htmlimageelemen.md"
+    },
+    {
+      "slug": "024-const-t-undefined-typeof-htmlimageelemen",
+      "title": "The SMB guide to growing with confidence using Nulab Pass",
+      "file": "chapters/024-const-t-undefined-typeof-htmlimageelemen.md"
+    },
+    {
+      "slug": "025-const-t-undefined-typeof-htmlimageelemen",
+      "title": "Choosing the right version control software | Nulab",
+      "file": "chapters/025-const-t-undefined-typeof-htmlimageelemen.md"
     }
   ],
   "sourceType": "web",

@@ -3,14 +3,23 @@
   "title": "Linux命令搜索引擎",
   "url": "https://wangchujiang.com/linux-command/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:25.676Z",
+  "fetchedAt": "2026-09-27T12:06:44.312Z",
   "chapters": [
     {
-      "slug": "001-13",
+      "slug": "001-logo-linux-command-logo-https-github-com",
       "title": "Linux命令搜索引擎 命令，Linux Linux命令搜索引擎 命令详解：最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。 -  Linux 命令搜索引擎",
-      "file": "chapters/001-13.md"
+      "file": "chapters/001-logo-linux-command-logo-https-github-com.md"
+    },
+    {
+      "slug": "002-命令列表",
+      "title": "搜索 命令，Linux 搜索 命令详解：最专业的Linux命令大全，命令搜索引擎，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。 -  Linux 命令搜索引擎",
+      "file": "chapters/002-命令列表.md"
+    },
+    {
+      "slug": "003-50",
+      "title": "搜索 命令，Linux 搜索 命令详解：最专业的Linux命令大全，命令搜索引擎，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。 -  Linux 命令搜索引擎",
+      "file": "chapters/003-50.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "Linux命令搜索引擎 命令，Linux Linux命令搜索引擎 命令详解：最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。 -  Linux 命令搜索引擎"
+  "sourceType": "web"
 }

@@ -3,12 +3,12 @@
   "title": "Python Cookbook 中文版",
   "url": "http://www.kancloud.cn/thinkphp/python-cookbook",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:17.053Z",
+  "fetchedAt": "2026-09-27T12:02:54.469Z",
   "chapters": [
     {
-      "slug": "001-1b",
+      "slug": "001-python-菜谱-看云",
       "title": "Python 菜谱 · 看云",
-      "file": "chapters/001-1b.md"
+      "file": "chapters/001-python-菜谱-看云.md"
     }
   ],
   "sourceType": "web",

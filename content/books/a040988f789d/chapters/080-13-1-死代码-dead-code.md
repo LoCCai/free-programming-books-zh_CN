@@ -1,0 +1,24 @@
+## 通过例子学 Rust 中文版
+
+[](https://rustwiki.org/zh-CN/rust-by-example/print.html "Print this book")[](https://github.com/rust-lang-cn/rust-by-example-cn "Git repository")[](https://github.com/rust-lang-cn/rust-by-example-cn/edit/master/src/attribute/unused.md "Suggest an edit")
+
+## [死代码 `dead_code`](#死代码-dead_code)
+
+编译器提供了 `dead_code`（死代码，无效代码）[_lint_](https://en.wikipedia.org/wiki/Lint_%28software%29)，这会对未使用的函数产生警告。可以用一个**属性**来禁用这个 lint。
+
+```
+fn used_function() {}
+
+// `#[allow(dead_code)]` 属性可以禁用 `dead_code` lint
+#[allow(dead_code)]
+fn unused_function() {}
+
+fn noisy_unused_function() {}
+// 改正 ^ 增加一个属性来消除警告
+
+fn main() {
+    used_function();
+}
+```
+
+注意在实际程序中，需要将死代码清除掉。由于本书的例子是交互性的，因而其中需要允许一些死代码的出现。

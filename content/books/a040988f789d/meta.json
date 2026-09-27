@@ -3,14 +3,993 @@
   "title": "通过例子学 Rust 中文版",
   "url": "https://rustwiki.org/zh-CN/rust-by-example/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:19.707Z",
+  "fetchedAt": "2026-09-27T11:38:25.439Z",
   "chapters": [
     {
-      "slug": "001-17",
+      "slug": "001-简介",
       "title": "简介 - 通过例子学 Rust 中文版",
-      "file": "chapters/001-17.md"
+      "file": "chapters/001-简介.md"
+    },
+    {
+      "slug": "002-1-hello-world",
+      "title": "Hello World - 通过例子学 Rust 中文版",
+      "file": "chapters/002-1-hello-world.md"
+    },
+    {
+      "slug": "003-1-1-注释",
+      "title": "注释 - 通过例子学 Rust 中文版",
+      "file": "chapters/003-1-1-注释.md"
+    },
+    {
+      "slug": "004-1-2-格式化输出",
+      "title": "格式化输出 - 通过例子学 Rust 中文版",
+      "file": "chapters/004-1-2-格式化输出.md"
+    },
+    {
+      "slug": "005-1-2-1-调试-debug",
+      "title": "调试（debug） - 通过例子学 Rust 中文版",
+      "file": "chapters/005-1-2-1-调试-debug.md"
+    },
+    {
+      "slug": "006-1-2-2-显示-display",
+      "title": "显示（display） - 通过例子学 Rust 中文版",
+      "file": "chapters/006-1-2-2-显示-display.md"
+    },
+    {
+      "slug": "007-1-2-3-测试实例-list",
+      "title": "测试实例：List - 通过例子学 Rust 中文版",
+      "file": "chapters/007-1-2-3-测试实例-list.md"
+    },
+    {
+      "slug": "008-1-2-4-格式化",
+      "title": "格式化 - 通过例子学 Rust 中文版",
+      "file": "chapters/008-1-2-4-格式化.md"
+    },
+    {
+      "slug": "009-2-原生类型",
+      "title": "原生类型 - 通过例子学 Rust 中文版",
+      "file": "chapters/009-2-原生类型.md"
+    },
+    {
+      "slug": "010-2-1-字面量和运算符",
+      "title": "字面量和运算符 - 通过例子学 Rust 中文版",
+      "file": "chapters/010-2-1-字面量和运算符.md"
+    },
+    {
+      "slug": "011-2-2-元组",
+      "title": "元组 - 通过例子学 Rust 中文版",
+      "file": "chapters/011-2-2-元组.md"
+    },
+    {
+      "slug": "012-2-3-数组和切片",
+      "title": "数组和切片 - 通过例子学 Rust 中文版",
+      "file": "chapters/012-2-3-数组和切片.md"
+    },
+    {
+      "slug": "013-3-自定义类型",
+      "title": "自定义类型 - 通过例子学 Rust 中文版",
+      "file": "chapters/013-3-自定义类型.md"
+    },
+    {
+      "slug": "014-3-1-结构体",
+      "title": "结构体 - 通过例子学 Rust 中文版",
+      "file": "chapters/014-3-1-结构体.md"
+    },
+    {
+      "slug": "015-3-2-枚举",
+      "title": "枚举 - 通过例子学 Rust 中文版",
+      "file": "chapters/015-3-2-枚举.md"
+    },
+    {
+      "slug": "016-3-2-1-使用-use",
+      "title": "使用 use - 通过例子学 Rust 中文版",
+      "file": "chapters/016-3-2-1-使用-use.md"
+    },
+    {
+      "slug": "017-3-2-2-c-风格用法",
+      "title": "C 风格用法 - 通过例子学 Rust 中文版",
+      "file": "chapters/017-3-2-2-c-风格用法.md"
+    },
+    {
+      "slug": "018-3-2-3-测试实例-链表",
+      "title": "测试实例：链表 - 通过例子学 Rust 中文版",
+      "file": "chapters/018-3-2-3-测试实例-链表.md"
+    },
+    {
+      "slug": "019-3-3-常量",
+      "title": "常量 - 通过例子学 Rust 中文版",
+      "file": "chapters/019-3-3-常量.md"
+    },
+    {
+      "slug": "020-4-变量绑定",
+      "title": "变量绑定 - 通过例子学 Rust 中文版",
+      "file": "chapters/020-4-变量绑定.md"
+    },
+    {
+      "slug": "021-4-1-可变变量",
+      "title": "可变变量 - 通过例子学 Rust 中文版",
+      "file": "chapters/021-4-1-可变变量.md"
+    },
+    {
+      "slug": "022-4-2-作用域和遮蔽",
+      "title": "作用域和遮蔽 - 通过例子学 Rust 中文版",
+      "file": "chapters/022-4-2-作用域和遮蔽.md"
+    },
+    {
+      "slug": "023-4-3-变量先声明",
+      "title": "变量先声明 - 通过例子学 Rust 中文版",
+      "file": "chapters/023-4-3-变量先声明.md"
+    },
+    {
+      "slug": "024-4-4-冻结",
+      "title": "冻结 - 通过例子学 Rust 中文版",
+      "file": "chapters/024-4-4-冻结.md"
+    },
+    {
+      "slug": "025-5-类型系统",
+      "title": "类型系统 - 通过例子学 Rust 中文版",
+      "file": "chapters/025-5-类型系统.md"
+    },
+    {
+      "slug": "026-5-1-类型转换",
+      "title": "类型转换 - 通过例子学 Rust 中文版",
+      "file": "chapters/026-5-1-类型转换.md"
+    },
+    {
+      "slug": "027-5-2-字面量",
+      "title": "字面量 - 通过例子学 Rust 中文版",
+      "file": "chapters/027-5-2-字面量.md"
+    },
+    {
+      "slug": "028-5-3-类型推断",
+      "title": "类型推断 - 通过例子学 Rust 中文版",
+      "file": "chapters/028-5-3-类型推断.md"
+    },
+    {
+      "slug": "029-5-4-别名",
+      "title": "别名 - 通过例子学 Rust 中文版",
+      "file": "chapters/029-5-4-别名.md"
+    },
+    {
+      "slug": "030-6-类型转换",
+      "title": "类型转换 - 通过例子学 Rust 中文版",
+      "file": "chapters/030-6-类型转换.md"
+    },
+    {
+      "slug": "031-6-1-from-和-into",
+      "title": "From 和 Into - 通过例子学 Rust 中文版",
+      "file": "chapters/031-6-1-from-和-into.md"
+    },
+    {
+      "slug": "032-6-2-tryfrom-和-tryinto",
+      "title": "TryFrom 和 TryInto - 通过例子学 Rust 中文版",
+      "file": "chapters/032-6-2-tryfrom-和-tryinto.md"
+    },
+    {
+      "slug": "033-6-3-tostring-和-fromstr",
+      "title": "ToString 和 FromStr - 通过例子学 Rust 中文版",
+      "file": "chapters/033-6-3-tostring-和-fromstr.md"
+    },
+    {
+      "slug": "034-7-表达式",
+      "title": "表达式 - 通过例子学 Rust 中文版",
+      "file": "chapters/034-7-表达式.md"
+    },
+    {
+      "slug": "035-8-流程控制",
+      "title": "流程控制 - 通过例子学 Rust 中文版",
+      "file": "chapters/035-8-流程控制.md"
+    },
+    {
+      "slug": "036-8-1-if-else",
+      "title": "else - 通过例子学 Rust 中文版",
+      "file": "chapters/036-8-1-if-else.md"
+    },
+    {
+      "slug": "037-8-2-loop-循环",
+      "title": "loop 循环 - 通过例子学 Rust 中文版",
+      "file": "chapters/037-8-2-loop-循环.md"
+    },
+    {
+      "slug": "038-8-2-1-嵌套循环和标签",
+      "title": "嵌套循环和标签 - 通过例子学 Rust 中文版",
+      "file": "chapters/038-8-2-1-嵌套循环和标签.md"
+    },
+    {
+      "slug": "039-8-2-2-从-loop-循环返回",
+      "title": "从 loop 循环返回 - 通过例子学 Rust 中文版",
+      "file": "chapters/039-8-2-2-从-loop-循环返回.md"
+    },
+    {
+      "slug": "040-8-3-while-循环",
+      "title": "while 循环 - 通过例子学 Rust 中文版",
+      "file": "chapters/040-8-3-while-循环.md"
+    },
+    {
+      "slug": "041-8-4-for-循环和区间",
+      "title": "for 循环和区间 - 通过例子学 Rust 中文版",
+      "file": "chapters/041-8-4-for-循环和区间.md"
+    },
+    {
+      "slug": "042-8-5-match-匹配",
+      "title": "match 匹配 - 通过例子学 Rust 中文版",
+      "file": "chapters/042-8-5-match-匹配.md"
+    },
+    {
+      "slug": "043-8-5-1-解构",
+      "title": "解构 - 通过例子学 Rust 中文版",
+      "file": "chapters/043-8-5-1-解构.md"
+    },
+    {
+      "slug": "044-8-5-1-1-元组",
+      "title": "元组 - 通过例子学 Rust 中文版",
+      "file": "chapters/044-8-5-1-1-元组.md"
+    },
+    {
+      "slug": "045-8-5-1-2-枚举",
+      "title": "枚举 - 通过例子学 Rust 中文版",
+      "file": "chapters/045-8-5-1-2-枚举.md"
+    },
+    {
+      "slug": "046-8-5-1-3-指针和引用",
+      "title": "指针和引用 - 通过例子学 Rust 中文版",
+      "file": "chapters/046-8-5-1-3-指针和引用.md"
+    },
+    {
+      "slug": "047-8-5-1-4-结构体",
+      "title": "结构体 - 通过例子学 Rust 中文版",
+      "file": "chapters/047-8-5-1-4-结构体.md"
+    },
+    {
+      "slug": "048-8-5-2-卫语句",
+      "title": "卫语句 - 通过例子学 Rust 中文版",
+      "file": "chapters/048-8-5-2-卫语句.md"
+    },
+    {
+      "slug": "049-8-5-3-绑定",
+      "title": "绑定 - 通过例子学 Rust 中文版",
+      "file": "chapters/049-8-5-3-绑定.md"
+    },
+    {
+      "slug": "050-8-6-if-let",
+      "title": "if let - 通过例子学 Rust 中文版",
+      "file": "chapters/050-8-6-if-let.md"
+    },
+    {
+      "slug": "051-8-7-while-let",
+      "title": "while let - 通过例子学 Rust 中文版",
+      "file": "chapters/051-8-7-while-let.md"
+    },
+    {
+      "slug": "052-9-函数",
+      "title": "函数 - 通过例子学 Rust 中文版",
+      "file": "chapters/052-9-函数.md"
+    },
+    {
+      "slug": "053-9-1-方法",
+      "title": "方法 - 通过例子学 Rust 中文版",
+      "file": "chapters/053-9-1-方法.md"
+    },
+    {
+      "slug": "054-9-2-闭包",
+      "title": "闭包 - 通过例子学 Rust 中文版",
+      "file": "chapters/054-9-2-闭包.md"
+    },
+    {
+      "slug": "055-9-2-1-捕获",
+      "title": "捕获 - 通过例子学 Rust 中文版",
+      "file": "chapters/055-9-2-1-捕获.md"
+    },
+    {
+      "slug": "056-9-2-2-作为输入参数",
+      "title": "作为输入参数 - 通过例子学 Rust 中文版",
+      "file": "chapters/056-9-2-2-作为输入参数.md"
+    },
+    {
+      "slug": "057-9-2-3-类型匿名",
+      "title": "类型匿名 - 通过例子学 Rust 中文版",
+      "file": "chapters/057-9-2-3-类型匿名.md"
+    },
+    {
+      "slug": "058-9-2-4-输入函数",
+      "title": "输入函数 - 通过例子学 Rust 中文版",
+      "file": "chapters/058-9-2-4-输入函数.md"
+    },
+    {
+      "slug": "059-9-2-5-作为输出参数",
+      "title": "作为输出参数 - 通过例子学 Rust 中文版",
+      "file": "chapters/059-9-2-5-作为输出参数.md"
+    },
+    {
+      "slug": "060-9-2-6-std-中的例子",
+      "title": "std 中的例子 - 通过例子学 Rust 中文版",
+      "file": "chapters/060-9-2-6-std-中的例子.md"
+    },
+    {
+      "slug": "061-9-2-6-1-iterator-any",
+      "title": "Iterator::any - 通过例子学 Rust 中文版",
+      "file": "chapters/061-9-2-6-1-iterator-any.md"
+    },
+    {
+      "slug": "062-9-2-6-2-iterator-find",
+      "title": "Iterator::find - 通过例子学 Rust 中文版",
+      "file": "chapters/062-9-2-6-2-iterator-find.md"
+    },
+    {
+      "slug": "063-9-3-高阶函数",
+      "title": "高阶函数 - 通过例子学 Rust 中文版",
+      "file": "chapters/063-9-3-高阶函数.md"
+    },
+    {
+      "slug": "064-9-4-发散函数",
+      "title": "发散函数 - 通过例子学 Rust 中文版",
+      "file": "chapters/064-9-4-发散函数.md"
+    },
+    {
+      "slug": "065-10-模块",
+      "title": "模块 - 通过例子学 Rust 中文版",
+      "file": "chapters/065-10-模块.md"
+    },
+    {
+      "slug": "066-10-1-可见性",
+      "title": "可见性 - 通过例子学 Rust 中文版",
+      "file": "chapters/066-10-1-可见性.md"
+    },
+    {
+      "slug": "067-10-2-结构体的可见性",
+      "title": "结构体的可见性 - 通过例子学 Rust 中文版",
+      "file": "chapters/067-10-2-结构体的可见性.md"
+    },
+    {
+      "slug": "068-10-3-use-声明",
+      "title": "use 声明 - 通过例子学 Rust 中文版",
+      "file": "chapters/068-10-3-use-声明.md"
+    },
+    {
+      "slug": "069-10-4-super-和-self",
+      "title": "super 和 self - 通过例子学 Rust 中文版",
+      "file": "chapters/069-10-4-super-和-self.md"
+    },
+    {
+      "slug": "070-10-5-文件分层",
+      "title": "文件分层 - 通过例子学 Rust 中文版",
+      "file": "chapters/070-10-5-文件分层.md"
+    },
+    {
+      "slug": "071-11-crate",
+      "title": "crate - 通过例子学 Rust 中文版",
+      "file": "chapters/071-11-crate.md"
+    },
+    {
+      "slug": "072-11-1-库",
+      "title": "库 - 通过例子学 Rust 中文版",
+      "file": "chapters/072-11-1-库.md"
+    },
+    {
+      "slug": "073-11-2-使用库",
+      "title": "使用库 - 通过例子学 Rust 中文版",
+      "file": "chapters/073-11-2-使用库.md"
+    },
+    {
+      "slug": "074-12-cargo",
+      "title": "cargo - 通过例子学 Rust 中文版",
+      "file": "chapters/074-12-cargo.md"
+    },
+    {
+      "slug": "075-12-1-依赖",
+      "title": "依赖 - 通过例子学 Rust 中文版",
+      "file": "chapters/075-12-1-依赖.md"
+    },
+    {
+      "slug": "076-12-2-约定规范",
+      "title": "约定规范 - 通过例子学 Rust 中文版",
+      "file": "chapters/076-12-2-约定规范.md"
+    },
+    {
+      "slug": "077-12-3-测试",
+      "title": "测试 - 通过例子学 Rust 中文版",
+      "file": "chapters/077-12-3-测试.md"
+    },
+    {
+      "slug": "078-12-4-构建脚本",
+      "title": "构建脚本 - 通过例子学 Rust 中文版",
+      "file": "chapters/078-12-4-构建脚本.md"
+    },
+    {
+      "slug": "079-13-属性",
+      "title": "属性 - 通过例子学 Rust 中文版",
+      "file": "chapters/079-13-属性.md"
+    },
+    {
+      "slug": "080-13-1-死代码-dead-code",
+      "title": "死代码 dead_code - 通过例子学 Rust 中文版",
+      "file": "chapters/080-13-1-死代码-dead-code.md"
+    },
+    {
+      "slug": "081-13-2-crate",
+      "title": "crate - 通过例子学 Rust 中文版",
+      "file": "chapters/081-13-2-crate.md"
+    },
+    {
+      "slug": "082-13-3-cfg",
+      "title": "cfg - 通过例子学 Rust 中文版",
+      "file": "chapters/082-13-3-cfg.md"
+    },
+    {
+      "slug": "083-13-3-1-自定义条件",
+      "title": "自定义条件 - 通过例子学 Rust 中文版",
+      "file": "chapters/083-13-3-1-自定义条件.md"
+    },
+    {
+      "slug": "084-14-泛型",
+      "title": "泛型 - 通过例子学 Rust 中文版",
+      "file": "chapters/084-14-泛型.md"
+    },
+    {
+      "slug": "085-14-1-函数",
+      "title": "函数 - 通过例子学 Rust 中文版",
+      "file": "chapters/085-14-1-函数.md"
+    },
+    {
+      "slug": "086-14-2-实现",
+      "title": "实现 - 通过例子学 Rust 中文版",
+      "file": "chapters/086-14-2-实现.md"
+    },
+    {
+      "slug": "087-14-3-trait",
+      "title": "trait - 通过例子学 Rust 中文版",
+      "file": "chapters/087-14-3-trait.md"
+    },
+    {
+      "slug": "088-14-4-约束",
+      "title": "约束 - 通过例子学 Rust 中文版",
+      "file": "chapters/088-14-4-约束.md"
+    },
+    {
+      "slug": "089-14-4-1-测试实例-空约束",
+      "title": "测试实例：空约束 - 通过例子学 Rust 中文版",
+      "file": "chapters/089-14-4-1-测试实例-空约束.md"
+    },
+    {
+      "slug": "090-14-5-多重约束",
+      "title": "多重约束 - 通过例子学 Rust 中文版",
+      "file": "chapters/090-14-5-多重约束.md"
+    },
+    {
+      "slug": "091-14-6-where-子句",
+      "title": "where 子句 - 通过例子学 Rust 中文版",
+      "file": "chapters/091-14-6-where-子句.md"
+    },
+    {
+      "slug": "092-14-7-newtype-惯用法",
+      "title": "newtype 惯用法 - 通过例子学 Rust 中文版",
+      "file": "chapters/092-14-7-newtype-惯用法.md"
+    },
+    {
+      "slug": "093-14-8-关联项",
+      "title": "关联项 - 通过例子学 Rust 中文版",
+      "file": "chapters/093-14-8-关联项.md"
+    },
+    {
+      "slug": "094-14-8-1-存在问题",
+      "title": "存在问题 - 通过例子学 Rust 中文版",
+      "file": "chapters/094-14-8-1-存在问题.md"
+    },
+    {
+      "slug": "095-14-8-2-关联类型",
+      "title": "关联类型 - 通过例子学 Rust 中文版",
+      "file": "chapters/095-14-8-2-关联类型.md"
+    },
+    {
+      "slug": "096-14-9-虚类型参数",
+      "title": "虚类型参数 - 通过例子学 Rust 中文版",
+      "file": "chapters/096-14-9-虚类型参数.md"
+    },
+    {
+      "slug": "097-14-9-1-测试实例-单位检查",
+      "title": "测试实例：单位检查 - 通过例子学 Rust 中文版",
+      "file": "chapters/097-14-9-1-测试实例-单位检查.md"
+    },
+    {
+      "slug": "098-15-作用域规则",
+      "title": "作用域规则 - 通过例子学 Rust 中文版",
+      "file": "chapters/098-15-作用域规则.md"
+    },
+    {
+      "slug": "099-15-1-raii",
+      "title": "RAII - 通过例子学 Rust 中文版",
+      "file": "chapters/099-15-1-raii.md"
+    },
+    {
+      "slug": "100-15-2-所有权和移动",
+      "title": "所有权和移动 - 通过例子学 Rust 中文版",
+      "file": "chapters/100-15-2-所有权和移动.md"
+    },
+    {
+      "slug": "101-15-2-1-可变性",
+      "title": "可变性 - 通过例子学 Rust 中文版",
+      "file": "chapters/101-15-2-1-可变性.md"
+    },
+    {
+      "slug": "102-15-2-2-部分移动",
+      "title": "部分移动 - 通过例子学 Rust 中文版",
+      "file": "chapters/102-15-2-2-部分移动.md"
+    },
+    {
+      "slug": "103-15-3-借用",
+      "title": "借用 - 通过例子学 Rust 中文版",
+      "file": "chapters/103-15-3-借用.md"
+    },
+    {
+      "slug": "104-15-3-1-可变性",
+      "title": "可变性 - 通过例子学 Rust 中文版",
+      "file": "chapters/104-15-3-1-可变性.md"
+    },
+    {
+      "slug": "105-15-3-2-别名使用",
+      "title": "别名使用 - 通过例子学 Rust 中文版",
+      "file": "chapters/105-15-3-2-别名使用.md"
+    },
+    {
+      "slug": "106-15-3-3-ref-模式",
+      "title": "ref 模式 - 通过例子学 Rust 中文版",
+      "file": "chapters/106-15-3-3-ref-模式.md"
+    },
+    {
+      "slug": "107-15-4-生命周期",
+      "title": "生命周期 - 通过例子学 Rust 中文版",
+      "file": "chapters/107-15-4-生命周期.md"
+    },
+    {
+      "slug": "108-15-4-1-显式标注",
+      "title": "显式标注 - 通过例子学 Rust 中文版",
+      "file": "chapters/108-15-4-1-显式标注.md"
+    },
+    {
+      "slug": "109-15-4-2-函数",
+      "title": "函数 - 通过例子学 Rust 中文版",
+      "file": "chapters/109-15-4-2-函数.md"
+    },
+    {
+      "slug": "110-15-4-3-方法",
+      "title": "方法 - 通过例子学 Rust 中文版",
+      "file": "chapters/110-15-4-3-方法.md"
+    },
+    {
+      "slug": "111-15-4-4-结构体",
+      "title": "结构体 - 通过例子学 Rust 中文版",
+      "file": "chapters/111-15-4-4-结构体.md"
+    },
+    {
+      "slug": "112-15-4-5-trait",
+      "title": "trait - 通过例子学 Rust 中文版",
+      "file": "chapters/112-15-4-5-trait.md"
+    },
+    {
+      "slug": "113-15-4-6-约束",
+      "title": "约束 - 通过例子学 Rust 中文版",
+      "file": "chapters/113-15-4-6-约束.md"
+    },
+    {
+      "slug": "114-15-4-7-强制转换",
+      "title": "强制转换 - 通过例子学 Rust 中文版",
+      "file": "chapters/114-15-4-7-强制转换.md"
+    },
+    {
+      "slug": "115-15-4-8-static",
+      "title": "static - 通过例子学 Rust 中文版",
+      "file": "chapters/115-15-4-8-static.md"
+    },
+    {
+      "slug": "116-15-4-9-省略",
+      "title": "省略 - 通过例子学 Rust 中文版",
+      "file": "chapters/116-15-4-9-省略.md"
+    },
+    {
+      "slug": "117-16-特质-trait",
+      "title": "特质 trait - 通过例子学 Rust 中文版",
+      "file": "chapters/117-16-特质-trait.md"
+    },
+    {
+      "slug": "118-16-1-派生",
+      "title": "派生 - 通过例子学 Rust 中文版",
+      "file": "chapters/118-16-1-派生.md"
+    },
+    {
+      "slug": "119-16-2-使用-dyn-返回-trait",
+      "title": "使用 dyn 返回 trait - 通过例子学 Rust 中文版",
+      "file": "chapters/119-16-2-使用-dyn-返回-trait.md"
+    },
+    {
+      "slug": "120-16-3-运算符重载",
+      "title": "运算符重载 - 通过例子学 Rust 中文版",
+      "file": "chapters/120-16-3-运算符重载.md"
+    },
+    {
+      "slug": "121-16-4-drop",
+      "title": "Drop - 通过例子学 Rust 中文版",
+      "file": "chapters/121-16-4-drop.md"
+    },
+    {
+      "slug": "122-16-5-iterator",
+      "title": "Iterator - 通过例子学 Rust 中文版",
+      "file": "chapters/122-16-5-iterator.md"
+    },
+    {
+      "slug": "123-16-6-impl-trait",
+      "title": "impl Trait - 通过例子学 Rust 中文版",
+      "file": "chapters/123-16-6-impl-trait.md"
+    },
+    {
+      "slug": "124-16-7-clone",
+      "title": "Clone - 通过例子学 Rust 中文版",
+      "file": "chapters/124-16-7-clone.md"
+    },
+    {
+      "slug": "125-16-8-父-trait",
+      "title": "父 trait - 通过例子学 Rust 中文版",
+      "file": "chapters/125-16-8-父-trait.md"
+    },
+    {
+      "slug": "126-16-9-消除重叠-trait",
+      "title": "消除重叠 trait - 通过例子学 Rust 中文版",
+      "file": "chapters/126-16-9-消除重叠-trait.md"
+    },
+    {
+      "slug": "127-17-使用-macro-rules-来创建宏",
+      "title": "使用 macro_rules! 来创建宏 - 通过例子学 Rust 中文版",
+      "file": "chapters/127-17-使用-macro-rules-来创建宏.md"
+    },
+    {
+      "slug": "128-17-1-语法",
+      "title": "语法 - 通过例子学 Rust 中文版",
+      "file": "chapters/128-17-1-语法.md"
+    },
+    {
+      "slug": "129-17-1-1-指示符",
+      "title": "指示符 - 通过例子学 Rust 中文版",
+      "file": "chapters/129-17-1-1-指示符.md"
+    },
+    {
+      "slug": "130-17-1-2-重载",
+      "title": "重载 - 通过例子学 Rust 中文版",
+      "file": "chapters/130-17-1-2-重载.md"
+    },
+    {
+      "slug": "131-17-1-3-重复",
+      "title": "重复 - 通过例子学 Rust 中文版",
+      "file": "chapters/131-17-1-3-重复.md"
+    },
+    {
+      "slug": "132-17-2-dry-不写重复代码",
+      "title": "DRY (不写重复代码) - 通过例子学 Rust 中文版",
+      "file": "chapters/132-17-2-dry-不写重复代码.md"
+    },
+    {
+      "slug": "133-17-3-dsl-领域专用语言",
+      "title": "DSL (领域专用语言) - 通过例子学 Rust 中文版",
+      "file": "chapters/133-17-3-dsl-领域专用语言.md"
+    },
+    {
+      "slug": "134-17-4-可变参数接口",
+      "title": "可变参数接口 - 通过例子学 Rust 中文版",
+      "file": "chapters/134-17-4-可变参数接口.md"
+    },
+    {
+      "slug": "135-18-错误处理",
+      "title": "错误处理 - 通过例子学 Rust 中文版",
+      "file": "chapters/135-18-错误处理.md"
+    },
+    {
+      "slug": "136-18-1-panic",
+      "title": "panic - 通过例子学 Rust 中文版",
+      "file": "chapters/136-18-1-panic.md"
+    },
+    {
+      "slug": "137-18-2-option-和-unwrap",
+      "title": "Option 和 unwrap - 通过例子学 Rust 中文版",
+      "file": "chapters/137-18-2-option-和-unwrap.md"
+    },
+    {
+      "slug": "138-18-2-1-使用-解开-option",
+      "title": "使用 ? 解开 Option - 通过例子学 Rust 中文版",
+      "file": "chapters/138-18-2-1-使用-解开-option.md"
+    },
+    {
+      "slug": "139-18-2-2-组合算子-map",
+      "title": "组合算子：map - 通过例子学 Rust 中文版",
+      "file": "chapters/139-18-2-2-组合算子-map.md"
+    },
+    {
+      "slug": "140-18-2-3-组合算子-and-then",
+      "title": "组合算子：and_then - 通过例子学 Rust 中文版",
+      "file": "chapters/140-18-2-3-组合算子-and-then.md"
+    },
+    {
+      "slug": "141-18-3-结果-result",
+      "title": "结果 Result - 通过例子学 Rust 中文版",
+      "file": "chapters/141-18-3-结果-result.md"
+    },
+    {
+      "slug": "142-18-3-1-result-的-map",
+      "title": "Result 的 map - 通过例子学 Rust 中文版",
+      "file": "chapters/142-18-3-1-result-的-map.md"
+    },
+    {
+      "slug": "143-18-3-2-给-result-取别名",
+      "title": "给 Result 取别名 - 通过例子学 Rust 中文版",
+      "file": "chapters/143-18-3-2-给-result-取别名.md"
+    },
+    {
+      "slug": "144-18-3-3-提前返回",
+      "title": "提前返回 - 通过例子学 Rust 中文版",
+      "file": "chapters/144-18-3-3-提前返回.md"
+    },
+    {
+      "slug": "145-18-3-4-引入",
+      "title": "引入 ? - 通过例子学 Rust 中文版",
+      "file": "chapters/145-18-3-4-引入.md"
+    },
+    {
+      "slug": "146-18-4-处理多种错误类型",
+      "title": "处理多种错误类型 - 通过例子学 Rust 中文版",
+      "file": "chapters/146-18-4-处理多种错误类型.md"
+    },
+    {
+      "slug": "147-18-4-1-从-option-中取出-result",
+      "title": "从 Option 中取出 Result - 通过例子学 Rust 中文版",
+      "file": "chapters/147-18-4-1-从-option-中取出-result.md"
+    },
+    {
+      "slug": "148-18-4-2-定义一种错误类型",
+      "title": "定义一种错误类型 - 通过例子学 Rust 中文版",
+      "file": "chapters/148-18-4-2-定义一种错误类型.md"
+    },
+    {
+      "slug": "149-18-4-3-把错误-装箱",
+      "title": "把错误 “装箱” - 通过例子学 Rust 中文版",
+      "file": "chapters/149-18-4-3-把错误-装箱.md"
+    },
+    {
+      "slug": "150-18-4-4-的其他用法",
+      "title": "? 的其他用法 - 通过例子学 Rust 中文版",
+      "file": "chapters/150-18-4-4-的其他用法.md"
+    },
+    {
+      "slug": "151-18-4-5-包裹错误",
+      "title": "包裹错误 - 通过例子学 Rust 中文版",
+      "file": "chapters/151-18-4-5-包裹错误.md"
+    },
+    {
+      "slug": "152-18-5-遍历-result",
+      "title": "遍历 Result - 通过例子学 Rust 中文版",
+      "file": "chapters/152-18-5-遍历-result.md"
+    },
+    {
+      "slug": "153-19-标准库类型",
+      "title": "标准库类型 - 通过例子学 Rust 中文版",
+      "file": "chapters/153-19-标准库类型.md"
+    },
+    {
+      "slug": "154-19-1-箱子-栈和堆",
+      "title": "箱子、栈和堆 - 通过例子学 Rust 中文版",
+      "file": "chapters/154-19-1-箱子-栈和堆.md"
+    },
+    {
+      "slug": "155-19-2-动态数组-vector",
+      "title": "动态数组 vector - 通过例子学 Rust 中文版",
+      "file": "chapters/155-19-2-动态数组-vector.md"
+    },
+    {
+      "slug": "156-19-3-字符串-string",
+      "title": "字符串 String - 通过例子学 Rust 中文版",
+      "file": "chapters/156-19-3-字符串-string.md"
+    },
+    {
+      "slug": "157-19-4-选项-option",
+      "title": "选项 Option - 通过例子学 Rust 中文版",
+      "file": "chapters/157-19-4-选项-option.md"
+    },
+    {
+      "slug": "158-19-5-结果-result",
+      "title": "结果 Result - 通过例子学 Rust 中文版",
+      "file": "chapters/158-19-5-结果-result.md"
+    },
+    {
+      "slug": "159-19-5-1-用法",
+      "title": "? 用法 - 通过例子学 Rust 中文版",
+      "file": "chapters/159-19-5-1-用法.md"
+    },
+    {
+      "slug": "160-19-6-panic",
+      "title": "panic! - 通过例子学 Rust 中文版",
+      "file": "chapters/160-19-6-panic.md"
+    },
+    {
+      "slug": "161-19-7-散列表-hashmap",
+      "title": "散列表 HashMap - 通过例子学 Rust 中文版",
+      "file": "chapters/161-19-7-散列表-hashmap.md"
+    },
+    {
+      "slug": "162-19-7-1-更改或自定义关键字类型",
+      "title": "更改或自定义关键字类型 - 通过例子学 Rust 中文版",
+      "file": "chapters/162-19-7-1-更改或自定义关键字类型.md"
+    },
+    {
+      "slug": "163-19-7-2-散列集-hashset",
+      "title": "散列集 HashSet - 通过例子学 Rust 中文版",
+      "file": "chapters/163-19-7-2-散列集-hashset.md"
+    },
+    {
+      "slug": "164-19-8-引用计数-rc",
+      "title": "引用计数 Rc - 通过例子学 Rust 中文版",
+      "file": "chapters/164-19-8-引用计数-rc.md"
+    },
+    {
+      "slug": "165-19-9-共享引用计数-arc",
+      "title": "共享引用计数 Arc - 通过例子学 Rust 中文版",
+      "file": "chapters/165-19-9-共享引用计数-arc.md"
+    },
+    {
+      "slug": "166-20-标准库更多介绍",
+      "title": "标准库更多介绍 - 通过例子学 Rust 中文版",
+      "file": "chapters/166-20-标准库更多介绍.md"
+    },
+    {
+      "slug": "167-20-1-线程",
+      "title": "线程 - 通过例子学 Rust 中文版",
+      "file": "chapters/167-20-1-线程.md"
+    },
+    {
+      "slug": "168-20-1-1-测试实例-map-reduce",
+      "title": "reduce - 通过例子学 Rust 中文版",
+      "file": "chapters/168-20-1-1-测试实例-map-reduce.md"
+    },
+    {
+      "slug": "169-20-2-通道",
+      "title": "通道 - 通过例子学 Rust 中文版",
+      "file": "chapters/169-20-2-通道.md"
+    },
+    {
+      "slug": "170-20-3-路径",
+      "title": "路径 - 通过例子学 Rust 中文版",
+      "file": "chapters/170-20-3-路径.md"
+    },
+    {
+      "slug": "171-20-4-文件输入输出-i-o",
+      "title": "O） - 通过例子学 Rust 中文版",
+      "file": "chapters/171-20-4-文件输入输出-i-o.md"
+    },
+    {
+      "slug": "172-20-4-1-打开文件-open",
+      "title": "打开文件 open - 通过例子学 Rust 中文版",
+      "file": "chapters/172-20-4-1-打开文件-open.md"
+    },
+    {
+      "slug": "173-20-4-2-创建文件-create",
+      "title": "创建文件 create - 通过例子学 Rust 中文版",
+      "file": "chapters/173-20-4-2-创建文件-create.md"
+    },
+    {
+      "slug": "174-20-4-3-读取行-read-lines",
+      "title": "读取行 read lines - 通过例子学 Rust 中文版",
+      "file": "chapters/174-20-4-3-读取行-read-lines.md"
+    },
+    {
+      "slug": "175-20-5-子进程",
+      "title": "子进程 - 通过例子学 Rust 中文版",
+      "file": "chapters/175-20-5-子进程.md"
+    },
+    {
+      "slug": "176-20-5-1-管道",
+      "title": "管道 - 通过例子学 Rust 中文版",
+      "file": "chapters/176-20-5-1-管道.md"
+    },
+    {
+      "slug": "177-20-5-2-等待",
+      "title": "等待 - 通过例子学 Rust 中文版",
+      "file": "chapters/177-20-5-2-等待.md"
+    },
+    {
+      "slug": "178-20-6-文件系统操作",
+      "title": "文件系统操作 - 通过例子学 Rust 中文版",
+      "file": "chapters/178-20-6-文件系统操作.md"
+    },
+    {
+      "slug": "179-20-7-程序参数",
+      "title": "程序参数 - 通过例子学 Rust 中文版",
+      "file": "chapters/179-20-7-程序参数.md"
+    },
+    {
+      "slug": "180-20-7-1-参数解析",
+      "title": "参数解析 - 通过例子学 Rust 中文版",
+      "file": "chapters/180-20-7-1-参数解析.md"
+    },
+    {
+      "slug": "181-20-8-外部语言函数接口",
+      "title": "外部语言函数接口 - 通过例子学 Rust 中文版",
+      "file": "chapters/181-20-8-外部语言函数接口.md"
+    },
+    {
+      "slug": "182-21-测试",
+      "title": "测试 - 通过例子学 Rust 中文版",
+      "file": "chapters/182-21-测试.md"
+    },
+    {
+      "slug": "183-21-1-单元测试",
+      "title": "单元测试 - 通过例子学 Rust 中文版",
+      "file": "chapters/183-21-1-单元测试.md"
+    },
+    {
+      "slug": "184-21-2-文档测试",
+      "title": "文档测试 - 通过例子学 Rust 中文版",
+      "file": "chapters/184-21-2-文档测试.md"
+    },
+    {
+      "slug": "185-21-3-集成测试",
+      "title": "集成测试 - 通过例子学 Rust 中文版",
+      "file": "chapters/185-21-3-集成测试.md"
+    },
+    {
+      "slug": "186-21-4-开发依赖",
+      "title": "开发依赖 - 通过例子学 Rust 中文版",
+      "file": "chapters/186-21-4-开发依赖.md"
+    },
+    {
+      "slug": "187-22-不安全操作",
+      "title": "不安全操作 - 通过例子学 Rust 中文版",
+      "file": "chapters/187-22-不安全操作.md"
+    },
+    {
+      "slug": "188-23-兼容性",
+      "title": "兼容性 - 通过例子学 Rust 中文版",
+      "file": "chapters/188-23-兼容性.md"
+    },
+    {
+      "slug": "189-23-1-原始标志符",
+      "title": "原始标志符 - 通过例子学 Rust 中文版",
+      "file": "chapters/189-23-1-原始标志符.md"
+    },
+    {
+      "slug": "190-24-补充",
+      "title": "补充 - 通过例子学 Rust 中文版",
+      "file": "chapters/190-24-补充.md"
+    },
+    {
+      "slug": "191-24-1-文档",
+      "title": "文档 - 通过例子学 Rust 中文版",
+      "file": "chapters/191-24-1-文档.md"
+    },
+    {
+      "slug": "192-24-2-playpen",
+      "title": "Playpen - 通过例子学 Rust 中文版",
+      "file": "chapters/192-24-2-playpen.md"
+    },
+    {
+      "slug": "193-通过例子学-rust-中文版",
+      "title": "通过例子学 Rust 中文版",
+      "file": "chapters/193-通过例子学-rust-中文版.md"
+    },
+    {
+      "slug": "194-rust-官方文档中英文双语教程",
+      "title": "Rust 文档网 - Rust 官方文档中文教程",
+      "file": "chapters/194-rust-官方文档中英文双语教程.md"
+    },
+    {
+      "slug": "195-rust-程序设计语言",
+      "title": "Rust 程序设计语言 - Rust 程序设计语言 中文版",
+      "file": "chapters/195-rust-程序设计语言.md"
+    },
+    {
+      "slug": "196-rust-标准库中文版",
+      "title": "std - Rust",
+      "file": "chapters/196-rust-标准库中文版.md"
+    },
+    {
+      "slug": "197-本站支持文档中英文切换",
+      "title": "Introduction - Rust By Example",
+      "file": "chapters/197-本站支持文档中英文切换.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "简介 - 通过例子学 Rust 中文版"
+  "sourceType": "web"
 }

@@ -3,12 +3,177 @@
   "title": "逐行剖析 Vue.js 源码",
   "url": "https://nlrx-wjc.github.io/Learn-Vue-Source-Code/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:51.467Z",
+  "fetchedAt": "2026-09-27T12:01:34.156Z",
   "chapters": [
     {
-      "slug": "001-1d",
+      "slug": "001-逐行剖析-vue-js-源码",
       "title": "逐行剖析 Vue.js 源码",
-      "file": "chapters/001-1d.md"
+      "file": "chapters/001-逐行剖析-vue-js-源码.md"
+    },
+    {
+      "slug": "002-写在最前面",
+      "title": "写在最前面 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/002-写在最前面.md"
+    },
+    {
+      "slug": "003-综述",
+      "title": "变化侦测篇综述 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/003-综述.md"
+    },
+    {
+      "slug": "004-object的变化侦测",
+      "title": "Object的变化侦测 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/004-object的变化侦测.md"
+    },
+    {
+      "slug": "005-array的变化侦测",
+      "title": "Array的变化侦测 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/005-array的变化侦测.md"
+    },
+    {
+      "slug": "006-vue中的虚拟dom",
+      "title": "Vue中的虚拟DOM | 逐行剖析 Vue.js 源码",
+      "file": "chapters/006-vue中的虚拟dom.md"
+    },
+    {
+      "slug": "007-vue中的dom-diff",
+      "title": "Diff | 逐行剖析 Vue.js 源码",
+      "file": "chapters/007-vue中的dom-diff.md"
+    },
+    {
+      "slug": "008-更新子节点",
+      "title": "更新子节点 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/008-更新子节点.md"
+    },
+    {
+      "slug": "009-优化更新子节点",
+      "title": "优化更新子节点 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/009-优化更新子节点.md"
+    },
+    {
+      "slug": "010-综述",
+      "title": "模板编译篇综述 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/010-综述.md"
+    },
+    {
+      "slug": "011-模板解析阶段-整体运行流程",
+      "title": "模板解析阶段(整体运行流程) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/011-模板解析阶段-整体运行流程.md"
+    },
+    {
+      "slug": "012-模板解析阶段-html解析器",
+      "title": "模板解析阶段(HTML解析器) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/012-模板解析阶段-html解析器.md"
+    },
+    {
+      "slug": "013-模板解析阶段-文本解析器",
+      "title": "模板解析阶段(文本解析器) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/013-模板解析阶段-文本解析器.md"
+    },
+    {
+      "slug": "014-优化阶段",
+      "title": "优化阶段 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/014-优化阶段.md"
+    },
+    {
+      "slug": "015-代码生成阶段",
+      "title": "代码生成阶段 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/015-代码生成阶段.md"
+    },
+    {
+      "slug": "016-总结",
+      "title": "模板编译篇总结 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/016-总结.md"
+    },
+    {
+      "slug": "017-综述",
+      "title": "生命周期篇综述 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/017-综述.md"
+    },
+    {
+      "slug": "018-初始化阶段-new-vue",
+      "title": "初始化阶段(new Vue) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/018-初始化阶段-new-vue.md"
+    },
+    {
+      "slug": "019-初始化阶段-initlifecycle",
+      "title": "初始化阶段(initLifecycle) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/019-初始化阶段-initlifecycle.md"
+    },
+    {
+      "slug": "020-初始化阶段-initevents",
+      "title": "初始化阶段(initEvents) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/020-初始化阶段-initevents.md"
+    },
+    {
+      "slug": "021-初始化阶段-initinjections",
+      "title": "初始化阶段(initInjections) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/021-初始化阶段-initinjections.md"
+    },
+    {
+      "slug": "022-初始化阶段-initstate",
+      "title": "初始化阶段(initState) | 逐行剖析 Vue.js 源码",
+      "file": "chapters/022-初始化阶段-initstate.md"
+    },
+    {
+      "slug": "023-模板编译阶段",
+      "title": "模板编译阶段 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/023-模板编译阶段.md"
+    },
+    {
+      "slug": "024-挂载阶段",
+      "title": "挂载阶段 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/024-挂载阶段.md"
+    },
+    {
+      "slug": "025-销毁阶段",
+      "title": "销毁阶段 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/025-销毁阶段.md"
+    },
+    {
+      "slug": "026-数据相关的方法",
+      "title": "数据相关的方法 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/026-数据相关的方法.md"
+    },
+    {
+      "slug": "027-事件相关的方法",
+      "title": "事件相关的方法 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/027-事件相关的方法.md"
+    },
+    {
+      "slug": "028-生命周期相关的方法",
+      "title": "生命周期相关的方法 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/028-生命周期相关的方法.md"
+    },
+    {
+      "slug": "029-全局api分析",
+      "title": "全局API分析 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/029-全局api分析.md"
+    },
+    {
+      "slug": "030-用法回顾",
+      "title": "用法回顾 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/030-用法回顾.md"
+    },
+    {
+      "slug": "031-工作原理",
+      "title": "工作原理 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/031-工作原理.md"
+    },
+    {
+      "slug": "032-解析过滤器",
+      "title": "解析过滤器 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/032-解析过滤器.md"
+    },
+    {
+      "slug": "033-自定义指令",
+      "title": "自定义指令 | 逐行剖析 Vue.js 源码",
+      "file": "chapters/033-自定义指令.md"
+    },
+    {
+      "slug": "034-keep-alive",
+      "title": "alive | 逐行剖析 Vue.js 源码",
+      "file": "chapters/034-keep-alive.md"
     }
   ],
   "sourceType": "web",

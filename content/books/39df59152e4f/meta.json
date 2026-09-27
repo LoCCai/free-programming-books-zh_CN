@@ -3,14 +3,14 @@
   "title": "YiiBook几本Yii框架的在线教程",
   "url": "http://yiibook.com//doc",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:11.791Z",
+  "fetchedAt": "2026-09-27T12:02:05.742Z",
   "chapters": [
     {
-      "slug": "001-n",
-      "title": "http://yiibook.com//doc",
-      "file": "chapters/001-n.md"
+      "slug": "001-http-yiibook-com-doc",
+      "title": "http://yiibook.com/doc",
+      "file": "chapters/001-http-yiibook-com-doc.md"
     }
   ],
   "sourceType": "web",
-  "sourceTitle": "http://yiibook.com//doc"
+  "sourceTitle": "http://yiibook.com/doc"
 }

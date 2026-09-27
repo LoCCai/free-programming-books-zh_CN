@@ -3,12 +3,187 @@
   "title": "Microsoft Docs C# 官方文档",
   "url": "https://docs.microsoft.com/zh-cn/dotnet/csharp/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:37.917Z",
+  "fetchedAt": "2026-09-27T11:59:02.268Z",
   "chapters": [
     {
-      "slug": "001-1b",
+      "slug": "001-c-指南-net-托管语言-c",
       "title": "C# 指南 - .NET 托管语言 - C#",
-      "file": "chapters/001-1b.md"
+      "file": "chapters/001-c-指南-net-托管语言-c.md"
+    },
+    {
+      "slug": "002-c-教程",
+      "title": "概述 - A tour of C#",
+      "file": "chapters/002-c-教程.md"
+    },
+    {
+      "slug": "003-基础",
+      "title": "C# 程序的常规结构 - C#",
+      "file": "chapters/003-基础.md"
+    },
+    {
+      "slug": "004-最新动态",
+      "title": "C# 15 中的新增功能",
+      "file": "chapters/004-最新动态.md"
+    },
+    {
+      "slug": "005-使用-c-可以开发的内容是什么",
+      "title": "你可以用 C# 构建什么 - A tour of C#",
+      "file": "chapters/005-使用-c-可以开发的内容是什么.md"
+    },
+    {
+      "slug": "006-初学者-c-教程",
+      "title": "交互式教程 - A tour of C#",
+      "file": "chapters/006-初学者-c-教程.md"
+    },
+    {
+      "slug": "007-适用于-java-开发人员的-c",
+      "title": "面向 Java 开发人员的提示 - A tour of C#",
+      "file": "chapters/007-适用于-java-开发人员的-c.md"
+    },
+    {
+      "slug": "008-类型系统",
+      "title": "C# 类型系统 - C#",
+      "file": "chapters/008-类型系统.md"
+    },
+    {
+      "slug": "009-面向对象的编程",
+      "title": "类、结构和记录 - C#",
+      "file": "chapters/009-面向对象的编程.md"
+    },
+    {
+      "slug": "010-模式匹配",
+      "title": "模式匹配概述 - C#",
+      "file": "chapters/010-模式匹配.md"
+    },
+    {
+      "slug": "011-异常",
+      "title": "异常和异常处理 - C#",
+      "file": "chapters/011-异常.md"
+    },
+    {
+      "slug": "012-编码样式",
+      "title": "标识符名称 - 规则和约定 - C#",
+      "file": "chapters/012-编码样式.md"
+    },
+    {
+      "slug": "013-c-语言策略",
+      "title": "语言策略 - A tour of C#",
+      "file": "chapters/013-c-语言策略.md"
+    },
+    {
+      "slug": "014-编程概念",
+      "title": "编程概念 - C#",
+      "file": "chapters/014-编程概念.md"
+    },
+    {
+      "slug": "015-linq",
+      "title": "语言集成查询 （LINQ） - C#",
+      "file": "chapters/015-linq.md"
+    },
+    {
+      "slug": "016-异步编程",
+      "title": "异步编程 - C#",
+      "file": "chapters/016-异步编程.md"
+    },
+    {
+      "slug": "017-反射和属性",
+      "title": "属性和反射 - C#",
+      "file": "chapters/017-反射和属性.md"
+    },
+    {
+      "slug": "018-接口实现",
+      "title": "使用默认接口方法安全地更新接口 - C#",
+      "file": "chapters/018-接口实现.md"
+    },
+    {
+      "slug": "019-表达式树",
+      "title": "表达式树 - C#",
+      "file": "chapters/019-表达式树.md"
+    },
+    {
+      "slug": "020-本地互操作性",
+      "title": "互作性概述 - C#",
+      "file": "chapters/020-本地互操作性.md"
+    },
+    {
+      "slug": "021-性能工程",
+      "title": "避免内存分配和数据副本 - C#",
+      "file": "chapters/021-性能工程.md"
+    },
+    {
+      "slug": "022-net-编译器平台-roslyn-sdk",
+      "title": ".NET Compiler Platform SDK (Roslyn API) - C#",
+      "file": "chapters/022-net-编译器平台-roslyn-sdk.md"
+    },
+    {
+      "slug": "023-内置类型",
+      "title": "值类型 - C# reference",
+      "file": "chapters/023-内置类型.md"
+    },
+    {
+      "slug": "024-关键字",
+      "title": "C# 关键字和上下文关键字 - C# reference",
+      "file": "chapters/024-关键字.md"
+    },
+    {
+      "slug": "025-运算符",
+      "title": "运算符和表达式 - 列出所有运算符和表达式 - C# reference",
+      "file": "chapters/025-运算符.md"
+    },
+    {
+      "slug": "026-声明",
+      "title": "声明语句 - 局部变量和常量、var、reference 局部变量（ref 局部变量） - C# reference",
+      "file": "chapters/026-声明.md"
+    },
+    {
+      "slug": "027-特殊字符",
+      "title": "特殊字符 - C# reference",
+      "file": "chapters/027-特殊字符.md"
+    },
+    {
+      "slug": "028-文档注释",
+      "title": "XML API 文档注释 - 使用 /// 注释来记录 API - C# reference",
+      "file": "chapters/028-文档注释.md"
+    },
+    {
+      "slug": "029-特殊属性",
+      "title": "编译器解释的属性：全局属性 - C# reference",
+      "file": "chapters/029-特殊属性.md"
+    },
+    {
+      "slug": "030-不安全代码",
+      "title": "不安全的代码、指向数据的指针和函数指针 - C# reference",
+      "file": "chapters/030-不安全代码.md"
+    },
+    {
+      "slug": "031-预处理器指令",
+      "title": "预处理器指令 - C# reference",
+      "file": "chapters/031-预处理器指令.md"
+    },
+    {
+      "slug": "032-编译器选项",
+      "title": "编译器选项 - C# reference",
+      "file": "chapters/032-编译器选项.md"
+    },
+    {
+      "slug": "033-标准和规范",
+      "title": "规范 - ECMA 规范和最新功能。 - C#",
+      "file": "chapters/033-标准和规范.md"
+    },
+    {
+      "slug": "034-规范流程",
+      "title": "标准规范 - C#",
+      "file": "chapters/034-规范流程.md"
+    },
+    {
+      "slug": "035-c-草稿标准",
+      "title": "目录 - C# language specification",
+      "file": "chapters/035-c-草稿标准.md"
+    },
+    {
+      "slug": "036-功能规范",
+      "title": "功能规范 - C#",
+      "file": "chapters/036-功能规范.md"
     }
   ],
   "sourceType": "web",

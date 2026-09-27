@@ -3,12 +3,292 @@
   "title": "笨方法學 Ruby",
   "url": "http://lrthw.github.io/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:13.250Z",
+  "fetchedAt": "2026-09-27T12:06:31.895Z",
   "chapters": [
     {
-      "slug": "001-n",
+      "slug": "001-learn-ruby-the-hard-way",
       "title": "Learn Ruby The Hard Way",
-      "file": "chapters/001-n.md"
+      "file": "chapters/001-learn-ruby-the-hard-way.md"
+    },
+    {
+      "slug": "002-笨方法更簡單",
+      "title": "Learn Ruby The Hard Way",
+      "file": "chapters/002-笨方法更簡單.md"
+    },
+    {
+      "slug": "003-習題-0-準備工作",
+      "title": "習題 0: 準備工作 - Learn Ruby The Hard Way",
+      "file": "chapters/003-習題-0-準備工作.md"
+    },
+    {
+      "slug": "004-習題-1-第一個程式",
+      "title": "習題 1: 第一個程式 - Learn Ruby The Hard Way",
+      "file": "chapters/004-習題-1-第一個程式.md"
+    },
+    {
+      "slug": "005-習題-2-註釋和井號",
+      "title": "習題 2: 註釋和井號 - Learn Ruby The Hard Way",
+      "file": "chapters/005-習題-2-註釋和井號.md"
+    },
+    {
+      "slug": "006-習題-3-數字和數學計算",
+      "title": "習題 3: 數字和數學計算 - Learn Ruby The Hard Way",
+      "file": "chapters/006-習題-3-數字和數學計算.md"
+    },
+    {
+      "slug": "007-習題-4-變數-variable-和命名",
+      "title": "習題 4: 變數(variable)和命名 - Learn Ruby The Hard Way",
+      "file": "chapters/007-習題-4-變數-variable-和命名.md"
+    },
+    {
+      "slug": "008-習題-5-更多的變數和印出",
+      "title": "習題 5: 更多的變數和印出 - Learn Ruby The Hard Way",
+      "file": "chapters/008-習題-5-更多的變數和印出.md"
+    },
+    {
+      "slug": "009-習題-6-字串-string-和文字",
+      "title": "習題 6: 字串(string)和文字 - Learn Ruby The Hard Way",
+      "file": "chapters/009-習題-6-字串-string-和文字.md"
+    },
+    {
+      "slug": "010-習題-7-更多印出",
+      "title": "習題 7: 更多印出 - Learn Ruby The Hard Way",
+      "file": "chapters/010-習題-7-更多印出.md"
+    },
+    {
+      "slug": "011-習題-8-印出-印出",
+      "title": "習題 8: 印出，印出 - Learn Ruby The Hard Way",
+      "file": "chapters/011-習題-8-印出-印出.md"
+    },
+    {
+      "slug": "012-習題-9-印出-印出-印出",
+      "title": "習題 9: 印出，印出，印出 - Learn Ruby The Hard Way",
+      "file": "chapters/012-習題-9-印出-印出-印出.md"
+    },
+    {
+      "slug": "013-習題-10-那是什麼",
+      "title": "習題 10: 那是什麼？ - Learn Ruby The Hard Way",
+      "file": "chapters/013-習題-10-那是什麼.md"
+    },
+    {
+      "slug": "014-習題-11-提問",
+      "title": "習題 11: 提問 - Learn Ruby The Hard Way",
+      "file": "chapters/014-習題-11-提問.md"
+    },
+    {
+      "slug": "015-習題-12-模組-module",
+      "title": "習題 12: 模組 (Module) - Learn Ruby The Hard Way",
+      "file": "chapters/015-習題-12-模組-module.md"
+    },
+    {
+      "slug": "016-習題-13-参数-解包-參數",
+      "title": "習題 13: 参数、解包、參數 - Learn Ruby The Hard Way",
+      "file": "chapters/016-習題-13-参数-解包-參數.md"
+    },
+    {
+      "slug": "017-習題-14-提示和傳遞",
+      "title": "習題 14: 提示和傳遞 - Learn Ruby The Hard Way",
+      "file": "chapters/017-習題-14-提示和傳遞.md"
+    },
+    {
+      "slug": "018-習題-15-讀取檔案",
+      "title": "習題 15: 讀取檔案 - Learn Ruby The Hard Way",
+      "file": "chapters/018-習題-15-讀取檔案.md"
+    },
+    {
+      "slug": "019-習題-16-讀寫檔案",
+      "title": "習題 16: 讀寫檔案 - Learn Ruby The Hard Way",
+      "file": "chapters/019-習題-16-讀寫檔案.md"
+    },
+    {
+      "slug": "020-習題-17-更多的檔案操作",
+      "title": "習題 17: 更多的檔案操作 - Learn Ruby The Hard Way",
+      "file": "chapters/020-習題-17-更多的檔案操作.md"
+    },
+    {
+      "slug": "021-習題-18-命名-變數-程式碼-函式",
+      "title": "習題 18: 命名、變數、程式碼、函式 - Learn Ruby The Hard Way",
+      "file": "chapters/021-習題-18-命名-變數-程式碼-函式.md"
+    },
+    {
+      "slug": "022-習題-19-函式和變數",
+      "title": "習題 19: 函式和變數 - Learn Ruby The Hard Way",
+      "file": "chapters/022-習題-19-函式和變數.md"
+    },
+    {
+      "slug": "023-習題-20-函式和檔案",
+      "title": "習題 20: 函式和檔案 - Learn Ruby The Hard Way",
+      "file": "chapters/023-習題-20-函式和檔案.md"
+    },
+    {
+      "slug": "024-習題-21-函式可以傳回東西",
+      "title": "習題 21: 函式可以傳回東西 - Learn Ruby The Hard Way",
+      "file": "chapters/024-習題-21-函式可以傳回東西.md"
+    },
+    {
+      "slug": "025-習題-22-到現在你學到了哪些東西",
+      "title": "習題 22: 到現在你學到了哪些東西？ - Learn Ruby The Hard Way",
+      "file": "chapters/025-習題-22-到現在你學到了哪些東西.md"
+    },
+    {
+      "slug": "026-習題-23-閱讀一些程式碼",
+      "title": "習題 23: 閱讀一些程式碼 - Learn Ruby The Hard Way",
+      "file": "chapters/026-習題-23-閱讀一些程式碼.md"
+    },
+    {
+      "slug": "027-習題-24-更多練習",
+      "title": "習題 24: 更多練習 - Learn Ruby The Hard Way",
+      "file": "chapters/027-習題-24-更多練習.md"
+    },
+    {
+      "slug": "028-習題-25-更多更多的練習",
+      "title": "習題 25: 更多更多的練習 - Learn Ruby The Hard Way",
+      "file": "chapters/028-習題-25-更多更多的練習.md"
+    },
+    {
+      "slug": "029-習題-26-恭喜你-現在來考試了",
+      "title": "習題 26: 恭喜你，現在來考試了！ - Learn Ruby The Hard Way",
+      "file": "chapters/029-習題-26-恭喜你-現在來考試了.md"
+    },
+    {
+      "slug": "030-習題-27-記住邏輯關係",
+      "title": "習題 27: 記住邏輯關係 - Learn Ruby The Hard Way",
+      "file": "chapters/030-習題-27-記住邏輯關係.md"
+    },
+    {
+      "slug": "031-習題-28-布林-boolean-表示式練習",
+      "title": "習題 28: 布林（Boolean）表示式練習 - Learn Ruby The Hard Way",
+      "file": "chapters/031-習題-28-布林-boolean-表示式練習.md"
+    },
+    {
+      "slug": "032-習題-29-如果-if",
+      "title": "習題 29: 如果（If） - Learn Ruby The Hard Way",
+      "file": "chapters/032-習題-29-如果-if.md"
+    },
+    {
+      "slug": "033-習題-30-else-和-if",
+      "title": "習題 30: Else 和 If",
+      "file": "chapters/033-習題-30-else-和-if.md"
+    },
+    {
+      "slug": "034-習題-31-做出決定",
+      "title": "習題 31: 做出決定 - Learn Ruby The Hard Way",
+      "file": "chapters/034-習題-31-做出決定.md"
+    },
+    {
+      "slug": "035-習題-32-迴圈和陣列",
+      "title": "習題 32: 迴圈和陣列 - Learn Ruby The Hard Way",
+      "file": "chapters/035-習題-32-迴圈和陣列.md"
+    },
+    {
+      "slug": "036-習題-33-while-迴圈",
+      "title": "習題 33: While 迴圈 - Learn Ruby The Hard Way",
+      "file": "chapters/036-習題-33-while-迴圈.md"
+    },
+    {
+      "slug": "037-習題-34-存取陣列裡的元素",
+      "title": "習題 34: 存取陣列裡的元素 - Learn Ruby The Hard Way",
+      "file": "chapters/037-習題-34-存取陣列裡的元素.md"
+    },
+    {
+      "slug": "038-習題-35-分支-branches-和函式-functions",
+      "title": "習題 35: 分支 (Branches) 和函式 (Functions)",
+      "file": "chapters/038-習題-35-分支-branches-和函式-functions.md"
+    },
+    {
+      "slug": "039-習題-36-設計和測試",
+      "title": "習題 36: 設計和測試 - Learn Ruby The Hard Way",
+      "file": "chapters/039-習題-36-設計和測試.md"
+    },
+    {
+      "slug": "040-習題-37-複習各種符號",
+      "title": "習題 37: 複習各種符號 - Learn Ruby The Hard Way",
+      "file": "chapters/040-習題-37-複習各種符號.md"
+    },
+    {
+      "slug": "041-習題-38-閱讀程式碼",
+      "title": "習題 38: 閱讀程式碼 - Learn Ruby The Hard Way",
+      "file": "chapters/041-習題-38-閱讀程式碼.md"
+    },
+    {
+      "slug": "042-習題-39-陣列的操作",
+      "title": "習題 39: 陣列的操作 - Learn Ruby The Hard Way",
+      "file": "chapters/042-習題-39-陣列的操作.md"
+    },
+    {
+      "slug": "043-習題-40-hash-可愛的-hash",
+      "title": "習題 40: Hash, 可愛的 Hash",
+      "file": "chapters/043-習題-40-hash-可愛的-hash.md"
+    },
+    {
+      "slug": "044-習題-41-來自-percal-25-號行星的哥頓人-gothons",
+      "title": "習題 41: 來自 Percal 25 號行星的哥頓人(Gothons)",
+      "file": "chapters/044-習題-41-來自-percal-25-號行星的哥頓人-gothons.md"
+    },
+    {
+      "slug": "045-習題-42-物以類聚",
+      "title": "習題 42: 物以類聚 - Learn Ruby The Hard Way",
+      "file": "chapters/045-習題-42-物以類聚.md"
+    },
+    {
+      "slug": "046-習題-43-你來製作一個遊戲",
+      "title": "習題 43: 你來製作一個遊戲 - Learn Ruby The Hard Way",
+      "file": "chapters/046-習題-43-你來製作一個遊戲.md"
+    },
+    {
+      "slug": "047-習題-44-評估你的遊戲",
+      "title": "習題 44: 評估你的遊戲 - Learn Ruby The Hard Way",
+      "file": "chapters/047-習題-44-評估你的遊戲.md"
+    },
+    {
+      "slug": "048-習題-45-物件-類和從屬關係",
+      "title": "習題 45: 物件、類和從屬關係 - Learn Ruby The Hard Way",
+      "file": "chapters/048-習題-45-物件-類和從屬關係.md"
+    },
+    {
+      "slug": "049-習題-46-一個專案骨架",
+      "title": "習題 46: 一個專案骨架 - Learn Ruby The Hard Way",
+      "file": "chapters/049-習題-46-一個專案骨架.md"
+    },
+    {
+      "slug": "050-習題-47-自動化測試",
+      "title": "習題 47: 自動化測試 - Learn Ruby The Hard Way",
+      "file": "chapters/050-習題-47-自動化測試.md"
+    },
+    {
+      "slug": "051-習題-48-更進階的使用者輸入",
+      "title": "習題 48: 更進階的使用者輸入 - Learn Ruby The Hard Way",
+      "file": "chapters/051-習題-48-更進階的使用者輸入.md"
+    },
+    {
+      "slug": "052-習題-49-創造句子",
+      "title": "習題 49: 創造句子 - Learn Ruby The Hard Way",
+      "file": "chapters/052-習題-49-創造句子.md"
+    },
+    {
+      "slug": "053-習題-50-你的第一個網站",
+      "title": "習題 50: 你的第一個網站 - Learn Ruby The Hard Way",
+      "file": "chapters/053-習題-50-你的第一個網站.md"
+    },
+    {
+      "slug": "054-習題-51-從瀏覽器中取得輸入",
+      "title": "習題 51: 從瀏覽器中取得輸入 - Learn Ruby The Hard Way",
+      "file": "chapters/054-習題-51-從瀏覽器中取得輸入.md"
+    },
+    {
+      "slug": "055-習題-52-創造你的網頁遊戲",
+      "title": "習題 52: 創造你的網頁遊戲 - Learn Ruby The Hard Way",
+      "file": "chapters/055-習題-52-創造你的網頁遊戲.md"
+    },
+    {
+      "slug": "056-下一步",
+      "title": "Learn Ruby The Hard Way",
+      "file": "chapters/056-下一步.md"
+    },
+    {
+      "slug": "057-一個老程式設計師的建議",
+      "title": "Learn Ruby The Hard Way",
+      "file": "chapters/057-一個老程式設計師的建議.md"
     }
   ],
   "sourceType": "web",

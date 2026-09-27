@@ -3,14 +3,38 @@
   "title": "PHP 官方手册",
   "url": "http://php.net/manual/zh/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:03.662Z",
+  "fetchedAt": "2026-09-27T12:01:58.318Z",
   "chapters": [
     {
-      "slug": "001-p",
-      "title": "PHP: 序言 - Manual",
-      "file": "chapters/001-p.md"
+      "slug": "001-php",
+      "title": "PHP",
+      "file": "chapters/001-php.md"
+    },
+    {
+      "slug": "002-downloads",
+      "title": "PHP: Downloads",
+      "file": "chapters/002-downloads.md"
+    },
+    {
+      "slug": "003-documentation",
+      "title": "PHP: Documentation",
+      "file": "chapters/003-documentation.md"
+    },
+    {
+      "slug": "004-get-involved",
+      "title": "PHP: Get Involved",
+      "file": "chapters/004-get-involved.md"
+    },
+    {
+      "slug": "005-help",
+      "title": "PHP: Getting Help",
+      "file": "chapters/005-help.md"
+    },
+    {
+      "slug": "006-php-8-5-released",
+      "title": "PHP 8.5 Released",
+      "file": "chapters/006-php-8-5-released.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "PHP: 序言 - Manual"
+  "sourceType": "web"
 }

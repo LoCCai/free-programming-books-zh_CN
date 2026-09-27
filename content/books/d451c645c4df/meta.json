@@ -3,12 +3,12 @@
   "title": "简单易懂的JQuery魔法",
   "url": "http://www.nowamagic.net/librarys/books/contents/jquery",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:37.598Z",
+  "fetchedAt": "2026-09-27T12:00:54.574Z",
   "chapters": [
     {
-      "slug": "001-1j",
+      "slug": "001-http-www-nowamagic-net-librarys-books-co",
       "title": "http://www.nowamagic.net/librarys/books/contents/jquery",
-      "file": "chapters/001-1j.md"
+      "file": "chapters/001-http-www-nowamagic-net-librarys-books-co.md"
     }
   ],
   "sourceType": "web",

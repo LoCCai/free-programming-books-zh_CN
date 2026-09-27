@@ -3,12 +3,352 @@
   "title": "Go语言高级编程",
   "url": "https://chai2010.cn/advanced-go-programming-book/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:48.652Z",
+  "fetchedAt": "2026-09-27T12:00:05.567Z",
   "chapters": [
     {
-      "slug": "001-1d",
+      "slug": "001-go语言高级编程",
       "title": "Go语言高级编程 - Go语言高级编程",
-      "file": "chapters/001-1d.md"
+      "file": "chapters/001-go语言高级编程.md"
+    },
+    {
+      "slug": "002-前言",
+      "title": "前言 - Go语言高级编程",
+      "file": "chapters/002-前言.md"
+    },
+    {
+      "slug": "003-1-语言基础",
+      "title": "语言基础 - Go语言高级编程",
+      "file": "chapters/003-1-语言基础.md"
+    },
+    {
+      "slug": "004-1-1-go语言创世纪",
+      "title": "Go语言创世纪 - Go语言高级编程",
+      "file": "chapters/004-1-1-go语言创世纪.md"
+    },
+    {
+      "slug": "005-1-2-hello-world-的革命",
+      "title": "Hello, World 的革命 - Go语言高级编程",
+      "file": "chapters/005-1-2-hello-world-的革命.md"
+    },
+    {
+      "slug": "006-1-3-数组-字符串和切片",
+      "title": "数组、字符串和切片 - Go语言高级编程",
+      "file": "chapters/006-1-3-数组-字符串和切片.md"
+    },
+    {
+      "slug": "007-1-4-函数-方法和接口",
+      "title": "函数、方法和接口 - Go语言高级编程",
+      "file": "chapters/007-1-4-函数-方法和接口.md"
+    },
+    {
+      "slug": "008-1-5-面向并发的内存模型",
+      "title": "面向并发的内存模型 - Go语言高级编程",
+      "file": "chapters/008-1-5-面向并发的内存模型.md"
+    },
+    {
+      "slug": "009-1-6-常见的并发模式",
+      "title": "常见的并发模式 - Go语言高级编程",
+      "file": "chapters/009-1-6-常见的并发模式.md"
+    },
+    {
+      "slug": "010-1-7-错误和异常",
+      "title": "错误和异常 - Go语言高级编程",
+      "file": "chapters/010-1-7-错误和异常.md"
+    },
+    {
+      "slug": "011-1-8-补充说明",
+      "title": "补充说明 - Go语言高级编程",
+      "file": "chapters/011-1-8-补充说明.md"
+    },
+    {
+      "slug": "012-2-cgo编程",
+      "title": "CGO编程 - Go语言高级编程",
+      "file": "chapters/012-2-cgo编程.md"
+    },
+    {
+      "slug": "013-2-1-快速入门",
+      "title": "快速入门 - Go语言高级编程",
+      "file": "chapters/013-2-1-快速入门.md"
+    },
+    {
+      "slug": "014-2-2-cgo基础",
+      "title": "CGO基础 - Go语言高级编程",
+      "file": "chapters/014-2-2-cgo基础.md"
+    },
+    {
+      "slug": "015-2-3-类型转换",
+      "title": "类型转换 - Go语言高级编程",
+      "file": "chapters/015-2-3-类型转换.md"
+    },
+    {
+      "slug": "016-2-4-函数调用",
+      "title": "函数调用 - Go语言高级编程",
+      "file": "chapters/016-2-4-函数调用.md"
+    },
+    {
+      "slug": "017-2-5-内部机制",
+      "title": "内部机制 - Go语言高级编程",
+      "file": "chapters/017-2-5-内部机制.md"
+    },
+    {
+      "slug": "018-2-6-实战-封装qsort",
+      "title": "实战: 封装qsort - Go语言高级编程",
+      "file": "chapters/018-2-6-实战-封装qsort.md"
+    },
+    {
+      "slug": "019-2-7-cgo内存模型",
+      "title": "CGO内存模型 - Go语言高级编程",
+      "file": "chapters/019-2-7-cgo内存模型.md"
+    },
+    {
+      "slug": "020-2-8-c-类包装",
+      "title": "C++类包装 - Go语言高级编程",
+      "file": "chapters/020-2-8-c-类包装.md"
+    },
+    {
+      "slug": "021-2-9-静态库和动态库",
+      "title": "静态库和动态库 - Go语言高级编程",
+      "file": "chapters/021-2-9-静态库和动态库.md"
+    },
+    {
+      "slug": "022-2-10-编译和链接参数",
+      "title": "编译和链接参数 - Go语言高级编程",
+      "file": "chapters/022-2-10-编译和链接参数.md"
+    },
+    {
+      "slug": "023-2-11-补充说明",
+      "title": "补充说明 - Go语言高级编程",
+      "file": "chapters/023-2-11-补充说明.md"
+    },
+    {
+      "slug": "024-3-汇编语言",
+      "title": "汇编语言 - Go语言高级编程",
+      "file": "chapters/024-3-汇编语言.md"
+    },
+    {
+      "slug": "025-3-1-快速入门",
+      "title": "快速入门 - Go语言高级编程",
+      "file": "chapters/025-3-1-快速入门.md"
+    },
+    {
+      "slug": "026-3-2-计算机结构",
+      "title": "计算机结构 - Go语言高级编程",
+      "file": "chapters/026-3-2-计算机结构.md"
+    },
+    {
+      "slug": "027-3-3-常量和全局变量",
+      "title": "常量和全局变量 - Go语言高级编程",
+      "file": "chapters/027-3-3-常量和全局变量.md"
+    },
+    {
+      "slug": "028-3-4-函数",
+      "title": "函数 - Go语言高级编程",
+      "file": "chapters/028-3-4-函数.md"
+    },
+    {
+      "slug": "029-3-5-控制流",
+      "title": "控制流 - Go语言高级编程",
+      "file": "chapters/029-3-5-控制流.md"
+    },
+    {
+      "slug": "030-3-6-再论函数",
+      "title": "再论函数 - Go语言高级编程",
+      "file": "chapters/030-3-6-再论函数.md"
+    },
+    {
+      "slug": "031-3-7-汇编语言的威力",
+      "title": "汇编语言的威力 - Go语言高级编程",
+      "file": "chapters/031-3-7-汇编语言的威力.md"
+    },
+    {
+      "slug": "032-3-8-例子-goroutine-id",
+      "title": "例子：Goroutine ID - Go语言高级编程",
+      "file": "chapters/032-3-8-例子-goroutine-id.md"
+    },
+    {
+      "slug": "033-3-9-delve调试器",
+      "title": "Delve调试器 - Go语言高级编程",
+      "file": "chapters/033-3-9-delve调试器.md"
+    },
+    {
+      "slug": "034-3-10-补充说明",
+      "title": "补充说明 - Go语言高级编程",
+      "file": "chapters/034-3-10-补充说明.md"
+    },
+    {
+      "slug": "035-4-第4章-rpc和protobuf",
+      "title": "第4章 RPC和Protobuf - Go语言高级编程",
+      "file": "chapters/035-4-第4章-rpc和protobuf.md"
+    },
+    {
+      "slug": "036-4-1-rpc入门",
+      "title": "RPC入门 - Go语言高级编程",
+      "file": "chapters/036-4-1-rpc入门.md"
+    },
+    {
+      "slug": "037-4-2-protobuf",
+      "title": "Protobuf - Go语言高级编程",
+      "file": "chapters/037-4-2-protobuf.md"
+    },
+    {
+      "slug": "038-4-3-玩转rpc",
+      "title": "玩转RPC - Go语言高级编程",
+      "file": "chapters/038-4-3-玩转rpc.md"
+    },
+    {
+      "slug": "039-4-4-grpc入门",
+      "title": "gRPC入门 - Go语言高级编程",
+      "file": "chapters/039-4-4-grpc入门.md"
+    },
+    {
+      "slug": "040-4-5-grpc进阶",
+      "title": "gRPC进阶 - Go语言高级编程",
+      "file": "chapters/040-4-5-grpc进阶.md"
+    },
+    {
+      "slug": "041-4-6-grpc和protobuf扩展",
+      "title": "gRPC和Protobuf扩展 - Go语言高级编程",
+      "file": "chapters/041-4-6-grpc和protobuf扩展.md"
+    },
+    {
+      "slug": "042-4-7-pbgo-基于protobuf的框架",
+      "title": "pbgo: 基于Protobuf的框架 - Go语言高级编程",
+      "file": "chapters/042-4-7-pbgo-基于protobuf的框架.md"
+    },
+    {
+      "slug": "043-4-8-grpcurl工具",
+      "title": "grpcurl工具 - Go语言高级编程",
+      "file": "chapters/043-4-8-grpcurl工具.md"
+    },
+    {
+      "slug": "044-4-9-补充说明",
+      "title": "补充说明 - Go语言高级编程",
+      "file": "chapters/044-4-9-补充说明.md"
+    },
+    {
+      "slug": "045-5-go和web",
+      "title": "Go和Web - Go语言高级编程",
+      "file": "chapters/045-5-go和web.md"
+    },
+    {
+      "slug": "046-5-1-web开发简介",
+      "title": "Web开发简介 - Go语言高级编程",
+      "file": "chapters/046-5-1-web开发简介.md"
+    },
+    {
+      "slug": "047-5-2-请求路由",
+      "title": "请求路由 - Go语言高级编程",
+      "file": "chapters/047-5-2-请求路由.md"
+    },
+    {
+      "slug": "048-5-3-中间件",
+      "title": "中间件 - Go语言高级编程",
+      "file": "chapters/048-5-3-中间件.md"
+    },
+    {
+      "slug": "049-5-4-请求校验",
+      "title": "请求校验 - Go语言高级编程",
+      "file": "chapters/049-5-4-请求校验.md"
+    },
+    {
+      "slug": "050-5-5-和数据库打交道",
+      "title": "和数据库打交道 - Go语言高级编程",
+      "file": "chapters/050-5-5-和数据库打交道.md"
+    },
+    {
+      "slug": "051-5-6-服务流量限制",
+      "title": "服务流量限制 - Go语言高级编程",
+      "file": "chapters/051-5-6-服务流量限制.md"
+    },
+    {
+      "slug": "052-5-7-大型web项目分层",
+      "title": "大型Web项目分层 - Go语言高级编程",
+      "file": "chapters/052-5-7-大型web项目分层.md"
+    },
+    {
+      "slug": "053-5-8-接口和表驱动开发",
+      "title": "接口和表驱动开发 - Go语言高级编程",
+      "file": "chapters/053-5-8-接口和表驱动开发.md"
+    },
+    {
+      "slug": "054-5-9-灰度发布和a-b测试",
+      "title": "灰度发布和A/B测试 - Go语言高级编程",
+      "file": "chapters/054-5-9-灰度发布和a-b测试.md"
+    },
+    {
+      "slug": "055-5-10-补充说明",
+      "title": "补充说明 - Go语言高级编程",
+      "file": "chapters/055-5-10-补充说明.md"
+    },
+    {
+      "slug": "056-6-分布式系统",
+      "title": "分布式系统 - Go语言高级编程",
+      "file": "chapters/056-6-分布式系统.md"
+    },
+    {
+      "slug": "057-6-1-分布式-id-生成器",
+      "title": "分布式 id 生成器 - Go语言高级编程",
+      "file": "chapters/057-6-1-分布式-id-生成器.md"
+    },
+    {
+      "slug": "058-6-2-分布式锁",
+      "title": "分布式锁 - Go语言高级编程",
+      "file": "chapters/058-6-2-分布式锁.md"
+    },
+    {
+      "slug": "059-6-3-延时任务系统",
+      "title": "延时任务系统 - Go语言高级编程",
+      "file": "chapters/059-6-3-延时任务系统.md"
+    },
+    {
+      "slug": "060-6-4-分布式搜索引擎",
+      "title": "分布式搜索引擎 - Go语言高级编程",
+      "file": "chapters/060-6-4-分布式搜索引擎.md"
+    },
+    {
+      "slug": "061-6-5-负载均衡",
+      "title": "负载均衡 - Go语言高级编程",
+      "file": "chapters/061-6-5-负载均衡.md"
+    },
+    {
+      "slug": "062-6-6-分布式配置管理",
+      "title": "分布式配置管理 - Go语言高级编程",
+      "file": "chapters/062-6-6-分布式配置管理.md"
+    },
+    {
+      "slug": "063-6-7-分布式爬虫",
+      "title": "分布式爬虫 - Go语言高级编程",
+      "file": "chapters/063-6-7-分布式爬虫.md"
+    },
+    {
+      "slug": "064-6-8-补充说明",
+      "title": "补充说明 - Go语言高级编程",
+      "file": "chapters/064-6-8-补充说明.md"
+    },
+    {
+      "slug": "065-7-附录",
+      "title": "附录 - Go语言高级编程",
+      "file": "chapters/065-7-附录.md"
+    },
+    {
+      "slug": "066-7-1-附录a-go语言常见坑",
+      "title": "附录A: Go语言常见坑 - Go语言高级编程",
+      "file": "chapters/066-7-1-附录a-go语言常见坑.md"
+    },
+    {
+      "slug": "067-7-2-附录b-有趣的代码片段",
+      "title": "附录B: 有趣的代码片段 - Go语言高级编程",
+      "file": "chapters/067-7-2-附录b-有趣的代码片段.md"
+    },
+    {
+      "slug": "068-7-3-附录c-作者简介",
+      "title": "附录C: 作者简介 - Go语言高级编程",
+      "file": "chapters/068-7-3-附录c-作者简介.md"
+    },
+    {
+      "slug": "069-https-chai2010-cn-advanced-go-programmin",
+      "title": "Go语言高级编程 - Go语言高级编程",
+      "file": "chapters/069-https-chai2010-cn-advanced-go-programmin.md"
     }
   ],
   "sourceType": "web",

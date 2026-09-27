@@ -3,12 +3,282 @@
   "title": "Web.py Cookbook 简体中文版",
   "url": "http://webpy.org/cookbook/index.zh-cn",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:09.811Z",
+  "fetchedAt": "2026-09-27T12:06:06.549Z",
   "chapters": [
     {
-      "slug": "001-11",
+      "slug": "001-web-py-cookbook-简体中文版-web-py",
       "title": "Web.py Cookbook 简体中文版 (web.py)",
-      "file": "chapters/001-11.md"
+      "file": "chapters/001-web-py-cookbook-简体中文版-web-py.md"
+    },
+    {
+      "slug": "002-cookbook",
+      "title": "Web.py Cookbook (web.py)",
+      "file": "chapters/002-cookbook.md"
+    },
+    {
+      "slug": "003-hello-world",
+      "title": "Hello World! (web.py)",
+      "file": "chapters/003-hello-world.md"
+    },
+    {
+      "slug": "004-提供静态文件访问",
+      "title": "提供静态文件 (诸如js脚本, css样式表和图象文件) (web.py)",
+      "file": "chapters/004-提供静态文件访问.md"
+    },
+    {
+      "slug": "005-理解url控制",
+      "title": "理解URL控制 (web.py)",
+      "file": "chapters/005-理解url控制.md"
+    },
+    {
+      "slug": "006-跳转与重定向",
+      "title": "跳转(seeother)与重定向(redirect) (web.py)",
+      "file": "chapters/006-跳转与重定向.md"
+    },
+    {
+      "slug": "007-使用子应用",
+      "title": "使用子应用 (web.py)",
+      "file": "chapters/007-使用子应用.md"
+    },
+    {
+      "slug": "008-提供xml访问",
+      "title": "提供XML访问 (web.py)",
+      "file": "chapters/008-提供xml访问.md"
+    },
+    {
+      "slug": "009-用web-ctx获得客户端信息",
+      "title": "web.ctx (web.py)",
+      "file": "chapters/009-用web-ctx获得客户端信息.md"
+    },
+    {
+      "slug": "010-应用处理器-添加钩子和卸载钩子",
+      "title": "Application processors (web.py)",
+      "file": "chapters/010-应用处理器-添加钩子和卸载钩子.md"
+    },
+    {
+      "slug": "011-自定义notfound信息",
+      "title": "自定义NotFound消息 (web.py)",
+      "file": "chapters/011-自定义notfound信息.md"
+    },
+    {
+      "slug": "012-如何流传输大文件",
+      "title": "如何流传输大文件 (web.py)",
+      "file": "chapters/012-如何流传输大文件.md"
+    },
+    {
+      "slug": "013-对自带的webserver日志进行操作",
+      "title": "管理自带webserver日志 (web.py)",
+      "file": "chapters/013-对自带的webserver日志进行操作.md"
+    },
+    {
+      "slug": "014-用cherrypy提供ssl支持",
+      "title": "用cherrypy提供SSL支持 (web.py)",
+      "file": "chapters/014-用cherrypy提供ssl支持.md"
+    },
+    {
+      "slug": "015-实时语言切换",
+      "title": "实时语言切换 (web.py)",
+      "file": "chapters/015-实时语言切换.md"
+    },
+    {
+      "slug": "016-如何使用session",
+      "title": "Sessions (web.py)",
+      "file": "chapters/016-如何使用session.md"
+    },
+    {
+      "slug": "017-如何在调试模式下使用session",
+      "title": "在调试模式下使用session (web.py)",
+      "file": "chapters/017-如何在调试模式下使用session.md"
+    },
+    {
+      "slug": "018-在template中使用session",
+      "title": "在template中使用session (web.py)",
+      "file": "chapters/018-在template中使用session.md"
+    },
+    {
+      "slug": "019-如何操作cookie",
+      "title": "如何操作Cookie (web.py)",
+      "file": "chapters/019-如何操作cookie.md"
+    },
+    {
+      "slug": "020-用户认证",
+      "title": "用户认证 (web.py)",
+      "file": "chapters/020-用户认证.md"
+    },
+    {
+      "slug": "021-一个在postgresql数据库环境下的用户认证的例子",
+      "title": "在PostgreSQL下实现用户认证 (web.py)",
+      "file": "chapters/021-一个在postgresql数据库环境下的用户认证的例子.md"
+    },
+    {
+      "slug": "022-如何在子应用中操作session",
+      "title": "在子应用下使用session (web.py)",
+      "file": "chapters/022-如何在子应用中操作session.md"
+    },
+    {
+      "slug": "023-如何发送邮件",
+      "title": "发送邮件 (web.py)",
+      "file": "chapters/023-如何发送邮件.md"
+    },
+    {
+      "slug": "024-如何利用gmail发送邮件",
+      "title": "如何用Gmail发送邮件 (web.py)",
+      "file": "chapters/024-如何利用gmail发送邮件.md"
+    },
+    {
+      "slug": "025-使用soaplib实现webservice",
+      "title": "用soaplib实现webservice (web.py)",
+      "file": "chapters/025-使用soaplib实现webservice.md"
+    },
+    {
+      "slug": "026-使用站点布局模板",
+      "title": "站点布局模板 (web.py)",
+      "file": "chapters/026-使用站点布局模板.md"
+    },
+    {
+      "slug": "027-交替式风格-未译",
+      "title": "交替风格 (web.py)",
+      "file": "chapters/027-交替式风格-未译.md"
+    },
+    {
+      "slug": "028-导入函数到模板中",
+      "title": "导入函数到模板中 (web.py)",
+      "file": "chapters/028-导入函数到模板中.md"
+    },
+    {
+      "slug": "029-模板文件中的i18n支持",
+      "title": "i18n support in template file (web.py)",
+      "file": "chapters/029-模板文件中的i18n支持.md"
+    },
+    {
+      "slug": "030-在web-py中使用mako模板引擎",
+      "title": "在webpy中使用Mako模板引擎 (web.py)",
+      "file": "chapters/030-在web-py中使用mako模板引擎.md"
+    },
+    {
+      "slug": "031-在web-py中使用cheetah模板引擎",
+      "title": "在webpy中使用Cheetah模板引擎 (web.py)",
+      "file": "chapters/031-在web-py中使用cheetah模板引擎.md"
+    },
+    {
+      "slug": "032-在web-py中使用jinja2模板引擎",
+      "title": "Use Jinja2 template engine in webpy (web.py)",
+      "file": "chapters/032-在web-py中使用jinja2模板引擎.md"
+    },
+    {
+      "slug": "033-如何在谷歌应用程序引擎使用模板",
+      "title": "How to use templates on Google App Engine (web.py)",
+      "file": "chapters/033-如何在谷歌应用程序引擎使用模板.md"
+    },
+    {
+      "slug": "034-testing-with-paste-and-nose-未译",
+      "title": "Testing with Paste and Nose (web.py)",
+      "file": "chapters/034-testing-with-paste-and-nose-未译.md"
+    },
+    {
+      "slug": "035-restful-doctesting-using-an-application-",
+      "title": "RESTful doctesting using app.request (web.py)",
+      "file": "chapters/035-restful-doctesting-using-an-application-.md"
+    },
+    {
+      "slug": "036-文件上传",
+      "title": "File Upload Recipe (web.py)",
+      "file": "chapters/036-文件上传.md"
+    },
+    {
+      "slug": "037-保存上传的文件",
+      "title": "保存上传的文件 (web.py)",
+      "file": "chapters/037-保存上传的文件.md"
+    },
+    {
+      "slug": "038-上传文件大小限定",
+      "title": "上传文件大小限定 (web.py)",
+      "file": "chapters/038-上传文件大小限定.md"
+    },
+    {
+      "slug": "039-通过-web-input-接受用户输入",
+      "title": "web.input (web.py)",
+      "file": "chapters/039-通过-web-input-接受用户输入.md"
+    },
+    {
+      "slug": "040-怎样使用表单",
+      "title": "怎样使用表单 forms (web.py)",
+      "file": "chapters/040-怎样使用表单.md"
+    },
+    {
+      "slug": "041-显示个别表单字段",
+      "title": "个别显示表单字段 (web.py)",
+      "file": "chapters/041-显示个别表单字段.md"
+    },
+    {
+      "slug": "042-使用多数据库",
+      "title": "多数据库使用 (web.py)",
+      "file": "chapters/042-使用多数据库.md"
+    },
+    {
+      "slug": "043-select-查询数据",
+      "title": "db.select 查询 (web.py)",
+      "file": "chapters/043-select-查询数据.md"
+    },
+    {
+      "slug": "044-update-更新数据",
+      "title": "db.upate 数据更新 (web.py)",
+      "file": "chapters/044-update-更新数据.md"
+    },
+    {
+      "slug": "045-insert-新增数据",
+      "title": "db.insert 向数据库中新增数据 (web.py)",
+      "file": "chapters/045-insert-新增数据.md"
+    },
+    {
+      "slug": "046-query-高级数据库查询",
+      "title": "使用 db.query 执行较为复杂的数据库查询 (web.py)",
+      "file": "chapters/046-query-高级数据库查询.md"
+    },
+    {
+      "slug": "047-怎样使用数据库事务",
+      "title": "怎样使用数据库事务处理 (web.py)",
+      "file": "chapters/047-怎样使用数据库事务.md"
+    },
+    {
+      "slug": "048-使用-sqlalchemy",
+      "title": "sqlalchemy (web.py)",
+      "file": "chapters/048-使用-sqlalchemy.md"
+    },
+    {
+      "slug": "049-整合-sqlite-udf-用户定义函数-到-webpy-数据库层",
+      "title": "整合 SQLite UDF (用户定义函数) 到 webpy 数据库层 (web.py)",
+      "file": "chapters/049-整合-sqlite-udf-用户定义函数-到-webpy-数据库层.md"
+    },
+    {
+      "slug": "050-使用字典动态构造where子句",
+      "title": "使用字典动态构造where子句 (web.py)",
+      "file": "chapters/050-使用字典动态构造where子句.md"
+    },
+    {
+      "slug": "051-通过fastcgi和lighttpd部署",
+      "title": "通过Fastcgi和lighttpd部署 (web.py)",
+      "file": "chapters/051-通过fastcgi和lighttpd部署.md"
+    },
+    {
+      "slug": "052-通过webpy和nginx-with-fastcgi搭建web-py",
+      "title": "Webpy + Nginx with FastCGI搭建Web.py (web.py)",
+      "file": "chapters/052-通过webpy和nginx-with-fastcgi搭建web-py.md"
+    },
+    {
+      "slug": "053-cgi-deployment-through-apache-未译",
+      "title": "CGI deployment on Apache (web.py)",
+      "file": "chapters/053-cgi-deployment-through-apache-未译.md"
+    },
+    {
+      "slug": "054-通过apache和mod-wsgi部署",
+      "title": "使用Apache + mod_wsgi部署webpy应用 (web.py)",
+      "file": "chapters/054-通过apache和mod-wsgi部署.md"
+    },
+    {
+      "slug": "055-mod-wsgi-deployment-through-nginx-未译",
+      "title": "使用 Nginx 加 mod_wsgi 模块部署 web.py (web.py)",
+      "file": "chapters/055-mod-wsgi-deployment-through-nginx-未译.md"
     }
   ],
   "sourceType": "web",

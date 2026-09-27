@@ -3,12 +3,12 @@
   "title": "简单易懂的PHP魔法",
   "url": "http://www.nowamagic.net/librarys/books/contents/php",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:12.386Z",
+  "fetchedAt": "2026-09-27T12:02:14.778Z",
   "chapters": [
     {
-      "slug": "001-1g",
+      "slug": "001-http-www-nowamagic-net-librarys-books-co",
       "title": "http://www.nowamagic.net/librarys/books/contents/php",
-      "file": "chapters/001-1g.md"
+      "file": "chapters/001-http-www-nowamagic-net-librarys-books-co.md"
     }
   ],
   "sourceType": "web",

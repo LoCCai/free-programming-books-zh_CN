@@ -3,12 +3,37 @@
   "title": "学习Go语言",
   "url": "http://mikespook.com/learning-go/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:52.432Z",
+  "fetchedAt": "2026-09-27T12:00:09.140Z",
   "chapters": [
     {
-      "slug": "001-x",
+      "slug": "001-linux",
+      "title": "linux Archives - Gopher beyond El[i]phants",
+      "file": "chapters/001-linux.md"
+    },
+    {
+      "slug": "002-study-u0026-research",
+      "title": "Study & Research Archives - Gopher beyond El[i]phants",
+      "file": "chapters/002-study-u0026-research.md"
+    },
+    {
+      "slug": "003-phpanything-about-php",
+      "title": "PHP Archives - Gopher beyond El[i]phants",
+      "file": "chapters/003-phpanything-about-php.md"
+    },
+    {
+      "slug": "004-yaf-的-ppa-源",
+      "title": "YAF 的 PPA 源 - Gopher beyond El[i]phants",
+      "file": "chapters/004-yaf-的-ppa-源.md"
+    },
+    {
+      "slug": "005-golang",
+      "title": "Golang Archives - Gopher beyond El[i]phants",
+      "file": "chapters/005-golang.md"
+    },
+    {
+      "slug": "006-学习go语言-中文版",
       "title": "《学习Go语言》中文版 - Gopher beyond El[i]phants",
-      "file": "chapters/001-x.md"
+      "file": "chapters/006-学习go语言-中文版.md"
     }
   ],
   "sourceType": "web",

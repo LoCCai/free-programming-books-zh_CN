@@ -2,8 +2,205 @@
   "bookId": "a487162c2004",
   "title": "Kotlin 中文文档",
   "url": "https://huanglizhuo.gitbooks.io/kotlin-in-chinese/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:26:20.226Z",
-  "chapters": [],
-  "error": "HTTP 404"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T12:12:04.054Z",
+  "chapters": [
+    {
+      "slug": "001-introduction",
+      "title": "Introduction · Kotlin-in-Chinese",
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-准备开始",
+      "title": "准备开始 · Kotlin-in-Chinese",
+      "file": "chapters/002-准备开始.md"
+    },
+    {
+      "slug": "003-基本语法",
+      "title": "基本语法 · Kotlin-in-Chinese",
+      "file": "chapters/003-基本语法.md"
+    },
+    {
+      "slug": "004-习惯用语",
+      "title": "习惯用语 · Kotlin-in-Chinese",
+      "file": "chapters/004-习惯用语.md"
+    },
+    {
+      "slug": "005-编码风格",
+      "title": "编码风格 · Kotlin-in-Chinese",
+      "file": "chapters/005-编码风格.md"
+    },
+    {
+      "slug": "006-基础",
+      "title": "基础 · Kotlin-in-Chinese",
+      "file": "chapters/006-基础.md"
+    },
+    {
+      "slug": "007-基本类型",
+      "title": "基本类型 · Kotlin-in-Chinese",
+      "file": "chapters/007-基本类型.md"
+    },
+    {
+      "slug": "008-包",
+      "title": "包 · Kotlin-in-Chinese",
+      "file": "chapters/008-包.md"
+    },
+    {
+      "slug": "009-控制流",
+      "title": "控制流 · Kotlin-in-Chinese",
+      "file": "chapters/009-控制流.md"
+    },
+    {
+      "slug": "010-返回与跳转",
+      "title": "返回与跳转 · Kotlin-in-Chinese",
+      "file": "chapters/010-返回与跳转.md"
+    },
+    {
+      "slug": "011-类和对象",
+      "title": "类和对象 · Kotlin-in-Chinese",
+      "file": "chapters/011-类和对象.md"
+    },
+    {
+      "slug": "012-类和继承",
+      "title": "类和继承 · Kotlin-in-Chinese",
+      "file": "chapters/012-类和继承.md"
+    },
+    {
+      "slug": "013-属性和字段",
+      "title": "属性和字段 · Kotlin-in-Chinese",
+      "file": "chapters/013-属性和字段.md"
+    },
+    {
+      "slug": "014-接口",
+      "title": "接口 · Kotlin-in-Chinese",
+      "file": "chapters/014-接口.md"
+    },
+    {
+      "slug": "015-可见性修饰词",
+      "title": "可见性修饰词 · Kotlin-in-Chinese",
+      "file": "chapters/015-可见性修饰词.md"
+    },
+    {
+      "slug": "016-扩展",
+      "title": "扩展 · Kotlin-in-Chinese",
+      "file": "chapters/016-扩展.md"
+    },
+    {
+      "slug": "017-数据对象",
+      "title": "数据对象 · Kotlin-in-Chinese",
+      "file": "chapters/017-数据对象.md"
+    },
+    {
+      "slug": "018-泛型",
+      "title": "泛型 · Kotlin-in-Chinese",
+      "file": "chapters/018-泛型.md"
+    },
+    {
+      "slug": "019-嵌套类",
+      "title": "嵌套类 · Kotlin-in-Chinese",
+      "file": "chapters/019-嵌套类.md"
+    },
+    {
+      "slug": "020-枚举类",
+      "title": "枚举类 · Kotlin-in-Chinese",
+      "file": "chapters/020-枚举类.md"
+    },
+    {
+      "slug": "021-对象表达式和声明",
+      "title": "对象表达式和声明 · Kotlin-in-Chinese",
+      "file": "chapters/021-对象表达式和声明.md"
+    },
+    {
+      "slug": "022-代理模式",
+      "title": "代理模式 · Kotlin-in-Chinese",
+      "file": "chapters/022-代理模式.md"
+    },
+    {
+      "slug": "023-代理属性",
+      "title": "代理属性 · Kotlin-in-Chinese",
+      "file": "chapters/023-代理属性.md"
+    },
+    {
+      "slug": "024-函数和lambda表达式",
+      "title": "函数和lambda表达式 · Kotlin-in-Chinese",
+      "file": "chapters/024-函数和lambda表达式.md"
+    },
+    {
+      "slug": "025-函数",
+      "title": "函数 · Kotlin-in-Chinese",
+      "file": "chapters/025-函数.md"
+    },
+    {
+      "slug": "026-高阶函数和lambda表达式",
+      "title": "高阶函数和lambda表达式 · Kotlin-in-Chinese",
+      "file": "chapters/026-高阶函数和lambda表达式.md"
+    },
+    {
+      "slug": "027-内联函数",
+      "title": "内联函数 · Kotlin-in-Chinese",
+      "file": "chapters/027-内联函数.md"
+    },
+    {
+      "slug": "028-协程",
+      "title": "协程 · Kotlin-in-Chinese",
+      "file": "chapters/028-协程.md"
+    },
+    {
+      "slug": "029-参考",
+      "title": "参考 · Kotlin-in-Chinese",
+      "file": "chapters/029-参考.md"
+    },
+    {
+      "slug": "030-互用性",
+      "title": "互用性 · Kotlin-in-Chinese",
+      "file": "chapters/030-互用性.md"
+    },
+    {
+      "slug": "031-动态类型",
+      "title": "动态类型 · Kotlin-in-Chinese",
+      "file": "chapters/031-动态类型.md"
+    },
+    {
+      "slug": "032-工具",
+      "title": "工具 · Kotlin-in-Chinese",
+      "file": "chapters/032-工具.md"
+    },
+    {
+      "slug": "033-kotlin代码文档",
+      "title": "Kotlin代码文档 · Kotlin-in-Chinese",
+      "file": "chapters/033-kotlin代码文档.md"
+    },
+    {
+      "slug": "034-使用maven",
+      "title": "使用Maven · Kotlin-in-Chinese",
+      "file": "chapters/034-使用maven.md"
+    },
+    {
+      "slug": "035-使用ant",
+      "title": "使用Ant · Kotlin-in-Chinese",
+      "file": "chapters/035-使用ant.md"
+    },
+    {
+      "slug": "036-使用gradle",
+      "title": "使用Gradle · Kotlin-in-Chinese",
+      "file": "chapters/036-使用gradle.md"
+    },
+    {
+      "slug": "037-faq",
+      "title": "FAQ · Kotlin-in-Chinese",
+      "file": "chapters/037-faq.md"
+    },
+    {
+      "slug": "038-与java对比",
+      "title": "与java对比 · Kotlin-in-Chinese",
+      "file": "chapters/038-与java对比.md"
+    },
+    {
+      "slug": "039-与scala对比",
+      "title": "与Scala对比 · Kotlin-in-Chinese",
+      "file": "chapters/039-与scala对比.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction · Kotlin-in-Chinese"
 }

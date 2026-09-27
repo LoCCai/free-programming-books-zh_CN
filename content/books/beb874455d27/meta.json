@@ -2,10 +2,120 @@
   "bookId": "beb874455d27",
   "title": "图说设计模式",
   "url": "https://github.com/me115/design_patterns",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:25:37.344Z",
-  "chapters": [],
+  "status": "ok",
+  "fetchedAt": "2026-09-27T11:53:43.527Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "readme",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-behavioral",
+      "title": "behavioral",
+      "file": "chapters/002-behavioral.md"
+    },
+    {
+      "slug": "003-command",
+      "title": "command",
+      "file": "chapters/003-command.md"
+    },
+    {
+      "slug": "004-mediator",
+      "title": "mediator",
+      "file": "chapters/004-mediator.md"
+    },
+    {
+      "slug": "005-observer",
+      "title": "observer",
+      "file": "chapters/005-observer.md"
+    },
+    {
+      "slug": "006-state",
+      "title": "state",
+      "file": "chapters/006-state.md"
+    },
+    {
+      "slug": "007-strategy",
+      "title": "strategy",
+      "file": "chapters/007-strategy.md"
+    },
+    {
+      "slug": "008-abstract-factory",
+      "title": "abstract_factory",
+      "file": "chapters/008-abstract-factory.md"
+    },
+    {
+      "slug": "009-builder",
+      "title": "builder",
+      "file": "chapters/009-builder.md"
+    },
+    {
+      "slug": "010-creational",
+      "title": "creational",
+      "file": "chapters/010-creational.md"
+    },
+    {
+      "slug": "011-factory-method",
+      "title": "factory_method",
+      "file": "chapters/011-factory-method.md"
+    },
+    {
+      "slug": "012-simple-factory",
+      "title": "simple_factory",
+      "file": "chapters/012-simple-factory.md"
+    },
+    {
+      "slug": "013-singleton",
+      "title": "singleton",
+      "file": "chapters/013-singleton.md"
+    },
+    {
+      "slug": "014-index",
+      "title": "index",
+      "file": "chapters/014-index.md"
+    },
+    {
+      "slug": "015-read-uml",
+      "title": "read_uml",
+      "file": "chapters/015-read-uml.md"
+    },
+    {
+      "slug": "016-adapter",
+      "title": "adapter",
+      "file": "chapters/016-adapter.md"
+    },
+    {
+      "slug": "017-bridge",
+      "title": "bridge",
+      "file": "chapters/017-bridge.md"
+    },
+    {
+      "slug": "018-decorator",
+      "title": "decorator",
+      "file": "chapters/018-decorator.md"
+    },
+    {
+      "slug": "019-facade",
+      "title": "facade",
+      "file": "chapters/019-facade.md"
+    },
+    {
+      "slug": "020-flyweight",
+      "title": "flyweight",
+      "file": "chapters/020-flyweight.md"
+    },
+    {
+      "slug": "021-proxy",
+      "title": "proxy",
+      "file": "chapters/021-proxy.md"
+    },
+    {
+      "slug": "022-structural",
+      "title": "structural",
+      "file": "chapters/022-structural.md"
+    }
+  ],
   "license": "custom",
-  "sourceType": "github",
-  "error": "没有可用章节"
+  "sourceType": "github"
 }

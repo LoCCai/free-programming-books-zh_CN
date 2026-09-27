@@ -3,12 +3,12 @@
   "title": "Javascript编程指南",
   "url": "http://pij.robinqu.me/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:32.914Z",
+  "fetchedAt": "2026-09-27T12:00:24.829Z",
   "chapters": [
     {
-      "slug": "001-m",
+      "slug": "001-redirecting",
       "title": "Redirecting...",
-      "file": "chapters/001-m.md"
+      "file": "chapters/001-redirecting.md"
     }
   ],
   "sourceType": "web",

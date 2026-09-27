@@ -3,12 +3,32 @@
   "title": "浏览器开发工具的秘密",
   "url": "http://jinlong.github.io/2013/08/29/devtoolsecrets/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:22.556Z",
+  "fetchedAt": "2026-09-27T11:57:05.521Z",
   "chapters": [
     {
-      "slug": "001-1f",
+      "slug": "001-浏览器开发工具的秘密",
       "title": "浏览器开发工具的秘密",
-      "file": "chapters/001-1f.md"
+      "file": "chapters/001-浏览器开发工具的秘密.md"
+    },
+    {
+      "slug": "002-首页",
+      "title": "Alon's Blog",
+      "file": "chapters/002-首页.md"
+    },
+    {
+      "slug": "003-分类",
+      "title": "分类",
+      "file": "chapters/003-分类.md"
+    },
+    {
+      "slug": "004-归档",
+      "title": "Alon's Blog",
+      "file": "chapters/004-归档.md"
+    },
+    {
+      "slug": "005-标签",
+      "title": "Tagcloud",
+      "file": "chapters/005-标签.md"
     }
   ],
   "sourceType": "web",

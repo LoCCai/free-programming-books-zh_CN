@@ -3,12 +3,112 @@
   "title": "Go语言定制指南",
   "url": "https://chai2010.cn/go-ast-book/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:49.149Z",
+  "fetchedAt": "2026-09-27T12:00:01.310Z",
   "chapters": [
     {
-      "slug": "001-w",
+      "slug": "001-go语言定制指南",
       "title": "Go语言定制指南 - Go语言定制指南",
-      "file": "chapters/001-w.md"
+      "file": "chapters/001-go语言定制指南.md"
+    },
+    {
+      "slug": "002-前言",
+      "title": "前言 - Go语言定制指南",
+      "file": "chapters/002-前言.md"
+    },
+    {
+      "slug": "003-1-第1章-记号",
+      "title": "第1章 记号 - Go语言定制指南",
+      "file": "chapters/003-1-第1章-记号.md"
+    },
+    {
+      "slug": "004-2-第2章-基础面值",
+      "title": "第2章 基础面值 - Go语言定制指南",
+      "file": "chapters/004-2-第2章-基础面值.md"
+    },
+    {
+      "slug": "005-3-第3章-基础表达式",
+      "title": "第3章 基础表达式 - Go语言定制指南",
+      "file": "chapters/005-3-第3章-基础表达式.md"
+    },
+    {
+      "slug": "006-4-第4章-代码结构",
+      "title": "第4章 代码结构 - Go语言定制指南",
+      "file": "chapters/006-4-第4章-代码结构.md"
+    },
+    {
+      "slug": "007-5-第5章-通用声明",
+      "title": "第5章 通用声明 - Go语言定制指南",
+      "file": "chapters/007-5-第5章-通用声明.md"
+    },
+    {
+      "slug": "008-6-第6章-函数声明",
+      "title": "第6章 函数声明 - Go语言定制指南",
+      "file": "chapters/008-6-第6章-函数声明.md"
+    },
+    {
+      "slug": "009-7-第7章-复合类型",
+      "title": "第7章 复合类型 - Go语言定制指南",
+      "file": "chapters/009-7-第7章-复合类型.md"
+    },
+    {
+      "slug": "010-8-第8章-复合面值",
+      "title": "第8章 复合面值 - Go语言定制指南",
+      "file": "chapters/010-8-第8章-复合面值.md"
+    },
+    {
+      "slug": "011-9-第9章-复合表达式",
+      "title": "第9章 复合表达式 - Go语言定制指南",
+      "file": "chapters/011-9-第9章-复合表达式.md"
+    },
+    {
+      "slug": "012-10-第10章-语句块和语句",
+      "title": "第10章 语句块和语句 - Go语言定制指南",
+      "file": "chapters/012-10-第10章-语句块和语句.md"
+    },
+    {
+      "slug": "013-11-第11章-类型检查",
+      "title": "第11章 类型检查 - Go语言定制指南",
+      "file": "chapters/013-11-第11章-类型检查.md"
+    },
+    {
+      "slug": "014-12-第12章-语义信息",
+      "title": "第12章 语义信息 - Go语言定制指南",
+      "file": "chapters/014-12-第12章-语义信息.md"
+    },
+    {
+      "slug": "015-13-第13章-ssa形式",
+      "title": "第13章 SSA形式 - Go语言定制指南",
+      "file": "chapters/015-13-第13章-ssa形式.md"
+    },
+    {
+      "slug": "016-14-第14章-凹语言",
+      "title": "第14章 凹语言 - Go语言定制指南",
+      "file": "chapters/016-14-第14章-凹语言.md"
+    },
+    {
+      "slug": "017-15-第15章-llvm简介",
+      "title": "第15章 LLVM简介 - Go语言定制指南",
+      "file": "chapters/017-15-第15章-llvm简介.md"
+    },
+    {
+      "slug": "018-16-第16章-llvm实例",
+      "title": "第16章 LLVM实例 - Go语言定制指南",
+      "file": "chapters/018-16-第16章-llvm实例.md"
+    },
+    {
+      "slug": "019-附录a-goyacc",
+      "title": "附录A goyacc - Go语言定制指南",
+      "file": "chapters/019-附录a-goyacc.md"
+    },
+    {
+      "slug": "020-附录b-antlr4",
+      "title": "附录B ANTLR4 - Go语言定制指南",
+      "file": "chapters/020-附录b-antlr4.md"
+    },
+    {
+      "slug": "021-https-chai2010-cn-go-ast-book",
+      "title": "Go语言定制指南 - Go语言定制指南",
+      "file": "chapters/021-https-chai2010-cn-go-ast-book.md"
     }
   ],
   "sourceType": "web",

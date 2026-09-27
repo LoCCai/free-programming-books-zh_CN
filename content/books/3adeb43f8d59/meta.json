@@ -3,12 +3,22 @@
   "title": "正则表达式30分钟入门教程",
   "url": "http://deerchao.net/tutorials/regex/regex.htm",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:27.597Z",
+  "fetchedAt": "2026-09-27T11:57:18.001Z",
   "chapters": [
     {
-      "slug": "001-19",
+      "slug": "001-来源",
       "title": "正则表达式30分钟入门教程",
-      "file": "chapters/001-19.md"
+      "file": "chapters/001-来源.md"
+    },
+    {
+      "slug": "002-常用正则表达式",
+      "title": "常用正则表达式",
+      "file": "chapters/002-常用正则表达式.md"
+    },
+    {
+      "slug": "003-正则表达式引擎特性对比",
+      "title": "正则表达式引擎/风味对比",
+      "file": "chapters/003-正则表达式引擎特性对比.md"
     }
   ],
   "sourceType": "web",

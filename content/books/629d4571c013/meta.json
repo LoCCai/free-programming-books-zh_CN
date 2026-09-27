@@ -3,257 +3,327 @@
   "title": "开源世界旅行手册",
   "url": "http://i.linuxtoy.org/docs/guide/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-26T19:08:31.459Z",
+  "fetchedAt": "2026-09-27T11:54:57.959Z",
   "chapters": [
     {
-      "slug": "001-17",
+      "slug": "001-开源世界旅行手册",
       "title": "开源世界旅行手册",
-      "file": "chapters/001-17.md"
+      "file": "chapters/001-开源世界旅行手册.md"
     },
     {
-      "slug": "002-16",
+      "slug": "002-授权",
       "title": "授权",
-      "file": "chapters/002-16.md"
+      "file": "chapters/002-授权.md"
     },
     {
-      "slug": "003-16",
+      "slug": "003-致谢",
       "title": "致谢",
-      "file": "chapters/003-16.md"
+      "file": "chapters/003-致谢.md"
     },
     {
-      "slug": "004-16",
+      "slug": "004-序言",
       "title": "序言",
-      "file": "chapters/004-16.md"
+      "file": "chapters/004-序言.md"
     },
     {
-      "slug": "005-16",
+      "slug": "005-更新纪录",
       "title": "更新纪录",
-      "file": "chapters/005-16.md"
+      "file": "chapters/005-更新纪录.md"
     },
     {
-      "slug": "006-16",
+      "slug": "006-导读",
       "title": "导读",
-      "file": "chapters/006-16.md"
+      "file": "chapters/006-导读.md"
     },
     {
-      "slug": "007-16",
+      "slug": "007-如何写作科技文档",
       "title": "如何写作科技文档",
-      "file": "chapters/007-16.md"
+      "file": "chapters/007-如何写作科技文档.md"
     },
     {
-      "slug": "008-16",
+      "slug": "008-i-气候",
       "title": "部分 I. 气候",
-      "file": "chapters/008-16.md"
+      "file": "chapters/008-i-气候.md"
     },
     {
-      "slug": "009-16",
+      "slug": "009-1-gui-cli",
       "title": "第 1 章 GUI? CLI?",
-      "file": "chapters/009-16.md"
+      "file": "chapters/009-1-gui-cli.md"
     },
     {
-      "slug": "010-16",
+      "slug": "010-2-unix-缩写风格",
       "title": "第 2 章 UNIX 缩写风格",
-      "file": "chapters/010-16.md"
+      "file": "chapters/010-2-unix-缩写风格.md"
     },
     {
-      "slug": "011-19",
-      "title": "缩写习惯",
-      "file": "chapters/011-19.md"
-    },
-    {
-      "slug": "012-19",
-      "title": "命令选项，从a到z",
-      "file": "chapters/012-19.md"
-    },
-    {
-      "slug": "013-16",
+      "slug": "011-3-版本号的迷雾",
       "title": "第 3 章 版本号的迷雾",
-      "file": "chapters/013-16.md"
+      "file": "chapters/011-3-版本号的迷雾.md"
     },
     {
-      "slug": "014-16",
+      "slug": "012-4-vim-还是-emacs",
       "title": "第 4 章 Vim 还是 Emacs",
-      "file": "chapters/014-16.md"
+      "file": "chapters/012-4-vim-还是-emacs.md"
     },
     {
-      "slug": "015-16",
+      "slug": "013-5-docbook-还是-tex",
       "title": "第 5 章 DocBook 还是 TeX",
-      "file": "chapters/015-16.md"
+      "file": "chapters/013-5-docbook-还是-tex.md"
     },
     {
-      "slug": "016-16",
+      "slug": "014-6-完全用-gnu-linux-工作",
       "title": "第 6 章 完全用 Gnu/Linux 工作",
-      "file": "chapters/016-16.md"
+      "file": "chapters/014-6-完全用-gnu-linux-工作.md"
     },
     {
-      "slug": "017-19",
-      "title": "UNIX 不是计算机专家的专利",
-      "file": "chapters/017-19.md"
-    },
-    {
-      "slug": "018-19",
-      "title": "理解 GNU/Linux",
-      "file": "chapters/018-19.md"
-    },
-    {
-      "slug": "019-19",
-      "title": "微软的地位",
-      "file": "chapters/019-19.md"
-    },
-    {
-      "slug": "020-19",
-      "title": "为什么要反对使用 Windows",
-      "file": "chapters/020-19.md"
-    },
-    {
-      "slug": "021-19",
-      "title": "GUI vs. CLI",
-      "file": "chapters/021-19.md"
-    },
-    {
-      "slug": "022-19",
-      "title": "UNIX 是简单的",
-      "file": "chapters/022-19.md"
-    },
-    {
-      "slug": "023-19",
-      "title": "UNIX 是永恒的",
-      "file": "chapters/023-19.md"
-    },
-    {
-      "slug": "024-19",
-      "title": "UNIX 是强大的",
-      "file": "chapters/024-19.md"
-    },
-    {
-      "slug": "025-19",
-      "title": "学 UNIX 绝对不是浪费时间",
-      "file": "chapters/025-19.md"
-    },
-    {
-      "slug": "026-19",
-      "title": "怎样完全用 GNU/Linux 工作",
-      "file": "chapters/026-19.md"
-    },
-    {
-      "slug": "027-19",
-      "title": "结论",
-      "file": "chapters/027-19.md"
-    },
-    {
-      "slug": "028-19",
-      "title": "附录: 我用来处理日常事务的 Linux 程序",
-      "file": "chapters/028-19.md"
-    },
-    {
-      "slug": "029-16",
+      "slug": "015-7-病毒",
       "title": "第 7 章 病毒",
-      "file": "chapters/029-16.md"
+      "file": "chapters/015-7-病毒.md"
     },
     {
-      "slug": "030-19",
-      "title": "Windows 的缺陷",
-      "file": "chapters/030-19.md"
-    },
-    {
-      "slug": "031-19",
-      "title": "Unix 的健壮",
-      "file": "chapters/031-19.md"
-    },
-    {
-      "slug": "032-19",
-      "title": "历史",
-      "file": "chapters/032-19.md"
-    },
-    {
-      "slug": "033-16",
+      "slug": "016-8-磁盘-分区",
       "title": "第 8 章 磁盘 分区",
-      "file": "chapters/033-16.md"
+      "file": "chapters/016-8-磁盘-分区.md"
     },
     {
-      "slug": "034-19",
-      "title": "挂载分区",
-      "file": "chapters/034-19.md"
-    },
-    {
-      "slug": "035-16",
+      "slug": "017-9-文件系统",
       "title": "第 9 章 文件系统",
-      "file": "chapters/035-16.md"
+      "file": "chapters/017-9-文件系统.md"
     },
     {
-      "slug": "036-16",
+      "slug": "018-10-发行版介绍",
       "title": "第 10 章   发行版介绍",
-      "file": "chapters/036-16.md"
+      "file": "chapters/018-10-发行版介绍.md"
     },
     {
-      "slug": "037-16",
+      "slug": "019-11-编程语言",
       "title": "第 11 章   编程语言",
-      "file": "chapters/037-16.md"
+      "file": "chapters/019-11-编程语言.md"
     },
     {
-      "slug": "038-16",
+      "slug": "020-12-无根的根-无名师的-unix-心传",
       "title": "第 12 章 无根的根：无名师的 Unix 心传",
-      "file": "chapters/038-16.md"
+      "file": "chapters/020-12-无根的根-无名师的-unix-心传.md"
     },
     {
-      "slug": "039-19",
-      "title": "无名师与万行码",
-      "file": "chapters/039-19.md"
-    },
-    {
-      "slug": "040-19",
-      "title": "无名师与脚本狂",
-      "file": "chapters/040-19.md"
-    },
-    {
-      "slug": "041-19",
-      "title": "无名师的双路论",
-      "file": "chapters/041-19.md"
-    },
-    {
-      "slug": "042-19",
-      "title": "无名师与方法论",
-      "file": "chapters/042-19.md"
-    },
-    {
-      "slug": "043-19",
-      "title": "无名师的GUI论",
-      "file": "chapters/043-19.md"
-    },
-    {
-      "slug": "044-19",
-      "title": "无名师与Unix狂",
-      "file": "chapters/044-19.md"
-    },
-    {
-      "slug": "045-19",
-      "title": "无名师的Unix传统论",
-      "file": "chapters/045-19.md"
-    },
-    {
-      "slug": "046-19",
-      "title": "无名师与最终用户",
-      "file": "chapters/046-19.md"
-    },
-    {
-      "slug": "047-16",
+      "slug": "021-ii-地理",
       "title": "部分 II. 地理",
-      "file": "chapters/047-16.md"
+      "file": "chapters/021-ii-地理.md"
     },
     {
-      "slug": "048-16",
+      "slug": "022-13-基础知识",
       "title": "第 13 章 基础知识",
-      "file": "chapters/048-16.md"
+      "file": "chapters/022-13-基础知识.md"
     },
     {
-      "slug": "049-19",
-      "title": "Shell",
-      "file": "chapters/049-19.md"
+      "slug": "023-14-命令系统",
+      "title": "第 14 章 命令系统",
+      "file": "chapters/023-14-命令系统.md"
     },
     {
-      "slug": "050-19",
-      "title": "命令",
-      "file": "chapters/050-19.md"
+      "slug": "024-15-基本系统",
+      "title": "第 15 章 基本系统",
+      "file": "chapters/024-15-基本系统.md"
+    },
+    {
+      "slug": "025-16-软件管理",
+      "title": "第 16 章 软件管理",
+      "file": "chapters/025-16-软件管理.md"
+    },
+    {
+      "slug": "026-17-核心工具集",
+      "title": "第 17 章 核心工具集",
+      "file": "chapters/026-17-核心工具集.md"
+    },
+    {
+      "slug": "027-18-编译工具链",
+      "title": "第 18 章 编译工具链",
+      "file": "chapters/027-18-编译工具链.md"
+    },
+    {
+      "slug": "028-19-图形界面",
+      "title": "第 19 章 图形界面",
+      "file": "chapters/028-19-图形界面.md"
+    },
+    {
+      "slug": "029-20-国际化",
+      "title": "第 20 章 国际化",
+      "file": "chapters/029-20-国际化.md"
+    },
+    {
+      "slug": "030-21-内核",
+      "title": "第 21 章   内核",
+      "file": "chapters/030-21-内核.md"
+    },
+    {
+      "slug": "031-22-grub",
+      "title": "第 22 章 Grub",
+      "file": "chapters/031-22-grub.md"
+    },
+    {
+      "slug": "032-23-服务器",
+      "title": "第 23 章 服务器",
+      "file": "chapters/032-23-服务器.md"
+    },
+    {
+      "slug": "033-24-vim-编辑器",
+      "title": "第 24 章 Vim 编辑器",
+      "file": "chapters/033-24-vim-编辑器.md"
+    },
+    {
+      "slug": "034-25-emacs-入门",
+      "title": "第 25 章 Emacs 入门",
+      "file": "chapters/034-25-emacs-入门.md"
+    },
+    {
+      "slug": "035-26-正则表达式",
+      "title": "第 26 章 正则表达式",
+      "file": "chapters/035-26-正则表达式.md"
+    },
+    {
+      "slug": "036-27-docbook-指南",
+      "title": "第 27 章 docbook 指南",
+      "file": "chapters/036-27-docbook-指南.md"
+    },
+    {
+      "slug": "037-28-git-版本控制系统",
+      "title": "第 28 章 Git 版本控制系统",
+      "file": "chapters/037-28-git-版本控制系统.md"
+    },
+    {
+      "slug": "038-29-context-入门指南",
+      "title": "第 29 章 ConTeXt 入门指南",
+      "file": "chapters/038-29-context-入门指南.md"
+    },
+    {
+      "slug": "039-iii-景观",
+      "title": "部分 III. 景观",
+      "file": "chapters/039-iii-景观.md"
+    },
+    {
+      "slug": "040-30-终极-shell-zsh",
+      "title": "第 30 章 终极 Shell -- ZSH",
+      "file": "chapters/040-30-终极-shell-zsh.md"
+    },
+    {
+      "slug": "041-31-完美工作站-archlinux",
+      "title": "第 31 章 完美工作站 Archlinux",
+      "file": "chapters/041-31-完美工作站-archlinux.md"
+    },
+    {
+      "slug": "042-32-组织你的意念-emacs-org-mode",
+      "title": "第 32 章 组织你的意念：Emacs org mode",
+      "file": "chapters/042-32-组织你的意念-emacs-org-mode.md"
+    },
+    {
+      "slug": "043-33-zsh-screen",
+      "title": "第 33 章   Zsh+screen",
+      "file": "chapters/043-33-zsh-screen.md"
+    },
+    {
+      "slug": "044-34-gentoo-stage3",
+      "title": "第 34 章 gentoo stage3",
+      "file": "chapters/044-34-gentoo-stage3.md"
+    },
+    {
+      "slug": "045-35-硬件问题",
+      "title": "第 35 章   硬件问题",
+      "file": "chapters/045-35-硬件问题.md"
+    },
+    {
+      "slug": "046-36-网络设置",
+      "title": "第 36 章   网络设置",
+      "file": "chapters/046-36-网络设置.md"
+    },
+    {
+      "slug": "047-37-自制-livecd",
+      "title": "第 37 章 自制 LiveCD",
+      "file": "chapters/047-37-自制-livecd.md"
+    },
+    {
+      "slug": "048-38-awesome",
+      "title": "第 38 章 awesome",
+      "file": "chapters/048-38-awesome.md"
+    },
+    {
+      "slug": "049-39-openbox-工作环境",
+      "title": "第 39 章 openbox 工作环境",
+      "file": "chapters/049-39-openbox-工作环境.md"
+    },
+    {
+      "slug": "050-40-emacs-muse",
+      "title": "第 40 章 Emacs muse",
+      "file": "chapters/050-40-emacs-muse.md"
+    },
+    {
+      "slug": "051-41-写作工具链",
+      "title": "第 41 章   写作工具链",
+      "file": "chapters/051-41-写作工具链.md"
+    },
+    {
+      "slug": "052-42-使用-lftp",
+      "title": "第 42 章 使用 lftp",
+      "file": "chapters/052-42-使用-lftp.md"
+    },
+    {
+      "slug": "053-43-firefox-使用技巧",
+      "title": "第 43 章 Firefox 使用技巧",
+      "file": "chapters/053-43-firefox-使用技巧.md"
+    },
+    {
+      "slug": "054-44-fvwm",
+      "title": "第 44 章   FVWM",
+      "file": "chapters/054-44-fvwm.md"
+    },
+    {
+      "slug": "055-iv-地质",
+      "title": "部分 IV. 地质",
+      "file": "chapters/055-iv-地质.md"
+    },
+    {
+      "slug": "056-45-unix",
+      "title": "第 45 章 Unix",
+      "file": "chapters/056-45-unix.md"
+    },
+    {
+      "slug": "057-46-gnu",
+      "title": "第 46 章   Gnu",
+      "file": "chapters/057-46-gnu.md"
+    },
+    {
+      "slug": "058-47-软件业自由之神-richard-stallman",
+      "title": "第 47 章 软件业自由之神——Richard Stallman",
+      "file": "chapters/058-47-软件业自由之神-richard-stallman.md"
+    },
+    {
+      "slug": "059-48-linux",
+      "title": "第 48 章 Linux",
+      "file": "chapters/059-48-linux.md"
+    },
+    {
+      "slug": "060-49-gnome与kde的战争",
+      "title": "第 49 章 GNOME与KDE的战争",
+      "file": "chapters/060-49-gnome与kde的战争.md"
+    },
+    {
+      "slug": "061-50-vim-emacs",
+      "title": "第 50 章 Vim Emacs",
+      "file": "chapters/061-50-vim-emacs.md"
+    },
+    {
+      "slug": "062-51-年代纪",
+      "title": "第 51 章   年代纪",
+      "file": "chapters/062-51-年代纪.md"
+    },
+    {
+      "slug": "063-52-我的选择",
+      "title": "第 52 章 我的选择",
+      "file": "chapters/063-52-我的选择.md"
+    },
+    {
+      "slug": "064-53-补遗",
+      "title": "第 53 章   补遗",
+      "file": "chapters/064-53-补遗.md"
     }
   ],
   "sourceType": "web",

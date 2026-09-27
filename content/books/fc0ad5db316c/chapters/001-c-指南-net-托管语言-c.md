@@ -1,0 +1,201 @@
+C# 指南包含文章、教程和代码示例，可帮助你开始使用 C# 和 .NET 平台。 经验丰富的开发人员可以在“新增功能”部分了解新功能。 经验丰富的开发人员可以从参考和语言规范中了解语言行为的详细信息。
+
+开始使用
+
+[C# 教程](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/overview)
+
+概念
+
+[基础](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/program-structure/)
+
+新增功能
+
+[最新动态](https://learn.microsoft.com/zh-cn/dotnet/csharp/whats-new/csharp-15)
+
+video
+
+[了解 C# 视频系列](https://aka.ms/dotnet/beginnervideos/learn/csharp)
+
+培训
+
+[C# 学习路径](https://learn.microsoft.com/collections/yz26f8y64n7k07)
+
+培训
+
+[基础 C# 认证 - freeCodeCamp](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
+
+## 了解如何进行编程
+
+C# 语言的主要概念和功能
+
+![](https://learn.microsoft.com/zh-cn/dotnet/media/logo_csharp.png)
+
+### 开始
+
+-   [C# 教程](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/overview)
+-   [使用 C# 可以开发的内容是什么](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/what-you-can-build)
+-   [初学者 C# 教程](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/tutorials/)
+-   [适用于 Java 开发人员的 C#](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/tips-for-java-developers)
+-   [C# 初学者视频系列](https://aka.ms/dotnet/beginnervideos/learn/csharp)
+-   [基础 C# 认证](https://aka.ms/csharp-certification)
+
+![](https://learn.microsoft.com/zh-cn/dotnet/media/dotnet-bot.svg)
+
+### 基础
+
+-   [类型系统](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/types/)
+-   [面向对象的编程](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/object-oriented/)
+-   [模式匹配](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/patterns/pattern-matching)
+-   [异常](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/exceptions/)
+-   [编码样式](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/coding-style/identifier-names)
+-   [C# 语言策略](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/strategy)
+
+![](https://learn.microsoft.com/zh-cn/dotnet/media/dotnet-bot_presenting.svg)
+
+### 语言概念
+
+-   [编程概念](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/)
+-   [LINQ](https://learn.microsoft.com/zh-cn/dotnet/csharp/linq/)
+-   [异步编程](https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/)
+
+![](https://learn.microsoft.com/zh-cn/dotnet/media/dotnet-bot_jetpack-faceing-right.svg)
+
+### 高级语言概念
+
+-   [反射和属性](https://learn.microsoft.com/zh-cn/dotnet/csharp/advanced-topics/reflection-and-attributes/)
+-   [接口实现](https://learn.microsoft.com/zh-cn/dotnet/csharp/advanced-topics/interface-implementation/default-interface-methods-versions)
+-   [表达式树](https://learn.microsoft.com/zh-cn/dotnet/csharp/advanced-topics/expression-trees/)
+-   [本地互操作性](https://learn.microsoft.com/zh-cn/dotnet/csharp/advanced-topics/interop/)
+-   [性能工程](https://learn.microsoft.com/zh-cn/dotnet/csharp/advanced-topics/performance/)
+-   [.NET 编译器平台 （roslyn） SDK](https://learn.microsoft.com/zh-cn/dotnet/csharp/roslyn-sdk/)
+
+## 参考
+
+阅读 C# 语言参考资料和 C# 语言规范。 C# 参考提供了有关 C# 语言的详尽参考。 C# 语言规范是 C# 语言的规范性参考。 它是 C# 语言语法和语义的官方来源。 尚未纳入标准的功能由功能规范文档进行说明。
+
+### 语言参考
+
+C# 语言参考提供了有关 C# 语言的详尽说明。
+
+-   [C# 语言参考](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/)
+    
+-   [内置类型](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-types)
+    
+-   [关键字](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/)
+    
+-   [运算符](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/)
+    
+-   [声明](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/statements/declarations)
+    
+-   [特殊字符](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/)
+    
+-   [文档注释](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/xmldoc/)
+    
+
+### 语言参考
+
+不安全代码和编译器选项
+
+-   [特殊属性](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/attributes/global)
+    
+-   [不安全代码](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/unsafe-code)
+    
+-   [预处理器指令](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/preprocessor-directives)
+    
+-   [编译器选项](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/compiler-options/)
+    
+
+### 语言规范
+
+C# 语言的官方规范
+
+-   [标准和规范](https://learn.microsoft.com/zh-cn/dotnet/csharp/specification/)
+    
+-   [规范流程](https://learn.microsoft.com/zh-cn/dotnet/csharp/specification/overview)
+    
+-   [C# 草稿标准](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/language-specification/readme)
+    
+-   [功能规范](https://learn.microsoft.com/zh-cn/dotnet/csharp/specification/feature-spec-overview)
+    
+
+## 使用 Visual Studio 系列生成 C# 应用
+
+选择 Visual Studio 或 Visual Studio Code 以生成 C# 应用程序。
+
+[Visual Studio](https://learn.microsoft.com/zh-cn/visualstudio/windows)
+
+[Visual Studio Code](https://code.visualstudio.com/docs/csharp/get-started)
+
+## 创建应用程序
+
+你可以选择 Web 应用、移动应用、桌面应用、游戏、IoT 等。
+
+### 机器学习和 AI
+
+-   [通过 ML.NET 生成自定义 AI 解决方案](https://learn.microsoft.com/zh-cn/dotnet/machine-learning/)
+-   [Azure 认知服务](https://learn.microsoft.com/zh-cn/azure/cognitive-services/)
+-   [Azure 机器学习](https://learn.microsoft.com/zh-cn/azure/machine-learning)
+-   [用于机器学习的 F#](https://learn.microsoft.com/zh-cn/dotnet/fsharp/scenarios/machine-learning)
+
+### 云
+
+-   [面向 .NET 开发人员的 Azure](https://learn.microsoft.com/zh-cn/dotnet/azure/)
+-   [Aspire](https://aspire.dev/)
+-   [使用 Aspire 构建云原生应用](https://aspire.dev/get-started/first-app/)
+-   [迁移本地 .NET Web 应用或服务](https://learn.microsoft.com/zh-cn/dotnet/azure/migration/app-service?preserve-view=true&view=azure-dotnet)
+-   [适用于 .NET 开发人员的 Azure 服务](https://learn.microsoft.com/zh-cn/dotnet/azure/key-azure-services)
+-   [用于 .NET 的 Azure SDK](https://learn.microsoft.com/zh-cn/dotnet/azure/sdk/azure-sdk-for-dotnet)
+-   [使用 F# 部署 Azure 资源](https://learn.microsoft.com/zh-cn/dotnet/fsharp/using-fsharp-on-azure/deploying-and-managing)
+
+### Web
+
+-   [ASP.NET Core 教程](https://learn.microsoft.com/zh-cn/aspnet/core/tutorials)
+-   [什么是 ASP.NET Core？](https://learn.microsoft.com/zh-cn/aspnet/core)
+-   [Visual Studio 中的 ASP.NET Core](https://learn.microsoft.com/zh-cn/aspnet/core/tutorials/first-mvc-app/start-mvc)
+-   [Windows 容器中的 ASP.NET MVC 应用](https://learn.microsoft.com/zh-cn/aspnet/mvc/overview/deployment/docker-aspnetmvc)
+-   [Blazor：带 .NET 的交互式客户端 Web UI](https://learn.microsoft.com/zh-cn/aspnet/core/blazor/)
+-   [适用于 Web 开发的 F#](https://learn.microsoft.com/zh-cn/dotnet/fsharp/scenarios/web-development)
+
+### 微服务
+
+-   [适用于 .NET 开发人员的 Dapr](https://learn.microsoft.com/zh-cn/dotnet/architecture/dapr-for-net-developers/)
+-   [云原生 .NET 应用](https://learn.microsoft.com/zh-cn/dotnet/architecture/cloud-native/)
+-   [使用 Azure 的无服务器应用](https://learn.microsoft.com/zh-cn/dotnet/architecture/serverless/)
+-   [适用于容器化 .NET 应用的体系结构](https://learn.microsoft.com/zh-cn/dotnet/architecture/microservices/)
+-   [将辅助角色服务部署到 Azure](https://learn.microsoft.com/zh-cn/dotnet/core/extensions/cloud-service)
+
+### 移动、桌面和 IoT
+
+-   [Windows Presentation Foundation](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/)
+-   [Windows 窗体](https://learn.microsoft.com/zh-cn/dotnet/desktop/winforms/)
+-   [.NET 多平台应用 UI (MAUI)](https://learn.microsoft.com/zh-cn/dotnet/maui)
+-   [使用 Azure 开发移动应用](https://learn.microsoft.com/zh-cn/azure/developer/mobile-apps)
+-   [.NET IoT 库](https://learn.microsoft.com/zh-cn/dotnet/iot/)
+-   [在 5 分钟内开始使用 IOT](https://learn.microsoft.com/zh-cn/dotnet/iot/quickstarts/sensehat)
+-   [使 LED 闪烁](https://learn.microsoft.com/zh-cn/dotnet/iot/tutorials/blink-led)
+-   [.NET IoT 101 视频系列](https://aka.ms/dotnet/beginnervideos/youtube/iot)
+
+### 游戏开发
+
+-   [利用 Visual Studio 开发游戏](https://visualstudio.microsoft.com/vs/features/game-development/?utm_medium=microsoft&utm_source=learn.microsoft.com&utm_campaign=inline+link)
+-   [了解如何使用 CRYENGINE 和 C# 开发游戏](https://docs.cryengine.com/display/CEPROG/C%23+Programming)
+-   [使用 MonoGame 库和 C# 开发游戏](https://docs.monogame.net/?page=main)
+-   [了解如何使用 Unity 和 C# 开发 2D 和 3D 游戏](https://docs.unity3d.com/Manual/index.html)
+
+## API 和语言参考
+
+搜索 .NET API 和语言参考文档。
+
+[.NET API 参考](https://learn.microsoft.com/zh-cn/dotnet/api/)
+
+.NET 的 API 参考文档
+
+[ASP.NET Core API 参考](https://learn.microsoft.com/zh-cn/dotnet/api/)
+
+ASP.NET Core 的 API 参考文档
+
+[.NET Framework API 参考](https://learn.microsoft.com/zh-cn/dotnet/api/?view=netframework-4.8&preserve-view=true)
+
+.NET Framework 的 API 参考文档
+
+是否有兴趣参与撰写 .NET 文档？ 有关详细信息，请参阅[参与者指南](https://learn.microsoft.com/zh-cn/contribute/dotnet/dotnet-contribute)。

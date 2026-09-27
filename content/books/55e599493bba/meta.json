@@ -3,12 +3,12 @@
   "title": "Python 绘图库 matplotlib 官方指南中文翻译",
   "url": "http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:30.606Z",
+  "fetchedAt": "2026-09-27T12:02:53.871Z",
   "chapters": [
     {
-      "slug": "001-1k",
+      "slug": "001-liam0205-me",
       "title": "liam0205.me",
-      "file": "chapters/001-1k.md"
+      "file": "chapters/001-liam0205-me.md"
     }
   ],
   "sourceType": "web",

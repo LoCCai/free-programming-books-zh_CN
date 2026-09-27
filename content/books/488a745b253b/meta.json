@@ -3,12 +3,87 @@
   "title": "Mercurial 使用教程",
   "url": "https://www.mercurial-scm.org/wiki/ChineseTutorial",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:37.425Z",
+  "fetchedAt": "2026-09-27T11:55:51.348Z",
   "chapters": [
     {
-      "slug": "001-1e",
+      "slug": "001-mercurial-wiki-archive",
+      "title": "Mercurial Wiki archive",
+      "file": "chapters/001-mercurial-wiki-archive.md"
+    },
+    {
+      "slug": "002-chinesetutorial",
       "title": "ChineseTutorial - Mercurial",
-      "file": "chapters/001-1e.md"
+      "file": "chapters/002-chinesetutorial.md"
+    },
+    {
+      "slug": "003-frenchtutorial",
+      "title": "FrenchTutorial - Mercurial",
+      "file": "chapters/003-frenchtutorial.md"
+    },
+    {
+      "slug": "004-japanesetutorial",
+      "title": "JapaneseTutorial - Mercurial",
+      "file": "chapters/004-japanesetutorial.md"
+    },
+    {
+      "slug": "005-chinesetutorialinstall",
+      "title": "ChineseTutorialInstall - Mercurial",
+      "file": "chapters/005-chinesetutorialinstall.md"
+    },
+    {
+      "slug": "006-chinesetutorialclone",
+      "title": "ChineseTutorialClone - Mercurial",
+      "file": "chapters/006-chinesetutorialclone.md"
+    },
+    {
+      "slug": "007-仓库",
+      "title": "Repository - Mercurial",
+      "file": "chapters/007-仓库.md"
+    },
+    {
+      "slug": "008-chinesetutorialhistory",
+      "title": "ChineseTutorialHistory - Mercurial",
+      "file": "chapters/008-chinesetutorialhistory.md"
+    },
+    {
+      "slug": "009-chinesetutorialfirstchange",
+      "title": "ChineseTutorialFirstChange - Mercurial",
+      "file": "chapters/009-chinesetutorialfirstchange.md"
+    },
+    {
+      "slug": "010-chinesetutorialsharechange",
+      "title": "ChineseTutorialShareChange - Mercurial",
+      "file": "chapters/010-chinesetutorialsharechange.md"
+    },
+    {
+      "slug": "011-chinesetutorialexport",
+      "title": "ChineseTutorialExport - Mercurial",
+      "file": "chapters/011-chinesetutorialexport.md"
+    },
+    {
+      "slug": "012-chinesetutorialmerge",
+      "title": "ChineseTutorialMerge - Mercurial",
+      "file": "chapters/012-chinesetutorialmerge.md"
+    },
+    {
+      "slug": "013-chinesetutorialconflict",
+      "title": "ChineseTutorialConflict - Mercurial",
+      "file": "chapters/013-chinesetutorialconflict.md"
+    },
+    {
+      "slug": "014-合并",
+      "title": "Merge - Mercurial",
+      "file": "chapters/014-合并.md"
+    },
+    {
+      "slug": "015-chinesetutorialconclusion",
+      "title": "ChineseTutorialConclusion - Mercurial",
+      "file": "chapters/015-chinesetutorialconclusion.md"
+    },
+    {
+      "slug": "016-abuehl",
+      "title": "abuehl - Mercurial",
+      "file": "chapters/016-abuehl.md"
     }
   ],
   "sourceType": "web",

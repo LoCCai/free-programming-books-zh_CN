@@ -1,0 +1,1 @@
+<table><tbody><tr><td><a href="https://webpy.org/" title="Home"><img src="https://webpy.org/static/webpy.gif" alt=""></a></td><td>“Think about the ideal way to write a web app.<br>Write the code to make it happen.” [<a href="https://webpy.org/philosophy">more...</a>]</td></tr></tbody></table>

@@ -1,0 +1,375 @@
+[![w3cschool](https://www.w3cschool.cn/statics/images/logonew2.png)](http://www.w3cschool.cn "w3cschool")
+
+-   [编程课程](http://www.w3cschool.cn/courses "编程课程")
+-   [编程实战](http://www.w3cschool.cn/codecamp "编程实战")
+-   [编程题库](http://www.w3cschool.cn/exam "编程题库")
+-   [编程教程](http://www.w3cschool.cn/tutorial "编程教程")
+-   [在线工具](https://123.w3cschool.cn/webtools "w3cschool在线工具集合")
+-    [![](https://atts.w3cschool.cn/trae.png) TRAE-AI编程](https://www.trae.cn/sem/?utm_source=advertising&utm_medium=w3cschool_ug_cpa&utm_term=hw_trae_w3cschool)
+-   [VIP会员 _开学季_](http://www.w3cschool.cn/vip?fcode=headermenu "VIP会员")
+
+[App下载](http://www.w3cschool.cn/download "App下载")
+
+![APP二维码](https://www.w3cschool.cn/statics/images/w3c/app-qrcode2.png)
+
+扫码下载编程狮APP
+
+[注册](http://www.w3cschool.cn/register?refer=/)|[登录](http://www.w3cschool.cn/login?refer=/)
+
+-   [入门教程](https://www.w3cschool.cn/tutorial "编程入门教程")
+-   [编程课程](https://www.w3cschool.cn/learn "编程课程")
+-   [VIP会员](https://www.w3cschool.cn/vip?fcode=m_indexmenu "VIP会员")
+
+[
+
+![PHPUnit5.0中文手册](https://atts.w3cschool.cn/attachments/cover/cover_jrwoig.jpeg?t=1314520?imageView2/1/w/48/h/48)
+
+PHPUnit5.0中文手册
+
+
+
+](https://www.w3cschool.cn/phpunit5 "PHPUnit5.0中文手册")
+
+-   赞
+-   收藏
+
+-   [更多文章](https://www.w3cschool.cn/phpunit5/list/ "更多文章")
+
+-   目录
+-   搜索
+-   书签
+
+1.  [PHPUnit 手册](https://www.w3cschool.cn/phpunit5/lp46tozt.html "PHPUnit 手册")
+    
+2.  [1\. 安装 PHPUnit](https://www.w3cschool.cn/phpunit5/39gxlcqm.html "1. 安装 PHPUnit")
+    
+    1.  [需求](https://www.w3cschool.cn/phpunit5/lbe2kozt.html "需求")
+        
+    2.  [PHP 档案包 (PHAR)](https://www.w3cschool.cn/phpunit5/fj178ozt.html "PHP 档案包 (PHAR)")
+        
+    3.  [Composer](https://www.w3cschool.cn/phpunit5/vq4rmozt.html "Composer")
+        
+    4.  [可选的组件包](https://www.w3cschool.cn/phpunit5/u2etxozt.html "可选的组件包")
+        
+    5.  [PHPUnit 通义灵码](https://www.w3cschool.cn/phpunit5/phpunit-tongyilingma.html "如何使用通义灵码完成PHP单元测试 - AI辅助开发教程")
+        
+3.  [2\. 编写 PHPUnit 测试](https://www.w3cschool.cn/phpunit5/21yf6cqm.html "2. 编写 PHPUnit 测试")
+    
+    1.  [测试的依赖关系](https://www.w3cschool.cn/phpunit5/b2oxvozt.html "测试的依赖关系")
+        
+    2.  [数据供给器](https://www.w3cschool.cn/phpunit5/hqg6nozt.html "数据供给器")
+        
+    3.  [对异常进行测试](https://www.w3cschool.cn/phpunit5/c1y37ozt.html "对异常进行测试")
+        
+    4.  [对 PHP 错误进行测试](https://www.w3cschool.cn/phpunit5/q72lyozt.html "对 PHP 错误进行测试")
+        
+    5.  [对输出进行测试](https://www.w3cschool.cn/phpunit5/pfenuozt.html "对输出进行测试")
+        
+    6.  [错误相关信息的输出](https://www.w3cschool.cn/phpunit5/3ucxqozt.html "错误相关信息的输出")
+        
+4.  [3\. 命令行测试执行器](https://www.w3cschool.cn/phpunit5/xe4vqcqm.html "3. 命令行测试执行器")
+    
+    1.  [命令行选项](https://www.w3cschool.cn/phpunit5/qpdv4ozt.html "命令行选项")
+        
+5.  [4\. 基境(fixture)](https://www.w3cschool.cn/phpunit5/bithmcqm.html "4. 基境(fixture)")
+    
+    1.  [setUp() 多 tearDown() 少](https://www.w3cschool.cn/phpunit5/71yrzozt.html "setUp() 多 tearDown() 少")
+        
+    2.  [变体](https://www.w3cschool.cn/phpunit5/8269uozt.html "变体")
+        
+    3.  [基境共享](https://www.w3cschool.cn/phpunit5/4cfnpozt.html "基境共享")
+        
+    4.  [全局状态](https://www.w3cschool.cn/phpunit5/7g1vnozt.html "全局状态")
+        
+6.  [5\. 组织测试](https://www.w3cschool.cn/phpunit5/ty7awcqm.html "5. 组织测试")
+    
+    1.  [用文件系统来编排测试套件](https://www.w3cschool.cn/phpunit5/5w48eozt.html "用文件系统来编排测试套件")
+        
+    2.  [用 XML 配置来编排测试套件](https://www.w3cschool.cn/phpunit5/o1nxyozt.html "用 XML 配置来编排测试套件")
+        
+7.  [6\. 有风险的测试](https://www.w3cschool.cn/phpunit5/skgctcqm.html "6. 有风险的测试")
+    
+    1.  [无用测试](https://www.w3cschool.cn/phpunit5/xw56oozt.html "无用测试")
+        
+    2.  [意外的代码覆盖](https://www.w3cschool.cn/phpunit5/dm91wozt.html "意外的代码覆盖")
+        
+    3.  [测试执行期间产生的输出](https://www.w3cschool.cn/phpunit5/985sdozt.html "测试执行期间产生的输出")
+        
+    4.  [测试执行时长的超时限制](https://www.w3cschool.cn/phpunit5/dl9m2ozt.html "测试执行时长的超时限制")
+        
+    5.  [全局状态篡改](https://www.w3cschool.cn/phpunit5/w3un9ozt.html "全局状态篡改")
+        
+8.  [7\. 未完成的测试与跳过的测试](https://www.w3cschool.cn/phpunit5/kwx1qcqm.html "7. 未完成的测试与跳过的测试")
+    
+    1.  [未完成的测试](https://www.w3cschool.cn/phpunit5/s453dozt.html "未完成的测试")
+        
+    2.  [跳过测试](https://www.w3cschool.cn/phpunit5/jrsgnozt.html "跳过测试")
+        
+    3.  [用 @requires 来跳过测试](https://www.w3cschool.cn/phpunit5/5hyd7ozt.html "用 @requires 来跳过测试")
+        
+9.  [8\. 数据库测试](https://www.w3cschool.cn/phpunit5/47x5ucqm.html "8. 数据库测试")
+    
+    1.  [数据库测试所支持的供应商](https://www.w3cschool.cn/phpunit5/36jmiozt.html "数据库测试所支持的供应商")
+        
+    2.  [数据库测试的难点](https://www.w3cschool.cn/phpunit5/oa6gsozt.html "数据库测试的难点")
+        
+    3.  [数据库测试的四个阶段](https://www.w3cschool.cn/phpunit5/zvlqaozt.html "数据库测试的四个阶段")
+        
+    4.  [PHPUnit 数据库测试用例的配置](https://www.w3cschool.cn/phpunit5/jtydrozt.html "PHPUnit 数据库测试用例的配置")
+        
+    5.  [理解 DataSet（数据集）和 DataTable（数据表）](https://www.w3cschool.cn/phpunit5/dewxuozt.html "理解 DataSet（数据集）和 DataTable（数据表）")
+        
+    6.  [数据库连接 API](https://www.w3cschool.cn/phpunit5/p3j5cozt.html "数据库连接 API")
+        
+    7.  [数据库断言 API](https://www.w3cschool.cn/phpunit5/nz7paozt.html "数据库断言 API")
+        
+    8.  [常见问题（FAQ）](https://www.w3cschool.cn/phpunit5/s3u8pozt.html "常见问题（FAQ）")
+        
+10.  [9\. 测试替身](https://www.w3cschool.cn/phpunit5/2xl3tcqm.html "9. 测试替身")
+     
+     1.  [Stubs （桩件）](https://www.w3cschool.cn/phpunit5/lfqxwozt.html "Stubs （桩件）")
+         
+     2.  [仿件对象(Mock Object)](https://www.w3cschool.cn/phpunit5/5k9hiozt.html "仿件对象(Mock Object)")
+         
+     3.  [Prophecy](https://www.w3cschool.cn/phpunit5/3e4pwozt.html "Prophecy")
+         
+     4.  [对特质(Trait)与抽象类进行模仿](https://www.w3cschool.cn/phpunit5/3xz5kozt.html "对特质(Trait)与抽象类进行模仿")
+         
+     5.  [对 Web 服务(Web Services)进行上桩或模仿](https://www.w3cschool.cn/phpunit5/qw1ljozt.html "对 Web 服务(Web Services)进行上桩或模仿")
+         
+     6.  [对文件系统进行模仿](https://www.w3cschool.cn/phpunit5/ewnb3ozt.html "对文件系统进行模仿")
+         
+11.  [10\. 测试实践](https://www.w3cschool.cn/phpunit5/aneh6cqm.html "10. 测试实践")
+     
+     1.  [在开发过程中](https://www.w3cschool.cn/phpunit5/hcsjvozt.html "在开发过程中")
+         
+     2.  [在调试过程中](https://www.w3cschool.cn/phpunit5/d38tsozt.html "在调试过程中")
+         
+12.  [11\. 代码覆盖率分析](https://www.w3cschool.cn/phpunit5/jzpb9cqm.html "11. 代码覆盖率分析")
+     
+     1.  [用于代码覆盖率的软件衡量标准](https://www.w3cschool.cn/phpunit5/dmqr6ozt.html "用于代码覆盖率的软件衡量标准")
+         
+     2.  [包含与排除文件](https://www.w3cschool.cn/phpunit5/fxtcgozt.html "包含与排除文件")
+         
+     3.  [略过代码块](https://www.w3cschool.cn/phpunit5/piyzmozt.html "略过代码块")
+         
+     4.  [指明要覆盖的方法](https://www.w3cschool.cn/phpunit5/t6vriozt.html "指明要覆盖的方法")
+         
+     5.  [边缘情况](https://www.w3cschool.cn/phpunit5/scf2wozt.html "边缘情况")
+         
+13.  [12\. 测试的其他用途](https://www.w3cschool.cn/phpunit5/s1fyrcqm.html "12. 测试的其他用途")
+     
+     1.  [敏捷文档](https://www.w3cschool.cn/phpunit5/dqkn3ozt.html "敏捷文档")
+         
+     2.  [跨团队测试](https://www.w3cschool.cn/phpunit5/l2zuwozt.html "跨团队测试")
+         
+14.  [13\. Logging （日志记录）](https://www.w3cschool.cn/phpunit5/w2p3lcqm.html "13. Logging （日志记录）")
+     
+     1.  [测试结果 (XML)](https://www.w3cschool.cn/phpunit5/6awqeozt.html "测试结果 (XML)")
+         
+     2.  [测试结果 (TAP)](https://www.w3cschool.cn/phpunit5/s7365ozt.html "测试结果 (TAP)")
+         
+     3.  [测试结果 (JSON)](https://www.w3cschool.cn/phpunit5/kt2cwozt.html "测试结果 (JSON)")
+         
+     4.  [代码覆盖率 (XML)](https://www.w3cschool.cn/phpunit5/9bxmwozt.html "代码覆盖率 (XML)")
+         
+     5.  [代码覆盖率 (TEXT)](https://www.w3cschool.cn/phpunit5/85udlozt.html "代码覆盖率 (TEXT)")
+         
+15.  [14\. 扩展 PHPUnit](https://www.w3cschool.cn/phpunit5/2kp8zcqm.html "14. 扩展 PHPUnit")
+     
+     1.  [从 PHPUnit\_Framework\_TestCase 派生子类](https://www.w3cschool.cn/phpunit5/gpz43ozt.html "从 PHPUnit_Framework_TestCase 派生子类")
+         
+     2.  [编写自定义断言](https://www.w3cschool.cn/phpunit5/l2fc4ozt.html "编写自定义断言")
+         
+     3.  [实现 PHPUnit\_Framework\_TestListener](https://www.w3cschool.cn/phpunit5/va8tzozt.html "实现 PHPUnit_Framework_TestListener")
+         
+     4.  [从 PHPUnit\_Extensions\_TestDecorator 派生子类](https://www.w3cschool.cn/phpunit5/lid1fozt.html "从 PHPUnit_Extensions_TestDecorator 派生子类")
+         
+     5.  [实现 PHPUnit\_Framework\_Test](https://www.w3cschool.cn/phpunit5/ij43pozt.html "实现 PHPUnit_Framework_Test")
+         
+16.  [A. 断言](https://www.w3cschool.cn/phpunit5/lu8t5cqm.html "A. 断言")
+     
+     1.  [assertArrayHasKey()](https://www.w3cschool.cn/phpunit5/1k7b2ozt.html "assertArrayHasKey()")
+         
+     2.  [assertClassHasAttribute()](https://www.w3cschool.cn/phpunit5/ildumozt.html "assertClassHasAttribute()")
+         
+     3.  [assertArraySubset()](https://www.w3cschool.cn/phpunit5/zhuxoozt.html "assertArraySubset()")
+         
+     4.  [assertClassHasStaticAttribute()](https://www.w3cschool.cn/phpunit5/k6dsbozt.html "assertClassHasStaticAttribute()")
+         
+     5.  [assertContains()](https://www.w3cschool.cn/phpunit5/au9icozt.html "assertContains()")
+         
+     6.  [assertContainsOnly()](https://www.w3cschool.cn/phpunit5/x4moyozt.html "assertContainsOnly()")
+         
+     7.  [assertContainsOnlyInstancesOf()](https://www.w3cschool.cn/phpunit5/21ilkozt.html "assertContainsOnlyInstancesOf()")
+         
+     8.  [assertCount()](https://www.w3cschool.cn/phpunit5/rwzmoozt.html "assertCount()")
+         
+     9.  [assertEmpty()](https://www.w3cschool.cn/phpunit5/oj3qxozt.html "assertEmpty()")
+         
+     10.  [assertEqualXMLStructure()](https://www.w3cschool.cn/phpunit5/ixkpgozt.html "assertEqualXMLStructure()")
+          
+     11.  [assertEquals()](https://www.w3cschool.cn/phpunit5/ehynvozt.html "assertEquals()")
+          
+     12.  [assertFalse()](https://www.w3cschool.cn/phpunit5/ioht4ozt.html "assertFalse()")
+          
+     13.  [assertFileEquals()](https://www.w3cschool.cn/phpunit5/8adrjozt.html "assertFileEquals()")
+          
+     14.  [assertFileExists()](https://www.w3cschool.cn/phpunit5/sd54bozt.html "assertFileExists()")
+          
+     15.  [assertGreaterThan()](https://www.w3cschool.cn/phpunit5/6hpeaozt.html "assertGreaterThan()")
+          
+     16.  [assertGreaterThanOrEqual()](https://www.w3cschool.cn/phpunit5/8ui1dozt.html "assertGreaterThanOrEqual()")
+          
+     17.  [assertInfinite()](https://www.w3cschool.cn/phpunit5/unry2ozt.html "assertInfinite()")
+          
+     18.  [assertInstanceOf()](https://www.w3cschool.cn/phpunit5/lyksgozt.html "assertInstanceOf()")
+          
+     19.  [assertInternalType()](https://www.w3cschool.cn/phpunit5/caot4ozt.html "assertInternalType()")
+          
+     20.  [assertJsonFileEqualsJsonFile()](https://www.w3cschool.cn/phpunit5/u9p7sozt.html "assertJsonFileEqualsJsonFile()")
+          
+     21.  [assertJsonStringEqualsJsonFile()](https://www.w3cschool.cn/phpunit5/gm3d5ozt.html "assertJsonStringEqualsJsonFile()")
+          
+     22.  [assertJsonStringEqualsJsonString()](https://www.w3cschool.cn/phpunit5/41zbjozt.html "assertJsonStringEqualsJsonString()")
+          
+     23.  [assertLessThan()](https://www.w3cschool.cn/phpunit5/ma7n5ozt.html "assertLessThan()")
+          
+     24.  [assertLessThanOrEqual()](https://www.w3cschool.cn/phpunit5/81ho2ozt.html "assertLessThanOrEqual()")
+          
+     25.  [assertNan()](https://www.w3cschool.cn/phpunit5/tyvuxozt.html "assertNan()")
+          
+     26.  [assertNull()](https://www.w3cschool.cn/phpunit5/cyuidozt.html "assertNull()")
+          
+     27.  [assertObjectHasAttribute()](https://www.w3cschool.cn/phpunit5/iytbdozt.html "assertObjectHasAttribute()")
+          
+     28.  [assertRegExp()](https://www.w3cschool.cn/phpunit5/gj8xvozt.html "assertRegExp()")
+          
+     29.  [assertStringMatchesFormat()](https://www.w3cschool.cn/phpunit5/9c4kxozt.html "assertStringMatchesFormat()")
+          
+     30.  [assertStringMatchesFormatFile()](https://www.w3cschool.cn/phpunit5/5cnr6ozt.html "assertStringMatchesFormatFile()")
+          
+     31.  [assertSame()](https://www.w3cschool.cn/phpunit5/cabpqozt.html "assertSame()")
+          
+     32.  [assertStringEndsWith()](https://www.w3cschool.cn/phpunit5/n9s8cozt.html "assertStringEndsWith()")
+          
+     33.  [assertStringEqualsFile()](https://www.w3cschool.cn/phpunit5/lko4cozt.html "assertStringEqualsFile()")
+          
+     34.  [assertStringStartsWith()](https://www.w3cschool.cn/phpunit5/rwlfyozt.html "assertStringStartsWith()")
+          
+     35.  [assertThat()](https://www.w3cschool.cn/phpunit5/hmr5fozt.html "assertThat()")
+          
+     36.  [assertTrue()](https://www.w3cschool.cn/phpunit5/pt3s2ozt.html "assertTrue()")
+          
+     37.  [assertXmlFileEqualsXmlFile()](https://www.w3cschool.cn/phpunit5/v4ejuozt.html "assertXmlFileEqualsXmlFile()")
+          
+     38.  [assertXmlStringEqualsXmlFile()](https://www.w3cschool.cn/phpunit5/w7q34ozt.html "assertXmlStringEqualsXmlFile()")
+          
+     39.  [assertXmlStringEqualsXmlString()](https://www.w3cschool.cn/phpunit5/7hxtdozt.html "assertXmlStringEqualsXmlString()")
+          
+17.  [B. 标注](https://www.w3cschool.cn/phpunit5/vbq5ucqm.html "B. 标注")
+     
+     1.  [@author](https://www.w3cschool.cn/phpunit5/bsm6rozt.html "@author")
+         
+     2.  [@after](https://www.w3cschool.cn/phpunit5/t13ifozt.html "@after")
+         
+     3.  [@afterClass](https://www.w3cschool.cn/phpunit5/xwjihozt.html "@afterClass")
+         
+     4.  [@backupGlobals](https://www.w3cschool.cn/phpunit5/rjp6aozt.html "@backupGlobals")
+         
+     5.  [@backupStaticAttributes](https://www.w3cschool.cn/phpunit5/c9feqozt.html "@backupStaticAttributes")
+         
+     6.  [@before](https://www.w3cschool.cn/phpunit5/oswe7ozt.html "@before")
+         
+     7.  [@beforeClass](https://www.w3cschool.cn/phpunit5/5ygrsozt.html "@beforeClass")
+         
+     8.  [@codeCoverageIgnore\*](https://www.w3cschool.cn/phpunit5/jtz1wozt.html "@codeCoverageIgnore*")
+         
+     9.  [@covers](https://www.w3cschool.cn/phpunit5/jz5c4ozt.html "@covers")
+         
+     10.  [@coversDefaultClass](https://www.w3cschool.cn/phpunit5/njb8sozt.html "@coversDefaultClass")
+          
+     11.  [@coversNothing](https://www.w3cschool.cn/phpunit5/1kbd6ozt.html "@coversNothing")
+          
+     12.  [@dataProvider](https://www.w3cschool.cn/phpunit5/ifnevozt.html "@dataProvider")
+          
+     13.  [@depends](https://www.w3cschool.cn/phpunit5/t9cz8ozt.html "@depends")
+          
+     14.  [@expectedException](https://www.w3cschool.cn/phpunit5/7tvwsozt.html "@expectedException")
+          
+     15.  [@expectedExceptionCode](https://www.w3cschool.cn/phpunit5/nuif6ozt.html "@expectedExceptionCode")
+          
+     16.  [@expectedExceptionMessage](https://www.w3cschool.cn/phpunit5/hbqx3ozt.html "@expectedExceptionMessage")
+          
+     17.  [@expectedExceptionMessageRegExp](https://www.w3cschool.cn/phpunit5/d8aqmozt.html "@expectedExceptionMessageRegExp")
+          
+     18.  [@group](https://www.w3cschool.cn/phpunit5/wr8m1ozt.html "@group")
+          
+     19.  [@large](https://www.w3cschool.cn/phpunit5/ufe9lozt.html "@large")
+          
+     20.  [@medium](https://www.w3cschool.cn/phpunit5/16h5xozt.html "@medium")
+          
+     21.  [@preserveGlobalState](https://www.w3cschool.cn/phpunit5/x83a2ozt.html "@preserveGlobalState")
+          
+     22.  [@requires](https://www.w3cschool.cn/phpunit5/4fmj9ozt.html "@requires")
+          
+     23.  [@runTestsInSeparateProcesses](https://www.w3cschool.cn/phpunit5/9n5c8ozt.html "@runTestsInSeparateProcesses")
+          
+     24.  [@runInSeparateProcess](https://www.w3cschool.cn/phpunit5/1pnvmozt.html "@runInSeparateProcess")
+          
+     25.  [@small](https://www.w3cschool.cn/phpunit5/m1qaoozt.html "@small")
+          
+     26.  [@test](https://www.w3cschool.cn/phpunit5/na718ozt.html "@test")
+          
+     27.  [@testdox](https://www.w3cschool.cn/phpunit5/vx63hozt.html "@testdox")
+          
+     28.  [@ticket](https://www.w3cschool.cn/phpunit5/3ebfiozt.html "@ticket")
+          
+     29.  [@uses](https://www.w3cschool.cn/phpunit5/9iba2ozt.html "@uses")
+          
+18.  [C. XML 配置文件](https://www.w3cschool.cn/phpunit5/itxzacqm.html "C. XML 配置文件")
+     
+     1.  [PHPUnit](https://www.w3cschool.cn/phpunit5/hu67mozt.html "PHPUnit")
+         
+     2.  [测试套件](https://www.w3cschool.cn/phpunit5/wkdq5ozt.html "测试套件")
+         
+     3.  [分组](https://www.w3cschool.cn/phpunit5/526a7ozt.html "分组")
+         
+     4.  [为代码覆盖率包含或排除文件](https://www.w3cschool.cn/phpunit5/x6tz9ozt.html "为代码覆盖率包含或排除文件")
+         
+     5.  [Logging （日志记录）](https://www.w3cschool.cn/phpunit5/mzgs9ozt.html "Logging （日志记录）")
+         
+     6.  [测试监听器](https://www.w3cschool.cn/phpunit5/sjlakozt.html "测试监听器")
+         
+     7.  [设定 PHP INI 设置、常量、全局变量](https://www.w3cschool.cn/phpunit5/n5j48ozt.html "设定 PHP INI 设置、常量、全局变量")
+         
+     8.  [为 Selenium RC 配置浏览器](https://www.w3cschool.cn/phpunit5/z3dj7ozt.html "为 Selenium RC 配置浏览器")
+         
+19.  [D. 升级](https://www.w3cschool.cn/phpunit5/w8b95ozt.html "D. 升级")
+     
+20.  [E. 索引](https://www.w3cschool.cn/phpunit5/asz4tozt.html "E. 索引")
+     
+21.  [F. 参考书目](https://www.w3cschool.cn/phpunit5/6elfxozt.html "F. 参考书目")
+     
+22.  [G. 版权](https://www.w3cschool.cn/phpunit5/456aqozt.html "G. 版权")
+     
+
+阅读(43.2k) 书签 赞(0) [我要纠错](https://www.w3cschool.cn/edit/phpunit5/itxzacqm)
+
+2018-02-23 16:23 更新
+
+## 附录 C. XML 配置文件
+
+以上内容是否对您有帮助：
+
+← [@uses](https://www.w3cschool.cn/phpunit5/9iba2ozt.html "上一篇：@uses")
+
+[PHPUnit](https://www.w3cschool.cn/phpunit5/hu67mozt.html "下一篇：PHPUnit") →
+
+写笔记
+
+我要补充
+
+Copyright©2021 [w3cschool](https://www.w3cschool.cn/ "w3cschool")编程狮|[闽ICP备15016281号-3](https://beian.miit.gov.cn/)|[闽公网安备35020302033924号](http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020302033924)
+
+违法和不良信息举报电话：173-0602-2364|[举报邮箱：jubao@eeedong.com](mailto:jubao@eeedong.com)

@@ -3,12 +3,162 @@
   "title": "Emmet 文档",
   "url": "http://yanxyz.github.io/emmet-docs/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:44.250Z",
+  "fetchedAt": "2026-09-27T11:58:56.615Z",
   "chapters": [
     {
-      "slug": "001-z",
+      "slug": "001-http-yanxyz-github-io-emmet-docs",
       "title": "http://yanxyz.github.io/emmet-docs/",
-      "file": "chapters/001-z.md"
+      "file": "chapters/001-http-yanxyz-github-io-emmet-docs.md"
+    },
+    {
+      "slug": "002-缩写",
+      "title": "http://yanxyz.github.io/emmet-docs/abbreviations/",
+      "file": "chapters/002-缩写.md"
+    },
+    {
+      "slug": "003-语法",
+      "title": "http://yanxyz.github.io/emmet-docs/abbreviations/syntax/",
+      "file": "chapters/003-语法.md"
+    },
+    {
+      "slug": "004-元素类型",
+      "title": "http://yanxyz.github.io/emmet-docs/abbreviations/types/",
+      "file": "chapters/004-元素类型.md"
+    },
+    {
+      "slug": "005-隐式标签名",
+      "title": "http://yanxyz.github.io/emmet-docs/abbreviations/implicit-names/",
+      "file": "chapters/005-隐式标签名.md"
+    },
+    {
+      "slug": "006-lorem-ipsum-生成器",
+      "title": "http://yanxyz.github.io/emmet-docs/abbreviations/lorem-ipsum/",
+      "file": "chapters/006-lorem-ipsum-生成器.md"
+    },
+    {
+      "slug": "007-css-缩写",
+      "title": "http://yanxyz.github.io/emmet-docs/css-abbreviations/",
+      "file": "chapters/007-css-缩写.md"
+    },
+    {
+      "slug": "008-厂商前缀",
+      "title": "http://yanxyz.github.io/emmet-docs/css-abbreviations/vendor-prefixes/",
+      "file": "chapters/008-厂商前缀.md"
+    },
+    {
+      "slug": "009-渐变",
+      "title": "http://yanxyz.github.io/emmet-docs/css-abbreviations/gradients/",
+      "file": "chapters/009-渐变.md"
+    },
+    {
+      "slug": "010-模糊查找",
+      "title": "http://yanxyz.github.io/emmet-docs/css-abbreviations/fuzzy-search/",
+      "file": "chapters/010-模糊查找.md"
+    },
+    {
+      "slug": "011-功能",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/",
+      "file": "chapters/011-功能.md"
+    },
+    {
+      "slug": "012-展开缩写",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/expand-abbreviation/",
+      "file": "chapters/012-展开缩写.md"
+    },
+    {
+      "slug": "013-匹配标签",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/match-pair/",
+      "file": "chapters/013-匹配标签.md"
+    },
+    {
+      "slug": "014-跳转到配对标签",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/go-to-pair/",
+      "file": "chapters/014-跳转到配对标签.md"
+    },
+    {
+      "slug": "015-包裹缩写",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/wrap-with-abbreviation/",
+      "file": "chapters/015-包裹缩写.md"
+    },
+    {
+      "slug": "016-跳转到编辑点",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/go-to-edit-point/",
+      "file": "chapters/016-跳转到编辑点.md"
+    },
+    {
+      "slug": "017-选择",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/select-item/",
+      "file": "chapters/017-选择.md"
+    },
+    {
+      "slug": "018-切换注释",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/toggle-comment/",
+      "file": "chapters/018-切换注释.md"
+    },
+    {
+      "slug": "019-分割合并标签",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/split-join-tag/",
+      "file": "chapters/019-分割合并标签.md"
+    },
+    {
+      "slug": "020-删除标签",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/remove-tag/",
+      "file": "chapters/020-删除标签.md"
+    },
+    {
+      "slug": "021-合并行",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/merge-lines/",
+      "file": "chapters/021-合并行.md"
+    },
+    {
+      "slug": "022-更新图片尺寸",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/update-image-size/",
+      "file": "chapters/022-更新图片尺寸.md"
+    },
+    {
+      "slug": "023-计算数学表达式",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/evaluate-math/",
+      "file": "chapters/023-计算数学表达式.md"
+    },
+    {
+      "slug": "024-重构-css-值",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/reflect-css-value/",
+      "file": "chapters/024-重构-css-值.md"
+    },
+    {
+      "slug": "025-编码-解码图像为-data-url",
+      "title": "http://yanxyz.github.io/emmet-docs/actions/base64/",
+      "file": "chapters/025-编码-解码图像为-data-url.md"
+    },
+    {
+      "slug": "026-过滤器",
+      "title": "http://yanxyz.github.io/emmet-docs/filters/",
+      "file": "chapters/026-过滤器.md"
+    },
+    {
+      "slug": "027-yandex-bem-oocss",
+      "title": "http://yanxyz.github.io/emmet-docs/filters/bem/",
+      "file": "chapters/027-yandex-bem-oocss.md"
+    },
+    {
+      "slug": "028-配置",
+      "title": "http://yanxyz.github.io/emmet-docs/customization/",
+      "file": "chapters/028-配置.md"
+    },
+    {
+      "slug": "029-snippets-json",
+      "title": "http://yanxyz.github.io/emmet-docs/customization/snippets/",
+      "file": "chapters/029-snippets-json.md"
+    },
+    {
+      "slug": "030-preferences-json",
+      "title": "http://yanxyz.github.io/emmet-docs/customization/preferences/",
+      "file": "chapters/030-preferences-json.md"
+    },
+    {
+      "slug": "031-syntaxprofiles-json",
+      "title": "http://yanxyz.github.io/emmet-docs/customization/syntax-profiles/",
+      "file": "chapters/031-syntaxprofiles-json.md"
     }
   ],
   "sourceType": "web",

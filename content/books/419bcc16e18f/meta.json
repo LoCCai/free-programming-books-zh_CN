@@ -3,12 +3,247 @@
   "title": "Lumen 中文文档",
   "url": "https://learnku.com/docs/lumen/5.7/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:14.438Z",
+  "fetchedAt": "2026-09-27T12:02:38.609Z",
   "chapters": [
     {
-      "slug": "001-z",
+      "slug": "001-lumen-中文文档-laravel-china-社区",
       "title": "《Lumen 中文文档》 | Laravel China 社区",
-      "file": "chapters/001-z.md"
+      "file": "chapters/001-lumen-中文文档-laravel-china-社区.md"
+    },
+    {
+      "slug": "002-首页",
+      "title": "LearnKu 终身编程者的知识社区",
+      "file": "chapters/002-首页.md"
+    },
+    {
+      "slug": "003-laravel",
+      "title": "Laravel China 社区 | Laravel China 社区",
+      "file": "chapters/003-laravel.md"
+    },
+    {
+      "slug": "004-go",
+      "title": "Go 技术论坛 | Golang",
+      "file": "chapters/004-go.md"
+    },
+    {
+      "slug": "005-python",
+      "title": "Python 技术论坛 | 高品质的 Python 开发者社区",
+      "file": "chapters/005-python.md"
+    },
+    {
+      "slug": "006-php",
+      "title": "PHP 技术论坛 | PHP 技术论坛",
+      "file": "chapters/006-php.md"
+    },
+    {
+      "slug": "007-vue-js",
+      "title": "Vue.js 技术论坛 | Vue.js 开发者社区",
+      "file": "chapters/007-vue-js.md"
+    },
+    {
+      "slug": "008-java",
+      "title": "Java 技术论坛 | Java 中文开发者社区",
+      "file": "chapters/008-java.md"
+    },
+    {
+      "slug": "009-mysql",
+      "title": "MySQL 技术论坛 | 高品质的 MySQL 开发者学习社区",
+      "file": "chapters/009-mysql.md"
+    },
+    {
+      "slug": "010-rust",
+      "title": "Rust 技术论坛 | Rust 语言技术论坛",
+      "file": "chapters/010-rust.md"
+    },
+    {
+      "slug": "011-lk",
+      "title": "LearnKu 产品论坛 | LearnKu.com",
+      "file": "chapters/011-lk.md"
+    },
+    {
+      "slug": "012-程序员",
+      "title": "程序员论坛 | 高品质的 程序员 开发者学习社区",
+      "file": "chapters/012-程序员.md"
+    },
+    {
+      "slug": "013-elasticsearch",
+      "title": "Elasticsearch 技术论坛 | 高品质的 Elasticsearch 开发者学习社区",
+      "file": "chapters/013-elasticsearch.md"
+    },
+    {
+      "slug": "014-f2e-前端",
+      "title": "F2E 前端技术论坛 | 专业前端开发者社区",
+      "file": "chapters/014-f2e-前端.md"
+    },
+    {
+      "slug": "015-server",
+      "title": "Server 运维论坛 | 高品质的服务器运维知识社区",
+      "file": "chapters/015-server.md"
+    },
+    {
+      "slug": "016-database",
+      "title": "数据库论坛 | 高品质的 Database 开发者学习社区",
+      "file": "chapters/016-database.md"
+    },
+    {
+      "slug": "017-devtools",
+      "title": "开发者工具论坛 | 高品质的开发者工具社区",
+      "file": "chapters/017-devtools.md"
+    },
+    {
+      "slug": "018-computer-science",
+      "title": "计算机科学论坛 | 高品质的 Computer Science 开发者学习社区",
+      "file": "chapters/018-computer-science.md"
+    },
+    {
+      "slug": "019-手机开发",
+      "title": "手机编程论坛 | 高品质的 手机开发 开发者学习社区",
+      "file": "chapters/019-手机开发.md"
+    },
+    {
+      "slug": "020-ai-coding",
+      "title": "AI Coding 技术论坛 | 高品质的 AI Coding 开发者学习社区",
+      "file": "chapters/020-ai-coding.md"
+    },
+    {
+      "slug": "021-adonisjs",
+      "title": "AdonisJS / NodeJS 技术论坛 | 高品质的 AdonisJS 开发者学习社区",
+      "file": "chapters/021-adonisjs.md"
+    },
+    {
+      "slug": "022-ai作品",
+      "title": "Fanch 导航站｜精选创意网站与 AI 工具导航平台｜LearnKu 知识社区",
+      "file": "chapters/022-ai作品.md"
+    },
+    {
+      "slug": "023-wiki",
+      "title": "Laravel  社区 Wiki | Laravel China 社区",
+      "file": "chapters/023-wiki.md"
+    },
+    {
+      "slug": "024-laravel-实战教程首页",
+      "title": "Laravel China 社区",
+      "file": "chapters/024-laravel-实战教程首页.md"
+    },
+    {
+      "slug": "025-l01-laravel-教程-web-开发实战入门",
+      "title": "《L01 Laravel 教程 - Web 开发实战入门 ( Laravel 9.x )》",
+      "file": "chapters/025-l01-laravel-教程-web-开发实战入门.md"
+    },
+    {
+      "slug": "026-l02-laravel-教程-web-开发实战进阶",
+      "title": "《L02 Laravel 教程 - Web 开发实战进阶 ( Laravel 9.x )》",
+      "file": "chapters/026-l02-laravel-教程-web-开发实战进阶.md"
+    },
+    {
+      "slug": "027-l03-laravel-教程-实战构架-api-服务器",
+      "title": "《L03 Laravel 教程 - 实战构架 API 服务器 ( Laravel 9.x ) 》",
+      "file": "chapters/027-l03-laravel-教程-实战构架-api-服务器.md"
+    },
+    {
+      "slug": "028-l04-laravel-教程-微信小程序从零到发布",
+      "title": "《L04 Laravel 教程 - 微信小程序从零到发布》",
+      "file": "chapters/028-l04-laravel-教程-微信小程序从零到发布.md"
+    },
+    {
+      "slug": "029-l05-laravel-教程-电商实战",
+      "title": "《L05 Laravel 教程 - 电商实战 ( Laravel 8.x) 》",
+      "file": "chapters/029-l05-laravel-教程-电商实战.md"
+    },
+    {
+      "slug": "030-l06-laravel-教程-电商进阶",
+      "title": "《L06 Laravel 教程 - 电商进阶 ( Laravel 8.x ) 》",
+      "file": "chapters/030-l06-laravel-教程-电商进阶.md"
+    },
+    {
+      "slug": "031-lx1-laravel-php-扩展包视频教程",
+      "title": "《LX1 Laravel / PHP 扩展包视频教程》",
+      "file": "chapters/031-lx1-laravel-php-扩展包视频教程.md"
+    },
+    {
+      "slug": "032-lx2-php-扩展包实战教程-从入门到发布",
+      "title": "《LX2 PHP 扩展包实战教程 - 从入门到发布》",
+      "file": "chapters/032-lx2-php-扩展包实战教程-从入门到发布.md"
+    },
+    {
+      "slug": "033-l07-laravel-教程-laravel-tdd-测试实战",
+      "title": "《L07 Laravel 教程 - Laravel TDD 》",
+      "file": "chapters/033-l07-laravel-教程-laravel-tdd-测试实战.md"
+    },
+    {
+      "slug": "034-lx3-laravel-性能优化入门",
+      "title": "《LX3 Laravel 性能优化入门》 | Laravel China 社区",
+      "file": "chapters/034-lx3-laravel-性能优化入门.md"
+    },
+    {
+      "slug": "035-lx4-laravel-php-五分钟视频",
+      "title": "《LX4 Laravel / PHP 五分钟视频》",
+      "file": "chapters/035-lx4-laravel-php-五分钟视频.md"
+    },
+    {
+      "slug": "036-社区文档首页",
+      "title": "Laravel China 社区",
+      "file": "chapters/036-社区文档首页.md"
+    },
+    {
+      "slug": "037-laravel-中文文档",
+      "title": "《Laravel 12 中文文档》 | Laravel China 社区",
+      "file": "chapters/037-laravel-中文文档.md"
+    },
+    {
+      "slug": "038-laravel-速查表",
+      "title": "《Laravel 速查表》 | Laravel China 社区",
+      "file": "chapters/038-laravel-速查表.md"
+    },
+    {
+      "slug": "039-php-代码简洁之道",
+      "title": "《PHP 代码简洁之道》 | Laravel China 社区",
+      "file": "chapters/039-php-代码简洁之道.md"
+    },
+    {
+      "slug": "040-laravel-编码技巧",
+      "title": "《Laravel 编码技巧》 | Laravel China 社区",
+      "file": "chapters/040-laravel-编码技巧.md"
+    },
+    {
+      "slug": "041-dcat-admin-中文文档",
+      "title": "《Dcat Admin 中文文档》 | Laravel China 社区",
+      "file": "chapters/041-dcat-admin-中文文档.md"
+    },
+    {
+      "slug": "042-laravel-nova-中文文档",
+      "title": "《Laravel Nova 中文文档》 | Laravel China 社区",
+      "file": "chapters/042-laravel-nova-中文文档.md"
+    },
+    {
+      "slug": "043-lumen-中文文档",
+      "title": "《Lumen 中文文档》 | Laravel China 社区",
+      "file": "chapters/043-lumen-中文文档.md"
+    },
+    {
+      "slug": "044-dingo-api-中文文档",
+      "title": "《Dingo API 2.0.0 中文文档》 | Laravel China 社区",
+      "file": "chapters/044-dingo-api-中文文档.md"
+    },
+    {
+      "slug": "045-laravel-项目开发规范",
+      "title": "《 Laravel 项目开发规范》 | Laravel China 社区",
+      "file": "chapters/045-laravel-项目开发规范.md"
+    },
+    {
+      "slug": "046-构建-laravel-开发环境",
+      "title": "《构建 Laravel 开发环境》 | Laravel China 社区",
+      "file": "chapters/046-构建-laravel-开发环境.md"
+    },
+    {
+      "slug": "047-登录",
+      "title": "用户登录 | LearnKu 终身编程者的知识社区",
+      "file": "chapters/047-登录.md"
+    },
+    {
+      "slug": "048-注册",
+      "title": "用户注册 | LearnKu 终身编程者的知识社区",
+      "file": "chapters/048-注册.md"
     }
   ],
   "sourceType": "web",

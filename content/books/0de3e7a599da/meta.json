@@ -2,8 +2,985 @@
   "bookId": "0de3e7a599da",
   "title": "SICP 解题集",
   "url": "https://sicp.readthedocs.io/en/latest/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:26:27.861Z",
-  "chapters": [],
-  "error": "HTTP 429"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T12:15:09.013Z",
+  "chapters": [
+    {
+      "slug": "001-sicp-解题集-sicp-解题集",
+      "title": "SICP 解题集 — SICP 解题集",
+      "file": "chapters/001-sicp-解题集-sicp-解题集.md"
+    },
+    {
+      "slug": "002-相关软件和链接",
+      "title": "相关软件和链接 — SICP 解题集",
+      "file": "chapters/002-相关软件和链接.md"
+    },
+    {
+      "slug": "003-练习-1-1",
+      "title": "练习 1.1 — SICP 解题集",
+      "file": "chapters/003-练习-1-1.md"
+    },
+    {
+      "slug": "004-练习-1-2",
+      "title": "练习 1.2 — SICP 解题集",
+      "file": "chapters/004-练习-1-2.md"
+    },
+    {
+      "slug": "005-练习-1-3",
+      "title": "练习 1.3 — SICP 解题集",
+      "file": "chapters/005-练习-1-3.md"
+    },
+    {
+      "slug": "006-练习-1-4",
+      "title": "练习 1.4 — SICP 解题集",
+      "file": "chapters/006-练习-1-4.md"
+    },
+    {
+      "slug": "007-练习-1-5",
+      "title": "练习 1.5 — SICP 解题集",
+      "file": "chapters/007-练习-1-5.md"
+    },
+    {
+      "slug": "008-练习-1-6",
+      "title": "练习 1.6 — SICP 解题集",
+      "file": "chapters/008-练习-1-6.md"
+    },
+    {
+      "slug": "009-练习-1-7",
+      "title": "练习 1.7 — SICP 解题集",
+      "file": "chapters/009-练习-1-7.md"
+    },
+    {
+      "slug": "010-练习-1-8",
+      "title": "练习 1.8 — SICP 解题集",
+      "file": "chapters/010-练习-1-8.md"
+    },
+    {
+      "slug": "011-练习-1-9",
+      "title": "练习 1.9 — SICP 解题集",
+      "file": "chapters/011-练习-1-9.md"
+    },
+    {
+      "slug": "012-练习-1-10",
+      "title": "练习 1.10 — SICP 解题集",
+      "file": "chapters/012-练习-1-10.md"
+    },
+    {
+      "slug": "013-练习-1-11",
+      "title": "练习 1.11 — SICP 解题集",
+      "file": "chapters/013-练习-1-11.md"
+    },
+    {
+      "slug": "014-练习-1-12",
+      "title": "练习 1.12 — SICP 解题集",
+      "file": "chapters/014-练习-1-12.md"
+    },
+    {
+      "slug": "015-练习-1-13",
+      "title": "练习 1.13 — SICP 解题集",
+      "file": "chapters/015-练习-1-13.md"
+    },
+    {
+      "slug": "016-练习-1-14",
+      "title": "练习 1.14 — SICP 解题集",
+      "file": "chapters/016-练习-1-14.md"
+    },
+    {
+      "slug": "017-练习-1-15",
+      "title": "练习 1.15 — SICP 解题集",
+      "file": "chapters/017-练习-1-15.md"
+    },
+    {
+      "slug": "018-练习-1-16",
+      "title": "练习 1.16 — SICP 解题集",
+      "file": "chapters/018-练习-1-16.md"
+    },
+    {
+      "slug": "019-练习-1-17",
+      "title": "练习 1.17 — SICP 解题集",
+      "file": "chapters/019-练习-1-17.md"
+    },
+    {
+      "slug": "020-练习-1-18",
+      "title": "练习 1.18 — SICP 解题集",
+      "file": "chapters/020-练习-1-18.md"
+    },
+    {
+      "slug": "021-练习-1-19",
+      "title": "练习 1.19 — SICP 解题集",
+      "file": "chapters/021-练习-1-19.md"
+    },
+    {
+      "slug": "022-练习-1-20",
+      "title": "练习 1.20 — SICP 解题集",
+      "file": "chapters/022-练习-1-20.md"
+    },
+    {
+      "slug": "023-练习-1-21",
+      "title": "练习 1.21 — SICP 解题集",
+      "file": "chapters/023-练习-1-21.md"
+    },
+    {
+      "slug": "024-练习-1-22",
+      "title": "练习 1.22 — SICP 解题集",
+      "file": "chapters/024-练习-1-22.md"
+    },
+    {
+      "slug": "025-练习-1-23",
+      "title": "练习 1.23 — SICP 解题集",
+      "file": "chapters/025-练习-1-23.md"
+    },
+    {
+      "slug": "026-练习-1-24",
+      "title": "练习 1.24 — SICP 解题集",
+      "file": "chapters/026-练习-1-24.md"
+    },
+    {
+      "slug": "027-练习-1-25",
+      "title": "练习 1.25 — SICP 解题集",
+      "file": "chapters/027-练习-1-25.md"
+    },
+    {
+      "slug": "028-练习-1-26",
+      "title": "练习 1.26 — SICP 解题集",
+      "file": "chapters/028-练习-1-26.md"
+    },
+    {
+      "slug": "029-练习-1-27",
+      "title": "练习 1.27 — SICP 解题集",
+      "file": "chapters/029-练习-1-27.md"
+    },
+    {
+      "slug": "030-练习-1-28",
+      "title": "练习 1.28 — SICP 解题集",
+      "file": "chapters/030-练习-1-28.md"
+    },
+    {
+      "slug": "031-练习-1-29",
+      "title": "练习 1.29 — SICP 解题集",
+      "file": "chapters/031-练习-1-29.md"
+    },
+    {
+      "slug": "032-练习-1-30",
+      "title": "练习 1.30 — SICP 解题集",
+      "file": "chapters/032-练习-1-30.md"
+    },
+    {
+      "slug": "033-练习-1-31",
+      "title": "练习 1.31 — SICP 解题集",
+      "file": "chapters/033-练习-1-31.md"
+    },
+    {
+      "slug": "034-练习-1-32",
+      "title": "练习 1.32 — SICP 解题集",
+      "file": "chapters/034-练习-1-32.md"
+    },
+    {
+      "slug": "035-练习-1-33",
+      "title": "练习 1.33 — SICP 解题集",
+      "file": "chapters/035-练习-1-33.md"
+    },
+    {
+      "slug": "036-练习-1-34",
+      "title": "练习 1.34 — SICP 解题集",
+      "file": "chapters/036-练习-1-34.md"
+    },
+    {
+      "slug": "037-练习-1-35",
+      "title": "练习 1.35 — SICP 解题集",
+      "file": "chapters/037-练习-1-35.md"
+    },
+    {
+      "slug": "038-练习-1-36",
+      "title": "练习 1.36 — SICP 解题集",
+      "file": "chapters/038-练习-1-36.md"
+    },
+    {
+      "slug": "039-练习-1-37",
+      "title": "练习 1.37 — SICP 解题集",
+      "file": "chapters/039-练习-1-37.md"
+    },
+    {
+      "slug": "040-练习-1-38",
+      "title": "练习 1.38 — SICP 解题集",
+      "file": "chapters/040-练习-1-38.md"
+    },
+    {
+      "slug": "041-练习-1-39",
+      "title": "练习 1.39 — SICP 解题集",
+      "file": "chapters/041-练习-1-39.md"
+    },
+    {
+      "slug": "042-练习-1-40",
+      "title": "练习 1.40 — SICP 解题集",
+      "file": "chapters/042-练习-1-40.md"
+    },
+    {
+      "slug": "043-练习-1-41",
+      "title": "练习 1.41 — SICP 解题集",
+      "file": "chapters/043-练习-1-41.md"
+    },
+    {
+      "slug": "044-练习-1-42",
+      "title": "练习 1.42 — SICP 解题集",
+      "file": "chapters/044-练习-1-42.md"
+    },
+    {
+      "slug": "045-练习-1-43",
+      "title": "练习 1.43 — SICP 解题集",
+      "file": "chapters/045-练习-1-43.md"
+    },
+    {
+      "slug": "046-练习-1-44",
+      "title": "练习 1.44 — SICP 解题集",
+      "file": "chapters/046-练习-1-44.md"
+    },
+    {
+      "slug": "047-练习-1-45",
+      "title": "练习 1.45 — SICP 解题集",
+      "file": "chapters/047-练习-1-45.md"
+    },
+    {
+      "slug": "048-练习-1-46",
+      "title": "练习 1.46 — SICP 解题集",
+      "file": "chapters/048-练习-1-46.md"
+    },
+    {
+      "slug": "049-练习-2-1",
+      "title": "练习 2.1 — SICP 解题集",
+      "file": "chapters/049-练习-2-1.md"
+    },
+    {
+      "slug": "050-练习-2-2",
+      "title": "练习 2.2 — SICP 解题集",
+      "file": "chapters/050-练习-2-2.md"
+    },
+    {
+      "slug": "051-练习-2-3",
+      "title": "练习 2.3 — SICP 解题集",
+      "file": "chapters/051-练习-2-3.md"
+    },
+    {
+      "slug": "052-练习-2-4",
+      "title": "练习 2.4 — SICP 解题集",
+      "file": "chapters/052-练习-2-4.md"
+    },
+    {
+      "slug": "053-练习-2-5",
+      "title": "练习 2.5 — SICP 解题集",
+      "file": "chapters/053-练习-2-5.md"
+    },
+    {
+      "slug": "054-练习-2-6",
+      "title": "练习 2.6 — SICP 解题集",
+      "file": "chapters/054-练习-2-6.md"
+    },
+    {
+      "slug": "055-练习-2-17",
+      "title": "练习 2.17 — SICP 解题集",
+      "file": "chapters/055-练习-2-17.md"
+    },
+    {
+      "slug": "056-练习-2-18",
+      "title": "练习 2.18 — SICP 解题集",
+      "file": "chapters/056-练习-2-18.md"
+    },
+    {
+      "slug": "057-练习-2-19",
+      "title": "练习 2.19 — SICP 解题集",
+      "file": "chapters/057-练习-2-19.md"
+    },
+    {
+      "slug": "058-练习-2-20",
+      "title": "练习 2.20 — SICP 解题集",
+      "file": "chapters/058-练习-2-20.md"
+    },
+    {
+      "slug": "059-练习-2-21",
+      "title": "练习 2.21 — SICP 解题集",
+      "file": "chapters/059-练习-2-21.md"
+    },
+    {
+      "slug": "060-练习-2-22",
+      "title": "练习 2.22 — SICP 解题集",
+      "file": "chapters/060-练习-2-22.md"
+    },
+    {
+      "slug": "061-练习-2-23",
+      "title": "练习 2.23 — SICP 解题集",
+      "file": "chapters/061-练习-2-23.md"
+    },
+    {
+      "slug": "062-练习-2-24",
+      "title": "练习 2.24 — SICP 解题集",
+      "file": "chapters/062-练习-2-24.md"
+    },
+    {
+      "slug": "063-练习-2-25",
+      "title": "练习 2.25 — SICP 解题集",
+      "file": "chapters/063-练习-2-25.md"
+    },
+    {
+      "slug": "064-练习-2-26",
+      "title": "练习 2.26 — SICP 解题集",
+      "file": "chapters/064-练习-2-26.md"
+    },
+    {
+      "slug": "065-练习-2-27",
+      "title": "练习 2.27 — SICP 解题集",
+      "file": "chapters/065-练习-2-27.md"
+    },
+    {
+      "slug": "066-练习-2-28",
+      "title": "练习 2.28 — SICP 解题集",
+      "file": "chapters/066-练习-2-28.md"
+    },
+    {
+      "slug": "067-练习-2-29",
+      "title": "练习 2.29 — SICP 解题集",
+      "file": "chapters/067-练习-2-29.md"
+    },
+    {
+      "slug": "068-练习-2-30",
+      "title": "练习 2.30 — SICP 解题集",
+      "file": "chapters/068-练习-2-30.md"
+    },
+    {
+      "slug": "069-练习-2-31",
+      "title": "练习 2.31 — SICP 解题集",
+      "file": "chapters/069-练习-2-31.md"
+    },
+    {
+      "slug": "070-练习-2-32",
+      "title": "练习 2.32 — SICP 解题集",
+      "file": "chapters/070-练习-2-32.md"
+    },
+    {
+      "slug": "071-练习-2-33",
+      "title": "练习 2.33 — SICP 解题集",
+      "file": "chapters/071-练习-2-33.md"
+    },
+    {
+      "slug": "072-练习-2-34",
+      "title": "练习 2.34 — SICP 解题集",
+      "file": "chapters/072-练习-2-34.md"
+    },
+    {
+      "slug": "073-练习-2-35",
+      "title": "练习 2.35 — SICP 解题集",
+      "file": "chapters/073-练习-2-35.md"
+    },
+    {
+      "slug": "074-练习-2-36",
+      "title": "练习 2.36 — SICP 解题集",
+      "file": "chapters/074-练习-2-36.md"
+    },
+    {
+      "slug": "075-练习-2-37",
+      "title": "练习 2.37 — SICP 解题集",
+      "file": "chapters/075-练习-2-37.md"
+    },
+    {
+      "slug": "076-练习-2-38",
+      "title": "练习 2.38 — SICP 解题集",
+      "file": "chapters/076-练习-2-38.md"
+    },
+    {
+      "slug": "077-练习-2-39",
+      "title": "练习 2.39 — SICP 解题集",
+      "file": "chapters/077-练习-2-39.md"
+    },
+    {
+      "slug": "078-练习-2-40",
+      "title": "练习 2.40 — SICP 解题集",
+      "file": "chapters/078-练习-2-40.md"
+    },
+    {
+      "slug": "079-练习-2-41",
+      "title": "练习 2.41 — SICP 解题集",
+      "file": "chapters/079-练习-2-41.md"
+    },
+    {
+      "slug": "080-练习-2-42",
+      "title": "练习 2.42 — SICP 解题集",
+      "file": "chapters/080-练习-2-42.md"
+    },
+    {
+      "slug": "081-练习-2-43",
+      "title": "练习 2.43 — SICP 解题集",
+      "file": "chapters/081-练习-2-43.md"
+    },
+    {
+      "slug": "082-练习-2-44",
+      "title": "练习 2.44 — SICP 解题集",
+      "file": "chapters/082-练习-2-44.md"
+    },
+    {
+      "slug": "083-练习-2-45",
+      "title": "练习 2.45 — SICP 解题集",
+      "file": "chapters/083-练习-2-45.md"
+    },
+    {
+      "slug": "084-练习-2-46",
+      "title": "练习 2.46 — SICP 解题集",
+      "file": "chapters/084-练习-2-46.md"
+    },
+    {
+      "slug": "085-练习-2-47",
+      "title": "练习 2.47 — SICP 解题集",
+      "file": "chapters/085-练习-2-47.md"
+    },
+    {
+      "slug": "086-练习-2-48",
+      "title": "练习 2.48 — SICP 解题集",
+      "file": "chapters/086-练习-2-48.md"
+    },
+    {
+      "slug": "087-练习-2-49",
+      "title": "练习 2.49 — SICP 解题集",
+      "file": "chapters/087-练习-2-49.md"
+    },
+    {
+      "slug": "088-练习-2-50",
+      "title": "练习 2.50 — SICP 解题集",
+      "file": "chapters/088-练习-2-50.md"
+    },
+    {
+      "slug": "089-练习-2-51",
+      "title": "练习 2.51 — SICP 解题集",
+      "file": "chapters/089-练习-2-51.md"
+    },
+    {
+      "slug": "090-练习-2-52",
+      "title": "练习 2.52 — SICP 解题集",
+      "file": "chapters/090-练习-2-52.md"
+    },
+    {
+      "slug": "091-练习-2-53",
+      "title": "练习 2.53 — SICP 解题集",
+      "file": "chapters/091-练习-2-53.md"
+    },
+    {
+      "slug": "092-练习-2-54",
+      "title": "练习 2.54 — SICP 解题集",
+      "file": "chapters/092-练习-2-54.md"
+    },
+    {
+      "slug": "093-练习-2-55",
+      "title": "练习 2.55 — SICP 解题集",
+      "file": "chapters/093-练习-2-55.md"
+    },
+    {
+      "slug": "094-练习-2-56",
+      "title": "练习 2.56 — SICP 解题集",
+      "file": "chapters/094-练习-2-56.md"
+    },
+    {
+      "slug": "095-练习-2-57",
+      "title": "练习 2.57 — SICP 解题集",
+      "file": "chapters/095-练习-2-57.md"
+    },
+    {
+      "slug": "096-练习-2-58",
+      "title": "练习 2.58 — SICP 解题集",
+      "file": "chapters/096-练习-2-58.md"
+    },
+    {
+      "slug": "097-练习-2-59",
+      "title": "练习 2.59 — SICP 解题集",
+      "file": "chapters/097-练习-2-59.md"
+    },
+    {
+      "slug": "098-练习-2-60",
+      "title": "练习 2.60 — SICP 解题集",
+      "file": "chapters/098-练习-2-60.md"
+    },
+    {
+      "slug": "099-练习-2-61",
+      "title": "练习 2.61 — SICP 解题集",
+      "file": "chapters/099-练习-2-61.md"
+    },
+    {
+      "slug": "100-练习-2-62",
+      "title": "练习 2.62 — SICP 解题集",
+      "file": "chapters/100-练习-2-62.md"
+    },
+    {
+      "slug": "101-练习-2-63",
+      "title": "练习 2.63 — SICP 解题集",
+      "file": "chapters/101-练习-2-63.md"
+    },
+    {
+      "slug": "102-练习-2-64",
+      "title": "练习 2.64 — SICP 解题集",
+      "file": "chapters/102-练习-2-64.md"
+    },
+    {
+      "slug": "103-练习-2-65",
+      "title": "练习 2.65 — SICP 解题集",
+      "file": "chapters/103-练习-2-65.md"
+    },
+    {
+      "slug": "104-练习-2-66",
+      "title": "练习 2.66 — SICP 解题集",
+      "file": "chapters/104-练习-2-66.md"
+    },
+    {
+      "slug": "105-练习-2-67",
+      "title": "练习 2.67 — SICP 解题集",
+      "file": "chapters/105-练习-2-67.md"
+    },
+    {
+      "slug": "106-练习-2-68",
+      "title": "练习 2.68 — SICP 解题集",
+      "file": "chapters/106-练习-2-68.md"
+    },
+    {
+      "slug": "107-练习-2-69",
+      "title": "练习 2.69 — SICP 解题集",
+      "file": "chapters/107-练习-2-69.md"
+    },
+    {
+      "slug": "108-练习-2-70",
+      "title": "练习 2.70 — SICP 解题集",
+      "file": "chapters/108-练习-2-70.md"
+    },
+    {
+      "slug": "109-练习-2-71",
+      "title": "练习 2.71 — SICP 解题集",
+      "file": "chapters/109-练习-2-71.md"
+    },
+    {
+      "slug": "110-练习-2-72",
+      "title": "练习 2.72 — SICP 解题集",
+      "file": "chapters/110-练习-2-72.md"
+    },
+    {
+      "slug": "111-练习-2-73",
+      "title": "练习 2.73 — SICP 解题集",
+      "file": "chapters/111-练习-2-73.md"
+    },
+    {
+      "slug": "112-练习-2-74",
+      "title": "练习 2.74 — SICP 解题集",
+      "file": "chapters/112-练习-2-74.md"
+    },
+    {
+      "slug": "113-练习-2-75",
+      "title": "练习 2.75 — SICP 解题集",
+      "file": "chapters/113-练习-2-75.md"
+    },
+    {
+      "slug": "114-练习-2-76",
+      "title": "练习 2.76 — SICP 解题集",
+      "file": "chapters/114-练习-2-76.md"
+    },
+    {
+      "slug": "115-练习-2-77",
+      "title": "练习 2.77 — SICP 解题集",
+      "file": "chapters/115-练习-2-77.md"
+    },
+    {
+      "slug": "116-练习-2-78",
+      "title": "练习 2.78 — SICP 解题集",
+      "file": "chapters/116-练习-2-78.md"
+    },
+    {
+      "slug": "117-练习-2-79",
+      "title": "练习 2.79 — SICP 解题集",
+      "file": "chapters/117-练习-2-79.md"
+    },
+    {
+      "slug": "118-练习-2-80",
+      "title": "练习 2.80 — SICP 解题集",
+      "file": "chapters/118-练习-2-80.md"
+    },
+    {
+      "slug": "119-练习-2-81",
+      "title": "练习 2.81 — SICP 解题集",
+      "file": "chapters/119-练习-2-81.md"
+    },
+    {
+      "slug": "120-练习-3-1",
+      "title": "练习 3.1 — SICP 解题集",
+      "file": "chapters/120-练习-3-1.md"
+    },
+    {
+      "slug": "121-练习-3-2",
+      "title": "练习 3.2 — SICP 解题集",
+      "file": "chapters/121-练习-3-2.md"
+    },
+    {
+      "slug": "122-练习-3-3",
+      "title": "练习 3.3 — SICP 解题集",
+      "file": "chapters/122-练习-3-3.md"
+    },
+    {
+      "slug": "123-练习-3-4",
+      "title": "练习 3.4 — SICP 解题集",
+      "file": "chapters/123-练习-3-4.md"
+    },
+    {
+      "slug": "124-练习-3-5",
+      "title": "练习 3.5 — SICP 解题集",
+      "file": "chapters/124-练习-3-5.md"
+    },
+    {
+      "slug": "125-练习-3-6",
+      "title": "练习 3.6 — SICP 解题集",
+      "file": "chapters/125-练习-3-6.md"
+    },
+    {
+      "slug": "126-练习-3-7",
+      "title": "练习 3.7 — SICP 解题集",
+      "file": "chapters/126-练习-3-7.md"
+    },
+    {
+      "slug": "127-练习-3-8",
+      "title": "练习 3.8 — SICP 解题集",
+      "file": "chapters/127-练习-3-8.md"
+    },
+    {
+      "slug": "128-练习-3-9",
+      "title": "练习 3.9 — SICP 解题集",
+      "file": "chapters/128-练习-3-9.md"
+    },
+    {
+      "slug": "129-练习-3-10",
+      "title": "练习 3.10 — SICP 解题集",
+      "file": "chapters/129-练习-3-10.md"
+    },
+    {
+      "slug": "130-练习-3-11",
+      "title": "练习 3.11 — SICP 解题集",
+      "file": "chapters/130-练习-3-11.md"
+    },
+    {
+      "slug": "131-练习-3-12",
+      "title": "练习 3.12 — SICP 解题集",
+      "file": "chapters/131-练习-3-12.md"
+    },
+    {
+      "slug": "132-练习-3-13",
+      "title": "练习 3.13 — SICP 解题集",
+      "file": "chapters/132-练习-3-13.md"
+    },
+    {
+      "slug": "133-练习-3-14",
+      "title": "练习 3.14 — SICP 解题集",
+      "file": "chapters/133-练习-3-14.md"
+    },
+    {
+      "slug": "134-练习-3-15",
+      "title": "练习 3.15 — SICP 解题集",
+      "file": "chapters/134-练习-3-15.md"
+    },
+    {
+      "slug": "135-练习-3-16",
+      "title": "练习 3.16 — SICP 解题集",
+      "file": "chapters/135-练习-3-16.md"
+    },
+    {
+      "slug": "136-练习-3-17",
+      "title": "练习 3.17 — SICP 解题集",
+      "file": "chapters/136-练习-3-17.md"
+    },
+    {
+      "slug": "137-练习-3-18",
+      "title": "练习 3.18 — SICP 解题集",
+      "file": "chapters/137-练习-3-18.md"
+    },
+    {
+      "slug": "138-练习-3-19",
+      "title": "练习 3.19 — SICP 解题集",
+      "file": "chapters/138-练习-3-19.md"
+    },
+    {
+      "slug": "139-练习-3-20",
+      "title": "练习 3.20 — SICP 解题集",
+      "file": "chapters/139-练习-3-20.md"
+    },
+    {
+      "slug": "140-练习-3-21",
+      "title": "练习 3.21 — SICP 解题集",
+      "file": "chapters/140-练习-3-21.md"
+    },
+    {
+      "slug": "141-练习-3-22",
+      "title": "练习 3.22 — SICP 解题集",
+      "file": "chapters/141-练习-3-22.md"
+    },
+    {
+      "slug": "142-练习-3-23",
+      "title": "练习 3.23 — SICP 解题集",
+      "file": "chapters/142-练习-3-23.md"
+    },
+    {
+      "slug": "143-练习-3-24",
+      "title": "练习 3.24 — SICP 解题集",
+      "file": "chapters/143-练习-3-24.md"
+    },
+    {
+      "slug": "144-练习-3-25",
+      "title": "练习 3.25 — SICP 解题集",
+      "file": "chapters/144-练习-3-25.md"
+    },
+    {
+      "slug": "145-练习-3-26",
+      "title": "练习 3.26 — SICP 解题集",
+      "file": "chapters/145-练习-3-26.md"
+    },
+    {
+      "slug": "146-练习-3-27",
+      "title": "练习 3.27 — SICP 解题集",
+      "file": "chapters/146-练习-3-27.md"
+    },
+    {
+      "slug": "147-练习-3-28",
+      "title": "练习 3.28 — SICP 解题集",
+      "file": "chapters/147-练习-3-28.md"
+    },
+    {
+      "slug": "148-练习-3-29",
+      "title": "练习 3.29 — SICP 解题集",
+      "file": "chapters/148-练习-3-29.md"
+    },
+    {
+      "slug": "149-练习-3-30",
+      "title": "练习 3.30 — SICP 解题集",
+      "file": "chapters/149-练习-3-30.md"
+    },
+    {
+      "slug": "150-练习-3-31",
+      "title": "练习 3.31 — SICP 解题集",
+      "file": "chapters/150-练习-3-31.md"
+    },
+    {
+      "slug": "151-练习-3-32",
+      "title": "练习 3.32 — SICP 解题集",
+      "file": "chapters/151-练习-3-32.md"
+    },
+    {
+      "slug": "152-练习-3-33",
+      "title": "练习 3.33 — SICP 解题集",
+      "file": "chapters/152-练习-3-33.md"
+    },
+    {
+      "slug": "153-练习-3-34",
+      "title": "练习 3.34 — SICP 解题集",
+      "file": "chapters/153-练习-3-34.md"
+    },
+    {
+      "slug": "154-练习-3-35",
+      "title": "练习 3.35 — SICP 解题集",
+      "file": "chapters/154-练习-3-35.md"
+    },
+    {
+      "slug": "155-练习-3-36",
+      "title": "练习 3.36 — SICP 解题集",
+      "file": "chapters/155-练习-3-36.md"
+    },
+    {
+      "slug": "156-练习-3-37",
+      "title": "练习 3.37 — SICP 解题集",
+      "file": "chapters/156-练习-3-37.md"
+    },
+    {
+      "slug": "157-练习-3-38",
+      "title": "练习 3.38 — SICP 解题集",
+      "file": "chapters/157-练习-3-38.md"
+    },
+    {
+      "slug": "158-练习-3-39",
+      "title": "练习 3.39 — SICP 解题集",
+      "file": "chapters/158-练习-3-39.md"
+    },
+    {
+      "slug": "159-练习-3-40",
+      "title": "练习 3.40 — SICP 解题集",
+      "file": "chapters/159-练习-3-40.md"
+    },
+    {
+      "slug": "160-练习-3-41",
+      "title": "练习 3.41 — SICP 解题集",
+      "file": "chapters/160-练习-3-41.md"
+    },
+    {
+      "slug": "161-练习-3-42",
+      "title": "练习 3.42 — SICP 解题集",
+      "file": "chapters/161-练习-3-42.md"
+    },
+    {
+      "slug": "162-练习-3-43",
+      "title": "练习 3.43 — SICP 解题集",
+      "file": "chapters/162-练习-3-43.md"
+    },
+    {
+      "slug": "163-练习-3-44",
+      "title": "练习 3.44 — SICP 解题集",
+      "file": "chapters/163-练习-3-44.md"
+    },
+    {
+      "slug": "164-练习-3-45",
+      "title": "练习 3.45 — SICP 解题集",
+      "file": "chapters/164-练习-3-45.md"
+    },
+    {
+      "slug": "165-练习-3-46",
+      "title": "练习 3.46 — SICP 解题集",
+      "file": "chapters/165-练习-3-46.md"
+    },
+    {
+      "slug": "166-练习-3-47",
+      "title": "练习 3.47 — SICP 解题集",
+      "file": "chapters/166-练习-3-47.md"
+    },
+    {
+      "slug": "167-练习-3-48",
+      "title": "练习 3.48 — SICP 解题集",
+      "file": "chapters/167-练习-3-48.md"
+    },
+    {
+      "slug": "168-练习-3-49",
+      "title": "练习 3.49 — SICP 解题集",
+      "file": "chapters/168-练习-3-49.md"
+    },
+    {
+      "slug": "169-练习-3-50",
+      "title": "练习 3.50 — SICP 解题集",
+      "file": "chapters/169-练习-3-50.md"
+    },
+    {
+      "slug": "170-练习-3-51",
+      "title": "练习 3.51 — SICP 解题集",
+      "file": "chapters/170-练习-3-51.md"
+    },
+    {
+      "slug": "171-练习-3-52",
+      "title": "练习 3.52 — SICP 解题集",
+      "file": "chapters/171-练习-3-52.md"
+    },
+    {
+      "slug": "172-练习-3-53",
+      "title": "练习 3.53 — SICP 解题集",
+      "file": "chapters/172-练习-3-53.md"
+    },
+    {
+      "slug": "173-练习-3-54",
+      "title": "练习 3.54 — SICP 解题集",
+      "file": "chapters/173-练习-3-54.md"
+    },
+    {
+      "slug": "174-练习-3-55",
+      "title": "练习 3.55 — SICP 解题集",
+      "file": "chapters/174-练习-3-55.md"
+    },
+    {
+      "slug": "175-练习-3-56",
+      "title": "练习 3.56 — SICP 解题集",
+      "file": "chapters/175-练习-3-56.md"
+    },
+    {
+      "slug": "176-练习-3-57",
+      "title": "练习 3.57 — SICP 解题集",
+      "file": "chapters/176-练习-3-57.md"
+    },
+    {
+      "slug": "177-练习-3-58",
+      "title": "练习 3.58 — SICP 解题集",
+      "file": "chapters/177-练习-3-58.md"
+    },
+    {
+      "slug": "178-练习-3-59",
+      "title": "练习 3.59 — SICP 解题集",
+      "file": "chapters/178-练习-3-59.md"
+    },
+    {
+      "slug": "179-练习-3-63",
+      "title": "练习 3.63 — SICP 解题集",
+      "file": "chapters/179-练习-3-63.md"
+    },
+    {
+      "slug": "180-练习-3-64",
+      "title": "练习 3.64 — SICP 解题集",
+      "file": "chapters/180-练习-3-64.md"
+    },
+    {
+      "slug": "181-练习-3-65",
+      "title": "练习 3.65 — SICP 解题集",
+      "file": "chapters/181-练习-3-65.md"
+    },
+    {
+      "slug": "182-练习-3-66",
+      "title": "练习 3.66 — SICP 解题集",
+      "file": "chapters/182-练习-3-66.md"
+    },
+    {
+      "slug": "183-练习-4-1",
+      "title": "练习 4.1 — SICP 解题集",
+      "file": "chapters/183-练习-4-1.md"
+    },
+    {
+      "slug": "184-练习-4-2",
+      "title": "练习 4.2 — SICP 解题集",
+      "file": "chapters/184-练习-4-2.md"
+    },
+    {
+      "slug": "185-练习-4-3",
+      "title": "练习 4.3 — SICP 解题集",
+      "file": "chapters/185-练习-4-3.md"
+    },
+    {
+      "slug": "186-练习-4-4",
+      "title": "练习 4.4 — SICP 解题集",
+      "file": "chapters/186-练习-4-4.md"
+    },
+    {
+      "slug": "187-练习-4-5",
+      "title": "练习 4.5 — SICP 解题集",
+      "file": "chapters/187-练习-4-5.md"
+    },
+    {
+      "slug": "188-练习-4-6",
+      "title": "练习 4.6 — SICP 解题集",
+      "file": "chapters/188-练习-4-6.md"
+    },
+    {
+      "slug": "189-练习-4-7",
+      "title": "练习 4.7 — SICP 解题集",
+      "file": "chapters/189-练习-4-7.md"
+    },
+    {
+      "slug": "190-练习-4-8",
+      "title": "练习 4.8 — SICP 解题集",
+      "file": "chapters/190-练习-4-8.md"
+    },
+    {
+      "slug": "191-练习-4-9",
+      "title": "练习 4.9 — SICP 解题集",
+      "file": "chapters/191-练习-4-9.md"
+    },
+    {
+      "slug": "192-练习-4-10",
+      "title": "练习 4.10 — SICP 解题集",
+      "file": "chapters/192-练习-4-10.md"
+    },
+    {
+      "slug": "193-练习-4-11",
+      "title": "练习 4.11 — SICP 解题集",
+      "file": "chapters/193-练习-4-11.md"
+    },
+    {
+      "slug": "194-练习-4-13",
+      "title": "练习 4.13 — SICP 解题集",
+      "file": "chapters/194-练习-4-13.md"
+    },
+    {
+      "slug": "195-练习-4-14",
+      "title": "练习 4.14 — SICP 解题集",
+      "file": "chapters/195-练习-4-14.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "SICP 解题集 — SICP 解题集"
 }

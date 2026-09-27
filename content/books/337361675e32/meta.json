@@ -3,12 +3,12 @@
   "title": "一份其实很短的 LaTeX 入门文档",
   "url": "http://liam0205.me/2014/09/08/latex-introduction/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:54.426Z",
+  "fetchedAt": "2026-09-27T12:01:36.600Z",
   "chapters": [
     {
-      "slug": "001-1d",
+      "slug": "001-liam0205-me",
       "title": "liam0205.me",
-      "file": "chapters/001-1d.md"
+      "file": "chapters/001-liam0205-me.md"
     }
   ],
   "sourceType": "web",

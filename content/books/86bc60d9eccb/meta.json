@@ -3,12 +3,12 @@
   "title": "The Linux Command Line",
   "url": "http://billie66.github.io/TLCL/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-26T19:08:32.148Z",
+  "fetchedAt": "2026-09-27T11:54:12.461Z",
   "chapters": [
     {
-      "slug": "001-15",
+      "slug": "001-tlcl",
       "title": "TLCL",
-      "file": "chapters/001-15.md"
+      "file": "chapters/001-tlcl.md"
     }
   ],
   "sourceType": "web",

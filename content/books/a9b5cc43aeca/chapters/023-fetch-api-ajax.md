@@ -1,0 +1,56 @@
+## 浏览器兼容性
+
+![caniuse](https://leader.js.cool/basic/js/fetch.png)
+
+## 支持检查
+
+```
+if (typeof fetch === 'function' && typeof window.fetch === 'function') {
+  // 支持
+}
+
+if (typeof fetch !== 'function' || typeof window.fetch !== 'function') {
+  // 不支持
+}
+```
+
+## 示例代码
+
+```
+var req = new Request('/data.json', { method: 'POST', cache: 'reload' });
+fetch(req)
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  });
+```
+
+## 跨域 Cookie 设置
+
+`credentials` 凭证参数
+
+```
+fetch('a.com/api', { credentials: 'include' }).then(function (res) {
+  // ...
+});
+```
+
+或
+
+```
+var req = new Request('/data.json', { method: 'POST', cache: 'reload', credentials: 'include' });
+fetch(req)
+  .then(function (res) {
+    return res.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  });
+```
+
+## 参考资料
+
+-   接口文档： [https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+-   介绍： [https://github.com/camsong/blog/issues/2](https://github.com/camsong/blog/issues/2)

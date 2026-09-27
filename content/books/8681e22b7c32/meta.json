@@ -3,12 +3,142 @@
   "title": "Scheme语言简明教程",
   "url": "http://songjinghe.github.io/TYS-zh-translation/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:55.167Z",
+  "fetchedAt": "2026-09-27T12:01:50.221Z",
   "chapters": [
     {
-      "slug": "001-1b",
+      "slug": "001-译-teach-yourself-scheme-in-fixnum-days",
       "title": "译：Teach Yourself Scheme in Fixnum Days",
-      "file": "chapters/001-1b.md"
+      "file": "chapters/001-译-teach-yourself-scheme-in-fixnum-days.md"
+    },
+    {
+      "slug": "002-译者-关于本文",
+      "title": "关于译文",
+      "file": "chapters/002-译者-关于本文.md"
+    },
+    {
+      "slug": "003-前言",
+      "title": "前言",
+      "file": "chapters/003-前言.md"
+    },
+    {
+      "slug": "004-第一章-进入scheme",
+      "title": "第一章：进入Scheme",
+      "file": "chapters/004-第一章-进入scheme.md"
+    },
+    {
+      "slug": "005-第二章-数据结构",
+      "title": "第二章 数据类型",
+      "file": "chapters/005-第二章-数据结构.md"
+    },
+    {
+      "slug": "006-第三章-代码结构",
+      "title": "第三章 Forms代码结构",
+      "file": "chapters/006-第三章-代码结构.md"
+    },
+    {
+      "slug": "007-第四章-条件语句",
+      "title": "第四章 条件语句",
+      "file": "chapters/007-第四章-条件语句.md"
+    },
+    {
+      "slug": "008-第五章-词法变量",
+      "title": "第五章 词法变量",
+      "file": "chapters/008-第五章-词法变量.md"
+    },
+    {
+      "slug": "009-第六章-递归",
+      "title": "第六章 递归",
+      "file": "chapters/009-第六章-递归.md"
+    },
+    {
+      "slug": "010-第七章-输入输出",
+      "title": "第七章 输入输出",
+      "file": "chapters/010-第七章-输入输出.md"
+    },
+    {
+      "slug": "011-第八章-宏",
+      "title": "第八章 宏",
+      "file": "chapters/011-第八章-宏.md"
+    },
+    {
+      "slug": "012-第九章-结构",
+      "title": "第九章 结构",
+      "file": "chapters/012-第九章-结构.md"
+    },
+    {
+      "slug": "013-第十章-关联列表和表格",
+      "title": "第十章 关联表和表格",
+      "file": "chapters/013-第十章-关联列表和表格.md"
+    },
+    {
+      "slug": "014-第十一章-系统接口",
+      "title": "第十一章 系统接口",
+      "file": "chapters/014-第十一章-系统接口.md"
+    },
+    {
+      "slug": "015-第十二章-对象和类",
+      "title": "第十二章 对象和类",
+      "file": "chapters/015-第十二章-对象和类.md"
+    },
+    {
+      "slug": "016-第十三章-跳转",
+      "title": "第十三章 跳转",
+      "file": "chapters/016-第十三章-跳转.md"
+    },
+    {
+      "slug": "017-第十四章-不确定性",
+      "title": "第十四章 不确定性",
+      "file": "chapters/017-第十四章-不确定性.md"
+    },
+    {
+      "slug": "018-第十五章-引擎",
+      "title": "第十五章 引擎",
+      "file": "chapters/018-第十五章-引擎.md"
+    },
+    {
+      "slug": "019-第十六章-命令行脚本",
+      "title": "第十六章 命令行脚本",
+      "file": "chapters/019-第十六章-命令行脚本.md"
+    },
+    {
+      "slug": "020-第十七章-cgi脚本",
+      "title": "第十七章 CGI脚本",
+      "file": "chapters/020-第十七章-cgi脚本.md"
+    },
+    {
+      "slug": "021-附录-a-scheme方言",
+      "title": "附录 A Scheme方言",
+      "file": "chapters/021-附录-a-scheme方言.md"
+    },
+    {
+      "slug": "022-附录-b-dos批处理",
+      "title": "附录B 在DOS中运行Scheme脚本",
+      "file": "chapters/022-附录-b-dos批处理.md"
+    },
+    {
+      "slug": "023-附录-c-数值运算",
+      "title": "附录C 数值运算技术",
+      "file": "chapters/023-附录-c-数值运算.md"
+    },
+    {
+      "slug": "024-附录-d-可设为infinity的时钟",
+      "title": "附录D 可设为infinity的时钟",
+      "file": "chapters/024-附录-d-可设为infinity的时钟.md"
+    },
+    {
+      "slug": "025-附录-e-参考文献",
+      "title": "附录E 参考文献",
+      "file": "chapters/025-附录-e-参考文献.md"
+    },
+    {
+      "slug": "026-附录-f-索引",
+      "title": "附录F 索引",
+      "file": "chapters/026-附录-f-索引.md"
+    },
+    {
+      "slug": "027-无关的-论java语言符号表设计时的一些问题",
+      "title": "Java 符号表设计的相关问题",
+      "file": "chapters/027-无关的-论java语言符号表设计时的一些问题.md"
     }
   ],
   "sourceType": "web",

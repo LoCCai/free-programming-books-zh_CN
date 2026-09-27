@@ -3,12 +3,27 @@
   "title": "Ruby 源码解读",
   "url": "https://ruby-china.org/topics/22386",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:18.312Z",
+  "fetchedAt": "2026-09-27T12:06:38.400Z",
   "chapters": [
     {
-      "slug": "001-z",
+      "slug": "001-试译-ruby-源码解读",
       "title": "试译 Ruby 源码解读",
-      "file": "chapters/001-z.md"
+      "file": "chapters/001-试译-ruby-源码解读.md"
+    },
+    {
+      "slug": "002-社区",
+      "title": "Ruby China",
+      "file": "chapters/002-社区.md"
+    },
+    {
+      "slug": "003-招聘",
+      "title": "招聘",
+      "file": "chapters/003-招聘.md"
+    },
+    {
+      "slug": "004-wiki",
+      "title": "Wiki",
+      "file": "chapters/004-wiki.md"
     }
   ],
   "sourceType": "web",

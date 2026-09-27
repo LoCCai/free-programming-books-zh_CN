@@ -3,12 +3,32 @@
   "title": "exvim--vim 改良成IDE项目",
   "url": "http://exvim.github.io/docs-zh/intro/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:40.626Z",
+  "fetchedAt": "2026-09-27T11:56:01.837Z",
   "chapters": [
     {
-      "slug": "001-11",
+      "slug": "001-exvim-简介",
       "title": "exVim: 简介",
-      "file": "chapters/001-11.md"
+      "file": "chapters/001-exvim-简介.md"
+    },
+    {
+      "slug": "002-home",
+      "title": "exVim: Home",
+      "file": "chapters/002-home.md"
+    },
+    {
+      "slug": "003-downloads",
+      "title": "exVim: Downloads",
+      "file": "chapters/003-downloads.md"
+    },
+    {
+      "slug": "004-docs-中文",
+      "title": "exVim: 文档",
+      "file": "chapters/004-docs-中文.md"
+    },
+    {
+      "slug": "005-about",
+      "title": "exVim: About",
+      "file": "chapters/005-about.md"
     }
   ],
   "sourceType": "web",

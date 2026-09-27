@@ -3,12 +3,12 @@
   "title": "PostgreSQL 9.5.3 中文文档",
   "url": "http://www.postgres.cn/docs/9.5/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:02.937Z",
+  "fetchedAt": "2026-09-27T11:56:15.508Z",
   "chapters": [
     {
-      "slug": "001-16",
+      "slug": "001-postgresql-手册",
       "title": "PostgreSQL 手册",
-      "file": "chapters/001-16.md"
+      "file": "chapters/001-postgresql-手册.md"
     }
   ],
   "sourceType": "web",

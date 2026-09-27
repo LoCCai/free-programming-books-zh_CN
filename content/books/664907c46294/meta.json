@@ -3,12 +3,37 @@
   "title": "Atom官方手册",
   "url": "https://atom-china.org/t/atom/62",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:52.405Z",
+  "fetchedAt": "2026-09-27T11:56:12.991Z",
   "chapters": [
     {
-      "slug": "001-w",
+      "slug": "001-官方手册-atom-基础使用",
       "title": "官方手册：Atom 基础使用",
-      "file": "chapters/001-w.md"
+      "file": "chapters/001-官方手册-atom-基础使用.md"
+    },
+    {
+      "slug": "002-首页",
+      "title": "Atom 中文社区",
+      "file": "chapters/002-首页.md"
+    },
+    {
+      "slug": "003-类别",
+      "title": "Atom 中文社区",
+      "file": "chapters/003-类别.md"
+    },
+    {
+      "slug": "004-准则",
+      "title": "常见问题解答 - Atom 中文社区",
+      "file": "chapters/004-准则.md"
+    },
+    {
+      "slug": "005-服务条款",
+      "title": "服务条款 - Atom 中文社区",
+      "file": "chapters/005-服务条款.md"
+    },
+    {
+      "slug": "006-隐私政策",
+      "title": "隐私 - Atom 中文社区",
+      "file": "chapters/006-隐私政策.md"
     }
   ],
   "sourceType": "web",

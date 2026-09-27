@@ -3,12 +3,52 @@
   "title": "Introduction to Tornado 中文翻译",
   "url": "http://demo.pythoner.com/itt2zh/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:08.536Z",
+  "fetchedAt": "2026-09-27T12:05:37.491Z",
   "chapters": [
     {
-      "slug": "001-16",
+      "slug": "001-索引页-introduction-to-tornado-中文翻译",
       "title": "索引页 - Introduction to Tornado 中文翻译",
-      "file": "chapters/001-16.md"
+      "file": "chapters/001-索引页-introduction-to-tornado-中文翻译.md"
+    },
+    {
+      "slug": "002-第一章-引言",
+      "title": "第一章：引言 - Introduction to Tornado 中文翻译",
+      "file": "chapters/002-第一章-引言.md"
+    },
+    {
+      "slug": "003-第二章-表单和模板",
+      "title": "第二章：表单和模板 - Introduction to Tornado 中文翻译",
+      "file": "chapters/003-第二章-表单和模板.md"
+    },
+    {
+      "slug": "004-第三章-模板扩展",
+      "title": "第三章：模板扩展 - Introduction to Tornado 中文翻译",
+      "file": "chapters/004-第三章-模板扩展.md"
+    },
+    {
+      "slug": "005-第四章-数据库",
+      "title": "第四章：数据库 - Introduction to Tornado 中文翻译",
+      "file": "chapters/005-第四章-数据库.md"
+    },
+    {
+      "slug": "006-第五章-异步web服务",
+      "title": "第五章：异步Web服务 - Introduction to Tornado 中文翻译",
+      "file": "chapters/006-第五章-异步web服务.md"
+    },
+    {
+      "slug": "007-第六章-编写安全应用",
+      "title": "第六章：编写安全应用 - Introduction to Tornado 中文翻译",
+      "file": "chapters/007-第六章-编写安全应用.md"
+    },
+    {
+      "slug": "008-第七章-外部服务认证",
+      "title": "第七章：外部服务认证 - Introduction to Tornado 中文翻译",
+      "file": "chapters/008-第七章-外部服务认证.md"
+    },
+    {
+      "slug": "009-第八章-部署tornado",
+      "title": "第八章：部署Tornado - Introduction to Tornado 中文翻译",
+      "file": "chapters/009-第八章-部署tornado.md"
     }
   ],
   "sourceType": "web",

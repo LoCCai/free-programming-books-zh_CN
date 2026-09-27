@@ -1,0 +1,33 @@
+分类:
+
+上一章我们说到，PluginSpec描述了插件的“元数据”。这些“元数据”是静态数据，读取自一个插件描述文件。而所有的 Qt Creator 插件，都要继承IPlugin类。 IPlugin类是所有插件的基类，每个插件都必须继承这个抽象类，并实现其中的纯虚函数（这是一个不恰当的命名，原本类名的前缀I代表 interface，但随着版本的迭代，这个类已经变成一个抽象类而不是接口。像 C++ 这种语言 ...
+
+前面我们已经了解到有关 Qt 中常见的 D 指针的相关内容，下面就可以开始真正的代码学习了。 首先，我们从ExtensionSystem::PluginSpec这个类开始。之所以选择这个类，是因为这是一个最基础的类，它代表 Qt Creator 的“一个插件”。以 Windows 平台为例，Qt Creator 的插件是以 dll 的形式存在的。我们可以打开 %QT\_PATH%\\Tools\\QtC ...
+
+按照我们之前的习惯，我们会按照 libs.pro 的SUBDIRS部分的顺序进行阅读。前面一章我们读过 aggregation 子项目，下面则要开始重中之重，extensionsystem。我们曾经介绍过，Qt Creator 的核心是一个插件系统。Qt Creator 的所有功能都是以插件的形式提供的。这个插件系统的实现，就是 extensionsystem。在这一阶段，我们将了解到 Qt Cr ...
+
+2016年11月26日 [9 评论](http://www.devbean.net/category/qt-study-road-2/%3Chttps://www.devbean.net/2016/11/qt-creator-source-study-07/#comments >) 4.6K 次阅读
+
+前面一章我们已经来到了 libs 目录。libs.pro 的SUBDIRS部分，第一个子项目是 aggregation。因此，我们的代码阅读也就从这里开始入手。 打开 aggregation 目录，按照之前的经验，还是从 aggregation.pro 开始。 这个文件没有那么复杂。但是它的第一行还是把我们带到了另外一个文件，qtcreatorlibrary.pri。qtcreatorlibrar ...
+
+2016年10月23日 [0 评论](http://www.devbean.net/category/qt-study-road-2/%3Chttps://www.devbean.net/2016/10/qt-creator-source-study-06/#respond >) 3.3K 次阅读
+
+前面我们已经学习了 qtcreator.pro 和 qtcreator.pri 两个文件的代码。在 qtcreator.pro 中有这么一段代码： 这意味着，Qt Creator 会按照SUBDIRS定义的顺序编译。所以，下面我们需要从 src 目录开始。打开 src 目录，有这么几个目录和文件。 我们从最根本的 src.pro 开始。当TEMPLATE被定义为subdirs时，Qt 会去找SUB ...
+
+上一章我们已经分析过项目文件 qtcreator.pro。我们看到，qtcreator.pro 中很多重要的功能都使用了来自 qtcreator.pri 中定义的函数或者变量。本章我们就来看看 qtcreator.pri 是怎么写的。 第一行，如果存在QTCREATOR\_PRI\_INCLUDED，则抛出错误。下面一行则设置了QTCREATOR\_PRI\_INCLUDED。这两行类防止将 q ...
+
+当我们准备好 Qt Creator 的源代码之后，首先进入到它的目录，来看一下它的源代码目录有什么奥秘。 这里一共有 9 个文件夹和 9 个文件。我们来一一看看它们都是干什么用的。 .git: 版本控制 git 的隐藏目录，这与 Qt Creator 代码没有关系。 bin: 生成 Linux 平台 shell 脚本。 dist: 安装文件配置信息和版本更新记录。 doc: 生成 doxygen ...
+
+要学习 Qt Creator 的源代码，首先要获取它的源代码。与 Qt 不同，前者在安装时可以选择是否安装源代码，但是 Qt Creator 的源代码并不是与可执行文件一起发布的。我们需要自己下载。 获取 Qt Creator 的源代码有两种方式：下载 zip 包以及使用 git clone。 Qt Creator 的源码 zip 包就在 Qt 的下载页面。我们可以打开 Qt 开源版下载页面（商业 ...
+
+针对 Qt Creator 源代码的分析已经计划了很长时间，但是一直没有进行。至于为什么要读源代码，这个问题已经不需要我们去回答。源码之前，了无秘密。站在巨人的肩膀上，我们也会比之前高那么一点点。 我们可以去读 Qt 的源代码。这对于深入学习 Qt 是不可或缺的，但是，对于初学者以及更多的普通开发者而言，直接读 Qt 的源代码还是比较困难的。首先，Qt 是一个跨系统的通用库，很多有关操作系统层面的 ...
+
+2016年7月23日 [1 个评论](http://www.devbean.net/category/qt-study-road-2/%3Chttps://www.devbean.net/2016/07/qt-creator-source-study-01/#comments >) 3.6K 次阅读
+
+Core::BaseFileWizard 类Core::BaseFileWizard在 coreplugin/basefilewizard.h 文件中声明：
+
+-   1
+-   [2](https://www.devbean.net/category/qtcreator/page/2/)
+-   [3](https://www.devbean.net/category/qtcreator/page/3/)
+-   [4](https://www.devbean.net/category/qtcreator/page/4/)
+-   [](https://www.devbean.net/category/qtcreator/page/2/)

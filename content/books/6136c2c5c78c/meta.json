@@ -3,12 +3,697 @@
   "title": "Linux 构建指南",
   "url": "https://www.jinbuguo.com/lfs/lfs62/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-26T19:07:48.643Z",
+  "fetchedAt": "2026-09-27T11:55:54.197Z",
   "chapters": [
     {
-      "slug": "001-19",
+      "slug": "001-linux-from-scratch",
       "title": "Linux From Scratch",
-      "file": "chapters/001-19.md"
+      "file": "chapters/001-linux-from-scratch.md"
+    },
+    {
+      "slug": "002-前言",
+      "title": "序言",
+      "file": "chapters/002-前言.md"
+    },
+    {
+      "slug": "003-目标读者",
+      "title": "ii. 目标读者",
+      "file": "chapters/003-目标读者.md"
+    },
+    {
+      "slug": "004-先决条件",
+      "title": "iii. 先决条件",
+      "file": "chapters/004-先决条件.md"
+    },
+    {
+      "slug": "005-对宿主系统的要求",
+      "title": "iv. 对宿主系统的要求",
+      "file": "chapters/005-对宿主系统的要求.md"
+    },
+    {
+      "slug": "006-排版约定",
+      "title": "v. 排版约定",
+      "file": "chapters/006-排版约定.md"
+    },
+    {
+      "slug": "007-本书的组织结构",
+      "title": "vi. 本书的组织结构",
+      "file": "chapters/007-本书的组织结构.md"
+    },
+    {
+      "slug": "008-勘误表",
+      "title": "vii. 勘误表",
+      "file": "chapters/008-勘误表.md"
+    },
+    {
+      "slug": "009-如何构建一个-lfs-系统",
+      "title": "第一章 简介",
+      "file": "chapters/009-如何构建一个-lfs-系统.md"
+    },
+    {
+      "slug": "010-与上一版本有何不同",
+      "title": "1.2. 与上一版本有何不同?",
+      "file": "chapters/010-与上一版本有何不同.md"
+    },
+    {
+      "slug": "011-更新日志",
+      "title": "1.3. 更新日志",
+      "file": "chapters/011-更新日志.md"
+    },
+    {
+      "slug": "012-资源",
+      "title": "1.4. 资源",
+      "file": "chapters/012-资源.md"
+    },
+    {
+      "slug": "013-帮助",
+      "title": "1.5. 帮助",
+      "file": "chapters/013-帮助.md"
+    },
+    {
+      "slug": "014-简介",
+      "title": "第二章 准备一个新分区",
+      "file": "chapters/014-简介.md"
+    },
+    {
+      "slug": "015-创建一个新分区",
+      "title": "2.2. 创建一个新分区",
+      "file": "chapters/015-创建一个新分区.md"
+    },
+    {
+      "slug": "016-在新分区上创建文件系统",
+      "title": "2.3. 在新分区上创建文件系统",
+      "file": "chapters/016-在新分区上创建文件系统.md"
+    },
+    {
+      "slug": "017-挂载新分区",
+      "title": "2.4. 挂载新分区",
+      "file": "chapters/017-挂载新分区.md"
+    },
+    {
+      "slug": "018-简介",
+      "title": "第三章 软件包和补丁",
+      "file": "chapters/018-简介.md"
+    },
+    {
+      "slug": "019-全部软件包",
+      "title": "3.2. 全部软件包",
+      "file": "chapters/019-全部软件包.md"
+    },
+    {
+      "slug": "020-需要的补丁",
+      "title": "3.3. 需要的补丁",
+      "file": "chapters/020-需要的补丁.md"
+    },
+    {
+      "slug": "021-关于环境变量-lfs",
+      "title": "第四章 最后的准备工作",
+      "file": "chapters/021-关于环境变量-lfs.md"
+    },
+    {
+      "slug": "022-创建-lfs-tools-目录",
+      "title": "4.2. 创建 $LFS/tools 目录",
+      "file": "chapters/022-创建-lfs-tools-目录.md"
+    },
+    {
+      "slug": "023-添加-lfs-用户",
+      "title": "4.3. 添加 LFS 用户",
+      "file": "chapters/023-添加-lfs-用户.md"
+    },
+    {
+      "slug": "024-设置工作环境",
+      "title": "4.4. 设置工作环境",
+      "file": "chapters/024-设置工作环境.md"
+    },
+    {
+      "slug": "025-关于-sbu",
+      "title": "4.5. 关于 SBU",
+      "file": "chapters/025-关于-sbu.md"
+    },
+    {
+      "slug": "026-关于软件包测试套件",
+      "title": "4.6. 关于软件包测试套件",
+      "file": "chapters/026-关于软件包测试套件.md"
+    },
+    {
+      "slug": "027-简介",
+      "title": "第五章 构建临时编译环境",
+      "file": "chapters/027-简介.md"
+    },
+    {
+      "slug": "028-工具链技术说明",
+      "title": "5.2. 工具链技术说明",
+      "file": "chapters/028-工具链技术说明.md"
+    },
+    {
+      "slug": "029-binutils-2-16-1-第一遍",
+      "title": "5.3. Binutils-2.16.1 - 第一遍",
+      "file": "chapters/029-binutils-2-16-1-第一遍.md"
+    },
+    {
+      "slug": "030-gcc-4-0-3-第一遍",
+      "title": "5.4. GCC-4.0.3 - 第一遍",
+      "file": "chapters/030-gcc-4-0-3-第一遍.md"
+    },
+    {
+      "slug": "031-linux-libc-headers-2-6-12-0",
+      "title": "5.5. Linux-Libc-Headers-2.6.12.0",
+      "file": "chapters/031-linux-libc-headers-2-6-12-0.md"
+    },
+    {
+      "slug": "032-glibc-2-3-6",
+      "title": "5.6. Glibc-2.3.6",
+      "file": "chapters/032-glibc-2-3-6.md"
+    },
+    {
+      "slug": "033-调整工具链",
+      "title": "5.7. 调整工具链",
+      "file": "chapters/033-调整工具链.md"
+    },
+    {
+      "slug": "034-tcl-8-4-13",
+      "title": "5.8. Tcl-8.4.13",
+      "file": "chapters/034-tcl-8-4-13.md"
+    },
+    {
+      "slug": "035-expect-5-43-0",
+      "title": "5.9. Expect-5.43.0",
+      "file": "chapters/035-expect-5-43-0.md"
+    },
+    {
+      "slug": "036-dejagnu-1-4-4",
+      "title": "5.10. DejaGNU-1.4.4",
+      "file": "chapters/036-dejagnu-1-4-4.md"
+    },
+    {
+      "slug": "037-gcc-4-0-3-第二遍",
+      "title": "5.11. GCC-4.0.3 - 第二遍",
+      "file": "chapters/037-gcc-4-0-3-第二遍.md"
+    },
+    {
+      "slug": "038-binutils-2-16-1-第二遍",
+      "title": "5.12. Binutils-2.16.1 - 第二遍",
+      "file": "chapters/038-binutils-2-16-1-第二遍.md"
+    },
+    {
+      "slug": "039-ncurses-5-5",
+      "title": "5.13. Ncurses-5.5",
+      "file": "chapters/039-ncurses-5-5.md"
+    },
+    {
+      "slug": "040-bash-3-1",
+      "title": "5.14. Bash-3.1",
+      "file": "chapters/040-bash-3-1.md"
+    },
+    {
+      "slug": "041-bzip2-1-0-3",
+      "title": "5.15. Bzip2-1.0.3",
+      "file": "chapters/041-bzip2-1-0-3.md"
+    },
+    {
+      "slug": "042-coreutils-5-96",
+      "title": "5.16. Coreutils-5.96",
+      "file": "chapters/042-coreutils-5-96.md"
+    },
+    {
+      "slug": "043-diffutils-2-8-1",
+      "title": "5.17. Diffutils-2.8.1",
+      "file": "chapters/043-diffutils-2-8-1.md"
+    },
+    {
+      "slug": "044-gawk-3-1-5",
+      "title": "5.19. Gawk-3.1.5",
+      "file": "chapters/044-gawk-3-1-5.md"
+    },
+    {
+      "slug": "045-gettext-0-14-5",
+      "title": "5.20. Gettext-0.14.5",
+      "file": "chapters/045-gettext-0-14-5.md"
+    },
+    {
+      "slug": "046-grep-2-5-1a",
+      "title": "5.21. Grep-2.5.1a",
+      "file": "chapters/046-grep-2-5-1a.md"
+    },
+    {
+      "slug": "047-gzip-1-3-5",
+      "title": "5.22. Gzip-1.3.5",
+      "file": "chapters/047-gzip-1-3-5.md"
+    },
+    {
+      "slug": "048-m4-1-4-4",
+      "title": "5.23. M4-1.4.4",
+      "file": "chapters/048-m4-1-4-4.md"
+    },
+    {
+      "slug": "049-make-3-80",
+      "title": "5.24. Make-3.80",
+      "file": "chapters/049-make-3-80.md"
+    },
+    {
+      "slug": "050-patch-2-5-4",
+      "title": "5.25. Patch-2.5.4",
+      "file": "chapters/050-patch-2-5-4.md"
+    },
+    {
+      "slug": "051-perl-5-8-8",
+      "title": "5.26. Perl-5.8.8",
+      "file": "chapters/051-perl-5-8-8.md"
+    },
+    {
+      "slug": "052-sed-4-1-5",
+      "title": "5.27. Sed-4.1.5",
+      "file": "chapters/052-sed-4-1-5.md"
+    },
+    {
+      "slug": "053-tar-1-15-1",
+      "title": "5.28. Tar-1.15.1",
+      "file": "chapters/053-tar-1-15-1.md"
+    },
+    {
+      "slug": "054-texinfo-4-8",
+      "title": "5.29. Texinfo-4.8",
+      "file": "chapters/054-texinfo-4-8.md"
+    },
+    {
+      "slug": "055-util-linux-2-12r",
+      "title": "5.30. Util-linux-2.12r",
+      "file": "chapters/055-util-linux-2-12r.md"
+    },
+    {
+      "slug": "056-清理系统",
+      "title": "5.31. 清理系统",
+      "file": "chapters/056-清理系统.md"
+    },
+    {
+      "slug": "057-改变所有者",
+      "title": "5.32. 改变所有者",
+      "file": "chapters/057-改变所有者.md"
+    },
+    {
+      "slug": "058-简介",
+      "title": "第六章 安装系统基础软件",
+      "file": "chapters/058-简介.md"
+    },
+    {
+      "slug": "059-挂载虚拟内核文件系统",
+      "title": "6.2. 挂载虚拟内核文件系统",
+      "file": "chapters/059-挂载虚拟内核文件系统.md"
+    },
+    {
+      "slug": "060-包管理",
+      "title": "6.3. 包管理",
+      "file": "chapters/060-包管理.md"
+    },
+    {
+      "slug": "061-进入-chroot-环境",
+      "title": "6.4. 进入 Chroot 环境",
+      "file": "chapters/061-进入-chroot-环境.md"
+    },
+    {
+      "slug": "062-创建系统目录结构",
+      "title": "6.5. 创建系统目录结构",
+      "file": "chapters/062-创建系统目录结构.md"
+    },
+    {
+      "slug": "063-创建必需的文件与符号连接",
+      "title": "6.6. 创建必需的文件与符号连接",
+      "file": "chapters/063-创建必需的文件与符号连接.md"
+    },
+    {
+      "slug": "064-linux-libc-headers-2-6-12-0",
+      "title": "6.7. Linux-Libc-Headers-2.6.12.0",
+      "file": "chapters/064-linux-libc-headers-2-6-12-0.md"
+    },
+    {
+      "slug": "065-man-pages-2-34",
+      "title": "6.8. Man-pages-2.34",
+      "file": "chapters/065-man-pages-2-34.md"
+    },
+    {
+      "slug": "066-glibc-2-3-6",
+      "title": "6.9. Glibc-2.3.6",
+      "file": "chapters/066-glibc-2-3-6.md"
+    },
+    {
+      "slug": "067-再次调整工具链",
+      "title": "6.10. 再次调整工具链",
+      "file": "chapters/067-再次调整工具链.md"
+    },
+    {
+      "slug": "068-binutils-2-16-1",
+      "title": "6.11. Binutils-2.16.1",
+      "file": "chapters/068-binutils-2-16-1.md"
+    },
+    {
+      "slug": "069-gcc-4-0-3",
+      "title": "6.12. GCC-4.0.3",
+      "file": "chapters/069-gcc-4-0-3.md"
+    },
+    {
+      "slug": "070-berkeley-db-4-4-20",
+      "title": "6.13. Berkeley DB-4.4.20",
+      "file": "chapters/070-berkeley-db-4-4-20.md"
+    },
+    {
+      "slug": "071-coreutils-5-96",
+      "title": "6.14. Coreutils-5.96",
+      "file": "chapters/071-coreutils-5-96.md"
+    },
+    {
+      "slug": "072-iana-etc-2-10",
+      "title": "6.15. Iana-Etc-2.10",
+      "file": "chapters/072-iana-etc-2-10.md"
+    },
+    {
+      "slug": "073-m4-1-4-4",
+      "title": "6.16. M4-1.4.4",
+      "file": "chapters/073-m4-1-4-4.md"
+    },
+    {
+      "slug": "074-bison-2-2",
+      "title": "6.17. Bison-2.2",
+      "file": "chapters/074-bison-2-2.md"
+    },
+    {
+      "slug": "075-ncurses-5-5",
+      "title": "6.18. Ncurses-5.5",
+      "file": "chapters/075-ncurses-5-5.md"
+    },
+    {
+      "slug": "076-procps-3-2-6",
+      "title": "6.19. Procps-3.2.6",
+      "file": "chapters/076-procps-3-2-6.md"
+    },
+    {
+      "slug": "077-sed-4-1-5",
+      "title": "6.20. Sed-4.1.5",
+      "file": "chapters/077-sed-4-1-5.md"
+    },
+    {
+      "slug": "078-libtool-1-5-22",
+      "title": "6.21. Libtool-1.5.22",
+      "file": "chapters/078-libtool-1-5-22.md"
+    },
+    {
+      "slug": "079-perl-5-8-8",
+      "title": "6.22. Perl-5.8.8",
+      "file": "chapters/079-perl-5-8-8.md"
+    },
+    {
+      "slug": "080-readline-5-1",
+      "title": "6.23. Readline-5.1",
+      "file": "chapters/080-readline-5-1.md"
+    },
+    {
+      "slug": "081-zlib-1-2-3",
+      "title": "6.24. Zlib-1.2.3",
+      "file": "chapters/081-zlib-1-2-3.md"
+    },
+    {
+      "slug": "082-autoconf-2-59",
+      "title": "6.25. Autoconf-2.59",
+      "file": "chapters/082-autoconf-2-59.md"
+    },
+    {
+      "slug": "083-automake-1-9-6",
+      "title": "6.26. Automake-1.9.6",
+      "file": "chapters/083-automake-1-9-6.md"
+    },
+    {
+      "slug": "084-bash-3-1",
+      "title": "6.27. Bash-3.1",
+      "file": "chapters/084-bash-3-1.md"
+    },
+    {
+      "slug": "085-bzip2-1-0-3",
+      "title": "6.28. Bzip2-1.0.3",
+      "file": "chapters/085-bzip2-1-0-3.md"
+    },
+    {
+      "slug": "086-diffutils-2-8-1",
+      "title": "6.29. Diffutils-2.8.1",
+      "file": "chapters/086-diffutils-2-8-1.md"
+    },
+    {
+      "slug": "087-e2fsprogs-1-39",
+      "title": "6.30. E2fsprogs-1.39",
+      "file": "chapters/087-e2fsprogs-1-39.md"
+    },
+    {
+      "slug": "088-file-4-17",
+      "title": "6.31. File-4.17",
+      "file": "chapters/088-file-4-17.md"
+    },
+    {
+      "slug": "089-findutils-4-2-27",
+      "title": "6.32. Findutils-4.2.27",
+      "file": "chapters/089-findutils-4-2-27.md"
+    },
+    {
+      "slug": "090-flex-2-5-33",
+      "title": "6.33. Flex-2.5.33",
+      "file": "chapters/090-flex-2-5-33.md"
+    },
+    {
+      "slug": "091-grub-0-97",
+      "title": "6.34. GRUB-0.97",
+      "file": "chapters/091-grub-0-97.md"
+    },
+    {
+      "slug": "092-gawk-3-1-5",
+      "title": "6.35. Gawk-3.1.5",
+      "file": "chapters/092-gawk-3-1-5.md"
+    },
+    {
+      "slug": "093-gettext-0-14-5",
+      "title": "6.36. Gettext-0.14.5",
+      "file": "chapters/093-gettext-0-14-5.md"
+    },
+    {
+      "slug": "094-grep-2-5-1a",
+      "title": "6.37. Grep-2.5.1a",
+      "file": "chapters/094-grep-2-5-1a.md"
+    },
+    {
+      "slug": "095-groff-1-18-1-1",
+      "title": "6.38. Groff-1.18.1.1",
+      "file": "chapters/095-groff-1-18-1-1.md"
+    },
+    {
+      "slug": "096-gzip-1-3-5",
+      "title": "6.39. Gzip-1.3.5",
+      "file": "chapters/096-gzip-1-3-5.md"
+    },
+    {
+      "slug": "097-inetutils-1-4-2",
+      "title": "6.40. Inetutils-1.4.2",
+      "file": "chapters/097-inetutils-1-4-2.md"
+    },
+    {
+      "slug": "098-iproute2-2-6-16-060323",
+      "title": "6.41. IPRoute2-2.6.16-060323",
+      "file": "chapters/098-iproute2-2-6-16-060323.md"
+    },
+    {
+      "slug": "099-kbd-1-12",
+      "title": "6.42. Kbd-1.12",
+      "file": "chapters/099-kbd-1-12.md"
+    },
+    {
+      "slug": "100-less-394",
+      "title": "6.43. Less-394",
+      "file": "chapters/100-less-394.md"
+    },
+    {
+      "slug": "101-man-db-2-4-3",
+      "title": "6.45. Man-DB-2.4.3",
+      "file": "chapters/101-man-db-2-4-3.md"
+    },
+    {
+      "slug": "102-mktemp-1-5",
+      "title": "6.46. Mktemp-1.5",
+      "file": "chapters/102-mktemp-1-5.md"
+    },
+    {
+      "slug": "103-module-init-tools-3-2-2",
+      "title": "6.47. Module-Init-Tools-3.2.2",
+      "file": "chapters/103-module-init-tools-3-2-2.md"
+    },
+    {
+      "slug": "104-patch-2-5-4",
+      "title": "6.48. Patch-2.5.4",
+      "file": "chapters/104-patch-2-5-4.md"
+    },
+    {
+      "slug": "105-psmisc-22-2",
+      "title": "6.49. Psmisc-22.2",
+      "file": "chapters/105-psmisc-22-2.md"
+    },
+    {
+      "slug": "106-shadow-4-0-15",
+      "title": "6.50. Shadow-4.0.15",
+      "file": "chapters/106-shadow-4-0-15.md"
+    },
+    {
+      "slug": "107-sysklogd-1-4-1",
+      "title": "6.51. Sysklogd-1.4.1",
+      "file": "chapters/107-sysklogd-1-4-1.md"
+    },
+    {
+      "slug": "108-sysvinit-2-86",
+      "title": "6.52. Sysvinit-2.86",
+      "file": "chapters/108-sysvinit-2-86.md"
+    },
+    {
+      "slug": "109-tar-1-15-1",
+      "title": "6.53. Tar-1.15.1",
+      "file": "chapters/109-tar-1-15-1.md"
+    },
+    {
+      "slug": "110-texinfo-4-8",
+      "title": "6.54. Texinfo-4.8",
+      "file": "chapters/110-texinfo-4-8.md"
+    },
+    {
+      "slug": "111-udev-096",
+      "title": "6.55. Udev-096",
+      "file": "chapters/111-udev-096.md"
+    },
+    {
+      "slug": "112-util-linux-2-12r",
+      "title": "6.56. Util-linux-2.12r",
+      "file": "chapters/112-util-linux-2-12r.md"
+    },
+    {
+      "slug": "113-vim-7-0",
+      "title": "6.57. Vim-7.0",
+      "file": "chapters/113-vim-7-0.md"
+    },
+    {
+      "slug": "114-关于调试符号",
+      "title": "6.58. 关于调试符号",
+      "file": "chapters/114-关于调试符号.md"
+    },
+    {
+      "slug": "115-再次清理系统",
+      "title": "6.59. 再次清理系统",
+      "file": "chapters/115-再次清理系统.md"
+    },
+    {
+      "slug": "116-最终的清理",
+      "title": "6.60. 最终的清理",
+      "file": "chapters/116-最终的清理.md"
+    },
+    {
+      "slug": "117-简介",
+      "title": "第七章 配置系统启动脚本",
+      "file": "chapters/117-简介.md"
+    },
+    {
+      "slug": "118-lfs-bootscripts-6-2",
+      "title": "7.2. LFS-Bootscripts-6.2",
+      "file": "chapters/118-lfs-bootscripts-6-2.md"
+    },
+    {
+      "slug": "119-启动脚本是如何工作的",
+      "title": "7.3. 启动脚本是如何工作的?",
+      "file": "chapters/119-启动脚本是如何工作的.md"
+    },
+    {
+      "slug": "120-lfs-系统的设备和模块处理",
+      "title": "7.4. LFS 系统的设备和模块处理",
+      "file": "chapters/120-lfs-系统的设备和模块处理.md"
+    },
+    {
+      "slug": "121-配置-setclock-脚本",
+      "title": "7.5. 配置 setclock 脚本",
+      "file": "chapters/121-配置-setclock-脚本.md"
+    },
+    {
+      "slug": "122-配置-linux-控制台",
+      "title": "7.6. 配置 Linux 控制台",
+      "file": "chapters/122-配置-linux-控制台.md"
+    },
+    {
+      "slug": "123-创建-etc-inputrc-文件",
+      "title": "7.8. 创建 /etc/inputrc 文件",
+      "file": "chapters/123-创建-etc-inputrc-文件.md"
+    },
+    {
+      "slug": "124-bash-shell-启动文件",
+      "title": "7.9. Bash Shell 启动文件",
+      "file": "chapters/124-bash-shell-启动文件.md"
+    },
+    {
+      "slug": "125-配置-localnet-脚本",
+      "title": "7.10. 配置 localnet 脚本",
+      "file": "chapters/125-配置-localnet-脚本.md"
+    },
+    {
+      "slug": "126-定制-etc-hosts-文件",
+      "title": "7.11. 定制 /etc/hosts 文件",
+      "file": "chapters/126-定制-etc-hosts-文件.md"
+    },
+    {
+      "slug": "127-为设备创建惯用符号连接",
+      "title": "7.12. 为设备创建惯用符号连接",
+      "file": "chapters/127-为设备创建惯用符号连接.md"
+    },
+    {
+      "slug": "128-配置网络脚本",
+      "title": "7.13. 配置网络脚本",
+      "file": "chapters/128-配置网络脚本.md"
+    },
+    {
+      "slug": "129-创建-etc-fstab-文件",
+      "title": "8.2. 创建 /etc/fstab 文件",
+      "file": "chapters/129-创建-etc-fstab-文件.md"
+    },
+    {
+      "slug": "130-linux-2-6-16-27",
+      "title": "8.3. Linux-2.6.16.27",
+      "file": "chapters/130-linux-2-6-16-27.md"
+    },
+    {
+      "slug": "131-使-lfs-系统能够启动",
+      "title": "8.4. 使 LFS 系统能够启动",
+      "file": "chapters/131-使-lfs-系统能够启动.md"
+    },
+    {
+      "slug": "132-看看你是第几个",
+      "title": "9.2. 看看你是第几个?",
+      "file": "chapters/132-看看你是第几个.md"
+    },
+    {
+      "slug": "133-重启系统",
+      "title": "9.3. 重启系统",
+      "file": "chapters/133-重启系统.md"
+    },
+    {
+      "slug": "134-现在做什么",
+      "title": "9.4. 现在做什么?",
+      "file": "chapters/134-现在做什么.md"
+    },
+    {
+      "slug": "135-a-缩写和名词",
+      "title": "Appendix A. 缩写和名词",
+      "file": "chapters/135-a-缩写和名词.md"
+    },
+    {
+      "slug": "136-b-致谢",
+      "title": "Appendix B. 致谢",
+      "file": "chapters/136-b-致谢.md"
+    },
+    {
+      "slug": "137-c-依赖关系",
+      "title": "Appendix C. 依赖关系",
+      "file": "chapters/137-c-依赖关系.md"
+    },
+    {
+      "slug": "138-长索引",
+      "title": "长索引",
+      "file": "chapters/138-长索引.md"
     }
   ],
   "sourceType": "web",

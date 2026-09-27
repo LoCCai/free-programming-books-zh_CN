@@ -3,12 +3,37 @@
   "title": "Shell编程范例",
   "url": "https://www.gitbook.com/book/tinylab/shellbook/details",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:25.666Z",
+  "fetchedAt": "2026-09-27T12:06:46.577Z",
   "chapters": [
     {
-      "slug": "001-1i",
+      "slug": "001-the-knowledge-layer-for-ai-gitbook",
       "title": "The knowledge layer for AI | GitBook",
-      "file": "chapters/001-1i.md"
+      "file": "chapters/001-the-knowledge-layer-for-ai-gitbook.md"
+    },
+    {
+      "slug": "002-how-freedompay-is-rebuilding-its-integra",
+      "title": "How FreedomPay is rebuilding its integration experience with GitBook",
+      "file": "chapters/002-how-freedompay-is-rebuilding-its-integra.md"
+    },
+    {
+      "slug": "003-how-bunq-powers-their-public-api-documen",
+      "title": "How bunq powers their public API documentation with GitBook",
+      "file": "chapters/003-how-bunq-powers-their-public-api-documen.md"
+    },
+    {
+      "slug": "004-how-sonar-cut-documentation-cycle-time-b",
+      "title": "How Sonar cut documentation cycle time by more than a third with GitBook",
+      "file": "chapters/004-how-sonar-cut-documentation-cycle-time-b.md"
+    },
+    {
+      "slug": "005-how-nexthink-broke-free-from-documentati",
+      "title": "How Nexthink broke free from documentation bottlenecks with GitBook",
+      "file": "chapters/005-how-nexthink-broke-free-from-documentati.md"
+    },
+    {
+      "slug": "006-how-fedex-streamlined-documentation-work",
+      "title": "How FedEx streamlined documentation workflows across multiple teams with GitBook",
+      "file": "chapters/006-how-fedex-streamlined-documentation-work.md"
     }
   ],
   "sourceType": "web",

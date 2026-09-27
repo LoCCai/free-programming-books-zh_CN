@@ -3,12 +3,12 @@
   "title": "Tornado源码解析",
   "url": "http://www.nowamagic.net/academy/detail/13321002",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:09.246Z",
+  "fetchedAt": "2026-09-27T12:05:38.080Z",
   "chapters": [
     {
-      "slug": "001-1c",
+      "slug": "001-http-www-nowamagic-net-academy-detail-13",
       "title": "http://www.nowamagic.net/academy/detail/13321002",
-      "file": "chapters/001-1c.md"
+      "file": "chapters/001-http-www-nowamagic-net-academy-detail-13.md"
     }
   ],
   "sourceType": "web",

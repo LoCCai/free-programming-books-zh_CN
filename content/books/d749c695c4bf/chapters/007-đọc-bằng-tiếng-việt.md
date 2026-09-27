@@ -1,0 +1,532 @@
+## Giới thiệu
+
+Tài liệu này hướng tới mục tiêu giúp bạn làm quen với việc phát triển các ứng dụng sử dụng Node.js và dạy cho bạn tất cả những thứ bạn cần biết về Javascript "nâng cao", vượt xa các hướng dẫn "Hello World" bạn thường thấy.
+
+### Tình trạng
+
+Bạn đang đọc phiên bản mới nhất của cuốn sách này, điều này có nghĩa là thay đổi chỉ được thực hiện để bắt kịp với các bản cập nhật cũng như vá lỗi của các phiên bản Node.js mới hơn. Thay đổi gần đây nhất vào ngày 01 tháng 07 năm 2013.
+
+Mã nguồn các ví dụ trong cuốn sách này đã được kiểm tra và xác nhận hoạt động tốt với phiên bản Node.js 0.10.12.
+
+Trang web này cho phép bạn đọc miễn phí từ trang 1 tới trang 21 của cuốn sách. Phiên bản đầy đủ được cung cấp miễn phí dưới dạng DRM-free eBook (PDF, ePub, và định dạng cho Kindle). Xem thêm thông tin phía cuối trang.
+
+### Đối tượng độc giả
+
+Tôi chắc chắn rằng cuốn sách này phù hợp với các độc giả có kiến thức về lập trình tương đương với tôi, tức là: đã có kinh nghiệm với ít nhất một ngôn ngữ lập trình hướng đối tượng như Ruby, Python, PHP hay Java, một chút kinh nghiệm về Javascript và chưa biết gì về Node.js.
+
+Hướng tới đối tượng là các lập trình viên đã có kinh nghiệm với ít nhất một ngôn ngữ lập trình khác đồng nghĩa với việc cuốn sách này sẽ không đề cập tới những khái niệm cơ bản trong lập trình như: kiểu dữ liệu, biến, các cấu trúc điều khiển v.v. Để hiểu tốt hơn về cuốn sách này, bạn cần nắm vững những khái niệm trên.
+
+Tuy nhiên, hàm và đối tượng trong JavaScript có đôi chút khác biệt so với các ngôn ngữ khác nên nó sẽ được giải thích chi tiết hơn.
+
+### Cấu trúc
+
+Đọc xong cuốn sách này cũng đồng nghĩa với việc bạn đã xây dựng được một ứng dụng web hoàn chỉnh có khả năng cho phép người dùng truy cập vào qua các trang khác nhau và tải file lên.
+
+Tuy những gì được đề cập trong cuốn sách này không mang tính chất "thay đổi thế giới", nhưng chúng ta sẽ tiến xa hơn là chỉ dừng lại ở việc thực hiện các ví dụ bằng cách xây dựng một framework có các thành phần được tổ chức, bố trí rõ ràng. Bạn sẽ được thấy nó trong ít phút nữa.
+
+Chúng ta sẽ bắt đầu bằng việc so sánh sự khác nhau trong quá trình phát triển của JavaScript trong Node.js và trong trình duyệt.
+
+Tiếp đó, chúng ta sẽ bắt tay vào thực hiện ví dụ "Hello World" truyền thống, ứng dụng Node.js cơ bản nhất.
+
+Cuối cùng chúng ta sẽ thảo luận về một ứng dụng có tính thực tiễn mà chúng ta muốn xây dựng, phân tích kỹ lưỡng các thành phần cơ bản không thể thiếu của nó, và bắt tay lần lượt vào từng phần.
+
+Như đã đề cập, song song đó chúng ta sẽ học một số khái niệm nâng cao về JavaScript, học cách áp dụng chúng, và cùng nghiên cứu tại sao nó lại tốt hơn những khái niệm tương tự trong các ngôn ngữ lập trình khác.
+
+Mã nguồn hoàn thiện của ứng dụng có thể tải về tại địa chỉ [the NodeBeginnerBook Github repository](https://github.com/ManuelKiessling/NodeBeginnerBook/tree/master/code/application).
+
+Mục lục
+
+-   [Giới thiệu](#about)
+    -   [Trạng thái](#status)
+    -   [Đối tượng độc giả](#intended-audience)
+    -   [Cấu trúc](#structure)
+-   [JavaScript và Node.js](#javascript-and-nodejs)
+    -   [JavaScript và Bạn](#javascript-and-you)
+    -   [Đôi lời nhắc nhở](#a-word-of-warning)
+    -   [Server-side JavaScript](#server-side-javascript)
+    -   ["Hello World"](#hello-world)
+-   [Một ứng dụng web hoàn thiện sử dụng Node.js](#a-full-blown-web-application-with-nodejs)
+    -   [The use cases](#the-use-cases)
+    -   [Cấu trúc ứng dụng](#the-application-stack)
+-   [Xây dựng cấu trúc của ứng dụng](#building-the-application-stack)
+    -   [Một máy chủ HTTP đơn giản](#a-basic-http-server)
+    -   [Phân tích máy chủ HTTP](#analyzing-our-http-server)
+    -   [Sử dụng hàm trong Node.js](#passing-functions-around)
+    -   [Sử dụng hàm như vậy giúp máy chủ HTTP hoạt động như thế nào](#how-function-passing-makes-our-http-server-work)
+    -   [Gọi ngược không đồng bộ dựa trên sự kiện](#event-driven-callbacks)
+    -   [Máy chủ xử lý yêu cầu như thế nào](#how-our-server-handles-requests)
+    -   [Nơi lưu trữ "module" của máy chủ](#finding-a-place-for-our-server-module)
+    -   [Cần những gì để điều hướng các request?](#whats-needed-to-route-requests)
+    -   [Thực thi và sự thực thi](#execution-in-the-kongdom-of-verbs)
+    -   [Sự điều hướng request tới request handlers](#routing-to-real-request-handlers)
+    -   **Các chương chỉ có trong sách:**
+    -   Making the request handlers respond
+        -   How to not do it
+        -   Blocking and non-blocking
+        -   Responding request handlers with non-blocking operation
+    -   Serving something useful
+        -   Handling POST requests
+        -   Handling file uploads
+    -   Conclusion and outlook
+
+## JavaScript và Node.js
+
+### JavaScript và Bạn
+
+Trước khi đề cập đến các vấn đề mang tính kỹ thuật, hãy dành một chút thời gian để nói về bản thân bạn và mối quan hệ của bạn với JavaScript. Sự hiện diện của chương này cho phép bạn có thể tự đánh giá được khả năng hiểu/lĩnh hội các nội dung tiếp theo.
+
+Nếu bạn giống tôi, bắt đầu từ "lập trình" HTML, bằng việc viết các tài liệu HTML. Bạn được biết đến với một thứ rất hay có tên JavaScript, nhưng từ trước tới nay mới bạn chỉ sử dụng nó ở mức độ hết sức cơ bản là tăng sự tương tác với người dùng cho các trang web của bạn.
+
+Cái mà bạn thật sự muốn là "cái gì đó mang tính thực tế", bạn muốn biết làm thế nào để xây dựng những website lớn và phức tạp - bạn học một ngôn ngữ lập trình chẳng hạn như PHP, Ruby, Java, và bắt đầu viết "backend" code. (Phần code sinh ra mã HTML).
+
+Tuy nhiên, bạn vẫn quan tâm đến JavaScript, bạn thấy chúng qua các bài giới thiệu về jQuery, Prototype, hay tương tự như thế, khiến JavaScript trở nên cao cấp và phức tạp hơn với bạn, không hẳn chỉ dừng lại ở _window.open()_.
+
+Xét cho cùng thì tất cả vẫn chỉ dừng lại ở phía frontend (thực thi trên trình duyệt), tuy rằng bạn biết thêm "gia vị" cho trang web của bạn bằng việc sử dụng jQuery, nhưng lạc quan mà nói, bạn vẫn chỉ là một _người dùng_ JavaScript chứ không phải một _lập trình viên_ JavaScript.
+
+Và Node.js ra đời. JavaScript chạy phía máy chủ, thật tuyệt phải không?
+
+Bạn quyết định sớm muộn gì cũng phải tìm hiểu về cái JavaScript cũ, mới đó. Nhưng đừng nóng vội, viết được ứng dụng sử dụng Node.js chưa phải là tất cả, hiểu được tại sao nó lại được viết như vậy mới gọi là - hiểu/nắm vững JavaScript. Và lần này mới là thực tế.
+
+Vấn đề ở đây là: JavaScript thực sự có đến hai, thậm chí ba loại khác nhau (từ DHTML helper giữa những năm 90, đến các thư viện phía client/máy khách như jQuery, và bây giờ là phía máy chủ), không dễ dàng gì để tìm tài liệu giúp bạn học JavaScript đúng cách; để viết các ứng dụng sử dụng Node.js tạm ổn khiến bạn không cảm thấy giống như đang _sử dụng_ JavaScript mà thực sự đang _phát triển_ nó.
+
+Hướng giải quyết: bạn đã là một lập trình viên có kinh nghiệm, bạn không muốn học một công nghệ/kỹ thuật mới chỉ bằng việc mổ xẻ lung tung hoặc dùng sai mục đích; bạn muốn chắc chắn rằng bạn đang tiếp cận nó từ một góc nhìn đúng đắn.
+
+Tuy rằng luôn có các tài liệu tham khảo chính thức rất đầy đủ tồn tại. Nhưng chỉ tài liệu tham khảo không thôi thì chưa đủ. Cái bạn cần ở đây là sự hướng dẫn.
+
+Vì thế mục đích của tôi là cung cấp một "người hướng dẫn" cho bạn.
+
+### Vài lời nhắc nhở
+
+Có rất nhiều lập trình viên JavaScript dày dặn kinh nghiệm ngoài kia, nhưng tôi không phải một trong số họ.
+
+Tôi thực sự chỉ là người vừa được đề cập tới ở đoạn trước. Tôi biết một hoặc hai "tí" về phát triển ứng dụng web ở phía backend, JavaScript "thực thụ" vẫn còn là mới mẻ đối với tôi, cả Node.js cũng vậy. Tôi mới chỉ học được một vài khía cạnh nâng cao của JavaScript gần đây. Tôi không phải là "kẻ lão luyện".
+
+Đó cũng là lý do vì sao đây không phải là cuốn sách để biến bạn "từ lính mới thành chuyên gia". Chính xác mà nói, nó giúp bạn "từ lính mới trở thành lính mới kỳ cựu" hơn.
+
+Nếu không nhầm thì tôi đã khao khát có được một cuốn sách như thế này khi tôi bắt đầu tìm hiểu về Node.js.
+
+### Server-side JavaScript
+
+Những "hiện thân" đầu tiên của JavaScript tồn tại trên trình duyệt. Nhưng đây thực sự chỉ là ngữ cảnh của nó. Người ta vạch rõ những cái mà bạn có thể làm với JavaScript chứ không hề đề cập tới những cái mà bản thân nó có thể làm được. JavaScript là một ngôn ngữ "hoàn thiện": bạn có thể sử dụng nó ở nhiều ngữ cảnh và đạt được kết quả tương tự như với bất kỳ một ngôn ngữ đã "hoàn thiện" nào khác.
+
+Và Node.js thực tế chỉ là một ngữ cảnh khác: nó cho phép bạn chạy mã JavaScript ở phía backend, vượt ra khỏi phạm vi trình duyệt.
+
+Để chạy được JavaScript phía backend, mã nguồn cần phải được biên dịch, và ...chạy. Đây chính là nhiệm vụ mà Node.js đảm nhiệm, bằng việc sử dụng lại máy ảo V8 của Google, hay còn được biết đến là môi trường chạy của JavaScript trên trình duyệt Google Chrome.
+
+Thêm vào đó, Node.js còn cung cấp rất nhiều thư viện bổ sung (module) hữu ích, vì thế bạn sẽ không phải viết ứng dụng của bạn từ con số 0, ví dụ đơn giản nhất như hiển thị một dòng chữ nào đó ra màn hình.
+
+Vì vậy có thể nói Node.js bao gồm 2 trong 1: một môi trường chạy (runtime environment) và một thư viện.
+
+Để có thể tận dụng được hết những tính năng này, bạn cần phải cài đặt Node.js. Thay vì lặp lại các bước hướng dẫn cài đặt ở đây, bạn vui lòng làm theo [hướng dẫn cài đặt chính thức tại đây](https://github.com/joyent/node/wiki/Installation "Building and Installing Node.js"). Sau đó quay trở lại khi đã hoàn tất.
+
+### "Hello World"
+
+Ok, hãy cùng bắt tay vào viết ứng dụng sử dụng Node.js đầu tiên của chúng ta: "Hello World".
+
+Hãy mở chương trình biên tập (editor) yêu thích của bạn ra và tạo một file mới có tên là _helloworld.js_. Chúng ta muốn in "Hello World" ra STDOUT, và đây là tất cả những gì chúng ta cần:
+
+console.log("Hello World");
+
+Lưu file lại và chạy nó thông qua Node.js:
+
+node helloworld.js
+
+Chương trình sẽ in _Hello World_ ra màn hình terminal hoặc command prompt của bạn.
+
+Hơi buồn tẻ một chút phải không? Hãy cùng làm cái gì đó thực tế hơn.
+
+## Một ứng dụng web hoàn chính sử dụng Node.js
+
+### The use cases
+
+Đơn giản thôi, nhưng thực tế:
+
+-   Người dùng có thể truy cập vào ứng dụng trên một trình duyệt bất kỳ.
+-   Người dùng sẽ nhìn thấy một trang chào đón có hiển thị một form cho phép tải file lên khi truy cập vào địa chỉ http://_domain_/start
+-   Sau khi chọn một bức ảnh và ấn gửi đi, bức ảnh đó sẽ được gửi đến http://_domain_/upload, nơi nó sẽ được hiển thị sau khi quá trình tải lên hoàn tất.
+
+Thế là đủ rồi. Bây giờ, bạn có thể đạt được mục tiêu này bằng cách ... google và sửa code của một _ai đó_. Nhưng đó không phải là cách mà chúng ta làm ở đây.
+
+Hơn nữa, chúng ta không muốn viết code đơn giản nhất có thể để "miễn sao xong là được", cái chúng ta muốn ở đây là chính xác và rõ ràng nhất có thể. Chúng ta sẽ sử dụng trừu tượng hoá nhiều hơn nhằm mục đích giúp bạn làm quen dần với việc xây dựng các ứng dụng Node.js phức tạp hơn.
+
+### Cấu trúc của ứng dụng
+
+Hãy cùng chia nhỏ ứng dụng của chúng ta ra để xem phần nào cần được thực hiện để thoả mãn yêu cầu đã đề ra (use cases).
+
+-   Chúng ta muốn cho phép người dùng truy cập vào các trang web, vì thế chúng ta cần một **máy chủ HTTP**
+-   Máy chủ của chúng ta phải phản hồi/trả lời được các yêu cầu khác nhau, tuỳ thuộc vào địa chỉ (URL) nào được yêu cầu, vì thể chúng ta cần cái gì đó có chức năng giống như **router** (cầu nối/dẫn) để "nối" các yêu cầu đến nơi chuyên xử lý các yêu cầu (request handler) đó.
+-   Để đáp ứng các yêu cầu nhận được ở phía máy chủ và đã được dẫn hướng thông qua router, chúng ta cần các **request handlers** thật sự.
+-   Chắc chắn router của chúng ta sẽ xử lý tất cả các dữ liệu được gửi đến qua phương thức POST rồi gửi nó đi dưới một định dạng thuận tiện đến các request handlers, vì thế chúng ta cần **request data handling**. (Có thể hiểu là xử lý dữ liệu đầu vào).
+-   Chúng ta không chỉ muốn quản lý các request theo đường dẫn mà còn hiển thị nội dung khi một đường dẫn nào đó được gọi, điều này có nghĩa chúng ta cần một **view logic** mà request handlers có thể sử dụng để gửi lại nội dung về trình duyệt của yêu cầu.
+-   Cuối cùng, người dùng có thể tải ảnh lên, vì thể chúng ta cần bước **upload handling** để xử lý việc upload.
+
+Hãy dành một chút thời gian để nghĩ xem chúng ta sẽ xây dựng cấu trúc này với PHP như thế nào. Không quá khó để đoán ra, mô hình phổ biến sẽ là máy chủ web Apache và mod\_php5.  
+Điều này đồng nghĩa với việc nhận, gửi và xử lý các yêu cầu không xảy ra trong bản thân PHP.
+
+Với Node.js thì khác. Bởi vì chúng ta không chỉ viết ứng dụng, mà còn cả máy chủ HTTP. Thực tế, ứng dụng web của chúng ta và máy chủ web của nó về cơ bản là giống nhau.
+
+Có vẻ như có rất nhiều việc phải làm, nhưng lát nữa bạn sẽ thấy với Node.js, mọi thứ không quá khó đến vậy.
+
+Hãy cùng bắt đầu từ vạch xuất phát và viết phần đầu tiên trong cấu trúc của ứng dụng của chúng ta, máy chủ HTTP.
+
+## Xây dựng cấu trúc ứng dụng
+
+### Một máy chủ HTTP cơ bản
+
+Ở cái thời điểm mà tôi muốn bắt đầu phát triển ứng dụng Node.js có tính thực tế đầu tiên của tôi, tôi không chỉ băn khoăn xem phát triển nó như thế nào mà còn tổ chức nó ra làm sao.  
+Tôi có nên viết tất cả vào trong một file? Đa số các hướng dẫn viết một máy chủ HTTP sử dung Node.js cơ bản đều gộp tất cả vào một chỗ. Vậy nếu tôi muốn đảm bảo rằng code của tôi luôn rõ ràng và dễ hiểu khi ứng dụng của tôi ngày một mở rộng lên thì sao?
+
+Hoá ra, cũng không quá khó để tách biệt những thứ không có liên quan tới nhau ra, và sắp xếp chúng vào các module khác nhau.
+
+Cách này cho phép chúng ta giữ được file chính (file khởi động ứng dụng) và các module luôn rõ ràng, dễ đọc, dễ bảo trì và các module còn có thể được sử dụng lại ở nhiều nơi khác nhau.
+
+Bây giờ hãy tạo một file chính, nơi khởi chạy ứng dụng, và một file module nơi chứa mã nguồn cho máy chủ HTTP.
+
+Theo quan điểm cá nhân của tôi, tiêu chuẩn để đặt tên file chính nên là _index.js_ và nó sẽ khiến việc đặt tên module máy chủ _server.js_ trở nên hợp lý và logic hơn.
+
+Hãy cùng bắt đầu viết module cho máy chủ. Tạo mới file _server.js_ trong thư mục gốc project của bạn, và viết vào đoạn code sau:
+
+var http \= require("http");
+
+http
+
+.createServer(function(request, response) {  response.writeHead(200, {"Content-Type": "text/plain"});  response.write("Hello World");  response.end();  
+}).listen(8888);
+
+Chỉ thế thôi! Bạn vừa viết xong một máy chủ HTTP có khả năng hoạt động tốt. Hãy xác thực lại việc đó bằng cách chạy và kiểm tra nó. Đầu tiên, hãy chạy lệnh sau bằng Node.js:
+
+node server.js
+
+Bây giờ hãy mở trình duyệt của bạn ra và truy cập vào địa chỉ sau [http://localhost:8888/](http://localhost:8888/). Nếu đúng như mong đợi, những gì chúng ta thấy sẽ là "Hello World".
+
+Thú vị phải không? Bạn nghĩ sao về việc cùng tìm hiểu xem nó hoạt động như thế nào? Hãy tạm thời để câu hỏi làm thế nào để tổ chức dự án của chúng ta lại đó. Tôi hứa sẽ đề cập lại tới nó trong những phần tiếp theo.
+
+### Phân tích máy chủ HTTP
+
+Chúng ta hãy cùng phân tích xem nó hoạt động như thế nào.
+
+Dòng đầu tiên _khai báo_ (chính xác hơn là yêu cầu, giống với import và using) rằng chúng ta sẽ sử dụng module _http_ có sẵn trong Node.js vào trong ứng dụng và sẽ gọi đến nó thông qua biến có tên _http_.
+
+Tiếp đến chúng ta sẽ gọi một trong các hàm có sẵn của module http: _createServer_. Hàm này sẽ trả về một đối tượng, đối tượng này chứa một hàm/phương thức khác gọi là _listen_, hàm này nhận vào một tham số kiểu số để sử dụng làm cổng lắng nghe cho máy chủ HTTP.
+
+Bạn đừng chú ý gì tới cái hàm được khai báo sau dấu mở ngoặc của hàm _http.createServer_ vội.
+
+Chúng ta đã có thể viết code để khởi động máy chủ của chúng ta ở cổng 8888 như sau:
+
+var http \= require("http");var server \= http.createServer();  
+server.listen(8888);
+
+Đoạn code này sẽ khởi động một máy chủ HTTP, lắng nghe ở cổng 8888 nhưng không làm gì cả (thậm chí không trả lời các yêu cầu được gửi tới).
+
+Điều thực sự thú vị (nhìn nó hơi buồn cười nếu như bạn đã biết về PHP) ở đây chính là phần định nghĩa/khai báo của hàm được sử dụng nơi mà đúng ra nó phải là một tham số cho _createServer()_.
+
+Hoá ra, định nghĩa hàm kia lại chính là giá trị đầu tiên (và duy nhất) mà chúng ta truyền cho lời gọi hàm _createServer()_. Bởi vì trong JavaScript, hàm có thể được sử dụng như là tham số đầu vào.
+
+### Về cách sử dụng hàm
+
+Ví dụ, bạn có thể viết như sau:
+
+function say(word) {  console.log(word);  
+}function execute(someFunction, value) {  someFunction(value);  
+}
+
+execute
+
+(say, "Hello");
+
+Hãy đọc thật kĩ! Cái chúng ta viết ở đây là, hàm _say_ được sử dụng như là tham số đầu vào cho hàm _execute_. Không phải giá trị trả về của _say_, mà chính bản thân nó!
+
+Vì thế, _say_ trở thành biến nội bộ _someFunction_ trong hàm _execute_, và _execute_ có thể gọi bất kỳ hàm nào trong biến _someFunction_ bằng việc gọi đến hàm (biến) đó (bằng cách thêm dấu ngoặc).
+
+Tất nhiên, vì _say_ nhận một tham số đầu vào, _execute_ cũng có thể truyền một tham số tương tự như thế khi gọi hàm _someFunction_.
+
+Chúng ta có thể làm, chúng ta đã làm, là sử dụng hàm như một tham số đầu vào cho hàm khác bằng cách sử dụng tên của chúng. Nhưng, chúng ta không nhất thiết phải đi theo hướng vòng vo thế này, từ định nghĩa rồi mới đến sử dụng - chúng ta có thể kết hợp hai bước này lại với nhau ở chung một vị trí/ thời điểm:
+
+function execute(someFunction, value) {  someFunction(value);  
+}
+
+execute
+
+(function(word){ console.log(word) }, "Hello");
+
+Chúng ta định nghĩa hàm muốn _thực thi_ ở ngay chính nơi chúng ta truyền tham số đầu vào.
+
+Với cách này, chúng ta thậm chí không cần phải đặt tên cho hàm đó, nó còn được biết đến với cái tên _hàm vô danh_ (anonymous function).
+
+Đây mới chỉ là thoáng qua cái chúng ta gọi là JavaScript "nâng cao", đừng nôn nóng vội, chúng ta sẽ làm quen với nó từng bước. Hãy tạm thời chấp nhập rằng trong JavaScript chúng ta có thể sử dụng hàm như là một tham số đầu vào cho một hàm khác. Chúng ta có thể gán hàm đó vào một biến nào đó hoặc định nghĩa đồng thời với hàm mà chúng ta muốn truyền vào.
+
+### Sử dụng hàm như vậy giúp máy chủ HTTP của chúng ta hoạt động như thế nào
+
+Với những gì bạn vừa học được, hãy quay lại và cải tiến máy chủ HTTP của chúng ta:
+
+var http \= require("http");
+
+http
+
+.createServer(function(request, response) {  response.writeHead(200, {"Content-Type": "text/plain"});  response.write("Hello World");  response.end();  
+}).listen(8888);
+
+Đến bây giờ thì mọi thứ dường như đã được làm sáng tỏ, thực sự cái chúng ta đang làm là truyền cho hàm _createServer_ một hàm vô danh.
+
+Chúng ta cũng có thể đạt được kết quả tương tự với đoạn code sau:
+
+var http \= require("http");function onRequest(request, response) {  response.writeHead(200, {"Content-Type": "text/plain"});  response.write("Hello World");  response.end();  
+}
+
+http
+
+.createServer(onRequest).listen(8888);
+
+Có thể bây giờ đã đến thời điểm thích hợp để hỏi: Tại sao chúng ta lại thực hiện theo cách đó?
+
+### Gọi ngược không đồng bộ dựa trên sự kiện
+
+Để hiểu được tại sao các ứng dụng sử dụng Node.js lại phải viết theo cách như vậy, chúng ta cần hiểu được cách Node.js thực thi code như thế nào. Không phải duy nhất Node.js tiếp cận vấn đề bằng phương pháp này, mỗi mô hình thực thi code cơ bản (underlying execution model) khác nhau ở từng môi trường chạy (runtime environment) như Python, Ruby, PHP, hay Java.
+
+Hãy cùng xem đoạn code đơn giản dưới đây:
+
+var result = database.query("SELECT \* FROM hugetable");
+console.log("Hello World");
+
+Hãy tạm thời bỏ qua các tương tác với database mà chúng ta chưa đề cập tới - đây chỉ là ví dụ mà thôi. Dòng đầu tiên truy vấn đến database và có thể trả về rất nhiều bản ghi, dòng thứ hai đơn giản chỉ in ra màn hình "Hello World".
+
+Giả sử thao tác đến database diễn ra rất chậm, có rất nhiều bản ghi thoả mãn yêu cầu, thời gian thực thi có thể mất mất vài giây.
+
+Với cách mà chúng ta đang làm, trình biên dịch (interpreter) JavaScript của Node.js trước tiên sẽ phải chờ khi thao tác tới database hoàn tất, sau đó mới thực thi lệnh _console.log()_.
+
+Nếu đoạn code này được viết bằng PHP, nó cũng sẽ được thực thi tương tự: đầu tiên là chờ và đọc tất cả các kết quả trả về, sau đó mới thực thi dòng tiếp theo. Nếu đoạn code này là một phần của một trang web, thời gian tải trang người dùng phải chờ có thể lên tới vài giây.
+
+Tuy nhiên, trong mô hình thực thi của PHP thì đó không phải là vấn đề đáng quan tâm: máy chủ web PHP khởi tạo một process riêng cho mỗi request nó nhận được. Nếu một trong những request này chậm hơn bình thường, nó chỉ có thể ảnh hưởng đến thời gian tải trang của người tạo ra request đó, chứ không gây ảnh hưởng đến những người dùng khác.
+
+Mô hình thực hiện của Node.js không giống như vậy - nó chỉ dùng duy nhất một process. Nếu có truy vấn tới database nào đó tốn nhiều thời gian, nó sẽ làm chậm toàn bộ process - mọi thứ sẽ bị dừng lại cho đến khi truy vấn kia kết thúc.
+
+Để tránh tình trạng này xảy ra, JavaScript và Node.js đưa ra khái niệm "dựa theo sự kiện" (event-driven), gọi ngược không đồng bộ (asynchronous callback), bằng cách sử dụng một "vòng lặp sự kiện" (event loop).
+
+Chúng ta sẽ hiểu rõ khái niệm này hơn bằng cách phân tích phiên bản đã được cải thiện của ví dụ vừa rồi:
+
+database.query("SELECT \* FROM hugetable", function(rows) {
+  var result = rows;
+});
+console.log("Hello World");
+
+Ở đây, thay vì chờ đợi _database.query()_ trực tiếp trả về kết quả, chúng ta truyền nó như là một tham số, hay nói cách khác là một hàm vô danh.
+
+Trong phiên bản cũ, code của chúng ta được thực hiện một cách "đồng bộ": _(1) trước tiên_ truy vấn tới database, chỉ sau khi truy vấn này hoàn tất, (2) _(2) mới_ thực hiện lệnh in ra màn hình.
+
+Bây giờ Node.js đã có thể xử lý các truy vấn tới database một cách không đồng bộ. Giả sử _database.query()_ được cung cấp sẵn bởi một thư viện chuyên xử không đồng bộ (asynchronous library), Node.js sẽ xử lý như sau: cũng giống như trước, nó sẽ gửi truy vấn tới database. Nhưng, thay vì chờ kết quả khi truy vấn đó kết thúc, nó sẽ ghi nhớ rằng "Đến một thời điểm nào đó trong tương lai - khi truy vấn kết thúc, kết quả được trả về - nó sẽ phải thực hiện những gì được viết trong hàm vô danh (hàm được truyền như là tham số cho _database.query()_)" kia.
+
+Lúc đó nó sẽ ngay lập tức thực thi _console.log()_, và sau đó bắt đầu một vòng lặp vô tận, và cứ thế chờ đợi, không xử lý bất kỳ gì khác cho đến khi có một sự kiện nào đó đánh thức nó, ví dụ như truy vấn tới database đã có dữ liệu trả về.
+
+Điều này cũng giải thích cho việc tại sao máy chủ HTTP của chúng ta cần một hàm để nó có thể gọi tới khi nhận được request - nếu Node.js khởi động rồi dừng lại để chờ request khác, chỉ tiếp tục khi nhận được request mới thì sẽ rất kém hiệu quả. Nếu một người dùng thứ hai nào đó gửi một request lên trong khi máy chủ của chúng ta còn đang xử lý request thứ nhất thì request thứ hai chỉ có thể được xử lý sau khi xong request thứ nhất - có nghĩa là chỉ ngay khi bạn có khoảng "vài" (a handful of) request trên một giây nó sẽ không thể hoạt động được nữa.
+
+Có điều quan trọng bạn phải ghi nhớ là mô hình thực thi không đồng bộ, đơn luồng, và dựa trên sự kiện này không phải thứ gì đó hoàn hảo tuyệt đối. Nó chỉ là một trong nhiều mô hình đang tồn tại, nó cũng có những nhược điểm, một trong số đó chính là: nó chỉ có thể chạy trên một nhân của CPU mà thôi. Cá nhân tôi cho thằng, mô hình này là chấp nhận được (approachable), vì chúng ta có thể dùng nó để xây dựng các ứng dụng "thời gian thực" (concurrency) có hiệu quả cao mà không mấy khó khăn.
+
+Bạn có thể giành thời gian đọc thêm bài viết tuyệt vời của Felix Geisendörfer's [Understanding node.js](http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb) để hiểu sâu hơn về Node.js cũng như cách thức hoạt động của nó.
+
+Hãy thử một vài ví dụ với khái niệm mới này xem sao. Chúng ta có thể chắc chắn rằng code của chúng ta vẫn hoạt động tốt sau khi đã tạo máy chủ hay không? thậm chí khi không có request nào được xử lý và hàm gọi ngược (callback function) không được gọi? Cùng thử xem sao:
+
+var http \= require("http");function onRequest(request, response) {  console.log("Request received.");  response.writeHead(200, {"Content-Type": "text/plain"});  response.write("Hello World");  response.end();  
+}
+
+http
+
+.createServer(onRequest).listen(8888);
+
+console
+
+.log("Server has started.");
+
+Chú ý là tôi sử dụng _console.log_ để hiển thị chuỗi ra màn hình mỗi khi _onRequest_ được gọi, và một chuỗi khác _ngay sau khi_ khởi động máy chủ HTTP.
+
+Khi chúng ta chạy lệnh (_node server.js_, như thường lệ), nó sẽ in ra màn hình "Server has started." ngay lập tức. Và mỗi khi chúng ta gửi request đến máy chủ (bằng cách truy cập vào [http://localhost:8888/](http://localhost:8888/) trên trình duyệt), thông báo "Request received." sẽ được hiển thị ra màn hình console.
+
+"Event-driven asynchronous server-side JavaScript with callbacks in action" :-)
+
+(Lưu ý là máy chủ sẽ hiện thông báo: "Request received." ra STDOUT (màn hình/console) hai lần mỗi khi một trang nào đó được truy cập. Vì đa số trình duyệt gửi đi hai request, trong đó một là http://localhost:8888/favicon.ico (biểu tượng nhỏ của mỗi trang nếu có) và bản thân trang http://localhost:8888/).
+
+### Máy chủ xử lý yêu cầu như thế nào
+
+Hãy cùng phân tích nhanh phần code còn lại của máy chủ, phần nội dung của hàm gọi ngược _onRequest()_.
+
+Khi hàm gọi ngược _onRequest()_ được gọi đến bởi một sự kiện nào đó, hai tham số: _request_ và _response_ sẽ được truyền vào cho nó.
+
+Chúng là các đối tượng (object), bạn có thể sử dụng các hàm của chúng để xử lý các chi tiết của HTTP request nhận được và phản hồi lại các request đó (ví dụ như, trả về dữ liệu gì đó cho trình duyệt).
+
+Và đoạn code của chúng ta thực hiện: Mỗi khi nhận được request, nó gọi đến hàm _response.writeHead()_ để ghi một mã trạng thái ở dạng số: 200 cũng như loại/kiểu nội dung sẽ được gửi về trong đoạn đầu (header) của phản hồi và dùng hàm _response.write()_ để ghi chuỗi "Hello World" vào phần nội dung của phản hồi (HTTP response).
+
+Cuối cùng, chúng ta dùng _response.end()_ để chính thức kết thúc phản hồi.
+
+Cho tới thời điểm này, chúng ta vẫn chưa hề sử dụng đến tham số _request_.
+
+### Nơi lưu trữ module máy chủ
+
+Như tôi đã hứa trước là chúng ta sẽ quay lại với chủ đề: làm thế nào để tổ chức tốt ứng dụng của chúng ta. Chúng ta đã hoàn thành xong một máy chủ web hết sức đơn giản và được lưu vào file _server.js_, như tôi đã đề cập, mọi người thường đặt tên _index.js_ cho file chính của ứng dụng, file này có nhiệm vụ "mồi" và rồi khởi động ứng dụng của chúng ta bằng cách sử dụng các module (ví dụ như module _server.js_ của chúng ta).
+
+Hãy cùng xem làm như thế nào để biến _server.js_ trở thành một module thực sự của Node.js mà có thể sử dụng cho file _index.js_ sắp được viết của chúng ta.
+
+Có thể bạn đã nhận ra là chúng ta đã sử dụng module ở trong đoạn code của chúng ta:
+
+var http \= require("http");...
+
+http
+
+.createServer(...);
+
+Ở đâu đó bên trong Node.js, có một module gọi là "http", vì thế nên chúng ta mới có thể sử dụng nó bằng cách tham chiếu dến và gán nó cho một biến nội bộ trong chương trình của chúng ta.
+
+Cách này giúp chúng ta sử dụng được tất cả các hàm được cung cấp công khai của đối tượng hay module _http_ đó giống như bất kỳ một đối tượng nào khác.
+
+Thói quen tốt để ghi nhớ là đặt tên các biến nội bộ trùng với tên của module, mặc dù về mặt lý thuyết bạn có thể đặt tên biến tự do:
+
+var foo \= require("http");...
+
+foo
+
+.createServer(...);
+
+Bây giờ việc sử dụng các module các module có sẵn của Node.js đã trở nên dễ dàng. Vậy làm thể nào để chúng ta tạo được các module riêng của chúng ta, và sử dụng chúng như thế nào?
+
+Hãy cùng trả lời câu hỏi đó bằng cách biến _server.js_ trở thành một module thực sự.
+
+Thật ra thì, chúng ta không phải thay đổi nhiều lắm. Biến một đoạn code thành một module có nghĩa là chúng ta phải _trích xuất_ (export) một phần chức năng mà chúng ta muốn (từ một file nào đó, hay cả file) để đưa vào module kia.
+
+Bây giờ, phần chức năng của máy chủ web cần được xuất ra rất đơn giản: đó là những gì cần và đủ để khởi động máy chủ.
+
+Để có thể làm được điều này, chúng ta gộp tất cả code lại vào trong một hàm _start_, rồi sẽ export nó ra:
+
+var http \= require("http");function start() {  function onRequest(request, response) {    console.log("Request received.");    response.writeHead(200, {"Content-Type": "text/plain"});    response.write("Hello World");    response.end();  }  http.createServer(onRequest).listen(8888);  console.log("Server has started.");  
+}
+
+exports
+
+.start \= start;
+
+Theo cách này, bây giờ chúng ta có thể tạo mới file chính _index.js_, và khởi động ứng dụng của chúng ta trong đó, mặc dù tất cả code cần thiết để chạy máy chủ nằm ở file _server.js_.
+
+Tạo mới file _index.js_ với nội dung sau:
+
+var server \= require("./server");
+
+server
+
+.start();
+
+Như bạn thấy, chúng ta có thể sử dụng module máy chủ giống như bất kỳ một module tích hợp sẵn nào khác trong Node.js: bằng cách tham chiếu đến file đó và gán nó vào một biến nội bộ nào đó, bất kỳ hàm được cung cấp một cách công khai (export) là chúng ta có thể gọi được.
+
+Xong rồi đó. Bây giờ chúng ta có thể chạy ứng dụng của chúng ta thông qua file _index.js_, và cũng cho kết quả tương tự:
+
+node index.js
+
+Tuyệt vời, giờ chúng ta đã có thể bố trí các thành phần khác nhau trong ứng dụng của chúng ta ra từng file riêng biệt và kết nối chúng lại với nhau thông qua thông qua việc tạo module.
+
+Khả năng duy nhất mà ứng dụng của chúng ta có thể thực hiện cho đến lúc này là: nhận request. Nhưng việc chúng ta còn phải làm nữa là xử lý các request đó - mỗi request cần được xử lý hoàn toàn khác nhau.
+
+Đối với những ứng dụng đơn giản, bạn có thể xử lý vấn đề này trực tiếp bên trong hàm gọi ngược _onRequest()_. Nhưng như tôi đã nói, chúng ta sẽ áp dụng nhiều sự trừu tượng hoá để làm cho ứng dụng này trở nên thú vị hơn.
+
+Việc hướng cho các request khác nhau trỏ tới các phần khác nhau trong ứng dụng của chúng ta được gọi là "điều hướng" (routing) - vậy nên, hãy cùng tạo một module mới có tên _router_.
+
+### Cần những gì để điều hướng các request?
+
+Chúng ta cần có khả năng cung cấp cho "router" địa chỉ của request nhận được và có thể các tham số bổ sung như GET hoặc POST, và dựa vào những thông tin này router cần có khả năng quyết định được xem phần code nào sẽ được thực thi ("code cần được thực thi" là phần thứ ba của ứng dụng: tập hợp các thành phần xử lý request mà thực sự làm những việc được yêu cầu).
+
+Vì thế, chúng ta cần tìm hiểu thêm bên trong một HTTP request và tách được địa chỉ được yêu cầu cũng như tham số GET/POST. Có người cho rằng đây là một phần của router nhưng cũng có người khác tin tưởng nó là một phần của server (hay thậm chí cũng là một module độc lập), nhưng cứ tạm thời cho nó là một phần của máy chủ (HTTP server) đã.
+
+Tất cả thông tin chúng ta cần đều có trong đối tượng _request_, được truyền vào là tham số đầu tiên của hàm gọi ngược _onRequest()_. Nhưng để biên dịch được những thông tin này, chúng ta cần thêm một số module bổ sung của Node.js, cụ thể là _url_ và _querystring_.
+
+Module _url_ cung cấp các phương thức cho phép chúng ta trích xuất các thành phần khác nhau của một địa chỉ URL (ví dụ như: địa chỉ yêu cầu và các truy vấn đi kèm (query string) ), và module _querystring_ được dùng để phân tích cú pháp của các địa chỉ yêu cầu để lấy các tham số:
+
+                               url.parse(string).query
+                                           |
+           url.parse(string).pathname      |
+                       |                   |
+                       |                   |
+                     ------ -------------------
+http://localhost:8888/start?foo=bar&hello=world
+                                ---       -----
+                                 |          |
+                                 |          |
+              querystring(string)\["foo"\]    |
+                                            |
+                         querystring(string)\["hello"\]
+
+Đương nhiên là chúng ta cũng có thể sử dụng _querystring_ để phân tích phần nội dung của một yêu cầu dạng POST để lấy ra các tham số, sẽ đề cập ở phần sau.
+
+Hãy cùng bổ sung logic cần thiết cho hàm _onRequest()_ để tìm xem đường dẫn nào được yêu cầu:
+
+var http \= require("http");  
+var url \= require("url");function start() {  function onRequest(request, response) {    var pathname \= url.parse(request.url).pathname;    console.log("Request for " + pathname + " received.");    response.writeHead(200, {"Content-Type": "text/plain"});    response.write("Hello World");    response.end();  }  http.createServer(onRequest).listen(8888);  console.log("Server has started.");  
+}
+
+exports
+
+.start \= start;
+
+Tốt rồi, chương trình của chúng ta bây giờ đã có thể phân biệt được các yêu cầu (request) dựa trên đường dẫn được yêu cầu - việc này cho phép chúng ta "nối" (map) được các request đến nơi chúng được xử lý (request handler) dựa trên đường dẫn bằng "router" (sắp viết) của chúng ta.
+
+Riêng với ứng dụng này, đơn giản là chúng ta chỉ có hai request _/start_ và _/upload_. Chúng ta sẽ xem nó kết hợp với nhau như thế nào ngay thôi.
+
+Đã đến lúc để viết router của chúng ta. Tạo mới một file có tên _router.js_ với nội dung sau:
+
+function route(pathname) {  console.log("About to route a request for " + pathname);  
+}
+
+exports
+
+.route \= route;
+
+Tuy đoạn code này chẳng làm gì cả, nhưng tạm thời cứ như vậy đã. Hãy xem router này kết nối với máy chủ (HTTP server) của chúng ta như thế nào trước đã.
+
+Máy chủ HTTP cần phải "nhận dạng" và "tương tác" được với router. Chúng ta có thể "cố định" (hard-wire) sự phụ thuộc này vào máy chủ, tuy nhiên vì đã có kinh nghiệm về lập trình nên chúng ta sẽ kết nối chúng với nhau theo cách linh hoạt hơn (loosely couple) bằng cách can thiệp vào sự phụ thuộc này (tìm hiều thêm về [Dependency Injection](http://martinfowler.com/articles/injection.html) trong bài viết tuyệt vời này của Martin Fowlers).
+
+Trước tiên hãy phát triển hàm _start()_ của máy chủ để chắc chắn rằng chúng ta có thể gọi hàm thông qua tham số (chính xác hơn là điều hướng đến hàm muốn gọi):
+
+var http \= require("http");  
+var url \= require("url");function start(route) {  function onRequest(request, response) {    var pathname \= url.parse(request.url).pathname;    console.log("Request for " + pathname + " received.");    route(pathname);    response.writeHead(200, {"Content-Type": "text/plain"});    response.write("Hello World");    response.end();  }  http.createServer(onRequest).listen(8888);  console.log("Server has started.");  
+}
+
+exports
+
+.start \= start;
+
+Viết thêm vào file _index.js_ sao cho tương ứng, đây chính là bước điều hướng hàm trong router từ server:
+
+var server \= require("./server");  
+var router \= require("./router");
+
+server
+
+.start(router.route);  
+
+Chúng ta sẽ lại truyền hàm đi, việc không có gì lạ lẫm cho đến giờ phút này.
+
+Nếu chúng ta chạy chương trình (_node index.js, như thường lệ_), và gửi đi một yêu cầu, thì bây giờ chúng ta sẽ nhìn thấy máy chủ đã sử dụng router để truyền đi đường dẫn được yêu cầu:
+
+bash$ node index.js
+Request for /foo received.
+About to route a request for /foo
+
+(Tôi đã xoá đi những dòng không cần thiết của request tới file /favicon.ico).
+
+### Thực thi và sự thực thi
+
+Một lần nữa, xin cho phép tôi có đôi lời tản mạn về "functional programming".
+
+Sự trao đổi/truyền (passing) trực tiếp các hàm không chỉ là một khái niệm mang tính kỹ thuật. Trong lĩnh vực thiết kế phần mềm, nó gần như còn mang tính triết học. Thử nghĩ xem: trong file index, chúng là có thể truyền đối tượng _router_ cho server, và server có thể gọi đến hàm _route_ của router đó.
+
+Theo cách này, chúng ta đã truyền một _thứ_, và server đã sử dụng thứ này để _làm_ một cái gì đó. "Hey, router thing, could you please route this for me?"
+
+Nhưng server không cần thứ đó. Nó chỉ cần _làm_ một việc gì đó. Để làm xong một việc bất kỳ, bạn không cần một _thứ_, cái bạn cần là một _hành động_. Bạn không cần _thứ gì_ mà bạn cần biết phải _làm gì_.
+
+Hiểu được cốt lõi sự thay đổi cơ bản trong tư tưởng về vấn đề này đã khiến tôi hiểu thực sự hiểu rõ về "functional programming".
+
+Tôi đã hiểu được ra nó khi đọc kiệt tác này của Steve Yegge [Execution in the Kingdom of Nouns](http://steve-yegge.blogspot.com/2006/03/execution-in-kingdom-of-nouns.html). Bạn _nên_ đọc nó. Đó thực sự là một trong những bài viết tuyệt vời nhất về lĩnh vực phần mềm mà tôi đã từng đọc qua.
+
+### Sự điều hướng request tới request handlers
+
+Quay trở lại bài viết. Máy chủ HTTP và router bây giờ đã tương tác với nhau nhịp nhàng đúng như mong đợi.
+
+Tất nhiên, thế chưa phải là đủ. "Điều hướng" (routing) có nghĩa là, chúng ta muốn điều khiển các request (có đường dẫn khác nhau) một cách riêng biệt. Chúng ta muốn viết nghiệp vụ xử lý cho _/start_ tách biệt với _/upload_.
+
+Ngay bây giờ, quá trình điều hướng đã "kết thúc" trong router, và router không phải là nơi để "làm" gì đó với các request, vì đó không phải là cách tốt để mở rộng khi ứng dụng trở nên phức tạp hơn.
+
+Hãy gọi những hàm mà request được điều hướng tới là _request handlers_ (Nơi đón nhận, xử lý "một" request nào đó). Và đó là cái chúng ta sẽ cùng đề cập tiếp theo, vì nếu không bạn sẽ không hiểu những gì mà chúng ta sắp thực hiện bên trong router ngay bây giờ.

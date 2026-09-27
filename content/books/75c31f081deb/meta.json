@@ -3,14 +3,14 @@
   "title": "背包问题九讲",
   "url": "http://love-oriented.com/pack/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:38.590Z",
+  "fetchedAt": "2026-09-27T12:06:51.173Z",
   "chapters": [
     {
-      "slug": "001-u",
-      "title": "http://love-oriented.com/pack/",
-      "file": "chapters/001-u.md"
+      "slug": "001-loading",
+      "title": "Loading...",
+      "file": "chapters/001-loading.md"
     }
   ],
   "sourceType": "web",
-  "sourceTitle": "http://love-oriented.com/pack/"
+  "sourceTitle": "Loading..."
 }

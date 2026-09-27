@@ -2,9 +2,74 @@
   "bookId": "556cbe9f640a",
   "title": "跟我一起写 Makefile",
   "url": "https://github.com/seisman/how-to-write-makefile",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:25:56.569Z",
-  "chapters": [],
-  "sourceType": "github",
-  "error": "没有可用章节"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T11:53:45.109Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-archives",
+      "title": "archives",
+      "file": "chapters/002-archives.md"
+    },
+    {
+      "slug": "003-conditionals",
+      "title": "conditionals",
+      "file": "chapters/003-conditionals.md"
+    },
+    {
+      "slug": "004-functions",
+      "title": "functions",
+      "file": "chapters/004-functions.md"
+    },
+    {
+      "slug": "005-implicit-rules",
+      "title": "implicit_rules",
+      "file": "chapters/005-implicit-rules.md"
+    },
+    {
+      "slug": "006-index",
+      "title": "index",
+      "file": "chapters/006-index.md"
+    },
+    {
+      "slug": "007-introduction",
+      "title": "introduction",
+      "file": "chapters/007-introduction.md"
+    },
+    {
+      "slug": "008-invoke",
+      "title": "invoke",
+      "file": "chapters/008-invoke.md"
+    },
+    {
+      "slug": "009-overview",
+      "title": "overview",
+      "file": "chapters/009-overview.md"
+    },
+    {
+      "slug": "010-postscript",
+      "title": "postscript",
+      "file": "chapters/010-postscript.md"
+    },
+    {
+      "slug": "011-recipes",
+      "title": "recipes",
+      "file": "chapters/011-recipes.md"
+    },
+    {
+      "slug": "012-rules",
+      "title": "rules",
+      "file": "chapters/012-rules.md"
+    },
+    {
+      "slug": "013-variables",
+      "title": "variables",
+      "file": "chapters/013-variables.md"
+    }
+  ],
+  "sourceType": "github"
 }

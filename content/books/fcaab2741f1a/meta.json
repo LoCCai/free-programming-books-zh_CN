@@ -3,12 +3,12 @@
   "title": "Sketch 中文手册",
   "url": "http://sketchcn.com/sketch-chinese-user-manual.html#introduce",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:53.162Z",
+  "fetchedAt": "2026-09-27T11:58:02.696Z",
   "chapters": [
     {
-      "slug": "001-1p",
+      "slug": "001-sketchcn-com",
       "title": "sketchcn.com",
-      "file": "chapters/001-1p.md"
+      "file": "chapters/001-sketchcn-com.md"
     }
   ],
   "sourceType": "web",

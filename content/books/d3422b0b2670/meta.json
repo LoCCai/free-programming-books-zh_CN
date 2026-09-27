@@ -3,14 +3,98 @@
   "title": "程序员的自我修养",
   "url": "http://www.kancloud.cn/kancloud/a-programmer-prepares",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:50.401Z",
+  "fetchedAt": "2026-09-27T11:58:09.646Z",
   "chapters": [
     {
-      "slug": "001-1h",
-      "title": "程序员的自我修养 · 看云",
-      "file": "chapters/001-1h.md"
+      "slug": "001-介紹",
+      "title": "介紹 · 程序员的自我修养 · 看云",
+      "file": "chapters/001-介紹.md"
+    },
+    {
+      "slug": "002-程序员基础知识",
+      "title": "程序员基础知识 · 程序员的自我修养 · 看云",
+      "file": "chapters/002-程序员基础知识.md"
+    },
+    {
+      "slug": "003-数据结构与算法",
+      "title": "数据结构与算法 · 程序员的自我修养 · 看云",
+      "file": "chapters/003-数据结构与算法.md"
+    },
+    {
+      "slug": "004-代码架构",
+      "title": "代码架构 · 程序员的自我修养 · 看云",
+      "file": "chapters/004-代码架构.md"
+    },
+    {
+      "slug": "005-代码评审",
+      "title": "代码评审 · 程序员的自我修养 · 看云",
+      "file": "chapters/005-代码评审.md"
+    },
+    {
+      "slug": "006-网络知识",
+      "title": "网络知识 · 程序员的自我修养 · 看云",
+      "file": "chapters/006-网络知识.md"
+    },
+    {
+      "slug": "007-懂点设计",
+      "title": "懂点设计 · 程序员的自我修养 · 看云",
+      "file": "chapters/007-懂点设计.md"
+    },
+    {
+      "slug": "008-写点东西",
+      "title": "写点东西 · 程序员的自我修养 · 看云",
+      "file": "chapters/008-写点东西.md"
+    },
+    {
+      "slug": "009-合格的pm",
+      "title": "合格的PM · 程序员的自我修养 · 看云",
+      "file": "chapters/009-合格的pm.md"
+    },
+    {
+      "slug": "010-团队合作",
+      "title": "团队合作 · 程序员的自我修养 · 看云",
+      "file": "chapters/010-团队合作.md"
+    },
+    {
+      "slug": "011-获取知识",
+      "title": "获取知识 · 程序员的自我修养 · 看云",
+      "file": "chapters/011-获取知识.md"
+    },
+    {
+      "slug": "012-关注健康",
+      "title": "关注健康 · 程序员的自我修养 · 看云",
+      "file": "chapters/012-关注健康.md"
+    },
+    {
+      "slug": "013-提升效率",
+      "title": "提升效率 · 程序员的自我修养 · 看云",
+      "file": "chapters/013-提升效率.md"
+    },
+    {
+      "slug": "014-soho",
+      "title": "SOHO · 程序员的自我修养 · 看云",
+      "file": "chapters/014-soho.md"
+    },
+    {
+      "slug": "015-hacker",
+      "title": "Hacker · 程序员的自我修养 · 看云",
+      "file": "chapters/015-hacker.md"
+    },
+    {
+      "slug": "016-关于工作",
+      "title": "关于工作 · 程序员的自我修养 · 看云",
+      "file": "chapters/016-关于工作.md"
+    },
+    {
+      "slug": "017-常用软件",
+      "title": "常用软件 · 程序员的自我修养 · 看云",
+      "file": "chapters/017-常用软件.md"
+    },
+    {
+      "slug": "018-附录",
+      "title": "附录 · 程序员的自我修养 · 看云",
+      "file": "chapters/018-附录.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "程序员的自我修养 · 看云"
+  "sourceType": "web"
 }

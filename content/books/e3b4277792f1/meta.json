@@ -3,12 +3,12 @@
   "title": "Git教程",
   "url": "http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:10.829Z",
+  "fetchedAt": "2026-09-27T11:22:45.337Z",
   "chapters": [
     {
-      "slug": "001-2a",
+      "slug": "001-首页-廖雪峰的官方网站",
       "title": "首页 - 廖雪峰的官方网站",
-      "file": "chapters/001-2a.md"
+      "file": "chapters/001-首页-廖雪峰的官方网站.md"
     }
   ],
   "sourceType": "web",

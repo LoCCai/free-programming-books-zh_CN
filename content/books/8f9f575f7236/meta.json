@@ -3,14 +3,748 @@
   "title": "设计模式目录",
   "url": "https://refactoringguru.cn/design-patterns/catalog",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:22.035Z",
+  "fetchedAt": "2026-09-27T11:58:55.061Z",
   "chapters": [
     {
-      "slug": "001-1e",
-      "title": "设计模式目录：22种设计模式",
-      "file": "chapters/001-1e.md"
+      "slug": "001-免费在线学习代码重构和设计模式",
+      "title": "免费在线学习代码重构和设计模式",
+      "file": "chapters/001-免费在线学习代码重构和设计模式.md"
+    },
+    {
+      "slug": "002-深入设计模式",
+      "title": "广受推荐的最新设计模式书籍：《深入设计模式》",
+      "file": "chapters/002-深入设计模式.md"
+    },
+    {
+      "slug": "003-refactoring-course",
+      "title": "Interactive Refactoring Course: Dive Into Refactoring",
+      "file": "chapters/003-refactoring-course.md"
+    },
+    {
+      "slug": "004-设计模式",
+      "title": "常用设计模式有哪些？",
+      "file": "chapters/004-设计模式.md"
+    },
+    {
+      "slug": "005-工厂方法模式",
+      "title": "工厂方法设计模式",
+      "file": "chapters/005-工厂方法模式.md"
+    },
+    {
+      "slug": "006-抽象工厂模式",
+      "title": "抽象工厂设计模式",
+      "file": "chapters/006-抽象工厂模式.md"
+    },
+    {
+      "slug": "007-生成器模式",
+      "title": "建造者设计模式（生成器模式）",
+      "file": "chapters/007-生成器模式.md"
+    },
+    {
+      "slug": "008-原型模式",
+      "title": "原型设计模式",
+      "file": "chapters/008-原型模式.md"
+    },
+    {
+      "slug": "009-单例模式",
+      "title": "单例设计模式",
+      "file": "chapters/009-单例模式.md"
+    },
+    {
+      "slug": "010-结构型模式",
+      "title": "结构型设计模式",
+      "file": "chapters/010-结构型模式.md"
+    },
+    {
+      "slug": "011-适配器模式",
+      "title": "适配器设计模式（封装器模式）",
+      "file": "chapters/011-适配器模式.md"
+    },
+    {
+      "slug": "012-桥接模式",
+      "title": "桥接设计模式",
+      "file": "chapters/012-桥接模式.md"
+    },
+    {
+      "slug": "013-组合模式",
+      "title": "组合设计模式",
+      "file": "chapters/013-组合模式.md"
+    },
+    {
+      "slug": "014-装饰模式",
+      "title": "装饰器模式）",
+      "file": "chapters/014-装饰模式.md"
+    },
+    {
+      "slug": "015-外观模式",
+      "title": "外观设计模式（门面模式）",
+      "file": "chapters/015-外观模式.md"
+    },
+    {
+      "slug": "016-享元模式",
+      "title": "享元设计模式",
+      "file": "chapters/016-享元模式.md"
+    },
+    {
+      "slug": "017-代理模式",
+      "title": "代理设计模式",
+      "file": "chapters/017-代理模式.md"
+    },
+    {
+      "slug": "018-行为模式",
+      "title": "行为型设计模式",
+      "file": "chapters/018-行为模式.md"
+    },
+    {
+      "slug": "019-责任链模式",
+      "title": "责任链设计模式（职责链模式）",
+      "file": "chapters/019-责任链模式.md"
+    },
+    {
+      "slug": "020-命令模式",
+      "title": "命令设计模式",
+      "file": "chapters/020-命令模式.md"
+    },
+    {
+      "slug": "021-迭代器模式",
+      "title": "迭代器设计模式",
+      "file": "chapters/021-迭代器模式.md"
+    },
+    {
+      "slug": "022-中介者模式",
+      "title": "中介者设计模式",
+      "file": "chapters/022-中介者模式.md"
+    },
+    {
+      "slug": "023-备忘录模式",
+      "title": "备忘录设计模式",
+      "file": "chapters/023-备忘录模式.md"
+    },
+    {
+      "slug": "024-观察者模式",
+      "title": "观察者设计模式",
+      "file": "chapters/024-观察者模式.md"
+    },
+    {
+      "slug": "025-状态模式",
+      "title": "状态设计模式",
+      "file": "chapters/025-状态模式.md"
+    },
+    {
+      "slug": "026-策略模式",
+      "title": "策略设计模式",
+      "file": "chapters/026-策略模式.md"
+    },
+    {
+      "slug": "027-模板方法模式",
+      "title": "模板方法设计模式",
+      "file": "chapters/027-模板方法模式.md"
+    },
+    {
+      "slug": "028-访问者模式",
+      "title": "访问者设计模式",
+      "file": "chapters/028-访问者模式.md"
+    },
+    {
+      "slug": "029-示例代码",
+      "title": "设计模式代码实例和示例",
+      "file": "chapters/029-示例代码.md"
+    },
+    {
+      "slug": "030-c",
+      "title": "C# 常用设计模式",
+      "file": "chapters/030-c.md"
+    },
+    {
+      "slug": "031-c",
+      "title": "C++ 常用设计模式",
+      "file": "chapters/031-c.md"
+    },
+    {
+      "slug": "032-go",
+      "title": "Go 常用设计模式",
+      "file": "chapters/032-go.md"
+    },
+    {
+      "slug": "033-java",
+      "title": "Java 常用设计模式",
+      "file": "chapters/033-java.md"
+    },
+    {
+      "slug": "034-php",
+      "title": "PHP 常用设计模式",
+      "file": "chapters/034-php.md"
+    },
+    {
+      "slug": "035-python",
+      "title": "Python 常用设计模式",
+      "file": "chapters/035-python.md"
+    },
+    {
+      "slug": "036-ruby",
+      "title": "Ruby 常用设计模式",
+      "file": "chapters/036-ruby.md"
+    },
+    {
+      "slug": "037-rust",
+      "title": "Rust 设计模式",
+      "file": "chapters/037-rust.md"
+    },
+    {
+      "slug": "038-swift",
+      "title": "Swift 常用设计模式",
+      "file": "chapters/038-swift.md"
+    },
+    {
+      "slug": "039-typescript",
+      "title": "TypeScript 常用设计模式",
+      "file": "chapters/039-typescript.md"
+    },
+    {
+      "slug": "040-重构未翻译",
+      "title": "Refactoring: clean your code",
+      "file": "chapters/040-重构未翻译.md"
+    },
+    {
+      "slug": "041-what-is-refactoring",
+      "title": "Clean code",
+      "file": "chapters/041-what-is-refactoring.md"
+    },
+    {
+      "slug": "042-technical-debt",
+      "title": "Technical debt",
+      "file": "chapters/042-technical-debt.md"
+    },
+    {
+      "slug": "043-when-to-refactor",
+      "title": "When to refactor",
+      "file": "chapters/043-when-to-refactor.md"
+    },
+    {
+      "slug": "044-how-to-refactor",
+      "title": "How to refactor",
+      "file": "chapters/044-how-to-refactor.md"
+    },
+    {
+      "slug": "045-catalog",
+      "title": "Catalog of Refactoring",
+      "file": "chapters/045-catalog.md"
+    },
+    {
+      "slug": "046-code-smells",
+      "title": "Code Smells",
+      "file": "chapters/046-code-smells.md"
+    },
+    {
+      "slug": "047-bloaters",
+      "title": "Bloaters",
+      "file": "chapters/047-bloaters.md"
+    },
+    {
+      "slug": "048-long-method",
+      "title": "Long Method",
+      "file": "chapters/048-long-method.md"
+    },
+    {
+      "slug": "049-large-class",
+      "title": "Large Class",
+      "file": "chapters/049-large-class.md"
+    },
+    {
+      "slug": "050-primitive-obsession",
+      "title": "Primitive Obsession",
+      "file": "chapters/050-primitive-obsession.md"
+    },
+    {
+      "slug": "051-long-parameter-list",
+      "title": "Long Parameter List",
+      "file": "chapters/051-long-parameter-list.md"
+    },
+    {
+      "slug": "052-data-clumps",
+      "title": "Data Clumps",
+      "file": "chapters/052-data-clumps.md"
+    },
+    {
+      "slug": "053-object-orientation-abusers",
+      "title": "Object-Orientation Abusers",
+      "file": "chapters/053-object-orientation-abusers.md"
+    },
+    {
+      "slug": "054-switch-statements",
+      "title": "Switch Statements",
+      "file": "chapters/054-switch-statements.md"
+    },
+    {
+      "slug": "055-temporary-field",
+      "title": "Temporary Field",
+      "file": "chapters/055-temporary-field.md"
+    },
+    {
+      "slug": "056-refused-bequest",
+      "title": "Refused Bequest",
+      "file": "chapters/056-refused-bequest.md"
+    },
+    {
+      "slug": "057-alternative-classes-with-different-inter",
+      "title": "Alternative Classes with Different Interfaces",
+      "file": "chapters/057-alternative-classes-with-different-inter.md"
+    },
+    {
+      "slug": "058-change-preventers",
+      "title": "Change Preventers",
+      "file": "chapters/058-change-preventers.md"
+    },
+    {
+      "slug": "059-divergent-change",
+      "title": "Divergent Change",
+      "file": "chapters/059-divergent-change.md"
+    },
+    {
+      "slug": "060-shotgun-surgery",
+      "title": "Shotgun Surgery",
+      "file": "chapters/060-shotgun-surgery.md"
+    },
+    {
+      "slug": "061-parallel-inheritance-hierarchies",
+      "title": "Parallel Inheritance Hierarchies",
+      "file": "chapters/061-parallel-inheritance-hierarchies.md"
+    },
+    {
+      "slug": "062-dispensables",
+      "title": "Dispensables",
+      "file": "chapters/062-dispensables.md"
+    },
+    {
+      "slug": "063-comments",
+      "title": "Comments",
+      "file": "chapters/063-comments.md"
+    },
+    {
+      "slug": "064-duplicate-code",
+      "title": "Duplicate Code",
+      "file": "chapters/064-duplicate-code.md"
+    },
+    {
+      "slug": "065-lazy-class",
+      "title": "Lazy Class",
+      "file": "chapters/065-lazy-class.md"
+    },
+    {
+      "slug": "066-data-class",
+      "title": "Data Class",
+      "file": "chapters/066-data-class.md"
+    },
+    {
+      "slug": "067-dead-code",
+      "title": "Dead Code",
+      "file": "chapters/067-dead-code.md"
+    },
+    {
+      "slug": "068-speculative-generality",
+      "title": "Speculative Generality",
+      "file": "chapters/068-speculative-generality.md"
+    },
+    {
+      "slug": "069-couplers",
+      "title": "Couplers",
+      "file": "chapters/069-couplers.md"
+    },
+    {
+      "slug": "070-feature-envy",
+      "title": "Feature Envy",
+      "file": "chapters/070-feature-envy.md"
+    },
+    {
+      "slug": "071-inappropriate-intimacy",
+      "title": "Inappropriate Intimacy",
+      "file": "chapters/071-inappropriate-intimacy.md"
+    },
+    {
+      "slug": "072-message-chains",
+      "title": "Message Chains",
+      "file": "chapters/072-message-chains.md"
+    },
+    {
+      "slug": "073-middle-man",
+      "title": "Middle Man",
+      "file": "chapters/073-middle-man.md"
+    },
+    {
+      "slug": "074-other-smells",
+      "title": "Other Smells",
+      "file": "chapters/074-other-smells.md"
+    },
+    {
+      "slug": "075-incomplete-library-class",
+      "title": "Incomplete Library Class",
+      "file": "chapters/075-incomplete-library-class.md"
+    },
+    {
+      "slug": "076-refactorings",
+      "title": "Refactoring Techniques",
+      "file": "chapters/076-refactorings.md"
+    },
+    {
+      "slug": "077-composing-methods",
+      "title": "Composing Methods",
+      "file": "chapters/077-composing-methods.md"
+    },
+    {
+      "slug": "078-extract-method",
+      "title": "Extract Method",
+      "file": "chapters/078-extract-method.md"
+    },
+    {
+      "slug": "079-inline-method",
+      "title": "Inline Method",
+      "file": "chapters/079-inline-method.md"
+    },
+    {
+      "slug": "080-extract-variable",
+      "title": "Extract Variable",
+      "file": "chapters/080-extract-variable.md"
+    },
+    {
+      "slug": "081-inline-temp",
+      "title": "Inline Temp",
+      "file": "chapters/081-inline-temp.md"
+    },
+    {
+      "slug": "082-replace-temp-with-query",
+      "title": "Replace Temp with Query",
+      "file": "chapters/082-replace-temp-with-query.md"
+    },
+    {
+      "slug": "083-split-temporary-variable",
+      "title": "Split Temporary Variable",
+      "file": "chapters/083-split-temporary-variable.md"
+    },
+    {
+      "slug": "084-remove-assignments-to-parameters",
+      "title": "Remove Assignments to Parameters",
+      "file": "chapters/084-remove-assignments-to-parameters.md"
+    },
+    {
+      "slug": "085-replace-method-with-method-object",
+      "title": "Replace Method with Method Object",
+      "file": "chapters/085-replace-method-with-method-object.md"
+    },
+    {
+      "slug": "086-substitute-algorithm",
+      "title": "Substitute Algorithm",
+      "file": "chapters/086-substitute-algorithm.md"
+    },
+    {
+      "slug": "087-moving-features-between-objects",
+      "title": "Moving Features between Objects",
+      "file": "chapters/087-moving-features-between-objects.md"
+    },
+    {
+      "slug": "088-move-method",
+      "title": "Move Method",
+      "file": "chapters/088-move-method.md"
+    },
+    {
+      "slug": "089-move-field",
+      "title": "Move Field",
+      "file": "chapters/089-move-field.md"
+    },
+    {
+      "slug": "090-extract-class",
+      "title": "Extract Class",
+      "file": "chapters/090-extract-class.md"
+    },
+    {
+      "slug": "091-inline-class",
+      "title": "Inline Class",
+      "file": "chapters/091-inline-class.md"
+    },
+    {
+      "slug": "092-hide-delegate",
+      "title": "Hide Delegate",
+      "file": "chapters/092-hide-delegate.md"
+    },
+    {
+      "slug": "093-remove-middle-man",
+      "title": "Remove Middle Man",
+      "file": "chapters/093-remove-middle-man.md"
+    },
+    {
+      "slug": "094-introduce-foreign-method",
+      "title": "Introduce Foreign Method",
+      "file": "chapters/094-introduce-foreign-method.md"
+    },
+    {
+      "slug": "095-introduce-local-extension",
+      "title": "Introduce Local Extension",
+      "file": "chapters/095-introduce-local-extension.md"
+    },
+    {
+      "slug": "096-organizing-data",
+      "title": "Organizing Data",
+      "file": "chapters/096-organizing-data.md"
+    },
+    {
+      "slug": "097-self-encapsulate-field",
+      "title": "Self Encapsulate Field",
+      "file": "chapters/097-self-encapsulate-field.md"
+    },
+    {
+      "slug": "098-replace-data-value-with-object",
+      "title": "Replace Data Value with Object",
+      "file": "chapters/098-replace-data-value-with-object.md"
+    },
+    {
+      "slug": "099-change-value-to-reference",
+      "title": "Change Value to Reference",
+      "file": "chapters/099-change-value-to-reference.md"
+    },
+    {
+      "slug": "100-change-reference-to-value",
+      "title": "Change Reference to Value",
+      "file": "chapters/100-change-reference-to-value.md"
+    },
+    {
+      "slug": "101-replace-array-with-object",
+      "title": "Replace Array with Object",
+      "file": "chapters/101-replace-array-with-object.md"
+    },
+    {
+      "slug": "102-duplicate-observed-data",
+      "title": "Duplicate Observed Data",
+      "file": "chapters/102-duplicate-observed-data.md"
+    },
+    {
+      "slug": "103-change-unidirectional-association-to-bid",
+      "title": "Change Unidirectional Association to Bidirectional",
+      "file": "chapters/103-change-unidirectional-association-to-bid.md"
+    },
+    {
+      "slug": "104-change-bidirectional-association-to-unid",
+      "title": "Change Bidirectional Association to Unidirectional",
+      "file": "chapters/104-change-bidirectional-association-to-unid.md"
+    },
+    {
+      "slug": "105-replace-magic-number-with-symbolic-const",
+      "title": "Replace Magic Number with Symbolic Constant",
+      "file": "chapters/105-replace-magic-number-with-symbolic-const.md"
+    },
+    {
+      "slug": "106-encapsulate-field",
+      "title": "Encapsulate Field",
+      "file": "chapters/106-encapsulate-field.md"
+    },
+    {
+      "slug": "107-encapsulate-collection",
+      "title": "Encapsulate Collection",
+      "file": "chapters/107-encapsulate-collection.md"
+    },
+    {
+      "slug": "108-replace-type-code-with-class",
+      "title": "Replace Type Code with Class",
+      "file": "chapters/108-replace-type-code-with-class.md"
+    },
+    {
+      "slug": "109-replace-type-code-with-subclasses",
+      "title": "Replace Type Code with Subclasses",
+      "file": "chapters/109-replace-type-code-with-subclasses.md"
+    },
+    {
+      "slug": "110-replace-type-code-with-state-strategy",
+      "title": "Replace Type Code with State/Strategy",
+      "file": "chapters/110-replace-type-code-with-state-strategy.md"
+    },
+    {
+      "slug": "111-replace-subclass-with-fields",
+      "title": "Replace Subclass with Fields",
+      "file": "chapters/111-replace-subclass-with-fields.md"
+    },
+    {
+      "slug": "112-simplifying-conditional-expressions",
+      "title": "Simplifying Conditional Expressions",
+      "file": "chapters/112-simplifying-conditional-expressions.md"
+    },
+    {
+      "slug": "113-decompose-conditional",
+      "title": "Decompose Conditional",
+      "file": "chapters/113-decompose-conditional.md"
+    },
+    {
+      "slug": "114-consolidate-conditional-expression",
+      "title": "Consolidate Conditional Expression",
+      "file": "chapters/114-consolidate-conditional-expression.md"
+    },
+    {
+      "slug": "115-consolidate-duplicate-conditional-fragme",
+      "title": "Consolidate Duplicate Conditional Fragments",
+      "file": "chapters/115-consolidate-duplicate-conditional-fragme.md"
+    },
+    {
+      "slug": "116-remove-control-flag",
+      "title": "Remove Control Flag",
+      "file": "chapters/116-remove-control-flag.md"
+    },
+    {
+      "slug": "117-replace-nested-conditional-with-guard-cl",
+      "title": "Replace Nested Conditional with Guard Clauses",
+      "file": "chapters/117-replace-nested-conditional-with-guard-cl.md"
+    },
+    {
+      "slug": "118-replace-conditional-with-polymorphism",
+      "title": "Replace Conditional with Polymorphism",
+      "file": "chapters/118-replace-conditional-with-polymorphism.md"
+    },
+    {
+      "slug": "119-introduce-null-object",
+      "title": "Introduce Null Object",
+      "file": "chapters/119-introduce-null-object.md"
+    },
+    {
+      "slug": "120-introduce-assertion",
+      "title": "Introduce Assertion",
+      "file": "chapters/120-introduce-assertion.md"
+    },
+    {
+      "slug": "121-simplifying-method-calls",
+      "title": "Simplifying Method Calls",
+      "file": "chapters/121-simplifying-method-calls.md"
+    },
+    {
+      "slug": "122-rename-method",
+      "title": "Rename Method",
+      "file": "chapters/122-rename-method.md"
+    },
+    {
+      "slug": "123-add-parameter",
+      "title": "Add Parameter",
+      "file": "chapters/123-add-parameter.md"
+    },
+    {
+      "slug": "124-remove-parameter",
+      "title": "Remove Parameter",
+      "file": "chapters/124-remove-parameter.md"
+    },
+    {
+      "slug": "125-separate-query-from-modifier",
+      "title": "Separate Query from Modifier",
+      "file": "chapters/125-separate-query-from-modifier.md"
+    },
+    {
+      "slug": "126-parameterize-method",
+      "title": "Parameterize Method",
+      "file": "chapters/126-parameterize-method.md"
+    },
+    {
+      "slug": "127-replace-parameter-with-explicit-methods",
+      "title": "Replace Parameter with Explicit Methods",
+      "file": "chapters/127-replace-parameter-with-explicit-methods.md"
+    },
+    {
+      "slug": "128-preserve-whole-object",
+      "title": "Preserve Whole Object",
+      "file": "chapters/128-preserve-whole-object.md"
+    },
+    {
+      "slug": "129-replace-parameter-with-method-call",
+      "title": "Replace Parameter with Method Call",
+      "file": "chapters/129-replace-parameter-with-method-call.md"
+    },
+    {
+      "slug": "130-introduce-parameter-object",
+      "title": "Introduce Parameter Object",
+      "file": "chapters/130-introduce-parameter-object.md"
+    },
+    {
+      "slug": "131-remove-setting-method",
+      "title": "Remove Setting Method",
+      "file": "chapters/131-remove-setting-method.md"
+    },
+    {
+      "slug": "132-hide-method",
+      "title": "Hide Method",
+      "file": "chapters/132-hide-method.md"
+    },
+    {
+      "slug": "133-replace-constructor-with-factory-method",
+      "title": "Replace Constructor with Factory Method",
+      "file": "chapters/133-replace-constructor-with-factory-method.md"
+    },
+    {
+      "slug": "134-replace-error-code-with-exception",
+      "title": "Replace Error Code with Exception",
+      "file": "chapters/134-replace-error-code-with-exception.md"
+    },
+    {
+      "slug": "135-replace-exception-with-test",
+      "title": "Replace Exception with Test",
+      "file": "chapters/135-replace-exception-with-test.md"
+    },
+    {
+      "slug": "136-dealing-with-generalization",
+      "title": "Dealing with Generalization",
+      "file": "chapters/136-dealing-with-generalization.md"
+    },
+    {
+      "slug": "137-pull-up-field",
+      "title": "Pull Up Field",
+      "file": "chapters/137-pull-up-field.md"
+    },
+    {
+      "slug": "138-pull-up-method",
+      "title": "Pull Up Method",
+      "file": "chapters/138-pull-up-method.md"
+    },
+    {
+      "slug": "139-pull-up-constructor-body",
+      "title": "Pull Up Constructor Body",
+      "file": "chapters/139-pull-up-constructor-body.md"
+    },
+    {
+      "slug": "140-push-down-method",
+      "title": "Push Down Method",
+      "file": "chapters/140-push-down-method.md"
+    },
+    {
+      "slug": "141-push-down-field",
+      "title": "Push Down Field",
+      "file": "chapters/141-push-down-field.md"
+    },
+    {
+      "slug": "142-extract-subclass",
+      "title": "Extract Subclass",
+      "file": "chapters/142-extract-subclass.md"
+    },
+    {
+      "slug": "143-extract-superclass",
+      "title": "Extract Superclass",
+      "file": "chapters/143-extract-superclass.md"
+    },
+    {
+      "slug": "144-extract-interface",
+      "title": "Extract Interface",
+      "file": "chapters/144-extract-interface.md"
+    },
+    {
+      "slug": "145-collapse-hierarchy",
+      "title": "Collapse Hierarchy",
+      "file": "chapters/145-collapse-hierarchy.md"
+    },
+    {
+      "slug": "146-form-template-method",
+      "title": "Form Template Method",
+      "file": "chapters/146-form-template-method.md"
+    },
+    {
+      "slug": "147-replace-inheritance-with-delegation",
+      "title": "Replace Inheritance with Delegation",
+      "file": "chapters/147-replace-inheritance-with-delegation.md"
+    },
+    {
+      "slug": "148-replace-delegation-with-inheritance",
+      "title": "Replace Delegation with Inheritance",
+      "file": "chapters/148-replace-delegation-with-inheritance.md"
     }
   ],
-  "sourceType": "web",
-  "sourceTitle": "设计模式目录：22种设计模式"
+  "sourceType": "web"
 }

@@ -3,12 +3,212 @@
   "title": "FreeBSD 使用手册",
   "url": "https://www.freebsd.org/doc/zh_CN/books/handbook/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-26T19:08:35.541Z",
+  "fetchedAt": "2026-09-27T11:43:52.575Z",
   "chapters": [
     {
-      "slug": "001-1n",
+      "slug": "001-freebsd-使用手册",
       "title": "FreeBSD 使用手册",
-      "file": "chapters/001-1n.md"
+      "file": "chapters/001-freebsd-使用手册.md"
+    },
+    {
+      "slug": "002-前言",
+      "title": "前言",
+      "file": "chapters/002-前言.md"
+    },
+    {
+      "slug": "003-部分-i-起步",
+      "title": "部分 I. 起步",
+      "file": "chapters/003-部分-i-起步.md"
+    },
+    {
+      "slug": "004-第-1-章-介绍",
+      "title": "第 1 章 介绍",
+      "file": "chapters/004-第-1-章-介绍.md"
+    },
+    {
+      "slug": "005-第-2-章-安装-freebsd",
+      "title": "第 2 章 安装 FreeBSD",
+      "file": "chapters/005-第-2-章-安装-freebsd.md"
+    },
+    {
+      "slug": "006-第-3-章-安装-freebsd-适用于-9-x-及以后版本",
+      "title": "第 3 章 安装 FreeBSD（适用于 9.x 及以后版本）",
+      "file": "chapters/006-第-3-章-安装-freebsd-适用于-9-x-及以后版本.md"
+    },
+    {
+      "slug": "007-第-4-章-unix-基础",
+      "title": "第 4 章 UNIX 基础",
+      "file": "chapters/007-第-4-章-unix-基础.md"
+    },
+    {
+      "slug": "008-第-5-章-安装应用程序-packages-和-ports",
+      "title": "第 5 章 安装应用程序: Packages 和 Ports",
+      "file": "chapters/008-第-5-章-安装应用程序-packages-和-ports.md"
+    },
+    {
+      "slug": "009-第-6-章-x-window-系统",
+      "title": "第 6 章 X Window 系统",
+      "file": "chapters/009-第-6-章-x-window-系统.md"
+    },
+    {
+      "slug": "010-部分-ii-常见的任务",
+      "title": "部分 II. 常见的任务",
+      "file": "chapters/010-部分-ii-常见的任务.md"
+    },
+    {
+      "slug": "011-第-7-章-桌面应用",
+      "title": "第 7 章 桌面应用",
+      "file": "chapters/011-第-7-章-桌面应用.md"
+    },
+    {
+      "slug": "012-第-8-章-多媒体",
+      "title": "第 8 章 多媒体",
+      "file": "chapters/012-第-8-章-多媒体.md"
+    },
+    {
+      "slug": "013-第-9-章-配置freebsd的内核",
+      "title": "第 9 章 配置FreeBSD的内核",
+      "file": "chapters/013-第-9-章-配置freebsd的内核.md"
+    },
+    {
+      "slug": "014-第-10-章-打印",
+      "title": "第 10 章 打印",
+      "file": "chapters/014-第-10-章-打印.md"
+    },
+    {
+      "slug": "015-第-11-章-linux-二进制兼容模式",
+      "title": "第 11 章 Linux® 二进制兼容模式",
+      "file": "chapters/015-第-11-章-linux-二进制兼容模式.md"
+    },
+    {
+      "slug": "016-第-12-章-设置和调整",
+      "title": "第 12 章 设置和调整",
+      "file": "chapters/016-第-12-章-设置和调整.md"
+    },
+    {
+      "slug": "017-第-13-章-freebsd-引导过程",
+      "title": "第 13 章 FreeBSD 引导过程",
+      "file": "chapters/017-第-13-章-freebsd-引导过程.md"
+    },
+    {
+      "slug": "018-第-14-章-用户和基本的帐户管理",
+      "title": "第 14 章 用户和基本的帐户管理",
+      "file": "chapters/018-第-14-章-用户和基本的帐户管理.md"
+    },
+    {
+      "slug": "019-第-15-章-安全",
+      "title": "第 15 章 安全",
+      "file": "chapters/019-第-15-章-安全.md"
+    },
+    {
+      "slug": "020-第-16-章-jails",
+      "title": "第 16 章 Jails",
+      "file": "chapters/020-第-16-章-jails.md"
+    },
+    {
+      "slug": "021-第-17-章-强制访问控制",
+      "title": "第 17 章 强制访问控制",
+      "file": "chapters/021-第-17-章-强制访问控制.md"
+    },
+    {
+      "slug": "022-第-18-章-安全事件审计",
+      "title": "第 18 章 安全事件审计",
+      "file": "chapters/022-第-18-章-安全事件审计.md"
+    },
+    {
+      "slug": "023-第-19-章-存储",
+      "title": "第 19 章 存储",
+      "file": "chapters/023-第-19-章-存储.md"
+    },
+    {
+      "slug": "024-第-20-章-geom-模块化磁盘变换框架",
+      "title": "第 20 章 GEOM: 模块化磁盘变换框架",
+      "file": "chapters/024-第-20-章-geom-模块化磁盘变换框架.md"
+    },
+    {
+      "slug": "025-第-21-章-文件系统-support",
+      "title": "第 21 章 文件系统 Support",
+      "file": "chapters/025-第-21-章-文件系统-support.md"
+    },
+    {
+      "slug": "026-第-22-章-vinum-卷管理程序",
+      "title": "第 22 章 Vinum 卷管理程序",
+      "file": "chapters/026-第-22-章-vinum-卷管理程序.md"
+    },
+    {
+      "slug": "027-第-23-章-虚拟化",
+      "title": "第 23 章 虚拟化",
+      "file": "chapters/027-第-23-章-虚拟化.md"
+    },
+    {
+      "slug": "028-第-24-章-本地化-i18n-l10n使用和设置",
+      "title": "第 24 章 本地化－I18N/L10N使用和设置",
+      "file": "chapters/028-第-24-章-本地化-i18n-l10n使用和设置.md"
+    },
+    {
+      "slug": "029-第-25-章-更新与升级-freebsd",
+      "title": "第 25 章 更新与升级 FreeBSD",
+      "file": "chapters/029-第-25-章-更新与升级-freebsd.md"
+    },
+    {
+      "slug": "030-第-26-章-dtrace",
+      "title": "第 26 章 DTrace",
+      "file": "chapters/030-第-26-章-dtrace.md"
+    },
+    {
+      "slug": "031-部分-iv-网络通讯",
+      "title": "部分 IV. 网络通讯",
+      "file": "chapters/031-部分-iv-网络通讯.md"
+    },
+    {
+      "slug": "032-第-27-章-串口通讯",
+      "title": "第 27 章 串口通讯",
+      "file": "chapters/032-第-27-章-串口通讯.md"
+    },
+    {
+      "slug": "033-第-28-章-ppp-和-slip",
+      "title": "第 28 章 PPP 和 SLIP",
+      "file": "chapters/033-第-28-章-ppp-和-slip.md"
+    },
+    {
+      "slug": "034-第-29-章-电子邮件",
+      "title": "第 29 章 电子邮件",
+      "file": "chapters/034-第-29-章-电子邮件.md"
+    },
+    {
+      "slug": "035-第-30-章-网络服务器",
+      "title": "第 30 章 网络服务器",
+      "file": "chapters/035-第-30-章-网络服务器.md"
+    },
+    {
+      "slug": "036-第-31-章-防火墙",
+      "title": "第 31 章 防火墙",
+      "file": "chapters/036-第-31-章-防火墙.md"
+    },
+    {
+      "slug": "037-第-32-章-高级网络",
+      "title": "第 32 章 高级网络",
+      "file": "chapters/037-第-32-章-高级网络.md"
+    },
+    {
+      "slug": "038-附录-a-获取-freebsd",
+      "title": "附录 A. 获取 FreeBSD",
+      "file": "chapters/038-附录-a-获取-freebsd.md"
+    },
+    {
+      "slug": "039-附录-b-参考文献",
+      "title": "附录 B. 参考文献",
+      "file": "chapters/039-附录-b-参考文献.md"
+    },
+    {
+      "slug": "040-附录-c-internet上的资源",
+      "title": "附录 C. Internet上的资源",
+      "file": "chapters/040-附录-c-internet上的资源.md"
+    },
+    {
+      "slug": "041-附录-d-pgp公钥",
+      "title": "附录 D. PGP公钥",
+      "file": "chapters/041-附录-d-pgp公钥.md"
     }
   ],
   "sourceType": "web",

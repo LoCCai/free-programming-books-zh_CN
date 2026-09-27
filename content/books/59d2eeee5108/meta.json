@@ -2,8 +2,65 @@
   "bookId": "59d2eeee5108",
   "title": "Werkzeug 文档中文版",
   "url": "https://werkzeug-docs-cn.readthedocs.io/zh_CN/latest/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:26:25.867Z",
-  "chapters": [],
-  "error": "HTTP 429"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T12:12:41.874Z",
+  "chapters": [
+    {
+      "slug": "001-werkzeug-文档概览-werkzeug-0-9-4-文档",
+      "title": "Werkzeug 文档概览 — Werkzeug 0.9.4 文档",
+      "file": "chapters/001-werkzeug-文档概览-werkzeug-0-9-4-文档.md"
+    },
+    {
+      "slug": "002-contributed-modules",
+      "title": "Contributed Modules — Werkzeug 0.9.4 文档",
+      "file": "chapters/002-contributed-modules.md"
+    },
+    {
+      "slug": "003-atom-syndication",
+      "title": "Atom Syndication — Werkzeug 0.9.4 文档",
+      "file": "chapters/003-atom-syndication.md"
+    },
+    {
+      "slug": "004-sessions",
+      "title": "Sessions — Werkzeug 0.9.4 文档",
+      "file": "chapters/004-sessions.md"
+    },
+    {
+      "slug": "005-secure-cookie",
+      "title": "Secure Cookie — Werkzeug 0.9.4 文档",
+      "file": "chapters/005-secure-cookie.md"
+    },
+    {
+      "slug": "006-cache",
+      "title": "Cache — Werkzeug 0.9.4 文档",
+      "file": "chapters/006-cache.md"
+    },
+    {
+      "slug": "007-extra-wrappers",
+      "title": "Extra Wrappers — Werkzeug 0.9.4 文档",
+      "file": "chapters/007-extra-wrappers.md"
+    },
+    {
+      "slug": "008-iter-io",
+      "title": "Iter IO — Werkzeug 0.9.4 文档",
+      "file": "chapters/008-iter-io.md"
+    },
+    {
+      "slug": "009-fixers",
+      "title": "Fixers — Werkzeug 0.9.4 文档",
+      "file": "chapters/009-fixers.md"
+    },
+    {
+      "slug": "010-wsgi-application-profiler",
+      "title": "WSGI Application Profiler — Werkzeug 0.9.4 文档",
+      "file": "chapters/010-wsgi-application-profiler.md"
+    },
+    {
+      "slug": "011-lint-validation-middleware",
+      "title": "Lint Validation Middleware — Werkzeug 0.9.4 文档",
+      "file": "chapters/011-lint-validation-middleware.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Werkzeug 文档概览 — Werkzeug 0.9.4 文档"
 }

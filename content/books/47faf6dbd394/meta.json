@@ -3,12 +3,277 @@
   "title": "PHP调试技术手册",
   "url": "http://www.laruence.com/2010/06/21/1608.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:02.156Z",
+  "fetchedAt": "2026-09-27T12:02:06.686Z",
   "chapters": [
     {
-      "slug": "001-18",
+      "slug": "001-php调试技术手册发布-1-0-0-pdf-风雪之隅",
       "title": "PHP调试技术手册发布(1.0.0 pdf) - 风雪之隅",
-      "file": "chapters/001-18.md"
+      "file": "chapters/001-php调试技术手册发布-1-0-0-pdf-风雪之隅.md"
+    },
+    {
+      "slug": "002-深入理解php7内核之object",
+      "title": "深入理解PHP7内核之OBJECT - 风雪之隅",
+      "file": "chapters/002-深入理解php7内核之object.md"
+    },
+    {
+      "slug": "003-yac-2-4-0发布-小值读取性能提升64",
+      "title": "Yac 2.4.0发布 - 小值读取性能提升64% - 风雪之隅",
+      "file": "chapters/003-yac-2-4-0发布-小值读取性能提升64.md"
+    },
+    {
+      "slug": "004-laruence",
+      "title": "风雪之隅 - Laruence的博客",
+      "file": "chapters/004-laruence.md"
+    },
+    {
+      "slug": "005-用yac给wordpress做缓存-比memcached快19",
+      "title": "用Yac给WordPress做缓存：比Memcached快19% - 风雪之隅",
+      "file": "chapters/005-用yac给wordpress做缓存-比memcached快19.md"
+    },
+    {
+      "slug": "006-ai编程",
+      "title": "AI编程  - 风雪之隅",
+      "file": "chapters/006-ai编程.md"
+    },
+    {
+      "slug": "007-apache",
+      "title": "Apache  - 风雪之隅",
+      "file": "chapters/007-apache.md"
+    },
+    {
+      "slug": "008-apc",
+      "title": "apc  - 风雪之隅",
+      "file": "chapters/008-apc.md"
+    },
+    {
+      "slug": "009-bug",
+      "title": "bug  - 风雪之隅",
+      "file": "chapters/009-bug.md"
+    },
+    {
+      "slug": "010-c",
+      "title": "C++  - 风雪之隅",
+      "file": "chapters/010-c.md"
+    },
+    {
+      "slug": "011-cache",
+      "title": "cache  - 风雪之隅",
+      "file": "chapters/011-cache.md"
+    },
+    {
+      "slug": "012-core",
+      "title": "core  - 风雪之隅",
+      "file": "chapters/012-core.md"
+    },
+    {
+      "slug": "013-curl",
+      "title": "curl  - 风雪之隅",
+      "file": "chapters/013-curl.md"
+    },
+    {
+      "slug": "014-extension",
+      "title": "Extension  - 风雪之隅",
+      "file": "chapters/014-extension.md"
+    },
+    {
+      "slug": "015-javascript",
+      "title": "javascript  - 风雪之隅",
+      "file": "chapters/015-javascript.md"
+    },
+    {
+      "slug": "016-mysql",
+      "title": "mysql  - 风雪之隅",
+      "file": "chapters/016-mysql.md"
+    },
+    {
+      "slug": "017-nginx",
+      "title": "nginx  - 风雪之隅",
+      "file": "chapters/017-nginx.md"
+    },
+    {
+      "slug": "018-obsidian",
+      "title": "Obsidian  - 风雪之隅",
+      "file": "chapters/018-obsidian.md"
+    },
+    {
+      "slug": "019-opcache",
+      "title": "opcache  - 风雪之隅",
+      "file": "chapters/019-opcache.md"
+    },
+    {
+      "slug": "020-performance",
+      "title": "Performance  - 风雪之隅",
+      "file": "chapters/020-performance.md"
+    },
+    {
+      "slug": "021-php",
+      "title": "PHP  - 风雪之隅",
+      "file": "chapters/021-php.md"
+    },
+    {
+      "slug": "022-php5-4",
+      "title": "PHP5.4  - 风雪之隅",
+      "file": "chapters/022-php5-4.md"
+    },
+    {
+      "slug": "023-php5-4新特性",
+      "title": "PHP5.4新特性  - 风雪之隅",
+      "file": "chapters/023-php5-4新特性.md"
+    },
+    {
+      "slug": "024-php7",
+      "title": "PHP7  - 风雪之隅",
+      "file": "chapters/024-php7.md"
+    },
+    {
+      "slug": "025-php8",
+      "title": "PHP8  - 风雪之隅",
+      "file": "chapters/025-php8.md"
+    },
+    {
+      "slug": "026-php-8",
+      "title": "PHP 8  - 风雪之隅",
+      "file": "chapters/026-php-8.md"
+    },
+    {
+      "slug": "027-php-extension",
+      "title": "PHP extension  - 风雪之隅",
+      "file": "chapters/027-php-extension.md"
+    },
+    {
+      "slug": "028-php原理",
+      "title": "php原理  - 风雪之隅",
+      "file": "chapters/028-php原理.md"
+    },
+    {
+      "slug": "029-php应用",
+      "title": "PHP应用  - 风雪之隅",
+      "file": "chapters/029-php应用.md"
+    },
+    {
+      "slug": "030-php源码",
+      "title": "php源码  - 风雪之隅",
+      "file": "chapters/030-php源码.md"
+    },
+    {
+      "slug": "031-php源码分析",
+      "title": "php源码分析  - 风雪之隅",
+      "file": "chapters/031-php源码分析.md"
+    },
+    {
+      "slug": "032-sapi",
+      "title": "SAPI  - 风雪之隅",
+      "file": "chapters/032-sapi.md"
+    },
+    {
+      "slug": "033-session",
+      "title": "session  - 风雪之隅",
+      "file": "chapters/033-session.md"
+    },
+    {
+      "slug": "034-taint",
+      "title": "taint  - 风雪之隅",
+      "file": "chapters/034-taint.md"
+    },
+    {
+      "slug": "035-valgrind",
+      "title": "valgrind  - 风雪之隅",
+      "file": "chapters/035-valgrind.md"
+    },
+    {
+      "slug": "036-wordpress",
+      "title": "wordpress  - 风雪之隅",
+      "file": "chapters/036-wordpress.md"
+    },
+    {
+      "slug": "037-yac",
+      "title": "yac  - 风雪之隅",
+      "file": "chapters/037-yac.md"
+    },
+    {
+      "slug": "038-yaconf",
+      "title": "yaconf  - 风雪之隅",
+      "file": "chapters/038-yaconf.md"
+    },
+    {
+      "slug": "039-yaf",
+      "title": "Yaf  - 风雪之隅",
+      "file": "chapters/039-yaf.md"
+    },
+    {
+      "slug": "040-yaf-loader",
+      "title": "Yaf_Loader  - 风雪之隅",
+      "file": "chapters/040-yaf-loader.md"
+    },
+    {
+      "slug": "041-yar",
+      "title": "Yar  - 风雪之隅",
+      "file": "chapters/041-yar.md"
+    },
+    {
+      "slug": "042-zend-php",
+      "title": "Zend/PHP  - 风雪之隅",
+      "file": "chapters/042-zend-php.md"
+    },
+    {
+      "slug": "043-zval",
+      "title": "zval  - 风雪之隅",
+      "file": "chapters/043-zval.md"
+    },
+    {
+      "slug": "044-优化",
+      "title": "优化  - 风雪之隅",
+      "file": "chapters/044-优化.md"
+    },
+    {
+      "slug": "045-内核",
+      "title": "内核  - 风雪之隅",
+      "file": "chapters/045-内核.md"
+    },
+    {
+      "slug": "046-原理",
+      "title": "原理  - 风雪之隅",
+      "file": "chapters/046-原理.md"
+    },
+    {
+      "slug": "047-开发php扩展",
+      "title": "开发php扩展  - 风雪之隅",
+      "file": "chapters/047-开发php扩展.md"
+    },
+    {
+      "slug": "048-性能",
+      "title": "性能  - 风雪之隅",
+      "file": "chapters/048-性能.md"
+    },
+    {
+      "slug": "049-性能优化",
+      "title": "性能优化  - 风雪之隅",
+      "file": "chapters/049-性能优化.md"
+    },
+    {
+      "slug": "050-扩展开发",
+      "title": "扩展开发  - 风雪之隅",
+      "file": "chapters/050-扩展开发.md"
+    },
+    {
+      "slug": "051-licence",
+      "title": "博客声明 - 风雪之隅",
+      "file": "chapters/051-licence.md"
+    },
+    {
+      "slug": "052-projects-manual",
+      "title": "Laruence 项目手册",
+      "file": "chapters/052-projects-manual.md"
+    },
+    {
+      "slug": "053-sse-intrinsics-guide",
+      "title": "Mirror of Intel® Intrinsics Guide",
+      "file": "chapters/053-sse-intrinsics-guide.md"
+    },
+    {
+      "slug": "054-x86-instruction-reference",
+      "title": "x86 and amd64 instruction reference",
+      "file": "chapters/054-x86-instruction-reference.md"
     }
   ],
   "sourceType": "web",

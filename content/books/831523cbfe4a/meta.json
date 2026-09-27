@@ -3,12 +3,107 @@
   "title": "ThinkPHP5.1完全开发手册",
   "url": "https://www.kancloud.cn/manual/thinkphp5_1",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:14.790Z",
+  "fetchedAt": "2026-09-27T12:02:44.656Z",
   "chapters": [
     {
-      "slug": "001-16",
+      "slug": "001-thinkphp5-1完全开发手册-看云",
       "title": "ThinkPHP5.1完全开发手册 · 看云",
-      "file": "chapters/001-16.md"
+      "file": "chapters/001-thinkphp5-1完全开发手册-看云.md"
+    },
+    {
+      "slug": "002-序言",
+      "title": "序言 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/002-序言.md"
+    },
+    {
+      "slug": "003-基础",
+      "title": "基础 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/003-基础.md"
+    },
+    {
+      "slug": "004-架构",
+      "title": "架构 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/004-架构.md"
+    },
+    {
+      "slug": "005-路由",
+      "title": "路由 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/005-路由.md"
+    },
+    {
+      "slug": "006-控制器",
+      "title": "控制器 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/006-控制器.md"
+    },
+    {
+      "slug": "007-请求",
+      "title": "请求 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/007-请求.md"
+    },
+    {
+      "slug": "008-响应",
+      "title": "响应 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/008-响应.md"
+    },
+    {
+      "slug": "009-数据库",
+      "title": "数据库 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/009-数据库.md"
+    },
+    {
+      "slug": "010-模型",
+      "title": "模型 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/010-模型.md"
+    },
+    {
+      "slug": "011-视图",
+      "title": "视图 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/011-视图.md"
+    },
+    {
+      "slug": "012-模板",
+      "title": "模板 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/012-模板.md"
+    },
+    {
+      "slug": "013-错误和日志",
+      "title": "错误和日志 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/013-错误和日志.md"
+    },
+    {
+      "slug": "014-调试",
+      "title": "调试 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/014-调试.md"
+    },
+    {
+      "slug": "015-验证",
+      "title": "验证 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/015-验证.md"
+    },
+    {
+      "slug": "016-杂项",
+      "title": "杂项 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/016-杂项.md"
+    },
+    {
+      "slug": "017-命令行",
+      "title": "命令行 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/017-命令行.md"
+    },
+    {
+      "slug": "018-扩展库",
+      "title": "扩展库 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/018-扩展库.md"
+    },
+    {
+      "slug": "019-安全和性能",
+      "title": "安全和性能 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/019-安全和性能.md"
+    },
+    {
+      "slug": "020-附录",
+      "title": "附录 · ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/020-附录.md"
     }
   ],
   "sourceType": "web",

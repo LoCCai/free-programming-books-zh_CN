@@ -1,0 +1,135 @@
+This text is a work in progress—highly subject to change—and may not accurately describe any released version of the Apache™ Subversion® software. Bookmarking or otherwise referring others to this page is probably not such a smart idea. Please visit [http://www.svnbook.com/](http://www.svnbook.com/) for stable versions of this book.
+
+Subversion 是一个 免费/开源 的 _版本控制系统_ (_version control system_, 简称 VCS), 也就是说, Subversion 可以跨越时间对文件和目录, 以及它们的修改进行管理. 这就允许你恢复 数据的旧版本, 或检查数据的修改历史. 由于这个特点, 很多人把版本控制系统 看成是一种 “时间机器”.
+
+Subversion 可以跨越网络进行操作, 这就允许多个用户在不同的机器上工作. 从某种程度上讲, 允许用户在各自的空间里修改和管理同一组数据可以促进团队 协作, 因为修改不再是单线进行, 开发速度会更快. 由于所有的工作都被记录在 案, 也就不用担心并行开发会降低软件的质量—如果出现不正确的修改, 只 要撤消那一次修改即可.
+
+某些版本控制系统同时也是 _软件配置管理_ (_software configuration management_, 简称 SCM) 系统. 这种系统经过精巧的设计, 专门用于管理源代码树, 具备许多与软件开发有关的 特性—例如理解编程语言, 或者提供了程序构建工具. 但 Subversion 不是 SCM, 它是一个通用系统, 可以管理 _任意_ 类型的文件集合. 对读者而言, 这些文件可能是源代码文件—对别人来说, 可能是一个货物清单 或数字电影.
+
+### Subversion 是正确的工具吗?
+
+如果你是一个考虑如何使用 Subversion 的用户或系统管理员, 你要问自 己的第一件事就是: “它适合这项工作吗?”, Subversion 是一个梦幻 般的锤子, 但要小心不要把任何问题都当作钉子.
+
+首先要确认的是你的工作是否需要通常意义上的版本控制. 如果你需要对 旧版本的文件和目录进行归档, 而且还要查看它们的修改历史, 那么你就需要 使用版本控制工具. 如果你要和同事 (通过网络) 协作编写文档, 而且还要求 记录每个人的修改, 此时你也可以使用版本控制工具. 实际上, 这正是软件 开发需要使用版本控制工具 (例如 Subversion) 的原因—在开发团队 中工作本身就是一件社会活动: 源代码文件的修改经常需要被讨论, 生成, 评价, 有时候还要撤消修改. 版本控制工具对这种类型的协作工作很有帮助.
+
+使用版本控制也是有代价的. 如果需要由你自己来管理版本控制系统, 你将 为此消耗相当多的精力, 除非把管理任务交给第三方负责. 在日常的工作中, 你不能像往常那样复制, 移动, 重命名或删除文件, 相反, 你需要按照版本控制 系统的要求来完成.
+
+即使你可以接受使用版本控制系统带来的 代价/好处, 你也不能仅仅因为 它 _可以_ 满足你的要求而使用它, 认真考虑一下你的 需求是否还有更好的工具可以实现. 举例来说, 由于 Subversion 把数据复制 给所有的相关人员, 所以经常有新手错误地把它当成了一种普通的分布式系统, 人们有时候使用 Subversion 管理大量的照片, 数字音乐或软件包, 但问题是 人们通常很少修改这些文件. 文件集合随着时间不断增长, 但集合中的单个 文件却没有发生变化, 在这种场景中使用 Subversion 就显得 “过犹不及”[\[2\]](#ftn.id779). 有很多简单的工具可以用来复制 数据, 而且没有多余的修改跟踪开销, 例如 **rsync** 或 **unison**.
+
+一旦决定好了你确实需要一个版本控制系统, 你将发现可选择的工具非常丰富. 第一次设计并发布 Subversion 时, 它的主要版本控制策略是 _集中式的版本控制_ (_centralized version control_)—有一个远程 的主仓库, 仓库中存放了被版本控制的数据, 用户在本地操作数据的浅拷贝副本. Subversion 发布后, 很快就显现出它在版本控制领域的领导地位, 它的使用范围 越来越广泛, 越来越多的旧版本控制系统被它取代, 即使是在今天, 它在版本控 制领域也占据着重要地位.
+
+从那时起也发生了很多事情. 在 Subversion 开始出现的那一年, 一种新的版本控制 策略—_分布式的版本控制_ (_distributed version control_)—开始受到越来 越多的关注, 应用也越来越广泛. 一些版本控制工具, 例如 Git ([http://git-scm.com/](http://git-scm.com/)) 和 Mercurial ([http://mercurial-scm.org/](http://mercurial-scm.org/)) 成为了分布式版本控制系统 (DVCS) 的宠儿. 分布式的版本控制利用不断提高的网络连接速度和低廉的存储 开销, 提出了一种和集中式模型完全不同的方法. 首先最明显的区别是它们不 需要一个远程的中央仓库, 每一个用户在本地都有一份完整的版本历史. 用户 之间仍然需要协作, 但不需要通过一台中央节点, 可以直接进行交互. 实际上, 项目版本化数据的权威 “主线” 通常只是各个协作者协商出来的 结果.
+
+每一种版本控制系统都有它自己的长处和短处. 也许 DVCS 的两个最 大的好处是日常操作非常高效 (因为所有的数据都在本地存放) 和更强大的 分支合并 (因为合并算法是 DVCS 的核心). 缺点是分布式的版本控制更加 复杂, 这种复杂性可能会给协作带来不小的挑战. 另外, DVCS 工具工作得 很好, 部分是因为本来由中央系统持有的控制权—基于路径的访问控制, 对单个项目进行更新或回溯等—转移到了用户手止. 幸运的是, 许多明智的组织已经发现没必要对两种版本控制系统进行严谨地辩论, Subversion 和 DVCS 工具 (例如 Git) 可以和谐地一起工作, 每一种工具都 能发挥出自己的优势.
+
+本书是关于 Subversion 的, 所以我们不会拿它和其他工具进行完整地 对比, 读者在选择版本控制工具时应该查看所有的备选, 然后从中选择一个 最适合自己和同事的工具. 如果最终选择了 Subversion, 那么你将从剩下 的几章里学到如何高效地使用 Subversion.
+
+### Subversion 的历史
+
+2000 年, CollabNet 公司 ([http://www.collab.net](http://www.collab.net)) 开始寻找 CVS 替代产品的开发人员, CollabNet 提供了一个名为 CollabNet Enterprise Edition (CEE) 的协作软件套装[\[3\]](#ftn.id785), 这套软件的一个组成部分就是 版本控制系统. 虽然 CEE 最初使用 CVS 作为版本控制系统, 但是 CVS 的局限 性从一开始就很明显, CollabNet 知道迟早要找到一个更好的替代品. 遗憾的是, CVS 已经成为开源世界事实上的标准, 很大程度上是因为没有更好的替代品, 至少 没有可以自由使用的替代品. 于是 CollabNet 决定重新开发一个新的版本控制 系统, 该系统要保留 CVS 的基本思想, 但是要修正 CVS 的错误和不合理的特性.
+
+2000 年 2 月, CollabNet 联系到 _Open Source Development with CVS_ (Coriolis, 1999) 的作者 Karl Fogel, 询问他是否愿意为这个新项目工作. 巧合的是, 当时 Karl 正在和朋友 Jim Blandy 讨论设计一个新的版本控制系统. 1995 年 他们曾经开办了一个提供 CVS 支持的公司 Cyclic Software, 尽管他们最终 卖掉了公司, 但还是经常使用 CVS 进行日常工作. 使用 CVS 的挫折促使 Jim 认真地思考如何管理版本化的数据. 他当时不仅使用了名字 Subversion, 而且已经完成了版本库的最初设计. 所以当 CollabNet 提出邀请时, Karl 马上同意为这个项目工作, 同时 Jim 也得到了他的雇主—Red Hat 软件 公司—的同意, 允许他为这个项目工作, 并且没有限定期限. CollabNet 雇佣了 Karl 和 Ben Collins-Sussman, 详细设计从 2000 年 5 月开始, 在 CollabNet 的 Brian Behlendorf 和 Jason Robbins, 以及 Greg Stein (独立开发者, 参与了 WebDAV/DeltaV 规范的制订) 恰到好处的激励 下, Subversion 吸引到了众多开发者的注意, 结果是许多对 CVS 有过失望 经历的人都很乐意为这个项目做些事情.
+
+最初的设计小组设计了几个简单的开发目标. 他们不想在版本控制方法 学中开垦处女地, 他们只想修正 CVS. 他们决定 Subversion 应该符合 CVS 的特征, 保留相同的开发模式, 但不能包含 CVS 的显著缺陷. 尽管 Subversion 不必成为 CVS 的完全替代品, 但应该与 CVS 保持足够的相似性, 使得 CVS 用户可以轻松地迁移到 Subversion.
+
+经过 14 个月的编码, 在 2001 年 8 月 31 日, Subversion 实现了 “自我寄生”, 也就是说开发人员不再使用 CVS, 而是使用 Subversion 管理 Subversion 的源代码.
+
+虽然 CollabNet 发起了这个项目, 而且仍然提供资金支持 (为一些全职的 Subversion 开发者提供薪水), 但 Subversion 像其他许多开源项目一样, 由一套松散透明, 鼓励能者多劳的规则管理. 2009 年, CollabNet 和 Subversion 开发人员合作, 把 Subversion 项目纳入 Apache Software Foundation (简称 ASF)—世界著名的开源项目集合. Subversion 的技术根基, 社区和开发工 作同 ASF 非常契合, ASF 的很多成员同时也是 Subversion 的活跃贡献者. 2010 年, Subversion 成为了 ASF 的顶级项目之一, 其项目主页迁移至 [http://subversion.apache.org](http://subversion.apache.org), Subversion 被重新命名为 “Apache Subversion”.
+
+### Subversion 的架构
+
+[图 1 “Subversion 的架构”](https://svnbook.red-bean.com/nightly/zh/svn.intro.whatis.html#svn.intro.architecture.dia-1 "图 1. Subversion 的架构") 展视了 Subversion 设计结构的 “俯视” 图.
+
+**图 1. Subversion 的架构**
+
+![Subversion 的架构](https://svnbook.red-bean.com/nightly/zh/images/svn-arch-diagram.png)
+
+图中的一端是存放所有版本化数据的 Subversion 仓库, 另一端是 Subversion 客户端程序, 客户端程序管理着部分版本化数据在本地的映射. 两端之间是穿过仓库访问 (Repository Access) 层的多条访问路径, 其中 一些路径跨越计算机网络, 通过网络服务器对仓库进行访问, 其他一些路径 则不经过网络, 直接访问仓库.
+
+### Subversion 的组件
+
+安装好的 Subversion 由好几个组件构成, 下面将简单地介绍 一下这些组件, 这些描述或许过于简略, 不太容易理解, 但是不要担心, 本书后面的章节会用更多的内容详细介绍这些组件.
+
+svn
+
+客户端命令行工具
+
+svnversion
+
+用于报告工作副本状态 (就项目的版本号而言) 的工具
+
+svnlook
+
+可以直接检查仓库的工具
+
+svnadmin
+
+用于创建, 调整或修复 Subversion 仓库的工具
+
+mod\_dav\_svn
+
+可插拔的 Apache HTTP 服务器模块, 该模块允许用户通过网络访问 仓库
+
+svnserve
+
+一个定制的, 可独立运行的服务器程序, 可以以守护进程方式运行, 也可以被 SSH 调用, 这是另一种允许用户通过网络访问仓库的方法
+
+svndumpfilter
+
+过滤 Subversion 仓库转储数据流的程序
+
+svnsync
+
+可以跨越网络对仓库进行增量镜像备份的程序
+
+svnrdump
+
+可以跨越网络对仓库历史进行转储和加载的程序
+
+svnmucc
+
+该工具支持在没有工作副本的情况下, 在一个单独的提交中对多个 仓库执行基于 URL 的操作
+
+### Subversion 的演化
+
+本书的第一版由 O'Reilly Media 于 2004 年出版, 也就是 Subversion 1.0 发布后不久, 此后 Subversion 项目仍然在不断地发行新版本. 下面是 Subversion 1.0 后发布的每个新版本的主要变化, 注意下面的修改日志 并不完整, 详细信息可以访问 Subversion 项目主页 [http://subversion.apache.org](http://subversion.apache.org).
+
+Subversion 1.1 (2004 年 9 月)
+
+1.1 版引入了 FSFS, 一种扁平文件的仓库存放选项, 虽然 Berkeley DB 后端仍然被广泛使用, 但是 FSFS 的门槛较低, 管理 需求也更容易满足, FSFS 成为了新建仓库的默认选项. 1.1 版还支持 对符号链接进行版本控制, URL 自动封装, 以及本地化的用户接口.
+
+Subversion 1.2 (2005 年 5 月)
+
+1.2 版支持在服务器端对文件加锁, 实现对特定资源的串行化提交. Subversion 是一种并行的版本控制系统, 但特定类型的二进制文件 (例如音频文件) 不支持合并, 使用锁机制实现了对这种类型的文件进行 版本控制和保护. 1.2 版还实现了一个完整的 WebDAV 自动化版本控制, 允许 Subversion 仓库被当成网络文件夹进行挂载. 最后, Subversion 1.2 开始使用一种新的, 更快的二进制差异算法来压缩和检索文件的 旧版本.
+
+Subversion 1.3 (2005 年 12 月)
+
+1.3 版为 **svnserve** 服务器引入了基于路径 的授权控制, 该特性以前只有 Apache 服务器才支持. Apache 服务器 增加了新的日志特性, Subversion 为其他语言提供的 API 也取得了 巨大的进步.
+
+Subversion 1.4 (2006 年 9 月)
+
+1.4 版引入了一个新工具—**svnsync** —通过网络完成仓库的单向复制. 工作副本的一个重大修改是 其元数据不再使用 XML (客户端的运行速度变得更快). 以 Berkeley DB 作为后端的仓库获得了在服务器崩溃后自动恢复的能力.
+
+Subversion 1.5 (2008 年 6 月)
+
+1.5 版的开发时间比之前版本长了很多, 但取得的效果是巨大的: 分支与合并的半自动跟踪. 这为用户带来了非常大的便利, 也让 Subversion 远远超越 CVS, 进入了商业竞争者的行列, 同 Perforce 和 ClearCase 并肩. Subversion 1.5 还增加了很多用户比较关注的 特性, 例如交互式的冲突解决, 稀疏检出, 变更列表的客户端管理, 外部定义的新语法, 为 **svnserve** 新增 SASL 授权支持.
+
+Subversion 1.6 (2009 年 3 月)
+
+通过引入结构性冲突, 1.6 版的分支与合并变得更加健壮, 已有的几个 特性也得到了增强: 更多的交互式冲突解决选项, 稀疏检出支持不可伸缩 和完全的排他性, 基于文件的外部定义, **svnserve** 支持与 **mod\_dav\_svn** 类似的操作日志. 另外, 客户端命令行工具支持新的, 用于引用仓库 URL 的缩写语法.
+
+Subversion 1.7 (2011 年 10 月)
+
+1.7 版主要是对 Subversion 的已有组件进行了两次大检修, 其中最大的变化是重新实现了工作副本的管理函数库 **libsvn\_wc**, 也就是所谓的 “WC-NG”. 第二个变化是为客户端与服务器间的交互引入了一种更光滑的 HTTP 协 议. Subversion 1.7 还增加了很多新特性, 修复了很多问题, 在性能 上也有明显的提升.
+
+Subversion 1.8 (2013 年 6 月)
+
+Subversion 1.8 的客户端在跟踪文件和目录的重命名上更加详尽, 它的 **svn merge** 更加智能, 选项 `--reintegrate` 对它来说根本就是多余的了. 增加 了新的版本控制属性, 其中一些属性可以从父目录继承, 这就允许仓库 为属性的自动设置和忽略文件模式传递默认值, 用户间的一致性得到增 强, 而这种一致性以前需要通过用户间的交流才能完成. 交互式的冲突 解决引入了一种新的命令行文件合并工具. 同样, Subversion 1.8 还 增加了许多新特性, 修复了很多问题, 在性能上也有提升.
+
+  
+
+* * *
+
+[\[2\]](#id779) 还有另一种说法, “用别克 打苍蝇”
+
+[\[3\]](#id785) CEE 现在已经被 CollabNet TeamForge 代替

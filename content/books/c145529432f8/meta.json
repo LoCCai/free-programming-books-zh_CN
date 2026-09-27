@@ -3,12 +3,267 @@
   "title": "JavaScript 标准参考教程（alpha）",
   "url": "http://javascript.ruanyifeng.com/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:32.310Z",
+  "fetchedAt": "2026-09-27T12:00:53.809Z",
   "chapters": [
     {
-      "slug": "001-x",
+      "slug": "001-javascript-标准参考教程-alpha",
       "title": "JavaScript 标准参考教程（alpha） -- JavaScript 标准参考教程（alpha）",
-      "file": "chapters/001-x.md"
+      "file": "chapters/001-javascript-标准参考教程-alpha.md"
+    },
+    {
+      "slug": "002-创意共享-署名-非商业性使用-许可证",
+      "title": "版权声明 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/002-创意共享-署名-非商业性使用-许可证.md"
+    },
+    {
+      "slug": "003-概述",
+      "title": "概述 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/003-概述.md"
+    },
+    {
+      "slug": "004-javascript的历史",
+      "title": "JavaScript语言的历史 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/004-javascript的历史.md"
+    },
+    {
+      "slug": "005-基本语法",
+      "title": "基本语法 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/005-基本语法.md"
+    },
+    {
+      "slug": "006-数据类型",
+      "title": "数据类型 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/006-数据类型.md"
+    },
+    {
+      "slug": "007-数值",
+      "title": "数值 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/007-数值.md"
+    },
+    {
+      "slug": "008-字符串",
+      "title": "字符串 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/008-字符串.md"
+    },
+    {
+      "slug": "009-对象",
+      "title": "对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/009-对象.md"
+    },
+    {
+      "slug": "010-数组",
+      "title": "数组 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/010-数组.md"
+    },
+    {
+      "slug": "011-函数",
+      "title": "函数 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/011-函数.md"
+    },
+    {
+      "slug": "012-运算符",
+      "title": "运算符 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/012-运算符.md"
+    },
+    {
+      "slug": "013-数据类型转换",
+      "title": "数据类型转换 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/013-数据类型转换.md"
+    },
+    {
+      "slug": "014-错误处理机制",
+      "title": "错误处理机制 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/014-错误处理机制.md"
+    },
+    {
+      "slug": "015-编程风格",
+      "title": "JavaScript 编程风格 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/015-编程风格.md"
+    },
+    {
+      "slug": "016-object对象",
+      "title": "Object对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/016-object对象.md"
+    },
+    {
+      "slug": "017-array对象",
+      "title": "Array 对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/017-array对象.md"
+    },
+    {
+      "slug": "018-包装对象",
+      "title": "包装对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/018-包装对象.md"
+    },
+    {
+      "slug": "019-number对象",
+      "title": "Number对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/019-number对象.md"
+    },
+    {
+      "slug": "020-string对象",
+      "title": "String对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/020-string对象.md"
+    },
+    {
+      "slug": "021-math对象",
+      "title": "Math对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/021-math对象.md"
+    },
+    {
+      "slug": "022-date对象",
+      "title": "Date对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/022-date对象.md"
+    },
+    {
+      "slug": "023-regexp对象",
+      "title": "RegExp对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/023-regexp对象.md"
+    },
+    {
+      "slug": "024-json对象",
+      "title": "JSON对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/024-json对象.md"
+    },
+    {
+      "slug": "025-console对象",
+      "title": "console对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/025-console对象.md"
+    },
+    {
+      "slug": "026-属性描述对象",
+      "title": "属性描述对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/026-属性描述对象.md"
+    },
+    {
+      "slug": "027-概述",
+      "title": "构造函数与 new 命令 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/027-概述.md"
+    },
+    {
+      "slug": "028-this-关键字",
+      "title": "this 关键字 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/028-this-关键字.md"
+    },
+    {
+      "slug": "029-prototype-对象",
+      "title": "prototype 对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/029-prototype-对象.md"
+    },
+    {
+      "slug": "030-object-对象与继承",
+      "title": "Object 对象的相关方法 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/030-object-对象与继承.md"
+    },
+    {
+      "slug": "031-面向对象编程的模式",
+      "title": "面向对象编程的模式 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/031-面向对象编程的模式.md"
+    },
+    {
+      "slug": "032-异步操作概述",
+      "title": "异步操作概述 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/032-异步操作概述.md"
+    },
+    {
+      "slug": "033-定时器",
+      "title": "定时器 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/033-定时器.md"
+    },
+    {
+      "slug": "034-promise-对象",
+      "title": "Promise 对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/034-promise-对象.md"
+    },
+    {
+      "slug": "035-严格模式",
+      "title": "严格模式 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/035-严格模式.md"
+    },
+    {
+      "slug": "036-概述",
+      "title": "DOM 模型概述 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/036-概述.md"
+    },
+    {
+      "slug": "037-document-节点",
+      "title": "document 对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/037-document-节点.md"
+    },
+    {
+      "slug": "038-element-节点",
+      "title": "Element对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/038-element-节点.md"
+    },
+    {
+      "slug": "039-属性的操作",
+      "title": "属性的操作 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/039-属性的操作.md"
+    },
+    {
+      "slug": "040-text节点和documentfragment节点",
+      "title": "Text 节点和 DocumentFragment 节点 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/040-text节点和documentfragment节点.md"
+    },
+    {
+      "slug": "041-事件模型",
+      "title": "事件模型 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/041-事件模型.md"
+    },
+    {
+      "slug": "042-事件类型",
+      "title": "事件种类 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/042-事件类型.md"
+    },
+    {
+      "slug": "043-css操作",
+      "title": "CSS操作 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/043-css操作.md"
+    },
+    {
+      "slug": "044-mutation-observer",
+      "title": "Mutation Observer API -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/044-mutation-observer.md"
+    },
+    {
+      "slug": "045-概述",
+      "title": "浏览器环境概述 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/045-概述.md"
+    },
+    {
+      "slug": "046-window对象",
+      "title": "window对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/046-window对象.md"
+    },
+    {
+      "slug": "047-history对象",
+      "title": "History 对象 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/047-history对象.md"
+    },
+    {
+      "slug": "048-cookie",
+      "title": "Cookie -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/048-cookie.md"
+    },
+    {
+      "slug": "049-web-storage-浏览器端数据储存机制",
+      "title": "Web Storage：浏览器端数据储存机制 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/049-web-storage-浏览器端数据储存机制.md"
+    },
+    {
+      "slug": "050-同源政策",
+      "title": "同源政策 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/050-同源政策.md"
+    },
+    {
+      "slug": "051-ajax",
+      "title": "AJAX -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/051-ajax.md"
+    },
+    {
+      "slug": "052-cors",
+      "title": "CORS通信 -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/052-cors.md"
     }
   ],
   "sourceType": "web",

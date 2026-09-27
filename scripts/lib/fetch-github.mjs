@@ -85,7 +85,7 @@ function collectMd(dir, rootDir, out = [], depth = 0) {
     if (EXCLUDE.test(rel)) continue;
     const st = statSync(full);
     if (st.isDirectory()) collectMd(full, rootDir, out, depth + 1);
-    else if (/\.(md|markdown|mdown)$/i.test(name) && st.size > 0 && st.size <= MAX_CHAPTER_BYTES) {
+    else if (/\.(md|markdown|mdown|rst)$/i.test(name) && st.size > 0 && st.size <= MAX_CHAPTER_BYTES) {
       if (!EXCLUDE_FILES.test(basename(name).replace(extname(name), '').toLowerCase())) out.push(rel);
     }
   }
@@ -169,7 +169,7 @@ export async function fetchGithubBook(book, workDir) {
     const raw = readFileSync(join(rootDir, rel), 'utf8');
     const { body, frontTitle } = stripFrontmatter(raw);
     return {
-      slug: `${String(i + 1).padStart(3, '0')}-${slugify(basename(rel).replace(/\.(md|markdown|mdown)$/i, ''))}`,
+      slug: `${String(i + 1).padStart(3, '0')}-${slugify(basename(rel).replace(/\.(md|markdown|mdown|rst)$/i, ''))}`,
       title: frontTitle || mdTitle(body, basename(rel).replace(extname(rel), '')),
       file: rel,
       body,
@@ -182,7 +182,7 @@ function toChapter(rel, title, i, rootDir) {
   const raw = readFileSync(join(rootDir, rel), 'utf8');
   const { body, frontTitle } = stripFrontmatter(raw);
   return {
-    slug: `${String(i + 1).padStart(3, '0')}-${slugify(basename(rel).replace(/\.(md|markdown|mdown)$/i, ''))}`,
+    slug: `${String(i + 1).padStart(3, '0')}-${slugify(basename(rel).replace(/\.(md|markdown|mdown|rst)$/i, ''))}`,
     title: frontTitle || title || basename(rel).replace(extname(rel), ''),
     file: rel,
     body,

@@ -3,12 +3,22 @@
   "title": "深入理解JavaScript系列",
   "url": "http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:34.276Z",
+  "fetchedAt": "2026-09-27T12:00:30.292Z",
   "chapters": [
     {
-      "slug": "001-1o",
+      "slug": "001-深入理解javascript系列-汤姆大叔-博客园",
       "title": "深入理解JavaScript系列 - 汤姆大叔 - 博客园",
-      "file": "chapters/001-1o.md"
+      "file": "chapters/001-深入理解javascript系列-汤姆大叔-博客园.md"
+    },
+    {
+      "slug": "002-博客园-开发者的网上家园",
+      "title": "博客园 - 开发者的网上家园",
+      "file": "chapters/002-博客园-开发者的网上家园.md"
+    },
+    {
+      "slug": "003-赞助商",
+      "title": "感谢艾思科蓝成为博客园赞助商 - 博客园团队 - 博客园",
+      "file": "chapters/003-赞助商.md"
     }
   ],
   "sourceType": "web",

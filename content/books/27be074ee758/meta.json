@@ -3,12 +3,12 @@
   "title": "HTML和CSS编码规范",
   "url": "http://codeguide.bootcss.com/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:45.283Z",
+  "fetchedAt": "2026-09-27T11:58:56.101Z",
   "chapters": [
     {
-      "slug": "001-t",
+      "slug": "001-编码规范-by-mdo",
       "title": "编码规范 by @mdo",
-      "file": "chapters/001-t.md"
+      "file": "chapters/001-编码规范-by-mdo.md"
     }
   ],
   "sourceType": "web",

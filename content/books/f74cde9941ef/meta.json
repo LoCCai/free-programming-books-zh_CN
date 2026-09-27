@@ -3,12 +3,217 @@
   "title": "Learn Git - complete book in Chinese",
   "url": "https://www.git-tower.com/learn/git/ebook/cn/command-line/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:10.336Z",
+  "fetchedAt": "2026-09-27T11:19:29.414Z",
   "chapters": [
     {
-      "slug": "001-1m",
+      "slug": "001-前言",
       "title": "前言",
-      "file": "chapters/001-1m.md"
+      "file": "chapters/001-前言.md"
+    },
+    {
+      "slug": "002-前言",
+      "title": "前言",
+      "file": "chapters/002-前言.md"
+    },
+    {
+      "slug": "003-part-1-基础知识",
+      "title": "什么是版本控制？",
+      "file": "chapters/003-part-1-基础知识.md"
+    },
+    {
+      "slug": "004-什么是版本控制",
+      "title": "什么是版本控制？",
+      "file": "chapters/004-什么是版本控制.md"
+    },
+    {
+      "slug": "005-为什么要使用版本控制系统",
+      "title": "为什么要使用版本控制系统？",
+      "file": "chapters/005-为什么要使用版本控制系统.md"
+    },
+    {
+      "slug": "006-准备工作",
+      "title": "准备工作",
+      "file": "chapters/006-准备工作.md"
+    },
+    {
+      "slug": "007-基本工作流程",
+      "title": "基本工作流程",
+      "file": "chapters/007-基本工作流程.md"
+    },
+    {
+      "slug": "008-从一个未被纳入版本控制的项目开始",
+      "title": "从一个未被纳入版本控制的项目开始",
+      "file": "chapters/008-从一个未被纳入版本控制的项目开始.md"
+    },
+    {
+      "slug": "009-从一个已被纳入版本控制的项目开始",
+      "title": "从一个已被纳入版本控制的项目开始",
+      "file": "chapters/009-从一个已被纳入版本控制的项目开始.md"
+    },
+    {
+      "slug": "010-工作在你的项目上",
+      "title": "工作在你的项目上",
+      "file": "chapters/010-工作在你的项目上.md"
+    },
+    {
+      "slug": "011-part-2-分支与合并",
+      "title": "分支可以改变你的生命",
+      "file": "chapters/011-part-2-分支与合并.md"
+    },
+    {
+      "slug": "012-分支可以改变你的生命",
+      "title": "分支可以改变你的生命",
+      "file": "chapters/012-分支可以改变你的生命.md"
+    },
+    {
+      "slug": "013-在分支上工作",
+      "title": "在分支上工作",
+      "file": "chapters/013-在分支上工作.md"
+    },
+    {
+      "slug": "014-暂时保存更改",
+      "title": "暂时保存更改",
+      "file": "chapters/014-暂时保存更改.md"
+    },
+    {
+      "slug": "015-签出一个本地分支",
+      "title": "签出一个本地分支",
+      "file": "chapters/015-签出一个本地分支.md"
+    },
+    {
+      "slug": "016-合并改动",
+      "title": "合并改动",
+      "file": "chapters/016-合并改动.md"
+    },
+    {
+      "slug": "017-分支的工作流程",
+      "title": "分支的工作流程",
+      "file": "chapters/017-分支的工作流程.md"
+    },
+    {
+      "slug": "018-part-3-远程仓库",
+      "title": "远程仓库",
+      "file": "chapters/018-part-3-远程仓库.md"
+    },
+    {
+      "slug": "019-远程仓库",
+      "title": "远程仓库",
+      "file": "chapters/019-远程仓库.md"
+    },
+    {
+      "slug": "020-连接一个远程仓库",
+      "title": "连接一个远程仓库",
+      "file": "chapters/020-连接一个远程仓库.md"
+    },
+    {
+      "slug": "021-查看远程数据",
+      "title": "查看远程数据",
+      "file": "chapters/021-查看远程数据.md"
+    },
+    {
+      "slug": "022-整合远程的改动",
+      "title": "整合远程的改动",
+      "file": "chapters/022-整合远程的改动.md"
+    },
+    {
+      "slug": "023-发布一个本地分支",
+      "title": "发布一个本地分支",
+      "file": "chapters/023-发布一个本地分支.md"
+    },
+    {
+      "slug": "024-删除分支",
+      "title": "删除分支",
+      "file": "chapters/024-删除分支.md"
+    },
+    {
+      "slug": "025-part-4-高级应用",
+      "title": "撤销操作",
+      "file": "chapters/025-part-4-高级应用.md"
+    },
+    {
+      "slug": "026-撤销操作",
+      "title": "撤销操作",
+      "file": "chapters/026-撤销操作.md"
+    },
+    {
+      "slug": "027-用-diff-检查改动",
+      "title": "用 diff 检查改动",
+      "file": "chapters/027-用-diff-检查改动.md"
+    },
+    {
+      "slug": "028-处理合并冲突",
+      "title": "处理合并冲突",
+      "file": "chapters/028-处理合并冲突.md"
+    },
+    {
+      "slug": "029-rebase-代替合并",
+      "title": "Rebase 代替合并",
+      "file": "chapters/029-rebase-代替合并.md"
+    },
+    {
+      "slug": "030-子模块",
+      "title": "子模块",
+      "file": "chapters/030-子模块.md"
+    },
+    {
+      "slug": "031-git-flow-的工作流程",
+      "title": "git-flow 的工作流程",
+      "file": "chapters/031-git-flow-的工作流程.md"
+    },
+    {
+      "slug": "032-使用-ssh-公钥验证",
+      "title": "使用 SSH 公钥验证",
+      "file": "chapters/032-使用-ssh-公钥验证.md"
+    },
+    {
+      "slug": "033-part-5-工具与服务",
+      "title": "桌面应用程序",
+      "file": "chapters/033-part-5-工具与服务.md"
+    },
+    {
+      "slug": "034-桌面应用程序",
+      "title": "桌面应用程序",
+      "file": "chapters/034-桌面应用程序.md"
+    },
+    {
+      "slug": "035-比较和整合工具",
+      "title": "比较和整合工具",
+      "file": "chapters/035-比较和整合工具.md"
+    },
+    {
+      "slug": "036-代码托管服务",
+      "title": "代码托管服务",
+      "file": "chapters/036-代码托管服务.md"
+    },
+    {
+      "slug": "037-更多学习资源",
+      "title": "更多学习资源",
+      "file": "chapters/037-更多学习资源.md"
+    },
+    {
+      "slug": "038-附录",
+      "title": "版本控制的最佳实践",
+      "file": "chapters/038-附录.md"
+    },
+    {
+      "slug": "039-版本控制的最佳实践",
+      "title": "版本控制的最佳实践",
+      "file": "chapters/039-版本控制的最佳实践.md"
+    },
+    {
+      "slug": "040-命令-101",
+      "title": "命令 101",
+      "file": "chapters/040-命令-101.md"
+    },
+    {
+      "slug": "041-从-subversion-过渡到-git",
+      "title": "从 Subversion 过渡到 Git",
+      "file": "chapters/041-从-subversion-过渡到-git.md"
+    },
+    {
+      "slug": "042-为什么选择-git",
+      "title": "为什么选择 Git？",
+      "file": "chapters/042-为什么选择-git.md"
     }
   ],
   "sourceType": "web",

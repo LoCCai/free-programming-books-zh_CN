@@ -1,0 +1,11 @@
+This text is a work in progress—highly subject to change—and may not accurately describe any released version of the Apache™ Subversion® software. Bookmarking or otherwise referring others to this page is probably not such a smart idea. Please visit [http://www.svnbook.com/](http://www.svnbook.com/) for stable versions of this book.
+
+* * *
+
+![](https://svnbook.red-bean.com/nightly/zh/images/cc-by.png)
+
+You are reading _Version Control with Subversion_ (for Subversion 1.8), by Ben Collins-Sussman, Brian W. Fitzpatrick, and C. Michael Pilato.
+
+This work is licensed under the [Creative Commons Attribution License v2.0](http://creativecommons.org/licenses/by/2.0/).
+
+To submit comments, corrections, or other contributions to the text, please visit [http://www.svnbook.com/](http://www.svnbook.com/).

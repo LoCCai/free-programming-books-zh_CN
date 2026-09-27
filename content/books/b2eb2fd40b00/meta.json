@@ -3,12 +3,347 @@
   "title": "PostgreSQL 8.2.3 中文文档",
   "url": "https://www.jinbuguo.com/postgresql/manual/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:09:02.649Z",
+  "fetchedAt": "2026-09-27T11:57:01.563Z",
   "chapters": [
     {
-      "slug": "001-1h",
+      "slug": "001-postgresql-8-2-3-中文文档-金步国",
       "title": "PostgreSQL 8.2.3 中文文档 [金步国]",
-      "file": "chapters/001-1h.md"
+      "file": "chapters/001-postgresql-8-2-3-中文文档-金步国.md"
+    },
+    {
+      "slug": "002-前言",
+      "title": "前言 [金步国]",
+      "file": "chapters/002-前言.md"
+    },
+    {
+      "slug": "003-何为-postgresql",
+      "title": "何为 PostgreSQL? [金步国]",
+      "file": "chapters/003-何为-postgresql.md"
+    },
+    {
+      "slug": "004-postgresql-简史",
+      "title": "PostgreSQL 简史 [金步国]",
+      "file": "chapters/004-postgresql-简史.md"
+    },
+    {
+      "slug": "005-格式约定",
+      "title": "格式约定 [金步国]",
+      "file": "chapters/005-格式约定.md"
+    },
+    {
+      "slug": "006-更多信息",
+      "title": "更多信息 [金步国]",
+      "file": "chapters/006-更多信息.md"
+    },
+    {
+      "slug": "007-臭虫汇报指导",
+      "title": "臭虫汇报指导 [金步国]",
+      "file": "chapters/007-臭虫汇报指导.md"
+    },
+    {
+      "slug": "008-教程",
+      "title": "教程 [金步国]",
+      "file": "chapters/008-教程.md"
+    },
+    {
+      "slug": "009-从头开始",
+      "title": "从头开始 [金步国]",
+      "file": "chapters/009-从头开始.md"
+    },
+    {
+      "slug": "010-sql-语言",
+      "title": "SQL 语言 [金步国]",
+      "file": "chapters/010-sql-语言.md"
+    },
+    {
+      "slug": "011-高级特性",
+      "title": "高级特性 [金步国]",
+      "file": "chapters/011-高级特性.md"
+    },
+    {
+      "slug": "012-sql-语言",
+      "title": "SQL 语言 [金步国]",
+      "file": "chapters/012-sql-语言.md"
+    },
+    {
+      "slug": "013-sql-语法",
+      "title": "SQL 语法 [金步国]",
+      "file": "chapters/013-sql-语法.md"
+    },
+    {
+      "slug": "014-数据定义",
+      "title": "数据定义 [金步国]",
+      "file": "chapters/014-数据定义.md"
+    },
+    {
+      "slug": "015-数据操作",
+      "title": "数据操作 [金步国]",
+      "file": "chapters/015-数据操作.md"
+    },
+    {
+      "slug": "016-查询",
+      "title": "查询 [金步国]",
+      "file": "chapters/016-查询.md"
+    },
+    {
+      "slug": "017-数据类型",
+      "title": "数据类型 [金步国]",
+      "file": "chapters/017-数据类型.md"
+    },
+    {
+      "slug": "018-函数和操作符",
+      "title": "函数和操作符 [金步国]",
+      "file": "chapters/018-函数和操作符.md"
+    },
+    {
+      "slug": "019-类型转换",
+      "title": "类型转换 [金步国]",
+      "file": "chapters/019-类型转换.md"
+    },
+    {
+      "slug": "020-索引",
+      "title": "索引 [金步国]",
+      "file": "chapters/020-索引.md"
+    },
+    {
+      "slug": "021-并发控制",
+      "title": "并发控制 [金步国]",
+      "file": "chapters/021-并发控制.md"
+    },
+    {
+      "slug": "022-性能提升技巧",
+      "title": "性能提升技巧 [金步国]",
+      "file": "chapters/022-性能提升技巧.md"
+    },
+    {
+      "slug": "023-服务器管理",
+      "title": "服务器管理 [金步国]",
+      "file": "chapters/023-服务器管理.md"
+    },
+    {
+      "slug": "024-安装指导",
+      "title": "安装指导 [金步国]",
+      "file": "chapters/024-安装指导.md"
+    },
+    {
+      "slug": "025-在-windows-上安装客户端",
+      "title": "在 Windows 上安装客户端 [金步国]",
+      "file": "chapters/025-在-windows-上安装客户端.md"
+    },
+    {
+      "slug": "026-操作系统环境",
+      "title": "操作系统环境 [金步国]",
+      "file": "chapters/026-操作系统环境.md"
+    },
+    {
+      "slug": "027-服务器配置",
+      "title": "服务器配置 [金步国]",
+      "file": "chapters/027-服务器配置.md"
+    },
+    {
+      "slug": "028-数据库角色和权限",
+      "title": "数据库角色和权限 [金步国]",
+      "file": "chapters/028-数据库角色和权限.md"
+    },
+    {
+      "slug": "029-管理数据库",
+      "title": "管理数据库 [金步国]",
+      "file": "chapters/029-管理数据库.md"
+    },
+    {
+      "slug": "030-用户认证",
+      "title": "用户认证 [金步国]",
+      "file": "chapters/030-用户认证.md"
+    },
+    {
+      "slug": "031-区域",
+      "title": "区域 [金步国]",
+      "file": "chapters/031-区域.md"
+    },
+    {
+      "slug": "032-日常数据库维护工作",
+      "title": "日常数据库维护工作 [金步国]",
+      "file": "chapters/032-日常数据库维护工作.md"
+    },
+    {
+      "slug": "033-备份与恢复",
+      "title": "备份与恢复 [金步国]",
+      "file": "chapters/033-备份与恢复.md"
+    },
+    {
+      "slug": "034-高可用性与负载均衡",
+      "title": "高可用性与负载均衡 [金步国]",
+      "file": "chapters/034-高可用性与负载均衡.md"
+    },
+    {
+      "slug": "035-监控数据库的活动",
+      "title": "监控数据库的活动 [金步国]",
+      "file": "chapters/035-监控数据库的活动.md"
+    },
+    {
+      "slug": "036-监控磁盘使用情况",
+      "title": "监控磁盘使用情况 [金步国]",
+      "file": "chapters/036-监控磁盘使用情况.md"
+    },
+    {
+      "slug": "037-可靠性和预写式日志",
+      "title": "可靠性和预写式日志 [金步国]",
+      "file": "chapters/037-可靠性和预写式日志.md"
+    },
+    {
+      "slug": "038-回归测试",
+      "title": "回归测试 [金步国]",
+      "file": "chapters/038-回归测试.md"
+    },
+    {
+      "slug": "039-服务器端编程",
+      "title": "服务器端编程 [金步国]",
+      "file": "chapters/039-服务器端编程.md"
+    },
+    {
+      "slug": "040-扩展-sql",
+      "title": "扩展 SQL [金步国]",
+      "file": "chapters/040-扩展-sql.md"
+    },
+    {
+      "slug": "041-触发器",
+      "title": "触发器 [金步国]",
+      "file": "chapters/041-触发器.md"
+    },
+    {
+      "slug": "042-规则系统",
+      "title": "规则系统 [金步国]",
+      "file": "chapters/042-规则系统.md"
+    },
+    {
+      "slug": "043-过程语言",
+      "title": "过程语言 [金步国]",
+      "file": "chapters/043-过程语言.md"
+    },
+    {
+      "slug": "044-pl-pgsql-sql-过程语言",
+      "title": "pgSQL - SQL 过程语言 [金步国]",
+      "file": "chapters/044-pl-pgsql-sql-过程语言.md"
+    },
+    {
+      "slug": "045-pl-tcl-tcl-过程语言",
+      "title": "Tcl - Tcl 过程语言 [金步国]",
+      "file": "chapters/045-pl-tcl-tcl-过程语言.md"
+    },
+    {
+      "slug": "046-pl-perl-perl-过程语言",
+      "title": "Perl - Perl 过程语言 [金步国]",
+      "file": "chapters/046-pl-perl-perl-过程语言.md"
+    },
+    {
+      "slug": "047-pl-python-python-过程语言",
+      "title": "Python - Python 过程语言 [金步国]",
+      "file": "chapters/047-pl-python-python-过程语言.md"
+    },
+    {
+      "slug": "048-服务器编程接口",
+      "title": "服务器编程接口 [金步国]",
+      "file": "chapters/048-服务器编程接口.md"
+    },
+    {
+      "slug": "049-postgresql-内部概貌",
+      "title": "PostgreSQL 内部概貌 [金步国]",
+      "file": "chapters/049-postgresql-内部概貌.md"
+    },
+    {
+      "slug": "050-系统表",
+      "title": "系统表 [金步国]",
+      "file": "chapters/050-系统表.md"
+    },
+    {
+      "slug": "051-前-后端协议",
+      "title": "前/后端协议 [金步国]",
+      "file": "chapters/051-前-后端协议.md"
+    },
+    {
+      "slug": "052-postgresql-编码约定",
+      "title": "PostgreSQL 编码约定 [金步国]",
+      "file": "chapters/052-postgresql-编码约定.md"
+    },
+    {
+      "slug": "053-本地语言支持",
+      "title": "本地语言支持 [金步国]",
+      "file": "chapters/053-本地语言支持.md"
+    },
+    {
+      "slug": "054-书写一个过程语言处理器",
+      "title": "书写一个过程语言处理器 [金步国]",
+      "file": "chapters/054-书写一个过程语言处理器.md"
+    },
+    {
+      "slug": "055-索引访问方法接口定义",
+      "title": "索引访问方法接口定义 [金步国]",
+      "file": "chapters/055-索引访问方法接口定义.md"
+    },
+    {
+      "slug": "056-gist-索引",
+      "title": "GiST 索引 [金步国]",
+      "file": "chapters/056-gist-索引.md"
+    },
+    {
+      "slug": "057-gin-索引",
+      "title": "GIN 索引 [金步国]",
+      "file": "chapters/057-gin-索引.md"
+    },
+    {
+      "slug": "058-数据库物理存储",
+      "title": "数据库物理存储 [金步国]",
+      "file": "chapters/058-数据库物理存储.md"
+    },
+    {
+      "slug": "059-bki-后端接口",
+      "title": "BKI Backend Interface [金步国]",
+      "file": "chapters/059-bki-后端接口.md"
+    },
+    {
+      "slug": "060-规划器如何使用统计信息",
+      "title": "规划器如何使用统计信息 [金步国]",
+      "file": "chapters/060-规划器如何使用统计信息.md"
+    },
+    {
+      "slug": "061-附录",
+      "title": "附录 [金步国]",
+      "file": "chapters/061-附录.md"
+    },
+    {
+      "slug": "062-postgresql-错误代码",
+      "title": "PostgreSQL 错误代码 [金步国]",
+      "file": "chapters/062-postgresql-错误代码.md"
+    },
+    {
+      "slug": "063-日期-时间支持",
+      "title": "日期/时间支持 [金步国]",
+      "file": "chapters/063-日期-时间支持.md"
+    },
+    {
+      "slug": "064-sql-关键字",
+      "title": "SQL Key Words [金步国]",
+      "file": "chapters/064-sql-关键字.md"
+    },
+    {
+      "slug": "065-sql-兼容性",
+      "title": "SQL 兼容性 [金步国]",
+      "file": "chapters/065-sql-兼容性.md"
+    },
+    {
+      "slug": "066-cvs-仓库",
+      "title": "The CVS Repository [金步国]",
+      "file": "chapters/066-cvs-仓库.md"
+    },
+    {
+      "slug": "067-文档",
+      "title": "文档 [金步国]",
+      "file": "chapters/067-文档.md"
+    },
+    {
+      "slug": "068-外部项目",
+      "title": "外部项目 [金步国]",
+      "file": "chapters/068-外部项目.md"
     }
   ],
   "sourceType": "web",

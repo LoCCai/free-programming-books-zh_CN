@@ -3,12 +3,77 @@
   "title": "Scala课堂",
   "url": "http://twitter.github.io/scala_school/zh_cn/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:21.341Z",
+  "fetchedAt": "2026-09-27T12:06:45.297Z",
   "chapters": [
     {
-      "slug": "001-1i",
+      "slug": "001-scala-课堂",
       "title": "Scala 课堂",
-      "file": "chapters/001-1i.md"
+      "file": "chapters/001-scala-课堂.md"
+    },
+    {
+      "slug": "002-基础",
+      "title": "Scala School - 基础",
+      "file": "chapters/002-基础.md"
+    },
+    {
+      "slug": "003-基础知识-续",
+      "title": "Scala School - 基础知识（续）",
+      "file": "chapters/003-基础知识-续.md"
+    },
+    {
+      "slug": "004-集合",
+      "title": "Scala School - 集合",
+      "file": "chapters/004-集合.md"
+    },
+    {
+      "slug": "005-模式匹配与函数组合",
+      "title": "Scala School - 模式匹配与函数组合",
+      "file": "chapters/005-模式匹配与函数组合.md"
+    },
+    {
+      "slug": "006-类型和多态基础",
+      "title": "Scala School - 类型和多态基础",
+      "file": "chapters/006-类型和多态基础.md"
+    },
+    {
+      "slug": "007-高级类型",
+      "title": "Scala School - 高级类型",
+      "file": "chapters/007-高级类型.md"
+    },
+    {
+      "slug": "008-简单构建工具",
+      "title": "Scala School - 简单构建工具",
+      "file": "chapters/008-简单构建工具.md"
+    },
+    {
+      "slug": "009-更多的集合",
+      "title": "Scala School - More collections",
+      "file": "chapters/009-更多的集合.md"
+    },
+    {
+      "slug": "010-使用specs测试",
+      "title": "Scala School - 使用specs进行测试",
+      "file": "chapters/010-使用specs测试.md"
+    },
+    {
+      "slug": "011-scala-并发编程",
+      "title": "Scala School - Concurrency in Scala",
+      "file": "chapters/011-scala-并发编程.md"
+    },
+    {
+      "slug": "012-java-scala",
+      "title": "Scala School - Java + Scala",
+      "file": "chapters/012-java-scala.md"
+    },
+    {
+      "slug": "013-finagle介绍",
+      "title": "Scala School - An introduction to Finagle",
+      "file": "chapters/013-finagle介绍.md"
+    },
+    {
+      "slug": "014-searchbird",
+      "title": "Scala School - Searchbird",
+      "file": "chapters/014-searchbird.md"
     }
   ],
   "sourceType": "web",

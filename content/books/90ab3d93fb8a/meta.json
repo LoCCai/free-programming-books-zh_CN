@@ -3,12 +3,32 @@
   "title": "@wulijun版",
   "url": "http://wulijun.github.io/php-the-right-way/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:12:02.844Z",
+  "fetchedAt": "2026-09-27T12:02:01.098Z",
   "chapters": [
     {
-      "slug": "001-17",
+      "slug": "001-查看banner图片",
+      "title": "Website Banners - PHP之道",
+      "file": "chapters/001-查看banner图片.md"
+    },
+    {
+      "slug": "002-学习更多php函数式编程",
+      "title": "Functional Programming in PHP - PHP之道",
+      "file": "chapters/002-学习更多php函数式编程.md"
+    },
+    {
+      "slug": "003-基础知识",
+      "title": "The Basics - PHP之道",
+      "file": "chapters/003-基础知识.md"
+    },
+    {
+      "slug": "004-了解更多设计模式",
+      "title": "Design Patterns - PHP之道",
+      "file": "chapters/004-了解更多设计模式.md"
+    },
+    {
+      "slug": "005-packagist",
       "title": "PHP之道",
-      "file": "chapters/001-17.md"
+      "file": "chapters/005-packagist.md"
     }
   ],
   "sourceType": "web",

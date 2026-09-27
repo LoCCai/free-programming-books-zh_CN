@@ -2,8 +2,145 @@
   "bookId": "90fe27cdb777",
   "title": "TypeScript Handbook",
   "url": "https://zhongsp.gitbooks.io/typescript-handbook/content/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T06:26:07.369Z",
-  "chapters": [],
-  "error": "HTTP 401"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T12:13:55.206Z",
+  "chapters": [
+    {
+      "slug": "001-introduction",
+      "title": "Introduction · TypeScript Handbook（中文版）",
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-快速上手",
+      "title": "快速上手 · TypeScript Handbook（中文版）",
+      "file": "chapters/002-快速上手.md"
+    },
+    {
+      "slug": "003-gulp",
+      "title": "Gulp · TypeScript Handbook（中文版）",
+      "file": "chapters/003-gulp.md"
+    },
+    {
+      "slug": "004-knockout-js",
+      "title": "Knockout.js · TypeScript Handbook（中文版）",
+      "file": "chapters/004-knockout-js.md"
+    },
+    {
+      "slug": "005-react",
+      "title": "React · TypeScript Handbook（中文版）",
+      "file": "chapters/005-react.md"
+    },
+    {
+      "slug": "006-手册",
+      "title": "手册 · TypeScript Handbook（中文版）",
+      "file": "chapters/006-手册.md"
+    },
+    {
+      "slug": "007-接口",
+      "title": "接口 · TypeScript Handbook（中文版）",
+      "file": "chapters/007-接口.md"
+    },
+    {
+      "slug": "008-类",
+      "title": "类 · TypeScript Handbook（中文版）",
+      "file": "chapters/008-类.md"
+    },
+    {
+      "slug": "009-函数",
+      "title": "函数 · TypeScript Handbook（中文版）",
+      "file": "chapters/009-函数.md"
+    },
+    {
+      "slug": "010-泛型",
+      "title": "泛型 · TypeScript Handbook（中文版）",
+      "file": "chapters/010-泛型.md"
+    },
+    {
+      "slug": "011-枚举",
+      "title": "枚举 · TypeScript Handbook（中文版）",
+      "file": "chapters/011-枚举.md"
+    },
+    {
+      "slug": "012-symbols",
+      "title": "Symbols · TypeScript Handbook（中文版）",
+      "file": "chapters/012-symbols.md"
+    },
+    {
+      "slug": "013-模块",
+      "title": "模块 · TypeScript Handbook（中文版）",
+      "file": "chapters/013-模块.md"
+    },
+    {
+      "slug": "014-命名空间",
+      "title": "命名空间 · TypeScript Handbook（中文版）",
+      "file": "chapters/014-命名空间.md"
+    },
+    {
+      "slug": "015-jsx",
+      "title": "JSX · TypeScript Handbook（中文版）",
+      "file": "chapters/015-jsx.md"
+    },
+    {
+      "slug": "016-decorators",
+      "title": "Decorators · TypeScript Handbook（中文版）",
+      "file": "chapters/016-decorators.md"
+    },
+    {
+      "slug": "017-混入",
+      "title": "混入 · TypeScript Handbook（中文版）",
+      "file": "chapters/017-混入.md"
+    },
+    {
+      "slug": "018-工程配置",
+      "title": "工程配置 · TypeScript Handbook（中文版）",
+      "file": "chapters/018-工程配置.md"
+    },
+    {
+      "slug": "019-wiki",
+      "title": "Wiki · TypeScript Handbook（中文版）",
+      "file": "chapters/019-wiki.md"
+    },
+    {
+      "slug": "020-typescript里的this",
+      "title": "TypeScript里的this · TypeScript Handbook（中文版）",
+      "file": "chapters/020-typescript里的this.md"
+    },
+    {
+      "slug": "021-编码规范",
+      "title": "编码规范 · TypeScript Handbook（中文版）",
+      "file": "chapters/021-编码规范.md"
+    },
+    {
+      "slug": "022-支持typescript的编辑器",
+      "title": "支持TypeScript的编辑器 · TypeScript Handbook（中文版）",
+      "file": "chapters/022-支持typescript的编辑器.md"
+    },
+    {
+      "slug": "023-结合asp-net-v5使用typescript",
+      "title": "结合ASP.NET v5使用TypeScript · TypeScript Handbook（中文版）",
+      "file": "chapters/023-结合asp-net-v5使用typescript.md"
+    },
+    {
+      "slug": "024-架构概述",
+      "title": "架构概述 · TypeScript Handbook（中文版）",
+      "file": "chapters/024-架构概述.md"
+    },
+    {
+      "slug": "025-发展路线图",
+      "title": "发展路线图 · TypeScript Handbook（中文版）",
+      "file": "chapters/025-发展路线图.md"
+    },
+    {
+      "slug": "026-新增功能",
+      "title": "新增功能 · TypeScript Handbook（中文版）",
+      "file": "chapters/026-新增功能.md"
+    },
+    {
+      "slug": "027-breaking-changes",
+      "title": "Breaking Changes · TypeScript Handbook（中文版）",
+      "file": "chapters/027-breaking-changes.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction · TypeScript Handbook（中文版）"
 }

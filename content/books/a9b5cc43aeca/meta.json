@@ -3,12 +3,552 @@
   "title": "《不可替代的团队领袖培养计划》",
   "url": "https://leader.js.cool/#/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:40.650Z",
+  "fetchedAt": "2026-09-27T12:10:37.751Z",
   "chapters": [
     {
-      "slug": "001-p",
+      "slug": "001-简介",
       "title": "《不可替代的团队领袖培养计划》",
-      "file": "chapters/001-p.md"
+      "file": "chapters/001-简介.md"
+    },
+    {
+      "slug": "002-版权",
+      "title": "版权",
+      "file": "chapters/002-版权.md"
+    },
+    {
+      "slug": "003-电脑-系统的选择",
+      "title": "笔记本、台式机、平板二合一？Mac、Win、Linux？",
+      "file": "chapters/003-电脑-系统的选择.md"
+    },
+    {
+      "slug": "004-操作系统-os-x",
+      "title": "操作系统 OS X",
+      "file": "chapters/004-操作系统-os-x.md"
+    },
+    {
+      "slug": "005-优雅地使用ipad开发",
+      "title": "优雅地使用平板进行远程OS X编码开发",
+      "file": "chapters/005-优雅地使用ipad开发.md"
+    },
+    {
+      "slug": "006-brew",
+      "title": "Brew",
+      "file": "chapters/006-brew.md"
+    },
+    {
+      "slug": "007-dnsmasq",
+      "title": "Dnsmasq",
+      "file": "chapters/007-dnsmasq.md"
+    },
+    {
+      "slug": "008-ohmyzsh",
+      "title": "OhMyZsh",
+      "file": "chapters/008-ohmyzsh.md"
+    },
+    {
+      "slug": "009-ide",
+      "title": "IDE",
+      "file": "chapters/009-ide.md"
+    },
+    {
+      "slug": "010-科学上网",
+      "title": "科学上网",
+      "file": "chapters/010-科学上网.md"
+    },
+    {
+      "slug": "011-在线资源",
+      "title": "在线资源",
+      "file": "chapters/011-在线资源.md"
+    },
+    {
+      "slug": "012-离线资源",
+      "title": "离线资源",
+      "file": "chapters/012-离线资源.md"
+    },
+    {
+      "slug": "013-前端资源",
+      "title": "前端资源",
+      "file": "chapters/013-前端资源.md"
+    },
+    {
+      "slug": "014-http",
+      "title": "HTTP",
+      "file": "chapters/014-http.md"
+    },
+    {
+      "slug": "015-shell",
+      "title": "常用SHELL命令",
+      "file": "chapters/015-shell.md"
+    },
+    {
+      "slug": "016-git",
+      "title": "Git",
+      "file": "chapters/016-git.md"
+    },
+    {
+      "slug": "017-promise-思想",
+      "title": "Promise 思想",
+      "file": "chapters/017-promise-思想.md"
+    },
+    {
+      "slug": "018-docker-加速",
+      "title": "Docker 加速",
+      "file": "chapters/018-docker-加速.md"
+    },
+    {
+      "slug": "019-中文字体",
+      "title": "跨平台的Web中文字体解决方案",
+      "file": "chapters/019-中文字体.md"
+    },
+    {
+      "slug": "020-github部署spa应用",
+      "title": "Github Pages 中部署 SPA（路由单页应用）",
+      "file": "chapters/020-github部署spa应用.md"
+    },
+    {
+      "slug": "021-travis-ci-每日构建",
+      "title": "Travis-CI 每日构建",
+      "file": "chapters/021-travis-ci-每日构建.md"
+    },
+    {
+      "slug": "022-小技巧",
+      "title": "Tricks",
+      "file": "chapters/022-小技巧.md"
+    },
+    {
+      "slug": "023-fetch-api-ajax",
+      "title": "Fetch API AJAX",
+      "file": "chapters/023-fetch-api-ajax.md"
+    },
+    {
+      "slug": "024-es-next",
+      "title": "ES Next",
+      "file": "chapters/024-es-next.md"
+    },
+    {
+      "slug": "025-map",
+      "title": "Map",
+      "file": "chapters/025-map.md"
+    },
+    {
+      "slug": "026-reduce",
+      "title": "Reduce",
+      "file": "chapters/026-reduce.md"
+    },
+    {
+      "slug": "027-正则替换",
+      "title": "正则替换",
+      "file": "chapters/027-正则替换.md"
+    },
+    {
+      "slug": "028-异常捕获",
+      "title": "异常捕获",
+      "file": "chapters/028-异常捕获.md"
+    },
+    {
+      "slug": "029-包管理",
+      "title": "Node.js 包管理",
+      "file": "chapters/029-包管理.md"
+    },
+    {
+      "slug": "030-babel",
+      "title": "Babel",
+      "file": "chapters/030-babel.md"
+    },
+    {
+      "slug": "031-flow",
+      "title": "Flow",
+      "file": "chapters/031-flow.md"
+    },
+    {
+      "slug": "032-test",
+      "title": "Test",
+      "file": "chapters/032-test.md"
+    },
+    {
+      "slug": "033-benchmark",
+      "title": "Benchmark",
+      "file": "chapters/033-benchmark.md"
+    },
+    {
+      "slug": "034-造轮子-npm-篇",
+      "title": "造轮子(NPM)篇",
+      "file": "chapters/034-造轮子-npm-篇.md"
+    },
+    {
+      "slug": "035-cpu调度",
+      "title": "Node.js CPU调度优化",
+      "file": "chapters/035-cpu调度.md"
+    },
+    {
+      "slug": "036-yarn-进阶使用",
+      "title": "Yarn 进阶使用",
+      "file": "chapters/036-yarn-进阶使用.md"
+    },
+    {
+      "slug": "037-hexo搭建静态博客",
+      "title": "Hexo搭建静态博客",
+      "file": "chapters/037-hexo搭建静态博客.md"
+    },
+    {
+      "slug": "038-gitbook-迁移到-docsify",
+      "title": "Gitbook 迁移到 Docsify",
+      "file": "chapters/038-gitbook-迁移到-docsify.md"
+    },
+    {
+      "slug": "039-docsify画图建模",
+      "title": "Docsify画图建模Mermaid插件支持",
+      "file": "chapters/039-docsify画图建模.md"
+    },
+    {
+      "slug": "040-gitbook静态文档生成",
+      "title": "GitBook静态文档生成",
+      "file": "chapters/040-gitbook静态文档生成.md"
+    },
+    {
+      "slug": "041-mysql-5",
+      "title": "MySQL 5",
+      "file": "chapters/041-mysql-5.md"
+    },
+    {
+      "slug": "042-mysql-8",
+      "title": "MySQL 8",
+      "file": "chapters/042-mysql-8.md"
+    },
+    {
+      "slug": "043-redis",
+      "title": "Redis",
+      "file": "chapters/043-redis.md"
+    },
+    {
+      "slug": "044-graphql",
+      "title": "GraphQL",
+      "file": "chapters/044-graphql.md"
+    },
+    {
+      "slug": "045-chatgpt",
+      "title": "ChatGPT",
+      "file": "chapters/045-chatgpt.md"
+    },
+    {
+      "slug": "046-hapi",
+      "title": "Hapi",
+      "file": "chapters/046-hapi.md"
+    },
+    {
+      "slug": "047-koa",
+      "title": "Koa",
+      "file": "chapters/047-koa.md"
+    },
+    {
+      "slug": "048-socket-io",
+      "title": "Socket.IO",
+      "file": "chapters/048-socket-io.md"
+    },
+    {
+      "slug": "049-vue",
+      "title": "Vue",
+      "file": "chapters/049-vue.md"
+    },
+    {
+      "slug": "050-webpack",
+      "title": "Webpack",
+      "file": "chapters/050-webpack.md"
+    },
+    {
+      "slug": "051-udp",
+      "title": "UDP",
+      "file": "chapters/051-udp.md"
+    },
+    {
+      "slug": "052-react-redux",
+      "title": "React Redux",
+      "file": "chapters/052-react-redux.md"
+    },
+    {
+      "slug": "053-nativescript",
+      "title": "NativeScript",
+      "file": "chapters/053-nativescript.md"
+    },
+    {
+      "slug": "054-phantom-request",
+      "title": "Phantom/Request",
+      "file": "chapters/054-phantom-request.md"
+    },
+    {
+      "slug": "055-electron",
+      "title": "Electron",
+      "file": "chapters/055-electron.md"
+    },
+    {
+      "slug": "056-nest-js",
+      "title": "Nest.js",
+      "file": "chapters/056-nest-js.md"
+    },
+    {
+      "slug": "057-nuxt-js",
+      "title": "Nuxt.js",
+      "file": "chapters/057-nuxt-js.md"
+    },
+    {
+      "slug": "058-奇数求和",
+      "title": "奇数求和",
+      "file": "chapters/058-奇数求和.md"
+    },
+    {
+      "slug": "059-查找散杂数",
+      "title": "查找散杂数",
+      "file": "chapters/059-查找散杂数.md"
+    },
+    {
+      "slug": "060-查找单数",
+      "title": "查找单数",
+      "file": "chapters/060-查找单数.md"
+    },
+    {
+      "slug": "061-无限层级目录算法",
+      "title": "无限层级目录算法",
+      "file": "chapters/061-无限层级目录算法.md"
+    },
+    {
+      "slug": "062-需求分析",
+      "title": "需求分析",
+      "file": "chapters/062-需求分析.md"
+    },
+    {
+      "slug": "063-产品设计",
+      "title": "产品设计",
+      "file": "chapters/063-产品设计.md"
+    },
+    {
+      "slug": "064-系统架构设计",
+      "title": "系统架构设计",
+      "file": "chapters/064-系统架构设计.md"
+    },
+    {
+      "slug": "065-系统架构设计实践",
+      "title": "系统架构设计实践",
+      "file": "chapters/065-系统架构设计实践.md"
+    },
+    {
+      "slug": "066-mvp原则",
+      "title": "MVP原则",
+      "file": "chapters/066-mvp原则.md"
+    },
+    {
+      "slug": "067-分治原则",
+      "title": "分治原则",
+      "file": "chapters/067-分治原则.md"
+    },
+    {
+      "slug": "068-项目结构",
+      "title": "项目结构",
+      "file": "chapters/068-项目结构.md"
+    },
+    {
+      "slug": "069-开发指南",
+      "title": "开发指南",
+      "file": "chapters/069-开发指南.md"
+    },
+    {
+      "slug": "070-功能模块设计",
+      "title": "功能模块设计",
+      "file": "chapters/070-功能模块设计.md"
+    },
+    {
+      "slug": "071-数据库表结构设计",
+      "title": "数据库表结构设计",
+      "file": "chapters/071-数据库表结构设计.md"
+    },
+    {
+      "slug": "072-缓存设计",
+      "title": "缓存设计",
+      "file": "chapters/072-缓存设计.md"
+    },
+    {
+      "slug": "073-行为驱动开发实践",
+      "title": "行为驱动开发实践",
+      "file": "chapters/073-行为驱动开发实践.md"
+    },
+    {
+      "slug": "074-代码细节处理",
+      "title": "代码细节处理",
+      "file": "chapters/074-代码细节处理.md"
+    },
+    {
+      "slug": "075-服务器配置",
+      "title": "服务器配置",
+      "file": "chapters/075-服务器配置.md"
+    },
+    {
+      "slug": "076-pm2-守护进程",
+      "title": "PM2 守护进程",
+      "file": "chapters/076-pm2-守护进程.md"
+    },
+    {
+      "slug": "077-later-计划任务",
+      "title": "Later 计划任务",
+      "file": "chapters/077-later-计划任务.md"
+    },
+    {
+      "slug": "078-ci-持续交付",
+      "title": "CI 持续交付",
+      "file": "chapters/078-ci-持续交付.md"
+    },
+    {
+      "slug": "079-重启服务",
+      "title": "重启服务",
+      "file": "chapters/079-重启服务.md"
+    },
+    {
+      "slug": "080-certbot-证书",
+      "title": "CertBot 证书",
+      "file": "chapters/080-certbot-证书.md"
+    },
+    {
+      "slug": "081-cloudflare",
+      "title": "CloudFlare",
+      "file": "chapters/081-cloudflare.md"
+    },
+    {
+      "slug": "082-iot-hub",
+      "title": "Azure IoT Hub开发指南",
+      "file": "chapters/082-iot-hub.md"
+    },
+    {
+      "slug": "083-iot-hub-路由",
+      "title": "Azure IoT Hub 路由开发指南",
+      "file": "chapters/083-iot-hub-路由.md"
+    },
+    {
+      "slug": "084-storage",
+      "title": "Azure Blob文件上传",
+      "file": "chapters/084-storage.md"
+    },
+    {
+      "slug": "085-webapp",
+      "title": "Azure Node.js WebApp",
+      "file": "chapters/085-webapp.md"
+    },
+    {
+      "slug": "086-像盖房子一样写代码",
+      "title": "像盖房子一样写代码",
+      "file": "chapters/086-像盖房子一样写代码.md"
+    },
+    {
+      "slug": "087-开源项目翻译正确姿势",
+      "title": "开源项目翻译正确姿势",
+      "file": "chapters/087-开源项目翻译正确姿势.md"
+    },
+    {
+      "slug": "088-元编程构造优雅解决方案",
+      "title": "元编程构造简单优雅解决方案",
+      "file": "chapters/088-元编程构造优雅解决方案.md"
+    },
+    {
+      "slug": "089-electron-桌面应用",
+      "title": "Electron 桌面应用",
+      "file": "chapters/089-electron-桌面应用.md"
+    },
+    {
+      "slug": "090-混合web应用实践",
+      "title": "混合Web应用实践",
+      "file": "chapters/090-混合web应用实践.md"
+    },
+    {
+      "slug": "091-api-快速搭建",
+      "title": "基于 API 快速搭建前后分离的项目",
+      "file": "chapters/091-api-快速搭建.md"
+    },
+    {
+      "slug": "092-前后端分离实践",
+      "title": "Vue + Koa 前后端分离实践",
+      "file": "chapters/092-前后端分离实践.md"
+    },
+    {
+      "slug": "093-发布一个vue组件",
+      "title": "手把手教你发布一个Vue组件",
+      "file": "chapters/093-发布一个vue组件.md"
+    },
+    {
+      "slug": "094-服务器端代码打包",
+      "title": "服务器端代码打包",
+      "file": "chapters/094-服务器端代码打包.md"
+    },
+    {
+      "slug": "095-mysql-向-graphql-迁移",
+      "title": "MySQL 向 GraphQL 迁移",
+      "file": "chapters/095-mysql-向-graphql-迁移.md"
+    },
+    {
+      "slug": "096-graphql-鉴权",
+      "title": "GraphQL 鉴权",
+      "file": "chapters/096-graphql-鉴权.md"
+    },
+    {
+      "slug": "097-dataloader",
+      "title": "DataLoader",
+      "file": "chapters/097-dataloader.md"
+    },
+    {
+      "slug": "098-新人成长",
+      "title": "新人成长",
+      "file": "chapters/098-新人成长.md"
+    },
+    {
+      "slug": "099-学习能力",
+      "title": "学习能力",
+      "file": "chapters/099-学习能力.md"
+    },
+    {
+      "slug": "100-问题处理能力",
+      "title": "问题处理能力",
+      "file": "chapters/100-问题处理能力.md"
+    },
+    {
+      "slug": "101-忽略细节-就是屎",
+      "title": "忽略细节，就是屎",
+      "file": "chapters/101-忽略细节-就是屎.md"
+    },
+    {
+      "slug": "102-辩证思维",
+      "title": "辩证思维",
+      "file": "chapters/102-辩证思维.md"
+    },
+    {
+      "slug": "103-克服强迫症",
+      "title": "克服强迫症",
+      "file": "chapters/103-克服强迫症.md"
+    },
+    {
+      "slug": "104-木桶效应",
+      "title": "木桶效应",
+      "file": "chapters/104-木桶效应.md"
+    },
+    {
+      "slug": "105-好员工的定义",
+      "title": "好员工的定义",
+      "file": "chapters/105-好员工的定义.md"
+    },
+    {
+      "slug": "106-优秀工程师的定义",
+      "title": "优秀工程师(程序员)的定义",
+      "file": "chapters/106-优秀工程师的定义.md"
+    },
+    {
+      "slug": "107-招聘原则",
+      "title": "招聘原则",
+      "file": "chapters/107-招聘原则.md"
+    },
+    {
+      "slug": "108-会议原则",
+      "title": "会议原则",
+      "file": "chapters/108-会议原则.md"
+    },
+    {
+      "slug": "109-人才理念",
+      "title": "人才理念",
+      "file": "chapters/109-人才理念.md"
     }
   ],
   "sourceType": "web",

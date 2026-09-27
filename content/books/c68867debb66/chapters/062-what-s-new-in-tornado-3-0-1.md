@@ -1,0 +1,9 @@
+## Apr 8, 2013[¶](#apr-8-2013 "永久链接至标题")
+
+-   The interface of [`tornado.auth.FacebookGraphMixin`](https://tornado-zh.readthedocs.io/zh/latest/auth.html#tornado.auth.FacebookGraphMixin "tornado.auth.FacebookGraphMixin") is now consistent with its documentation and the rest of the module. The `get_authenticated_user` and `facebook_request` methods return a `Future` and the `callback` argument is optional.
+-   The [`tornado.testing.gen_test`](https://tornado-zh.readthedocs.io/zh/latest/testing.html#tornado.testing.gen_test "tornado.testing.gen_test") decorator will no longer be recognized as a (broken) test by `nose`.
+-   Work around a bug in Ubuntu 13.04 betas involving an incomplete backport of the [`ssl.match_hostname`](https://docs.python.org/3.4/library/ssl.html#ssl.match_hostname "(在 Python v3.4)") function.
+-   [`tornado.websocket.websocket_connect`](https://tornado-zh.readthedocs.io/zh/latest/websocket.html#tornado.websocket.websocket_connect "tornado.websocket.websocket_connect") now fails cleanly when it attempts to connect to a non-websocket url.
+-   [`tornado.testing.LogTrapTestCase`](https://tornado-zh.readthedocs.io/zh/latest/testing.html#tornado.testing.LogTrapTestCase "tornado.testing.LogTrapTestCase") once again works with byte strings on Python 2.
+-   The `request` attribute of [`tornado.httpclient.HTTPResponse`](https://tornado-zh.readthedocs.io/zh/latest/httpclient.html#tornado.httpclient.HTTPResponse "tornado.httpclient.HTTPResponse") is now always an [`HTTPRequest`](https://tornado-zh.readthedocs.io/zh/latest/httpclient.html#tornado.httpclient.HTTPRequest "tornado.httpclient.HTTPRequest"), never a `_RequestProxy`.
+-   Exceptions raised by the [`tornado.gen`](https://tornado-zh.readthedocs.io/zh/latest/gen.html#module-tornado.gen "tornado.gen") module now have better messages when tuples are used as callback keys.

@@ -3,17 +3,27 @@
   "title": "GitHub秘籍",
   "url": "https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:39.772Z",
+  "fetchedAt": "2026-09-27T11:55:57.190Z",
   "chapters": [
     {
-      "slug": "001-20",
+      "slug": "001-introduction",
       "title": "Introduction | github-cheat-sheet",
-      "file": "chapters/001-20.md"
+      "file": "chapters/001-introduction.md"
     },
     {
-      "slug": "002-27",
+      "slug": "002-english",
       "title": "Introduction | github-cheat-sheet",
-      "file": "chapters/002-27.md"
+      "file": "chapters/002-english.md"
+    },
+    {
+      "slug": "003-한국어",
+      "title": "Introduction | github-cheat-sheet",
+      "file": "chapters/003-한국어.md"
+    },
+    {
+      "slug": "004-日本語",
+      "title": "Introduction | github-cheat-sheet",
+      "file": "chapters/004-日本語.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,27 @@
   "title": "Effective Scala",
   "url": "http://twitter.github.io/effectivescala/index-cn.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:21.691Z",
+  "fetchedAt": "2026-09-27T12:06:42.234Z",
   "chapters": [
     {
-      "slug": "001-1h",
+      "slug": "001-effective-scala",
       "title": "Effective Scala",
-      "file": "chapters/001-1h.md"
+      "file": "chapters/001-effective-scala.md"
+    },
+    {
+      "slug": "002-english",
+      "title": "Effective Scala",
+      "file": "chapters/002-english.md"
+    },
+    {
+      "slug": "003-日本語",
+      "title": "Effective Scala",
+      "file": "chapters/003-日本語.md"
+    },
+    {
+      "slug": "004-русский",
+      "title": "Effective Scala",
+      "file": "chapters/004-русский.md"
     }
   ],
   "sourceType": "web",

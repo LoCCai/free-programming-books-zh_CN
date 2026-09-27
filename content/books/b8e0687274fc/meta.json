@@ -3,12 +3,12 @@
   "title": "21天学会Emacs",
   "url": "http://book.emacs-china.org/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:45.236Z",
+  "fetchedAt": "2026-09-27T11:56:08.207Z",
   "chapters": [
     {
-      "slug": "001-s",
+      "slug": "001-master-emacs-in-21-days",
       "title": "Master Emacs in 21 Days",
-      "file": "chapters/001-s.md"
+      "file": "chapters/001-master-emacs-in-21-days.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,12 @@
   "title": "Redis 命令参考",
   "url": "http://redisdoc.com/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:55.494Z",
+  "fetchedAt": "2026-09-27T11:56:13.743Z",
   "chapters": [
     {
-      "slug": "001-k",
+      "slug": "001-http-redisdoc-com",
       "title": "http://redisdoc.com/",
-      "file": "chapters/001-k.md"
+      "file": "chapters/001-http-redisdoc-com.md"
     }
   ],
   "sourceType": "web",

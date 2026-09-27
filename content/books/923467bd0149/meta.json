@@ -3,12 +3,12 @@
   "title": "马上着手开发 iOS 应用程序",
   "url": "https://developer.apple.com/library/archive/referencelibrary/GettingStarted/RoadMapiOSCh-Legacy/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:14.622Z",
+  "fetchedAt": "2026-09-27T12:00:10.347Z",
   "chapters": [
     {
-      "slug": "001-2y",
+      "slug": "001-马上着手开发-ios-应用程序-start-developing-ios-app",
       "title": "马上着手开发 iOS 应用程序 (Start Developing iOS Apps Today) (弃用的文稿)",
-      "file": "chapters/001-2y.md"
+      "file": "chapters/001-马上着手开发-ios-应用程序-start-developing-ios-app.md"
     }
   ],
   "sourceType": "web",

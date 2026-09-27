@@ -3,12 +3,272 @@
   "title": "Git Community Book 中文版",
   "url": "http://gitbook.liuhui998.com/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:08:36.521Z",
+  "fetchedAt": "2026-09-27T11:39:18.938Z",
   "chapters": [
     {
-      "slug": "001-13",
+      "slug": "001-git-community-book-中文版",
       "title": "Git Community Book 中文版",
-      "file": "chapters/001-13.md"
+      "file": "chapters/001-git-community-book-中文版.md"
+    },
+    {
+      "slug": "002-介绍",
+      "title": "Git Book 中文版 - 欢迎使用Git",
+      "file": "chapters/002-介绍.md"
+    },
+    {
+      "slug": "003-安装",
+      "title": "Git Book 中文版 - 安装与初始化",
+      "file": "chapters/003-安装.md"
+    },
+    {
+      "slug": "004-git对象模型",
+      "title": "Git Book 中文版 - GIT对象模型",
+      "file": "chapters/004-git对象模型.md"
+    },
+    {
+      "slug": "005-git目录-与-工作目录",
+      "title": "Git Book 中文版 - Git目录 与 工作目录",
+      "file": "chapters/005-git目录-与-工作目录.md"
+    },
+    {
+      "slug": "006-git索引",
+      "title": "Git Book 中文版 - Git索引",
+      "file": "chapters/006-git索引.md"
+    },
+    {
+      "slug": "007-安装git",
+      "title": "Git Book 中文版 - 安装Git",
+      "file": "chapters/007-安装git.md"
+    },
+    {
+      "slug": "008-获得一个git仓库",
+      "title": "Git Book 中文版 - 获得一个Git仓库",
+      "file": "chapters/008-获得一个git仓库.md"
+    },
+    {
+      "slug": "009-正常的工作流程",
+      "title": "Git Book 中文版 - 正常的工作流程",
+      "file": "chapters/009-正常的工作流程.md"
+    },
+    {
+      "slug": "010-分支与合并-基础",
+      "title": "Git Book 中文版 - 分支与合并@基础",
+      "file": "chapters/010-分支与合并-基础.md"
+    },
+    {
+      "slug": "011-查看历史-git日志",
+      "title": "Git Book 中文版 - 查看历史 －Git日志",
+      "file": "chapters/011-查看历史-git日志.md"
+    },
+    {
+      "slug": "012-比较提交-git-diff",
+      "title": "Git Book 中文版 - 比较提交",
+      "file": "chapters/012-比较提交-git-diff.md"
+    },
+    {
+      "slug": "013-分布式的工作流程",
+      "title": "Git Book 中文版 - 分布式的工作流程",
+      "file": "chapters/013-分布式的工作流程.md"
+    },
+    {
+      "slug": "014-git标签",
+      "title": "Git Book 中文版 - Git标签",
+      "file": "chapters/014-git标签.md"
+    },
+    {
+      "slug": "015-忽略某些文件",
+      "title": "Git Book 中文版 - 忽略某些文件",
+      "file": "chapters/015-忽略某些文件.md"
+    },
+    {
+      "slug": "016-rebase",
+      "title": "Git Book 中文版 - rebase",
+      "file": "chapters/016-rebase.md"
+    },
+    {
+      "slug": "017-交互式rebase",
+      "title": "Git Book 中文版 - 交互式rebase",
+      "file": "chapters/017-交互式rebase.md"
+    },
+    {
+      "slug": "018-交互式添加",
+      "title": "Git Book 中文版 - 交互式添加",
+      "file": "chapters/018-交互式添加.md"
+    },
+    {
+      "slug": "019-储藏",
+      "title": "Git Book 中文版 - 储藏",
+      "file": "chapters/019-储藏.md"
+    },
+    {
+      "slug": "020-git树名",
+      "title": "Git Book 中文版 - Git树名",
+      "file": "chapters/020-git树名.md"
+    },
+    {
+      "slug": "021-追踪分支",
+      "title": "Git Book 中文版 - 追踪分支",
+      "file": "chapters/021-追踪分支.md"
+    },
+    {
+      "slug": "022-使用git-grep进行搜索",
+      "title": "Git Book 中文版 - 使用Git Grep进行搜索",
+      "file": "chapters/022-使用git-grep进行搜索.md"
+    },
+    {
+      "slug": "023-git的撤消操作-重置-签出-和-撤消",
+      "title": "Git Book 中文版 - Git的撤消操作",
+      "file": "chapters/023-git的撤消操作-重置-签出-和-撤消.md"
+    },
+    {
+      "slug": "024-维护git",
+      "title": "Git Book 中文版 - 维护Git",
+      "file": "chapters/024-维护git.md"
+    },
+    {
+      "slug": "025-建立一个公共仓库",
+      "title": "Git Book 中文版 - 建立一个公共仓库",
+      "file": "chapters/025-建立一个公共仓库.md"
+    },
+    {
+      "slug": "026-建立一个私有仓库",
+      "title": "Git Book 中文版 - 建立一个私有仓库",
+      "file": "chapters/026-建立一个私有仓库.md"
+    },
+    {
+      "slug": "027-创建新的空分支",
+      "title": "Git Book 中文版 - 创建新的空分支",
+      "file": "chapters/027-创建新的空分支.md"
+    },
+    {
+      "slug": "028-修改你的历史",
+      "title": "Git Book 中文版 - 修改你的历史",
+      "file": "chapters/028-修改你的历史.md"
+    },
+    {
+      "slug": "029-高级分支与合并",
+      "title": "Git Book 中文版 - 高级分支与合并",
+      "file": "chapters/029-高级分支与合并.md"
+    },
+    {
+      "slug": "030-查找问题的利器-git-bisect",
+      "title": "Git Book 中文版 - 查找问题的利器",
+      "file": "chapters/030-查找问题的利器-git-bisect.md"
+    },
+    {
+      "slug": "031-查找问题的利器-git-blame",
+      "title": "Git Book 中文版 - 查找问题的利器",
+      "file": "chapters/031-查找问题的利器-git-blame.md"
+    },
+    {
+      "slug": "032-git和email",
+      "title": "Git Book 中文版 - Git和Email",
+      "file": "chapters/032-git和email.md"
+    },
+    {
+      "slug": "033-定制git",
+      "title": "Git Book 中文版 - 定制Git",
+      "file": "chapters/033-定制git.md"
+    },
+    {
+      "slug": "034-git-hooks",
+      "title": "Git Book 中文版 - Git Hooks",
+      "file": "chapters/034-git-hooks.md"
+    },
+    {
+      "slug": "035-找回丢失的对象",
+      "title": "Git Book 中文版 - 找回丢失的对象",
+      "file": "chapters/035-找回丢失的对象.md"
+    },
+    {
+      "slug": "036-子模块",
+      "title": "Git Book 中文版 - 子模块",
+      "file": "chapters/036-子模块.md"
+    },
+    {
+      "slug": "037-git-与之-windows",
+      "title": "Git Book 中文版 - Git 与之 Windows",
+      "file": "chapters/037-git-与之-windows.md"
+    },
+    {
+      "slug": "038-使用git进行系统部署",
+      "title": "Git Book 中文版 - 使用Git进行系统部署",
+      "file": "chapters/038-使用git进行系统部署.md"
+    },
+    {
+      "slug": "039-与-subversion-集成",
+      "title": "Git Book 中文版 - 与 Subversion 集成",
+      "file": "chapters/039-与-subversion-集成.md"
+    },
+    {
+      "slug": "040-从其他代码管理工具迁移到git",
+      "title": "Git Book 中文版 - 从其他代码管理工具迁移到Git",
+      "file": "chapters/040-从其他代码管理工具迁移到git.md"
+    },
+    {
+      "slug": "041-图形化的git",
+      "title": "Git Book 中文版 - 图形化的Git",
+      "file": "chapters/041-图形化的git.md"
+    },
+    {
+      "slug": "042-git仓库托管",
+      "title": "Git Book 中文版 - Git仓库托管",
+      "file": "chapters/042-git仓库托管.md"
+    },
+    {
+      "slug": "043-git的其它用法",
+      "title": "Git Book 中文版 - Git的其它用法",
+      "file": "chapters/043-git的其它用法.md"
+    },
+    {
+      "slug": "044-git的脚本支持",
+      "title": "Git Book 中文版 - Git的脚本支持",
+      "file": "chapters/044-git的脚本支持.md"
+    },
+    {
+      "slug": "045-git-与编辑器",
+      "title": "Git Book 中文版 - Git 与编辑器",
+      "file": "chapters/045-git-与编辑器.md"
+    },
+    {
+      "slug": "046-git是如何存储对象的",
+      "title": "Git Book 中文版 - Git是如何存储对象的",
+      "file": "chapters/046-git是如何存储对象的.md"
+    },
+    {
+      "slug": "047-查看git对象",
+      "title": "Git Book 中文版 - 查看Git对象",
+      "file": "chapters/047-查看git对象.md"
+    },
+    {
+      "slug": "048-git引用",
+      "title": "Git Book 中文版 - Git引用",
+      "file": "chapters/048-git引用.md"
+    },
+    {
+      "slug": "049-git索引",
+      "title": "Git Book 中文版 - Git索引",
+      "file": "chapters/049-git索引.md"
+    },
+    {
+      "slug": "050-打包文件",
+      "title": "Git Book 中文版 - 打包文件",
+      "file": "chapters/050-打包文件.md"
+    },
+    {
+      "slug": "051-更底层的git",
+      "title": "Git Book 中文版 - 更底层的Git",
+      "file": "chapters/051-更底层的git.md"
+    },
+    {
+      "slug": "052-传输协议",
+      "title": "Git Book 中文版 - 传输协议",
+      "file": "chapters/052-传输协议.md"
+    },
+    {
+      "slug": "053-术语表",
+      "title": "Git Book 中文版 - 术语表",
+      "file": "chapters/053-术语表.md"
     }
   ],
   "sourceType": "web",

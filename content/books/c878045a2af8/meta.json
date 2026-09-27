@@ -3,12 +3,77 @@
   "title": "Sass Guidelines 中文",
   "url": "http://sass-guidelin.es/zh/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:10:47.856Z",
+  "fetchedAt": "2026-09-27T11:59:14.580Z",
   "chapters": [
     {
-      "slug": "001-r",
+      "slug": "001-czech-1-1",
+      "title": "Sass Guidelines — Czech translation",
+      "file": "chapters/001-czech-1-1.md"
+    },
+    {
+      "slug": "002-danish-1-1",
+      "title": "Sass Guidelines — Danish translation",
+      "file": "chapters/002-danish-1-1.md"
+    },
+    {
+      "slug": "003-german-1-3",
+      "title": "Sass Guidelines — German translation",
+      "file": "chapters/003-german-1-3.md"
+    },
+    {
+      "slug": "004-greek-1-3",
+      "title": "Sass Guidelines — Greek translation",
+      "file": "chapters/004-greek-1-3.md"
+    },
+    {
+      "slug": "005-english-1-3",
+      "title": "Sass Guidelines",
+      "file": "chapters/005-english-1-3.md"
+    },
+    {
+      "slug": "006-spanish-1-3",
+      "title": "Sass Guidelines — Spanish translation",
+      "file": "chapters/006-spanish-1-3.md"
+    },
+    {
+      "slug": "007-french-1-3",
+      "title": "Sass Guidelines — French translation",
+      "file": "chapters/007-french-1-3.md"
+    },
+    {
+      "slug": "008-italian-1-3",
+      "title": "Sass Guidelines — Italian translation",
+      "file": "chapters/008-italian-1-3.md"
+    },
+    {
+      "slug": "009-korean-1-3",
+      "title": "Sass Guidelines — Korean translation",
+      "file": "chapters/009-korean-1-3.md"
+    },
+    {
+      "slug": "010-dutch-1-3",
+      "title": "Sass Guidelines — Dutch translation",
+      "file": "chapters/010-dutch-1-3.md"
+    },
+    {
+      "slug": "011-polish-1-2",
+      "title": "Sass Guidelines — Polish translation",
+      "file": "chapters/011-polish-1-2.md"
+    },
+    {
+      "slug": "012-portuguese-1-3",
+      "title": "Sass Guidelines — Portuguese translation",
+      "file": "chapters/012-portuguese-1-3.md"
+    },
+    {
+      "slug": "013-russian-1-3",
+      "title": "Sass Guidelines — Russian translation",
+      "file": "chapters/013-russian-1-3.md"
+    },
+    {
+      "slug": "014-chinese-1-3",
       "title": "Sass Guidelines — Chinese translation",
-      "file": "chapters/001-r.md"
+      "file": "chapters/014-chinese-1-3.md"
     }
   ],
   "sourceType": "web",

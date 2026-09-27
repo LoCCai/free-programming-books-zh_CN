@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # 12000+ 章节的 Astro 构建内存峰值大,默认堆不够
+      NODE_OPTIONS: --max-old-space-size=7168
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

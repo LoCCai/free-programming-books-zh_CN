@@ -3,12 +3,92 @@
   "title": "GitBook简明教程",
   "url": "http://www.chengweiyang.cn/gitbook/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:14:33.889Z",
+  "fetchedAt": "2026-09-27T12:06:56.890Z",
   "chapters": [
     {
-      "slug": "001-19",
+      "slug": "001-introduction",
       "title": "Introduction | GitBook 简明教程",
-      "file": "chapters/001-19.md"
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-1-简介",
+      "title": "简介 | GitBook 简明教程",
+      "file": "chapters/002-1-简介.md"
+    },
+    {
+      "slug": "003-2-安装",
+      "title": "安装 | GitBook 简明教程",
+      "file": "chapters/003-2-安装.md"
+    },
+    {
+      "slug": "004-3-使用",
+      "title": "使用 | GitBook 简明教程",
+      "file": "chapters/004-3-使用.md"
+    },
+    {
+      "slug": "005-4-gitbook-com",
+      "title": "GitBook.com | GitBook 简明教程",
+      "file": "chapters/005-4-gitbook-com.md"
+    },
+    {
+      "slug": "006-4-1-新建书籍",
+      "title": "新建书籍 | GitBook 简明教程",
+      "file": "chapters/006-4-1-新建书籍.md"
+    },
+    {
+      "slug": "007-4-2-编辑书籍",
+      "title": "编辑书籍 | GitBook 简明教程",
+      "file": "chapters/007-4-2-编辑书籍.md"
+    },
+    {
+      "slug": "008-4-3-1-书籍主题",
+      "title": "书籍主题 | GitBook 简明教程",
+      "file": "chapters/008-4-3-1-书籍主题.md"
+    },
+    {
+      "slug": "009-4-3-2-github-集成",
+      "title": "GitHub 集成 | GitBook 简明教程",
+      "file": "chapters/009-4-3-2-github-集成.md"
+    },
+    {
+      "slug": "010-4-3-3-绑定域名",
+      "title": "绑定域名 | GitBook 简明教程",
+      "file": "chapters/010-4-3-3-绑定域名.md"
+    },
+    {
+      "slug": "011-1-1-book-json",
+      "title": "book.json | GitBook 简明教程",
+      "file": "chapters/011-1-1-book-json.md"
+    },
+    {
+      "slug": "012-2-插件",
+      "title": "插件 | GitBook 简明教程",
+      "file": "chapters/012-2-插件.md"
+    },
+    {
+      "slug": "013-2-1-1-comscore",
+      "title": "comscore | GitBook 简明教程",
+      "file": "chapters/013-2-1-1-comscore.md"
+    },
+    {
+      "slug": "014-2-2-1-disqus",
+      "title": "disqus | GitBook 简明教程",
+      "file": "chapters/014-2-2-1-disqus.md"
+    },
+    {
+      "slug": "015-2-2-2-multipart",
+      "title": "multipart | GitBook 简明教程",
+      "file": "chapters/015-2-2-2-multipart.md"
+    },
+    {
+      "slug": "016-2-2-3-toggle-chapters",
+      "title": "toggle-chapters | GitBook 简明教程",
+      "file": "chapters/016-2-2-3-toggle-chapters.md"
+    },
+    {
+      "slug": "017-3-发布到-github-pages",
+      "title": "发布到 GitHub Pages | GitBook 简明教程",
+      "file": "chapters/017-3-发布到-github-pages.md"
     }
   ],
   "sourceType": "web",

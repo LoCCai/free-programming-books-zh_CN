@@ -3,12 +3,12 @@
   "title": "七天学会NodeJS",
   "url": "http://nqdeng.github.io/7-days-nodejs/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:38.732Z",
+  "fetchedAt": "2026-09-27T12:00:57.831Z",
   "chapters": [
     {
-      "slug": "001-12",
+      "slug": "001-七天学会nodejs",
       "title": "七天学会NodeJS",
-      "file": "chapters/001-12.md"
+      "file": "chapters/001-七天学会nodejs.md"
     }
   ],
   "sourceType": "web",

@@ -3,12 +3,12 @@
   "title": "FreeRADIUS新手入门",
   "url": "http://freeradius.akagi201.org",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:07:32.813Z",
+  "fetchedAt": "2026-09-27T11:54:14.396Z",
   "chapters": [
     {
-      "slug": "001-u",
+      "slug": "001-akagi201-org",
       "title": "akagi201.org",
-      "file": "chapters/001-u.md"
+      "file": "chapters/001-akagi201-org.md"
     }
   ],
   "sourceType": "web",

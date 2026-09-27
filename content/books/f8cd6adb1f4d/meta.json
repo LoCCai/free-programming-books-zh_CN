@@ -3,12 +3,12 @@
   "title": "JavaScript Promise迷你书",
   "url": "http://liubin.github.io/promises-book/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T06:11:38.009Z",
+  "fetchedAt": "2026-09-27T12:00:36.441Z",
   "chapters": [
     {
-      "slug": "001-12",
+      "slug": "001-javascript-promise迷你书-中文版",
       "title": "JavaScript Promise迷你书（中文版）",
-      "file": "chapters/001-12.md"
+      "file": "chapters/001-javascript-promise迷你书-中文版.md"
     }
   ],
   "sourceType": "web",
