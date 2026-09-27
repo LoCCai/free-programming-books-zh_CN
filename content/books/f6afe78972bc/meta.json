@@ -2,8 +2,15 @@
   "bookId": "f6afe78972bc",
   "title": "Docker Cheat Sheet",
   "url": "https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn#docker-cheat-sheet",
-  "status": "failed",
-  "fetchedAt": "2026-09-26T18:52:29.017Z",
-  "chapters": [],
-  "error": "子目录不存在: zh-cn"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:15:11.028Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Docker Cheat Sheet",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
 }

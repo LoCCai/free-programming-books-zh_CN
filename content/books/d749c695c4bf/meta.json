@@ -1,0 +1,16 @@
+{
+  "bookId": "d749c695c4bf",
+  "title": "Node入门",
+  "url": "http://www.nodebeginner.org/index-zh-cn.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:40.541Z",
+  "chapters": [
+    {
+      "slug": "001-18",
+      "title": "一本全面的Node.js教程",
+      "file": "chapters/001-18.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "一本全面的Node.js教程"
+}

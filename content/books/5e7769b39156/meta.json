@@ -1,0 +1,16 @@
+{
+  "bookId": "5e7769b39156",
+  "title": "How to write jQuery plugin",
+  "url": "http://i5ting.github.io/How-to-write-jQuery-plugin/build/jquery.plugin.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:38.385Z",
+  "chapters": [
+    {
+      "slug": "001-23",
+      "title": "How to write jQuery plugin?",
+      "file": "chapters/001-23.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "How to write jQuery plugin?"
+}

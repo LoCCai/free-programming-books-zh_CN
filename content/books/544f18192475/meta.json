@@ -1,0 +1,15 @@
+{
+  "bookId": "544f18192475",
+  "title": "Go语言实战: 编写可维护Go语言代码建议",
+  "url": "https://github.com/llitfkitfk/go-best-practice",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:58.351Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Go 语言实战:  编写可维护 Go 语言代码建议",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

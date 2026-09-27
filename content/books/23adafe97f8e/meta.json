@@ -1,0 +1,15 @@
+{
+  "bookId": "23adafe97f8e",
+  "title": ".NET开发要点精讲（初稿）",
+  "url": "https://github.com/sherlockchou86/-free-ebook-.NET-",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:40.498Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

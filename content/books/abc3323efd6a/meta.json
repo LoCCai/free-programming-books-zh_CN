@@ -1,0 +1,15 @@
+{
+  "bookId": "abc3323efd6a",
+  "title": "The Little MongoDB Book",
+  "url": "https://github.com/justinyhuang/the-little-mongodb-book-cn/blob/master/mongodb.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:56.207Z",
+  "chapters": [
+    {
+      "slug": "001-mongodb",
+      "title": "mongodb",
+      "file": "chapters/001-mongodb.md"
+    }
+  ],
+  "sourceType": "github"
+}

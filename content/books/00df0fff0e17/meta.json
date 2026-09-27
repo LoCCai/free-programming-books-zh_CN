@@ -1,0 +1,16 @@
+{
+  "bookId": "00df0fff0e17",
+  "title": "Introduction to Tornado 中文翻译",
+  "url": "http://demo.pythoner.com/itt2zh/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:08.536Z",
+  "chapters": [
+    {
+      "slug": "001-16",
+      "title": "索引页 - Introduction to Tornado 中文翻译",
+      "file": "chapters/001-16.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "索引页 - Introduction to Tornado 中文翻译"
+}

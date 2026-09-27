@@ -1,0 +1,111 @@
+{
+  "bookId": "a28074440c22",
+  "title": "Yet Another Scheme Tutorial Scheme入门教程",
+  "url": "http://deathking.github.io/yast-cn/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:01.419Z",
+  "chapters": [
+    {
+      "slug": "001-z",
+      "title": "Introduction · GitBook",
+      "file": "chapters/001-z.md"
+    },
+    {
+      "slug": "002-1k",
+      "title": "中文版序 · GitBook",
+      "file": "chapters/002-1k.md"
+    },
+    {
+      "slug": "003-1l",
+      "title": "安装MIT-Scheme · GitBook",
+      "file": "chapters/003-1l.md"
+    },
+    {
+      "slug": "004-1l",
+      "title": "将Scheme用作计算器 · GitBook",
+      "file": "chapters/004-1l.md"
+    },
+    {
+      "slug": "005-1l",
+      "title": "生成表 · GitBook",
+      "file": "chapters/005-1l.md"
+    },
+    {
+      "slug": "006-1l",
+      "title": "定义函数 · GitBook",
+      "file": "chapters/006-1l.md"
+    },
+    {
+      "slug": "007-1l",
+      "title": "分支 · GitBook",
+      "file": "chapters/007-1l.md"
+    },
+    {
+      "slug": "008-1l",
+      "title": "局部变量 · GitBook",
+      "file": "chapters/008-1l.md"
+    },
+    {
+      "slug": "009-1l",
+      "title": "重复 · GitBook",
+      "file": "chapters/009-1l.md"
+    },
+    {
+      "slug": "010-1l",
+      "title": "高阶函数 · GitBook",
+      "file": "chapters/010-1l.md"
+    },
+    {
+      "slug": "011-1l",
+      "title": "输入/输出 · GitBook",
+      "file": "chapters/011-1l.md"
+    },
+    {
+      "slug": "012-1m",
+      "title": "赋值 · GitBook",
+      "file": "chapters/012-1m.md"
+    },
+    {
+      "slug": "013-1m",
+      "title": "字符与字符串 · GitBook",
+      "file": "chapters/013-1m.md"
+    },
+    {
+      "slug": "014-1m",
+      "title": "符号 · GitBook",
+      "file": "chapters/014-1m.md"
+    },
+    {
+      "slug": "015-1m",
+      "title": "关联表和哈希表 · GitBook",
+      "file": "chapters/015-1m.md"
+    },
+    {
+      "slug": "016-1m",
+      "title": "向量和结构体 · GitBook",
+      "file": "chapters/016-1m.md"
+    },
+    {
+      "slug": "017-1m",
+      "title": "定义语法 · GitBook",
+      "file": "chapters/017-1m.md"
+    },
+    {
+      "slug": "018-1m",
+      "title": "继续 · GitBook",
+      "file": "chapters/018-1m.md"
+    },
+    {
+      "slug": "019-1m",
+      "title": "惰性求值 · GitBook",
+      "file": "chapters/019-1m.md"
+    },
+    {
+      "slug": "020-1m",
+      "title": "非确定性求值 · GitBook",
+      "file": "chapters/020-1m.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction · GitBook"
+}

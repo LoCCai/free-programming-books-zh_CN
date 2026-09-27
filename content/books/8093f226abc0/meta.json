@@ -1,0 +1,111 @@
+{
+  "bookId": "8093f226abc0",
+  "title": "Real World Haskell 中文版",
+  "url": "https://rwh.readthedocs.io/en/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:28.175Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "第一章：入门 — Real World Haskell 中文版",
+      "file": "chapters/001-1b.md"
+    },
+    {
+      "slug": "002-1b",
+      "title": "第二章：类型和函数 — Real World Haskell 中文版",
+      "file": "chapters/002-1b.md"
+    },
+    {
+      "slug": "003-1b",
+      "title": "第三章：Defining Types, Streamlining Functions — Real World Haskell 中文版",
+      "file": "chapters/003-1b.md"
+    },
+    {
+      "slug": "004-1b",
+      "title": "第四章：函数式编程 — Real World Haskell 中文版",
+      "file": "chapters/004-1b.md"
+    },
+    {
+      "slug": "005-1b",
+      "title": "第五章：编写 JSON 库 — Real World Haskell 中文版",
+      "file": "chapters/005-1b.md"
+    },
+    {
+      "slug": "006-1b",
+      "title": "第六章：类型类 — Real World Haskell 中文版",
+      "file": "chapters/006-1b.md"
+    },
+    {
+      "slug": "007-1b",
+      "title": "第七章：I/O — Real World Haskell 中文版",
+      "file": "chapters/007-1b.md"
+    },
+    {
+      "slug": "008-1b",
+      "title": "第八章：高效文件处理、正则表达式、文件名匹配 — Real World Haskell 中文版",
+      "file": "chapters/008-1b.md"
+    },
+    {
+      "slug": "009-1b",
+      "title": "第九章：I/O学习 —— 构建一个用于搜索文件系统的库 — Real World Haskell 中文版",
+      "file": "chapters/009-1b.md"
+    },
+    {
+      "slug": "010-1c",
+      "title": "第十章：代码案例学习：解析二进制数据格式 — Real World Haskell 中文版",
+      "file": "chapters/010-1c.md"
+    },
+    {
+      "slug": "011-1c",
+      "title": "第十一章：测试和质量保障 — Real World Haskell 中文版",
+      "file": "chapters/011-1c.md"
+    },
+    {
+      "slug": "012-1c",
+      "title": "第十三章：数据结构 — Real World Haskell 中文版",
+      "file": "chapters/012-1c.md"
+    },
+    {
+      "slug": "013-1c",
+      "title": "第十八章： Monad变换器 — Real World Haskell 中文版",
+      "file": "chapters/013-1c.md"
+    },
+    {
+      "slug": "014-1c",
+      "title": "第十九章： 错误处理 — Real World Haskell 中文版",
+      "file": "chapters/014-1c.md"
+    },
+    {
+      "slug": "015-1c",
+      "title": "第二十章：使用 Haskell 进行系统编程 — Real World Haskell 中文版",
+      "file": "chapters/015-1c.md"
+    },
+    {
+      "slug": "016-1c",
+      "title": "第二十一章：数据库的使用 — Real World Haskell 中文版",
+      "file": "chapters/016-1c.md"
+    },
+    {
+      "slug": "017-1c",
+      "title": "第二十二章：扩展示例 —— Web 客户端编程 — Real World Haskell 中文版",
+      "file": "chapters/017-1c.md"
+    },
+    {
+      "slug": "018-1c",
+      "title": "第二七章：Socket 和 Syslog — Real World Haskell 中文版",
+      "file": "chapters/018-1c.md"
+    },
+    {
+      "slug": "019-1c",
+      "title": "第二十八章：软件事务内存 (STM) — Real World Haskell 中文版",
+      "file": "chapters/019-1c.md"
+    },
+    {
+      "slug": "020-1g",
+      "title": "翻译约定 — Real World Haskell 中文版",
+      "file": "chapters/020-1g.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Real World Haskell 中文版 — Real World Haskell 中文版"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "022e7a219c1a",
+  "title": "系统重构与迁移指南",
+  "url": "https://github.com/phodal/migration",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:54.894Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "[系统重构与迁移指南](https://migration.ink/)",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

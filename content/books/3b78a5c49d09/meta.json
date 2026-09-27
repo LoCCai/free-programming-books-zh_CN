@@ -1,0 +1,15 @@
+{
+  "bookId": "3b78a5c49d09",
+  "title": "网易斯坦福大学公开课：iOS 7应用开发字幕文件",
+  "url": "https://github.com/jkyin/Subtitle",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:20.757Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "剧终",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

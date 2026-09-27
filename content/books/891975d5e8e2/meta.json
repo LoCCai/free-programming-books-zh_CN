@@ -1,0 +1,615 @@
+{
+  "bookId": "891975d5e8e2",
+  "title": "Rust Primer",
+  "url": "https://github.com/rustcc/RustPrimer",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:21.643Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "初识Rust",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-preface",
+      "title": "安装Rust",
+      "file": "chapters/002-preface.md"
+    },
+    {
+      "slug": "003-install-rust-on-linux",
+      "title": "Linux",
+      "file": "chapters/003-install-rust-on-linux.md"
+    },
+    {
+      "slug": "004-install-rust-on-mac-os",
+      "title": "Mac",
+      "file": "chapters/004-install-rust-on-mac-os.md"
+    },
+    {
+      "slug": "005-install-rust-on-windows",
+      "title": "Windows",
+      "file": "chapters/005-install-rust-on-windows.md"
+    },
+    {
+      "slug": "006-rustup",
+      "title": "版本管理工具: rustup",
+      "file": "chapters/006-rustup.md"
+    },
+    {
+      "slug": "007-preface",
+      "title": "编辑器",
+      "file": "chapters/007-preface.md"
+    },
+    {
+      "slug": "008-before",
+      "title": "前期准备",
+      "file": "chapters/008-before.md"
+    },
+    {
+      "slug": "009-vim",
+      "title": "vim",
+      "file": "chapters/009-vim.md"
+    },
+    {
+      "slug": "010-emacs",
+      "title": "emacs",
+      "file": "chapters/010-emacs.md"
+    },
+    {
+      "slug": "011-vscode",
+      "title": "vscode",
+      "file": "chapters/011-vscode.md"
+    },
+    {
+      "slug": "012-atom",
+      "title": "atom",
+      "file": "chapters/012-atom.md"
+    },
+    {
+      "slug": "013-sublime",
+      "title": "sublime",
+      "file": "chapters/013-sublime.md"
+    },
+    {
+      "slug": "014-visualstudio",
+      "title": "visual studio",
+      "file": "chapters/014-visualstudio.md"
+    },
+    {
+      "slug": "015-spacemacs",
+      "title": "spacemacs",
+      "file": "chapters/015-spacemacs.md"
+    },
+    {
+      "slug": "016-quickstart",
+      "title": "Rust快速入门",
+      "file": "chapters/016-quickstart.md"
+    },
+    {
+      "slug": "017-rust-travel",
+      "title": "Rust旅程",
+      "file": "chapters/017-rust-travel.md"
+    },
+    {
+      "slug": "018-primitive-type",
+      "title": "变量绑定与原生类型",
+      "file": "chapters/018-primitive-type.md"
+    },
+    {
+      "slug": "019-vector-string",
+      "title": "数组、动态数组和字符串",
+      "file": "chapters/019-vector-string.md"
+    },
+    {
+      "slug": "020-struct-enum",
+      "title": "结构体与枚举",
+      "file": "chapters/020-struct-enum.md"
+    },
+    {
+      "slug": "021-control-flow",
+      "title": "控制流",
+      "file": "chapters/021-control-flow.md"
+    },
+    {
+      "slug": "022-function-method",
+      "title": "函数与方法",
+      "file": "chapters/022-function-method.md"
+    },
+    {
+      "slug": "023-trait",
+      "title": "特性",
+      "file": "chapters/023-trait.md"
+    },
+    {
+      "slug": "024-comments-document",
+      "title": "注释与文档",
+      "file": "chapters/024-comments-document.md"
+    },
+    {
+      "slug": "025-io-stream",
+      "title": "输入输出流",
+      "file": "chapters/025-io-stream.md"
+    },
+    {
+      "slug": "026-cargo-projects-manager",
+      "title": "Cargo项目管理器",
+      "file": "chapters/026-cargo-projects-manager.md"
+    },
+    {
+      "slug": "027-preface",
+      "title": "基本程序结构",
+      "file": "chapters/027-preface.md"
+    },
+    {
+      "slug": "028-comment",
+      "title": "注释",
+      "file": "chapters/028-comment.md"
+    },
+    {
+      "slug": "029-condition",
+      "title": "条件",
+      "file": "chapters/029-condition.md"
+    },
+    {
+      "slug": "030-repetition",
+      "title": "循环",
+      "file": "chapters/030-repetition.md"
+    },
+    {
+      "slug": "031-preface",
+      "title": "类型、运算符和字符串",
+      "file": "chapters/031-preface.md"
+    },
+    {
+      "slug": "032-types",
+      "title": "基础类型",
+      "file": "chapters/032-types.md"
+    },
+    {
+      "slug": "033-compound-types",
+      "title": "复合类型",
+      "file": "chapters/033-compound-types.md"
+    },
+    {
+      "slug": "034-string",
+      "title": "字符串类",
+      "file": "chapters/034-string.md"
+    },
+    {
+      "slug": "035-operator-and-formatting",
+      "title": "基础运算符和字符串格式化",
+      "file": "chapters/035-operator-and-formatting.md"
+    },
+    {
+      "slug": "036-overview",
+      "title": "函数",
+      "file": "chapters/036-overview.md"
+    },
+    {
+      "slug": "037-arguement",
+      "title": "函数参数",
+      "file": "chapters/037-arguement.md"
+    },
+    {
+      "slug": "038-return-value",
+      "title": "函数返回值",
+      "file": "chapters/038-return-value.md"
+    },
+    {
+      "slug": "039-statement-expression",
+      "title": "语句和表达式",
+      "file": "chapters/039-statement-expression.md"
+    },
+    {
+      "slug": "040-higher-order-function",
+      "title": "高阶函数",
+      "file": "chapters/040-higher-order-function.md"
+    },
+    {
+      "slug": "041-overview",
+      "title": "模式匹配",
+      "file": "chapters/041-overview.md"
+    },
+    {
+      "slug": "042-match",
+      "title": "match关键字",
+      "file": "chapters/042-match.md"
+    },
+    {
+      "slug": "043-pattern",
+      "title": "模式 pattern",
+      "file": "chapters/043-pattern.md"
+    },
+    {
+      "slug": "044-overview",
+      "title": "特征 Trait",
+      "file": "chapters/044-overview.md"
+    },
+    {
+      "slug": "045-trait",
+      "title": "trait关键字",
+      "file": "chapters/045-trait.md"
+    },
+    {
+      "slug": "046-trait-object",
+      "title": "trait对象",
+      "file": "chapters/046-trait-object.md"
+    },
+    {
+      "slug": "047-generic",
+      "title": "泛型",
+      "file": "chapters/047-generic.md"
+    },
+    {
+      "slug": "048-preface",
+      "title": "可变性、所有权、租借和生命期",
+      "file": "chapters/048-preface.md"
+    },
+    {
+      "slug": "049-ownership",
+      "title": "所有权",
+      "file": "chapters/049-ownership.md"
+    },
+    {
+      "slug": "050-borrowing-reference",
+      "title": "引用和借用",
+      "file": "chapters/050-borrowing-reference.md"
+    },
+    {
+      "slug": "051-lifetime",
+      "title": "生命周期",
+      "file": "chapters/051-lifetime.md"
+    },
+    {
+      "slug": "052-overview",
+      "title": "闭包",
+      "file": "chapters/052-overview.md"
+    },
+    {
+      "slug": "053-syntax",
+      "title": "闭包的语法",
+      "file": "chapters/053-syntax.md"
+    },
+    {
+      "slug": "054-implementation",
+      "title": "闭包的实现",
+      "file": "chapters/054-implementation.md"
+    },
+    {
+      "slug": "055-as-argument-return-value",
+      "title": "闭包作为参数和返回值",
+      "file": "chapters/055-as-argument-return-value.md"
+    },
+    {
+      "slug": "056-overview",
+      "title": "集合类型 Collections",
+      "file": "chapters/056-overview.md"
+    },
+    {
+      "slug": "057-vec",
+      "title": "动态数组 Vec",
+      "file": "chapters/057-vec.md"
+    },
+    {
+      "slug": "058-hashmap",
+      "title": "哈希表 HashMap",
+      "file": "chapters/058-hashmap.md"
+    },
+    {
+      "slug": "059-overview",
+      "title": "迭代器",
+      "file": "chapters/059-overview.md"
+    },
+    {
+      "slug": "060-iterator",
+      "title": "迭代器、适配器、消费者",
+      "file": "chapters/060-iterator.md"
+    },
+    {
+      "slug": "061-preface",
+      "title": "模块和包系统、Prelude",
+      "file": "chapters/061-preface.md"
+    },
+    {
+      "slug": "062-module",
+      "title": "模块 module 和包 crate",
+      "file": "chapters/062-module.md"
+    },
+    {
+      "slug": "063-prelude",
+      "title": "Prelude",
+      "file": "chapters/063-prelude.md"
+    },
+    {
+      "slug": "064-pub-restricted",
+      "title": "pub restricted",
+      "file": "chapters/064-pub-restricted.md"
+    },
+    {
+      "slug": "065-option-result",
+      "title": "Option、Result与错误处理",
+      "file": "chapters/065-option-result.md"
+    },
+    {
+      "slug": "066-preface",
+      "title": "输入与输出",
+      "file": "chapters/066-preface.md"
+    },
+    {
+      "slug": "067-io",
+      "title": "标准输入输出",
+      "file": "chapters/067-io.md"
+    },
+    {
+      "slug": "068-output",
+      "title": "print! 宏",
+      "file": "chapters/068-output.md"
+    },
+    {
+      "slug": "069-file-io",
+      "title": "文件输入输出",
+      "file": "chapters/069-file-io.md"
+    },
+    {
+      "slug": "070-macro",
+      "title": "宏系统",
+      "file": "chapters/070-macro.md"
+    },
+    {
+      "slug": "071-heap-stack",
+      "title": "堆、栈与Box",
+      "file": "chapters/071-heap-stack.md"
+    },
+    {
+      "slug": "072-preface",
+      "title": "几种智能指针",
+      "file": "chapters/072-preface.md"
+    },
+    {
+      "slug": "073-rcarc",
+      "title": "Rc, Arc",
+      "file": "chapters/073-rcarc.md"
+    },
+    {
+      "slug": "074-mutex",
+      "title": "Mutex, RwLock",
+      "file": "chapters/074-mutex.md"
+    },
+    {
+      "slug": "075-cell",
+      "title": "Cell, RefCell",
+      "file": "chapters/075-cell.md"
+    },
+    {
+      "slug": "076-preface",
+      "title": "类型系统中的几个常见 Trait",
+      "file": "chapters/076-preface.md"
+    },
+    {
+      "slug": "077-into",
+      "title": "Into/From 及其在 String 和 &str 互转上的应用",
+      "file": "chapters/077-into.md"
+    },
+    {
+      "slug": "078-asref",
+      "title": "AsRef, AsMut",
+      "file": "chapters/078-asref.md"
+    },
+    {
+      "slug": "079-borrow",
+      "title": "Borrow, BorrowMut, ToOwned",
+      "file": "chapters/079-borrow.md"
+    },
+    {
+      "slug": "080-deref",
+      "title": "Deref 与 Deref coercions",
+      "file": "chapters/080-deref.md"
+    },
+    {
+      "slug": "081-cow",
+      "title": "Cow 及其在 String 和 &str 上的应用",
+      "file": "chapters/081-cow.md"
+    },
+    {
+      "slug": "082-sendsync",
+      "title": "Send 和 Sync",
+      "file": "chapters/082-sendsync.md"
+    },
+    {
+      "slug": "083-preface",
+      "title": "并发，并行，多线程编程",
+      "file": "chapters/083-preface.md"
+    },
+    {
+      "slug": "084-thread",
+      "title": "线程",
+      "file": "chapters/084-thread.md"
+    },
+    {
+      "slug": "085-message-passing",
+      "title": "消息传递",
+      "file": "chapters/085-message-passing.md"
+    },
+    {
+      "slug": "086-share-memory",
+      "title": "共享内存",
+      "file": "chapters/086-share-memory.md"
+    },
+    {
+      "slug": "087-synchronize",
+      "title": "同步",
+      "file": "chapters/087-synchronize.md"
+    },
+    {
+      "slug": "088-parallel",
+      "title": "并行",
+      "file": "chapters/088-parallel.md"
+    },
+    {
+      "slug": "089-preface",
+      "title": "Unsafe、原始指针",
+      "file": "chapters/089-preface.md"
+    },
+    {
+      "slug": "090-unsafe",
+      "title": "Unsafe",
+      "file": "chapters/090-unsafe.md"
+    },
+    {
+      "slug": "091-raw-pointer",
+      "title": "原始指针",
+      "file": "chapters/091-raw-pointer.md"
+    },
+    {
+      "slug": "092-preface",
+      "title": "FFI",
+      "file": "chapters/092-preface.md"
+    },
+    {
+      "slug": "093-calling-ffi-function",
+      "title": "rust调用ffi函数",
+      "file": "chapters/093-calling-ffi-function.md"
+    },
+    {
+      "slug": "094-compiling-rust-to-lib",
+      "title": "将rust编译成库",
+      "file": "chapters/094-compiling-rust-to-lib.md"
+    },
+    {
+      "slug": "095-operator",
+      "title": "运算符重载",
+      "file": "chapters/095-operator.md"
+    },
+    {
+      "slug": "096-preface",
+      "title": "属性和编译器参数",
+      "file": "chapters/096-preface.md"
+    },
+    {
+      "slug": "097-attribute",
+      "title": "属性",
+      "file": "chapters/097-attribute.md"
+    },
+    {
+      "slug": "098-rustc-option",
+      "title": "编译器参数",
+      "file": "chapters/098-rustc-option.md"
+    },
+    {
+      "slug": "099-cargo-detailed-cfg",
+      "title": "Cargo参数配置",
+      "file": "chapters/099-cargo-detailed-cfg.md"
+    },
+    {
+      "slug": "100-preface",
+      "title": "测试与评测",
+      "file": "chapters/100-preface.md"
+    },
+    {
+      "slug": "101-threearchtest",
+      "title": "测试 (testing)",
+      "file": "chapters/101-threearchtest.md"
+    },
+    {
+      "slug": "102-bench",
+      "title": "评测 (benchmark)",
+      "file": "chapters/102-bench.md"
+    },
+    {
+      "slug": "103-style",
+      "title": "代码风格",
+      "file": "chapters/103-style.md"
+    },
+    {
+      "slug": "104-any",
+      "title": "Any与反射",
+      "file": "chapters/104-any.md"
+    },
+    {
+      "slug": "105-safety",
+      "title": "安全",
+      "file": "chapters/105-safety.md"
+    },
+    {
+      "slug": "106-preface",
+      "title": "常用数据结构实现",
+      "file": "chapters/106-preface.md"
+    },
+    {
+      "slug": "107-stack",
+      "title": "栈结构",
+      "file": "chapters/107-stack.md"
+    },
+    {
+      "slug": "108-queue",
+      "title": "队列",
+      "file": "chapters/108-queue.md"
+    },
+    {
+      "slug": "109-binary-tree",
+      "title": "二叉树",
+      "file": "chapters/109-binary-tree.md"
+    },
+    {
+      "slug": "110-priority-queue",
+      "title": "优先队列",
+      "file": "chapters/110-priority-queue.md"
+    },
+    {
+      "slug": "111-linked-list",
+      "title": "链表",
+      "file": "chapters/111-linked-list.md"
+    },
+    {
+      "slug": "112-graph",
+      "title": "图结构",
+      "file": "chapters/112-graph.md"
+    },
+    {
+      "slug": "113-overview",
+      "title": "标准库介绍",
+      "file": "chapters/113-overview.md"
+    },
+    {
+      "slug": "114-process",
+      "title": "系统命令:调用grep",
+      "file": "chapters/114-process.md"
+    },
+    {
+      "slug": "115-fs-and-path",
+      "title": "目录操作:简单grep",
+      "file": "chapters/115-fs-and-path.md"
+    },
+    {
+      "slug": "116-net",
+      "title": "网络模块:W回音",
+      "file": "chapters/116-net.md"
+    },
+    {
+      "slug": "117-preface",
+      "title": "实战篇",
+      "file": "chapters/117-preface.md"
+    },
+    {
+      "slug": "118-readme",
+      "title": "实战：Json处理",
+      "file": "chapters/118-readme.md"
+    },
+    {
+      "slug": "119-readme",
+      "title": "实战：Web 应用开发入门",
+      "file": "chapters/119-readme.md"
+    },
+    {
+      "slug": "120-readme",
+      "title": "实战：使用Postgresql数据库",
+      "file": "chapters/120-readme.md"
+    },
+    {
+      "slug": "121-glossary",
+      "title": "附录-术语表",
+      "file": "chapters/121-glossary.md"
+    }
+  ],
+  "sourceType": "github"
+}

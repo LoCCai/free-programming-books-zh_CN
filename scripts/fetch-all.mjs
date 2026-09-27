@@ -25,6 +25,8 @@ function parseArgs() {
     limit: Number(args.find((a) => a.startsWith('--limit='))?.split('=')[1]) || Infinity,
     only: args.find((a) => a.startsWith('--only='))?.split('=')[1], // 分类名过滤
     idsFile: args.find((a) => a.startsWith('--ids-file='))?.split('=')[1], // 仅抓取列出的 id(上游同步增量)
+    // 上游 :worried: 标记的条目也尝试抓取(部分网站可能已恢复;抓不到自动降级外链)
+    retryDeprecated: args.includes('--retry-deprecated'),
   };
 }
 
@@ -74,7 +76,7 @@ async function main() {
           }
         } catch { /* 损坏的 meta 视同未抓取 */ }
       }
-      if (book.status === 'deprecated') {
+      if (book.status === 'deprecated' && !opts.retryDeprecated) {
         results.push({ id: book.id, title: book.title, status: 'skipped-deprecated' });
         // 直接落 failed meta(不发起抓取):详情页据此明确走外链
         const outDir = join(CONTENT_DIR, book.id);

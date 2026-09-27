@@ -1,0 +1,15 @@
+{
+  "bookId": "7670e4a45063",
+  "title": "Ruby 风格指南",
+  "url": "https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:12.001Z",
+  "chapters": [
+    {
+      "slug": "001-readme-zhcn",
+      "title": "序幕",
+      "file": "chapters/001-readme-zhcn.md"
+    }
+  ],
+  "sourceType": "github"
+}

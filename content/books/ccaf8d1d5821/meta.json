@@ -1,0 +1,60 @@
+{
+  "bookId": "ccaf8d1d5821",
+  "title": "Java 8 简明教程",
+  "url": "https://github.com/wizardforcel/modern-java-zh",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:34.256Z",
+  "chapters": [
+    {
+      "slug": "001-ch1",
+      "title": "Java 8 简明教程",
+      "file": "chapters/001-ch1.md"
+    },
+    {
+      "slug": "002-ch2",
+      "title": "Java 8 数据流教程",
+      "file": "chapters/002-ch2.md"
+    },
+    {
+      "slug": "003-ch3",
+      "title": "Java 8 Nashorn 教程",
+      "file": "chapters/003-ch3.md"
+    },
+    {
+      "slug": "004-ch4",
+      "title": "Java 8 并发教程：线程和执行器",
+      "file": "chapters/004-ch4.md"
+    },
+    {
+      "slug": "005-ch5",
+      "title": "Java 8 并发教程：同步和锁",
+      "file": "chapters/005-ch5.md"
+    },
+    {
+      "slug": "006-ch6",
+      "title": "Java 8 并发教程：原子变量和 ConcurrentMap",
+      "file": "chapters/006-ch6.md"
+    },
+    {
+      "slug": "007-ch7",
+      "title": "Java 8 API 示例：字符串、数值、算术和文件",
+      "file": "chapters/007-ch7.md"
+    },
+    {
+      "slug": "008-ch8",
+      "title": "在 Java 8 中避免 Null 检查",
+      "file": "chapters/008-ch8.md"
+    },
+    {
+      "slug": "009-ch9",
+      "title": "使用 Intellij IDEA 解决 Java 8 的数据流问题",
+      "file": "chapters/009-ch9.md"
+    },
+    {
+      "slug": "010-ch10",
+      "title": "在 Nashron 中使用 Backbone.js",
+      "file": "chapters/010-ch10.md"
+    }
+  ],
+  "sourceType": "github"
+}

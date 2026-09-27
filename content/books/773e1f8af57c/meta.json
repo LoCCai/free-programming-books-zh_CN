@@ -1,0 +1,215 @@
+{
+  "bookId": "773e1f8af57c",
+  "title": "React webpack-cookbook",
+  "url": "https://github.com/fakefish/react-webpack-cookbook",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:48.048Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "react-webpack-cookbook - A cookbook for using Webpack with React JS.",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-footer",
+      "title": "_Footer",
+      "file": "chapters/003-footer.md"
+    },
+    {
+      "slug": "004-assets",
+      "title": "Assets",
+      "file": "chapters/004-assets.md"
+    },
+    {
+      "slug": "005-authoring-libraries",
+      "title": "Authoring-libraries",
+      "file": "chapters/005-authoring-libraries.md"
+    },
+    {
+      "slug": "006-automatic-browser-refresh",
+      "title": "Automatic-browser-refresh",
+      "file": "chapters/006-automatic-browser-refresh.md"
+    },
+    {
+      "slug": "007-automatic-css-refresh",
+      "title": "Automatic-CSS-refresh",
+      "file": "chapters/007-automatic-css-refresh.md"
+    },
+    {
+      "slug": "008-basics",
+      "title": "Basics",
+      "file": "chapters/008-basics.md"
+    },
+    {
+      "slug": "009-configuring-react-js",
+      "title": "Configuring-react-js",
+      "file": "chapters/009-configuring-react-js.md"
+    },
+    {
+      "slug": "010-creating-a-dev-and-production-config",
+      "title": "Creating-a-dev-and-production-config",
+      "file": "chapters/010-creating-a-dev-and-production-config.md"
+    },
+    {
+      "slug": "011-custom-workflow-entry",
+      "title": "Custom-workflow-entry",
+      "file": "chapters/011-custom-workflow-entry.md"
+    },
+    {
+      "slug": "012-getting-started",
+      "title": "Getting-started",
+      "file": "chapters/012-getting-started.md"
+    },
+    {
+      "slug": "013-hot-loading-components",
+      "title": "Hot-loading-components",
+      "file": "chapters/013-hot-loading-components.md"
+    },
+    {
+      "slug": "014-inlining-fonts",
+      "title": "Inlining-fonts",
+      "file": "chapters/014-inlining-fonts.md"
+    },
+    {
+      "slug": "015-inlining-images",
+      "title": "Inlining-images",
+      "file": "chapters/015-inlining-images.md"
+    },
+    {
+      "slug": "016-introduction-to-react-js",
+      "title": "Introduction-to-React-JS",
+      "file": "chapters/016-introduction-to-react-js.md"
+    },
+    {
+      "slug": "017-introduction-to-webpack",
+      "title": "Introduction-to-Webpack",
+      "file": "chapters/017-introduction-to-webpack.md"
+    },
+    {
+      "slug": "018-isomorphic-app",
+      "title": "Isomorphic-app",
+      "file": "chapters/018-isomorphic-app.md"
+    },
+    {
+      "slug": "019-javascript-next",
+      "title": "Javascript-next",
+      "file": "chapters/019-javascript-next.md"
+    },
+    {
+      "slug": "020-lazy-loaded-entry-points",
+      "title": "Lazy-loaded-entry-points",
+      "file": "chapters/020-lazy-loaded-entry-points.md"
+    },
+    {
+      "slug": "021-loading-css",
+      "title": "Loading-CSS",
+      "file": "chapters/021-loading-css.md"
+    },
+    {
+      "slug": "022-loading-less-or-sass",
+      "title": "Loading-LESS-or-SASS",
+      "file": "chapters/022-loading-less-or-sass.md"
+    },
+    {
+      "slug": "023-loading-svg",
+      "title": "Loading-SVG",
+      "file": "chapters/023-loading-svg.md"
+    },
+    {
+      "slug": "024-matchers",
+      "title": "Matchers",
+      "file": "chapters/024-matchers.md"
+    },
+    {
+      "slug": "025-multiple-entry-points",
+      "title": "Multiple-entry-points",
+      "file": "chapters/025-multiple-entry-points.md"
+    },
+    {
+      "slug": "026-navigation",
+      "title": "Navigation",
+      "file": "chapters/026-navigation.md"
+    },
+    {
+      "slug": "027-optimizing-caching",
+      "title": "Optimizing-caching",
+      "file": "chapters/027-optimizing-caching.md"
+    },
+    {
+      "slug": "028-optimizing-development",
+      "title": "Optimizing-development",
+      "file": "chapters/028-optimizing-development.md"
+    },
+    {
+      "slug": "029-optimizing-rebundling",
+      "title": "Optimizing-rebundling",
+      "file": "chapters/029-optimizing-rebundling.md"
+    },
+    {
+      "slug": "030-optimizing-workflow",
+      "title": "Optimizing-workflow",
+      "file": "chapters/030-optimizing-workflow.md"
+    },
+    {
+      "slug": "031-requiring-files",
+      "title": "Requiring-files",
+      "file": "chapters/031-requiring-files.md"
+    },
+    {
+      "slug": "032-requiring-images-and-fonts",
+      "title": "Requiring-images-and-fonts",
+      "file": "chapters/032-requiring-images-and-fonts.md"
+    },
+    {
+      "slug": "033-running-a-workflow",
+      "title": "Running-a-workflow",
+      "file": "chapters/033-running-a-workflow.md"
+    },
+    {
+      "slug": "034-single-bundle",
+      "title": "Single-bundle",
+      "file": "chapters/034-single-bundle.md"
+    },
+    {
+      "slug": "035-split-app-and-vendors",
+      "title": "Split-app-and-vendors",
+      "file": "chapters/035-split-app-and-vendors.md"
+    },
+    {
+      "slug": "036-structuring-configuration",
+      "title": "Structuring-configuration",
+      "file": "chapters/036-structuring-configuration.md"
+    },
+    {
+      "slug": "037-summary",
+      "title": "Navigation",
+      "file": "chapters/037-summary.md"
+    },
+    {
+      "slug": "038-type-checking-with-flow",
+      "title": "Type-checking-with-flow",
+      "file": "chapters/038-type-checking-with-flow.md"
+    },
+    {
+      "slug": "039-understanding-chunks",
+      "title": "Understanding-chunks",
+      "file": "chapters/039-understanding-chunks.md"
+    },
+    {
+      "slug": "040-wing-it-like-a-pro",
+      "title": "Wing-It-Like-a-Pro",
+      "file": "chapters/040-wing-it-like-a-pro.md"
+    },
+    {
+      "slug": "041-writing-loaders",
+      "title": "Writing-loaders",
+      "file": "chapters/041-writing-loaders.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "47faf6dbd394",
+  "title": "PHP调试技术手册",
+  "url": "http://www.laruence.com/2010/06/21/1608.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:02.156Z",
+  "chapters": [
+    {
+      "slug": "001-18",
+      "title": "PHP调试技术手册发布(1.0.0 pdf) - 风雪之隅",
+      "file": "chapters/001-18.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "PHP调试技术手册发布(1.0.0 pdf) - 风雪之隅"
+}

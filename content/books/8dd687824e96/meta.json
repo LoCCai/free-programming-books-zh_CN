@@ -1,0 +1,15 @@
+{
+  "bookId": "8dd687824e96",
+  "title": "Golang 学习笔记、Python 学习笔记、C 学习笔记",
+  "url": "https://github.com/qyuhen/book",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:29.996Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "2023.02",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

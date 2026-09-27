@@ -1,0 +1,16 @@
+{
+  "bookId": "dcced953946b",
+  "title": "ASP.NET MVC 5 入门指南",
+  "url": "http://www.cnblogs.com/powertoolsteam/p/aspnetmvc5-tutorials-grapecity.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:38.224Z",
+  "chapters": [
+    {
+      "slug": "001-23",
+      "title": "ASP.NET MVC 5 入门指南汇总 - 葡萄城技术团队",
+      "file": "chapters/001-23.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "ASP.NET MVC 5 入门指南汇总 - 葡萄城技术团队"
+}

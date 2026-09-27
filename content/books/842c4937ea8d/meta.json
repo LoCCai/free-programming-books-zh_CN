@@ -1,0 +1,16 @@
+{
+  "bookId": "842c4937ea8d",
+  "title": "Python 正则表达式操作指南",
+  "url": "http://wiki.ubuntu.org.cn/Python正则表达式操作指南",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:17:06.233Z",
+  "chapters": [
+    {
+      "slug": "001-15",
+      "title": "Python正则表达式操作指南 - Ubuntu中文",
+      "file": "chapters/001-15.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Python正则表达式操作指南 - Ubuntu中文"
+}

@@ -1,0 +1,625 @@
+{
+  "bookId": "cac4408a57d1",
+  "title": "面向开发者的 LLM 入门教程",
+  "url": "https://github.com/datawhalechina/llm-cookbook",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:55.481Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "使用 ChatGPT API 搭建系统",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "使用 LangChain 开发基于 LLM 的应用程序",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "使用 LangChain 访问个人数据",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "面向开发者的提示工程",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "基于 Chroma 的高级检索",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "搭建和评估高级 RAG 应用",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "使用 Gradio 搭建生成式 AI 应用",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "评估改进生成式 AI",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "微调大语言模型",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "LangChain 的 Functions、Tools 和 Agents",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "大模型与语义检索",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "面向开发者的 LLM 入门课程",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "第一部分 面向开发者的提示工程",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "第二部分 搭建基于 ChatGPT 的问答系统",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "第三部分 使用 LangChain 开发应用程序",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "第四部分 使用 LangChain 访问个人数据",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "面向开发者的大模型手册 - LLM Cookbook",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "readme",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "readme",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "readme",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "readme",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "readme",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme",
+      "title": "readme",
+      "file": "chapters/023-readme.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "面向开发者的大模型手册 - LLM Cookbook",
+      "file": "chapters/024-readme.md"
+    },
+    {
+      "slug": "025-1-简介-introduction",
+      "title": "使用 ChatGPT API 搭建系统",
+      "file": "chapters/025-1-简介-introduction.md"
+    },
+    {
+      "slug": "026-11-总结-conclusion",
+      "title": "第十一章、吴恩达《用 ChatGPT API 构建系统》总结篇",
+      "file": "chapters/026-11-总结-conclusion.md"
+    },
+    {
+      "slug": "027-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/027-1-简介-introduction.md"
+    },
+    {
+      "slug": "028-8-总结-conclusion",
+      "title": "第八章 总结",
+      "file": "chapters/028-8-总结-conclusion.md"
+    },
+    {
+      "slug": "029-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/029-1-简介-introduction.md"
+    },
+    {
+      "slug": "030-8-总结-summary",
+      "title": "第八章、总结",
+      "file": "chapters/030-8-总结-summary.md"
+    },
+    {
+      "slug": "031-letstalkaboutstress-64040a0733074994976118bbe0acc7fb",
+      "title": "#letstalkaboutstress",
+      "file": "chapters/031-letstalkaboutstress-64040a0733074994976118bbe0acc7fb.md"
+    },
+    {
+      "slug": "032-about-this-document-and-the-author-76a144f94cbd4d779f0098fe2",
+      "title": "About this document and the author",
+      "file": "chapters/032-about-this-document-and-the-author-76a144f94cbd4d779f0098fe2.md"
+    },
+    {
+      "slug": "033-blendle-library-a8ce7db8587a4ae5bf786446454bf45e",
+      "title": "Blendle library",
+      "file": "chapters/033-blendle-library-a8ce7db8587a4ae5bf786446454bf45e.md"
+    },
+    {
+      "slug": "034-blendle-social-code-33b085aa2d4d430185fe2bb9a63027e6",
+      "title": "Blendle Social Code",
+      "file": "chapters/034-blendle-social-code-33b085aa2d4d430185fe2bb9a63027e6.md"
+    },
+    {
+      "slug": "035-blendle-s-employee-handbook-d331da39bd0341ed8d5ee2942fecf17a",
+      "title": "Blendle's Employee Handbook",
+      "file": "chapters/035-blendle-s-employee-handbook-d331da39bd0341ed8d5ee2942fecf17a.md"
+    },
+    {
+      "slug": "036-calling-in-sick-better-9219eaa9dabc456bb1b49f2e9decbc1a",
+      "title": "Calling in sick/better",
+      "file": "chapters/036-calling-in-sick-better-9219eaa9dabc456bb1b49f2e9decbc1a.md"
+    },
+    {
+      "slug": "037-diversity-and-inclusion-460f5e9759fd439bb7bccceae81c21ff",
+      "title": "Diversity and inclusion",
+      "file": "chapters/037-diversity-and-inclusion-460f5e9759fd439bb7bccceae81c21ff.md"
+    },
+    {
+      "slug": "038-dna-culture-237e15b3264d46adb866936cd13f6dd3",
+      "title": "DNA & culture",
+      "file": "chapters/038-dna-culture-237e15b3264d46adb866936cd13f6dd3.md"
+    },
+    {
+      "slug": "039-feedback-cycle-76db1b6873c9447780fc41d81a69441b",
+      "title": "Feedback cycle",
+      "file": "chapters/039-feedback-cycle-76db1b6873c9447780fc41d81a69441b.md"
+    },
+    {
+      "slug": "040-firing-d930cdc39090418ea504f297425c97d7",
+      "title": "Firing",
+      "file": "chapters/040-firing-d930cdc39090418ea504f297425c97d7.md"
+    },
+    {
+      "slug": "041-general-practical-437c608f7c4e4cfeabf76af7b831a441",
+      "title": "General & practical",
+      "file": "chapters/041-general-practical-437c608f7c4e4cfeabf76af7b831a441.md"
+    },
+    {
+      "slug": "042-getting-people-in-branding-sourcing-3c64133079924ff6820b3b76",
+      "title": "Getting people in (branding&sourcing)",
+      "file": "chapters/042-getting-people-in-branding-sourcing-3c64133079924ff6820b3b76.md"
+    },
+    {
+      "slug": "043-goals-96276a9614204d1ea000613c432d5724",
+      "title": "Goals",
+      "file": "chapters/043-goals-96276a9614204d1ea000613c432d5724.md"
+    },
+    {
+      "slug": "044-highly-skilled-migrants-and-relocation-ddf512ef9032450f9d4b2",
+      "title": "Highly Skilled Migrants and relocation",
+      "file": "chapters/044-highly-skilled-migrants-and-relocation-ddf512ef9032450f9d4b2.md"
+    },
+    {
+      "slug": "045-hiring-553b27f441d44be6bc98653afbe0dd61",
+      "title": "Hiring",
+      "file": "chapters/045-hiring-553b27f441d44be6bc98653afbe0dd61.md"
+    },
+    {
+      "slug": "046-history-73f3f1512c1949079eed545034c25739",
+      "title": "History",
+      "file": "chapters/046-history-73f3f1512c1949079eed545034c25739.md"
+    },
+    {
+      "slug": "047-holidays-b309d1e278d2418f828a0f85b733c5d1",
+      "title": "Holidays",
+      "file": "chapters/047-holidays-b309d1e278d2418f828a0f85b733c5d1.md"
+    },
+    {
+      "slug": "048-how-to-lead-at-blendle-08d66c91017c4a3c85da0601bf9fe150",
+      "title": "How to lead at Blendle",
+      "file": "chapters/048-how-to-lead-at-blendle-08d66c91017c4a3c85da0601bf9fe150.md"
+    },
+    {
+      "slug": "049-leading-feedback-304a48f9a954482bb434e75cc581f04b",
+      "title": "Leading Feedback",
+      "file": "chapters/049-leading-feedback-304a48f9a954482bb434e75cc581f04b.md"
+    },
+    {
+      "slug": "050-office-aa9cf6e6bdfa4277932056d700608387",
+      "title": "Office",
+      "file": "chapters/050-office-aa9cf6e6bdfa4277932056d700608387.md"
+    },
+    {
+      "slug": "051-parenthood-909ce46f34174854a7b011778689ff56",
+      "title": "Parenthood",
+      "file": "chapters/051-parenthood-909ce46f34174854a7b011778689ff56.md"
+    },
+    {
+      "slug": "052-party-and-study-budget-93163720d55940beb0a1e70c7f121a96",
+      "title": "Party and study budget",
+      "file": "chapters/052-party-and-study-budget-93163720d55940beb0a1e70c7f121a96.md"
+    },
+    {
+      "slug": "053-perks-and-benefits-2f1a58f0a86d4c4d88c178e131dde968",
+      "title": "Perks and benefits",
+      "file": "chapters/053-perks-and-benefits-2f1a58f0a86d4c4d88c178e131dde968.md"
+    },
+    {
+      "slug": "054-personal-user-guide-c4cfa4e0683144aabf09ff955a5177be",
+      "title": "Personal User Guide",
+      "file": "chapters/054-personal-user-guide-c4cfa4e0683144aabf09ff955a5177be.md"
+    },
+    {
+      "slug": "055-rating-systems-53c7d4de5be4490f8277a30f4019c805",
+      "title": "Rating systems",
+      "file": "chapters/055-rating-systems-53c7d4de5be4490f8277a30f4019c805.md"
+    },
+    {
+      "slug": "056-salary-talks-9878e565393348189d8816689013b4f1",
+      "title": "Salary talks",
+      "file": "chapters/056-salary-talks-9878e565393348189d8816689013b4f1.md"
+    },
+    {
+      "slug": "057-sickness-absence-2a1d61a941c940068ecbb1e4521a90b2",
+      "title": "Sickness absence",
+      "file": "chapters/057-sickness-absence-2a1d61a941c940068ecbb1e4521a90b2.md"
+    },
+    {
+      "slug": "058-soft-shizzle-7fa3bb0ec8114b34b18fd6143cd17171",
+      "title": "Soft shizzle",
+      "file": "chapters/058-soft-shizzle-7fa3bb0ec8114b34b18fd6143cd17171.md"
+    },
+    {
+      "slug": "059-the-matrix-job-profiles-215d09c0ccc84239ab64f7a16d7c0f7c",
+      "title": "The Matrix™ (job profiles)",
+      "file": "chapters/059-the-matrix-job-profiles-215d09c0ccc84239ab64f7a16d7c0f7c.md"
+    },
+    {
+      "slug": "060-time-off-holidays-and-national-holidays-dc2d206a3096412abe58",
+      "title": "Time off: holidays and national holidays",
+      "file": "chapters/060-time-off-holidays-and-national-holidays-dc2d206a3096412abe58.md"
+    },
+    {
+      "slug": "061-to-do-read-in-your-first-week-3b93655c75fc4b0db0f20d09be26ab",
+      "title": "To Do/Read in your first week",
+      "file": "chapters/061-to-do-read-in-your-first-week-3b93655c75fc4b0db0f20d09be26ab.md"
+    },
+    {
+      "slug": "062-travel-costs-and-reimbursements-0fbe38e2e708470b8079e33ec392",
+      "title": "Travel costs and reimbursements",
+      "file": "chapters/062-travel-costs-and-reimbursements-0fbe38e2e708470b8079e33ec392.md"
+    },
+    {
+      "slug": "063-your-1st-month-eef9b2e7b3a54d11ae0aa7d64e77e30f",
+      "title": "Your 1st month",
+      "file": "chapters/063-your-1st-month-eef9b2e7b3a54d11ae0aa7d64e77e30f.md"
+    },
+    {
+      "slug": "064-your-check-list-6928b6412e4a4026a25bb9003661dcab",
+      "title": "Your check-list",
+      "file": "chapters/064-your-check-list-6928b6412e4a4026a25bb9003661dcab.md"
+    },
+    {
+      "slug": "065-1-简介",
+      "title": "第一章 简介",
+      "file": "chapters/065-1-简介.md"
+    },
+    {
+      "slug": "066-9-总结",
+      "title": "9. 总结",
+      "file": "chapters/066-9-总结.md"
+    },
+    {
+      "slug": "067-1-简介-introduction",
+      "title": "1. 简介 Introduction",
+      "file": "chapters/067-1-简介-introduction.md"
+    },
+    {
+      "slug": "068-1-简介-introduction",
+      "title": "基于Chroma的高级检索技术",
+      "file": "chapters/068-1-简介-introduction.md"
+    },
+    {
+      "slug": "069-7-其他技术-other-techniques",
+      "title": "7. 其他技术",
+      "file": "chapters/069-7-其他技术-other-techniques.md"
+    },
+    {
+      "slug": "070-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/070-1-简介-introduction.md"
+    },
+    {
+      "slug": "071-6-总结-conclusion",
+      "title": "第六章 结课与展望",
+      "file": "chapters/071-6-总结-conclusion.md"
+    },
+    {
+      "slug": "072-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/072-1-简介-introduction.md"
+    },
+    {
+      "slug": "073-7-总结-conclusion",
+      "title": "第七章 总结",
+      "file": "chapters/073-7-总结-conclusion.md"
+    },
+    {
+      "slug": "074-1-简介-introduction",
+      "title": "评估和调试生成式 AI",
+      "file": "chapters/074-1-简介-introduction.md"
+    },
+    {
+      "slug": "075-7-总结-conclusion",
+      "title": "7.总结 Conclusion",
+      "file": "chapters/075-7-总结-conclusion.md"
+    },
+    {
+      "slug": "076-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/076-1-简介-introduction.md"
+    },
+    {
+      "slug": "077-8-入门注意事项-consideration-on-getting-started-now",
+      "title": "第八章 入门注意事项",
+      "file": "chapters/077-8-入门注意事项-consideration-on-getting-started-now.md"
+    },
+    {
+      "slug": "078-9-总结-conclusion",
+      "title": "第九章 总结",
+      "file": "chapters/078-9-总结-conclusion.md"
+    },
+    {
+      "slug": "079-lamini安装使用教程",
+      "title": "lamini安装使用教程",
+      "file": "chapters/079-lamini安装使用教程.md"
+    },
+    {
+      "slug": "080-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/080-1-简介-introduction.md"
+    },
+    {
+      "slug": "081-8-总结-conclusion",
+      "title": "第八章 总结",
+      "file": "chapters/081-8-总结-conclusion.md"
+    },
+    {
+      "slug": "082-1-简介-introduction",
+      "title": "第一章、简介",
+      "file": "chapters/082-1-简介-introduction.md"
+    },
+    {
+      "slug": "083-8-总结-summary",
+      "title": "第八章、总结",
+      "file": "chapters/083-8-总结-summary.md"
+    },
+    {
+      "slug": "084-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/084-sidebar.md"
+    },
+    {
+      "slug": "085-环境配置",
+      "title": "环境配置",
+      "file": "chapters/085-环境配置.md"
+    },
+    {
+      "slug": "086-前言",
+      "title": "前言",
+      "file": "chapters/086-前言.md"
+    },
+    {
+      "slug": "087-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/087-1-简介-introduction.md"
+    },
+    {
+      "slug": "088-2-提示原则-guidelines",
+      "title": "第二章 提示原则",
+      "file": "chapters/088-2-提示原则-guidelines.md"
+    },
+    {
+      "slug": "089-3-迭代优化-iterative",
+      "title": "第三章 迭代优化",
+      "file": "chapters/089-3-迭代优化-iterative.md"
+    },
+    {
+      "slug": "090-4-文本概括-summarizing",
+      "title": "第四章 文本概括",
+      "file": "chapters/090-4-文本概括-summarizing.md"
+    },
+    {
+      "slug": "091-5-推断-inferring",
+      "title": "第五章 推断",
+      "file": "chapters/091-5-推断-inferring.md"
+    },
+    {
+      "slug": "092-6-文本转换-transforming",
+      "title": "第六章 文本转换",
+      "file": "chapters/092-6-文本转换-transforming.md"
+    },
+    {
+      "slug": "093-7-文本扩展-expanding",
+      "title": "第七章 文本扩展",
+      "file": "chapters/093-7-文本扩展-expanding.md"
+    },
+    {
+      "slug": "094-8-聊天机器人-chatbot",
+      "title": "第八章 聊天机器人",
+      "file": "chapters/094-8-聊天机器人-chatbot.md"
+    },
+    {
+      "slug": "095-9-总结-summary",
+      "title": "第九章 总结",
+      "file": "chapters/095-9-总结-summary.md"
+    },
+    {
+      "slug": "096-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/096-1-简介-introduction.md"
+    },
+    {
+      "slug": "097-10-评估-下-evaluation-part2",
+      "title": "第十章 评估（下）——当不存在一个简单的正确答案时",
+      "file": "chapters/097-10-评估-下-evaluation-part2.md"
+    },
+    {
+      "slug": "098-11-总结-conclusion",
+      "title": "第十一章 总结",
+      "file": "chapters/098-11-总结-conclusion.md"
+    },
+    {
+      "slug": "099-2-语言模型-提问范式与-token-language-models-the-chat-format-and-token",
+      "title": "第二章 语言模型，提问范式与 Token",
+      "file": "chapters/099-2-语言模型-提问范式与-token-language-models-the-chat-format-and-token.md"
+    },
+    {
+      "slug": "100-3-评估输入-分类-classification",
+      "title": "第三章 评估输入——分类",
+      "file": "chapters/100-3-评估输入-分类-classification.md"
+    },
+    {
+      "slug": "101-4-检查输入-监督-moderation",
+      "title": "第四章 检查输入 - 审核",
+      "file": "chapters/101-4-检查输入-监督-moderation.md"
+    },
+    {
+      "slug": "102-5-处理输入-思维链推理-chain-of-thought-reasoning",
+      "title": "第五章 处理输入-思维链推理",
+      "file": "chapters/102-5-处理输入-思维链推理-chain-of-thought-reasoning.md"
+    },
+    {
+      "slug": "103-6-处理输入-链式-prompt-chaining-prompts",
+      "title": "第六章 处理输入-链式",
+      "file": "chapters/103-6-处理输入-链式-prompt-chaining-prompts.md"
+    },
+    {
+      "slug": "104-7-检查结果-check-outputs",
+      "title": "第七章 检查结果",
+      "file": "chapters/104-7-检查结果-check-outputs.md"
+    },
+    {
+      "slug": "105-8-搭建一个带评估的端到端问答系统-evaluation",
+      "title": "第八章 搭建一个带评估的端到端问答系统",
+      "file": "chapters/105-8-搭建一个带评估的端到端问答系统-evaluation.md"
+    },
+    {
+      "slug": "106-9-评估-上-evaluation-part1",
+      "title": "第九章 评估（上）——存在一个简单的正确答案时",
+      "file": "chapters/106-9-评估-上-evaluation-part1.md"
+    },
+    {
+      "slug": "107-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/107-1-简介-introduction.md"
+    },
+    {
+      "slug": "108-2-模型-提示和解析器-models-prompts-and-output-parsers",
+      "title": "第二章 模型，提示和输出解释器",
+      "file": "chapters/108-2-模型-提示和解析器-models-prompts-and-output-parsers.md"
+    },
+    {
+      "slug": "109-3-储存-memory",
+      "title": "第三章 储存",
+      "file": "chapters/109-3-储存-memory.md"
+    },
+    {
+      "slug": "110-4-模型链-chains",
+      "title": "第四章 模型链",
+      "file": "chapters/110-4-模型链-chains.md"
+    },
+    {
+      "slug": "111-5-基于文档的问答-question-and-answer",
+      "title": "第五章 基于文档的问答",
+      "file": "chapters/111-5-基于文档的问答-question-and-answer.md"
+    },
+    {
+      "slug": "112-6-评估-evaluation",
+      "title": "第六章 评估",
+      "file": "chapters/112-6-评估-evaluation.md"
+    },
+    {
+      "slug": "113-7-代理-agent",
+      "title": "第七章 代理",
+      "file": "chapters/113-7-代理-agent.md"
+    },
+    {
+      "slug": "114-8-总结-conclusion",
+      "title": "第八章 总结",
+      "file": "chapters/114-8-总结-conclusion.md"
+    },
+    {
+      "slug": "115-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/115-1-简介-introduction.md"
+    },
+    {
+      "slug": "116-2-文档加载-document-loading",
+      "title": "第二章 文档加载",
+      "file": "chapters/116-2-文档加载-document-loading.md"
+    },
+    {
+      "slug": "117-3-文档分割-splitting",
+      "title": "第三章 文档分割",
+      "file": "chapters/117-3-文档分割-splitting.md"
+    },
+    {
+      "slug": "118-4-向量数据库与词向量-vectorstores-and-embeddings",
+      "title": "第四章 向量数据库与词向量(Vectorstores and Embeddings)",
+      "file": "chapters/118-4-向量数据库与词向量-vectorstores-and-embeddings.md"
+    },
+    {
+      "slug": "119-5-检索-retrieval",
+      "title": "第五章 检索(Retrieval)",
+      "file": "chapters/119-5-检索-retrieval.md"
+    },
+    {
+      "slug": "120-6-问答-question-answering",
+      "title": "第六章 问答",
+      "file": "chapters/120-6-问答-question-answering.md"
+    },
+    {
+      "slug": "121-7-聊天-chat",
+      "title": "第七章、聊天 Chat",
+      "file": "chapters/121-7-聊天-chat.md"
+    },
+    {
+      "slug": "122-8-总结-summary",
+      "title": "第八章、总结",
+      "file": "chapters/122-8-总结-summary.md"
+    },
+    {
+      "slug": "123-env-setup",
+      "title": "项目环境配置",
+      "file": "chapters/123-env-setup.md"
+    }
+  ],
+  "sourceType": "github"
+}

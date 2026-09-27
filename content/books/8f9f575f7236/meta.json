@@ -1,0 +1,16 @@
+{
+  "bookId": "8f9f575f7236",
+  "title": "设计模式目录",
+  "url": "https://refactoringguru.cn/design-patterns/catalog",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:22.035Z",
+  "chapters": [
+    {
+      "slug": "001-1e",
+      "title": "设计模式目录：22种设计模式",
+      "file": "chapters/001-1e.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "设计模式目录：22种设计模式"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "fc0ad5db316c",
+  "title": "Microsoft Docs C# 官方文档",
+  "url": "https://docs.microsoft.com/zh-cn/dotnet/csharp/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:37.917Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "C# 指南 - .NET 托管语言 - C#",
+      "file": "chapters/001-1b.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "C# 指南 - .NET 托管语言 - C#"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "b1bfaf84af03",
+  "title": "MyBatis中文文档",
+  "url": "https://mybatis.org/mybatis-3/zh_CN/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:22.123Z",
+  "chapters": [
+    {
+      "slug": "001-1a",
+      "title": "MyBatis 3 | 简介 – mybatis",
+      "file": "chapters/001-1a.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "MyBatis 3 | 简介 – mybatis"
+}

@@ -1,0 +1,250 @@
+{
+  "bookId": "774505006e11",
+  "title": "React.js 小书",
+  "url": "https://github.com/huzidaha/react-naive-book",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:48.712Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "React.js 小书",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-2017-02-12-lesson1",
+      "title": "React.js 简介",
+      "file": "chapters/002-2017-02-12-lesson1.md"
+    },
+    {
+      "slug": "003-2017-02-13-lesson2",
+      "title": "前端组件化（一）：从一个简单的例子讲起",
+      "file": "chapters/003-2017-02-13-lesson2.md"
+    },
+    {
+      "slug": "004-2017-02-14-lesson3",
+      "title": "前端组件化（二）：优化 DOM 操作",
+      "file": "chapters/004-2017-02-14-lesson3.md"
+    },
+    {
+      "slug": "005-2017-02-15-lesson4",
+      "title": "前端组件化（三）：抽象出公共组件类",
+      "file": "chapters/005-2017-02-15-lesson4.md"
+    },
+    {
+      "slug": "006-2017-02-16-lesson5",
+      "title": "React.js 基本环境安装",
+      "file": "chapters/006-2017-02-16-lesson5.md"
+    },
+    {
+      "slug": "007-2017-02-17-lesson6",
+      "title": "使用 JSX 描述 UI 信息",
+      "file": "chapters/007-2017-02-17-lesson6.md"
+    },
+    {
+      "slug": "008-2017-02-18-lesson7",
+      "title": "组件的 render 方法",
+      "file": "chapters/008-2017-02-18-lesson7.md"
+    },
+    {
+      "slug": "009-2017-02-19-lesson8",
+      "title": "组件的组合、嵌套和组件树",
+      "file": "chapters/009-2017-02-19-lesson8.md"
+    },
+    {
+      "slug": "010-2017-02-20-lesson9",
+      "title": "事件监听",
+      "file": "chapters/010-2017-02-20-lesson9.md"
+    },
+    {
+      "slug": "011-2017-02-21-lesson10",
+      "title": "组件的 state 和 setState",
+      "file": "chapters/011-2017-02-21-lesson10.md"
+    },
+    {
+      "slug": "012-2017-02-22-lesson11",
+      "title": "配置组件的 props",
+      "file": "chapters/012-2017-02-22-lesson11.md"
+    },
+    {
+      "slug": "013-2017-02-23-lesson12",
+      "title": "state vs props",
+      "file": "chapters/013-2017-02-23-lesson12.md"
+    },
+    {
+      "slug": "014-2017-02-24-lesson13",
+      "title": "渲染列表数据",
+      "file": "chapters/014-2017-02-24-lesson13.md"
+    },
+    {
+      "slug": "015-2017-02-25-lesson14",
+      "title": "实战分析：评论功能（一）",
+      "file": "chapters/015-2017-02-25-lesson14.md"
+    },
+    {
+      "slug": "016-2017-02-26-lesson15",
+      "title": "实战分析：评论功能（二）",
+      "file": "chapters/016-2017-02-26-lesson15.md"
+    },
+    {
+      "slug": "017-2017-02-27-lesson16",
+      "title": "实战分析：评论功能（三）",
+      "file": "chapters/017-2017-02-27-lesson16.md"
+    },
+    {
+      "slug": "018-2017-02-28-lesson17",
+      "title": "前端应用状态管理 —— 状态提升",
+      "file": "chapters/018-2017-02-28-lesson17.md"
+    },
+    {
+      "slug": "019-2017-03-01-lesson18",
+      "title": "挂载阶段的组件生命周期（一）",
+      "file": "chapters/019-2017-03-01-lesson18.md"
+    },
+    {
+      "slug": "020-2017-03-02-lesson19",
+      "title": "挂载阶段的组件生命周期（二）",
+      "file": "chapters/020-2017-03-02-lesson19.md"
+    },
+    {
+      "slug": "021-2017-03-03-lesson20",
+      "title": "更新阶段的组件生命周期",
+      "file": "chapters/021-2017-03-03-lesson20.md"
+    },
+    {
+      "slug": "022-2017-03-04-lesson21",
+      "title": "ref 和 React.js 中的 DOM 操作",
+      "file": "chapters/022-2017-03-04-lesson21.md"
+    },
+    {
+      "slug": "023-2017-03-05-lesson22",
+      "title": "props.children 和容器类组件",
+      "file": "chapters/023-2017-03-05-lesson22.md"
+    },
+    {
+      "slug": "024-2017-03-06-lesson23",
+      "title": "dangerouslySetHTML 和 style 属性",
+      "file": "chapters/024-2017-03-06-lesson23.md"
+    },
+    {
+      "slug": "025-2017-03-07-lesson24",
+      "title": "PropTypes 和组件参数验证",
+      "file": "chapters/025-2017-03-07-lesson24.md"
+    },
+    {
+      "slug": "026-2017-03-08-lesson25",
+      "title": "实战分析：评论功能（四）",
+      "file": "chapters/026-2017-03-08-lesson25.md"
+    },
+    {
+      "slug": "027-2017-03-09-lesson26",
+      "title": "实战分析：评论功能（五）",
+      "file": "chapters/027-2017-03-09-lesson26.md"
+    },
+    {
+      "slug": "028-2017-03-10-lesson27",
+      "title": "实战分析：评论功能（六）",
+      "file": "chapters/028-2017-03-10-lesson27.md"
+    },
+    {
+      "slug": "029-2017-03-11-lesson28",
+      "title": "高阶组件（Higher-Order Components）",
+      "file": "chapters/029-2017-03-11-lesson28.md"
+    },
+    {
+      "slug": "030-2017-03-12-lesson29",
+      "title": "React.js 的 context",
+      "file": "chapters/030-2017-03-12-lesson29.md"
+    },
+    {
+      "slug": "031-2017-03-13-lesson30",
+      "title": "动手实现 Redux（一）：优雅地修改共享状态",
+      "file": "chapters/031-2017-03-13-lesson30.md"
+    },
+    {
+      "slug": "032-2017-03-14-lesson31",
+      "title": "动手实现 Redux（二）：抽离 store 和监控数据变化",
+      "file": "chapters/032-2017-03-14-lesson31.md"
+    },
+    {
+      "slug": "033-2017-03-15-lesson32",
+      "title": "动手实现 Redux（三）：纯函数（Pure Function）简介",
+      "file": "chapters/033-2017-03-15-lesson32.md"
+    },
+    {
+      "slug": "034-2017-03-16-lesson33",
+      "title": "动手实现 Redux（四）：共享结构的对象提高性能",
+      "file": "chapters/034-2017-03-16-lesson33.md"
+    },
+    {
+      "slug": "035-2017-03-17-lesson34",
+      "title": "动手实现 Redux（五）：不要问为什么的 reducer",
+      "file": "chapters/035-2017-03-17-lesson34.md"
+    },
+    {
+      "slug": "036-2017-03-18-lesson35",
+      "title": "动手实现 Redux（六）：Redux 总结",
+      "file": "chapters/036-2017-03-18-lesson35.md"
+    },
+    {
+      "slug": "037-2017-03-19-lesson36",
+      "title": "动手实现 React-redux（一）：初始化工程",
+      "file": "chapters/037-2017-03-19-lesson36.md"
+    },
+    {
+      "slug": "038-2017-03-20-lesson37",
+      "title": "动手实现 React-redux（二）：结合 context 和 store",
+      "file": "chapters/038-2017-03-20-lesson37.md"
+    },
+    {
+      "slug": "039-2017-03-21-lesson38",
+      "title": "动手实现 React-redux（三）：connect 和 mapStateToProps",
+      "file": "chapters/039-2017-03-21-lesson38.md"
+    },
+    {
+      "slug": "040-2017-03-22-lesson39",
+      "title": "动手实现 React-redux（四）：mapDispatchToProps",
+      "file": "chapters/040-2017-03-22-lesson39.md"
+    },
+    {
+      "slug": "041-2017-03-23-lesson40",
+      "title": "动手实现 React-redux（五）：Provider",
+      "file": "chapters/041-2017-03-23-lesson40.md"
+    },
+    {
+      "slug": "042-2017-03-24-lesson41",
+      "title": "动手实现 React-redux（六）：React-redux 总结",
+      "file": "chapters/042-2017-03-24-lesson41.md"
+    },
+    {
+      "slug": "043-2017-03-25-lesson42",
+      "title": "使用真正的 Redux 和 React-redux",
+      "file": "chapters/043-2017-03-25-lesson42.md"
+    },
+    {
+      "slug": "044-2017-03-26-lesson43",
+      "title": "Smart 组件 vs Dumb 组件",
+      "file": "chapters/044-2017-03-26-lesson43.md"
+    },
+    {
+      "slug": "045-2017-03-27-lesson44",
+      "title": "实战分析：评论功能（七）",
+      "file": "chapters/045-2017-03-27-lesson44.md"
+    },
+    {
+      "slug": "046-2017-03-28-lesson45",
+      "title": "实战分析：评论功能（八）",
+      "file": "chapters/046-2017-03-28-lesson45.md"
+    },
+    {
+      "slug": "047-2017-03-29-lesson46",
+      "title": "实战分析：评论功能（九）",
+      "file": "chapters/047-2017-03-29-lesson46.md"
+    },
+    {
+      "slug": "048-index",
+      "title": "index",
+      "file": "chapters/048-index.md"
+    }
+  ],
+  "sourceType": "github"
+}

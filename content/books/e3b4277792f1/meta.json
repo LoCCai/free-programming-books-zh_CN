@@ -1,0 +1,16 @@
+{
+  "bookId": "e3b4277792f1",
+  "title": "Git教程",
+  "url": "http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:10.829Z",
+  "chapters": [
+    {
+      "slug": "001-2a",
+      "title": "首页 - 廖雪峰的官方网站",
+      "file": "chapters/001-2a.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "首页 - 廖雪峰的官方网站"
+}

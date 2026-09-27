@@ -1,0 +1,145 @@
+{
+  "bookId": "aea3fa1d4df4",
+  "title": "动手学大模型应用开发",
+  "url": "https://github.com/datawhalechina/llm-universe",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:49.638Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "动手学大模型应用开发",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "readme",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "readme",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "readme",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "readme",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "LLM Universe | 动手学大模型应用开发",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-1-简介-introduction",
+      "title": "第一章 简介",
+      "file": "chapters/007-1-简介-introduction.md"
+    },
+    {
+      "slug": "008-2-提示原则-guidelines",
+      "title": "第二章 提示原则",
+      "file": "chapters/008-2-提示原则-guidelines.md"
+    },
+    {
+      "slug": "009-3-迭代优化-iterative",
+      "title": "第三章 迭代优化",
+      "file": "chapters/009-3-迭代优化-iterative.md"
+    },
+    {
+      "slug": "010-4-文本概括-summarizing",
+      "title": "第四章 文本概括",
+      "file": "chapters/010-4-文本概括-summarizing.md"
+    },
+    {
+      "slug": "011-5-推断-inferring",
+      "title": "第五章 推断",
+      "file": "chapters/011-5-推断-inferring.md"
+    },
+    {
+      "slug": "012-6-文本转换-transforming",
+      "title": "第六章 文本转换",
+      "file": "chapters/012-6-文本转换-transforming.md"
+    },
+    {
+      "slug": "013-7-文本扩展-expanding",
+      "title": "第七章 文本扩展",
+      "file": "chapters/013-7-文本扩展-expanding.md"
+    },
+    {
+      "slug": "014-8-聊天机器人-chatbot",
+      "title": "第八章 聊天机器人",
+      "file": "chapters/014-8-聊天机器人-chatbot.md"
+    },
+    {
+      "slug": "015-9-总结-summary",
+      "title": "第九章 总结",
+      "file": "chapters/015-9-总结-summary.md"
+    },
+    {
+      "slug": "016-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/016-sidebar.md"
+    },
+    {
+      "slug": "017-c1",
+      "title": "第一章 大型语言模型 LLM 介绍",
+      "file": "chapters/017-c1.md"
+    },
+    {
+      "slug": "018-c2",
+      "title": "第二章 使用 LLM API 开发应用",
+      "file": "chapters/018-c2.md"
+    },
+    {
+      "slug": "019-附langchain自定义embedding封装讲解",
+      "title": "Embedding封装讲解",
+      "file": "chapters/019-附langchain自定义embedding封装讲解.md"
+    },
+    {
+      "slug": "020-c3",
+      "title": "第三章 搭建向量知识库",
+      "file": "chapters/020-c3.md"
+    },
+    {
+      "slug": "021-附langchain自定义-llm",
+      "title": "附一 基于 LangChain 自定义 LLM",
+      "file": "chapters/021-附langchain自定义-llm.md"
+    },
+    {
+      "slug": "022-c4",
+      "title": "第四章 构建RAG应用",
+      "file": "chapters/022-c4.md"
+    },
+    {
+      "slug": "023-c5",
+      "title": "第五章 系统评估与优化",
+      "file": "chapters/023-c5.md"
+    },
+    {
+      "slug": "024-案例1-个人知识库助手",
+      "title": "个人知识库助手项目",
+      "file": "chapters/024-案例1-个人知识库助手.md"
+    },
+    {
+      "slug": "025-案例2-人情世故大模型系统-天机",
+      "title": "LLM应用案例：人情世故大模型系统-天机",
+      "file": "chapters/025-案例2-人情世故大模型系统-天机.md"
+    },
+    {
+      "slug": "026-c1",
+      "title": "第一章 大型语言模型 LLM 介绍",
+      "file": "chapters/026-c1.md"
+    },
+    {
+      "slug": "027-附损失函数浅析",
+      "title": "损失函数浅析",
+      "file": "chapters/027-附损失函数浅析.md"
+    }
+  ],
+  "sourceType": "github"
+}

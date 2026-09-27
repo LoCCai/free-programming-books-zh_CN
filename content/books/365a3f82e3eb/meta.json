@@ -1,0 +1,16 @@
+{
+  "bookId": "365a3f82e3eb",
+  "title": "DevBean的《Qt学习之路2》(Qt5)",
+  "url": "http://www.devbean.net/category/qt-study-road-2/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:30.252Z",
+  "chapters": [
+    {
+      "slug": "001-1c",
+      "title": "Qt 学习之路 2 - DevBean Tech World",
+      "file": "chapters/001-1c.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Qt 学习之路 2 - DevBean Tech World"
+}

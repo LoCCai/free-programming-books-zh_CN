@@ -1,0 +1,15 @@
+{
+  "bookId": "ae49ed917fbd",
+  "title": "Racket book",
+  "url": "https://github.com/tyrchen/racket-book",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:56.134Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

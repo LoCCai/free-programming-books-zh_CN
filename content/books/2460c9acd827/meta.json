@@ -1,0 +1,16 @@
+{
+  "bookId": "2460c9acd827",
+  "title": "C++ FAQ LITE(中文版)",
+  "url": "http://www.sunistudio.com/cppfaq/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:27.036Z",
+  "chapters": [
+    {
+      "slug": "001-x",
+      "title": "C++ FAQ LITE",
+      "file": "chapters/001-x.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "C++ FAQ LITE"
+}

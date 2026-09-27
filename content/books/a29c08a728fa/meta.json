@@ -1,0 +1,96 @@
+{
+  "bookId": "a29c08a728fa",
+  "title": "C++ Primer 5th Answers",
+  "url": "https://github.com/Mooophy/Cpp-Primer",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:27.732Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "README",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "README",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "README",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "README",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "README",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "without '&'",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "Chapter 8. The IO Library",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "README",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "Chapter 10. Generic Algorithms",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "Chapter 11. Associative Containers",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "Chapter 12. Dynamic Memory",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "README",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "Chapter 14. Overloaded Operations and Conversions",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "Chapter 15. Object-Oriented Programming",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "README",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "README",
+      "file": "chapters/017-readme.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

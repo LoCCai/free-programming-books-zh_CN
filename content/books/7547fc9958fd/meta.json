@@ -1,0 +1,21 @@
+{
+  "bookId": "7547fc9958fd",
+  "title": "GitHub秘籍",
+  "url": "https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:39.772Z",
+  "chapters": [
+    {
+      "slug": "001-20",
+      "title": "Introduction | github-cheat-sheet",
+      "file": "chapters/001-20.md"
+    },
+    {
+      "slug": "002-27",
+      "title": "Introduction | github-cheat-sheet",
+      "file": "chapters/002-27.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction | github-cheat-sheet"
+}

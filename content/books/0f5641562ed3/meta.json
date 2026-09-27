@@ -2,8 +2,15 @@
   "bookId": "0f5641562ed3",
   "title": "UNIX TOOLBOX",
   "url": "http://cb.vu/unixtoolbox_zh_CN.xhtml",
-  "status": "failed",
-  "error": "上游标记疑似失效,未尝试抓取",
-  "fetchedAt": "2026-09-26T18:52:27.241Z",
-  "chapters": []
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:32.588Z",
+  "chapters": [
+    {
+      "slug": "001-10",
+      "title": "CB.VU - Linux, Unix & Webmaster Resources",
+      "file": "chapters/001-10.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "CB.VU - Linux, Unix & Webmaster Resources"
 }

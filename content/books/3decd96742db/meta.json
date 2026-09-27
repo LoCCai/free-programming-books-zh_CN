@@ -1,0 +1,36 @@
+{
+  "bookId": "3decd96742db",
+  "title": "Effective Java 第3版中文版",
+  "url": "https://github.com/sjsdfg/effective-java-3rd-chinese",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:25:58.182Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "[Prism](http://prismjs.com/)",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "README",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "effective-java-3rd-chinese",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-coverpage",
+      "title": "effective-java-3rd-chinese",
+      "file": "chapters/004-coverpage.md"
+    },
+    {
+      "slug": "005-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/005-sidebar.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

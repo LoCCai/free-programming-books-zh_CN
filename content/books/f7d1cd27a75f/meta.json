@@ -1,0 +1,1011 @@
+{
+  "bookId": "f7d1cd27a75f",
+  "title": "Android开发技术前线(android-tech-frontier)",
+  "url": "https://github.com/bboyfeiyu/android-tech-frontier",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:15:52.663Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "readme",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "readme",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "readme",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "readme",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "readme",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "readme",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "readme",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "readme",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "readme",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "readme",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "readme",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "readme",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "readme",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "readme",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "readme",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "readme",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "readme",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "readme",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "readme",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "readme",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "readme",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "在Android调试模式中使用Stetho",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme",
+      "title": "Android性能案例研究续集",
+      "file": "chapters/023-readme.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "readme",
+      "file": "chapters/024-readme.md"
+    },
+    {
+      "slug": "025-readme",
+      "title": "readme",
+      "file": "chapters/025-readme.md"
+    },
+    {
+      "slug": "026-readme",
+      "title": "readme",
+      "file": "chapters/026-readme.md"
+    },
+    {
+      "slug": "027-readme",
+      "title": "readme",
+      "file": "chapters/027-readme.md"
+    },
+    {
+      "slug": "028-readme",
+      "title": "readme",
+      "file": "chapters/028-readme.md"
+    },
+    {
+      "slug": "029-readme",
+      "title": "不要将文章放到这个文件夹下啦!请放到最新的issue文件夹中,谢谢大家。",
+      "file": "chapters/029-readme.md"
+    },
+    {
+      "slug": "030-readme",
+      "title": "readme",
+      "file": "chapters/030-readme.md"
+    },
+    {
+      "slug": "031-readme",
+      "title": "开发技术前线 第10期",
+      "file": "chapters/031-readme.md"
+    },
+    {
+      "slug": "032-readme",
+      "title": "开发技术前线 第10期",
+      "file": "chapters/032-readme.md"
+    },
+    {
+      "slug": "033-readme",
+      "title": "2015.5.31 ( 第十二期 )",
+      "file": "chapters/033-readme.md"
+    },
+    {
+      "slug": "034-readme",
+      "title": "2015.6.5 ( 第十三期 )",
+      "file": "chapters/034-readme.md"
+    },
+    {
+      "slug": "035-readme",
+      "title": "开发技术前线 第18期",
+      "file": "chapters/035-readme.md"
+    },
+    {
+      "slug": "036-readme",
+      "title": "开发技术前线 第19期",
+      "file": "chapters/036-readme.md"
+    },
+    {
+      "slug": "037-readme",
+      "title": "readme",
+      "file": "chapters/037-readme.md"
+    },
+    {
+      "slug": "038-readme",
+      "title": "readme",
+      "file": "chapters/038-readme.md"
+    },
+    {
+      "slug": "039-readme",
+      "title": "配置build.gradle",
+      "file": "chapters/039-readme.md"
+    },
+    {
+      "slug": "040-readme",
+      "title": "readme",
+      "file": "chapters/040-readme.md"
+    },
+    {
+      "slug": "041-readme",
+      "title": "README",
+      "file": "chapters/041-readme.md"
+    },
+    {
+      "slug": "042-readme",
+      "title": "开发技术前线 第七期 周报",
+      "file": "chapters/042-readme.md"
+    },
+    {
+      "slug": "043-readme",
+      "title": "README",
+      "file": "chapters/043-readme.md"
+    },
+    {
+      "slug": "044-readme",
+      "title": "开发技术前线 第九期",
+      "file": "chapters/044-readme.md"
+    },
+    {
+      "slug": "045-readme",
+      "title": "readme",
+      "file": "chapters/045-readme.md"
+    },
+    {
+      "slug": "046-readme",
+      "title": "readme",
+      "file": "chapters/046-readme.md"
+    },
+    {
+      "slug": "047-readme",
+      "title": "readme",
+      "file": "chapters/047-readme.md"
+    },
+    {
+      "slug": "048-readme",
+      "title": "readme",
+      "file": "chapters/048-readme.md"
+    },
+    {
+      "slug": "049-readme",
+      "title": "Lollipop 中的 Activity & Fragment Transitions",
+      "file": "chapters/049-readme.md"
+    },
+    {
+      "slug": "050-readme",
+      "title": "readme",
+      "file": "chapters/050-readme.md"
+    },
+    {
+      "slug": "051-readme",
+      "title": "readme",
+      "file": "chapters/051-readme.md"
+    },
+    {
+      "slug": "052-readme",
+      "title": "readme",
+      "file": "chapters/052-readme.md"
+    },
+    {
+      "slug": "053-readme",
+      "title": "readme",
+      "file": "chapters/053-readme.md"
+    },
+    {
+      "slug": "054-readme",
+      "title": "readme",
+      "file": "chapters/054-readme.md"
+    },
+    {
+      "slug": "055-readme",
+      "title": "readme",
+      "file": "chapters/055-readme.md"
+    },
+    {
+      "slug": "056-readme",
+      "title": "readme",
+      "file": "chapters/056-readme.md"
+    },
+    {
+      "slug": "057-readme",
+      "title": "readme",
+      "file": "chapters/057-readme.md"
+    },
+    {
+      "slug": "058-readme",
+      "title": "Android开发技术前线 ( android-tech-frontier )",
+      "file": "chapters/058-readme.md"
+    },
+    {
+      "slug": "059-readme",
+      "title": "readme",
+      "file": "chapters/059-readme.md"
+    },
+    {
+      "slug": "060-readme",
+      "title": "国内优秀Android学习资源",
+      "file": "chapters/060-readme.md"
+    },
+    {
+      "slug": "061-翻译项目协作流程",
+      "title": "翻译项目协作流程",
+      "file": "chapters/061-翻译项目协作流程.md"
+    },
+    {
+      "slug": "062-android中的人脸检测入门",
+      "title": "Android中的人脸检测入门",
+      "file": "chapters/062-android中的人脸检测入门.md"
+    },
+    {
+      "slug": "063-authorization",
+      "title": "作者授权列表",
+      "file": "chapters/063-authorization.md"
+    },
+    {
+      "slug": "064-git简单使用教程",
+      "title": "git简单使用教程",
+      "file": "chapters/064-git简单使用教程.md"
+    },
+    {
+      "slug": "065-将基于dagger-1开发的项目迁移到dagger-2中",
+      "title": "将基于 Dagger 1 开发的项目迁移到 Dagger 2 中",
+      "file": "chapters/065-将基于dagger-1开发的项目迁移到dagger-2中.md"
+    },
+    {
+      "slug": "066-使用facebook-sdk为安卓应用添加like按钮",
+      "title": "使用Facebook-SDK为安卓应用添加Like按钮",
+      "file": "chapters/066-使用facebook-sdk为安卓应用添加like按钮.md"
+    },
+    {
+      "slug": "067-android进行单元测试难在哪-part2",
+      "title": "Android进行单元测试难在哪-part2",
+      "file": "chapters/067-android进行单元测试难在哪-part2.md"
+    },
+    {
+      "slug": "068-android如何直播rtmp流",
+      "title": "Android如何直播RTMP流",
+      "file": "chapters/068-android如何直播rtmp流.md"
+    },
+    {
+      "slug": "069-kotlin-for-android-iv-自定义视图和android的扩展",
+      "title": "Kotlin-for-Android-(IV)：自定义视图和Android的扩展",
+      "file": "chapters/069-kotlin-for-android-iv-自定义视图和android的扩展.md"
+    },
+    {
+      "slug": "070-听facebook工程师讲custom-viewgroups",
+      "title": "听FaceBook工程师讲Custom-ViewGroups",
+      "file": "chapters/070-听facebook工程师讲custom-viewgroups.md"
+    },
+    {
+      "slug": "071-详解dagger2",
+      "title": "详解Dagger2",
+      "file": "chapters/071-详解dagger2.md"
+    },
+    {
+      "slug": "072-android-espresso测试框架介绍",
+      "title": "Android-Espresso测试框架介绍",
+      "file": "chapters/072-android-espresso测试框架介绍.md"
+    },
+    {
+      "slug": "073-android进行单元测试难在哪-part3",
+      "title": "Android进行单元测试难在哪-part3",
+      "file": "chapters/073-android进行单元测试难在哪-part3.md"
+    },
+    {
+      "slug": "074-code-review最佳实践",
+      "title": "Code Review最佳实践",
+      "file": "chapters/074-code-review最佳实践.md"
+    },
+    {
+      "slug": "075-当复仇者联盟遇上dragger2-rxjava和retrofit的巧妙结合",
+      "title": "当复仇者联盟遇上Dragger2、RxJava和Retrofit的巧妙结合",
+      "file": "chapters/075-当复仇者联盟遇上dragger2-rxjava和retrofit的巧妙结合.md"
+    },
+    {
+      "slug": "076-自动化android开发",
+      "title": "自动化Android开发",
+      "file": "chapters/076-自动化android开发.md"
+    },
+    {
+      "slug": "077-android进行单元测试难在哪-part4",
+      "title": "Android进行单元测试难在哪-part4",
+      "file": "chapters/077-android进行单元测试难在哪-part4.md"
+    },
+    {
+      "slug": "078-android上mvp的介绍",
+      "title": "Android上MVP的介绍",
+      "file": "chapters/078-android上mvp的介绍.md"
+    },
+    {
+      "slug": "079-android自动截屏工具",
+      "title": "Android自动截屏工具",
+      "file": "chapters/079-android自动截屏工具.md"
+    },
+    {
+      "slug": "080-mvp框架mosby架构详解",
+      "title": "Ted Mosby - 软件架构",
+      "file": "chapters/080-mvp框架mosby架构详解.md"
+    },
+    {
+      "slug": "081-创建-recyclerview-layoutmanager-part-2",
+      "title": "创建 a RecyclerView LayoutManager – Part 2",
+      "file": "chapters/081-创建-recyclerview-layoutmanager-part-2.md"
+    },
+    {
+      "slug": "082-创建-recyclerview-layoutmanager-part-3",
+      "title": "Building a RecyclerView LayoutManager – Part 3",
+      "file": "chapters/082-创建-recyclerview-layoutmanager-part-3.md"
+    },
+    {
+      "slug": "083-创建-recyclerview-layoutmanager-redux",
+      "title": "创建-RecyclerView-LayoutManager-Redux",
+      "file": "chapters/083-创建-recyclerview-layoutmanager-redux.md"
+    },
+    {
+      "slug": "084-优化android-studio编译效率的方法",
+      "title": "优化android-studio编译效率的方法",
+      "file": "chapters/084-优化android-studio编译效率的方法.md"
+    },
+    {
+      "slug": "085-android进行单元测试难在哪-终",
+      "title": "Android进行单元测试难在哪-终",
+      "file": "chapters/085-android进行单元测试难在哪-终.md"
+    },
+    {
+      "slug": "086-square-从今天开始抛弃fragment吧",
+      "title": "Square：从今天开始抛弃Fragment吧！",
+      "file": "chapters/086-square-从今天开始抛弃fragment吧.md"
+    },
+    {
+      "slug": "087-新的测试注解",
+      "title": "新的测试注解",
+      "file": "chapters/087-新的测试注解.md"
+    },
+    {
+      "slug": "088-android-design-support-library",
+      "title": "Android-Design-Support-Library",
+      "file": "chapters/088-android-design-support-library.md"
+    },
+    {
+      "slug": "089-android之webrtc介绍",
+      "title": "Android之WebRTC介绍",
+      "file": "chapters/089-android之webrtc介绍.md"
+    },
+    {
+      "slug": "090-design-support-library-i-navigation-view",
+      "title": "Design-Support-Library(I)-Navigation-View",
+      "file": "chapters/090-design-support-library-i-navigation-view.md"
+    },
+    {
+      "slug": "091-mvvm-模式简介",
+      "title": "MVVM 模式简介",
+      "file": "chapters/091-mvvm-模式简介.md"
+    },
+    {
+      "slug": "092-2015-google-io带来的新android开发工具",
+      "title": "2015-Google-IO带来的新Android开发工具 ",
+      "file": "chapters/092-2015-google-io带来的新android开发工具.md"
+    },
+    {
+      "slug": "093-你可能漏掉的知识点-onresumefragments",
+      "title": "你可能漏掉的知识点-onResumeFragments",
+      "file": "chapters/093-你可能漏掉的知识点-onresumefragments.md"
+    },
+    {
+      "slug": "094-如何修复编译时的multidex崩溃",
+      "title": "如何修复编译时的MultiDex崩溃",
+      "file": "chapters/094-如何修复编译时的multidex崩溃.md"
+    },
+    {
+      "slug": "095-android-c-引用计数介绍",
+      "title": "Android-C++引用计数介绍",
+      "file": "chapters/095-android-c-引用计数介绍.md"
+    },
+    {
+      "slug": "096-android-m的app-links实现详解",
+      "title": "Android M的App Links实现详解",
+      "file": "chapters/096-android-m的app-links实现详解.md"
+    },
+    {
+      "slug": "097-facebook代码分析工具-infer",
+      "title": "facebook开源项目Facebook Infer: 静态代码检查工具",
+      "file": "chapters/097-facebook代码分析工具-infer.md"
+    },
+    {
+      "slug": "098-结合rxjava更简单地使用sqlite",
+      "title": "结合RxJava更简单地使用SQLite",
+      "file": "chapters/098-结合rxjava更简单地使用sqlite.md"
+    },
+    {
+      "slug": "099-手动实现布局transitions动画-第二部分",
+      "title": "手动实现布局Transitions动画-第二部分",
+      "file": "chapters/099-手动实现布局transitions动画-第二部分.md"
+    },
+    {
+      "slug": "100-手动实现布局transitions动画-第三部分",
+      "title": "手动实现布局Transitions动画-第三部分",
+      "file": "chapters/100-手动实现布局transitions动画-第三部分.md"
+    },
+    {
+      "slug": "101-手动实现布局transitions动画-第一部分",
+      "title": "手动实现布局Transitions动画-第一部分",
+      "file": "chapters/101-手动实现布局transitions动画-第一部分.md"
+    },
+    {
+      "slug": "102-为什么你应该停止使用eventbus",
+      "title": "为什么你应该停止使用EventBus",
+      "file": "chapters/102-为什么你应该停止使用eventbus.md"
+    },
+    {
+      "slug": "103-android一体机模式-规则限制",
+      "title": "Android 一体机模式：规则限制",
+      "file": "chapters/103-android一体机模式-规则限制.md"
+    },
+    {
+      "slug": "104-当钢铁侠变得反应更快-rxjava",
+      "title": "当钢铁侠变得反应更快-RxJava",
+      "file": "chapters/104-当钢铁侠变得反应更快-rxjava.md"
+    },
+    {
+      "slug": "105-如何使用android-studio把自己的android-library分发到jcenter和maven-centra",
+      "title": "如何使用Android Studio把自己的Android library分发到jCenter和Maven Central",
+      "file": "chapters/105-如何使用android-studio把自己的android-library分发到jcenter和maven-centra.md"
+    },
+    {
+      "slug": "106-使用rxjava从几个数据源中加载数据",
+      "title": "使用RxJava从多个数据源中加载数据",
+      "file": "chapters/106-使用rxjava从几个数据源中加载数据.md"
+    },
+    {
+      "slug": "107-为什么需要在你的crash报告中使用git-sha",
+      "title": "为什么需要在你的Crash报告中使用git-SHA",
+      "file": "chapters/107-为什么需要在你的crash报告中使用git-sha.md"
+    },
+    {
+      "slug": "108-android-ui-自动化测试",
+      "title": "Android UI 自动化测试",
+      "file": "chapters/108-android-ui-自动化测试.md"
+    },
+    {
+      "slug": "109-android开发iii-规范与性能",
+      "title": "Android开发III-规范与性能",
+      "file": "chapters/109-android开发iii-规范与性能.md"
+    },
+    {
+      "slug": "110-android中的帧动画",
+      "title": "Android中的帧动画",
+      "file": "chapters/110-android中的帧动画.md"
+    },
+    {
+      "slug": "111-还在用toast-你out啦-试试snackbar吧",
+      "title": "还在用Toast？你Out啦，试试Snackbar吧！",
+      "file": "chapters/111-还在用toast-你out啦-试试snackbar吧.md"
+    },
+    {
+      "slug": "112-如何提高你的代码质量",
+      "title": "如何提高你的代码质量",
+      "file": "chapters/112-如何提高你的代码质量.md"
+    },
+    {
+      "slug": "113-拖拽recyclerview",
+      "title": "拖拽RecyclerView",
+      "file": "chapters/113-拖拽recyclerview.md"
+    },
+    {
+      "slug": "114-用组合代替继承能为activity带来什么",
+      "title": "用组合代替继承能为Activity带来什么",
+      "file": "chapters/114-用组合代替继承能为activity带来什么.md"
+    },
+    {
+      "slug": "115-service测试",
+      "title": "Service测试",
+      "file": "chapters/115-service测试.md"
+    },
+    {
+      "slug": "116-android-ui自动化测试",
+      "title": "Android-UI自动化测试",
+      "file": "chapters/116-android-ui自动化测试.md"
+    },
+    {
+      "slug": "117-gradle技巧之语法浅谈",
+      "title": "回顾",
+      "file": "chapters/117-gradle技巧之语法浅谈.md"
+    },
+    {
+      "slug": "118-rxjava-observables单元测试",
+      "title": "RxJava-Observables单元测试",
+      "file": "chapters/118-rxjava-observables单元测试.md"
+    },
+    {
+      "slug": "119-检测和解决android应用的性能问题",
+      "title": "检测和解决Android应用的性能问题",
+      "file": "chapters/119-检测和解决android应用的性能问题.md"
+    },
+    {
+      "slug": "120-在你开发应用前应知道的六件事情",
+      "title": "在你开发应用前应知道的六件事情",
+      "file": "chapters/120-在你开发应用前应知道的六件事情.md"
+    },
+    {
+      "slug": "121-使用mockito对异步方法进行单元测试",
+      "title": "使用Mockito对异步方法进行单元测试",
+      "file": "chapters/121-使用mockito对异步方法进行单元测试.md"
+    },
+    {
+      "slug": "122-android数据绑定-再见presenter-你好viewmodel",
+      "title": "Android DataBinding：再见Presenter，你好ViewModel！",
+      "file": "chapters/122-android数据绑定-再见presenter-你好viewmodel.md"
+    },
+    {
+      "slug": "123-textview预渲染研究",
+      "title": "TextView预渲染研究",
+      "file": "chapters/123-textview预渲染研究.md"
+    },
+    {
+      "slug": "124-yelp是如何通过glide优化图片加载的",
+      "title": "Yelp是如何通过Glide优化图片加载的",
+      "file": "chapters/124-yelp是如何通过glide优化图片加载的.md"
+    },
+    {
+      "slug": "125-深入剖析android网络开发库-part1",
+      "title": "深入剖析Android网络开发库-part1",
+      "file": "chapters/125-深入剖析android网络开发库-part1.md"
+    },
+    {
+      "slug": "126-android-activity测试",
+      "title": "Android-Activity测试",
+      "file": "chapters/126-android-activity测试.md"
+    },
+    {
+      "slug": "127-android中的aop编程",
+      "title": "Android中的AOP编程",
+      "file": "chapters/127-android中的aop编程.md"
+    },
+    {
+      "slug": "128-binder框架解析",
+      "title": "Binder框架解析",
+      "file": "chapters/128-binder框架解析.md"
+    },
+    {
+      "slug": "129-使用espresso进行ui测试",
+      "title": "使用Espresso进行UI测试",
+      "file": "chapters/129-使用espresso进行ui测试.md"
+    },
+    {
+      "slug": "130-使用tdd的方式开发一个hackernews客户端",
+      "title": "使用TDD的方式开发一个Hackernews客户端",
+      "file": "chapters/130-使用tdd的方式开发一个hackernews客户端.md"
+    },
+    {
+      "slug": "131-android-mvpr-架构模式-part1",
+      "title": "Android-MVPR-架构模式-Part1",
+      "file": "chapters/131-android-mvpr-架构模式-part1.md"
+    },
+    {
+      "slug": "132-android-mvvm模式",
+      "title": "Android-MVVM模式",
+      "file": "chapters/132-android-mvvm模式.md"
+    },
+    {
+      "slug": "133-textview的textlayout",
+      "title": "TextView的TextLayout",
+      "file": "chapters/133-textview的textlayout.md"
+    },
+    {
+      "slug": "134-使用kotlin对viewgroup中的view进行函数式操作",
+      "title": "使用Kotlin对ViewGroup中的View进行函数式操作",
+      "file": "chapters/134-使用kotlin对viewgroup中的view进行函数式操作.md"
+    },
+    {
+      "slug": "135-适用于android的flux架构",
+      "title": "Flux Architecture on Android",
+      "file": "chapters/135-适用于android的flux架构.md"
+    },
+    {
+      "slug": "136-android-layerdrawable-和-drawable-callback",
+      "title": "Android LayerDrawable 和 Drawable.Callback",
+      "file": "chapters/136-android-layerdrawable-和-drawable-callback.md"
+    },
+    {
+      "slug": "137-android设计与开发工作流",
+      "title": "Android设计与开发工作流",
+      "file": "chapters/137-android设计与开发工作流.md"
+    },
+    {
+      "slug": "138-android双向数据绑定",
+      "title": "Android双向数据绑定",
+      "file": "chapters/138-android双向数据绑定.md"
+    },
+    {
+      "slug": "139-一个内存泄漏引发的血案-square",
+      "title": "一个内存泄漏引发的血案-Square",
+      "file": "chapters/139-一个内存泄漏引发的血案-square.md"
+    },
+    {
+      "slug": "140-在android-lollipop中使用palette抽取bitmap颜色",
+      "title": "在Android Lollipop中使用Palette抽取Bitmap颜色",
+      "file": "chapters/140-在android-lollipop中使用palette抽取bitmap颜色.md"
+    },
+    {
+      "slug": "141-android主题动态切换开源库prism基本原理1-核心功能",
+      "title": "Android主题动态切换开源库Prism基本原理1-核心功能",
+      "file": "chapters/141-android主题动态切换开源库prism基本原理1-核心功能.md"
+    },
+    {
+      "slug": "142-android主题动态切换开源库prism基本原理2-搭配viewpager使用",
+      "title": "Android主题动态切换开源库Prism基本原理2-搭配ViewPager使用",
+      "file": "chapters/142-android主题动态切换开源库prism基本原理2-搭配viewpager使用.md"
+    },
+    {
+      "slug": "143-android主题动态切换开源库prism基本原理3-搭配palette使用",
+      "title": "Android主题动态切换开源库Prism基本原理3-搭配Palette使用",
+      "file": "chapters/143-android主题动态切换开源库prism基本原理3-搭配palette使用.md"
+    },
+    {
+      "slug": "144-30分钟搭建一个android的私有maven仓库",
+      "title": "30分钟搭建一个android的私有Maven仓库",
+      "file": "chapters/144-30分钟搭建一个android的私有maven仓库.md"
+    },
+    {
+      "slug": "145-使用systrace分析ui性能",
+      "title": "使用Systrace分析UI性能",
+      "file": "chapters/145-使用systrace分析ui性能.md"
+    },
+    {
+      "slug": "146-在android-m中权限被拒绝时该如何处理",
+      "title": "在Android M中权限被拒绝时该如何处理",
+      "file": "chapters/146-在android-m中权限被拒绝时该如何处理.md"
+    },
+    {
+      "slug": "147-android架构演化之路",
+      "title": "Android架构演化之路",
+      "file": "chapters/147-android架构演化之路.md"
+    },
+    {
+      "slug": "148-tinting-drawables",
+      "title": "Tinting drawables",
+      "file": "chapters/148-tinting-drawables.md"
+    },
+    {
+      "slug": "149-开发你自己的android授权管理器",
+      "title": "开发你自己的Android授权管理器",
+      "file": "chapters/149-开发你自己的android授权管理器.md"
+    },
+    {
+      "slug": "150-使用gradle将项目发布到bitbucket上",
+      "title": "使用Gradle将项目发布到Bitbucket上",
+      "file": "chapters/150-使用gradle将项目发布到bitbucket上.md"
+    },
+    {
+      "slug": "151-为你的应用加速-安卓优化指南",
+      "title": "为你的应用加速 - 安卓优化指南",
+      "file": "chapters/151-为你的应用加速-安卓优化指南.md"
+    },
+    {
+      "slug": "152-为什么不仅继承observale而且使用observable-create",
+      "title": "为什么不仅继承Observale而且使用Observable.create",
+      "file": "chapters/152-为什么不仅继承observale而且使用observable-create.md"
+    },
+    {
+      "slug": "153-数据绑定-data-binding-part1",
+      "title": "数据绑定(Data Binding)-Part1",
+      "file": "chapters/153-数据绑定-data-binding-part1.md"
+    },
+    {
+      "slug": "154-数据绑定-data-binding-part2",
+      "title": "数据绑定(Data Binding)-Part2",
+      "file": "chapters/154-数据绑定-data-binding-part2.md"
+    },
+    {
+      "slug": "155-数据绑定-data-binding-part3",
+      "title": "数据绑定(Data Binding)-Part3",
+      "file": "chapters/155-数据绑定-data-binding-part3.md"
+    },
+    {
+      "slug": "156-数据绑定-data-binding-part4",
+      "title": "数据绑定(Data Binding)-Part4",
+      "file": "chapters/156-数据绑定-data-binding-part4.md"
+    },
+    {
+      "slug": "157-数据绑定-data-binding-part5",
+      "title": "数据绑定(Data Binding)-Part5",
+      "file": "chapters/157-数据绑定-data-binding-part5.md"
+    },
+    {
+      "slug": "158-开发安全的android应用",
+      "title": "开发安全的Android应用",
+      "file": "chapters/158-开发安全的android应用.md"
+    },
+    {
+      "slug": "159-注意api21-android5-0-上的edittext",
+      "title": "注意API21(Android5.0)上的EditText",
+      "file": "chapters/159-注意api21-android5-0-上的edittext.md"
+    },
+    {
+      "slug": "160-chrome自定义tabs-让app和web之间的转场更平顺",
+      "title": "Chrome自定义Tabs-让App和Web之间的转场更平顺",
+      "file": "chapters/160-chrome自定义tabs-让app和web之间的转场更平顺.md"
+    },
+    {
+      "slug": "161-通过硬件层提高android动画的性能",
+      "title": "通过硬件层提高Android动画的性能",
+      "file": "chapters/161-通过硬件层提高android动画的性能.md"
+    },
+    {
+      "slug": "162-android开发生僻却实用的知识点part1",
+      "title": "Android开发生僻却实用的知识点Part1",
+      "file": "chapters/162-android开发生僻却实用的知识点part1.md"
+    },
+    {
+      "slug": "163-android开发生僻却实用的知识点part2",
+      "title": "Android开发生僻却实用的知识点Part2",
+      "file": "chapters/163-android开发生僻却实用的知识点part2.md"
+    },
+    {
+      "slug": "164-flux-and-android",
+      "title": "Flux and Android",
+      "file": "chapters/164-flux-and-android.md"
+    },
+    {
+      "slug": "165-使用classyshark压缩你的项目",
+      "title": "使用ClassyShark压缩你的项目",
+      "file": "chapters/165-使用classyshark压缩你的项目.md"
+    },
+    {
+      "slug": "166-android-中的依赖注入框架",
+      "title": "Android 中的依赖注入框架",
+      "file": "chapters/166-android-中的依赖注入框架.md"
+    },
+    {
+      "slug": "167-android开发生僻却实用的知识点part3",
+      "title": "Android开发生僻却实用的知识点Part3",
+      "file": "chapters/167-android开发生僻却实用的知识点part3.md"
+    },
+    {
+      "slug": "168-android应用架构",
+      "title": "Android应用架构",
+      "file": "chapters/168-android应用架构.md"
+    },
+    {
+      "slug": "169-android中调试rxjava",
+      "title": "Android中调试RxJava",
+      "file": "chapters/169-android中调试rxjava.md"
+    },
+    {
+      "slug": "170-espresso保存和恢复状态",
+      "title": "Espresso保存和恢复状态",
+      "file": "chapters/170-espresso保存和恢复状态.md"
+    },
+    {
+      "slug": "171-高性能listviews",
+      "title": "高性能ListViews",
+      "file": "chapters/171-高性能listviews.md"
+    },
+    {
+      "slug": "172-剪刀手-android平台上的图片裁剪库",
+      "title": "剪刀手—Android平台上的图片裁剪库",
+      "file": "chapters/172-剪刀手-android平台上的图片裁剪库.md"
+    },
+    {
+      "slug": "173-实现安卓6-0的直接分享-direct-share-功能",
+      "title": "实现安卓6.0的直接分享（Direct Share ）功能",
+      "file": "chapters/173-实现安卓6-0的直接分享-direct-share-功能.md"
+    },
+    {
+      "slug": "174-重构plaid-响应式的mvp模式",
+      "title": "重构Plaid-响应式的MVP模式",
+      "file": "chapters/174-重构plaid-响应式的mvp模式.md"
+    },
+    {
+      "slug": "175-appbarlayout的越界滚动行为",
+      "title": "ViewScaler",
+      "file": "chapters/175-appbarlayout的越界滚动行为.md"
+    },
+    {
+      "slug": "176-高效地配置okhttp",
+      "title": "高效地配置okhttp",
+      "file": "chapters/176-高效地配置okhttp.md"
+    },
+    {
+      "slug": "177-如何自定义lint规则",
+      "title": "如何自定义Lint规则",
+      "file": "chapters/177-如何自定义lint规则.md"
+    },
+    {
+      "slug": "178-使用adb-shell的效率和乐趣-part1",
+      "title": "使用ADB Shell的效率和乐趣-Part1",
+      "file": "chapters/178-使用adb-shell的效率和乐趣-part1.md"
+    },
+    {
+      "slug": "179-下雪动画",
+      "title": "下雪动画",
+      "file": "chapters/179-下雪动画.md"
+    },
+    {
+      "slug": "180-android-libraries的依赖管理",
+      "title": "Android Libraries的依赖管理",
+      "file": "chapters/180-android-libraries的依赖管理.md"
+    },
+    {
+      "slug": "181-在android开发中使用rxjava",
+      "title": "在Android开发中使用RxJava",
+      "file": "chapters/181-在android开发中使用rxjava.md"
+    },
+    {
+      "slug": "182-android逆向工程101-part-1",
+      "title": "Android逆向工程101 – Part 1",
+      "file": "chapters/182-android逆向工程101-part-1.md"
+    },
+    {
+      "slug": "183-android逆向工程101-part-2",
+      "title": "Android逆向工程101 – Part 2",
+      "file": "chapters/183-android逆向工程101-part-2.md"
+    },
+    {
+      "slug": "184-context是怎么泄露的handlers-inner-classes",
+      "title": "Context是怎么泄露的Handlers & Inner Classes",
+      "file": "chapters/184-context是怎么泄露的handlers-inner-classes.md"
+    },
+    {
+      "slug": "185-近乎通用的vectordrawable",
+      "title": "近乎通用的VectorDrawable",
+      "file": "chapters/185-近乎通用的vectordrawable.md"
+    },
+    {
+      "slug": "186-让edittext中的链接即可点击又可编辑",
+      "title": "让EditText中的链接即可点击又可编辑",
+      "file": "chapters/186-让edittext中的链接即可点击又可编辑.md"
+    },
+    {
+      "slug": "187-为什么我们要用fitssystemwindows",
+      "title": "为什么我们要用fitsSystemWindows",
+      "file": "chapters/187-为什么我们要用fitssystemwindows.md"
+    },
+    {
+      "slug": "188-星球大战-原力觉醒或者用原力粉碎android的视图",
+      "title": "星球大战：原力觉醒或者用原力粉碎Android的视图",
+      "file": "chapters/188-星球大战-原力觉醒或者用原力粉碎android的视图.md"
+    },
+    {
+      "slug": "189-用transition完成fragment共享元素的切换",
+      "title": "用Transition完成Fragment共享元素的切换",
+      "file": "chapters/189-用transition完成fragment共享元素的切换.md"
+    },
+    {
+      "slug": "190-gradle提示和使用技巧",
+      "title": "Gradle提示和使用技巧",
+      "file": "chapters/190-gradle提示和使用技巧.md"
+    },
+    {
+      "slug": "191-gradle小知识1",
+      "title": "Gradle小知识1",
+      "file": "chapters/191-gradle小知识1.md"
+    },
+    {
+      "slug": "192-gradle小知识2",
+      "title": "Gradle小知识2",
+      "file": "chapters/192-gradle小知识2.md"
+    },
+    {
+      "slug": "193-gradle小知识3",
+      "title": "Gradle小知识3",
+      "file": "chapters/193-gradle小知识3.md"
+    },
+    {
+      "slug": "194-gradle小知识4",
+      "title": "Gradle小知识4",
+      "file": "chapters/194-gradle小知识4.md"
+    },
+    {
+      "slug": "195-更加强大的dagger2",
+      "title": "更加强大的Dagger2",
+      "file": "chapters/195-更加强大的dagger2.md"
+    },
+    {
+      "slug": "196-如何理解rxjava中的subjects-第一部分",
+      "title": "如何理解RxJava中的Subjects(第一部分)",
+      "file": "chapters/196-如何理解rxjava中的subjects-第一部分.md"
+    },
+    {
+      "slug": "197-使用action-process-text创建自定义文本选择动作",
+      "title": "使用ACTION_PROCESS_TEXT创建自定义文本选择动作",
+      "file": "chapters/197-使用action-process-text创建自定义文本选择动作.md"
+    },
+    {
+      "slug": "198-使用rxjava缓存rest请求",
+      "title": "使用Rxjava缓存请求",
+      "file": "chapters/198-使用rxjava缓存rest请求.md"
+    },
+    {
+      "slug": "199-在android中使用并发来提高速度和性能",
+      "title": "在Android中使用并发来提高速度和性能",
+      "file": "chapters/199-在android中使用并发来提高速度和性能.md"
+    },
+    {
+      "slug": "200-从网页中触发android原生的分享intent",
+      "title": "Triggering a native Share intent on Android from the web",
+      "file": "chapters/200-从网页中触发android原生的分享intent.md"
+    }
+  ],
+  "license": "Apache-2.0",
+  "sourceType": "github"
+}

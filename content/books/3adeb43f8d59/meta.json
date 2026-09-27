@@ -1,0 +1,16 @@
+{
+  "bookId": "3adeb43f8d59",
+  "title": "正则表达式30分钟入门教程",
+  "url": "http://deerchao.net/tutorials/regex/regex.htm",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:27.597Z",
+  "chapters": [
+    {
+      "slug": "001-19",
+      "title": "正则表达式30分钟入门教程",
+      "file": "chapters/001-19.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "正则表达式30分钟入门教程"
+}

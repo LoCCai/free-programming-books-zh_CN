@@ -1,0 +1,16 @@
+{
+  "bookId": "98828ed492bf",
+  "title": "JavaScript 教程",
+  "url": "http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:37.024Z",
+  "chapters": [
+    {
+      "slug": "001-2a",
+      "title": "首页 - 廖雪峰的官方网站",
+      "file": "chapters/001-2a.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "首页 - 廖雪峰的官方网站"
+}

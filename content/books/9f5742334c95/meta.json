@@ -1,0 +1,125 @@
+{
+  "bookId": "9f5742334c95",
+  "title": "Elixir编程入门",
+  "url": "https://github.com/straightdave/programming_elixir",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:47.153Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-intro",
+      "title": "1-intro",
+      "file": "chapters/002-1-intro.md"
+    },
+    {
+      "slug": "003-10-enum-stream",
+      "title": "10-enum-stream",
+      "file": "chapters/003-10-enum-stream.md"
+    },
+    {
+      "slug": "004-11-process",
+      "title": "spawn.exs",
+      "file": "chapters/004-11-process.md"
+    },
+    {
+      "slug": "005-12-io",
+      "title": "12-io",
+      "file": "chapters/005-12-io.md"
+    },
+    {
+      "slug": "006-13-alias-req-imp",
+      "title": "给模块起别名，让它可以用 Bar 调用而非 Foo.Bar",
+      "file": "chapters/006-13-alias-req-imp.md"
+    },
+    {
+      "slug": "007-14-mod-attr",
+      "title": "14-mod-attr",
+      "file": "chapters/007-14-mod-attr.md"
+    },
+    {
+      "slug": "008-15-structs",
+      "title": "15-structs",
+      "file": "chapters/008-15-structs.md"
+    },
+    {
+      "slug": "009-16-proto",
+      "title": "整型永远不为空",
+      "file": "chapters/009-16-proto.md"
+    },
+    {
+      "slug": "010-17-try-catch",
+      "title": "17-try-catch",
+      "file": "chapters/010-17-try-catch.md"
+    },
+    {
+      "slug": "011-18-comprehensions",
+      "title": "18-comprehensions",
+      "file": "chapters/011-18-comprehensions.md"
+    },
+    {
+      "slug": "012-19-sigils",
+      "title": "A regular expression that returns true if the text has foo or bar",
+      "file": "chapters/012-19-sigils.md"
+    },
+    {
+      "slug": "013-2-basic-types",
+      "title": "2-basic-types",
+      "file": "chapters/013-2-basic-types.md"
+    },
+    {
+      "slug": "014-20-typespecs-behaviors",
+      "title": "20-typespecs-behaviors",
+      "file": "chapters/014-20-typespecs-behaviors.md"
+    },
+    {
+      "slug": "015-21-erlang-lib",
+      "title": "Store as tuples with {name, population}",
+      "file": "chapters/015-21-erlang-lib.md"
+    },
+    {
+      "slug": "016-22-next",
+      "title": "22-next",
+      "file": "chapters/016-22-next.md"
+    },
+    {
+      "slug": "017-3-basic-ops",
+      "title": "or",
+      "file": "chapters/017-3-basic-ops.md"
+    },
+    {
+      "slug": "018-4-pattern-matching",
+      "title": "4-pattern-matching",
+      "file": "chapters/018-4-pattern-matching.md"
+    },
+    {
+      "slug": "019-5-case-cond-if",
+      "title": "5-case-cond-if",
+      "file": "chapters/019-5-case-cond-if.md"
+    },
+    {
+      "slug": "020-6-bin-str-charlist",
+      "title": "6-bin-str-charlist",
+      "file": "chapters/020-6-bin-str-charlist.md"
+    },
+    {
+      "slug": "021-7-keywords-map-dict",
+      "title": "7-keywords-map-dict",
+      "file": "chapters/021-7-keywords-map-dict.md"
+    },
+    {
+      "slug": "022-8-modules",
+      "title": "8-modules",
+      "file": "chapters/022-8-modules.md"
+    },
+    {
+      "slug": "023-9-recursion",
+      "title": "Hello!",
+      "file": "chapters/023-9-recursion.md"
+    }
+  ],
+  "sourceType": "github"
+}

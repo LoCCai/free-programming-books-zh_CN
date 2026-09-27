@@ -1,0 +1,9 @@
+{
+  "bookId": "59d2eeee5108",
+  "title": "Werkzeug 文档中文版",
+  "url": "https://werkzeug-docs-cn.readthedocs.io/zh_CN/latest/",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:26:25.867Z",
+  "chapters": [],
+  "error": "HTTP 429"
+}

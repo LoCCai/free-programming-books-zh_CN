@@ -1,0 +1,241 @@
+{
+  "bookId": "121e71fdd79d",
+  "title": "Google Python 风格指南 中文版",
+  "url": "https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:32.227Z",
+  "chapters": [
+    {
+      "slug": "001-27",
+      "title": "扉页 — Google 开源项目风格指南",
+      "file": "chapters/001-27.md"
+    },
+    {
+      "slug": "002-2m",
+      "title": "背景 — Google 开源项目风格指南",
+      "file": "chapters/002-2m.md"
+    },
+    {
+      "slug": "003-2x",
+      "title": "Python语言规范 — Google 开源项目风格指南",
+      "file": "chapters/003-2x.md"
+    },
+    {
+      "slug": "004-2u",
+      "title": "Python风格规范 — Google 开源项目风格指南",
+      "file": "chapters/004-2u.md"
+    },
+    {
+      "slug": "005-2p",
+      "title": "临别赠言 — Google 开源项目风格指南",
+      "file": "chapters/005-2p.md"
+    },
+    {
+      "slug": "006-2j",
+      "title": "Shell 风格指南 - 内容目录 — Google 开源项目风格指南",
+      "file": "chapters/006-2j.md"
+    },
+    {
+      "slug": "007-2g",
+      "title": "扉页 — Google 开源项目风格指南",
+      "file": "chapters/007-2g.md"
+    },
+    {
+      "slug": "008-2l",
+      "title": "背景 — Google 开源项目风格指南",
+      "file": "chapters/008-2l.md"
+    },
+    {
+      "slug": "009-3d",
+      "title": "Shell文件和解释器调用 — Google 开源项目风格指南",
+      "file": "chapters/009-3d.md"
+    },
+    {
+      "slug": "010-2m",
+      "title": "环境 — Google 开源项目风格指南",
+      "file": "chapters/010-2m.md"
+    },
+    {
+      "slug": "011-2j",
+      "title": "注释 — Google 开源项目风格指南",
+      "file": "chapters/011-2j.md"
+    },
+    {
+      "slug": "012-2l",
+      "title": "格式 — Google 开源项目风格指南",
+      "file": "chapters/012-2l.md"
+    },
+    {
+      "slug": "013-2s",
+      "title": "特性及错误 — Google 开源项目风格指南",
+      "file": "chapters/013-2s.md"
+    },
+    {
+      "slug": "014-2t",
+      "title": "命名约定 — Google 开源项目风格指南",
+      "file": "chapters/014-2t.md"
+    },
+    {
+      "slug": "015-2r",
+      "title": "调用命令 — Google 开源项目风格指南",
+      "file": "chapters/015-2r.md"
+    },
+    {
+      "slug": "016-2o",
+      "title": "Javascript 风格指南 - 内容目录 — Google 开源项目风格指南",
+      "file": "chapters/016-2o.md"
+    },
+    {
+      "slug": "017-2l",
+      "title": "0. 扉页 — Google 开源项目风格指南",
+      "file": "chapters/017-2l.md"
+    },
+    {
+      "slug": "018-35",
+      "title": "Javascript语言规范 — Google 开源项目风格指南",
+      "file": "chapters/018-35.md"
+    },
+    {
+      "slug": "019-32",
+      "title": "Javascript风格规范 — Google 开源项目风格指南",
+      "file": "chapters/019-32.md"
+    },
+    {
+      "slug": "020-2o",
+      "title": "TypeScript 风格指南 — Google 开源项目风格指南",
+      "file": "chapters/020-2o.md"
+    },
+    {
+      "slug": "021-2l",
+      "title": "1. 0. 扉页 — Google 开源项目风格指南",
+      "file": "chapters/021-2l.md"
+    },
+    {
+      "slug": "022-2s",
+      "title": "2. 导言 — Google 开源项目风格指南",
+      "file": "chapters/022-2s.md"
+    },
+    {
+      "slug": "023-2m",
+      "title": "3. 语法规范 — Google 开源项目风格指南",
+      "file": "chapters/023-2m.md"
+    },
+    {
+      "slug": "024-2o",
+      "title": "4. 语言特性 — Google 开源项目风格指南",
+      "file": "chapters/024-2o.md"
+    },
+    {
+      "slug": "025-2z",
+      "title": "5. 代码管理 — Google 开源项目风格指南",
+      "file": "chapters/025-2z.md"
+    },
+    {
+      "slug": "026-2r",
+      "title": "6. 类型系统 — Google 开源项目风格指南",
+      "file": "chapters/026-2r.md"
+    },
+    {
+      "slug": "027-2r",
+      "title": "7. 一致性 — Google 开源项目风格指南",
+      "file": "chapters/027-2r.md"
+    },
+    {
+      "slug": "028-2m",
+      "title": "CSS 风格指南 - 内容目录 — Google 开源项目风格指南",
+      "file": "chapters/028-2m.md"
+    },
+    {
+      "slug": "029-2j",
+      "title": "0. 扉页 — Google 开源项目风格指南",
+      "file": "chapters/029-2j.md"
+    },
+    {
+      "slug": "030-2x",
+      "title": "整体样式规则 — Google 开源项目风格指南",
+      "file": "chapters/030-2x.md"
+    },
+    {
+      "slug": "031-32",
+      "title": "总体排版规则 — Google 开源项目风格指南",
+      "file": "chapters/031-32.md"
+    },
+    {
+      "slug": "032-2w",
+      "title": "整体的元数据规则 — Google 开源项目风格指南",
+      "file": "chapters/032-2w.md"
+    },
+    {
+      "slug": "033-2u",
+      "title": "HTML样式规则 — Google 开源项目风格指南",
+      "file": "chapters/033-2u.md"
+    },
+    {
+      "slug": "034-2z",
+      "title": "HTML格式规则 — Google 开源项目风格指南",
+      "file": "chapters/034-2z.md"
+    },
+    {
+      "slug": "035-2t",
+      "title": "css样式规则 — Google 开源项目风格指南",
+      "file": "chapters/035-2t.md"
+    },
+    {
+      "slug": "036-2y",
+      "title": "CSS格式化规则 — Google 开源项目风格指南",
+      "file": "chapters/036-2y.md"
+    },
+    {
+      "slug": "037-2r",
+      "title": "赠言 — Google 开源项目风格指南",
+      "file": "chapters/037-2r.md"
+    },
+    {
+      "slug": "038-2i",
+      "title": "Java 风格指南 - 内容目录 — Google 开源项目风格指南",
+      "file": "chapters/038-2i.md"
+    },
+    {
+      "slug": "039-2f",
+      "title": "0. 扉页 — Google 开源项目风格指南",
+      "file": "chapters/039-2f.md"
+    },
+    {
+      "slug": "040-2m",
+      "title": "1. 介绍 — Google 开源项目风格指南",
+      "file": "chapters/040-2m.md"
+    },
+    {
+      "slug": "041-2s",
+      "title": "2. 源文件基础 — Google 开源项目风格指南",
+      "file": "chapters/041-2s.md"
+    },
+    {
+      "slug": "042-2v",
+      "title": "3. 源文件结构 — Google 开源项目风格指南",
+      "file": "chapters/042-2v.md"
+    },
+    {
+      "slug": "043-2k",
+      "title": "4. 格式 — Google 开源项目风格指南",
+      "file": "chapters/043-2k.md"
+    },
+    {
+      "slug": "044-2g",
+      "title": "5. 命名 — Google 开源项目风格指南",
+      "file": "chapters/044-2g.md"
+    },
+    {
+      "slug": "045-2v",
+      "title": "6. 编程习惯 — Google 开源项目风格指南",
+      "file": "chapters/045-2v.md"
+    },
+    {
+      "slug": "046-2h",
+      "title": "7. Javadoc — Google 开源项目风格指南",
+      "file": "chapters/046-2h.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "扉页 — Google 开源项目风格指南"
+}

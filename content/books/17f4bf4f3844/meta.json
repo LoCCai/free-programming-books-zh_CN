@@ -1,0 +1,16 @@
+{
+  "bookId": "17f4bf4f3844",
+  "title": "Javascript编程指南",
+  "url": "http://pij.robinqu.me/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:32.914Z",
+  "chapters": [
+    {
+      "slug": "001-m",
+      "title": "Redirecting...",
+      "file": "chapters/001-m.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Redirecting..."
+}

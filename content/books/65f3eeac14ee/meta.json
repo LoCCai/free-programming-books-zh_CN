@@ -1,0 +1,16 @@
+{
+  "bookId": "65f3eeac14ee",
+  "title": "Redis 命令参考",
+  "url": "http://redisdoc.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:55.494Z",
+  "chapters": [
+    {
+      "slug": "001-k",
+      "title": "http://redisdoc.com/",
+      "file": "chapters/001-k.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://redisdoc.com/"
+}

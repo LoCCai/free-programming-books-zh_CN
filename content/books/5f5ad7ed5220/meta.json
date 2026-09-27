@@ -1,0 +1,16 @@
+{
+  "bookId": "5f5ad7ed5220",
+  "title": "现代 Javascript 教程",
+  "url": "https://zh.javascript.info/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:32.983Z",
+  "chapters": [
+    {
+      "slug": "001-r",
+      "title": "现代 JavaScript 教程",
+      "file": "chapters/001-r.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "现代 JavaScript 教程"
+}

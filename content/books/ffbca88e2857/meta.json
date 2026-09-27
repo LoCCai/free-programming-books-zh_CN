@@ -1,0 +1,151 @@
+{
+  "bookId": "ffbca88e2857",
+  "title": "Happy-LLM：从零开始的大语言模型原理与实践教程",
+  "url": "https://github.com/datawhalechina/happy-llm",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:38.563Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "第六章实践说明",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "GRPO 配套代码",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "OPD 配套代码",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "ReTool 配套代码",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "Search-R1 配套代码",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "README",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "建筑文档智能RAG审查系统",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "大模型生成Token的方式",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "Readme",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "S1: Thinking Budget with vLLM",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "Extra-Chapter：text-data-processing",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "transformer-architecture",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "Qwen3-\"VL\"——超小中文多模态模型的“拼接微调”之路1（附代码和SwanLab记录）",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "大模型都这么厉害了，微调0.6B的小模型有什么意义？",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme-en",
+      "title": "README_en",
+      "file": "chapters/015-readme-en.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "README",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/017-sidebar.md"
+    },
+    {
+      "slug": "018-前言",
+      "title": "前言",
+      "file": "chapters/018-前言.md"
+    },
+    {
+      "slug": "019-学习与环境准备",
+      "title": "学习与环境准备",
+      "file": "chapters/019-学习与环境准备.md"
+    },
+    {
+      "slug": "020-第一章-nlp基础概念",
+      "title": "第一章 NLP 基础概念",
+      "file": "chapters/020-第一章-nlp基础概念.md"
+    },
+    {
+      "slug": "021-第二章-transformer架构",
+      "title": "第二章 Transformer 架构",
+      "file": "chapters/021-第二章-transformer架构.md"
+    },
+    {
+      "slug": "022-第三章-预训练语言模型",
+      "title": "第三章 预训练语言模型",
+      "file": "chapters/022-第三章-预训练语言模型.md"
+    },
+    {
+      "slug": "023-第四章-大语言模型",
+      "title": "第四章 大语言模型",
+      "file": "chapters/023-第四章-大语言模型.md"
+    },
+    {
+      "slug": "024-第五章-动手搭建大模型",
+      "title": "第五章 动手搭建大模型",
+      "file": "chapters/024-第五章-动手搭建大模型.md"
+    },
+    {
+      "slug": "025-6-4-wip-偏好对齐",
+      "title": "6.4 通过强化学习进行偏好对齐",
+      "file": "chapters/025-6-4-wip-偏好对齐.md"
+    },
+    {
+      "slug": "026-第六章-大模型训练流程实践",
+      "title": "第六章 大模型训练流程实践",
+      "file": "chapters/026-第六章-大模型训练流程实践.md"
+    },
+    {
+      "slug": "027-第七章-大模型应用",
+      "title": "大模型应用",
+      "file": "chapters/027-第七章-大模型应用.md"
+    },
+    {
+      "slug": "028-第八章-大模型强化学习",
+      "title": "第八章 大模型强化学习",
+      "file": "chapters/028-第八章-大模型强化学习.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "dcbc3332ab3f",
+  "title": "Flask 入门教程",
+  "url": "https://read.helloflask.com",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:07.900Z",
+  "chapters": [
+    {
+      "slug": "001-r",
+      "title": "Flask 入门教程",
+      "file": "chapters/001-r.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Flask 入门教程"
+}

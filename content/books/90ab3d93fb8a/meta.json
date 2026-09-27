@@ -1,0 +1,16 @@
+{
+  "bookId": "90ab3d93fb8a",
+  "title": "@wulijun版",
+  "url": "http://wulijun.github.io/php-the-right-way/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:02.844Z",
+  "chapters": [
+    {
+      "slug": "001-17",
+      "title": "PHP之道",
+      "file": "chapters/001-17.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "PHP之道"
+}

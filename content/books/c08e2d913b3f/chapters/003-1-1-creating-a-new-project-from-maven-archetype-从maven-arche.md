@@ -1,0 +1,29 @@
+1.1. Creating a New Project from Maven Archetype 从Maven Archetype创建一个新项目
+========================
+
+创建 Jersey 工程需要使用 Apache 的[Maven](http://maven.apache.org/)软件工程和管理工具。所有的Jersey产品模块都可以在[Maven中央库](http://search.maven.org/)中找到。因此基于 Maven 的模块都是现成的，不需要在 Maven 中增加其他的 Jersey 模块。(*译者注*：有关Maven的安装、使用，可以参考[Apache Maven 3.1.0 安装、部署、使用](http://www.waylau.com/apache-maven-3-1-0-installation-deployment-and-use/))
+
+**注意**：如果你想要使用最新的Jersey 模块的 SNAPSHOT 版本（*译者注*：SNAPSHOT 版本代表不稳定、尚处于开发中的版本），需要在pom.xml 中添加如下内容：
+
+	<repository>
+	    <id>snapshot-repository.java.net</id>
+	    <name>Java.net Snapshot Repository for Maven</name>
+	    <url>https://maven.java.net/content/repositories/snapshots/</url>
+	    <layout>default</layout>
+	</repository>
+
+使用Maven的工程创建一个 Jersey 项目是最方便的，让我们用这种方法来看一下它是怎么实现的。让我们创建一个新的 Jersey 项目,运行在[Grizzly](http://grizzly.java.net/)容器。我们使用 Jersey-provided 的 maven archetype。创建一个项目，需要执行下面的代码：
+
+```
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-grizzly2 \
+-DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false \
+-DgroupId=com.example -DartifactId=simple-service -Dpackage=com.example \
+-DarchetypeVersion=2.16
+
+```
+
+![maven archetype](http://i1288.photobucket.com/albums/b484/waylau/waylau%20blog/Jersey-2-User-Guide/11-001_zpsac90461a.jpg)
+
+![simple-service](http://i1288.photobucket.com/albums/b484/waylau/waylau%20blog/Jersey-2-User-Guide/11-002_zpsd56abf6c.jpg)
+
+在你的项目里面随意调整 pom.xml 内的 groupId，包名和版本号就可以成为一个新的项目。

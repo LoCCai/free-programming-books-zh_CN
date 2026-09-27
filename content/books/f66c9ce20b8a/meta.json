@@ -1,0 +1,20 @@
+{
+  "bookId": "f66c9ce20b8a",
+  "title": "Python3 Cookbook 中文版",
+  "url": "https://github.com/yidao620c/python3-cookbook",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:18.132Z",
+  "chapters": [
+    {
+      "slug": "001-readme-en",
+      "title": "on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org",
+      "file": "chapters/001-readme-en.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Python Cookbook 3rd Edition 中文翻译",
+      "file": "chapters/002-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

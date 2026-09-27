@@ -1,0 +1,16 @@
+{
+  "bookId": "a7e69ed2938e",
+  "title": "深入理解并行编程",
+  "url": "http://ifeve.com/perfbook/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:50.045Z",
+  "chapters": [
+    {
+      "slug": "001-q",
+      "title": "网站整改中",
+      "file": "chapters/001-q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "网站整改中"
+}

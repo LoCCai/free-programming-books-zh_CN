@@ -1,0 +1,16 @@
+{
+  "bookId": "c8d047e6d8f8",
+  "title": "超全面的 .NET GDI+ 图形图像编程教程",
+  "url": "http://www.cnblogs.com/geeksss/p/4162318.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:38.751Z",
+  "chapters": [
+    {
+      "slug": "001-19",
+      "title": "超全面的.NET GDI+图形图像编程教程 - 张董 - 博客园",
+      "file": "chapters/001-19.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "超全面的.NET GDI+图形图像编程教程 - 张董 - 博客园"
+}

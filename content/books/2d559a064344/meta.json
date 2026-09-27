@@ -1,0 +1,15 @@
+{
+  "bookId": "2d559a064344",
+  "title": "Point-of-Android",
+  "url": "https://github.com/FX-Max/Point-of-Android",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:55.982Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

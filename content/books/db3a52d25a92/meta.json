@@ -1,0 +1,16 @@
+{
+  "bookId": "db3a52d25a92",
+  "title": "从零开始的Nodejs系列文章",
+  "url": "http://blog.fens.me/series-nodejs/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:45.802Z",
+  "chapters": [
+    {
+      "slug": "001-y",
+      "title": "从零开始nodejs系列文章 | 粉丝日志",
+      "file": "chapters/001-y.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "从零开始nodejs系列文章 | 粉丝日志"
+}

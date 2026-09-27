@@ -1,0 +1,16 @@
+{
+  "bookId": "d3422b0b2670",
+  "title": "程序员的自我修养",
+  "url": "http://www.kancloud.cn/kancloud/a-programmer-prepares",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:50.401Z",
+  "chapters": [
+    {
+      "slug": "001-1h",
+      "title": "程序员的自我修养 · 看云",
+      "file": "chapters/001-1h.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "程序员的自我修养 · 看云"
+}

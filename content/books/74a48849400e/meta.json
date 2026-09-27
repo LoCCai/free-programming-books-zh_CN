@@ -1,0 +1,65 @@
+{
+  "bookId": "74a48849400e",
+  "title": "RFC 7540 - HTTP/2 中文翻译版",
+  "url": "https://github.com/abbshr/rfc7540-translation-zh_cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:39.200Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "RFC 7540 Translation (in progress)",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-zh-cn",
+      "title": "1-zh-cn",
+      "file": "chapters/002-1-zh-cn.md"
+    },
+    {
+      "slug": "003-10-zh-cn",
+      "title": "10-zh-cn",
+      "file": "chapters/003-10-zh-cn.md"
+    },
+    {
+      "slug": "004-2-zh-cn",
+      "title": "2.HTTP/2 协议综述",
+      "file": "chapters/004-2-zh-cn.md"
+    },
+    {
+      "slug": "005-3-zh-cn",
+      "title": "3-zh-cn",
+      "file": "chapters/005-3-zh-cn.md"
+    },
+    {
+      "slug": "006-4-zh-cn",
+      "title": "4. HTTP帧",
+      "file": "chapters/006-4-zh-cn.md"
+    },
+    {
+      "slug": "007-5-zh-cn",
+      "title": "5. 流和多路复用",
+      "file": "chapters/007-5-zh-cn.md"
+    },
+    {
+      "slug": "008-6-zh-cn",
+      "title": "6. Frame Definitions",
+      "file": "chapters/008-6-zh-cn.md"
+    },
+    {
+      "slug": "009-7-zh-cn",
+      "title": "错误码",
+      "file": "chapters/009-7-zh-cn.md"
+    },
+    {
+      "slug": "010-8-zh-cn",
+      "title": "8-zh-cn",
+      "file": "chapters/010-8-zh-cn.md"
+    },
+    {
+      "slug": "011-9-zh-cn",
+      "title": "9. 其他HTTP要求/注意事项",
+      "file": "chapters/011-9-zh-cn.md"
+    }
+  ],
+  "sourceType": "github"
+}

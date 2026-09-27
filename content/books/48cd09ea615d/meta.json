@@ -1,0 +1,16 @@
+{
+  "bookId": "48cd09ea615d",
+  "title": "MDN HTML 中文文档",
+  "url": "https://developer.mozilla.org/zh-CN/docs/Web/HTML",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:46.331Z",
+  "chapters": [
+    {
+      "slug": "001-1d",
+      "title": "HTML（超文本标记语言） | MDN",
+      "file": "chapters/001-1d.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "HTML（超文本标记语言） | MDN"
+}

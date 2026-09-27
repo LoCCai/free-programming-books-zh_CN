@@ -1,0 +1,16 @@
+{
+  "bookId": "b9f59c802ce8",
+  "title": "C4iOS - COSMOS",
+  "url": "http://c4ios.swift.gg",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:27.083Z",
+  "chapters": [
+    {
+      "slug": "001-l",
+      "title": "http://c4ios.swift.gg",
+      "file": "chapters/001-l.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://c4ios.swift.gg"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "f089d4934dee",
+  "title": "图灵开放书翻译计划--C++、Python、Java等",
+  "url": "http://www.ituring.com.cn/activity/details/2004",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:31.465Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "图灵社区",
+      "file": "chapters/001-1b.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "图灵社区"
+}

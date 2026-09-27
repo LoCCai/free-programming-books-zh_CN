@@ -1,0 +1,16 @@
+{
+  "bookId": "cd19eed0756f",
+  "title": "OpenResty最佳实践",
+  "url": "https://www.gitbook.com/book/moonbingbing/openresty-best-practices/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:06.534Z",
+  "chapters": [
+    {
+      "slug": "001-22",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-22.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

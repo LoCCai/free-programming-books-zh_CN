@@ -1,0 +1,15 @@
+{
+  "bookId": "ce0861b35b18",
+  "title": "Shell脚本编程30分钟入门",
+  "url": "https://github.com/qinjx/30min_guides/blob/master/shell.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:22.352Z",
+  "chapters": [
+    {
+      "slug": "001-shell",
+      "title": "shell",
+      "file": "chapters/001-shell.md"
+    }
+  ],
+  "sourceType": "github"
+}

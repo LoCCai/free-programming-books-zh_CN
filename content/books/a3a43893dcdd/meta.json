@@ -1,0 +1,261 @@
+{
+  "bookId": "a3a43893dcdd",
+  "title": "Git权威指南",
+  "url": "http://www.worldhello.net/gotgit/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:48.759Z",
+  "chapters": [
+    {
+      "slug": "001-x",
+      "title": "Git权威指南 — GotGit",
+      "file": "chapters/001-x.md"
+    },
+    {
+      "slug": "002-1j",
+      "title": "1. 初识Git — GotGit",
+      "file": "chapters/002-1j.md"
+    },
+    {
+      "slug": "003-1t",
+      "title": "1.1. 版本控制的前世和今生 — GotGit",
+      "file": "chapters/003-1t.md"
+    },
+    {
+      "slug": "004-1q",
+      "title": "1.2. 爱上Git的理由 — GotGit",
+      "file": "chapters/004-1q.md"
+    },
+    {
+      "slug": "005-1u",
+      "title": "1.3. 安装Git — GotGit",
+      "file": "chapters/005-1u.md"
+    },
+    {
+      "slug": "006-1y",
+      "title": "1.3.1. Linux下安装和使用Git — GotGit",
+      "file": "chapters/006-1y.md"
+    },
+    {
+      "slug": "007-1w",
+      "title": "1.3.2. Mac OS X下安装和使用Git — GotGit",
+      "file": "chapters/007-1w.md"
+    },
+    {
+      "slug": "008-27",
+      "title": "1.3.3. Windows下安装和使用Git（Cygwin篇） — GotGit",
+      "file": "chapters/008-27.md"
+    },
+    {
+      "slug": "009-28",
+      "title": "1.3.4. Windows下安装和使用Git（msysGit篇） — GotGit",
+      "file": "chapters/009-28.md"
+    },
+    {
+      "slug": "010-1j",
+      "title": "2. Git独奏 — GotGit",
+      "file": "chapters/010-1j.md"
+    },
+    {
+      "slug": "011-1q",
+      "title": "2.1. Git初始化 — GotGit",
+      "file": "chapters/011-1q.md"
+    },
+    {
+      "slug": "012-1r",
+      "title": "2.2. Git暂存区 — GotGit",
+      "file": "chapters/012-1r.md"
+    },
+    {
+      "slug": "013-25",
+      "title": "2.3. Git对象 — GotGit",
+      "file": "chapters/013-25.md"
+    },
+    {
+      "slug": "014-1r",
+      "title": "2.4. Git重置 — GotGit",
+      "file": "chapters/014-1r.md"
+    },
+    {
+      "slug": "015-1u",
+      "title": "2.5. Git检出 — GotGit",
+      "file": "chapters/015-1u.md"
+    },
+    {
+      "slug": "016-1z",
+      "title": "2.6. 恢复进度 — GotGit",
+      "file": "chapters/016-1z.md"
+    },
+    {
+      "slug": "017-1r",
+      "title": "2.7. Git基本操作 — GotGit",
+      "file": "chapters/017-1r.md"
+    },
+    {
+      "slug": "018-20",
+      "title": "2.8. 历史穿梭 — GotGit",
+      "file": "chapters/018-20.md"
+    },
+    {
+      "slug": "019-1w",
+      "title": "2.9. 改变历史 — GotGit",
+      "file": "chapters/019-1w.md"
+    },
+    {
+      "slug": "020-1r",
+      "title": "2.10. Git克隆 — GotGit",
+      "file": "chapters/020-1r.md"
+    },
+    {
+      "slug": "021-1r",
+      "title": "2.11. Git库管理 — GotGit",
+      "file": "chapters/021-1r.md"
+    },
+    {
+      "slug": "022-1m",
+      "title": "3. Git和声 — GotGit",
+      "file": "chapters/022-1m.md"
+    },
+    {
+      "slug": "023-1t",
+      "title": "3.1. Git协议与工作协同 — GotGit",
+      "file": "chapters/023-1t.md"
+    },
+    {
+      "slug": "024-1t",
+      "title": "3.2. 冲突解决 — GotGit",
+      "file": "chapters/024-1t.md"
+    },
+    {
+      "slug": "025-1s",
+      "title": "3.3. Git里程碑 — GotGit",
+      "file": "chapters/025-1s.md"
+    },
+    {
+      "slug": "026-1v",
+      "title": "3.4. Git分支 — GotGit",
+      "file": "chapters/026-1v.md"
+    },
+    {
+      "slug": "027-1v",
+      "title": "3.5. 远程版本库 — GotGit",
+      "file": "chapters/027-1v.md"
+    },
+    {
+      "slug": "028-1w",
+      "title": "3.6. 补丁文件交互 — GotGit",
+      "file": "chapters/028-1w.md"
+    },
+    {
+      "slug": "029-1k",
+      "title": "4. Git协同模型 — GotGit",
+      "file": "chapters/029-1k.md"
+    },
+    {
+      "slug": "030-1w",
+      "title": "4.1. 经典Git协同模型 — GotGit",
+      "file": "chapters/030-1w.md"
+    },
+    {
+      "slug": "031-1z",
+      "title": "4.2. 金字塔式协同模型 — GotGit",
+      "file": "chapters/031-1z.md"
+    },
+    {
+      "slug": "032-1v",
+      "title": "4.3. Topgit协同模型 — GotGit",
+      "file": "chapters/032-1v.md"
+    },
+    {
+      "slug": "033-1y",
+      "title": "4.4. 子模组协同模型 — GotGit",
+      "file": "chapters/033-1y.md"
+    },
+    {
+      "slug": "034-1w",
+      "title": "4.5. 子树合并 — GotGit",
+      "file": "chapters/034-1w.md"
+    },
+    {
+      "slug": "035-1w",
+      "title": "4.6. Android式多版本库协同 — GotGit",
+      "file": "chapters/035-1w.md"
+    },
+    {
+      "slug": "036-1q",
+      "title": "4.7. Git和SVN协同模型 — GotGit",
+      "file": "chapters/036-1q.md"
+    },
+    {
+      "slug": "037-1l",
+      "title": "5. 搭建Git服务器 — GotGit",
+      "file": "chapters/037-1l.md"
+    },
+    {
+      "slug": "038-1o",
+      "title": "5.1. 使用HTTP协议 — GotGit",
+      "file": "chapters/038-1o.md"
+    },
+    {
+      "slug": "039-1n",
+      "title": "5.2. 使用Git协议 — GotGit",
+      "file": "chapters/039-1n.md"
+    },
+    {
+      "slug": "040-1n",
+      "title": "5.3. 使用SSH协议 — GotGit",
+      "file": "chapters/040-1n.md"
+    },
+    {
+      "slug": "041-1s",
+      "title": "5.4. Gitolite服务架设 — GotGit",
+      "file": "chapters/041-1s.md"
+    },
+    {
+      "slug": "042-1r",
+      "title": "5.5. Gitosis服务架设 — GotGit",
+      "file": "chapters/042-1r.md"
+    },
+    {
+      "slug": "043-1q",
+      "title": "5.6. Gerrit代码审核服务器 — GotGit",
+      "file": "chapters/043-1q.md"
+    },
+    {
+      "slug": "044-1v",
+      "title": "5.7. Git版本库托管 — GotGit",
+      "file": "chapters/044-1v.md"
+    },
+    {
+      "slug": "045-1i",
+      "title": "6. 迁移到Git — GotGit",
+      "file": "chapters/045-1i.md"
+    },
+    {
+      "slug": "046-1k",
+      "title": "6.1. CVS版本库到Git的迁移 — GotGit",
+      "file": "chapters/046-1k.md"
+    },
+    {
+      "slug": "047-1n",
+      "title": "6.2. 更多版本控制系统的迁移 — GotGit",
+      "file": "chapters/047-1n.md"
+    },
+    {
+      "slug": "048-1k",
+      "title": "6.2.1. SVN版本库到Git的迁移 — GotGit",
+      "file": "chapters/048-1k.md"
+    },
+    {
+      "slug": "049-1j",
+      "title": "6.2.2. Hg版本库到Git的迁移 — GotGit",
+      "file": "chapters/049-1j.md"
+    },
+    {
+      "slug": "050-1n",
+      "title": "6.2.3. 通用版本库迁移 — GotGit",
+      "file": "chapters/050-1n.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Git权威指南 — GotGit"
+}

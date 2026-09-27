@@ -1,0 +1,15 @@
+{
+  "bookId": "8916f09e4675",
+  "title": "C++ Template 进阶指南",
+  "url": "https://github.com/wuye9036/CppTemplateTutorial",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:31.996Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "1. 前言",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

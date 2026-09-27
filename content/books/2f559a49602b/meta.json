@@ -1,0 +1,16 @@
+{
+  "bookId": "2f559a49602b",
+  "title": "Ruby on Rails Tutorial 原书第 3 版",
+  "url": "http://railstutorial-china.org/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:13.995Z",
+  "chapters": [
+    {
+      "slug": "001-v",
+      "title": "railstutorial-china.org",
+      "file": "chapters/001-v.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "railstutorial-china.org"
+}

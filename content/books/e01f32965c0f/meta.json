@@ -1,0 +1,15 @@
+{
+  "bookId": "e01f32965c0f",
+  "title": "Nodejs Wiki Book",
+  "url": "https://github.com/nodejs-tw/nodejs-wiki-book",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:39.303Z",
+  "chapters": [
+    {
+      "slug": "001-slide1",
+      "title": "In the morning",
+      "file": "chapters/001-slide1.md"
+    }
+  ],
+  "sourceType": "github"
+}

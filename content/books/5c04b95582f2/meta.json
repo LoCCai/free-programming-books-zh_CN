@@ -1,0 +1,16 @@
+{
+  "bookId": "5c04b95582f2",
+  "title": "The Twelve-Factor App",
+  "url": "http://12factor.net/zh_cn/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:18.217Z",
+  "chapters": [
+    {
+      "slug": "001-q",
+      "title": "The Twelve-Factor App （简体中文）",
+      "file": "chapters/001-q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The Twelve-Factor App （简体中文）"
+}

@@ -1,0 +1,131 @@
+{
+  "bookId": "f79febb6a25c",
+  "title": "Go语言设计模式",
+  "url": "https://github.com/senghoo/golang-design-pattern",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:30.496Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "简单工厂模式",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "外观模式",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "适配器模式",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "单例模式",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "工厂方法模式",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "抽象工厂模式",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "原型模式",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "中介者模式",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "代理模式",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "观察者模式",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "命令模式",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "迭代器模式",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "组合模式",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "模版方法模式",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "策略模式",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "状态模式",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "备忘录模式",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "享元模式",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "解释器模式",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "装饰模式",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "职责链模式",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "桥接模式",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme",
+      "title": "访问者模式",
+      "file": "chapters/023-readme.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "Go 语言设计模式",
+      "file": "chapters/024-readme.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

@@ -1,0 +1,60 @@
+{
+  "bookId": "5652cab160ff",
+  "title": "React 学习之道",
+  "url": "https://github.com/the-road-to-learn-react/the-road-to-learn-react-chinese",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:47.316Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "简介",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-foreword-cn",
+      "title": "前言",
+      "file": "chapters/002-foreword-cn.md"
+    },
+    {
+      "slug": "003-chapter1-cn",
+      "title": "第一章",
+      "file": "chapters/003-chapter1-cn.md"
+    },
+    {
+      "slug": "004-chapter2-cn",
+      "title": "第二章",
+      "file": "chapters/004-chapter2-cn.md"
+    },
+    {
+      "slug": "005-chapter3-cn",
+      "title": "第三章",
+      "file": "chapters/005-chapter3-cn.md"
+    },
+    {
+      "slug": "006-chapter4",
+      "title": "第四章",
+      "file": "chapters/006-chapter4.md"
+    },
+    {
+      "slug": "007-chapter5",
+      "title": "第五章",
+      "file": "chapters/007-chapter5.md"
+    },
+    {
+      "slug": "008-chapter6-cn",
+      "title": "第六章",
+      "file": "chapters/008-chapter6-cn.md"
+    },
+    {
+      "slug": "009-deploychapter-cn",
+      "title": "部署",
+      "file": "chapters/009-deploychapter-cn.md"
+    },
+    {
+      "slug": "010-finalwords-cn",
+      "title": "概述",
+      "file": "chapters/010-finalwords-cn.md"
+    }
+  ],
+  "sourceType": "github"
+}

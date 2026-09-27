@@ -1,0 +1,100 @@
+{
+  "bookId": "39fab88f0b3c",
+  "title": "OpenGL 教程",
+  "url": "https://github.com/zilongshanren/opengl-tutorials",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:15:13.316Z",
+  "chapters": [
+    {
+      "slug": "001-zh",
+      "title": "第一课：新建一个窗口",
+      "file": "chapters/001-zh.md"
+    },
+    {
+      "slug": "002-zh",
+      "title": "第二课：画第一个三角形",
+      "file": "chapters/002-zh.md"
+    },
+    {
+      "slug": "003-zh",
+      "title": "第三课：矩阵",
+      "file": "chapters/003-zh.md"
+    },
+    {
+      "slug": "004-zh",
+      "title": "第四课：彩色立方体",
+      "file": "chapters/004-zh.md"
+    },
+    {
+      "slug": "005-zh",
+      "title": "第五课：带纹理的立方体",
+      "file": "chapters/005-zh.md"
+    },
+    {
+      "slug": "006-zh",
+      "title": "第六课：键盘和鼠标",
+      "file": "chapters/006-zh.md"
+    },
+    {
+      "slug": "007-zh",
+      "title": "第七课：模型加载",
+      "file": "chapters/007-zh.md"
+    },
+    {
+      "slug": "008-zh",
+      "title": "第八课：基本着色",
+      "file": "chapters/008-zh.md"
+    },
+    {
+      "slug": "009-zh",
+      "title": "第九课：VBO索引",
+      "file": "chapters/009-zh.md"
+    },
+    {
+      "slug": "010-zh",
+      "title": "第十课：透明",
+      "file": "chapters/010-zh.md"
+    },
+    {
+      "slug": "011-zh",
+      "title": "第十一课：2D文本",
+      "file": "chapters/011-zh.md"
+    },
+    {
+      "slug": "012-zh",
+      "title": "第十二课：OpenGL扩展",
+      "file": "chapters/012-zh.md"
+    },
+    {
+      "slug": "013-zh",
+      "title": "第十三课：法线贴图",
+      "file": "chapters/013-zh.md"
+    },
+    {
+      "slug": "014-zh",
+      "title": "第十四课: 渲染到纹理",
+      "file": "chapters/014-zh.md"
+    },
+    {
+      "slug": "015-zh",
+      "title": "第十五课: 光照贴图",
+      "file": "chapters/015-zh.md"
+    },
+    {
+      "slug": "016-zh",
+      "title": "第十六课: 阴影贴图",
+      "file": "chapters/016-zh.md"
+    },
+    {
+      "slug": "017-zh",
+      "title": "第十七课: 旋转",
+      "file": "chapters/017-zh.md"
+    },
+    {
+      "slug": "018-zh",
+      "title": "第十八课: Billboard和粒子",
+      "file": "chapters/018-zh.md"
+    }
+  ],
+  "sourceType": "github"
+}

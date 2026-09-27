@@ -1,0 +1,50 @@
+{
+  "bookId": "110af8cac0ac",
+  "title": "Git-Cheat-Sheet",
+  "url": "https://github.com/flyhigher139/Git-Cheat-Sheet",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:38.860Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Git Cheat Sheet 中文版 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-git-cheat-sheet-ar",
+      "title": "git-cheat-sheet-ar",
+      "file": "chapters/002-git-cheat-sheet-ar.md"
+    },
+    {
+      "slug": "003-git-cheat-sheet-en",
+      "title": "Other Available Languages:",
+      "file": "chapters/003-git-cheat-sheet-en.md"
+    },
+    {
+      "slug": "004-git-cheat-sheet-es",
+      "title": "git-cheat-sheet-es",
+      "file": "chapters/004-git-cheat-sheet-es.md"
+    },
+    {
+      "slug": "005-git-cheat-sheet-hi",
+      "title": "git-cheat-sheet-hi",
+      "file": "chapters/005-git-cheat-sheet-hi.md"
+    },
+    {
+      "slug": "006-git-cheat-sheet-np",
+      "title": "Other Available Languages:",
+      "file": "chapters/006-git-cheat-sheet-np.md"
+    },
+    {
+      "slug": "007-git-cheat-sheet-tr",
+      "title": "git-cheat-sheet-tr",
+      "file": "chapters/007-git-cheat-sheet-tr.md"
+    },
+    {
+      "slug": "008-git-cheat-sheet-zh",
+      "title": "Git Cheat Sheet 中文版 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)",
+      "file": "chapters/008-git-cheat-sheet-zh.md"
+    }
+  ],
+  "sourceType": "github"
+}

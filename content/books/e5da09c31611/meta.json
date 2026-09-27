@@ -1,0 +1,251 @@
+{
+  "bookId": "e5da09c31611",
+  "title": "可爱的 Python",
+  "url": "https://lovelypython.readthedocs.io/en/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:35.104Z",
+  "chapters": [
+    {
+      "slug": "001-1a",
+      "title": "可爱的Python — LovelyPython 09.08.27 documentation",
+      "file": "chapters/001-1a.md"
+    },
+    {
+      "slug": "002-1s",
+      "title": "书前 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/002-1s.md"
+    },
+    {
+      "slug": "003-1x",
+      "title": "哲思自由软件图书序 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/003-1x.md"
+    },
+    {
+      "slug": "004-21",
+      "title": "preface by Guido van Rossum — LovelyPython 09.08.27 documentation",
+      "file": "chapters/004-21.md"
+    },
+    {
+      "slug": "005-1w",
+      "title": "书序 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/005-1w.md"
+    },
+    {
+      "slug": "006-1w",
+      "title": "前言 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/006-1w.md"
+    },
+    {
+      "slug": "007-1x",
+      "title": "感谢 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/007-1x.md"
+    },
+    {
+      "slug": "008-1v",
+      "title": "实例故事 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/008-1v.md"
+    },
+    {
+      "slug": "009-1v",
+      "title": "实例故事 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/009-1v.md"
+    },
+    {
+      "slug": "010-1v",
+      "title": "CDays — LovelyPython 09.08.27 documentation",
+      "file": "chapters/010-1v.md"
+    },
+    {
+      "slug": "011-1w",
+      "title": "Python初体验和原始需求 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/011-1w.md"
+    },
+    {
+      "slug": "012-1w",
+      "title": "CDay -4 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/012-1w.md"
+    },
+    {
+      "slug": "013-1w",
+      "title": "CDay -3 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/013-1w.md"
+    },
+    {
+      "slug": "014-1w",
+      "title": "CDay -2 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/014-1w.md"
+    },
+    {
+      "slug": "015-1w",
+      "title": "CDay -1 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/015-1w.md"
+    },
+    {
+      "slug": "016-1w",
+      "title": "CDay 0 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/016-1w.md"
+    },
+    {
+      "slug": "017-1w",
+      "title": "CDay +1 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/017-1w.md"
+    },
+    {
+      "slug": "018-1w",
+      "title": "CDay +2 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/018-1w.md"
+    },
+    {
+      "slug": "019-1w",
+      "title": "CDay +3 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/019-1w.md"
+    },
+    {
+      "slug": "020-1w",
+      "title": "CDay +N — LovelyPython 09.08.27 documentation",
+      "file": "chapters/020-1w.md"
+    },
+    {
+      "slug": "021-1v",
+      "title": "KDays — LovelyPython 09.08.27 documentation",
+      "file": "chapters/021-1v.md"
+    },
+    {
+      "slug": "022-1v",
+      "title": "KDay 0 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/022-1v.md"
+    },
+    {
+      "slug": "023-1v",
+      "title": "KDay 1 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/023-1v.md"
+    },
+    {
+      "slug": "024-1v",
+      "title": "KDay 2 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/024-1v.md"
+    },
+    {
+      "slug": "025-1v",
+      "title": "KDay 3 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/025-1v.md"
+    },
+    {
+      "slug": "026-1v",
+      "title": "KDay 4 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/026-1v.md"
+    },
+    {
+      "slug": "027-1v",
+      "title": "KDay 5 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/027-1v.md"
+    },
+    {
+      "slug": "028-1v",
+      "title": "KDay 6 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/028-1v.md"
+    },
+    {
+      "slug": "029-1v",
+      "title": "KDay N — LovelyPython 09.08.27 documentation",
+      "file": "chapters/029-1v.md"
+    },
+    {
+      "slug": "030-1o",
+      "title": "作弊条儿 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/030-1o.md"
+    },
+    {
+      "slug": "031-1o",
+      "title": "概述 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/031-1o.md"
+    },
+    {
+      "slug": "032-1n",
+      "title": "PCS 0 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/032-1n.md"
+    },
+    {
+      "slug": "033-1p",
+      "title": "PCS 100 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/033-1p.md"
+    },
+    {
+      "slug": "034-1p",
+      "title": "PCS 200 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/034-1p.md"
+    },
+    {
+      "slug": "035-1p",
+      "title": "PCS 300 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/035-1p.md"
+    },
+    {
+      "slug": "036-1p",
+      "title": "PCS 400 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/036-1p.md"
+    },
+    {
+      "slug": "037-20",
+      "title": "推荐阅读 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/037-20.md"
+    },
+    {
+      "slug": "038-1q",
+      "title": "小结 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/038-1q.md"
+    },
+    {
+      "slug": "039-1p",
+      "title": "附录 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/039-1p.md"
+    },
+    {
+      "slug": "040-1s",
+      "title": "术语表 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/040-1s.md"
+    },
+    {
+      "slug": "041-1p",
+      "title": "资源索引 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/041-1p.md"
+    },
+    {
+      "slug": "042-1p",
+      "title": "跋 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/042-1p.md"
+    },
+    {
+      "slug": "043-1p",
+      "title": "行者箴言 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/043-1p.md"
+    },
+    {
+      "slug": "044-1u",
+      "title": "后记故事 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/044-1u.md"
+    },
+    {
+      "slug": "045-1o",
+      "title": "Z跋 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/045-1o.md"
+    },
+    {
+      "slug": "046-1l",
+      "title": "图书工程说明 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/046-1l.md"
+    },
+    {
+      "slug": "047-1m",
+      "title": "关于作者s — LovelyPython 09.08.27 documentation",
+      "file": "chapters/047-1m.md"
+    },
+    {
+      "slug": "048-1o",
+      "title": "关键时间点 — LovelyPython 09.08.27 documentation",
+      "file": "chapters/048-1o.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "可爱的Python — LovelyPython 09.08.27 documentation"
+}

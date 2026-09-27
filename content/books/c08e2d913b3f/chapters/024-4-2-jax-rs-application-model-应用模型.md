@@ -1,0 +1,28 @@
+4.2. JAX-RS Application Model 应用模型
+========================
+
+JAX-RS 提供部署无关的抽象类的 [Application ](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Application.html)用来声明根资源和提供类和根资源，以及提供单例。Web 服务可以扩展这个类声明的根资源提供程序类。例如，
+
+Example 4.1. 部署无关的抽象类的应用模型
+
+
+	public class MyApplication extends Application {
+	    @Override
+	    public Set<Class<?>> getClasses() {
+	        Set<Class<?>> s = new HashSet<Class<?>>();
+	        s.add(HelloWorldResource.class);
+	        return s;
+	    }
+	}
+
+或者可以重用 [ResourceConfig](https://jersey.java.net/apidocs/2.16/jersey/org/glassfish/jersey/server/ResourceConfig.html) - Jersey 自己实现的 Application 类。这个类可以直接被实例化，然后配置或可扩展和配置代码放置到扩展类的构造函数。该方法通常取决于所选的部署运行时。
+
+与 Application 相比，ResourceConfig  提供了先进的功能来简化 JAX-RS 组件注册，如扫描根资源、类提供者提供的路径或一组包名的集合。所有 JAX-RS 组件类都会手动注册或者扫描期间找到的类都会自动添加到 getClasses 所返回的类的集合中。例如，下面的 application  类继承自 ResourceConfig 在部署时会扫描包 org.foo.rest 和 org.bar.rest 中的 JAX-RS 组件：
+
+Example 4.2. 在应用模型中重用 Jersey 的实现
+
+	public class MyApplication extends ResourceConfig {
+	    public MyApplication() {
+	        packages("org.foo.rest;org.bar.rest");
+	    }
+	}

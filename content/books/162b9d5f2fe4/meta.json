@@ -1,0 +1,1011 @@
+{
+  "bookId": "162b9d5f2fe4",
+  "title": "游戏引擎 浅入浅出",
+  "url": "https://github.com/ThisisGame/cpp-game-engine-book",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:20:29.887Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "README",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "boolinq 3.0",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "bundle :package: <a href=\"https://travis-ci.org/r-lyeh/bundle\"><img src=\"https://api.travis-ci.org/r-lyeh/bundle.svg?branch=master\" align=\"right\" /></a>",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "cppcodec",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "README",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "Vince's CSV Parser",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "digestpp",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "easy_profiler [![2.0.1](https://img.shields.io/badge/stable-2.0.1-009688.svg)](https://github.com/yse/easy_profiler/releases) [![2.1.0](https://img.shields.io/badge/latest-2.1.0-f57f17.svg)](https://github.com/yse/easy_profiler)",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "eventpp -- C++ library for event dispatcher and callback list",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "README",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "GLFW",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "Google protobuf support for Lua",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "LuaSocket",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "Magic Enum C++",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "README",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "README",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "Feature Summary",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "README",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "spdlog",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "SPSCQueue.h",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "README",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme",
+      "title": "stduuid",
+      "file": "chapters/023-readme.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "README",
+      "file": "chapters/024-readme.md"
+    },
+    {
+      "slug": "025-readme",
+      "title": "Tweeny",
+      "file": "chapters/025-readme.md"
+    },
+    {
+      "slug": "026-langs",
+      "title": "LANGS",
+      "file": "chapters/026-langs.md"
+    },
+    {
+      "slug": "027-1-game-engine-framework-introduction",
+      "title": "1. game_engine_framework_introduction",
+      "file": "chapters/027-1-game-engine-framework-introduction.md"
+    },
+    {
+      "slug": "028-1-1-unity-framework",
+      "title": "1.1 unity_framework",
+      "file": "chapters/028-1-1-unity-framework.md"
+    },
+    {
+      "slug": "029-1-2-game-engine-composition",
+      "title": "1.2 game_engine_composition",
+      "file": "chapters/029-1-2-game-engine-composition.md"
+    },
+    {
+      "slug": "030-10-camera",
+      "title": "10. camera",
+      "file": "chapters/030-10-camera.md"
+    },
+    {
+      "slug": "031-10-1-simple-camera",
+      "title": "10.1 simple_camera",
+      "file": "chapters/031-10-1-simple-camera.md"
+    },
+    {
+      "slug": "032-10-2-multi-camera-rendering",
+      "title": "10.2 multi-camera_rendering",
+      "file": "chapters/032-10-2-multi-camera-rendering.md"
+    },
+    {
+      "slug": "033-10-3-camera-sorting",
+      "title": "10.3 camera_sorting",
+      "file": "chapters/033-10-3-camera-sorting.md"
+    },
+    {
+      "slug": "034-10-4-culling-mask",
+      "title": "10.4 culling_mask",
+      "file": "chapters/034-10-4-culling-mask.md"
+    },
+    {
+      "slug": "035-11-control-system",
+      "title": "11. control_system",
+      "file": "chapters/035-11-control-system.md"
+    },
+    {
+      "slug": "036-11-1-keyboard-control",
+      "title": "11.1 keyboard_control",
+      "file": "chapters/036-11-1-keyboard-control.md"
+    },
+    {
+      "slug": "037-11-2-mouse-control",
+      "title": "11.2 mouse_control",
+      "file": "chapters/037-11-2-mouse-control.md"
+    },
+    {
+      "slug": "038-12-split-engine-and-project",
+      "title": "12. split_engine_and_project",
+      "file": "chapters/038-12-split-engine-and-project.md"
+    },
+    {
+      "slug": "039-obsolete-13-1-draw-truetype",
+      "title": "[Obsolete]13.1 draw_truetype",
+      "file": "chapters/039-obsolete-13-1-draw-truetype.md"
+    },
+    {
+      "slug": "040-13-draw-text",
+      "title": "13. draw_text",
+      "file": "chapters/040-13-draw-text.md"
+    },
+    {
+      "slug": "041-13-1-introduction-to-truetype",
+      "title": "13.1 introduction_to_truetype",
+      "file": "chapters/041-13-1-introduction-to-truetype.md"
+    },
+    {
+      "slug": "042-13-2-draw-one-character",
+      "title": "13.2 draw_one_character",
+      "file": "chapters/042-13-2-draw-one-character.md"
+    },
+    {
+      "slug": "043-13-3-drawing-multiple-texts",
+      "title": "13.3 drawing_multiple_texts",
+      "file": "chapters/043-13-3-drawing-multiple-texts.md"
+    },
+    {
+      "slug": "044-13-4-draw-color-word",
+      "title": "13.4 draw_color_word",
+      "file": "chapters/044-13-4-draw-color-word.md"
+    },
+    {
+      "slug": "045-14-gui",
+      "title": "14. gui",
+      "file": "chapters/045-14-gui.md"
+    },
+    {
+      "slug": "046-14-1-orthographic-camera",
+      "title": "14.1 orthographic_camera",
+      "file": "chapters/046-14-1-orthographic-camera.md"
+    },
+    {
+      "slug": "047-14-2-uiimage",
+      "title": "14.2 UIImage",
+      "file": "chapters/047-14-2-uiimage.md"
+    },
+    {
+      "slug": "048-14-3-uimask",
+      "title": "14.3 UIMask",
+      "file": "chapters/048-14-3-uimask.md"
+    },
+    {
+      "slug": "049-14-4-uitext",
+      "title": "14.4 UIText",
+      "file": "chapters/049-14-4-uitext.md"
+    },
+    {
+      "slug": "050-14-5-uibutton",
+      "title": "14.5 UIButton",
+      "file": "chapters/050-14-5-uibutton.md"
+    },
+    {
+      "slug": "051-15-play-sound-effects",
+      "title": "15. play_sound_effects",
+      "file": "chapters/051-15-play-sound-effects.md"
+    },
+    {
+      "slug": "052-15-1-playing-2d-sound-effects",
+      "title": "15.1 playing_2d_sound_effects",
+      "file": "chapters/052-15-1-playing-2d-sound-effects.md"
+    },
+    {
+      "slug": "053-15-2-playing-3d-sound-effects",
+      "title": "15.2 playing_3d_sound_effects",
+      "file": "chapters/053-15-2-playing-3d-sound-effects.md"
+    },
+    {
+      "slug": "054-15-3-using-the-fmod-studio-audio-engine",
+      "title": "15.3 using_the_fmod_studio_audio_engine",
+      "file": "chapters/054-15-3-using-the-fmod-studio-audio-engine.md"
+    },
+    {
+      "slug": "055-16-profiler",
+      "title": "16. profiler",
+      "file": "chapters/055-16-profiler.md"
+    },
+    {
+      "slug": "056-16-1-introducing-easy-profiler",
+      "title": "16.1 introducing_easy_profiler",
+      "file": "chapters/056-16-1-introducing-easy-profiler.md"
+    },
+    {
+      "slug": "057-16-2-integrating-easy-profiler",
+      "title": "define EASY_MAIN_THREAD EASY_THREAD(\"Main\")",
+      "file": "chapters/057-16-2-integrating-easy-profiler.md"
+    },
+    {
+      "slug": "058-obsolete-17-1-interaction-between-lua-and-c",
+      "title": "[Obsolete]17.1 interaction_between_lua_and_c++",
+      "file": "chapters/058-obsolete-17-1-interaction-between-lua-and-c.md"
+    },
+    {
+      "slug": "059-obsolete-17-1-interaction-between-luabridge-and-c",
+      "title": "[Obsolete]17.1 interaction_between_luabridge_and_c++",
+      "file": "chapters/059-obsolete-17-1-interaction-between-luabridge-and-c.md"
+    },
+    {
+      "slug": "060-17-integrate-lua",
+      "title": "17. integrate_lua",
+      "file": "chapters/060-17-integrate-lua.md"
+    },
+    {
+      "slug": "061-17-1-sol2-interaction-with-c",
+      "title": "17.1 sol2_interaction_with_c++",
+      "file": "chapters/061-17-1-sol2-interaction-with-c.md"
+    },
+    {
+      "slug": "062-17-1-sol2-interaction-with-cpp",
+      "title": "17.1 sol2_interaction_with_cpp",
+      "file": "chapters/062-17-1-sol2-interaction-with-cpp.md"
+    },
+    {
+      "slug": "063-17-2-integration-sol2",
+      "title": "17.2 integration_sol2",
+      "file": "chapters/063-17-2-integration-sol2.md"
+    },
+    {
+      "slug": "064-18-skeletal-animation",
+      "title": "18. skeletal_animation",
+      "file": "chapters/064-18-skeletal-animation.md"
+    },
+    {
+      "slug": "065-18-1-blender-makes-skeletal-animation",
+      "title": "18.1 blender_makes_skeletal_animation",
+      "file": "chapters/065-18-1-blender-makes-skeletal-animation.md"
+    },
+    {
+      "slug": "066-18-2-blender-export-skeletal-animation",
+      "title": "矩阵",
+      "file": "chapters/066-18-2-blender-export-skeletal-animation.md"
+    },
+    {
+      "slug": "067-18-3-parsing-skeletal-animation",
+      "title": "18.3 parsing_skeletal_animation",
+      "file": "chapters/067-18-3-parsing-skeletal-animation.md"
+    },
+    {
+      "slug": "068-18-4-main-order-of-matrices",
+      "title": "18.4 main_order_of_matrices",
+      "file": "chapters/068-18-4-main-order-of-matrices.md"
+    },
+    {
+      "slug": "069-19-skeletal-skinning-animation",
+      "title": "19. skeletal_skinning_animation",
+      "file": "chapters/069-19-skeletal-skinning-animation.md"
+    },
+    {
+      "slug": "070-19-1-implementing-skeletal-skinning-animation",
+      "title": "19.1 implementing_skeletal_skinning_animation",
+      "file": "chapters/070-19-1-implementing-skeletal-skinning-animation.md"
+    },
+    {
+      "slug": "071-19-2-bone-weights",
+      "title": "19.2 bone_weights",
+      "file": "chapters/071-19-2-bone-weights.md"
+    },
+    {
+      "slug": "072-19-3-blender-skinning-brush-weights",
+      "title": "19.3 blender_skinning_brush_weights",
+      "file": "chapters/072-19-3-blender-skinning-brush-weights.md"
+    },
+    {
+      "slug": "073-19-4-blender-export-skin-weights",
+      "title": "file:files\\skinned_mesh_renderer\\export_weight\\export_weight.py",
+      "file": "chapters/073-19-4-blender-export-skin-weights.md"
+    },
+    {
+      "slug": "074-19-5-loading-the-weights-file",
+      "title": "19.5 loading_the_weights_file",
+      "file": "chapters/074-19-5-loading-the-weights-file.md"
+    },
+    {
+      "slug": "075-2-opengl-dev-env",
+      "title": "2. opengl_dev_env",
+      "file": "chapters/075-2-opengl-dev-env.md"
+    },
+    {
+      "slug": "076-2-1-what-exactly-is-opengl",
+      "title": "2.1 what_exactly_is_opengl",
+      "file": "chapters/076-2-1-what-exactly-is-opengl.md"
+    },
+    {
+      "slug": "077-2-2-build-opengl-development-environment",
+      "title": "2.2 build_opengl_development_environment",
+      "file": "chapters/077-2-2-build-opengl-development-environment.md"
+    },
+    {
+      "slug": "078-20-parse-fbx-file",
+      "title": "20. parse_fbx_file",
+      "file": "chapters/078-20-parse-fbx-file.md"
+    },
+    {
+      "slug": "079-20-1-export-mesh",
+      "title": "20.1 export_mesh",
+      "file": "chapters/079-20-1-export-mesh.md"
+    },
+    {
+      "slug": "080-20-2-export-skeletal-animation",
+      "title": "20.2 export_skeletal_animation",
+      "file": "chapters/080-20-2-export-skeletal-animation.md"
+    },
+    {
+      "slug": "081-20-3-export-weights",
+      "title": "20.3 export_weights",
+      "file": "chapters/081-20-3-export-weights.md"
+    },
+    {
+      "slug": "082-20-4-rendering-skeletal-skinning-animations",
+      "title": "20.4 rendering_skeletal_skinning_animations",
+      "file": "chapters/082-20-4-rendering-skeletal-skinning-animations.md"
+    },
+    {
+      "slug": "083-21-multithreaded-rendering",
+      "title": "21. multithreaded_rendering",
+      "file": "chapters/083-21-multithreaded-rendering.md"
+    },
+    {
+      "slug": "084-21-1-glfw-multithreaded-rendering",
+      "title": "21.1 glfw_multithreaded_rendering",
+      "file": "chapters/084-21-1-glfw-multithreaded-rendering.md"
+    },
+    {
+      "slug": "085-21-2-multithreaded-rendering-based-on-task-queue",
+      "title": "21.2 multithreaded_rendering_based_on_task_queue",
+      "file": "chapters/085-21-2-multithreaded-rendering-based-on-task-queue.md"
+    },
+    {
+      "slug": "086-21-3-fully-asynchronous-multithreading-model",
+      "title": "21.3 fully_asynchronous_multithreading_model",
+      "file": "chapters/086-21-3-fully-asynchronous-multithreading-model.md"
+    },
+    {
+      "slug": "087-21-4-engine-supports-multi-threaded-rendering",
+      "title": "21.4 engine_supports_multi-threaded_rendering",
+      "file": "chapters/087-21-4-engine-supports-multi-threaded-rendering.md"
+    },
+    {
+      "slug": "088-22-physics-engine-physx",
+      "title": "22. physics_engine_physx",
+      "file": "chapters/088-22-physics-engine-physx.md"
+    },
+    {
+      "slug": "089-22-1-integrating-physx",
+      "title": "22.1 integrating_physx",
+      "file": "chapters/089-22-1-integrating-physx.md"
+    },
+    {
+      "slug": "090-23-lighting",
+      "title": "23. lighting",
+      "file": "chapters/090-23-lighting.md"
+    },
+    {
+      "slug": "091-23-1-directional-light",
+      "title": "23.1 directional_light",
+      "file": "chapters/091-23-1-directional-light.md"
+    },
+    {
+      "slug": "092-23-2-spotlight",
+      "title": "23.2 spotlight",
+      "file": "chapters/092-23-2-spotlight.md"
+    },
+    {
+      "slug": "093-3-draw-polygon",
+      "title": "3. draw_polygon",
+      "file": "chapters/093-3-draw-polygon.md"
+    },
+    {
+      "slug": "094-3-1-draw-triangle",
+      "title": "3.1 draw_triangle",
+      "file": "chapters/094-3-1-draw-triangle.md"
+    },
+    {
+      "slug": "095-3-2-draw-square",
+      "title": "3.2 draw_square",
+      "file": "chapters/095-3-2-draw-square.md"
+    },
+    {
+      "slug": "096-3-3-draw-cube",
+      "title": "3.3 draw_cube",
+      "file": "chapters/096-3-3-draw-cube.md"
+    },
+    {
+      "slug": "097-4-shader",
+      "title": "4. shader",
+      "file": "chapters/097-4-shader.md"
+    },
+    {
+      "slug": "098-4-1-unity-shader-vs-opengl-shader",
+      "title": "4.1 unity_shader_vs_opengl_shader",
+      "file": "chapters/098-4-1-unity-shader-vs-opengl-shader.md"
+    },
+    {
+      "slug": "099-4-2-vertex-shader",
+      "title": "4.2 vertex_shader",
+      "file": "chapters/099-4-2-vertex-shader.md"
+    },
+    {
+      "slug": "100-4-3-fragment-shader",
+      "title": "4.3 fragment_shader",
+      "file": "chapters/100-4-3-fragment-shader.md"
+    },
+    {
+      "slug": "101-4-4-shader-errors",
+      "title": "4.4 shader_errors",
+      "file": "chapters/101-4-4-shader-errors.md"
+    },
+    {
+      "slug": "102-5-draw-with-texture",
+      "title": "5. draw_with_texture",
+      "file": "chapters/102-5-draw-with-texture.md"
+    },
+    {
+      "slug": "103-5-1-color-and-texture",
+      "title": "5.1 color_and_texture",
+      "file": "chapters/103-5-1-color-and-texture.md"
+    },
+    {
+      "slug": "104-5-2-introduction-to-texture-files",
+      "title": "5.2 introduction_to_texture_files",
+      "file": "chapters/104-5-2-introduction-to-texture-files.md"
+    },
+    {
+      "slug": "105-5-3-communication-between-cpu-and-gpu",
+      "title": "5.3 communication_between_cpu_and_gpu",
+      "file": "chapters/105-5-3-communication-between-cpu-and-gpu.md"
+    },
+    {
+      "slug": "106-5-4-stb-image-parse-images",
+      "title": "5.4 stb_image_parse_images",
+      "file": "chapters/106-5-4-stb-image-parse-images.md"
+    },
+    {
+      "slug": "107-5-5-draw-textured-cube",
+      "title": "5.5 draw_textured_cube",
+      "file": "chapters/107-5-5-draw-textured-cube.md"
+    },
+    {
+      "slug": "108-5-6-compressed-texture",
+      "title": "5.6 compressed_texture",
+      "file": "chapters/108-5-6-compressed-texture.md"
+    },
+    {
+      "slug": "109-5-7-texture-compress-tool",
+      "title": "5.7 texture_compress_tool",
+      "file": "chapters/109-5-7-texture-compress-tool.md"
+    },
+    {
+      "slug": "110-5-8-use-compress-texture",
+      "title": "5.8 use_compress_texture",
+      "file": "chapters/110-5-8-use-compress-texture.md"
+    },
+    {
+      "slug": "111-5-9-dxt-compressed-texture-extension",
+      "title": "5.9 dxt_compressed_texture_extension",
+      "file": "chapters/111-5-9-dxt-compressed-texture-extension.md"
+    },
+    {
+      "slug": "112-6-index-and-buffer-objects",
+      "title": "6. index_and_buffer_objects",
+      "file": "chapters/112-6-index-and-buffer-objects.md"
+    },
+    {
+      "slug": "113-6-1-vertex-index",
+      "title": "6.1 vertex_index",
+      "file": "chapters/113-6-1-vertex-index.md"
+    },
+    {
+      "slug": "114-6-2-buffer-objects",
+      "title": "6.2 buffer_objects",
+      "file": "chapters/114-6-2-buffer-objects.md"
+    },
+    {
+      "slug": "115-6-3-opengl-core-profile",
+      "title": "6.3 opengl_core_profile",
+      "file": "chapters/115-6-3-opengl-core-profile.md"
+    },
+    {
+      "slug": "116-6-4-vertex-array-object",
+      "title": "6.4 vertex_array_object",
+      "file": "chapters/116-6-4-vertex-array-object.md"
+    },
+    {
+      "slug": "117-7-draw-mesh-and-material",
+      "title": "7. draw_mesh_and_material",
+      "file": "chapters/117-7-draw-mesh-and-material.md"
+    },
+    {
+      "slug": "118-7-1-export-mesh-file",
+      "title": "7.1 export_mesh_file",
+      "file": "chapters/118-7-1-export-mesh-file.md"
+    },
+    {
+      "slug": "119-7-2-use-mesh-file",
+      "title": "7.2 use_mesh_file",
+      "file": "chapters/119-7-2-use-mesh-file.md"
+    },
+    {
+      "slug": "120-7-3-create-shader-and-use",
+      "title": "7.3 create_shader_and_use",
+      "file": "chapters/120-7-3-create-shader-and-use.md"
+    },
+    {
+      "slug": "121-7-4-create-material",
+      "title": "7.4 create_material",
+      "file": "chapters/121-7-4-create-material.md"
+    },
+    {
+      "slug": "122-7-5-use-material",
+      "title": "7.5 use_material",
+      "file": "chapters/122-7-5-use-material.md"
+    },
+    {
+      "slug": "123-7-6-mesh-renderer",
+      "title": "7.6 mesh_renderer",
+      "file": "chapters/123-7-6-mesh-renderer.md"
+    },
+    {
+      "slug": "124-8-draw-static-models",
+      "title": "8. draw_static_models",
+      "file": "chapters/124-8-draw-static-models.md"
+    },
+    {
+      "slug": "125-8-1-blender-installation-configuration",
+      "title": "8.1 blender_installation_configuration",
+      "file": "chapters/125-8-1-blender-installation-configuration.md"
+    },
+    {
+      "slug": "126-8-2-blender-making-models",
+      "title": "8.2 blender_making_models",
+      "file": "chapters/126-8-2-blender-making-models.md"
+    },
+    {
+      "slug": "127-8-3-blender-python-setting-dev-env",
+      "title": "8.3 blender_python_setting_dev_env",
+      "file": "chapters/127-8-3-blender-python-setting-dev-env.md"
+    },
+    {
+      "slug": "128-8-4-blender-python-create-objects",
+      "title": "8.4 blender_python_create_objects",
+      "file": "chapters/128-8-4-blender-python-create-objects.md"
+    },
+    {
+      "slug": "129-8-5-blender-python-export-vertex",
+      "title": "Get the active mesh",
+      "file": "chapters/129-8-5-blender-python-export-vertex.md"
+    },
+    {
+      "slug": "130-8-6-loading-the-exported-mesh",
+      "title": "8.6 loading_the_exported_mesh",
+      "file": "chapters/130-8-6-loading-the-exported-mesh.md"
+    },
+    {
+      "slug": "131-8-7-blender-python-export-material-and-textures",
+      "title": "8.7 blender_python_export_material_and_textures",
+      "file": "chapters/131-8-7-blender-python-export-material-and-textures.md"
+    },
+    {
+      "slug": "132-89-doxygen-generates-api-documentation",
+      "title": "89. doxygen_generates_api_documentation",
+      "file": "chapters/132-89-doxygen-generates-api-documentation.md"
+    },
+    {
+      "slug": "133-9-component-based-development",
+      "title": "9. component_based_development",
+      "file": "chapters/133-9-component-based-development.md"
+    },
+    {
+      "slug": "134-9-1-cpp-reflection-based-on-rttr",
+      "title": "9.1 cpp_reflection_based_on_rttr",
+      "file": "chapters/134-9-1-cpp-reflection-based-on-rttr.md"
+    },
+    {
+      "slug": "135-9-2-implementing-gameobject-component",
+      "title": "9.2 implementing_gameobject-component",
+      "file": "chapters/135-9-2-implementing-gameobject-component.md"
+    },
+    {
+      "slug": "136-90-gpu-analysis-tools",
+      "title": "90. gpu_analysis_tools",
+      "file": "chapters/136-90-gpu-analysis-tools.md"
+    },
+    {
+      "slug": "137-90-1-renderdoc-analysis-not-show-bugs",
+      "title": "90.1 renderdoc_analysis_not_show_bugs",
+      "file": "chapters/137-90-1-renderdoc-analysis-not-show-bugs.md"
+    },
+    {
+      "slug": "138-98-substancepainter-plugin-development",
+      "title": "98. substancepainter_plugin_development",
+      "file": "chapters/138-98-substancepainter-plugin-development.md"
+    },
+    {
+      "slug": "139-98-1-substancepainter-plug-in-development-environment",
+      "title": "98.1 substancepainter_plug-in_development_environment",
+      "file": "chapters/139-98-1-substancepainter-plug-in-development-environment.md"
+    },
+    {
+      "slug": "140-98-2-develop-substancepainter-functional-plug-ins",
+      "title": "98.2 develop_substancepainter_functional_plug-ins",
+      "file": "chapters/140-98-2-develop-substancepainter-functional-plug-ins.md"
+    },
+    {
+      "slug": "141-98-3-develop-substancepainter-renering-plug-ins",
+      "title": "98.3 develop_substancepainter_renering_plug-ins",
+      "file": "chapters/141-98-3-develop-substancepainter-renering-plug-ins.md"
+    },
+    {
+      "slug": "142-99-toolbag-plugin-development",
+      "title": "99. toolbag_plugin_development",
+      "file": "chapters/142-99-toolbag-plugin-development.md"
+    },
+    {
+      "slug": "143-99-1-plug-in-development-environment",
+      "title": "99.1 plug-in_development_environment",
+      "file": "chapters/143-99-1-plug-in-development-environment.md"
+    },
+    {
+      "slug": "144-99-2-toolbag-api-introduction",
+      "title": "获取场景中所有物体",
+      "file": "chapters/144-99-2-toolbag-api-introduction.md"
+    },
+    {
+      "slug": "145-99-3-calling-toolbag-from-command-line",
+      "title": "99.3 calling_toolbag_from_command_line",
+      "file": "chapters/145-99-3-calling-toolbag-from-command-line.md"
+    },
+    {
+      "slug": "146-99-4-other-toolbag-samples",
+      "title": "99.4 other_toolbag_samples",
+      "file": "chapters/146-99-4-other-toolbag-samples.md"
+    },
+    {
+      "slug": "147-99-5-code-reference",
+      "title": "创建多个物体",
+      "file": "chapters/147-99-5-code-reference.md"
+    },
+    {
+      "slug": "148-1-wwise-audio-engine",
+      "title": "1. wwise_audio_engine",
+      "file": "chapters/148-1-wwise-audio-engine.md"
+    },
+    {
+      "slug": "149-1-1-wwise-noun-concept",
+      "title": "1.1 wwise_noun_concept",
+      "file": "chapters/149-1-1-wwise-noun-concept.md"
+    },
+    {
+      "slug": "150-1-2-wwise-makes-sound-effects-and-export-soundbank",
+      "title": "1.2 wwise_makes_sound_effects_and_export_soundbank",
+      "file": "chapters/150-1-2-wwise-makes-sound-effects-and-export-soundbank.md"
+    },
+    {
+      "slug": "151-1-3-integrating-wwise",
+      "title": "1.3 integrating_wwise",
+      "file": "chapters/151-1-3-integrating-wwise.md"
+    },
+    {
+      "slug": "152-1-4-wwise-play-3d-sound-effects",
+      "title": "1.4 wwise_play_3d_sound_effects",
+      "file": "chapters/152-1-4-wwise-play-3d-sound-effects.md"
+    },
+    {
+      "slug": "153-1-5-introduction-wwise-performance-analyzer",
+      "title": "1.5 introduction_wwise_performance_analyzer",
+      "file": "chapters/153-1-5-introduction-wwise-performance-analyzer.md"
+    },
+    {
+      "slug": "154-1-6-postscript-to-hunter",
+      "title": "1.6 postscript_to_hunter",
+      "file": "chapters/154-1-6-postscript-to-hunter.md"
+    },
+    {
+      "slug": "155-content",
+      "title": "content",
+      "file": "chapters/155-content.md"
+    },
+    {
+      "slug": "156-foreword",
+      "title": "foreword",
+      "file": "chapters/156-foreword.md"
+    },
+    {
+      "slug": "157-introduction",
+      "title": "Introduction",
+      "file": "chapters/157-introduction.md"
+    },
+    {
+      "slug": "158-summary",
+      "title": "SUMMARY",
+      "file": "chapters/158-summary.md"
+    },
+    {
+      "slug": "159-1-game-engine-framework-introduction",
+      "title": "1. game_engine_framework_introduction",
+      "file": "chapters/159-1-game-engine-framework-introduction.md"
+    },
+    {
+      "slug": "160-1-1-unity-framework",
+      "title": "1.1 unity_framework",
+      "file": "chapters/160-1-1-unity-framework.md"
+    },
+    {
+      "slug": "161-1-2-game-engine-composition",
+      "title": "1.2 game_engine_composition",
+      "file": "chapters/161-1-2-game-engine-composition.md"
+    },
+    {
+      "slug": "162-10-camera",
+      "title": "10. camera",
+      "file": "chapters/162-10-camera.md"
+    },
+    {
+      "slug": "163-10-1-simple-camera",
+      "title": "10.1 simple_camera",
+      "file": "chapters/163-10-1-simple-camera.md"
+    },
+    {
+      "slug": "164-10-2-multi-camera-rendering",
+      "title": "10.2 multi-camera_rendering",
+      "file": "chapters/164-10-2-multi-camera-rendering.md"
+    },
+    {
+      "slug": "165-10-3-camera-sorting",
+      "title": "10.3 camera_sorting",
+      "file": "chapters/165-10-3-camera-sorting.md"
+    },
+    {
+      "slug": "166-10-4-culling-mask",
+      "title": "10.4 culling_mask",
+      "file": "chapters/166-10-4-culling-mask.md"
+    },
+    {
+      "slug": "167-11-control-system",
+      "title": "11. control_system",
+      "file": "chapters/167-11-control-system.md"
+    },
+    {
+      "slug": "168-11-1-keyboard-control",
+      "title": "11.1 keyboard_control",
+      "file": "chapters/168-11-1-keyboard-control.md"
+    },
+    {
+      "slug": "169-11-2-mouse-control",
+      "title": "11.2 mouse_control",
+      "file": "chapters/169-11-2-mouse-control.md"
+    },
+    {
+      "slug": "170-12-split-engine-and-project",
+      "title": "12. split_engine_and_project",
+      "file": "chapters/170-12-split-engine-and-project.md"
+    },
+    {
+      "slug": "171-obsolete-13-1-draw-truetype",
+      "title": "[Obsolete]13.1 draw_truetype",
+      "file": "chapters/171-obsolete-13-1-draw-truetype.md"
+    },
+    {
+      "slug": "172-13-draw-text",
+      "title": "13. draw_text",
+      "file": "chapters/172-13-draw-text.md"
+    },
+    {
+      "slug": "173-13-1-introduction-to-truetype",
+      "title": "13.1 introduction_to_truetype",
+      "file": "chapters/173-13-1-introduction-to-truetype.md"
+    },
+    {
+      "slug": "174-13-2-draw-one-character",
+      "title": "13.2 draw_one_character",
+      "file": "chapters/174-13-2-draw-one-character.md"
+    },
+    {
+      "slug": "175-13-3-drawing-multiple-texts",
+      "title": "13.3 drawing_multiple_texts",
+      "file": "chapters/175-13-3-drawing-multiple-texts.md"
+    },
+    {
+      "slug": "176-13-4-draw-color-word",
+      "title": "13.4 draw_color_word",
+      "file": "chapters/176-13-4-draw-color-word.md"
+    },
+    {
+      "slug": "177-14-gui",
+      "title": "14. gui",
+      "file": "chapters/177-14-gui.md"
+    },
+    {
+      "slug": "178-14-1-orthographic-camera",
+      "title": "14.1 orthographic_camera",
+      "file": "chapters/178-14-1-orthographic-camera.md"
+    },
+    {
+      "slug": "179-14-2-uiimage",
+      "title": "14.2 UIImage",
+      "file": "chapters/179-14-2-uiimage.md"
+    },
+    {
+      "slug": "180-14-3-uimask",
+      "title": "14.3 UIMask",
+      "file": "chapters/180-14-3-uimask.md"
+    },
+    {
+      "slug": "181-14-4-uitext",
+      "title": "14.4 UIText",
+      "file": "chapters/181-14-4-uitext.md"
+    },
+    {
+      "slug": "182-14-5-uibutton",
+      "title": "14.5 UIButton",
+      "file": "chapters/182-14-5-uibutton.md"
+    },
+    {
+      "slug": "183-15-play-sound-effects",
+      "title": "15. play_sound_effects",
+      "file": "chapters/183-15-play-sound-effects.md"
+    },
+    {
+      "slug": "184-15-1-playing-2d-sound-effects",
+      "title": "15.1 playing_2d_sound_effects",
+      "file": "chapters/184-15-1-playing-2d-sound-effects.md"
+    },
+    {
+      "slug": "185-15-2-playing-3d-sound-effects",
+      "title": "15.2 playing_3d_sound_effects",
+      "file": "chapters/185-15-2-playing-3d-sound-effects.md"
+    },
+    {
+      "slug": "186-15-3-using-the-fmod-studio-audio-engine",
+      "title": "15.3 using_the_fmod_studio_audio_engine",
+      "file": "chapters/186-15-3-using-the-fmod-studio-audio-engine.md"
+    },
+    {
+      "slug": "187-16-profiler",
+      "title": "16. profiler",
+      "file": "chapters/187-16-profiler.md"
+    },
+    {
+      "slug": "188-16-1-introducing-easy-profiler",
+      "title": "16.1 introducing_easy_profiler",
+      "file": "chapters/188-16-1-introducing-easy-profiler.md"
+    },
+    {
+      "slug": "189-16-2-integrating-easy-profiler",
+      "title": "define EASY_MAIN_THREAD EASY_THREAD(\"Main\")",
+      "file": "chapters/189-16-2-integrating-easy-profiler.md"
+    },
+    {
+      "slug": "190-obsolete-17-1-interaction-between-lua-and-c",
+      "title": "[Obsolete]17.1 interaction_between_lua_and_c++",
+      "file": "chapters/190-obsolete-17-1-interaction-between-lua-and-c.md"
+    },
+    {
+      "slug": "191-obsolete-17-1-interaction-between-luabridge-and-c",
+      "title": "[Obsolete]17.1 interaction_between_luabridge_and_c++",
+      "file": "chapters/191-obsolete-17-1-interaction-between-luabridge-and-c.md"
+    },
+    {
+      "slug": "192-17-integrate-lua",
+      "title": "17. integrate_lua",
+      "file": "chapters/192-17-integrate-lua.md"
+    },
+    {
+      "slug": "193-17-1-sol2-interaction-with-c",
+      "title": "17.1 sol2_interaction_with_c++",
+      "file": "chapters/193-17-1-sol2-interaction-with-c.md"
+    },
+    {
+      "slug": "194-17-1-sol2-interaction-with-cpp",
+      "title": "17.1 sol2_interaction_with_cpp",
+      "file": "chapters/194-17-1-sol2-interaction-with-cpp.md"
+    },
+    {
+      "slug": "195-17-2-friendly-lua-framework",
+      "title": "17.2 friendly_lua_framework",
+      "file": "chapters/195-17-2-friendly-lua-framework.md"
+    },
+    {
+      "slug": "196-17-3-integration-sol2",
+      "title": "17.3 integration_sol2",
+      "file": "chapters/196-17-3-integration-sol2.md"
+    },
+    {
+      "slug": "197-17-4-lua-debuger",
+      "title": "17.4 lua_debuger",
+      "file": "chapters/197-17-4-lua-debuger.md"
+    },
+    {
+      "slug": "198-18-skeletal-animation",
+      "title": "18. skeletal_animation",
+      "file": "chapters/198-18-skeletal-animation.md"
+    },
+    {
+      "slug": "199-18-1-blender-makes-skeletal-animation",
+      "title": "18.1 blender_makes_skeletal_animation",
+      "file": "chapters/199-18-1-blender-makes-skeletal-animation.md"
+    },
+    {
+      "slug": "200-18-2-blender-export-skeletal-animation",
+      "title": "矩阵",
+      "file": "chapters/200-18-2-blender-export-skeletal-animation.md"
+    }
+  ],
+  "license": "GPL-3.0",
+  "sourceType": "github"
+}

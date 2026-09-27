@@ -1,0 +1,326 @@
+{
+  "bookId": "b102ad30d46c",
+  "title": "Growth: 全栈增长工程师指南",
+  "url": "https://github.com/phodal/growth-ebook",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:52.309Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-0-0-0-prelude",
+      "title": "0.0.0-prelude",
+      "file": "chapters/002-0-0-0-prelude.md"
+    },
+    {
+      "slug": "003-1-0",
+      "title": "1.0",
+      "file": "chapters/003-1-0.md"
+    },
+    {
+      "slug": "004-1-1-0-setup",
+      "title": "1.1.0-setup",
+      "file": "chapters/004-1-1-0-setup.md"
+    },
+    {
+      "slug": "005-1-1-0-tool",
+      "title": "1.1.0-tool",
+      "file": "chapters/005-1-1-0-tool.md"
+    },
+    {
+      "slug": "006-1-1-1-env-osx",
+      "title": "1.1.1-env-osx",
+      "file": "chapters/006-1-1-1-env-osx.md"
+    },
+    {
+      "slug": "007-1-1-2-env-windows",
+      "title": "1.1.2-env-windows",
+      "file": "chapters/007-1-1-2-env-windows.md"
+    },
+    {
+      "slug": "008-1-1-3-env-linux",
+      "title": "1.1.3-env-linux",
+      "file": "chapters/008-1-1-3-env-linux.md"
+    },
+    {
+      "slug": "009-1-2-learn-language",
+      "title": "1.2-learn-language",
+      "file": "chapters/009-1-2-learn-language.md"
+    },
+    {
+      "slug": "010-1-3-web-basic",
+      "title": "1.3-web-basic",
+      "file": "chapters/010-1-3-web-basic.md"
+    },
+    {
+      "slug": "011-1-4-0-html",
+      "title": "1.4.0-html",
+      "file": "chapters/011-1-4-0-html.md"
+    },
+    {
+      "slug": "012-1-4-1-css",
+      "title": "1.4.1-css",
+      "file": "chapters/012-1-4-1-css.md"
+    },
+    {
+      "slug": "013-1-4-2-js",
+      "title": "1.4.2-js",
+      "file": "chapters/013-1-4-2-js.md"
+    },
+    {
+      "slug": "014-2-0-0-back-front",
+      "title": "2.0.0-back-front",
+      "file": "chapters/014-2-0-0-back-front.md"
+    },
+    {
+      "slug": "015-2-1-0-backend-language",
+      "title": "2.1.0-backend-language",
+      "file": "chapters/015-2-1-0-backend-language.md"
+    },
+    {
+      "slug": "016-2-1-2-mvc",
+      "title": "2.1.2-mvc",
+      "file": "chapters/016-2-1-2-mvc.md"
+    },
+    {
+      "slug": "017-2-1-3-serviceful",
+      "title": "2.1.3-serviceful",
+      "file": "chapters/017-2-1-3-serviceful.md"
+    },
+    {
+      "slug": "018-2-1-4-persistence",
+      "title": "2.1.4-persistence",
+      "file": "chapters/018-2-1-4-persistence.md"
+    },
+    {
+      "slug": "019-2-2-0-choice-frontend",
+      "title": "2.2.0-choice-frontend",
+      "file": "chapters/019-2-2-0-choice-frontend.md"
+    },
+    {
+      "slug": "020-2-2-2-communication",
+      "title": "2.2.2-communication",
+      "file": "chapters/020-2-2-2-communication.md"
+    },
+    {
+      "slug": "021-3-0-0-coding",
+      "title": "3.0.0-coding",
+      "file": "chapters/021-3-0-0-coding.md"
+    },
+    {
+      "slug": "022-3-0-1-builder",
+      "title": "3.0.1-builder",
+      "file": "chapters/022-3-0-1-builder.md"
+    },
+    {
+      "slug": "023-3-0-2-git",
+      "title": "3.0.2-git",
+      "file": "chapters/023-3-0-2-git.md"
+    },
+    {
+      "slug": "024-3-0-3-tasking",
+      "title": "3.0.3-tasking",
+      "file": "chapters/024-3-0-3-tasking.md"
+    },
+    {
+      "slug": "025-3-0-4-typing",
+      "title": "3.0.4-typing",
+      "file": "chapters/025-3-0-4-typing.md"
+    },
+    {
+      "slug": "026-3-0-5-knowledge",
+      "title": "3.0.5-knowledge",
+      "file": "chapters/026-3-0-5-knowledge.md"
+    },
+    {
+      "slug": "027-3-1-0-how-to-test",
+      "title": "3.1.0-how-to-test",
+      "file": "chapters/027-3-1-0-how-to-test.md"
+    },
+    {
+      "slug": "028-3-1-1-test-double",
+      "title": "3.1.1-test-double",
+      "file": "chapters/028-3-1-1-test-double.md"
+    },
+    {
+      "slug": "029-3-1-2-tdd",
+      "title": "3.1.2-tdd",
+      "file": "chapters/029-3-1-2-tdd.md"
+    },
+    {
+      "slug": "030-3-2-1-readable",
+      "title": "3.2.1-readable",
+      "file": "chapters/030-3-2-1-readable.md"
+    },
+    {
+      "slug": "031-3-2-2-refactor",
+      "title": "3.2.2-refactor",
+      "file": "chapters/031-3-2-2-refactor.md"
+    },
+    {
+      "slug": "032-3-2-3-intellij-refactor",
+      "title": "3.2.3-intellij-refactor",
+      "file": "chapters/032-3-2-3-intellij-refactor.md"
+    },
+    {
+      "slug": "033-3-3-0-refactor-to-pattern",
+      "title": "3.3.0-refactor-to-pattern",
+      "file": "chapters/033-3-3-0-refactor-to-pattern.md"
+    },
+    {
+      "slug": "034-4-0-0-golive",
+      "title": "4.0.0-golive",
+      "file": "chapters/034-4-0-0-golive.md"
+    },
+    {
+      "slug": "035-4-1-0-runenv",
+      "title": "4.1.0-runenv",
+      "file": "chapters/035-4-1-0-runenv.md"
+    },
+    {
+      "slug": "036-4-2-0-lnmp",
+      "title": "4.2.0-lnmp",
+      "file": "chapters/036-4-2-0-lnmp.md"
+    },
+    {
+      "slug": "037-4-2-1-cache",
+      "title": "4.2.1-cache",
+      "file": "chapters/037-4-2-1-cache.md"
+    },
+    {
+      "slug": "038-4-3-1-configurable",
+      "title": "4.3.1-configurable",
+      "file": "chapters/038-4-3-1-configurable.md"
+    },
+    {
+      "slug": "039-4-4-0-auto-deploy",
+      "title": "4.4.0-auto-deploy",
+      "file": "chapters/039-4-4-0-auto-deploy.md"
+    },
+    {
+      "slug": "040-5-0-0-data-analytics",
+      "title": "5.0.0-data-analytics",
+      "file": "chapters/040-5-0-0-data-analytics.md"
+    },
+    {
+      "slug": "041-5-1-0-lean",
+      "title": "5.1.0-lean",
+      "file": "chapters/041-5-1-0-lean.md"
+    },
+    {
+      "slug": "042-5-1-1-da",
+      "title": "5.1.1-da",
+      "file": "chapters/042-5-1-1-da.md"
+    },
+    {
+      "slug": "043-5-1-2-ga",
+      "title": "5.1.2-ga",
+      "file": "chapters/043-5-1-2-ga.md"
+    },
+    {
+      "slug": "044-5-2-0-performance",
+      "title": "5.2.0-performance",
+      "file": "chapters/044-5-2-0-performance.md"
+    },
+    {
+      "slug": "045-5-3-0-seo",
+      "title": "5.3.0-seo",
+      "file": "chapters/045-5-3-0-seo.md"
+    },
+    {
+      "slug": "046-5-4-0-first-ux",
+      "title": "5.4.0-first-ux",
+      "file": "chapters/046-5-4-0-first-ux.md"
+    },
+    {
+      "slug": "047-5-4-1-learn-design",
+      "title": "5.4.1-learn-design",
+      "file": "chapters/047-5-4-1-learn-design.md"
+    },
+    {
+      "slug": "048-6-0-0-cd",
+      "title": "6.0.0-cd",
+      "file": "chapters/048-6-0-0-cd.md"
+    },
+    {
+      "slug": "049-6-1-1-ci",
+      "title": "6.1.1-ci",
+      "file": "chapters/049-6-1-1-ci.md"
+    },
+    {
+      "slug": "050-6-2-1-cd",
+      "title": "6.2.1-cd",
+      "file": "chapters/050-6-2-1-cd.md"
+    },
+    {
+      "slug": "051-6-3-0-cl",
+      "title": "6.3.0-cl",
+      "file": "chapters/051-6-3-0-cl.md"
+    },
+    {
+      "slug": "052-7-0-0-legacy-system",
+      "title": "7.0.0-legacy-system",
+      "file": "chapters/052-7-0-0-legacy-system.md"
+    },
+    {
+      "slug": "053-7-1-1-legacy-code",
+      "title": "7.1.1-legacy-code",
+      "file": "chapters/053-7-1-1-legacy-code.md"
+    },
+    {
+      "slug": "054-7-1-2-change-code",
+      "title": "7.1.2-change-code",
+      "file": "chapters/054-7-1-2-change-code.md"
+    },
+    {
+      "slug": "055-7-2-1-refactor2",
+      "title": "7.2.1-refactor2",
+      "file": "chapters/055-7-2-1-refactor2.md"
+    },
+    {
+      "slug": "056-8-0-0-retro-rearch",
+      "title": "8.0.0-retro-rearch",
+      "file": "chapters/056-8-0-0-retro-rearch.md"
+    },
+    {
+      "slug": "057-8-1-1-summary",
+      "title": "8.1.1-summary",
+      "file": "chapters/057-8-1-1-summary.md"
+    },
+    {
+      "slug": "058-8-1-2-retro",
+      "title": "8.1.2-retro",
+      "file": "chapters/058-8-1-2-retro.md"
+    },
+    {
+      "slug": "059-8-2-0-arch-pattern",
+      "title": "8.2.0-arch-pattern",
+      "file": "chapters/059-8-2-0-arch-pattern.md"
+    },
+    {
+      "slug": "060-8-2-1-emergent-design",
+      "title": "8.2.1-emergent-design",
+      "file": "chapters/060-8-2-1-emergent-design.md"
+    },
+    {
+      "slug": "061-8-3-0-architecture",
+      "title": "8.3.0-architecture",
+      "file": "chapters/061-8-3-0-architecture.md"
+    },
+    {
+      "slug": "062-8-3-1-seperate",
+      "title": "8.3.1-seperate",
+      "file": "chapters/062-8-3-1-seperate.md"
+    },
+    {
+      "slug": "063-growth",
+      "title": "growth",
+      "file": "chapters/063-growth.md"
+    }
+  ],
+  "license": "CC-BY",
+  "sourceType": "github"
+}

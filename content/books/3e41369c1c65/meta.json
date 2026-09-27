@@ -1,0 +1,20 @@
+{
+  "bookId": "3e41369c1c65",
+  "title": "R语言忍者秘笈",
+  "url": "https://github.com/yihui/r-ninja",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:11.141Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "readme",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "R语言忍者秘笈",
+      "file": "chapters/002-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

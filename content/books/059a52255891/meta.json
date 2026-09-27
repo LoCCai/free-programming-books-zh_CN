@@ -1,0 +1,16 @@
+{
+  "bookId": "059a52255891",
+  "title": "Go语言圣经",
+  "url": "https://gopl-zh.github.io/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:48.360Z",
+  "chapters": [
+    {
+      "slug": "001-q",
+      "title": "Go语言圣经 - Go语言圣经",
+      "file": "chapters/001-q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Go语言圣经 - Go语言圣经"
+}

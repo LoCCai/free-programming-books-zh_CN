@@ -1,0 +1,16 @@
+{
+  "bookId": "38e494737bc1",
+  "title": "Git Cheat Sheet",
+  "url": "https://www.git-tower.com/blog/git-cheat-sheet-cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:10.563Z",
+  "chapters": [
+    {
+      "slug": "001-1d",
+      "title": "Git Cheat Sheet (Chinese Edition)",
+      "file": "chapters/001-1d.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Git Cheat Sheet (Chinese Edition)"
+}

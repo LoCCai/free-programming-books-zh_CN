@@ -1,0 +1,16 @@
+{
+  "bookId": "d451c645c4df",
+  "title": "简单易懂的JQuery魔法",
+  "url": "http://www.nowamagic.net/librarys/books/contents/jquery",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:37.598Z",
+  "chapters": [
+    {
+      "slug": "001-1j",
+      "title": "http://www.nowamagic.net/librarys/books/contents/jquery",
+      "file": "chapters/001-1j.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://www.nowamagic.net/librarys/books/contents/jquery"
+}

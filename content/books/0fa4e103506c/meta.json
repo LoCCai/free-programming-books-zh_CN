@@ -1,0 +1,16 @@
+{
+  "bookId": "0fa4e103506c",
+  "title": "Ext4.1.0 中文文档",
+  "url": "http://extjs-doc-cn.github.io/ext4api/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:50.810Z",
+  "chapters": [
+    {
+      "slug": "001-12",
+      "title": "Sencha Docs - Ext JS",
+      "file": "chapters/001-12.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Sencha Docs - Ext JS"
+}

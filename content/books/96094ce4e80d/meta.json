@@ -1,0 +1,16 @@
+{
+  "bookId": "96094ce4e80d",
+  "title": "Django 2.0 文档中文版",
+  "url": "https://docs.djangoproject.com/zh-hans/2.0/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:49.173Z",
+  "chapters": [
+    {
+      "slug": "001-17",
+      "title": "Django 文档 | Django 文档",
+      "file": "chapters/001-17.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Django 文档 | Django 文档"
+}

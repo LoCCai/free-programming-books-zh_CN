@@ -1,0 +1,65 @@
+{
+  "bookId": "9a87ae618e11",
+  "title": "CSS3 Tutorial 《CSS3 教程》",
+  "url": "https://github.com/waylau/css3-tutorial",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:45.960Z",
+  "chapters": [
+    {
+      "slug": "001-introduction",
+      "title": "介绍",
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-animation",
+      "title": "动画",
+      "file": "chapters/002-animation.md"
+    },
+    {
+      "slug": "003-border",
+      "title": "边框",
+      "file": "chapters/003-border.md"
+    },
+    {
+      "slug": "004-background",
+      "title": "背景",
+      "file": "chapters/004-background.md"
+    },
+    {
+      "slug": "005-font",
+      "title": "字体",
+      "file": "chapters/005-font.md"
+    },
+    {
+      "slug": "006-multiple-columns",
+      "title": "多列",
+      "file": "chapters/006-multiple-columns.md"
+    },
+    {
+      "slug": "007-user-interface",
+      "title": "UI",
+      "file": "chapters/007-user-interface.md"
+    },
+    {
+      "slug": "008-transitions-effect",
+      "title": "过渡效果",
+      "file": "chapters/008-transitions-effect.md"
+    },
+    {
+      "slug": "009-text-effect",
+      "title": "文本效果",
+      "file": "chapters/009-text-effect.md"
+    },
+    {
+      "slug": "010-2d-transform",
+      "title": "2D",
+      "file": "chapters/010-2d-transform.md"
+    },
+    {
+      "slug": "011-3d-transform",
+      "title": "3D",
+      "file": "chapters/011-3d-transform.md"
+    }
+  ],
+  "sourceType": "github"
+}

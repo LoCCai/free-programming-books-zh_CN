@@ -1,0 +1,16 @@
+{
+  "bookId": "cf09aaf8d9bd",
+  "title": "GitBook简明教程",
+  "url": "http://www.chengweiyang.cn/gitbook/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:33.889Z",
+  "chapters": [
+    {
+      "slug": "001-19",
+      "title": "Introduction | GitBook 简明教程",
+      "file": "chapters/001-19.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction | GitBook 简明教程"
+}

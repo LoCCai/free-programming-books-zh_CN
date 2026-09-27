@@ -1,0 +1,16 @@
+{
+  "bookId": "96d54938ed4c",
+  "title": "把《编程珠玑》读薄",
+  "url": "http://hawstein.com/2013/08/11/make-thiner-programming-pearls/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:29.561Z",
+  "chapters": [
+    {
+      "slug": "001-1q",
+      "title": "把《编程珠玑》读薄 - Hawstein 的博客",
+      "file": "chapters/001-1q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "把《编程珠玑》读薄 - Hawstein 的博客"
+}

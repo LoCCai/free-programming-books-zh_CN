@@ -1,0 +1,231 @@
+{
+  "bookId": "a0746216fccd",
+  "title": "ANSI Common Lisp 中文翻譯版",
+  "url": "https://acl.readthedocs.io/en/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:16.472Z",
+  "chapters": [
+    {
+      "slug": "001-1i",
+      "title": "前言 — ANSI Common Lisp 中文版",
+      "file": "chapters/001-1i.md"
+    },
+    {
+      "slug": "002-1e",
+      "title": "第一章：簡介 — ANSI Common Lisp 中文版",
+      "file": "chapters/002-1e.md"
+    },
+    {
+      "slug": "003-1e",
+      "title": "第二章：歡迎來到 Lisp — ANSI Common Lisp 中文版",
+      "file": "chapters/003-1e.md"
+    },
+    {
+      "slug": "004-1e",
+      "title": "第三章：列表 — ANSI Common Lisp 中文版",
+      "file": "chapters/004-1e.md"
+    },
+    {
+      "slug": "005-1e",
+      "title": "第四章：特殊資料結構 — ANSI Common Lisp 中文版",
+      "file": "chapters/005-1e.md"
+    },
+    {
+      "slug": "006-1e",
+      "title": "第五章：控制流 — ANSI Common Lisp 中文版",
+      "file": "chapters/006-1e.md"
+    },
+    {
+      "slug": "007-1e",
+      "title": "第六章：函數 — ANSI Common Lisp 中文版",
+      "file": "chapters/007-1e.md"
+    },
+    {
+      "slug": "008-1e",
+      "title": "第七章：輸入與輸出 — ANSI Common Lisp 中文版",
+      "file": "chapters/008-1e.md"
+    },
+    {
+      "slug": "009-1e",
+      "title": "第八章：符號 — ANSI Common Lisp 中文版",
+      "file": "chapters/009-1e.md"
+    },
+    {
+      "slug": "010-1e",
+      "title": "第九章：數字 — ANSI Common Lisp 中文版",
+      "file": "chapters/010-1e.md"
+    },
+    {
+      "slug": "011-1f",
+      "title": "第十章：宏 — ANSI Common Lisp 中文版",
+      "file": "chapters/011-1f.md"
+    },
+    {
+      "slug": "012-1f",
+      "title": "第十一章：Common Lisp 物件系統 — ANSI Common Lisp 中文版",
+      "file": "chapters/012-1f.md"
+    },
+    {
+      "slug": "013-1f",
+      "title": "第十二章：結構 — ANSI Common Lisp 中文版",
+      "file": "chapters/013-1f.md"
+    },
+    {
+      "slug": "014-1f",
+      "title": "第十三章：速度 — ANSI Common Lisp 中文版",
+      "file": "chapters/014-1f.md"
+    },
+    {
+      "slug": "015-1f",
+      "title": "第十四章：進階議題 — ANSI Common Lisp 中文版",
+      "file": "chapters/015-1f.md"
+    },
+    {
+      "slug": "016-1f",
+      "title": "第十五章：範例：推論 — ANSI Common Lisp 中文版",
+      "file": "chapters/016-1f.md"
+    },
+    {
+      "slug": "017-1f",
+      "title": "第十六章：範例：產生 HTML — ANSI Common Lisp 中文版",
+      "file": "chapters/017-1f.md"
+    },
+    {
+      "slug": "018-1f",
+      "title": "第十七章：範例：物件 — ANSI Common Lisp 中文版",
+      "file": "chapters/018-1f.md"
+    },
+    {
+      "slug": "019-1l",
+      "title": "附錄 A：除錯 — ANSI Common Lisp 中文版",
+      "file": "chapters/019-1l.md"
+    },
+    {
+      "slug": "020-1l",
+      "title": "附錄 B：Lisp in Lisp — ANSI Common Lisp 中文版",
+      "file": "chapters/020-1l.md"
+    },
+    {
+      "slug": "021-1l",
+      "title": "附錄 C：Common Lisp 的改變 — ANSI Common Lisp 中文版",
+      "file": "chapters/021-1l.md"
+    },
+    {
+      "slug": "022-1g",
+      "title": "備註 — ANSI Common Lisp 中文版",
+      "file": "chapters/022-1g.md"
+    },
+    {
+      "slug": "023-1l",
+      "title": "前言 — ANSI Common Lisp 中文版",
+      "file": "chapters/023-1l.md"
+    },
+    {
+      "slug": "024-1h",
+      "title": "第一章：简介 — ANSI Common Lisp 中文版",
+      "file": "chapters/024-1h.md"
+    },
+    {
+      "slug": "025-1h",
+      "title": "第二章：欢迎来到 Lisp — ANSI Common Lisp 中文版",
+      "file": "chapters/025-1h.md"
+    },
+    {
+      "slug": "026-1h",
+      "title": "第三章：列表 — ANSI Common Lisp 中文版",
+      "file": "chapters/026-1h.md"
+    },
+    {
+      "slug": "027-1h",
+      "title": "第四章：特殊数据结构 — ANSI Common Lisp 中文版",
+      "file": "chapters/027-1h.md"
+    },
+    {
+      "slug": "028-1h",
+      "title": "第五章：控制流 — ANSI Common Lisp 中文版",
+      "file": "chapters/028-1h.md"
+    },
+    {
+      "slug": "029-1h",
+      "title": "第六章：函数 — ANSI Common Lisp 中文版",
+      "file": "chapters/029-1h.md"
+    },
+    {
+      "slug": "030-1h",
+      "title": "第七章：输入与输出 — ANSI Common Lisp 中文版",
+      "file": "chapters/030-1h.md"
+    },
+    {
+      "slug": "031-1h",
+      "title": "第八章：符号 — ANSI Common Lisp 中文版",
+      "file": "chapters/031-1h.md"
+    },
+    {
+      "slug": "032-1h",
+      "title": "第九章：数字 — ANSI Common Lisp 中文版",
+      "file": "chapters/032-1h.md"
+    },
+    {
+      "slug": "033-1i",
+      "title": "第十章：宏 — ANSI Common Lisp 中文版",
+      "file": "chapters/033-1i.md"
+    },
+    {
+      "slug": "034-1i",
+      "title": "第十一章：Common Lisp 对象系统 — ANSI Common Lisp 中文版",
+      "file": "chapters/034-1i.md"
+    },
+    {
+      "slug": "035-1i",
+      "title": "第十二章：结构 — ANSI Common Lisp 中文版",
+      "file": "chapters/035-1i.md"
+    },
+    {
+      "slug": "036-1i",
+      "title": "第十三章：速度 — ANSI Common Lisp 中文版",
+      "file": "chapters/036-1i.md"
+    },
+    {
+      "slug": "037-1i",
+      "title": "第十四章：进阶议题 — ANSI Common Lisp 中文版",
+      "file": "chapters/037-1i.md"
+    },
+    {
+      "slug": "038-1i",
+      "title": "第十五章：示例：推论 — ANSI Common Lisp 中文版",
+      "file": "chapters/038-1i.md"
+    },
+    {
+      "slug": "039-1i",
+      "title": "第十六章：示例：生成 HTML — ANSI Common Lisp 中文版",
+      "file": "chapters/039-1i.md"
+    },
+    {
+      "slug": "040-1i",
+      "title": "第十七章：示例：对象 — ANSI Common Lisp 中文版",
+      "file": "chapters/040-1i.md"
+    },
+    {
+      "slug": "041-1o",
+      "title": "附录 A：调试 — ANSI Common Lisp 中文版",
+      "file": "chapters/041-1o.md"
+    },
+    {
+      "slug": "042-1o",
+      "title": "附录 B：Lisp in Lisp — ANSI Common Lisp 中文版",
+      "file": "chapters/042-1o.md"
+    },
+    {
+      "slug": "043-1o",
+      "title": "附录 C：Common Lisp 的改变 — ANSI Common Lisp 中文版",
+      "file": "chapters/043-1o.md"
+    },
+    {
+      "slug": "044-1j",
+      "title": "备注 — ANSI Common Lisp 中文版",
+      "file": "chapters/044-1j.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "ANSI Common Lisp 中文翻譯版 — ANSI Common Lisp 中文版"
+}

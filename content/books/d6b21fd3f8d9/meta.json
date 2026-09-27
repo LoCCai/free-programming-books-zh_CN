@@ -1,0 +1,16 @@
+{
+  "bookId": "d6b21fd3f8d9",
+  "title": "深入理解JavaScript系列",
+  "url": "http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:34.276Z",
+  "chapters": [
+    {
+      "slug": "001-1o",
+      "title": "深入理解JavaScript系列 - 汤姆大叔 - 博客园",
+      "file": "chapters/001-1o.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "深入理解JavaScript系列 - 汤姆大叔 - 博客园"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "a040988f789d",
+  "title": "通过例子学 Rust 中文版",
+  "url": "https://rustwiki.org/zh-CN/rust-by-example/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:19.707Z",
+  "chapters": [
+    {
+      "slug": "001-17",
+      "title": "简介 - 通过例子学 Rust 中文版",
+      "file": "chapters/001-17.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "简介 - 通过例子学 Rust 中文版"
+}

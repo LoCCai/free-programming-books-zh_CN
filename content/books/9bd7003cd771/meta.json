@@ -1,0 +1,16 @@
+{
+  "bookId": "9bd7003cd771",
+  "title": "Go语言设计与实现",
+  "url": "https://draveness.me/golang/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:50.264Z",
+  "chapters": [
+    {
+      "slug": "001-s",
+      "title": "Go 语言设计与实现",
+      "file": "chapters/001-s.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Go 语言设计与实现"
+}

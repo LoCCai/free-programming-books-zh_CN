@@ -1,0 +1,251 @@
+{
+  "bookId": "e82663181e85",
+  "title": "Clojure入门教程",
+  "url": "https://wizardforcel.gitbooks.io/clojure-fpftj/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:42.312Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "Clojure入门教程 | Clojure 入门教程",
+      "file": "chapters/001-1b.md"
+    },
+    {
+      "slug": "002-1h",
+      "title": "简介 | Clojure 入门教程",
+      "file": "chapters/002-1h.md"
+    },
+    {
+      "slug": "003-1h",
+      "title": "函数式编程 | Clojure 入门教程",
+      "file": "chapters/003-1h.md"
+    },
+    {
+      "slug": "004-1h",
+      "title": "Clojure概述 | Clojure 入门教程",
+      "file": "chapters/004-1h.md"
+    },
+    {
+      "slug": "005-1h",
+      "title": "开始吧 | Clojure 入门教程",
+      "file": "chapters/005-1h.md"
+    },
+    {
+      "slug": "006-1h",
+      "title": "Clojure 语法 | Clojure 入门教程",
+      "file": "chapters/006-1h.md"
+    },
+    {
+      "slug": "007-1h",
+      "title": "REPL | Clojure 入门教程",
+      "file": "chapters/007-1h.md"
+    },
+    {
+      "slug": "008-1h",
+      "title": "变量 | Clojure 入门教程",
+      "file": "chapters/008-1h.md"
+    },
+    {
+      "slug": "009-1h",
+      "title": "集合 | Clojure 入门教程",
+      "file": "chapters/009-1h.md"
+    },
+    {
+      "slug": "010-1h",
+      "title": "列表 | Clojure 入门教程",
+      "file": "chapters/010-1h.md"
+    },
+    {
+      "slug": "011-1i",
+      "title": "向量 | Clojure 入门教程",
+      "file": "chapters/011-1i.md"
+    },
+    {
+      "slug": "012-1i",
+      "title": "集合 | Clojure 入门教程",
+      "file": "chapters/012-1i.md"
+    },
+    {
+      "slug": "013-1i",
+      "title": "映射 | Clojure 入门教程",
+      "file": "chapters/013-1i.md"
+    },
+    {
+      "slug": "014-1i",
+      "title": "StructMap | Clojure 入门教程",
+      "file": "chapters/014-1i.md"
+    },
+    {
+      "slug": "015-1i",
+      "title": "函数定义 | Clojure 入门教程",
+      "file": "chapters/015-1i.md"
+    },
+    {
+      "slug": "016-1i",
+      "title": "Java 互操作 | Clojure 入门教程",
+      "file": "chapters/016-1i.md"
+    },
+    {
+      "slug": "017-1i",
+      "title": "线程 | Clojure 入门教程",
+      "file": "chapters/017-1i.md"
+    },
+    {
+      "slug": "018-1i",
+      "title": "异常处理 | Clojure 入门教程",
+      "file": "chapters/018-1i.md"
+    },
+    {
+      "slug": "019-1i",
+      "title": "条件处理 | Clojure 入门教程",
+      "file": "chapters/019-1i.md"
+    },
+    {
+      "slug": "020-1i",
+      "title": "迭代 | Clojure 入门教程",
+      "file": "chapters/020-1i.md"
+    },
+    {
+      "slug": "021-1i",
+      "title": "列表推导式 | Clojure 入门教程",
+      "file": "chapters/021-1i.md"
+    },
+    {
+      "slug": "022-1i",
+      "title": "递归 | Clojure 入门教程",
+      "file": "chapters/022-1i.md"
+    },
+    {
+      "slug": "023-1i",
+      "title": "谓词 | Clojure 入门教程",
+      "file": "chapters/023-1i.md"
+    },
+    {
+      "slug": "024-1i",
+      "title": "序列 | Clojure 入门教程",
+      "file": "chapters/024-1i.md"
+    },
+    {
+      "slug": "025-1i",
+      "title": "输入/输出 | Clojure 入门教程",
+      "file": "chapters/025-1i.md"
+    },
+    {
+      "slug": "026-1i",
+      "title": "解构 | Clojure 入门教程",
+      "file": "chapters/026-1i.md"
+    },
+    {
+      "slug": "027-1i",
+      "title": "命名空间 | Clojure 入门教程",
+      "file": "chapters/027-1i.md"
+    },
+    {
+      "slug": "028-1i",
+      "title": "Some Fine Print | Clojure 入门教程",
+      "file": "chapters/028-1i.md"
+    },
+    {
+      "slug": "029-1i",
+      "title": "元数据 | Clojure 入门教程",
+      "file": "chapters/029-1i.md"
+    },
+    {
+      "slug": "030-1i",
+      "title": "宏 | Clojure 入门教程",
+      "file": "chapters/030-1i.md"
+    },
+    {
+      "slug": "031-1i",
+      "title": "并发 | Clojure 入门教程",
+      "file": "chapters/031-1i.md"
+    },
+    {
+      "slug": "032-1i",
+      "title": "引用类型 | Clojure 入门教程",
+      "file": "chapters/032-1i.md"
+    },
+    {
+      "slug": "033-1i",
+      "title": "Vars | Clojure 入门教程",
+      "file": "chapters/033-1i.md"
+    },
+    {
+      "slug": "034-1i",
+      "title": "Refs | Clojure 入门教程",
+      "file": "chapters/034-1i.md"
+    },
+    {
+      "slug": "035-1i",
+      "title": "Validation函数 | Clojure 入门教程",
+      "file": "chapters/035-1i.md"
+    },
+    {
+      "slug": "036-1i",
+      "title": "Atoms | Clojure 入门教程",
+      "file": "chapters/036-1i.md"
+    },
+    {
+      "slug": "037-1i",
+      "title": "Agents | Clojure 入门教程",
+      "file": "chapters/037-1i.md"
+    },
+    {
+      "slug": "038-1i",
+      "title": "Watchers | Clojure 入门教程",
+      "file": "chapters/038-1i.md"
+    },
+    {
+      "slug": "039-1i",
+      "title": "编译 | Clojure 入门教程",
+      "file": "chapters/039-1i.md"
+    },
+    {
+      "slug": "040-1i",
+      "title": "在Java里面调用 Clojure | Clojure 入门教程",
+      "file": "chapters/040-1i.md"
+    },
+    {
+      "slug": "041-1i",
+      "title": "自动化测试 | Clojure 入门教程",
+      "file": "chapters/041-1i.md"
+    },
+    {
+      "slug": "042-1i",
+      "title": "编辑器和IDE | Clojure 入门教程",
+      "file": "chapters/042-1i.md"
+    },
+    {
+      "slug": "043-1i",
+      "title": "桌面应用 | Clojure 入门教程",
+      "file": "chapters/043-1i.md"
+    },
+    {
+      "slug": "044-1i",
+      "title": "Web应用 | Clojure 入门教程",
+      "file": "chapters/044-1i.md"
+    },
+    {
+      "slug": "045-1i",
+      "title": "数据库 | Clojure 入门教程",
+      "file": "chapters/045-1i.md"
+    },
+    {
+      "slug": "046-1i",
+      "title": "库 | Clojure 入门教程",
+      "file": "chapters/046-1i.md"
+    },
+    {
+      "slug": "047-1i",
+      "title": "总结 | Clojure 入门教程",
+      "file": "chapters/047-1i.md"
+    },
+    {
+      "slug": "048-1i",
+      "title": "参考 | Clojure 入门教程",
+      "file": "chapters/048-1i.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Clojure入门教程 | Clojure 入门教程"
+}

@@ -1,0 +1,65 @@
+{
+  "bookId": "72ffb40c5496",
+  "title": "Java 编码规范",
+  "url": "https://github.com/waylau/java-code-conventions",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:26.554Z",
+  "chapters": [
+    {
+      "slug": "001-page01",
+      "title": "介绍",
+      "file": "chapters/001-page01.md"
+    },
+    {
+      "slug": "002-page02",
+      "title": "文件名称",
+      "file": "chapters/002-page02.md"
+    },
+    {
+      "slug": "003-page03",
+      "title": "文件组织",
+      "file": "chapters/003-page03.md"
+    },
+    {
+      "slug": "004-page04",
+      "title": "缩进",
+      "file": "chapters/004-page04.md"
+    },
+    {
+      "slug": "005-page05",
+      "title": "注释",
+      "file": "chapters/005-page05.md"
+    },
+    {
+      "slug": "006-page06",
+      "title": "声明",
+      "file": "chapters/006-page06.md"
+    },
+    {
+      "slug": "007-page07",
+      "title": "语句",
+      "file": "chapters/007-page07.md"
+    },
+    {
+      "slug": "008-page08",
+      "title": "空白",
+      "file": "chapters/008-page08.md"
+    },
+    {
+      "slug": "009-page09",
+      "title": "命名规范",
+      "file": "chapters/009-page09.md"
+    },
+    {
+      "slug": "010-page10",
+      "title": "编程惯例",
+      "file": "chapters/010-page10.md"
+    },
+    {
+      "slug": "011-page11",
+      "title": "代码示例",
+      "file": "chapters/011-page11.md"
+    }
+  ],
+  "sourceType": "github"
+}

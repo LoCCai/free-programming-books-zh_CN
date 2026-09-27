@@ -1,0 +1,15 @@
+{
+  "bookId": "ae3c259098b9",
+  "title": "The Little Redis Book",
+  "url": "https://github.com/JasonLai256/the-little-redis-book/blob/master/cn/redis.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:57.228Z",
+  "chapters": [
+    {
+      "slug": "001-redis",
+      "title": "redis",
+      "file": "chapters/001-redis.md"
+    }
+  ],
+  "sourceType": "github"
+}

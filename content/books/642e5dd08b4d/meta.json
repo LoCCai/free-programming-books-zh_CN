@@ -1,0 +1,16 @@
+{
+  "bookId": "642e5dd08b4d",
+  "title": "Git Community Book 中文版",
+  "url": "http://gitbook.liuhui998.com/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:36.521Z",
+  "chapters": [
+    {
+      "slug": "001-13",
+      "title": "Git Community Book 中文版",
+      "file": "chapters/001-13.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Git Community Book 中文版"
+}

@@ -1,0 +1,81 @@
+{
+  "bookId": "7df4ff84c53a",
+  "title": "移动Web前端知识库",
+  "url": "https://github.com/AlloyTeam/Mars",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:27.185Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "README",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "README",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "README",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "README",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "README",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-android",
+      "title": "android",
+      "file": "chapters/007-android.md"
+    },
+    {
+      "slug": "008-ios",
+      "title": "iOS",
+      "file": "chapters/008-ios.md"
+    },
+    {
+      "slug": "009-css-property-animation-performance",
+      "title": "CSS动画属性性能",
+      "file": "chapters/009-css-property-animation-performance.md"
+    },
+    {
+      "slug": "010-high-performance-css3-animation",
+      "title": "high-performance-css3-animation",
+      "file": "chapters/010-high-performance-css3-animation.md"
+    },
+    {
+      "slug": "011-border-1px",
+      "title": "border-1px",
+      "file": "chapters/011-border-1px.md"
+    },
+    {
+      "slug": "012-font-family",
+      "title": "font-family",
+      "file": "chapters/012-font-family.md"
+    },
+    {
+      "slug": "013-project-structure",
+      "title": "project-structure",
+      "file": "chapters/013-project-structure.md"
+    },
+    {
+      "slug": "014-es5-mobile-compat-table",
+      "title": "es5-mobile-compat-table",
+      "file": "chapters/014-es5-mobile-compat-table.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

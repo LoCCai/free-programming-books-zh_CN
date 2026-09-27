@@ -1,0 +1,1011 @@
+{
+  "bookId": "6f83c4b98e8b",
+  "title": "深入理解 AI Agent：设计原理与工程实践",
+  "url": "https://github.com/bojieli/ai-agent-book",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:31.141Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Context-Aware AI Agent with Ablation Studies / 上下文感知 Agent 与消融实验",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "实验 1-4：文生图工作流与原生图像生成的对照",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Learning from Experience: RL vs LLM In-Context Learning / 从经验中学习：RL 与 LLM 上下文学习对比",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme-ar",
+      "title": "الفصل الأول · أساسيات الوكيل",
+      "file": "chapters/004-readme-ar.md"
+    },
+    {
+      "slug": "005-readme-en",
+      "title": "Chapter 1 · Agent Fundamentals",
+      "file": "chapters/005-readme-en.md"
+    },
+    {
+      "slug": "006-readme-es",
+      "title": "Capítulo 1 · Fundamentos de los Agentes de IA",
+      "file": "chapters/006-readme-es.md"
+    },
+    {
+      "slug": "007-readme-hu",
+      "title": "1. fejezet · Ügynökalapok",
+      "file": "chapters/007-readme-hu.md"
+    },
+    {
+      "slug": "008-readme-id",
+      "title": "Bab 1 · Dasar-Dasar Agent",
+      "file": "chapters/008-readme-id.md"
+    },
+    {
+      "slug": "009-readme-ja",
+      "title": "第1章 · Agent の基礎",
+      "file": "chapters/009-readme-ja.md"
+    },
+    {
+      "slug": "010-readme-ko",
+      "title": "제1장 · 에이전트 기초",
+      "file": "chapters/010-readme-ko.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "第 1 章 · Agent 基础知识",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme-ru",
+      "title": "Глава 1 · Основы агентов",
+      "file": "chapters/012-readme-ru.md"
+    },
+    {
+      "slug": "013-readme-ta",
+      "title": "அத்தியாயம் 1 · ஏஜென்ட் அடிப்படைகள்",
+      "file": "chapters/013-readme-ta.md"
+    },
+    {
+      "slug": "014-readme-tr",
+      "title": "Bölüm 1 · Agent Temelleri",
+      "file": "chapters/014-readme-tr.md"
+    },
+    {
+      "slug": "015-readme-vi",
+      "title": "Chương 1 · Kiến thức nền tảng về Agent",
+      "file": "chapters/015-readme-vi.md"
+    },
+    {
+      "slug": "016-readme-zh-tw",
+      "title": "第 1 章 · Agent 基礎知識",
+      "file": "chapters/016-readme-zh-tw.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "把搜索得到的信息交给代码计算",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "Kimi Web Search Agent / Kimi 网络搜索 Agent",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "让浏览器与语音角色协作补齐表单信息",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "用分工与文件组织长文档翻译",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "观察记忆、计划与互动如何形成群体行为",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "比较角色切换与按需加载技能",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme",
+      "title": "并行收集资料时怎样保持证据一致",
+      "file": "chapters/023-readme.md"
+    },
+    {
+      "slug": "024-readme-ar",
+      "title": "الفصل العاشر · التعاون متعدد الوكلاء",
+      "file": "chapters/024-readme-ar.md"
+    },
+    {
+      "slug": "025-readme-en",
+      "title": "Chapter 10 · Multi-Agent Collaboration",
+      "file": "chapters/025-readme-en.md"
+    },
+    {
+      "slug": "026-readme-es",
+      "title": "Capítulo 10 · Colaboración Multi-Agente",
+      "file": "chapters/026-readme-es.md"
+    },
+    {
+      "slug": "027-readme-hu",
+      "title": "10. fejezet · Többügynökös együttműködés",
+      "file": "chapters/027-readme-hu.md"
+    },
+    {
+      "slug": "028-readme-id",
+      "title": "Bab 10 · Kolaborasi Multi-Agent",
+      "file": "chapters/028-readme-id.md"
+    },
+    {
+      "slug": "029-readme-ja",
+      "title": "第10章 · マルチ Agent の協調",
+      "file": "chapters/029-readme-ja.md"
+    },
+    {
+      "slug": "030-readme-ko",
+      "title": "제10장 · 멀티 에이전트 협업",
+      "file": "chapters/030-readme-ko.md"
+    },
+    {
+      "slug": "031-readme",
+      "title": "第 10 章 · 多 Agent 协作",
+      "file": "chapters/031-readme.md"
+    },
+    {
+      "slug": "032-readme-ru",
+      "title": "Глава 10 · Многоагентное взаимодействие",
+      "file": "chapters/032-readme-ru.md"
+    },
+    {
+      "slug": "033-readme-ta",
+      "title": "அத்தியாயம் 10 · பல-ஏஜென்ட் கூட்டுச் செயல்பாடு",
+      "file": "chapters/033-readme-ta.md"
+    },
+    {
+      "slug": "034-readme-tr",
+      "title": "Bölüm 10 · Çoklu Ajan İşbirliği",
+      "file": "chapters/034-readme-tr.md"
+    },
+    {
+      "slug": "035-readme-vi",
+      "title": "Chương 10 · Cộng tác đa Agent",
+      "file": "chapters/035-readme-vi.md"
+    },
+    {
+      "slug": "036-readme-zh-tw",
+      "title": "第 10 章 · 多 Agent 協作",
+      "file": "chapters/036-readme-zh-tw.md"
+    },
+    {
+      "slug": "037-readme",
+      "title": "按任务阶段组织行为与工具",
+      "file": "chapters/037-readme.md"
+    },
+    {
+      "slug": "038-readme",
+      "title": "比较固定的快慢角色协作",
+      "file": "chapters/038-readme.md"
+    },
+    {
+      "slug": "039-readme",
+      "title": "用游戏状态机协调多角色语音交互",
+      "file": "chapters/039-readme.md"
+    },
+    {
+      "slug": "040-readme",
+      "title": "Agent Skills PPT Demo / 使用 Agent Skills 从论文生成演示文稿",
+      "file": "chapters/040-readme.md"
+    },
+    {
+      "slug": "041-readme",
+      "title": "Attention Visualization / 注意力机制可视化",
+      "file": "chapters/041-readme.md"
+    },
+    {
+      "slug": "042-readme",
+      "title": "Context Compression Strategies / 上下文压缩策略对比",
+      "file": "chapters/042-readme.md"
+    },
+    {
+      "slug": "043-readme",
+      "title": "KV Cache Demonstration / KV Cache 与错误上下文管理模式",
+      "file": "chapters/043-readme.md"
+    },
+    {
+      "slug": "044-readme",
+      "title": "Local LLM Serving & Tool Calling / 本地 LLM 服务部署与工具调用",
+      "file": "chapters/044-readme.md"
+    },
+    {
+      "slug": "045-readme",
+      "title": "Prompt Engineering Ablation (τ-bench) / 提示工程消融实验",
+      "file": "chapters/045-readme.md"
+    },
+    {
+      "slug": "046-readme",
+      "title": "Prompt Injection Attack & Defense / 提示注入攻防实验",
+      "file": "chapters/046-readme.md"
+    },
+    {
+      "slug": "047-readme-ar",
+      "title": "الفصل الثاني · هندسة السياق",
+      "file": "chapters/047-readme-ar.md"
+    },
+    {
+      "slug": "048-readme-en",
+      "title": "Chapter 2 · Context Engineering",
+      "file": "chapters/048-readme-en.md"
+    },
+    {
+      "slug": "049-readme-es",
+      "title": "Capítulo 2 · Ingeniería de Contexto",
+      "file": "chapters/049-readme-es.md"
+    },
+    {
+      "slug": "050-readme-hu",
+      "title": "2. fejezet · Kontextustervezés",
+      "file": "chapters/050-readme-hu.md"
+    },
+    {
+      "slug": "051-readme-id",
+      "title": "Bab 2 · Rekayasa Context",
+      "file": "chapters/051-readme-id.md"
+    },
+    {
+      "slug": "052-readme-ja",
+      "title": "第2章 · コンテキストエンジニアリング",
+      "file": "chapters/052-readme-ja.md"
+    },
+    {
+      "slug": "053-readme-ko",
+      "title": "제2장 · 컨텍스트 엔지니어링",
+      "file": "chapters/053-readme-ko.md"
+    },
+    {
+      "slug": "054-readme",
+      "title": "第 2 章 · 上下文工程",
+      "file": "chapters/054-readme.md"
+    },
+    {
+      "slug": "055-readme-ru",
+      "title": "Глава 2 · Инженерия контекста",
+      "file": "chapters/055-readme-ru.md"
+    },
+    {
+      "slug": "056-readme-ta",
+      "title": "அத்தியாயம் 2 · சூழல் பொறியியல்",
+      "file": "chapters/056-readme-ta.md"
+    },
+    {
+      "slug": "057-readme-tr",
+      "title": "Bölüm 2 · Bağlam Mühendisliği",
+      "file": "chapters/057-readme-tr.md"
+    },
+    {
+      "slug": "058-readme-vi",
+      "title": "Chương 2 · Kỹ thuật ngữ cảnh",
+      "file": "chapters/058-readme-vi.md"
+    },
+    {
+      "slug": "059-readme-zh-tw",
+      "title": "第 2 章 · 上下文工程",
+      "file": "chapters/059-readme-zh-tw.md"
+    },
+    {
+      "slug": "060-readme",
+      "title": "System-Hint Enhanced AI Agent / Agent 状态栏（System Hint）实验",
+      "file": "chapters/060-readme.md"
+    },
+    {
+      "slug": "061-readme-legal-indexing",
+      "title": "从法律原文建立可核对的检索索引",
+      "file": "chapters/061-readme-legal-indexing.md"
+    },
+    {
+      "slug": "062-readme",
+      "title": "Agentic RAG System / Agentic RAG 系统",
+      "file": "chapters/062-readme.md"
+    },
+    {
+      "slug": "063-readme-ar",
+      "title": "الفصل الثالث · ذاكرة المستخدم وقواعد المعرفة",
+      "file": "chapters/063-readme-ar.md"
+    },
+    {
+      "slug": "064-readme-en",
+      "title": "Chapter 3 · User Memory and Knowledge Bases",
+      "file": "chapters/064-readme-en.md"
+    },
+    {
+      "slug": "065-readme-es",
+      "title": "Capítulo 3 · Memoria de Usuario y Base de Conocimiento",
+      "file": "chapters/065-readme-es.md"
+    },
+    {
+      "slug": "066-readme-hu",
+      "title": "3. fejezet · Felhasználói memória és tudásbázis",
+      "file": "chapters/066-readme-hu.md"
+    },
+    {
+      "slug": "067-readme-id",
+      "title": "Bab 3 · Memori Pengguna dan Knowledge Base",
+      "file": "chapters/067-readme-id.md"
+    },
+    {
+      "slug": "068-readme-ja",
+      "title": "第3章 · ユーザーメモリと知識ベース",
+      "file": "chapters/068-readme-ja.md"
+    },
+    {
+      "slug": "069-readme-ko",
+      "title": "제3장 · 사용자 메모리와 지식 베이스",
+      "file": "chapters/069-readme-ko.md"
+    },
+    {
+      "slug": "070-readme",
+      "title": "第 3 章 · 用户记忆和知识库",
+      "file": "chapters/070-readme.md"
+    },
+    {
+      "slug": "071-readme-ru",
+      "title": "Глава 3 · Память пользователя и базы знаний",
+      "file": "chapters/071-readme-ru.md"
+    },
+    {
+      "slug": "072-readme-ta",
+      "title": "அத்தியாயம் 3 · பயனர் நினைவகம் மற்றும் அறிவுத் தளம்",
+      "file": "chapters/072-readme-ta.md"
+    },
+    {
+      "slug": "073-readme-tr",
+      "title": "Bölüm 3 · Kullanıcı Belleği ve Bilgi Tabanları",
+      "file": "chapters/073-readme-tr.md"
+    },
+    {
+      "slug": "074-readme-vi",
+      "title": "Chương 3 · Bộ nhớ người dùng và kho tri thức",
+      "file": "chapters/074-readme-vi.md"
+    },
+    {
+      "slug": "075-readme-zh-tw",
+      "title": "第 3 章 · 使用者記憶和知識庫",
+      "file": "chapters/075-readme-zh-tw.md"
+    },
+    {
+      "slug": "076-readme-en",
+      "title": "This file has moved",
+      "file": "chapters/076-readme-en.md"
+    },
+    {
+      "slug": "077-readme-es",
+      "title": "Este archivo se ha movido",
+      "file": "chapters/077-readme-es.md"
+    },
+    {
+      "slug": "078-readme-he",
+      "title": "סוכני AI לעומק: עקרונות עיצוב ופרקטיקה הנדסית",
+      "file": "chapters/078-readme-he.md"
+    },
+    {
+      "slug": "079-readme-ja",
+      "title": "このファイルは移動しました",
+      "file": "chapters/079-readme-ja.md"
+    },
+    {
+      "slug": "080-readme-ko",
+      "title": "이 파일은 이동했습니다",
+      "file": "chapters/080-readme-ko.md"
+    },
+    {
+      "slug": "081-readme",
+      "title": "深入理解 AI Agent：设计原理与工程实践",
+      "file": "chapters/081-readme.md"
+    },
+    {
+      "slug": "082-readme-ptbr",
+      "title": "Agentes de IA em Profundidade: Princípios de Design e Prática de Engenharia",
+      "file": "chapters/082-readme-ptbr.md"
+    },
+    {
+      "slug": "083-readme-ta",
+      "title": "இந்தக் கோப்பு நகர்த்தப்பட்டது",
+      "file": "chapters/083-readme-ta.md"
+    },
+    {
+      "slug": "084-readme-tr",
+      "title": "Türkçe README",
+      "file": "chapters/084-readme-tr.md"
+    },
+    {
+      "slug": "085-readme-vi",
+      "title": "Tệp này đã được di chuyển",
+      "file": "chapters/085-readme-vi.md"
+    },
+    {
+      "slug": "086-readme-zhtw",
+      "title": "此檔案已移動",
+      "file": "chapters/086-readme-zhtw.md"
+    },
+    {
+      "slug": "087-afterword-ar",
+      "title": "الخاتمة: العودة إلى الصيغة: Agent = LLM + السياق + الأدوات {.unnumbered}",
+      "file": "chapters/087-afterword-ar.md"
+    },
+    {
+      "slug": "088-chapter1-ar",
+      "title": "الفصل الأول: أساسيات وكلاء الذكاء الاصطناعي",
+      "file": "chapters/088-chapter1-ar.md"
+    },
+    {
+      "slug": "089-chapter10-ar",
+      "title": "التعاون متعدد الوكلاء",
+      "file": "chapters/089-chapter10-ar.md"
+    },
+    {
+      "slug": "090-chapter2-ar",
+      "title": "الفصل الثاني: هندسة السياق",
+      "file": "chapters/090-chapter2-ar.md"
+    },
+    {
+      "slug": "091-chapter3-ar",
+      "title": "ذاكرة المستخدم وقاعدة المعرفة",
+      "file": "chapters/091-chapter3-ar.md"
+    },
+    {
+      "slug": "092-chapter4-ar",
+      "title": "الفصل الرابع: الأدوات",
+      "file": "chapters/092-chapter4-ar.md"
+    },
+    {
+      "slug": "093-chapter5-ar",
+      "title": "وكيل البرمجة وتوليد الشفرة",
+      "file": "chapters/093-chapter5-ar.md"
+    },
+    {
+      "slug": "094-chapter6-ar",
+      "title": "التفاعل: توسيع فضاء الملاحظة وفضاء الفعل",
+      "file": "chapters/094-chapter6-ar.md"
+    },
+    {
+      "slug": "095-chapter7-ar",
+      "title": "الفصل السابع: تقييم الوكلاء",
+      "file": "chapters/095-chapter7-ar.md"
+    },
+    {
+      "slug": "096-chapter8-ar",
+      "title": "مرحلة ما بعد تدريب النموذج",
+      "file": "chapters/096-chapter8-ar.md"
+    },
+    {
+      "slug": "097-chapter9-ar",
+      "title": "التطور المستمر للوكلاء",
+      "file": "chapters/097-chapter9-ar.md"
+    },
+    {
+      "slug": "098-introduction-ar",
+      "title": "مقدمة {.unnumbered}",
+      "file": "chapters/098-introduction-ar.md"
+    },
+    {
+      "slug": "099-reference-answers-ar",
+      "title": "إجابات مرجعية لأسئلة التأمل {.unnumbered}",
+      "file": "chapters/099-reference-answers-ar.md"
+    },
+    {
+      "slug": "100-afterword",
+      "title": "Afterword: Back to Agent = LLM + Context + Tools {.unnumbered}",
+      "file": "chapters/100-afterword.md"
+    },
+    {
+      "slug": "101-chapter1",
+      "title": "Getting Started with AI Agents",
+      "file": "chapters/101-chapter1.md"
+    },
+    {
+      "slug": "102-chapter10",
+      "title": "Multi-Agent Collaboration",
+      "file": "chapters/102-chapter10.md"
+    },
+    {
+      "slug": "103-chapter2",
+      "title": "Context Engineering",
+      "file": "chapters/103-chapter2.md"
+    },
+    {
+      "slug": "104-chapter3",
+      "title": "User Memory and Knowledge Base",
+      "file": "chapters/104-chapter3.md"
+    },
+    {
+      "slug": "105-chapter4",
+      "title": "Tools",
+      "file": "chapters/105-chapter4.md"
+    },
+    {
+      "slug": "106-chapter5",
+      "title": "Coding Agent and Code Generation",
+      "file": "chapters/106-chapter5.md"
+    },
+    {
+      "slug": "107-chapter6",
+      "title": "Interaction: Expanding the Observation and Action Spaces",
+      "file": "chapters/107-chapter6.md"
+    },
+    {
+      "slug": "108-chapter7",
+      "title": "Evaluating Agents",
+      "file": "chapters/108-chapter7.md"
+    },
+    {
+      "slug": "109-chapter8",
+      "title": "Model Post-Training",
+      "file": "chapters/109-chapter8.md"
+    },
+    {
+      "slug": "110-chapter9",
+      "title": "Continual Evolution of Agents",
+      "file": "chapters/110-chapter9.md"
+    },
+    {
+      "slug": "111-introduction",
+      "title": "Introduction {.unnumbered}",
+      "file": "chapters/111-introduction.md"
+    },
+    {
+      "slug": "112-reference-answers",
+      "title": "Reference Answers to Thought Questions",
+      "file": "chapters/112-reference-answers.md"
+    },
+    {
+      "slug": "113-afterword-es",
+      "title": "Epílogo: Regresando a Agente = LLM + Contexto + Herramientas {.unnumbered}",
+      "file": "chapters/113-afterword-es.md"
+    },
+    {
+      "slug": "114-chapter1-es",
+      "title": "Capítulo 1: Fundamentos de los Agentes de IA",
+      "file": "chapters/114-chapter1-es.md"
+    },
+    {
+      "slug": "115-chapter10-es",
+      "title": "Capítulo 10: Colaboración Multi-Agente",
+      "file": "chapters/115-chapter10-es.md"
+    },
+    {
+      "slug": "116-chapter2-es",
+      "title": "Capítulo 2: Ingeniería de Contexto y Gestión de Memoria",
+      "file": "chapters/116-chapter2-es.md"
+    },
+    {
+      "slug": "117-chapter3-es",
+      "title": "Capítulo 3: Memoria del Usuario y Base de Conocimiento",
+      "file": "chapters/117-chapter3-es.md"
+    },
+    {
+      "slug": "118-chapter4-es",
+      "title": "Capítulo 4: Integración de Herramientas y Protocolos MCP",
+      "file": "chapters/118-chapter4-es.md"
+    },
+    {
+      "slug": "119-chapter5-es",
+      "title": "Capítulo 5: Coding Agent y Generación de Código",
+      "file": "chapters/119-chapter5-es.md"
+    },
+    {
+      "slug": "120-chapter6-es",
+      "title": "Interacción: la expansión de los espacios de observación y de acción",
+      "file": "chapters/120-chapter6-es.md"
+    },
+    {
+      "slug": "121-chapter7-es",
+      "title": "Evaluación de Agentes",
+      "file": "chapters/121-chapter7-es.md"
+    },
+    {
+      "slug": "122-chapter8-es",
+      "title": "Post-entrenamiento de Modelos",
+      "file": "chapters/122-chapter8-es.md"
+    },
+    {
+      "slug": "123-chapter9-es",
+      "title": "Capítulo 9: La Evolución Continua del Agente",
+      "file": "chapters/123-chapter9-es.md"
+    },
+    {
+      "slug": "124-glossary-es",
+      "title": "Glosario de Términos Inglés - Español {.unnumbered}",
+      "file": "chapters/124-glossary-es.md"
+    },
+    {
+      "slug": "125-introduction-es",
+      "title": "Introducción {.unnumbered}",
+      "file": "chapters/125-introduction-es.md"
+    },
+    {
+      "slug": "126-reference-answers-es",
+      "title": "Respuestas de referencia para preguntas de reflexión",
+      "file": "chapters/126-reference-answers-es.md"
+    },
+    {
+      "slug": "127-afterword-he",
+      "title": "אחרית דבר: חזרה אל סוכן = LLM + הקשר + כלים {.unnumbered}",
+      "file": "chapters/127-afterword-he.md"
+    },
+    {
+      "slug": "128-chapter1-he",
+      "title": "צעדים ראשונים עם סוכני AI",
+      "file": "chapters/128-chapter1-he.md"
+    },
+    {
+      "slug": "129-chapter10-he",
+      "title": "שיתוף פעולה רב‑סוכני",
+      "file": "chapters/129-chapter10-he.md"
+    },
+    {
+      "slug": "130-chapter2-he",
+      "title": "הנדסת הקשר",
+      "file": "chapters/130-chapter2-he.md"
+    },
+    {
+      "slug": "131-chapter3-he",
+      "title": "זיכרון משתמש ובסיס ידע",
+      "file": "chapters/131-chapter3-he.md"
+    },
+    {
+      "slug": "132-chapter4-he",
+      "title": "כלים",
+      "file": "chapters/132-chapter4-he.md"
+    },
+    {
+      "slug": "133-chapter5-he",
+      "title": "סוכן קוד ויצירת קוד",
+      "file": "chapters/133-chapter5-he.md"
+    },
+    {
+      "slug": "134-chapter6-he",
+      "title": "אינטראקציה: הרחבת מרחבי התצפית והפעולה",
+      "file": "chapters/134-chapter6-he.md"
+    },
+    {
+      "slug": "135-chapter7-he",
+      "title": "הערכת סוכנים",
+      "file": "chapters/135-chapter7-he.md"
+    },
+    {
+      "slug": "136-chapter8-he",
+      "title": "אימון־על של מודלים",
+      "file": "chapters/136-chapter8-he.md"
+    },
+    {
+      "slug": "137-chapter9-he",
+      "title": "התפתחות מתמשכת של סוכנים",
+      "file": "chapters/137-chapter9-he.md"
+    },
+    {
+      "slug": "138-introduction-he",
+      "title": "הקדמה {.unnumbered}",
+      "file": "chapters/138-introduction-he.md"
+    },
+    {
+      "slug": "139-reference-answers-he",
+      "title": "תשובות לשאלות למחשבה {.unnumbered}",
+      "file": "chapters/139-reference-answers-he.md"
+    },
+    {
+      "slug": "140-afterword",
+      "title": "Utószó: Vissza az Agent = LLM + Kontextus + Eszközökhöz {.unnumbered}",
+      "file": "chapters/140-afterword.md"
+    },
+    {
+      "slug": "141-chapter1",
+      "title": "Ismerkedés az AI-ügynökökkel",
+      "file": "chapters/141-chapter1.md"
+    },
+    {
+      "slug": "142-chapter10",
+      "title": "Többügynökös Együttműködés",
+      "file": "chapters/142-chapter10.md"
+    },
+    {
+      "slug": "143-chapter2",
+      "title": "Kontextustervezés",
+      "file": "chapters/143-chapter2.md"
+    },
+    {
+      "slug": "144-chapter3",
+      "title": "Felhasználói memória és Tudásbázis",
+      "file": "chapters/144-chapter3.md"
+    },
+    {
+      "slug": "145-chapter4",
+      "title": "Eszközök",
+      "file": "chapters/145-chapter4.md"
+    },
+    {
+      "slug": "146-chapter5",
+      "title": "Kódoló Ágens és Kódgenerálás",
+      "file": "chapters/146-chapter5.md"
+    },
+    {
+      "slug": "147-chapter6",
+      "title": "Interakció: a megfigyelési és a cselekvési tér kiterjesztése",
+      "file": "chapters/147-chapter6.md"
+    },
+    {
+      "slug": "148-chapter7",
+      "title": "Ügynökök kiértékelése",
+      "file": "chapters/148-chapter7.md"
+    },
+    {
+      "slug": "149-chapter8",
+      "title": "Modell poszt-tréning",
+      "file": "chapters/149-chapter8.md"
+    },
+    {
+      "slug": "150-chapter9",
+      "title": "Az ágensek folyamatos evolúciója",
+      "file": "chapters/150-chapter9.md"
+    },
+    {
+      "slug": "151-introduction",
+      "title": "Bevezetés {.unnumbered}",
+      "file": "chapters/151-introduction.md"
+    },
+    {
+      "slug": "152-reference-answers",
+      "title": "Válaszvázlatok a gondolatébresztő kérdésekhez",
+      "file": "chapters/152-reference-answers.md"
+    },
+    {
+      "slug": "153-afterword",
+      "title": "Kata Penutup: Kembali ke Agent = LLM + Context + Tools {.unnumbered}",
+      "file": "chapters/153-afterword.md"
+    },
+    {
+      "slug": "154-chapter1",
+      "title": "Memulai dengan AI Agent",
+      "file": "chapters/154-chapter1.md"
+    },
+    {
+      "slug": "155-chapter10",
+      "title": "Kolaborasi Multi-Agent",
+      "file": "chapters/155-chapter10.md"
+    },
+    {
+      "slug": "156-chapter2",
+      "title": "Context Engineering",
+      "file": "chapters/156-chapter2.md"
+    },
+    {
+      "slug": "157-chapter3",
+      "title": "Memori Pengguna dan Basis Pengetahuan",
+      "file": "chapters/157-chapter3.md"
+    },
+    {
+      "slug": "158-chapter4",
+      "title": "Alat",
+      "file": "chapters/158-chapter4.md"
+    },
+    {
+      "slug": "159-chapter5",
+      "title": "Coding Agent dan Pembuatan Kode",
+      "file": "chapters/159-chapter5.md"
+    },
+    {
+      "slug": "160-chapter6",
+      "title": "Interaksi: Perluasan Ruang Observasi dan Ruang Aksi",
+      "file": "chapters/160-chapter6.md"
+    },
+    {
+      "slug": "161-chapter7",
+      "title": "Mengevaluasi Agent",
+      "file": "chapters/161-chapter7.md"
+    },
+    {
+      "slug": "162-chapter8",
+      "title": "Pascapelatihan Model",
+      "file": "chapters/162-chapter8.md"
+    },
+    {
+      "slug": "163-chapter9",
+      "title": "Evolusi Kontinual pada Agent",
+      "file": "chapters/163-chapter9.md"
+    },
+    {
+      "slug": "164-introduction",
+      "title": "Pengantar {.unnumbered}",
+      "file": "chapters/164-introduction.md"
+    },
+    {
+      "slug": "165-reference-answers",
+      "title": "Referensi Jawaban untuk Pertanyaan Pemikiran",
+      "file": "chapters/165-reference-answers.md"
+    },
+    {
+      "slug": "166-afterword-ja",
+      "title": "あとがき：Agent = LLM + コンテキスト + ツール に立ち返る {.unnumbered}",
+      "file": "chapters/166-afterword-ja.md"
+    },
+    {
+      "slug": "167-chapter1-ja",
+      "title": "AI Agent 入門",
+      "file": "chapters/167-chapter1-ja.md"
+    },
+    {
+      "slug": "168-chapter10-ja",
+      "title": "マルチ Agent 協調",
+      "file": "chapters/168-chapter10-ja.md"
+    },
+    {
+      "slug": "169-chapter2-ja",
+      "title": "コンテキストエンジニアリング",
+      "file": "chapters/169-chapter2-ja.md"
+    },
+    {
+      "slug": "170-chapter3-ja",
+      "title": "ユーザーメモリと知識ベース",
+      "file": "chapters/170-chapter3-ja.md"
+    },
+    {
+      "slug": "171-chapter4-ja",
+      "title": "ツール",
+      "file": "chapters/171-chapter4-ja.md"
+    },
+    {
+      "slug": "172-chapter5-ja",
+      "title": "Coding Agent とコード生成",
+      "file": "chapters/172-chapter5-ja.md"
+    },
+    {
+      "slug": "173-chapter6-ja",
+      "title": "交互：観察空間と動作空間の拡張",
+      "file": "chapters/173-chapter6-ja.md"
+    },
+    {
+      "slug": "174-chapter7-ja",
+      "title": "Agent の評価",
+      "file": "chapters/174-chapter7-ja.md"
+    },
+    {
+      "slug": "175-chapter8-ja",
+      "title": "モデルのポストトレーニング",
+      "file": "chapters/175-chapter8-ja.md"
+    },
+    {
+      "slug": "176-chapter9-ja",
+      "title": "Agent の継続的進化",
+      "file": "chapters/176-chapter9-ja.md"
+    },
+    {
+      "slug": "177-introduction-ja",
+      "title": "はじめに {.unnumbered}",
+      "file": "chapters/177-introduction-ja.md"
+    },
+    {
+      "slug": "178-reference-answers-ja",
+      "title": "演習問題の解答例",
+      "file": "chapters/178-reference-answers-ja.md"
+    },
+    {
+      "slug": "179-afterword-ko",
+      "title": "맺음말: 다시 에이전트 = LLM + 컨텍스트 + 도구로 {.unnumbered}",
+      "file": "chapters/179-afterword-ko.md"
+    },
+    {
+      "slug": "180-chapter1-ko",
+      "title": "AI 에이전트 입문",
+      "file": "chapters/180-chapter1-ko.md"
+    },
+    {
+      "slug": "181-chapter10-ko",
+      "title": "멀티 에이전트 협업",
+      "file": "chapters/181-chapter10-ko.md"
+    },
+    {
+      "slug": "182-chapter2-ko",
+      "title": "컨텍스트 엔지니어링",
+      "file": "chapters/182-chapter2-ko.md"
+    },
+    {
+      "slug": "183-chapter3-ko",
+      "title": "사용자 메모리와 지식 베이스",
+      "file": "chapters/183-chapter3-ko.md"
+    },
+    {
+      "slug": "184-chapter4-ko",
+      "title": "도구",
+      "file": "chapters/184-chapter4-ko.md"
+    },
+    {
+      "slug": "185-chapter5-ko",
+      "title": "코딩 에이전트와 코드 생성",
+      "file": "chapters/185-chapter5-ko.md"
+    },
+    {
+      "slug": "186-chapter6-ko",
+      "title": "상호작용: 관찰 공간과 행동 공간의 확장",
+      "file": "chapters/186-chapter6-ko.md"
+    },
+    {
+      "slug": "187-chapter7-ko",
+      "title": "에이전트 평가",
+      "file": "chapters/187-chapter7-ko.md"
+    },
+    {
+      "slug": "188-chapter8-ko",
+      "title": "모델 사후 학습",
+      "file": "chapters/188-chapter8-ko.md"
+    },
+    {
+      "slug": "189-chapter9-ko",
+      "title": "에이전트의 지속적 진화",
+      "file": "chapters/189-chapter9-ko.md"
+    },
+    {
+      "slug": "190-introduction-ko",
+      "title": "들어가며 {.unnumbered}",
+      "file": "chapters/190-introduction-ko.md"
+    },
+    {
+      "slug": "191-reference-answers-ko",
+      "title": "생각해 볼 문제 참고 답안",
+      "file": "chapters/191-reference-answers-ko.md"
+    },
+    {
+      "slug": "192-afterword-ptbr",
+      "title": "Posfácio: de volta a Agente = LLM + Contexto + Ferramentas {.unnumbered}",
+      "file": "chapters/192-afterword-ptbr.md"
+    },
+    {
+      "slug": "193-chapter1-ptbr",
+      "title": "Introdução aos agentes de IA",
+      "file": "chapters/193-chapter1-ptbr.md"
+    },
+    {
+      "slug": "194-chapter10-ptbr",
+      "title": "Colaboração multiagente",
+      "file": "chapters/194-chapter10-ptbr.md"
+    },
+    {
+      "slug": "195-chapter2-ptbr",
+      "title": "Engenharia de contexto",
+      "file": "chapters/195-chapter2-ptbr.md"
+    },
+    {
+      "slug": "196-chapter3-ptbr",
+      "title": "Memória do usuário e base de conhecimento",
+      "file": "chapters/196-chapter3-ptbr.md"
+    },
+    {
+      "slug": "197-chapter4-ptbr",
+      "title": "Ferramentas",
+      "file": "chapters/197-chapter4-ptbr.md"
+    },
+    {
+      "slug": "198-chapter5-ptbr",
+      "title": "Agente de programação e geração de código",
+      "file": "chapters/198-chapter5-ptbr.md"
+    },
+    {
+      "slug": "199-chapter6-ptbr",
+      "title": "Interação: expansão dos espaços de observação e ação",
+      "file": "chapters/199-chapter6-ptbr.md"
+    },
+    {
+      "slug": "200-chapter7-ptbr",
+      "title": "Avaliação de agentes",
+      "file": "chapters/200-chapter7-ptbr.md"
+    }
+  ],
+  "license": "Apache-2.0",
+  "sourceType": "github"
+}

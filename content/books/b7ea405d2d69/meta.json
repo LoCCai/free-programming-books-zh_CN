@@ -1,0 +1,16 @@
+{
+  "bookId": "b7ea405d2d69",
+  "title": "Gradle 中文使用文档",
+  "url": "http://yuedu.baidu.com/ebook/f23af265998fcc22bcd10da2",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:11.190Z",
+  "chapters": [
+    {
+      "slug": "001-1h",
+      "title": "百度阅读wap首页",
+      "file": "chapters/001-1h.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "百度阅读wap首页"
+}

@@ -1,0 +1,1011 @@
+{
+  "bookId": "f0985cf1950f",
+  "title": "Go Web 编程",
+  "url": "https://github.com/astaxie/build-web-application-with-golang",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:27.667Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "readme",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Spenden",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "readme",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "Donate",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "readme",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "Donaciones",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "readme",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "دونیت",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "Donation",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "Go Web プログラミング",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "Doações",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "Multiple Language Versions",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-01-0",
+      "title": "১ গো এনভায়রনমেন্ট কনফিগারেশন",
+      "file": "chapters/013-01-0.md"
+    },
+    {
+      "slug": "014-01-1",
+      "title": "ইনস্টলেশন ১.১",
+      "file": "chapters/014-01-1.md"
+    },
+    {
+      "slug": "015-preface",
+      "title": "preface",
+      "file": "chapters/015-preface.md"
+    },
+    {
+      "slug": "016-ref",
+      "title": "Appendix A References",
+      "file": "chapters/016-ref.md"
+    },
+    {
+      "slug": "017-01-0",
+      "title": "1 Einrichtung der Go Entwicklungsumgebung",
+      "file": "chapters/017-01-0.md"
+    },
+    {
+      "slug": "018-01-1",
+      "title": "1.1 Installation",
+      "file": "chapters/018-01-1.md"
+    },
+    {
+      "slug": "019-01-2",
+      "title": "1.2 $GOPATH und Workspaces",
+      "file": "chapters/019-01-2.md"
+    },
+    {
+      "slug": "020-01-3",
+      "title": "1.3 Go Befehle",
+      "file": "chapters/020-01-3.md"
+    },
+    {
+      "slug": "021-01-4",
+      "title": "Go Entwicklungswerkzeuge",
+      "file": "chapters/021-01-4.md"
+    },
+    {
+      "slug": "022-01-5",
+      "title": "1.5 Zusammenfassung",
+      "file": "chapters/022-01-5.md"
+    },
+    {
+      "slug": "023-02-0",
+      "title": "2 Grundlegendes Wissen zu Go",
+      "file": "chapters/023-02-0.md"
+    },
+    {
+      "slug": "024-02-1",
+      "title": "2.1 Hallo Go",
+      "file": "chapters/024-02-1.md"
+    },
+    {
+      "slug": "025-02-2",
+      "title": "2.2 Grundlagen von Go",
+      "file": "chapters/025-02-2.md"
+    },
+    {
+      "slug": "026-02-3",
+      "title": "2.3 Kontrollstrukturen und Funktionen",
+      "file": "chapters/026-02-3.md"
+    },
+    {
+      "slug": "027-02-4",
+      "title": "2.4 Struct",
+      "file": "chapters/027-02-4.md"
+    },
+    {
+      "slug": "028-02-5",
+      "title": "2.5 Objektorientierte Programmierung",
+      "file": "chapters/028-02-5.md"
+    },
+    {
+      "slug": "029-02-6",
+      "title": "2.6 Interfaces",
+      "file": "chapters/029-02-6.md"
+    },
+    {
+      "slug": "030-02-7",
+      "title": "2.7 Nebenläufigkeit",
+      "file": "chapters/030-02-7.md"
+    },
+    {
+      "slug": "031-02-8",
+      "title": "2.8 Zusammenfassung",
+      "file": "chapters/031-02-8.md"
+    },
+    {
+      "slug": "032-03-0",
+      "title": "3 Internet Grundlagen",
+      "file": "chapters/032-03-0.md"
+    },
+    {
+      "slug": "033-03-1",
+      "title": "Web working principles",
+      "file": "chapters/033-03-1.md"
+    },
+    {
+      "slug": "034-03-2",
+      "title": "3.2 Build a simple web server",
+      "file": "chapters/034-03-2.md"
+    },
+    {
+      "slug": "035-03-3",
+      "title": "3.3 How Go works with web",
+      "file": "chapters/035-03-3.md"
+    },
+    {
+      "slug": "036-03-4",
+      "title": "3.4 Get into http package",
+      "file": "chapters/036-03-4.md"
+    },
+    {
+      "slug": "037-03-5",
+      "title": "3.5 Summary",
+      "file": "chapters/037-03-5.md"
+    },
+    {
+      "slug": "038-04-0",
+      "title": "4 User form",
+      "file": "chapters/038-04-0.md"
+    },
+    {
+      "slug": "039-04-1",
+      "title": "4.1 Process form inputs",
+      "file": "chapters/039-04-1.md"
+    },
+    {
+      "slug": "040-04-2",
+      "title": "4.2 Verification of inputs",
+      "file": "chapters/040-04-2.md"
+    },
+    {
+      "slug": "041-04-3",
+      "title": "4.3 Cross site scripting",
+      "file": "chapters/041-04-3.md"
+    },
+    {
+      "slug": "042-04-4",
+      "title": "4.4 Duplicate submissions",
+      "file": "chapters/042-04-4.md"
+    },
+    {
+      "slug": "043-04-5",
+      "title": "4.5 File upload",
+      "file": "chapters/043-04-5.md"
+    },
+    {
+      "slug": "044-04-6",
+      "title": "4.6 Summary",
+      "file": "chapters/044-04-6.md"
+    },
+    {
+      "slug": "045-05-0",
+      "title": "5 Database",
+      "file": "chapters/045-05-0.md"
+    },
+    {
+      "slug": "046-05-1",
+      "title": "5.1 database/sql interface",
+      "file": "chapters/046-05-1.md"
+    },
+    {
+      "slug": "047-05-2",
+      "title": "5.2 MySQL",
+      "file": "chapters/047-05-2.md"
+    },
+    {
+      "slug": "048-05-3",
+      "title": "5.3 SQLite",
+      "file": "chapters/048-05-3.md"
+    },
+    {
+      "slug": "049-05-4",
+      "title": "5.4 PostgreSQL",
+      "file": "chapters/049-05-4.md"
+    },
+    {
+      "slug": "050-05-5",
+      "title": "5.5 Develop ORM based on beedb",
+      "file": "chapters/050-05-5.md"
+    },
+    {
+      "slug": "051-05-6",
+      "title": "5.6 NoSQL database",
+      "file": "chapters/051-05-6.md"
+    },
+    {
+      "slug": "052-05-7",
+      "title": "5.7 Summary",
+      "file": "chapters/052-05-7.md"
+    },
+    {
+      "slug": "053-06-0",
+      "title": "6 Data storage and sessions",
+      "file": "chapters/053-06-0.md"
+    },
+    {
+      "slug": "054-06-1",
+      "title": "06.1",
+      "file": "chapters/054-06-1.md"
+    },
+    {
+      "slug": "055-06-2",
+      "title": "6.2 How to use sessions in Go",
+      "file": "chapters/055-06-2.md"
+    },
+    {
+      "slug": "056-06-3",
+      "title": "6.3 Session storage",
+      "file": "chapters/056-06-3.md"
+    },
+    {
+      "slug": "057-06-4",
+      "title": "6.4 Preventing session hijacking",
+      "file": "chapters/057-06-4.md"
+    },
+    {
+      "slug": "058-06-5",
+      "title": "6.5 Summary",
+      "file": "chapters/058-06-5.md"
+    },
+    {
+      "slug": "059-07-0",
+      "title": "7 Text files",
+      "file": "chapters/059-07-0.md"
+    },
+    {
+      "slug": "060-07-1",
+      "title": "7.1 XML",
+      "file": "chapters/060-07-1.md"
+    },
+    {
+      "slug": "061-07-2",
+      "title": "7.2 JSON",
+      "file": "chapters/061-07-2.md"
+    },
+    {
+      "slug": "062-07-3",
+      "title": "7.3 Regexp",
+      "file": "chapters/062-07-3.md"
+    },
+    {
+      "slug": "063-07-4",
+      "title": "7.4 Templates",
+      "file": "chapters/063-07-4.md"
+    },
+    {
+      "slug": "064-07-5",
+      "title": "7.5 Files",
+      "file": "chapters/064-07-5.md"
+    },
+    {
+      "slug": "065-07-6",
+      "title": "7.6 Strings",
+      "file": "chapters/065-07-6.md"
+    },
+    {
+      "slug": "066-07-7",
+      "title": "7.7 Summary",
+      "file": "chapters/066-07-7.md"
+    },
+    {
+      "slug": "067-08-0",
+      "title": "8 Web services",
+      "file": "chapters/067-08-0.md"
+    },
+    {
+      "slug": "068-08-1",
+      "title": "8.1 Sockets",
+      "file": "chapters/068-08-1.md"
+    },
+    {
+      "slug": "069-08-2",
+      "title": "8.2 WebSockets",
+      "file": "chapters/069-08-2.md"
+    },
+    {
+      "slug": "070-08-3",
+      "title": "8.3 REST",
+      "file": "chapters/070-08-3.md"
+    },
+    {
+      "slug": "071-08-4",
+      "title": "8.4 RPC",
+      "file": "chapters/071-08-4.md"
+    },
+    {
+      "slug": "072-08-5",
+      "title": "8.5 Summary",
+      "file": "chapters/072-08-5.md"
+    },
+    {
+      "slug": "073-09-0",
+      "title": "9 Security and encryption",
+      "file": "chapters/073-09-0.md"
+    },
+    {
+      "slug": "074-09-1",
+      "title": "9.1 CSRF attacks",
+      "file": "chapters/074-09-1.md"
+    },
+    {
+      "slug": "075-09-2",
+      "title": "9.2 Filtering inputs",
+      "file": "chapters/075-09-2.md"
+    },
+    {
+      "slug": "076-09-3",
+      "title": "9.3 XSS attacks",
+      "file": "chapters/076-09-3.md"
+    },
+    {
+      "slug": "077-09-4",
+      "title": "9.4 SQL injection",
+      "file": "chapters/077-09-4.md"
+    },
+    {
+      "slug": "078-09-5",
+      "title": "9.5 Password storage",
+      "file": "chapters/078-09-5.md"
+    },
+    {
+      "slug": "079-09-6",
+      "title": "9.6 Encrypting and decrypting data",
+      "file": "chapters/079-09-6.md"
+    },
+    {
+      "slug": "080-09-7",
+      "title": "9.7 Summary",
+      "file": "chapters/080-09-7.md"
+    },
+    {
+      "slug": "081-10-0",
+      "title": "10 Internationalization and localization",
+      "file": "chapters/081-10-0.md"
+    },
+    {
+      "slug": "082-10-1",
+      "title": "10.1 Setting the default region",
+      "file": "chapters/082-10-1.md"
+    },
+    {
+      "slug": "083-10-2",
+      "title": "10.2 Localized Resources",
+      "file": "chapters/083-10-2.md"
+    },
+    {
+      "slug": "084-10-3",
+      "title": "10.3 International sites",
+      "file": "chapters/084-10-3.md"
+    },
+    {
+      "slug": "085-10-4",
+      "title": "10.4 Summary",
+      "file": "chapters/085-10-4.md"
+    },
+    {
+      "slug": "086-11-0",
+      "title": "11 Error Handling, Debugging, and Testing",
+      "file": "chapters/086-11-0.md"
+    },
+    {
+      "slug": "087-11-1",
+      "title": "11.1 Error handling",
+      "file": "chapters/087-11-1.md"
+    },
+    {
+      "slug": "088-11-2",
+      "title": "11.2 Debugging with GDB",
+      "file": "chapters/088-11-2.md"
+    },
+    {
+      "slug": "089-11-3",
+      "title": "11.3 Writing test cases",
+      "file": "chapters/089-11-3.md"
+    },
+    {
+      "slug": "090-11-4",
+      "title": "11.4 Summary",
+      "file": "chapters/090-11-4.md"
+    },
+    {
+      "slug": "091-12-0",
+      "title": "12 Deployment and maintenance",
+      "file": "chapters/091-12-0.md"
+    },
+    {
+      "slug": "092-12-1",
+      "title": "12.1 Logs",
+      "file": "chapters/092-12-1.md"
+    },
+    {
+      "slug": "093-12-2",
+      "title": "12.2 Errors and crashes",
+      "file": "chapters/093-12-2.md"
+    },
+    {
+      "slug": "094-12-3",
+      "title": "12.3 Deployment",
+      "file": "chapters/094-12-3.md"
+    },
+    {
+      "slug": "095-12-4",
+      "title": "12.4 Backup and recovery",
+      "file": "chapters/095-12-4.md"
+    },
+    {
+      "slug": "096-12-5",
+      "title": "12.5 Summary",
+      "file": "chapters/096-12-5.md"
+    },
+    {
+      "slug": "097-13-0",
+      "title": "13 Building a web framework",
+      "file": "chapters/097-13-0.md"
+    },
+    {
+      "slug": "098-13-1",
+      "title": "13.1 Project planning",
+      "file": "chapters/098-13-1.md"
+    },
+    {
+      "slug": "099-13-2",
+      "title": "13.2 Customizing routers",
+      "file": "chapters/099-13-2.md"
+    },
+    {
+      "slug": "100-13-3",
+      "title": "13.3 Designing controllers",
+      "file": "chapters/100-13-3.md"
+    },
+    {
+      "slug": "101-13-4",
+      "title": "13.4 Logging and configuration",
+      "file": "chapters/101-13-4.md"
+    },
+    {
+      "slug": "102-13-5",
+      "title": "13.5 Adding, deleting and updating blogs",
+      "file": "chapters/102-13-5.md"
+    },
+    {
+      "slug": "103-13-6",
+      "title": "13.6 Summary",
+      "file": "chapters/103-13-6.md"
+    },
+    {
+      "slug": "104-14-0",
+      "title": "14 Developing a web framework",
+      "file": "chapters/104-14-0.md"
+    },
+    {
+      "slug": "105-14-1",
+      "title": "14.1 Static files",
+      "file": "chapters/105-14-1.md"
+    },
+    {
+      "slug": "106-14-2",
+      "title": "14.2 Sessions",
+      "file": "chapters/106-14-2.md"
+    },
+    {
+      "slug": "107-14-3",
+      "title": "14.3 Forms",
+      "file": "chapters/107-14-3.md"
+    },
+    {
+      "slug": "108-14-4",
+      "title": "14.4 User validation",
+      "file": "chapters/108-14-4.md"
+    },
+    {
+      "slug": "109-14-5",
+      "title": "14.5 Multi-language support",
+      "file": "chapters/109-14-5.md"
+    },
+    {
+      "slug": "110-14-6",
+      "title": "14.6 pprof",
+      "file": "chapters/110-14-6.md"
+    },
+    {
+      "slug": "111-14-7",
+      "title": "14.7 Summary",
+      "file": "chapters/111-14-7.md"
+    },
+    {
+      "slug": "112-preface",
+      "title": "preface",
+      "file": "chapters/112-preface.md"
+    },
+    {
+      "slug": "113-ref",
+      "title": "Anhang A Literaturverzeichnis",
+      "file": "chapters/113-ref.md"
+    },
+    {
+      "slug": "114-summary",
+      "title": "SUMMARY",
+      "file": "chapters/114-summary.md"
+    },
+    {
+      "slug": "115-01-0",
+      "title": "1 Go Environment Configuration",
+      "file": "chapters/115-01-0.md"
+    },
+    {
+      "slug": "116-01-1",
+      "title": "1.1 Installation",
+      "file": "chapters/116-01-1.md"
+    },
+    {
+      "slug": "117-01-2",
+      "title": "1.2 $GOPATH and workspace",
+      "file": "chapters/117-01-2.md"
+    },
+    {
+      "slug": "118-01-3",
+      "title": "1.3 Go commands",
+      "file": "chapters/118-01-3.md"
+    },
+    {
+      "slug": "119-01-4",
+      "title": "Go development tools",
+      "file": "chapters/119-01-4.md"
+    },
+    {
+      "slug": "120-01-5",
+      "title": "1.5 Summary",
+      "file": "chapters/120-01-5.md"
+    },
+    {
+      "slug": "121-02-0",
+      "title": "2 Go basic knowledge",
+      "file": "chapters/121-02-0.md"
+    },
+    {
+      "slug": "122-02-1",
+      "title": "2.1 Hello, Go",
+      "file": "chapters/122-02-1.md"
+    },
+    {
+      "slug": "123-02-2",
+      "title": "2.2 Go foundation",
+      "file": "chapters/123-02-2.md"
+    },
+    {
+      "slug": "124-02-3",
+      "title": "2.3 Control statements and functions",
+      "file": "chapters/124-02-3.md"
+    },
+    {
+      "slug": "125-02-4",
+      "title": "2.4 struct",
+      "file": "chapters/125-02-4.md"
+    },
+    {
+      "slug": "126-02-5",
+      "title": "Object-oriented",
+      "file": "chapters/126-02-5.md"
+    },
+    {
+      "slug": "127-02-6",
+      "title": "2.6 Interface",
+      "file": "chapters/127-02-6.md"
+    },
+    {
+      "slug": "128-02-7",
+      "title": "Concurrency",
+      "file": "chapters/128-02-7.md"
+    },
+    {
+      "slug": "129-02-8",
+      "title": "2.8 Summary",
+      "file": "chapters/129-02-8.md"
+    },
+    {
+      "slug": "130-03-0",
+      "title": "3 Web foundation",
+      "file": "chapters/130-03-0.md"
+    },
+    {
+      "slug": "131-03-1",
+      "title": "Web working principles",
+      "file": "chapters/131-03-1.md"
+    },
+    {
+      "slug": "132-03-2",
+      "title": "3.2 Build a simple web server",
+      "file": "chapters/132-03-2.md"
+    },
+    {
+      "slug": "133-03-3",
+      "title": "3.3 How Go works with web",
+      "file": "chapters/133-03-3.md"
+    },
+    {
+      "slug": "134-03-4",
+      "title": "3.4 Get into http package",
+      "file": "chapters/134-03-4.md"
+    },
+    {
+      "slug": "135-03-5",
+      "title": "3.5 Summary",
+      "file": "chapters/135-03-5.md"
+    },
+    {
+      "slug": "136-04-0",
+      "title": "4 User form",
+      "file": "chapters/136-04-0.md"
+    },
+    {
+      "slug": "137-04-1",
+      "title": "4.1 Process form inputs",
+      "file": "chapters/137-04-1.md"
+    },
+    {
+      "slug": "138-04-2",
+      "title": "4.2 Verification of inputs",
+      "file": "chapters/138-04-2.md"
+    },
+    {
+      "slug": "139-04-3",
+      "title": "4.3 Cross site scripting",
+      "file": "chapters/139-04-3.md"
+    },
+    {
+      "slug": "140-04-4",
+      "title": "4.4 Duplicate submissions",
+      "file": "chapters/140-04-4.md"
+    },
+    {
+      "slug": "141-04-5",
+      "title": "4.5 File upload",
+      "file": "chapters/141-04-5.md"
+    },
+    {
+      "slug": "142-04-6",
+      "title": "4.6 Summary",
+      "file": "chapters/142-04-6.md"
+    },
+    {
+      "slug": "143-05-0",
+      "title": "5 Database",
+      "file": "chapters/143-05-0.md"
+    },
+    {
+      "slug": "144-05-1",
+      "title": "5.1 database/sql interface",
+      "file": "chapters/144-05-1.md"
+    },
+    {
+      "slug": "145-05-2",
+      "title": "5.2 MySQL",
+      "file": "chapters/145-05-2.md"
+    },
+    {
+      "slug": "146-05-3",
+      "title": "5.3 SQLite",
+      "file": "chapters/146-05-3.md"
+    },
+    {
+      "slug": "147-05-4",
+      "title": "5.4 PostgreSQL",
+      "file": "chapters/147-05-4.md"
+    },
+    {
+      "slug": "148-05-5",
+      "title": "5.5 Develop ORM based on beedb",
+      "file": "chapters/148-05-5.md"
+    },
+    {
+      "slug": "149-05-6",
+      "title": "5.6 NoSQL database",
+      "file": "chapters/149-05-6.md"
+    },
+    {
+      "slug": "150-05-7",
+      "title": "5.7 Summary",
+      "file": "chapters/150-05-7.md"
+    },
+    {
+      "slug": "151-06-0",
+      "title": "6 Data storage and sessions",
+      "file": "chapters/151-06-0.md"
+    },
+    {
+      "slug": "152-06-1",
+      "title": "06.1",
+      "file": "chapters/152-06-1.md"
+    },
+    {
+      "slug": "153-06-2",
+      "title": "6.2 How to use sessions in Go",
+      "file": "chapters/153-06-2.md"
+    },
+    {
+      "slug": "154-06-3",
+      "title": "6.3 Session storage",
+      "file": "chapters/154-06-3.md"
+    },
+    {
+      "slug": "155-06-4",
+      "title": "6.4 Preventing session hijacking",
+      "file": "chapters/155-06-4.md"
+    },
+    {
+      "slug": "156-06-5",
+      "title": "6.5 Summary",
+      "file": "chapters/156-06-5.md"
+    },
+    {
+      "slug": "157-07-0",
+      "title": "7 Text files",
+      "file": "chapters/157-07-0.md"
+    },
+    {
+      "slug": "158-07-1",
+      "title": "7.1 XML",
+      "file": "chapters/158-07-1.md"
+    },
+    {
+      "slug": "159-07-2",
+      "title": "7.2 JSON",
+      "file": "chapters/159-07-2.md"
+    },
+    {
+      "slug": "160-07-3",
+      "title": "7.3 Regexp",
+      "file": "chapters/160-07-3.md"
+    },
+    {
+      "slug": "161-07-4",
+      "title": "7.4 Templates",
+      "file": "chapters/161-07-4.md"
+    },
+    {
+      "slug": "162-07-5",
+      "title": "7.5 Files",
+      "file": "chapters/162-07-5.md"
+    },
+    {
+      "slug": "163-07-6",
+      "title": "7.6 Strings",
+      "file": "chapters/163-07-6.md"
+    },
+    {
+      "slug": "164-07-7",
+      "title": "7.7 Summary",
+      "file": "chapters/164-07-7.md"
+    },
+    {
+      "slug": "165-08-0",
+      "title": "8 Web services",
+      "file": "chapters/165-08-0.md"
+    },
+    {
+      "slug": "166-08-1",
+      "title": "8.1 Sockets",
+      "file": "chapters/166-08-1.md"
+    },
+    {
+      "slug": "167-08-2",
+      "title": "8.2 WebSockets",
+      "file": "chapters/167-08-2.md"
+    },
+    {
+      "slug": "168-08-3",
+      "title": "8.3 REST",
+      "file": "chapters/168-08-3.md"
+    },
+    {
+      "slug": "169-08-4",
+      "title": "8.4 RPC",
+      "file": "chapters/169-08-4.md"
+    },
+    {
+      "slug": "170-08-5",
+      "title": "8.5 Summary",
+      "file": "chapters/170-08-5.md"
+    },
+    {
+      "slug": "171-09-0",
+      "title": "9 Security and encryption",
+      "file": "chapters/171-09-0.md"
+    },
+    {
+      "slug": "172-09-1",
+      "title": "9.1 CSRF attacks",
+      "file": "chapters/172-09-1.md"
+    },
+    {
+      "slug": "173-09-2",
+      "title": "9.2 Filtering inputs",
+      "file": "chapters/173-09-2.md"
+    },
+    {
+      "slug": "174-09-3",
+      "title": "9.3 XSS attacks",
+      "file": "chapters/174-09-3.md"
+    },
+    {
+      "slug": "175-09-4",
+      "title": "9.4 SQL injection",
+      "file": "chapters/175-09-4.md"
+    },
+    {
+      "slug": "176-09-5",
+      "title": "9.5 Password storage",
+      "file": "chapters/176-09-5.md"
+    },
+    {
+      "slug": "177-09-6",
+      "title": "9.6 Encrypting and decrypting data",
+      "file": "chapters/177-09-6.md"
+    },
+    {
+      "slug": "178-09-7",
+      "title": "9.7 Summary",
+      "file": "chapters/178-09-7.md"
+    },
+    {
+      "slug": "179-10-0",
+      "title": "10 Internationalization and localization",
+      "file": "chapters/179-10-0.md"
+    },
+    {
+      "slug": "180-10-1",
+      "title": "10.1 Setting the default region",
+      "file": "chapters/180-10-1.md"
+    },
+    {
+      "slug": "181-10-2",
+      "title": "10.2 Localized Resources",
+      "file": "chapters/181-10-2.md"
+    },
+    {
+      "slug": "182-10-3",
+      "title": "10.3 International sites",
+      "file": "chapters/182-10-3.md"
+    },
+    {
+      "slug": "183-10-4",
+      "title": "10.4 Summary",
+      "file": "chapters/183-10-4.md"
+    },
+    {
+      "slug": "184-11-0",
+      "title": "11 Error Handling, Debugging, and Testing",
+      "file": "chapters/184-11-0.md"
+    },
+    {
+      "slug": "185-11-1",
+      "title": "11.1 Error handling",
+      "file": "chapters/185-11-1.md"
+    },
+    {
+      "slug": "186-11-2",
+      "title": "11.2 Debugging with GDB",
+      "file": "chapters/186-11-2.md"
+    },
+    {
+      "slug": "187-11-3",
+      "title": "11.3 Writing test cases",
+      "file": "chapters/187-11-3.md"
+    },
+    {
+      "slug": "188-11-4",
+      "title": "11.4 Summary",
+      "file": "chapters/188-11-4.md"
+    },
+    {
+      "slug": "189-12-0",
+      "title": "12 Deployment and maintenance",
+      "file": "chapters/189-12-0.md"
+    },
+    {
+      "slug": "190-12-1",
+      "title": "12.1 Logs",
+      "file": "chapters/190-12-1.md"
+    },
+    {
+      "slug": "191-12-2",
+      "title": "12.2 Errors and crashes",
+      "file": "chapters/191-12-2.md"
+    },
+    {
+      "slug": "192-12-3",
+      "title": "12.3 Deployment",
+      "file": "chapters/192-12-3.md"
+    },
+    {
+      "slug": "193-12-4",
+      "title": "12.4 Backup and recovery",
+      "file": "chapters/193-12-4.md"
+    },
+    {
+      "slug": "194-12-5",
+      "title": "12.5 Summary",
+      "file": "chapters/194-12-5.md"
+    },
+    {
+      "slug": "195-13-0",
+      "title": "13 Building a web framework",
+      "file": "chapters/195-13-0.md"
+    },
+    {
+      "slug": "196-13-1",
+      "title": "13.1 Project planning",
+      "file": "chapters/196-13-1.md"
+    },
+    {
+      "slug": "197-13-2",
+      "title": "13.2 Customizing routers",
+      "file": "chapters/197-13-2.md"
+    },
+    {
+      "slug": "198-13-3",
+      "title": "13.3 Designing controllers",
+      "file": "chapters/198-13-3.md"
+    },
+    {
+      "slug": "199-13-4",
+      "title": "13.4 Logging and configuration",
+      "file": "chapters/199-13-4.md"
+    },
+    {
+      "slug": "200-13-5",
+      "title": "13.5 Adding, deleting and updating blogs",
+      "file": "chapters/200-13-5.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

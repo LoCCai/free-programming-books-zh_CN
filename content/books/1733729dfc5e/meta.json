@@ -1,0 +1,131 @@
+{
+  "bookId": "1733729dfc5e",
+  "title": "Python 核心编程 第二版",
+  "url": "https://wizardforcel.gitbooks.io/core-python-2e/content/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:21:09.289Z",
+  "chapters": [
+    {
+      "slug": "001-1q",
+      "title": "前言 Preface | Python 核心编程 第二版",
+      "file": "chapters/001-1q.md"
+    },
+    {
+      "slug": "002-1q",
+      "title": "第1章　欢迎来到Python世界 | Python 核心编程 第二版",
+      "file": "chapters/002-1q.md"
+    },
+    {
+      "slug": "003-1q",
+      "title": "第2章　快速入门 | Python 核心编程 第二版",
+      "file": "chapters/003-1q.md"
+    },
+    {
+      "slug": "004-1q",
+      "title": "第3章　Python基础 | Python 核心编程 第二版",
+      "file": "chapters/004-1q.md"
+    },
+    {
+      "slug": "005-1q",
+      "title": "第4章　Python对象 | Python 核心编程 第二版",
+      "file": "chapters/005-1q.md"
+    },
+    {
+      "slug": "006-1q",
+      "title": "第5章　数字 | Python 核心编程 第二版",
+      "file": "chapters/006-1q.md"
+    },
+    {
+      "slug": "007-1q",
+      "title": "第6章　序列：字符串、列表和元组 | Python 核心编程 第二版",
+      "file": "chapters/007-1q.md"
+    },
+    {
+      "slug": "008-1q",
+      "title": "第7章　映像和集合类型 | Python 核心编程 第二版",
+      "file": "chapters/008-1q.md"
+    },
+    {
+      "slug": "009-1r",
+      "title": "第8章　条件和循环 | Python 核心编程 第二版",
+      "file": "chapters/009-1r.md"
+    },
+    {
+      "slug": "010-1r",
+      "title": "第9章　文件和输入输出 | Python 核心编程 第二版",
+      "file": "chapters/010-1r.md"
+    },
+    {
+      "slug": "011-1r",
+      "title": "第10章　错误和异常 | Python 核心编程 第二版",
+      "file": "chapters/011-1r.md"
+    },
+    {
+      "slug": "012-1r",
+      "title": "第11章　函数和函数式编程 | Python 核心编程 第二版",
+      "file": "chapters/012-1r.md"
+    },
+    {
+      "slug": "013-1r",
+      "title": "第12章　模块 | Python 核心编程 第二版",
+      "file": "chapters/013-1r.md"
+    },
+    {
+      "slug": "014-1r",
+      "title": "第13章　面向对象编程 | Python 核心编程 第二版",
+      "file": "chapters/014-1r.md"
+    },
+    {
+      "slug": "015-1r",
+      "title": "第14章　执行环境 | Python 核心编程 第二版",
+      "file": "chapters/015-1r.md"
+    },
+    {
+      "slug": "016-1r",
+      "title": "第15章　正则表达式 | Python 核心编程 第二版",
+      "file": "chapters/016-1r.md"
+    },
+    {
+      "slug": "017-1r",
+      "title": "第16章　网络编程 | Python 核心编程 第二版",
+      "file": "chapters/017-1r.md"
+    },
+    {
+      "slug": "018-1r",
+      "title": "第17章　网络客户端编程 | Python 核心编程 第二版",
+      "file": "chapters/018-1r.md"
+    },
+    {
+      "slug": "019-1r",
+      "title": "第18章　多线程编程 | Python 核心编程 第二版",
+      "file": "chapters/019-1r.md"
+    },
+    {
+      "slug": "020-1r",
+      "title": "第19章　图形用户界编程 | Python 核心编程 第二版",
+      "file": "chapters/020-1r.md"
+    },
+    {
+      "slug": "021-1r",
+      "title": "第20章　Web编程 | Python 核心编程 第二版",
+      "file": "chapters/021-1r.md"
+    },
+    {
+      "slug": "022-1r",
+      "title": "第21章　数据库编程 | Python 核心编程 第二版",
+      "file": "chapters/022-1r.md"
+    },
+    {
+      "slug": "023-1r",
+      "title": "第22章　扩展Python | Python 核心编程 第二版",
+      "file": "chapters/023-1r.md"
+    },
+    {
+      "slug": "024-1r",
+      "title": "第23章　其他话题 | Python 核心编程 第二版",
+      "file": "chapters/024-1r.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Python 核心编程 第二版 | Python 核心编程 第二版"
+}

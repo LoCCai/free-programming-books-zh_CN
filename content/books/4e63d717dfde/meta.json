@@ -1,0 +1,16 @@
+{
+  "bookId": "4e63d717dfde",
+  "title": "The Swift Programming Language 中文版",
+  "url": "https://swiftggteam.github.io/the-swift-programming-language-in-chinese/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:29.143Z",
+  "chapters": [
+    {
+      "slug": "001-20",
+      "title": "https://swiftggteam.github.io/the-swift-programming-language-in-chinese/",
+      "file": "chapters/001-20.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "https://swiftggteam.github.io/the-swift-programming-language-in-chinese/"
+}

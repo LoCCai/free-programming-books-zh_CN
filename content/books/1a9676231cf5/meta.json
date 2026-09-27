@@ -1,0 +1,16 @@
+{
+  "bookId": "1a9676231cf5",
+  "title": "nodejs中文文档",
+  "url": "https://www.gitbook.com/book/0532/nodejs/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:43.892Z",
+  "chapters": [
+    {
+      "slug": "001-1c",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1c.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

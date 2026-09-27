@@ -1,0 +1,251 @@
+{
+  "bookId": "33297fdfc1f4",
+  "title": "C++ 并发编程指南",
+  "url": "https://github.com/forhappy/Cplusplus-Concurrency-In-Practice",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:05.457Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "本书目录(只列出一级目录) #",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "附录 C++11 新标准概览 #",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "第一章 并发编程基础 #",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "第三章 线程详解 #",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "第四章 互斥量与锁 #",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "第五章 条件变量与线程同步 #",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "第六章 异步任务详解 #",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "第七章 原子类型详解 #",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "README",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-table-of-contents",
+      "title": "Table-of-contents",
+      "file": "chapters/010-table-of-contents.md"
+    },
+    {
+      "slug": "011-c-11-core-language-build-time-performance-enhancements",
+      "title": "C++11 Core language build time performance enhancements",
+      "file": "chapters/011-c-11-core-language-build-time-performance-enhancements.md"
+    },
+    {
+      "slug": "012-c-11-core-language-runtime-performance-enhancements",
+      "title": "C++11 Core language runtime performance enhancements",
+      "file": "chapters/012-c-11-core-language-runtime-performance-enhancements.md"
+    },
+    {
+      "slug": "013-c-11-core-language-usability-enhancements",
+      "title": "C++11 Core language usability enhancements",
+      "file": "chapters/013-c-11-core-language-usability-enhancements.md"
+    },
+    {
+      "slug": "014-web-resources",
+      "title": "web-resources",
+      "file": "chapters/014-web-resources.md"
+    },
+    {
+      "slug": "015-1-1-what-is-concurrency",
+      "title": "1.1 What is concurrency",
+      "file": "chapters/015-1-1-what-is-concurrency.md"
+    },
+    {
+      "slug": "016-cplusplus-concurrency-introduction",
+      "title": "与 C++11 多线程相关的头文件 #",
+      "file": "chapters/016-cplusplus-concurrency-introduction.md"
+    },
+    {
+      "slug": "017-web-resources",
+      "title": "web-resources",
+      "file": "chapters/017-web-resources.md"
+    },
+    {
+      "slug": "018-11-1-producer-consumer-solution",
+      "title": "单生产者-单消费者模型 #",
+      "file": "chapters/018-11-1-producer-consumer-solution.md"
+    },
+    {
+      "slug": "019-web-resources",
+      "title": "web-resources",
+      "file": "chapters/019-web-resources.md"
+    },
+    {
+      "slug": "020-introduction-to-thread",
+      "title": "Introduction-to-Thread",
+      "file": "chapters/020-introduction-to-thread.md"
+    },
+    {
+      "slug": "021-web-resources",
+      "title": "web-resources",
+      "file": "chapters/021-web-resources.md"
+    },
+    {
+      "slug": "022-4-1-mutex-header-synopsis",
+      "title": "4.1 Mutex-header-synopsis",
+      "file": "chapters/022-4-1-mutex-header-synopsis.md"
+    },
+    {
+      "slug": "023-4-2-mutex-tutorial",
+      "title": "4.2 Mutex-tutorial",
+      "file": "chapters/023-4-2-mutex-tutorial.md"
+    },
+    {
+      "slug": "024-4-3-lock-tutorial",
+      "title": "4.3 Lock-tutorial",
+      "file": "chapters/024-4-3-lock-tutorial.md"
+    },
+    {
+      "slug": "025-4-4-auxiliary-function",
+      "title": "4.4 Auxiliary-function",
+      "file": "chapters/025-4-4-auxiliary-function.md"
+    },
+    {
+      "slug": "026-4-5-mutex-vs-pthread",
+      "title": "4.5 Mutex vs pthread",
+      "file": "chapters/026-4-5-mutex-vs-pthread.md"
+    },
+    {
+      "slug": "027-web-resources",
+      "title": "web-resources",
+      "file": "chapters/027-web-resources.md"
+    },
+    {
+      "slug": "028-5-1-condition-variable-header-synopsis",
+      "title": "5.1 Condition-variable header synopsis",
+      "file": "chapters/028-5-1-condition-variable-header-synopsis.md"
+    },
+    {
+      "slug": "029-5-2-condition-variable-tutorial",
+      "title": "5.2 Condition-variable-tutorial",
+      "file": "chapters/029-5-2-condition-variable-tutorial.md"
+    },
+    {
+      "slug": "030-5-3-auxiliary-function",
+      "title": "5.3 Auxiliary-function",
+      "file": "chapters/030-5-3-auxiliary-function.md"
+    },
+    {
+      "slug": "031-5-4-thread-synchronization-with-condition-variable",
+      "title": "5.4 Thread-synchronization-with-condition-variable",
+      "file": "chapters/031-5-4-thread-synchronization-with-condition-variable.md"
+    },
+    {
+      "slug": "032-5-5-condition-variable-vs-pthread",
+      "title": "5.5 Condition-variable vs pthread",
+      "file": "chapters/032-5-5-condition-variable-vs-pthread.md"
+    },
+    {
+      "slug": "033-web-resources",
+      "title": "web-resources",
+      "file": "chapters/033-web-resources.md"
+    },
+    {
+      "slug": "034-6-1-future-header-synopsis",
+      "title": "6.1 Future-header-synopsis",
+      "file": "chapters/034-6-1-future-header-synopsis.md"
+    },
+    {
+      "slug": "035-6-2-providers-tutorial",
+      "title": "6.2 Providers-tutorial",
+      "file": "chapters/035-6-2-providers-tutorial.md"
+    },
+    {
+      "slug": "036-6-3-providers-tutorial-2",
+      "title": "6.3 Providers-tutorial-2",
+      "file": "chapters/036-6-3-providers-tutorial-2.md"
+    },
+    {
+      "slug": "037-6-4-future-tutorial",
+      "title": "6.4 Future-tutorial",
+      "file": "chapters/037-6-4-future-tutorial.md"
+    },
+    {
+      "slug": "038-6-5-auxiliary-types",
+      "title": "6.5 Auxiliary-types",
+      "file": "chapters/038-6-5-auxiliary-types.md"
+    },
+    {
+      "slug": "039-6-6-auxiliary-function",
+      "title": "6.6 Auxiliary-function",
+      "file": "chapters/039-6-6-auxiliary-function.md"
+    },
+    {
+      "slug": "040-web-resources",
+      "title": "web-resources",
+      "file": "chapters/040-web-resources.md"
+    },
+    {
+      "slug": "041-7-1-atomic-header-synopsis",
+      "title": "7.1 Atomic-header-synopsis",
+      "file": "chapters/041-7-1-atomic-header-synopsis.md"
+    },
+    {
+      "slug": "042-7-2-atomic-flag-tutorial",
+      "title": "7.2 Atomic-flag-tutorial",
+      "file": "chapters/042-7-2-atomic-flag-tutorial.md"
+    },
+    {
+      "slug": "043-7-3-atomic-tutorial",
+      "title": "7.3 Atomic-tutorial",
+      "file": "chapters/043-7-3-atomic-tutorial.md"
+    },
+    {
+      "slug": "044-7-4-atomic-tutorial2",
+      "title": "7.4 Atomic-tutorial2",
+      "file": "chapters/044-7-4-atomic-tutorial2.md"
+    },
+    {
+      "slug": "045-7-5-c-style-atomic",
+      "title": "7.5 C-style-atomic",
+      "file": "chapters/045-7-5-c-style-atomic.md"
+    },
+    {
+      "slug": "046-web-resources",
+      "title": "web-resources",
+      "file": "chapters/046-web-resources.md"
+    },
+    {
+      "slug": "047-8-2-c-11-memory-model-explained",
+      "title": "8.2 C++11 memory-model-explained",
+      "file": "chapters/047-8-2-c-11-memory-model-explained.md"
+    },
+    {
+      "slug": "048-web-resources",
+      "title": "web-resources",
+      "file": "chapters/048-web-resources.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

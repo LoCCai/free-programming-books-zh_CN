@@ -1,0 +1,15 @@
+{
+  "bookId": "8edfa318dc13",
+  "title": "Learn React & Webpack by building the Hacker News front page",
+  "url": "https://github.com/theJian/build-a-hn-front-page",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:49.524Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Learn React & Webpack by building the Hacker News front page",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

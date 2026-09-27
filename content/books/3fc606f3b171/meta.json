@@ -1,0 +1,221 @@
+{
+  "bookId": "3fc606f3b171",
+  "title": "Pillow 中文文档",
+  "url": "https://pillow-docs-cn.readthedocs.io/zh_CN/latest/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:26.023Z",
+  "chapters": [
+    {
+      "slug": "001-1p",
+      "title": "Pillow — Pillow中文文档  文档",
+      "file": "chapters/001-1p.md"
+    },
+    {
+      "slug": "002-1w",
+      "title": "安装 — Pillow中文文档  文档",
+      "file": "chapters/002-1w.md"
+    },
+    {
+      "slug": "003-1y",
+      "title": "手册 — Pillow中文文档  文档",
+      "file": "chapters/003-1y.md"
+    },
+    {
+      "slug": "004-21",
+      "title": "概览 — Pillow中文文档  文档",
+      "file": "chapters/004-21.md"
+    },
+    {
+      "slug": "005-21",
+      "title": "教程 — Pillow中文文档  文档",
+      "file": "chapters/005-21.md"
+    },
+    {
+      "slug": "006-21",
+      "title": "概念 — Pillow中文文档  文档",
+      "file": "chapters/006-21.md"
+    },
+    {
+      "slug": "007-2b",
+      "title": "Image file formats — Pillow中文文档 文档",
+      "file": "chapters/007-2b.md"
+    },
+    {
+      "slug": "008-2m",
+      "title": "Writing Your Own Image Plugin — Pillow中文文档 文档",
+      "file": "chapters/008-2m.md"
+    },
+    {
+      "slug": "009-1z",
+      "title": "参考 — Pillow中文文档  文档",
+      "file": "chapters/009-1z.md"
+    },
+    {
+      "slug": "010-1z",
+      "title": "Image Module — Pillow中文文档 文档",
+      "file": "chapters/010-1z.md"
+    },
+    {
+      "slug": "011-24",
+      "title": "ImageChops (“Channel Operations”) Module — Pillow中文文档 文档",
+      "file": "chapters/011-24.md"
+    },
+    {
+      "slug": "012-24",
+      "title": "ImageColor Module — Pillow中文文档 文档",
+      "file": "chapters/012-24.md"
+    },
+    {
+      "slug": "013-22",
+      "title": "ImageCms Module — Pillow中文文档 文档",
+      "file": "chapters/013-22.md"
+    },
+    {
+      "slug": "014-23",
+      "title": "ImageDraw Module — Pillow中文文档 文档",
+      "file": "chapters/014-23.md"
+    },
+    {
+      "slug": "015-26",
+      "title": "ImageEnhance Module — Pillow中文文档 文档",
+      "file": "chapters/015-26.md"
+    },
+    {
+      "slug": "016-23",
+      "title": "ImageFile Module — Pillow中文文档 文档",
+      "file": "chapters/016-23.md"
+    },
+    {
+      "slug": "017-25",
+      "title": "ImageFilter Module — Pillow中文文档 文档",
+      "file": "chapters/017-25.md"
+    },
+    {
+      "slug": "018-23",
+      "title": "ImageFont Module — Pillow中文文档 文档",
+      "file": "chapters/018-23.md"
+    },
+    {
+      "slug": "019-23",
+      "title": "ImageGrab Module (macOS and Windows only) — Pillow中文文档 文档",
+      "file": "chapters/019-23.md"
+    },
+    {
+      "slug": "020-23",
+      "title": "ImageMath Module — Pillow中文文档 文档",
+      "file": "chapters/020-23.md"
+    },
+    {
+      "slug": "021-24",
+      "title": "ImageMorph Module — Pillow中文文档 文档",
+      "file": "chapters/021-24.md"
+    },
+    {
+      "slug": "022-22",
+      "title": "ImageOps Module — Pillow中文文档 文档",
+      "file": "chapters/022-22.md"
+    },
+    {
+      "slug": "023-26",
+      "title": "ImagePalette Module — Pillow中文文档 文档",
+      "file": "chapters/023-26.md"
+    },
+    {
+      "slug": "024-23",
+      "title": "ImagePath Module — Pillow中文文档 文档",
+      "file": "chapters/024-23.md"
+    },
+    {
+      "slug": "025-21",
+      "title": "ImageQt Module — Pillow中文文档 文档",
+      "file": "chapters/025-21.md"
+    },
+    {
+      "slug": "026-27",
+      "title": "ImageSequence Module — Pillow中文文档 文档",
+      "file": "chapters/026-27.md"
+    },
+    {
+      "slug": "027-23",
+      "title": "ImageStat Module — Pillow中文文档 文档",
+      "file": "chapters/027-23.md"
+    },
+    {
+      "slug": "028-21",
+      "title": "ImageTk Module — Pillow中文文档 文档",
+      "file": "chapters/028-21.md"
+    },
+    {
+      "slug": "029-22",
+      "title": "ImageWin Module (Windows-only) — Pillow中文文档 文档",
+      "file": "chapters/029-22.md"
+    },
+    {
+      "slug": "030-22",
+      "title": "ExifTags Module — Pillow中文文档 文档",
+      "file": "chapters/030-22.md"
+    },
+    {
+      "slug": "031-22",
+      "title": "TiffTags Module — Pillow中文文档 文档",
+      "file": "chapters/031-22.md"
+    },
+    {
+      "slug": "032-20",
+      "title": "PSDraw Module — Pillow中文文档 文档",
+      "file": "chapters/032-20.md"
+    },
+    {
+      "slug": "033-25",
+      "title": "PixelAccess Class — Pillow中文文档 文档",
+      "file": "chapters/033-25.md"
+    },
+    {
+      "slug": "034-22",
+      "title": "PyAccess Module — Pillow中文文档 文档",
+      "file": "chapters/034-22.md"
+    },
+    {
+      "slug": "035-1n",
+      "title": "PIL Package (autodoc of remaining modules) — Pillow中文文档 文档",
+      "file": "chapters/035-1n.md"
+    },
+    {
+      "slug": "036-21",
+      "title": "Plugin reference — Pillow中文文档 文档",
+      "file": "chapters/036-21.md"
+    },
+    {
+      "slug": "037-29",
+      "title": "Internal Reference Docs — Pillow中文文档 文档",
+      "file": "chapters/037-29.md"
+    },
+    {
+      "slug": "038-24",
+      "title": "File Handling in Pillow — Pillow中文文档 文档",
+      "file": "chapters/038-24.md"
+    },
+    {
+      "slug": "039-20",
+      "title": "Limits — Pillow中文文档  文档",
+      "file": "chapters/039-20.md"
+    },
+    {
+      "slug": "040-29",
+      "title": "Block Allocator — Pillow中文文档 文档",
+      "file": "chapters/040-29.md"
+    },
+    {
+      "slug": "041-1r",
+      "title": "移植 — Pillow中文文档  文档",
+      "file": "chapters/041-1r.md"
+    },
+    {
+      "slug": "042-1p",
+      "title": "关于Pillow — Pillow中文文档  文档",
+      "file": "chapters/042-1p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Pillow — Pillow中文文档  文档"
+}

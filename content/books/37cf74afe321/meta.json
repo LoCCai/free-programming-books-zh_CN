@@ -1,0 +1,16 @@
+{
+  "bookId": "37cf74afe321",
+  "title": "学习CSS布局",
+  "url": "http://zh.learnlayout.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:43.731Z",
+  "chapters": [
+    {
+      "slug": "001-q",
+      "title": "学习CSS布局",
+      "file": "chapters/001-q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "学习CSS布局"
+}

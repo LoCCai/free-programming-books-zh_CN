@@ -1,0 +1,140 @@
+{
+  "bookId": "af0560afac3d",
+  "title": "Apache Spark 设计与实现",
+  "url": "https://github.com/JerryLead/SparkInternals/tree/master/markdown",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:06.094Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Spark Internals",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "ภายใน Spark (Spark Internals)",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-0-introduction",
+      "title": "Spark Internals",
+      "file": "chapters/003-0-introduction.md"
+    },
+    {
+      "slug": "004-1-overview",
+      "title": "概览",
+      "file": "chapters/004-1-overview.md"
+    },
+    {
+      "slug": "005-2-joblogicalplan",
+      "title": "Job 逻辑执行图",
+      "file": "chapters/005-2-joblogicalplan.md"
+    },
+    {
+      "slug": "006-3-jobphysicalplan",
+      "title": "Job 物理执行图",
+      "file": "chapters/006-3-jobphysicalplan.md"
+    },
+    {
+      "slug": "007-4-shuffledetails",
+      "title": "Shuffle 过程",
+      "file": "chapters/007-4-shuffledetails.md"
+    },
+    {
+      "slug": "008-5-architecture",
+      "title": "架构",
+      "file": "chapters/008-5-architecture.md"
+    },
+    {
+      "slug": "009-6-cacheandcheckpoint",
+      "title": "Cache 和 Checkpoint",
+      "file": "chapters/009-6-cacheandcheckpoint.md"
+    },
+    {
+      "slug": "010-7-broadcast",
+      "title": "Broadcast",
+      "file": "chapters/010-7-broadcast.md"
+    },
+    {
+      "slug": "011-0-introduction",
+      "title": "Spark Internals",
+      "file": "chapters/011-0-introduction.md"
+    },
+    {
+      "slug": "012-1-overview",
+      "title": "1-Overview",
+      "file": "chapters/012-1-overview.md"
+    },
+    {
+      "slug": "013-2-joblogicalplan",
+      "title": "Job Logical Plan",
+      "file": "chapters/013-2-joblogicalplan.md"
+    },
+    {
+      "slug": "014-3-jobphysicalplan",
+      "title": "Physical Plan",
+      "file": "chapters/014-3-jobphysicalplan.md"
+    },
+    {
+      "slug": "015-4-shuffledetails",
+      "title": "Shuffle Process",
+      "file": "chapters/015-4-shuffledetails.md"
+    },
+    {
+      "slug": "016-5-architecture",
+      "title": "Architecture",
+      "file": "chapters/016-5-architecture.md"
+    },
+    {
+      "slug": "017-6-cacheandcheckpoint",
+      "title": "cache and checkpoint",
+      "file": "chapters/017-6-cacheandcheckpoint.md"
+    },
+    {
+      "slug": "018-7-broadcast",
+      "title": "7-Broadcast",
+      "file": "chapters/018-7-broadcast.md"
+    },
+    {
+      "slug": "019-0-introduction",
+      "title": "ภายใน Spark (Spark Internals)",
+      "file": "chapters/019-0-introduction.md"
+    },
+    {
+      "slug": "020-1-overview",
+      "title": "1-Overview",
+      "file": "chapters/020-1-overview.md"
+    },
+    {
+      "slug": "021-2-joblogicalplan",
+      "title": "Job Logical Plan",
+      "file": "chapters/021-2-joblogicalplan.md"
+    },
+    {
+      "slug": "022-3-jobphysicalplan",
+      "title": "Physical Plan",
+      "file": "chapters/022-3-jobphysicalplan.md"
+    },
+    {
+      "slug": "023-4-shuffledetails",
+      "title": "กระบวนการ Shuffle",
+      "file": "chapters/023-4-shuffledetails.md"
+    },
+    {
+      "slug": "024-5-architecture",
+      "title": "สถาปัตยกรรม",
+      "file": "chapters/024-5-architecture.md"
+    },
+    {
+      "slug": "025-6-cacheandcheckpoint",
+      "title": "cache และ checkpoint",
+      "file": "chapters/025-6-cacheandcheckpoint.md"
+    },
+    {
+      "slug": "026-7-broadcast",
+      "title": "7-Broadcast",
+      "file": "chapters/026-7-broadcast.md"
+    }
+  ],
+  "sourceType": "github"
+}

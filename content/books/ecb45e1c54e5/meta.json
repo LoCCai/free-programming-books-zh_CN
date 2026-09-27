@@ -1,0 +1,190 @@
+{
+  "bookId": "ecb45e1c54e5",
+  "title": "Apache MINA 2 用户指南",
+  "url": "https://github.com/waylau/apache-mina-2.x-user-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:33.063Z",
+  "chapters": [
+    {
+      "slug": "001-chapter-1-getting-started",
+      "title": "Chapter 1 - 开始",
+      "file": "chapters/001-chapter-1-getting-started.md"
+    },
+    {
+      "slug": "002-nio-overview",
+      "title": "NIO 总览",
+      "file": "chapters/002-nio-overview.md"
+    },
+    {
+      "slug": "003-why-mina",
+      "title": "为何使用 MINA",
+      "file": "chapters/003-why-mina.md"
+    },
+    {
+      "slug": "004-features",
+      "title": "特性",
+      "file": "chapters/004-features.md"
+    },
+    {
+      "slug": "005-first-steps",
+      "title": "开始的步骤",
+      "file": "chapters/005-first-steps.md"
+    },
+    {
+      "slug": "006-c1-summary",
+      "title": "总结",
+      "file": "chapters/006-c1-summary.md"
+    },
+    {
+      "slug": "007-chapter-2-basics",
+      "title": "Chapter 2 - 基础",
+      "file": "chapters/007-chapter-2-basics.md"
+    },
+    {
+      "slug": "008-application-architecture",
+      "title": "应用架构",
+      "file": "chapters/008-application-architecture.md"
+    },
+    {
+      "slug": "009-server-architecture",
+      "title": "服务端架构",
+      "file": "chapters/009-server-architecture.md"
+    },
+    {
+      "slug": "010-client-architecture",
+      "title": "客户端架构",
+      "file": "chapters/010-client-architecture.md"
+    },
+    {
+      "slug": "011-sample-tcp-server",
+      "title": "TCP Server 示例",
+      "file": "chapters/011-sample-tcp-server.md"
+    },
+    {
+      "slug": "012-sample-tcp-client",
+      "title": "TCP Client 示例",
+      "file": "chapters/012-sample-tcp-client.md"
+    },
+    {
+      "slug": "013-sample-udp-server",
+      "title": "UDP Server 示例",
+      "file": "chapters/013-sample-udp-server.md"
+    },
+    {
+      "slug": "014-sample-udp-client",
+      "title": "UDP Client 示例",
+      "file": "chapters/014-sample-udp-client.md"
+    },
+    {
+      "slug": "015-c2-summary",
+      "title": "总结",
+      "file": "chapters/015-c2-summary.md"
+    },
+    {
+      "slug": "016-chapter-3-service",
+      "title": "Chapter 3 - 服务",
+      "file": "chapters/016-chapter-3-service.md"
+    },
+    {
+      "slug": "017-ioservice-introduction",
+      "title": "IoService 介绍",
+      "file": "chapters/017-ioservice-introduction.md"
+    },
+    {
+      "slug": "018-ioservice-details",
+      "title": "IoService 细节",
+      "file": "chapters/018-ioservice-details.md"
+    },
+    {
+      "slug": "019-acceptor",
+      "title": "Acceptor",
+      "file": "chapters/019-acceptor.md"
+    },
+    {
+      "slug": "020-connector",
+      "title": "Connector",
+      "file": "chapters/020-connector.md"
+    },
+    {
+      "slug": "021-chapter-4-session",
+      "title": "Chapter 4 - Session(会话)",
+      "file": "chapters/021-chapter-4-session.md"
+    },
+    {
+      "slug": "022-chapter-5-filters",
+      "title": "Chapter 5 - Filter (过滤器)",
+      "file": "chapters/022-chapter-5-filters.md"
+    },
+    {
+      "slug": "023-chapter-6-transports",
+      "title": "Chapter 6 - Transport (传输)",
+      "file": "chapters/023-chapter-6-transports.md"
+    },
+    {
+      "slug": "024-apr-transport",
+      "title": "APR 传输",
+      "file": "chapters/024-apr-transport.md"
+    },
+    {
+      "slug": "025-serial-transport",
+      "title": "串行传输",
+      "file": "chapters/025-serial-transport.md"
+    },
+    {
+      "slug": "026-chapter-7-handler",
+      "title": "Chapter 7 - Handler (处理器)",
+      "file": "chapters/026-chapter-7-handler.md"
+    },
+    {
+      "slug": "027-chapter-8-iobuffer",
+      "title": "Chapter 8 - IoBuffer",
+      "file": "chapters/027-chapter-8-iobuffer.md"
+    },
+    {
+      "slug": "028-chapter-9-codec-filter",
+      "title": "Chapter 9 - 编解码器过滤器",
+      "file": "chapters/028-chapter-9-codec-filter.md"
+    },
+    {
+      "slug": "029-chapter-10-executor-filter",
+      "title": "Chapter 10 - Executor 过滤器",
+      "file": "chapters/029-chapter-10-executor-filter.md"
+    },
+    {
+      "slug": "030-chapter-11-ssl-filter",
+      "title": "Chapter 11 - SSL 过滤器",
+      "file": "chapters/030-chapter-11-ssl-filter.md"
+    },
+    {
+      "slug": "031-chapter-12-logging-filter",
+      "title": "Chapter 12 - 日志过滤器",
+      "file": "chapters/031-chapter-12-logging-filter.md"
+    },
+    {
+      "slug": "032-chapter-13-debugging",
+      "title": "Chapter 13 - 调试",
+      "file": "chapters/032-chapter-13-debugging.md"
+    },
+    {
+      "slug": "033-chapter-14-state-machine",
+      "title": "Chapter 14 - State Machine (状态机)",
+      "file": "chapters/033-chapter-14-state-machine.md"
+    },
+    {
+      "slug": "034-chapter-15-proxy",
+      "title": "Chapter 15 - 代理",
+      "file": "chapters/034-chapter-15-proxy.md"
+    },
+    {
+      "slug": "035-chapter-16-jmx-integration",
+      "title": "Chapter 16 - JMX 集成",
+      "file": "chapters/035-chapter-16-jmx-integration.md"
+    },
+    {
+      "slug": "036-chapter-17-spring-integration",
+      "title": "Chapter 17 - Spring 集成",
+      "file": "chapters/036-chapter-17-spring-integration.md"
+    }
+  ],
+  "sourceType": "github"
+}

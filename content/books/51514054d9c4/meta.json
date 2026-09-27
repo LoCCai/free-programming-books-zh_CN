@@ -1,0 +1,50 @@
+{
+  "bookId": "51514054d9c4",
+  "title": "精通 Python 设计模式",
+  "url": "https://github.com/cundi/Mastering.Python.Design.Patterns",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:28.561Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Mastering.Python.Design.Patterns",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-第八章-模型-视图-控制器模式",
+      "title": "第八章-模型-视图-控制器模式",
+      "file": "chapters/002-第八章-模型-视图-控制器模式.md"
+    },
+    {
+      "slug": "003-第二章-构造器模式",
+      "title": "第二章 构造器模式",
+      "file": "chapters/003-第二章-构造器模式.md"
+    },
+    {
+      "slug": "004-第三章-原型模式",
+      "title": "第三章－原型模式",
+      "file": "chapters/004-第三章-原型模式.md"
+    },
+    {
+      "slug": "005-第十三章-观察者模式",
+      "title": "第十三章-观察者模式",
+      "file": "chapters/005-第十三章-观察者模式.md"
+    },
+    {
+      "slug": "006-第四章-适配器模式",
+      "title": "The Adapter Pattern",
+      "file": "chapters/006-第四章-适配器模式.md"
+    },
+    {
+      "slug": "007-第五章-装饰器模式",
+      "title": "第五章-装饰器模式",
+      "file": "chapters/007-第五章-装饰器模式.md"
+    },
+    {
+      "slug": "008-第一章-工厂模式",
+      "title": "总结",
+      "file": "chapters/008-第一章-工厂模式.md"
+    }
+  ],
+  "sourceType": "github"
+}

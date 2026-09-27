@@ -1,0 +1,1010 @@
+{
+  "bookId": "af16f2fecfcc",
+  "title": "Vibe Vibe：人人都能学会的 AI 编程指南",
+  "url": "https://github.com/datawhalechina/vibe-vibe",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:19.532Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Demo 项目",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-08-readme-structure",
+      "title": "4.8 项目说明书结构",
+      "file": "chapters/002-08-readme-structure.md"
+    },
+    {
+      "slug": "003-readme-en",
+      "title": "Vibe Vibe — AI Creation for Everyone",
+      "file": "chapters/003-readme-en.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "Vibe Vibe —— 人人都能学会的 AI 编程（Vibe Coding）指南",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-component-guide",
+      "title": "组件开发工具",
+      "file": "chapters/005-component-guide.md"
+    },
+    {
+      "slug": "006-00-quick-start",
+      "title": "1.0 快速开始",
+      "file": "chapters/006-00-quick-start.md"
+    },
+    {
+      "slug": "007-01-code-formats",
+      "title": "1.1 代码格式演变",
+      "file": "chapters/007-01-code-formats.md"
+    },
+    {
+      "slug": "008-02-tech-stack",
+      "title": "1.2 技术栈概念",
+      "file": "chapters/008-02-tech-stack.md"
+    },
+    {
+      "slug": "009-03-browser-server",
+      "title": "1.3 浏览器与服务器基础",
+      "file": "chapters/009-03-browser-server.md"
+    },
+    {
+      "slug": "010-04-terminal-basics",
+      "title": "1.4 Terminal 终端入门",
+      "file": "chapters/010-04-terminal-basics.md"
+    },
+    {
+      "slug": "011-05-package-manager-and-config",
+      "title": "1.5 包管理与项目配置",
+      "file": "chapters/011-05-package-manager-and-config.md"
+    },
+    {
+      "slug": "012-06-models-and-tools",
+      "title": "1.6 模型与工具",
+      "file": "chapters/012-06-models-and-tools.md"
+    },
+    {
+      "slug": "013-07-creating-project",
+      "title": "1.7 创建项目",
+      "file": "chapters/013-07-creating-project.md"
+    },
+    {
+      "slug": "014-08-localhost-and-ports",
+      "title": "1.8 Localhost 与端口",
+      "file": "chapters/014-08-localhost-and-ports.md"
+    },
+    {
+      "slug": "015-index",
+      "title": "第一章：环境搭建与代码运行基础",
+      "file": "chapters/015-index.md"
+    },
+    {
+      "slug": "016-00-recommended-config",
+      "title": "2.0 推荐配置",
+      "file": "chapters/016-00-recommended-config.md"
+    },
+    {
+      "slug": "017-01-ai-economics",
+      "title": "2.1 AI 编程的经济学",
+      "file": "chapters/017-01-ai-economics.md"
+    },
+    {
+      "slug": "018-02-vibecoding-workflow",
+      "title": "2.2 VibeCoding 工作流",
+      "file": "chapters/018-02-vibecoding-workflow.md"
+    },
+    {
+      "slug": "019-03-mcp-and-skills",
+      "title": "2.3 MCP、插件与 Skills",
+      "file": "chapters/019-03-mcp-and-skills.md"
+    },
+    {
+      "slug": "020-04-project-config",
+      "title": "2.4 项目规则配置",
+      "file": "chapters/020-04-project-config.md"
+    },
+    {
+      "slug": "021-05-debugging-tips",
+      "title": "2.5 高效调试心法",
+      "file": "chapters/021-05-debugging-tips.md"
+    },
+    {
+      "slug": "022-index",
+      "title": "第二章：AI 使用说明书",
+      "file": "chapters/022-index.md"
+    },
+    {
+      "slug": "023-00-prd-template",
+      "title": "3.0 PRD 模板",
+      "file": "chapters/023-00-prd-template.md"
+    },
+    {
+      "slug": "024-01-product-validation",
+      "title": "3.1 想法验证实战",
+      "file": "chapters/024-01-product-validation.md"
+    },
+    {
+      "slug": "025-02-discuss-with-ai",
+      "title": "3.2 与 AI 确认需求",
+      "file": "chapters/025-02-discuss-with-ai.md"
+    },
+    {
+      "slug": "026-03-prd-template-guide",
+      "title": "3.3 PRD 编写实战",
+      "file": "chapters/026-03-prd-template-guide.md"
+    },
+    {
+      "slug": "027-04-coding-agents",
+      "title": "3.4 从 PRD 到代码",
+      "file": "chapters/027-04-coding-agents.md"
+    },
+    {
+      "slug": "028-index",
+      "title": "第三章：产品思维与文档驱动",
+      "file": "chapters/028-index.md"
+    },
+    {
+      "slug": "029-00-build-basics",
+      "title": "4.0 代码运行的三种状态",
+      "file": "chapters/029-00-build-basics.md"
+    },
+    {
+      "slug": "030-01-tech-stack-decision",
+      "title": "4.1 技术栈决策框架",
+      "file": "chapters/030-01-tech-stack-decision.md"
+    },
+    {
+      "slug": "031-02-prd-and-tech-docs",
+      "title": "4.2 从 PRD 到技术文档",
+      "file": "chapters/031-02-prd-and-tech-docs.md"
+    },
+    {
+      "slug": "032-03-programming-basics",
+      "title": "4.3 如何读懂 AI 生成的代码",
+      "file": "chapters/032-03-programming-basics.md"
+    },
+    {
+      "slug": "033-04-api-and-http",
+      "title": "4.4 API 与 HTTP 基础",
+      "file": "chapters/033-04-api-and-http.md"
+    },
+    {
+      "slug": "034-05-frontend-backend-separation",
+      "title": "4.5 前后端分离概念",
+      "file": "chapters/034-05-frontend-backend-separation.md"
+    },
+    {
+      "slug": "035-06-config-formats",
+      "title": "4.6 配置文件格式",
+      "file": "chapters/035-06-config-formats.md"
+    },
+    {
+      "slug": "036-07-api-integration",
+      "title": "4.7 API 集成实战",
+      "file": "chapters/036-07-api-integration.md"
+    },
+    {
+      "slug": "037-09-finding-libraries",
+      "title": "4.9 别再重复造轮子",
+      "file": "chapters/037-09-finding-libraries.md"
+    },
+    {
+      "slug": "038-index",
+      "title": "第四章：你必须知道的开发基础",
+      "file": "chapters/038-index.md"
+    },
+    {
+      "slug": "039-01-ai-design-tools",
+      "title": "5.1 AI 设计工具",
+      "file": "chapters/039-01-ai-design-tools.md"
+    },
+    {
+      "slug": "040-02-component-libraries",
+      "title": "5.2 组件库",
+      "file": "chapters/040-02-component-libraries.md"
+    },
+    {
+      "slug": "041-03-animation-libraries",
+      "title": "5.3 动画与交互库",
+      "file": "chapters/041-03-animation-libraries.md"
+    },
+    {
+      "slug": "042-04-ui-inspiration",
+      "title": "5.4 UI 风格与灵感",
+      "file": "chapters/042-04-ui-inspiration.md"
+    },
+    {
+      "slug": "043-05-advanced-effects",
+      "title": "5.5 让页面更高级的效果",
+      "file": "chapters/043-05-advanced-effects.md"
+    },
+    {
+      "slug": "044-06-component-skills",
+      "title": "5.6 让 AI 记住你的设计规范",
+      "file": "chapters/044-06-component-skills.md"
+    },
+    {
+      "slug": "045-index",
+      "title": "第五章：界面(UI)与交互(UX)",
+      "file": "chapters/045-index.md"
+    },
+    {
+      "slug": "046-00-get-your-database",
+      "title": "6.0 领取你的数据库",
+      "file": "chapters/046-00-get-your-database.md"
+    },
+    {
+      "slug": "047-01-storage-evolution",
+      "title": "6.1 数据存储演进",
+      "file": "chapters/047-01-storage-evolution.md"
+    },
+    {
+      "slug": "048-02-database-basics",
+      "title": "6.2 数据库基础概念",
+      "file": "chapters/048-02-database-basics.md"
+    },
+    {
+      "slug": "049-03-database-operations",
+      "title": "6.3 如何操作数据库",
+      "file": "chapters/049-03-database-operations.md"
+    },
+    {
+      "slug": "050-05-database-design",
+      "title": "6.4 数据库设计与优化",
+      "file": "chapters/050-05-database-design.md"
+    },
+    {
+      "slug": "051-index",
+      "title": "第六章：数据持久化与数据库",
+      "file": "chapters/051-index.md"
+    },
+    {
+      "slug": "052-00-crud-example",
+      "title": "7.0 跑通你的第一个全栈应用",
+      "file": "chapters/052-00-crud-example.md"
+    },
+    {
+      "slug": "053-01-api-growing-pains",
+      "title": "7.1 一个接口不够用了",
+      "file": "chapters/053-01-api-growing-pains.md"
+    },
+    {
+      "slug": "054-02-when-things-go-wrong",
+      "title": "7.2 当接口出了问题",
+      "file": "chapters/054-02-when-things-go-wrong.md"
+    },
+    {
+      "slug": "055-03-api-as-product",
+      "title": "7.3 让接口更好用",
+      "file": "chapters/055-03-api-as-product.md"
+    },
+    {
+      "slug": "056-index",
+      "title": "第七章：后端API开发",
+      "file": "chapters/056-index.md"
+    },
+    {
+      "slug": "057-00-user-system-example",
+      "title": "8.0 用户系统快速示例",
+      "file": "chapters/057-00-user-system-example.md"
+    },
+    {
+      "slug": "058-01-env-and-secrets",
+      "title": "8.1 密钥管理与环境变量",
+      "file": "chapters/058-01-env-and-secrets.md"
+    },
+    {
+      "slug": "059-02-auth-methods",
+      "title": "8.2 认证方式与方案选择",
+      "file": "chapters/059-02-auth-methods.md"
+    },
+    {
+      "slug": "060-03-route-protection",
+      "title": "8.3 路由保护与权限控制",
+      "file": "chapters/060-03-route-protection.md"
+    },
+    {
+      "slug": "061-04-security-checklist",
+      "title": "8.4 安全检查与问题排查",
+      "file": "chapters/061-04-security-checklist.md"
+    },
+    {
+      "slug": "062-05-advanced-security",
+      "title": "8.5 进阶安全防护",
+      "file": "chapters/062-05-advanced-security.md"
+    },
+    {
+      "slug": "063-index",
+      "title": "第八章：安全与用户认证",
+      "file": "chapters/063-index.md"
+    },
+    {
+      "slug": "064-01-testing-strategy",
+      "title": "9.1 为什么需要测试",
+      "file": "chapters/064-01-testing-strategy.md"
+    },
+    {
+      "slug": "065-02-api-and-e2e-testing",
+      "title": "9.2 API 测试与 E2E 测试",
+      "file": "chapters/065-02-api-and-e2e-testing.md"
+    },
+    {
+      "slug": "066-03-automation-workflow",
+      "title": "9.3 自动化工作流",
+      "file": "chapters/066-03-automation-workflow.md"
+    },
+    {
+      "slug": "067-index",
+      "title": "第九章：功能测试与自动化",
+      "file": "chapters/067-index.md"
+    },
+    {
+      "slug": "068-01-network-layers",
+      "title": "10.1 从 Localhost 到互联网",
+      "file": "chapters/068-01-network-layers.md"
+    },
+    {
+      "slug": "069-02-tunneling",
+      "title": "10.2 内网穿透：临时让朋友看看",
+      "file": "chapters/069-02-tunneling.md"
+    },
+    {
+      "slug": "070-index",
+      "title": "第十章：Localhost 与公网访问",
+      "file": "chapters/070-index.md"
+    },
+    {
+      "slug": "071-01-why-git",
+      "title": "11.1 为什么需要 Git",
+      "file": "chapters/071-01-why-git.md"
+    },
+    {
+      "slug": "072-02-remote-and-collaboration",
+      "title": "11.2 推上云端，开始协作",
+      "file": "chapters/072-02-remote-and-collaboration.md"
+    },
+    {
+      "slug": "073-03-branch-and-workflow",
+      "title": "11.3 分支、PR 与团队工作流",
+      "file": "chapters/073-03-branch-and-workflow.md"
+    },
+    {
+      "slug": "074-index",
+      "title": "第十一章：Git 版本控制与协作开发",
+      "file": "chapters/074-index.md"
+    },
+    {
+      "slug": "075-01-deploy-edgeone",
+      "title": "12.1 部署到 EdgeOne Pages",
+      "file": "chapters/075-01-deploy-edgeone.md"
+    },
+    {
+      "slug": "076-02-deploy-vercel-platforms",
+      "title": "12.2 部署到类 Vercel 平台",
+      "file": "chapters/076-02-deploy-vercel-platforms.md"
+    },
+    {
+      "slug": "077-03-cicd-automation",
+      "title": "12.3 CI/CD 与自动化",
+      "file": "chapters/077-03-cicd-automation.md"
+    },
+    {
+      "slug": "078-04-operations-cost",
+      "title": "12.4 运维基础与成本优化",
+      "file": "chapters/078-04-operations-cost.md"
+    },
+    {
+      "slug": "079-index",
+      "title": "第十二章：无服务器部署与 CI/CD 自动化",
+      "file": "chapters/079-index.md"
+    },
+    {
+      "slug": "080-01-domain-setup",
+      "title": "13.1 域名购买与 DNS 配置",
+      "file": "chapters/080-01-domain-setup.md"
+    },
+    {
+      "slug": "081-02-compliance-access",
+      "title": "13.2 备案与访问问题排查",
+      "file": "chapters/081-02-compliance-access.md"
+    },
+    {
+      "slug": "082-index",
+      "title": "第十三章：域名、DNS 与网络接入",
+      "file": "chapters/082-index.md"
+    },
+    {
+      "slug": "083-01-vps-selection",
+      "title": "14.1 VPS 选购指南",
+      "file": "chapters/083-01-vps-selection.md"
+    },
+    {
+      "slug": "084-02-vps-setup",
+      "title": "14.2 VPS 初始化与安全配置",
+      "file": "chapters/084-02-vps-setup.md"
+    },
+    {
+      "slug": "085-03-1-docker-apps",
+      "title": "14.3.1 应用商店与 Docker 基础",
+      "file": "chapters/085-03-1-docker-apps.md"
+    },
+    {
+      "slug": "086-03-2-deploy-nextjs",
+      "title": "14.3.2 部署 Next.js 应用",
+      "file": "chapters/086-03-2-deploy-nextjs.md"
+    },
+    {
+      "slug": "087-03-3-deploy-static",
+      "title": "14.3.3 部署静态网站",
+      "file": "chapters/087-03-3-deploy-static.md"
+    },
+    {
+      "slug": "088-03-4-deploy-fullstack",
+      "title": "14.3.4 部署前后端分离应用",
+      "file": "chapters/088-03-4-deploy-fullstack.md"
+    },
+    {
+      "slug": "089-04-domain-ssl",
+      "title": "14.4 配置域名与证书",
+      "file": "chapters/089-04-domain-ssl.md"
+    },
+    {
+      "slug": "090-05-cool-apps",
+      "title": "14.5 其他好玩的应用",
+      "file": "chapters/090-05-cool-apps.md"
+    },
+    {
+      "slug": "091-index",
+      "title": "第十四章：云服务器运维与项目部署",
+      "file": "chapters/091-index.md"
+    },
+    {
+      "slug": "092-01-opengraph-sharing",
+      "title": "15.1 Open Graph 与社交分享",
+      "file": "chapters/092-01-opengraph-sharing.md"
+    },
+    {
+      "slug": "093-02-seo-guide",
+      "title": "15.2 SEO 全攻略",
+      "file": "chapters/093-02-seo-guide.md"
+    },
+    {
+      "slug": "094-03-umami",
+      "title": "15.3 Umami 数据统计",
+      "file": "chapters/094-03-umami.md"
+    },
+    {
+      "slug": "095-04-legal",
+      "title": "15.4 法律合规",
+      "file": "chapters/095-04-legal.md"
+    },
+    {
+      "slug": "096-index",
+      "title": "第十五章：SEO、分享与数据统计",
+      "file": "chapters/096-index.md"
+    },
+    {
+      "slug": "097-01-facing-real-users",
+      "title": "16.1 面对真实用户",
+      "file": "chapters/097-01-facing-real-users.md"
+    },
+    {
+      "slug": "098-02-feedback-prioritization",
+      "title": "16.2 反馈分类与优先级",
+      "file": "chapters/098-02-feedback-prioritization.md"
+    },
+    {
+      "slug": "099-03-understanding-users",
+      "title": "16.3 理解用户",
+      "file": "chapters/099-03-understanding-users.md"
+    },
+    {
+      "slug": "100-04-iteration-and-growth",
+      "title": "16.4 迭代与成长",
+      "file": "chapters/100-04-iteration-and-growth.md"
+    },
+    {
+      "slug": "101-index",
+      "title": "第十六章：用户反馈与产品迭代",
+      "file": "chapters/101-index.md"
+    },
+    {
+      "slug": "102-index",
+      "title": "NEXT LEVEL",
+      "file": "chapters/102-index.md"
+    },
+    {
+      "slug": "103-happy-coder",
+      "title": "随时随地 AI 编程",
+      "file": "chapters/103-happy-coder.md"
+    },
+    {
+      "slug": "104-index",
+      "title": "进阶篇",
+      "file": "chapters/104-index.md"
+    },
+    {
+      "slug": "105-web-ide",
+      "title": "5 分钟搭建云端开发环境",
+      "file": "chapters/105-web-ide.md"
+    },
+    {
+      "slug": "106-agentic-engineering",
+      "title": "260307-智能体工程",
+      "file": "chapters/106-agentic-engineering.md"
+    },
+    {
+      "slug": "107-coding-agents-101",
+      "title": "Coding Agents 入门：真正完成工作的艺术",
+      "file": "chapters/107-coding-agents-101.md"
+    },
+    {
+      "slug": "108-how-we-vibe-code-at-faang",
+      "title": "250800-我们在 FAANG 是怎么做 Vibe Coding 的",
+      "file": "chapters/108-how-we-vibe-code-at-faang.md"
+    },
+    {
+      "slug": "109-index",
+      "title": "核心概念与范式演进",
+      "file": "chapters/109-index.md"
+    },
+    {
+      "slug": "110-specs-are-the-new-source-code",
+      "title": "250731-规范是新的源代码",
+      "file": "chapters/110-specs-are-the-new-source-code.md"
+    },
+    {
+      "slug": "111-the-factory-model-how-coding-agents-changed-software-enginee",
+      "title": "260307-工厂模型：Coding Agents 如何改变软件工程",
+      "file": "chapters/111-the-factory-model-how-coding-agents-changed-software-enginee.md"
+    },
+    {
+      "slug": "112-vibe-coding-is-not-an-excuse-for-low-quality-work",
+      "title": "Vibe Coding 不是低质量工作的借口",
+      "file": "chapters/112-vibe-coding-is-not-an-excuse-for-low-quality-work.md"
+    },
+    {
+      "slug": "113-vibe-coding-revolution-or-reckless-abandon",
+      "title": "Vibe Coding：革命还是鲁莽放纵？",
+      "file": "chapters/113-vibe-coding-revolution-or-reckless-abandon.md"
+    },
+    {
+      "slug": "114-what-are-ai-agents-why-do-they-matter",
+      "title": "什么是 AI Agent？为什么它们很重要？",
+      "file": "chapters/114-what-are-ai-agents-why-do-they-matter.md"
+    },
+    {
+      "slug": "115-what-you-need-to-know-about-vibe-coding",
+      "title": "250201-关于 Vibe Coding 你需要知道的一切",
+      "file": "chapters/115-what-you-need-to-know-about-vibe-coding.md"
+    },
+    {
+      "slug": "116-world-class-agent-engineer",
+      "title": "260307-如何成为世界级的智能体工程师",
+      "file": "chapters/116-world-class-agent-engineer.md"
+    },
+    {
+      "slug": "117-build-agents-with-filesystems-and-bash",
+      "title": "260307-用文件系统和 Bash 构建智能体",
+      "file": "chapters/117-build-agents-with-filesystems-and-bash.md"
+    },
+    {
+      "slug": "118-how-claude-code-works",
+      "title": "250800-揭秘 Claude Code 的工作原理",
+      "file": "chapters/118-how-claude-code-works.md"
+    },
+    {
+      "slug": "119-index",
+      "title": "基础技术与架构设计",
+      "file": "chapters/119-index.md"
+    },
+    {
+      "slug": "120-mcp-what-it-is-and-why-it-matters",
+      "title": "260307-MCP：它是什么，以及为什么重要",
+      "file": "chapters/120-mcp-what-it-is-and-why-it-matters.md"
+    },
+    {
+      "slug": "121-multi-agent-systems-ai-native-engineering",
+      "title": "251112-多智能体系统如何支撑 AI 原生工程",
+      "file": "chapters/121-multi-agent-systems-ai-native-engineering.md"
+    },
+    {
+      "slug": "122-nvidia-ai-5-layer-cake",
+      "title": "250318-理解 AI 的「五层蛋糕」架构",
+      "file": "chapters/122-nvidia-ai-5-layer-cake.md"
+    },
+    {
+      "slug": "123-self-improving-coding-agents",
+      "title": "260307-自我改进的编码智能体",
+      "file": "chapters/123-self-improving-coding-agents.md"
+    },
+    {
+      "slug": "124-testing-bash-vs-sql",
+      "title": "260307-测试「Bash 就够了」假设：SQL vs Bash 智能体对比实验",
+      "file": "chapters/124-testing-bash-vs-sql.md"
+    },
+    {
+      "slug": "125-agents-md-vs-skills",
+      "title": "260307-AGENTS.md vs Skills：被动上下文为何胜过主动检索",
+      "file": "chapters/125-agents-md-vs-skills.md"
+    },
+    {
+      "slug": "126-ai-driven-prototyping-v0-bolt-and-lovable-compared",
+      "title": "260307-AI 驱动的原型开发：v0、Bolt 和 Lovable 对比",
+      "file": "chapters/126-ai-driven-prototyping-v0-bolt-and-lovable-compared.md"
+    },
+    {
+      "slug": "127-claude-code-swarms",
+      "title": "260307-Claude Code Swarms：多智能体协作开发",
+      "file": "chapters/127-claude-code-swarms.md"
+    },
+    {
+      "slug": "128-complete-guide-to-building-skills-for-claude",
+      "title": "Claude Skills 完整构建指南",
+      "file": "chapters/128-complete-guide-to-building-skills-for-claude.md"
+    },
+    {
+      "slug": "129-how-to-write-good-spec-for-ai-agents",
+      "title": "如何为 AI 智能体写出优秀的规范",
+      "file": "chapters/129-how-to-write-good-spec-for-ai-agents.md"
+    },
+    {
+      "slug": "130-index",
+      "title": "工具链与开发框架",
+      "file": "chapters/130-index.md"
+    },
+    {
+      "slug": "131-we-removed-80-percent-tools",
+      "title": "260307-我们删掉了智能体 80% 的工具",
+      "file": "chapters/131-we-removed-80-percent-tools.md"
+    },
+    {
+      "slug": "132-why-i-use-cline-for-ai-engineering",
+      "title": "为什么我在 AI 工程中使用 Cline",
+      "file": "chapters/132-why-i-use-cline-for-ai-engineering.md"
+    },
+    {
+      "slug": "133-ai-code-review-implementation",
+      "title": "250800-AI 代码审查的实施与最佳实践",
+      "file": "chapters/133-ai-code-review-implementation.md"
+    },
+    {
+      "slug": "134-ai-writes-code-faster-your-job-is-to-prove-it-works",
+      "title": "260307-AI 写代码更快，你的工作是证明它能用",
+      "file": "chapters/134-ai-writes-code-faster-your-job-is-to-prove-it-works.md"
+    },
+    {
+      "slug": "135-avoiding-skill-atrophy-in-the-age-of-ai",
+      "title": "260307-在AI时代避免技能退化",
+      "file": "chapters/135-avoiding-skill-atrophy-in-the-age-of-ai.md"
+    },
+    {
+      "slug": "136-beyond-the-70-maximizing-the-human-30-of-ai-assisted-coding",
+      "title": "260307-超越70%：最大化AI辅助编程中人类30%的价值",
+      "file": "chapters/136-beyond-the-70-maximizing-the-human-30-of-ai-assisted-coding.md"
+    },
+    {
+      "slug": "137-how-to-write-a-good-spec-for-ai-agents",
+      "title": "260307-如何为 AI Coding Agents 编写高质量规范",
+      "file": "chapters/137-how-to-write-a-good-spec-for-ai-agents.md"
+    },
+    {
+      "slug": "138-index",
+      "title": "工程实施与质量保障",
+      "file": "chapters/138-index.md"
+    },
+    {
+      "slug": "139-leading-effective-engineering-teams-in-the-age-of-genai",
+      "title": "260307-GenAI 时代领导高效工程团队",
+      "file": "chapters/139-leading-effective-engineering-teams-in-the-age-of-genai.md"
+    },
+    {
+      "slug": "140-my-llm-coding-workflow-going-into-2026",
+      "title": "260307-我在2026年的LLM编码工作流",
+      "file": "chapters/140-my-llm-coding-workflow-going-into-2026.md"
+    },
+    {
+      "slug": "141-react-best-practices",
+      "title": "260114-React 最佳实践：Vercel 十年性能优化经验总结",
+      "file": "chapters/141-react-best-practices.md"
+    },
+    {
+      "slug": "142-stop-using-init-for-agents",
+      "title": "260307-停止为 AGENTS.md 使用 /init",
+      "file": "chapters/142-stop-using-init-for-agents.md"
+    },
+    {
+      "slug": "143-vercel-aeo-tracking",
+      "title": "260307-Vercel 如何构建 Coding Agents 的 AEO 追踪系统",
+      "file": "chapters/143-vercel-aeo-tracking.md"
+    },
+    {
+      "slug": "144-video-generation-with-ai-gateway",
+      "title": "260307-使用 AI Gateway 生成视频",
+      "file": "chapters/144-video-generation-with-ai-gateway.md"
+    },
+    {
+      "slug": "145-your-ai-coding-agents-need-a-manager",
+      "title": "260307-你的 AI Coding Agents 需要一个管理者",
+      "file": "chapters/145-your-ai-coding-agents-need-a-manager.md"
+    },
+    {
+      "slug": "146-ai-agents-threats-and-mitigations",
+      "title": "250501-AI 代理已经到来，威胁也随之而来",
+      "file": "chapters/146-ai-agents-threats-and-mitigations.md"
+    },
+    {
+      "slug": "147-index",
+      "title": "安全、合规与局限性",
+      "file": "chapters/147-index.md"
+    },
+    {
+      "slug": "148-security-boundaries-in-agentic-architectures",
+      "title": "260307-智能体架构中的安全边界",
+      "file": "chapters/148-security-boundaries-in-agentic-architectures.md"
+    },
+    {
+      "slug": "149-how-openevidence-built-healthcare-ai-physicians-trust",
+      "title": "260307-OpenEvidence 如何打造让医生信得过的医疗 AI",
+      "file": "chapters/149-how-openevidence-built-healthcare-ai-physicians-trust.md"
+    },
+    {
+      "slug": "150-index",
+      "title": "商业应用与行业趋势",
+      "file": "chapters/150-index.md"
+    },
+    {
+      "slug": "151-keeping-community-human-while-scaling-with-agents",
+      "title": "260307-用 AI 智能体扩展社区，同时保持人性化",
+      "file": "chapters/151-keeping-community-human-while-scaling-with-agents.md"
+    },
+    {
+      "slug": "152-the-next-two-years-of-software-engineering",
+      "title": "260307-软件工程的未来两年",
+      "file": "chapters/152-the-next-two-years-of-software-engineering.md"
+    },
+    {
+      "slug": "153-index",
+      "title": "优质文章篇",
+      "file": "chapters/153-index.md"
+    },
+    {
+      "slug": "154-0-1-start-here",
+      "title": "找到你的位置",
+      "file": "chapters/154-0-1-start-here.md"
+    },
+    {
+      "slug": "155-index",
+      "title": "写在最前面",
+      "file": "chapters/155-index.md"
+    },
+    {
+      "slug": "156-1-1-1-coder-to-commander",
+      "title": "1.1.1 2025 年，编程世界发生了什么",
+      "file": "chapters/156-1-1-1-coder-to-commander.md"
+    },
+    {
+      "slug": "157-1-1-2-vibe-vs-spec",
+      "title": "1.1.2 从 Coder 到 Commander 的角色转变",
+      "file": "chapters/157-1-1-2-vibe-vs-spec.md"
+    },
+    {
+      "slug": "158-index",
+      "title": "1.1 编程已死，编程永生：从 Coder 到 Commander",
+      "file": "chapters/158-index.md"
+    },
+    {
+      "slug": "159-1-2-1-math-myth",
+      "title": "1.2.1 迷信一：编程需要数学很好",
+      "file": "chapters/159-1-2-1-math-myth.md"
+    },
+    {
+      "slug": "160-1-2-2-english-myth",
+      "title": "1.2.2 迷信二：要先学好英文",
+      "file": "chapters/160-1-2-2-english-myth.md"
+    },
+    {
+      "slug": "161-1-2-3-terms-myth",
+      "title": "1.2.3 迷信三：需要懂很多技术名词",
+      "file": "chapters/161-1-2-3-terms-myth.md"
+    },
+    {
+      "slug": "162-1-2-4-vibe-toy-myth",
+      "title": "1.2.4 迷信四：Vibe Coding 只是玩具",
+      "file": "chapters/162-1-2-4-vibe-toy-myth.md"
+    },
+    {
+      "slug": "163-1-2-5-job-security-myth",
+      "title": "1.2.5 迷信五：AI 会抢走程序员的工作",
+      "file": "chapters/163-1-2-5-job-security-myth.md"
+    },
+    {
+      "slug": "164-1-2-6-ai-perfect-myth",
+      "title": "1.2.6 迷信六：AI生成的代码总是完美的",
+      "file": "chapters/164-1-2-6-ai-perfect-myth.md"
+    },
+    {
+      "slug": "165-index",
+      "title": "1.2 破除迷信：不懂英文、数学不好也能写代码吗？",
+      "file": "chapters/165-index.md"
+    },
+    {
+      "slug": "166-1-3-1-tool-overview",
+      "title": "1.3.1 AI 编程工具全景图（2025 年版）",
+      "file": "chapters/166-1-3-1-tool-overview.md"
+    },
+    {
+      "slug": "167-1-3-2-common-capabilities",
+      "title": "1.3.2 所有工具的共同能力",
+      "file": "chapters/167-1-3-2-common-capabilities.md"
+    },
+    {
+      "slug": "168-1-3-3-choose-tools",
+      "title": "1.3.3 按你的情况选择",
+      "file": "chapters/168-1-3-3-choose-tools.md"
+    },
+    {
+      "slug": "169-1-3-4-tool-strategy",
+      "title": "1.3.4 本教程的工具策略",
+      "file": "chapters/169-1-3-4-tool-strategy.md"
+    },
+    {
+      "slug": "170-index",
+      "title": "1.3 工具初探：AI 编程工具选型指南",
+      "file": "chapters/170-index.md"
+    },
+    {
+      "slug": "171-1-4-1-what-is-vibe-coding",
+      "title": "1.4.1 什么是 Vibe Coding",
+      "file": "chapters/171-1-4-1-what-is-vibe-coding.md"
+    },
+    {
+      "slug": "172-1-4-2-what-is-spec-coding",
+      "title": "1.4.2 什么是 Spec Coding（规范驱动开发）",
+      "file": "chapters/172-1-4-2-what-is-spec-coding.md"
+    },
+    {
+      "slug": "173-1-4-3-vibe-vs-spec",
+      "title": "1.4.3 如何选择和切换",
+      "file": "chapters/173-1-4-3-vibe-vs-spec.md"
+    },
+    {
+      "slug": "174-1-4-4-context-management",
+      "title": "1.4.4 Context 管理技巧",
+      "file": "chapters/174-1-4-4-context-management.md"
+    },
+    {
+      "slug": "175-index",
+      "title": "1.4 Vibe vs Spec：AI 编程的两种方式",
+      "file": "chapters/175-index.md"
+    },
+    {
+      "slug": "176-1-5-1-goals",
+      "title": "1.5.1 目标与准备",
+      "file": "chapters/176-1-5-1-goals.md"
+    },
+    {
+      "slug": "177-1-5-2-step-by-step",
+      "title": "1.5.2 Step by Step 操作",
+      "file": "chapters/177-1-5-2-step-by-step.md"
+    },
+    {
+      "slug": "178-1-5-3-congrats",
+      "title": "1.5.3 恭喜你！你已经完成了什么",
+      "file": "chapters/178-1-5-3-congrats.md"
+    },
+    {
+      "slug": "179-1-5-4-faq",
+      "title": "1.5.4 常见问题 FAQ",
+      "file": "chapters/179-1-5-4-faq.md"
+    },
+    {
+      "slug": "180-index",
+      "title": "1.5 Hello World：你的第一个 3 分钟 AI 网页",
+      "file": "chapters/180-index.md"
+    },
+    {
+      "slug": "181-index",
+      "title": "第 1 章：觉醒 —— 为什么现在是编程最好的时代",
+      "file": "chapters/181-index.md"
+    },
+    {
+      "slug": "182-2-1-1-jtbd-intro-theory",
+      "title": "2.1.1 JTBD理论：从功能思维到任务思维",
+      "file": "chapters/182-2-1-1-jtbd-intro-theory.md"
+    },
+    {
+      "slug": "183-2-1-2-jtbd-intro-practice",
+      "title": "2.1.2 JTBD实践应用：四场景分析与练习",
+      "file": "chapters/183-2-1-2-jtbd-intro-practice.md"
+    },
+    {
+      "slug": "184-2-1-3-jtbd-intro-advanced",
+      "title": "2.1.3 JTBD进阶技巧：深度理解与应用方法",
+      "file": "chapters/184-2-1-3-jtbd-intro-advanced.md"
+    },
+    {
+      "slug": "185-index",
+      "title": "\"2.1 思维升级：从\\\"我想做一个App\\\"到\\\"我要解决一个问题\\\"\"",
+      "file": "chapters/185-index.md"
+    },
+    {
+      "slug": "186-2-2-1-inversion-thinking-basics",
+      "title": "2.2.1 逆向思维基础：从Carl Jacobi到Charlie Munger",
+      "file": "chapters/186-2-2-1-inversion-thinking-basics.md"
+    },
+    {
+      "slug": "187-2-2-2-pre-mortem-failure-patterns",
+      "title": "2.2.2 Pre-mortem失败模式分析：Vibe Coding项目避坑指南",
+      "file": "chapters/187-2-2-2-pre-mortem-failure-patterns.md"
+    },
+    {
+      "slug": "188-2-2-3-pre-mortem-practical-guide",
+      "title": "2.2.3 Pre-mortem实战指南：操作步骤与工具模板",
+      "file": "chapters/188-2-2-3-pre-mortem-practical-guide.md"
+    },
+    {
+      "slug": "189-index",
+      "title": "2.2 逆向思维：先想清楚什么会让项目失败",
+      "file": "chapters/189-index.md"
+    },
+    {
+      "slug": "190-2-3-1-mvp-foundations",
+      "title": "2.3.1 MVP基础：从概念到深层含义",
+      "file": "chapters/190-2-3-1-mvp-foundations.md"
+    },
+    {
+      "slug": "191-2-3-2-case-studies",
+      "title": "2.3.2 真实案例对比：成功与失败的分水岭",
+      "file": "chapters/191-2-3-2-case-studies.md"
+    },
+    {
+      "slug": "192-2-3-3-feature-strategy",
+      "title": "2.3.3 功能策略：砍掉功能的艺术与不做清单",
+      "file": "chapters/192-2-3-3-feature-strategy.md"
+    },
+    {
+      "slug": "193-2-3-4-practice-guide",
+      "title": "2.3.4 实践指南：减法思维的完整应用流程",
+      "file": "chapters/193-2-3-4-practice-guide.md"
+    },
+    {
+      "slug": "194-index",
+      "title": "2.3 减法思维：MVP不是「最小功能」，而是「最小可验证价值」",
+      "file": "chapters/194-index.md"
+    },
+    {
+      "slug": "195-2-4-2-product-as-story",
+      "title": "2.4.2 产品即故事：用叙事结构思考需求",
+      "file": "chapters/195-2-4-2-product-as-story.md"
+    },
+    {
+      "slug": "196-2-4-3-persona-3d",
+      "title": "2.4.3 三维用户画像：让用户从纸面上站起来",
+      "file": "chapters/196-2-4-3-persona-3d.md"
+    },
+    {
+      "slug": "197-2-4-4-user-journey-map",
+      "title": "2.4.4 用户旅程地图：把故事可视化",
+      "file": "chapters/197-2-4-4-user-journey-map.md"
+    },
+    {
+      "slug": "198-2-4-5-prompt-writing",
+      "title": "2.4.5 用故事思维写 Prompt：让 AI 真正理解你",
+      "file": "chapters/198-2-4-5-prompt-writing.md"
+    },
+    {
+      "slug": "199-2-4-6-practice",
+      "title": "2.4.6 实战练习：为你的项目应用故事思维",
+      "file": "chapters/199-2-4-6-practice.md"
+    },
+    {
+      "slug": "200-2-4-7-summary",
+      "title": "2.4.7 本节核心要点",
+      "file": "chapters/200-2-4-7-summary.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "560422d3323b",
+  "title": "ECMAScript 6 入门",
+  "url": "http://es6.ruanyifeng.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:37.298Z",
+  "chapters": [
+    {
+      "slug": "001-q",
+      "title": "ES6 入门教程",
+      "file": "chapters/001-q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "ES6 入门教程"
+}

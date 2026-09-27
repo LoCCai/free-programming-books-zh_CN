@@ -1,0 +1,16 @@
+{
+  "bookId": "2adbc01d540d",
+  "title": "简单易懂的PHP魔法",
+  "url": "http://www.nowamagic.net/librarys/books/contents/php",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:12.386Z",
+  "chapters": [
+    {
+      "slug": "001-1g",
+      "title": "http://www.nowamagic.net/librarys/books/contents/php",
+      "file": "chapters/001-1g.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://www.nowamagic.net/librarys/books/contents/php"
+}

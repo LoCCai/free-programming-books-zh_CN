@@ -1,0 +1,96 @@
+{
+  "bookId": "2915305483f4",
+  "title": "shell十三问",
+  "url": "https://github.com/wzb56/13_questions_of_shell",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:23.090Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "13_questions_of_shell",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-何为shell",
+      "title": "1.何为shell",
+      "file": "chapters/002-1-何为shell.md"
+    },
+    {
+      "slug": "003-10-与-差在哪",
+      "title": "10.&&与||差在哪",
+      "file": "chapters/003-10-与-差在哪.md"
+    },
+    {
+      "slug": "004-11-与-差在哪",
+      "title": "11.>与<差在哪",
+      "file": "chapters/004-11-与-差在哪.md"
+    },
+    {
+      "slug": "005-12-你要if还是case呢",
+      "title": "12.你要if还是case呢",
+      "file": "chapters/005-12-你要if还是case呢.md"
+    },
+    {
+      "slug": "006-13-for与while还有until差在哪",
+      "title": "13.for与while还有until差在哪",
+      "file": "chapters/006-13-for与while还有until差在哪.md"
+    },
+    {
+      "slug": "007-14wildcard",
+      "title": "14wildcard",
+      "file": "chapters/007-14wildcard.md"
+    },
+    {
+      "slug": "008-15-regular-expression",
+      "title": "15.regular-expression",
+      "file": "chapters/008-15-regular-expression.md"
+    },
+    {
+      "slug": "009-16-end",
+      "title": "16.end",
+      "file": "chapters/009-16-end.md"
+    },
+    {
+      "slug": "010-2-shell-prompt-ps1-与carriage-return-cr-的关系",
+      "title": "2.shell_prompt(PS1)与Carriage Return(CR)的关系",
+      "file": "chapters/010-2-shell-prompt-ps1-与carriage-return-cr-的关系.md"
+    },
+    {
+      "slug": "011-3-别人echo你也echo-是问echo知多少",
+      "title": "3.别人echo你也echo;是问echo知多少",
+      "file": "chapters/011-3-别人echo你也echo-是问echo知多少.md"
+    },
+    {
+      "slug": "012-4-与-的差在哪",
+      "title": "4.\"\"与''的差在哪",
+      "file": "chapters/012-4-与-的差在哪.md"
+    },
+    {
+      "slug": "013-5-var-value问export前后的差在哪",
+      "title": "5.var=value问export前后的差在哪",
+      "file": "chapters/013-5-var-value问export前后的差在哪.md"
+    },
+    {
+      "slug": "014-6-exec跟source差在哪",
+      "title": "6.exec跟source差在哪?",
+      "file": "chapters/014-6-exec跟source差在哪.md"
+    },
+    {
+      "slug": "015-7-与-差在哪",
+      "title": "7.()与{}差在哪?",
+      "file": "chapters/015-7-与-差在哪.md"
+    },
+    {
+      "slug": "016-8-与-还有-的差别在哪",
+      "title": "8.$(())与$()还有${}的差别在哪",
+      "file": "chapters/016-8-与-还有-的差别在哪.md"
+    },
+    {
+      "slug": "017-9-与-差在哪",
+      "title": "9.$@与$*差在哪",
+      "file": "chapters/017-9-与-差在哪.md"
+    }
+  ],
+  "license": "GPL",
+  "sourceType": "github"
+}

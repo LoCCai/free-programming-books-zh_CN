@@ -1,0 +1,16 @@
+{
+  "bookId": "d8077b9b5475",
+  "title": "3 Web Designs in 3 Weeks",
+  "url": "https://www.gitbook.com/book/juntao/3-web-designs-in-3-weeks/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:40.982Z",
+  "chapters": [
+    {
+      "slug": "001-1w",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1w.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

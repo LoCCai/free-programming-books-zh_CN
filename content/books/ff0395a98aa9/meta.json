@@ -1,0 +1,16 @@
+{
+  "bookId": "ff0395a98aa9",
+  "title": "Python 量化交易教程",
+  "url": "https://www.gitbook.com/book/wizardforcel/python-quant-uqer/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:42.322Z",
+  "chapters": [
+    {
+      "slug": "001-1v",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1v.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

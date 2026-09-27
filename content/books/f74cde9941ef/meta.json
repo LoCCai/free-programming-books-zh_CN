@@ -1,0 +1,16 @@
+{
+  "bookId": "f74cde9941ef",
+  "title": "Learn Git - complete book in Chinese",
+  "url": "https://www.git-tower.com/learn/git/ebook/cn/command-line/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:10.336Z",
+  "chapters": [
+    {
+      "slug": "001-1m",
+      "title": "前言",
+      "file": "chapters/001-1m.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "前言"
+}

@@ -1,0 +1,40 @@
+{
+  "bookId": "513b468101df",
+  "title": "ZMQ 指南",
+  "url": "https://github.com/anjuke/zguide-cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:09.455Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "ZMQ 指南",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-chapter1",
+      "title": "ZMQ 指南",
+      "file": "chapters/002-chapter1.md"
+    },
+    {
+      "slug": "003-chapter2",
+      "title": "chapter2",
+      "file": "chapters/003-chapter2.md"
+    },
+    {
+      "slug": "004-chapter3",
+      "title": "chapter3",
+      "file": "chapters/004-chapter3.md"
+    },
+    {
+      "slug": "005-chapter4",
+      "title": "chapter4",
+      "file": "chapters/005-chapter4.md"
+    },
+    {
+      "slug": "006-chapter5",
+      "title": "chapter5",
+      "file": "chapters/006-chapter5.md"
+    }
+  ],
+  "sourceType": "github"
+}

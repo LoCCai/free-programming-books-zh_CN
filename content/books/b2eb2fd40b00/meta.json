@@ -1,0 +1,16 @@
+{
+  "bookId": "b2eb2fd40b00",
+  "title": "PostgreSQL 8.2.3 中文文档",
+  "url": "https://www.jinbuguo.com/postgresql/manual/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:02.649Z",
+  "chapters": [
+    {
+      "slug": "001-1h",
+      "title": "PostgreSQL 8.2.3 中文文档 [金步国]",
+      "file": "chapters/001-1h.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "PostgreSQL 8.2.3 中文文档 [金步国]"
+}

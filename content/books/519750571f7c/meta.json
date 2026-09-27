@@ -1,0 +1,16 @@
+{
+  "bookId": "519750571f7c",
+  "title": "简明 Python 教程(Python 3)",
+  "url": "https://legacy.gitbook.com/book/lenkimo/byte-of-python-chinese-edition/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:18.452Z",
+  "chapters": [
+    {
+      "slug": "001-26",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-26.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

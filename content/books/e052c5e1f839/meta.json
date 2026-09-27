@@ -1,0 +1,26 @@
+{
+  "bookId": "e052c5e1f839",
+  "title": "中文文案排版指北",
+  "url": "https://github.com/sparanoid/chinese-copywriting-guidelines",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:33.121Z",
+  "chapters": [
+    {
+      "slug": "001-readme-en",
+      "title": "Chinese Copywriting Guidelines",
+      "file": "chapters/001-readme-en.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "中文文案排版指北",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme-zh-hans",
+      "title": "中文文案排版指北",
+      "file": "chapters/003-readme-zh-hans.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

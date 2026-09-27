@@ -1,0 +1,75 @@
+{
+  "bookId": "944aed4431ef",
+  "title": "REST 实战",
+  "url": "https://github.com/waylau/rest-in-action",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:33.552Z",
+  "chapters": [
+    {
+      "slug": "001-rest-overview",
+      "title": "REST Overview 总览",
+      "file": "chapters/001-rest-overview.md"
+    },
+    {
+      "slug": "002-getting-started",
+      "title": "Getting Started 开始",
+      "file": "chapters/002-getting-started.md"
+    },
+    {
+      "slug": "003-exploring-the-newly-created-project",
+      "title": "Exploring the Newly Created Project 探索新项目",
+      "file": "chapters/003-exploring-the-newly-created-project.md"
+    },
+    {
+      "slug": "004-rapid-development",
+      "title": "Rapid Development 快速开发",
+      "file": "chapters/004-rapid-development.md"
+    },
+    {
+      "slug": "005-custom-resourceconfig",
+      "title": "Custom ResourceConfig 自定义资源配置",
+      "file": "chapters/005-custom-resourceconfig.md"
+    },
+    {
+      "slug": "006-handle-json-and-xml",
+      "title": "Handle JSON and XML 处理 JSON 和 XML",
+      "file": "chapters/006-handle-json-and-xml.md"
+    },
+    {
+      "slug": "007-encoding-format",
+      "title": "Encoding Format 处理编码问题",
+      "file": "chapters/007-encoding-format.md"
+    },
+    {
+      "slug": "008-java-se-deployment-environments",
+      "title": "Java SE Deployment Environments 使用 Java SE 部署环境",
+      "file": "chapters/008-java-se-deployment-environments.md"
+    },
+    {
+      "slug": "009-simulation-of-curd",
+      "title": "Simulation of CURD 模拟CURD操作",
+      "file": "chapters/009-simulation-of-curd.md"
+    },
+    {
+      "slug": "010-parameter-annotations",
+      "title": "Parameter Annotations 常用参数注解",
+      "file": "chapters/010-parameter-annotations.md"
+    },
+    {
+      "slug": "011-file-upload-and-download",
+      "title": "File Upload and Download 文件上传、下载",
+      "file": "chapters/011-file-upload-and-download.md"
+    },
+    {
+      "slug": "012-build-real-time-web-app-with-sse",
+      "title": "Build Real-Time Web App with SSE 用 SSE 构建实时 Web 应用",
+      "file": "chapters/012-build-real-time-web-app-with-sse.md"
+    },
+    {
+      "slug": "013-ref",
+      "title": "References 参考引用",
+      "file": "chapters/013-ref.md"
+    }
+  ],
+  "sourceType": "github"
+}

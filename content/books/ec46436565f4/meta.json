@@ -1,0 +1,16 @@
+{
+  "bookId": "ec46436565f4",
+  "title": "The Django Book 中文版",
+  "url": "http://djangobook.py3k.cn/2.0/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:54.075Z",
+  "chapters": [
+    {
+      "slug": "001-u",
+      "title": "The Django Book",
+      "file": "chapters/001-u.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The Django Book"
+}

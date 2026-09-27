@@ -1,0 +1,16 @@
+{
+  "bookId": "7711bd6bb3a6",
+  "title": "Spring 系列中文参考指南",
+  "url": "https://github.com/jcohy/jcohy-docs",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:21.513Z",
+  "chapters": [
+    {
+      "slug": "001-version",
+      "title": "version",
+      "file": "chapters/001-version.md"
+    }
+  ],
+  "license": "Apache-2.0",
+  "sourceType": "github"
+}

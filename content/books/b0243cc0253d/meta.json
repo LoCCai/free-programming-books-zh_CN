@@ -1,0 +1,16 @@
+{
+  "bookId": "b0243cc0253d",
+  "title": "简单易懂的C魔法",
+  "url": "http://www.nowamagic.net/librarys/books/contents/c",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:25.695Z",
+  "chapters": [
+    {
+      "slug": "001-1e",
+      "title": "http://www.nowamagic.net/librarys/books/contents/c",
+      "file": "chapters/001-1e.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://www.nowamagic.net/librarys/books/contents/c"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "0800b770f940",
+  "title": "Apache 中文手册",
+  "url": "https://www.jinbuguo.com/apache/manual/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:07.415Z",
+  "chapters": [
+    {
+      "slug": "001-1d",
+      "title": "Apache HTTP Server Version 2.2 文档 － Apache 2.2 中文手册 [金步国]",
+      "file": "chapters/001-1d.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Apache HTTP Server Version 2.2 文档 － Apache 2.2 中文手册 [金步国]"
+}

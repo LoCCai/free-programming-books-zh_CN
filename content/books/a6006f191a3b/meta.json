@@ -1,0 +1,16 @@
+{
+  "bookId": "a6006f191a3b",
+  "title": "Python 精要教程",
+  "url": "https://www.gitbook.com/book/wizardforcel/python-essential-tutorial/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:41.241Z",
+  "chapters": [
+    {
+      "slug": "001-23",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-23.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

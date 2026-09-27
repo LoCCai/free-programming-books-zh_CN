@@ -1,0 +1,7 @@
+### 6. 迁移到生产环境
+
+当你准备将Spring Boot应用发布到生产环境时，我们提供了一些你[可能喜欢的技巧](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/README.md)！
+
+- 管理端点：[概述](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/46. Endpoints.md)｜[自定义](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/46.1 Customizing endpoints.md)
+- 连接选项：[HTTP](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/47. Monitoring and management over HTTP.md)｜[JMX](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/48. Monitoring and management over JMX.md)｜[SSH](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/49. Monitoring and management using a remote shell.md)
+- 监控：[指标](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/50. Metrics.md)｜[审计](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/51. Auditing.md)｜[追踪](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/52. Tracing.md)｜[进程](https://raw.githubusercontent.com/qibaoguang/Spring-Boot-Reference-Guide/HEAD/V. Spring Boot Actuator/53. Process monitoring.md)

@@ -1,0 +1,261 @@
+{
+  "bookId": "30ddbb9fd0b7",
+  "title": "Python 标准库 中文版",
+  "url": "https://docs.python.org/zh-cn/3/library/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:48.552Z",
+  "chapters": [
+    {
+      "slug": "001-1e",
+      "title": "The Python standard library",
+      "file": "chapters/001-1e.md"
+    },
+    {
+      "slug": "002-1e",
+      "title": "概述",
+      "file": "chapters/002-1e.md"
+    },
+    {
+      "slug": "003-1d",
+      "title": "文本处理服务",
+      "file": "chapters/003-1d.md"
+    },
+    {
+      "slug": "004-1f",
+      "title": "string --- 常见的字符串操作",
+      "file": "chapters/004-1f.md"
+    },
+    {
+      "slug": "005-1r",
+      "title": "string.templatelib --- 对模板字符串字面值的支持",
+      "file": "chapters/005-1r.md"
+    },
+    {
+      "slug": "006-1b",
+      "title": "re --- 正则表达式操作",
+      "file": "chapters/006-1b.md"
+    },
+    {
+      "slug": "007-1g",
+      "title": "difflib --- 计算差异的辅助工具",
+      "file": "chapters/007-1g.md"
+    },
+    {
+      "slug": "008-1h",
+      "title": "textwrap --- 文本自动换行与填充",
+      "file": "chapters/008-1h.md"
+    },
+    {
+      "slug": "009-1k",
+      "title": "unicodedata --- Unicode 数据库",
+      "file": "chapters/009-1k.md"
+    },
+    {
+      "slug": "010-1j",
+      "title": "stringprep --- 因特网字符串预处理",
+      "file": "chapters/010-1j.md"
+    },
+    {
+      "slug": "011-1h",
+      "title": "readline --- GNU readline 接口",
+      "file": "chapters/011-1h.md"
+    },
+    {
+      "slug": "012-1k",
+      "title": "rlcompleter --- 用于 GNU readline 的补全函数",
+      "file": "chapters/012-1k.md"
+    },
+    {
+      "slug": "013-1f",
+      "title": "二进制数据服务",
+      "file": "chapters/013-1f.md"
+    },
+    {
+      "slug": "014-1f",
+      "title": "struct --- 将字节串解读为打包的二进制数据",
+      "file": "chapters/014-1f.md"
+    },
+    {
+      "slug": "015-1f",
+      "title": "codecs --- 编解码器注册和相关基类",
+      "file": "chapters/015-1f.md"
+    },
+    {
+      "slug": "016-1i",
+      "title": "数据类型",
+      "file": "chapters/016-1i.md"
+    },
+    {
+      "slug": "017-1h",
+      "title": "datetime --- 基本日期和时间类型",
+      "file": "chapters/017-1h.md"
+    },
+    {
+      "slug": "018-1h",
+      "title": "zoneinfo --- IANA 时区支持",
+      "file": "chapters/018-1h.md"
+    },
+    {
+      "slug": "019-1h",
+      "title": "calendar --- 通用日历相关函数",
+      "file": "chapters/019-1h.md"
+    },
+    {
+      "slug": "020-1k",
+      "title": "collections --- 容器数据类型",
+      "file": "chapters/020-1k.md"
+    },
+    {
+      "slug": "021-1o",
+      "title": "collections.abc --- 容器的抽象基类",
+      "file": "chapters/021-1o.md"
+    },
+    {
+      "slug": "022-1e",
+      "title": "heapq --- 堆队列算法",
+      "file": "chapters/022-1e.md"
+    },
+    {
+      "slug": "023-1f",
+      "title": "bisect --- 数组二分算法",
+      "file": "chapters/023-1f.md"
+    },
+    {
+      "slug": "024-1e",
+      "title": "array --- 高效的数值数组",
+      "file": "chapters/024-1e.md"
+    },
+    {
+      "slug": "025-1g",
+      "title": "weakref --- 弱引用",
+      "file": "chapters/025-1g.md"
+    },
+    {
+      "slug": "026-1e",
+      "title": "types --- 动态类型创建和内置类型名称",
+      "file": "chapters/026-1e.md"
+    },
+    {
+      "slug": "027-1d",
+      "title": "copy --- 浅层及深层拷贝操作",
+      "file": "chapters/027-1d.md"
+    },
+    {
+      "slug": "028-1f",
+      "title": "pprint --- 数据美化输出",
+      "file": "chapters/028-1f.md"
+    },
+    {
+      "slug": "029-1g",
+      "title": "reprlib --- 替代性 repr() 实现",
+      "file": "chapters/029-1g.md"
+    },
+    {
+      "slug": "030-1d",
+      "title": "enum --- 对枚举的支持",
+      "file": "chapters/030-1d.md"
+    },
+    {
+      "slug": "031-1h",
+      "title": "graphlib --- 操作类似图的结构的功能",
+      "file": "chapters/031-1h.md"
+    },
+    {
+      "slug": "032-1g",
+      "title": "数字和数学模块",
+      "file": "chapters/032-1g.md"
+    },
+    {
+      "slug": "033-1g",
+      "title": "numbers --- 数字抽象基类",
+      "file": "chapters/033-1g.md"
+    },
+    {
+      "slug": "034-1d",
+      "title": "math --- 数学函数",
+      "file": "chapters/034-1d.md"
+    },
+    {
+      "slug": "035-1e",
+      "title": "cmath --- 针对复数的数学函数",
+      "file": "chapters/035-1e.md"
+    },
+    {
+      "slug": "036-1g",
+      "title": "decimal --- 十进制定点和浮点算术",
+      "file": "chapters/036-1g.md"
+    },
+    {
+      "slug": "037-1i",
+      "title": "fractions --- 有理数",
+      "file": "chapters/037-1i.md"
+    },
+    {
+      "slug": "038-1f",
+      "title": "random --- 生成伪随机数",
+      "file": "chapters/038-1f.md"
+    },
+    {
+      "slug": "039-1j",
+      "title": "statistics --- 数学统计函数",
+      "file": "chapters/039-1j.md"
+    },
+    {
+      "slug": "040-1j",
+      "title": "函数式编程模块",
+      "file": "chapters/040-1j.md"
+    },
+    {
+      "slug": "041-1i",
+      "title": "itertools --- 为高效循环创建迭代器的函数",
+      "file": "chapters/041-1i.md"
+    },
+    {
+      "slug": "042-1i",
+      "title": "functools —— 高阶函数，以及可调用对象上的操作",
+      "file": "chapters/042-1i.md"
+    },
+    {
+      "slug": "043-1h",
+      "title": "operator --- 标准运算符对应函数",
+      "file": "chapters/043-1h.md"
+    },
+    {
+      "slug": "044-1g",
+      "title": "文件和目录访问",
+      "file": "chapters/044-1g.md"
+    },
+    {
+      "slug": "045-1g",
+      "title": "pathlib --- 面向对象的文件系统路径",
+      "file": "chapters/045-1g.md"
+    },
+    {
+      "slug": "046-1g",
+      "title": "os.path --- 常用的路径操作",
+      "file": "chapters/046-1g.md"
+    },
+    {
+      "slug": "047-1d",
+      "title": "stat --- 解释 stat() 的结果",
+      "file": "chapters/047-1d.md"
+    },
+    {
+      "slug": "048-1g",
+      "title": "filecmp --- 文件和目录比较",
+      "file": "chapters/048-1g.md"
+    },
+    {
+      "slug": "049-1h",
+      "title": "tempfile --- 生成临时文件和目录",
+      "file": "chapters/049-1h.md"
+    },
+    {
+      "slug": "050-1d",
+      "title": "glob --- Unix 风格的路径名模式扩展",
+      "file": "chapters/050-1d.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The Python standard library"
+}

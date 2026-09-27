@@ -1,0 +1,131 @@
+{
+  "bookId": "9cc236e35e85",
+  "title": "Golang 系列教程(译)",
+  "url": "https://github.com/Tinywan/golang-tutorial",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:59.079Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-golang-tutorial-01",
+      "title": "golang_tutorial_01",
+      "file": "chapters/002-golang-tutorial-01.md"
+    },
+    {
+      "slug": "003-golang-tutorial-02",
+      "title": "golang_tutorial_02",
+      "file": "chapters/003-golang-tutorial-02.md"
+    },
+    {
+      "slug": "004-golang-tutorial-03",
+      "title": "golang_tutorial_03",
+      "file": "chapters/004-golang-tutorial-03.md"
+    },
+    {
+      "slug": "005-golang-tutorial-04",
+      "title": "command-line-arguments",
+      "file": "chapters/005-golang-tutorial-04.md"
+    },
+    {
+      "slug": "006-golang-tutorial-05",
+      "title": "golang_tutorial_05",
+      "file": "chapters/006-golang-tutorial-05.md"
+    },
+    {
+      "slug": "007-golang-tutorial-06",
+      "title": "golang_tutorial_06",
+      "file": "chapters/007-golang-tutorial-06.md"
+    },
+    {
+      "slug": "008-golang-tutorial-07",
+      "title": "golang_tutorial_07",
+      "file": "chapters/008-golang-tutorial-07.md"
+    },
+    {
+      "slug": "009-golang-tutorial-08",
+      "title": "golang_tutorial_08",
+      "file": "chapters/009-golang-tutorial-08.md"
+    },
+    {
+      "slug": "010-golang-tutorial-09",
+      "title": "golang_tutorial_09",
+      "file": "chapters/010-golang-tutorial-09.md"
+    },
+    {
+      "slug": "011-golang-tutorial-10",
+      "title": "golang_tutorial_10",
+      "file": "chapters/011-golang-tutorial-10.md"
+    },
+    {
+      "slug": "012-golang-tutorial-11",
+      "title": "golang_tutorial_11",
+      "file": "chapters/012-golang-tutorial-11.md"
+    },
+    {
+      "slug": "013-golang-tutorial-12",
+      "title": "golang_tutorial_12",
+      "file": "chapters/013-golang-tutorial-12.md"
+    },
+    {
+      "slug": "014-golang-tutorial-13",
+      "title": "golang_tutorial_13",
+      "file": "chapters/014-golang-tutorial-13.md"
+    },
+    {
+      "slug": "015-golang-tutorial-14",
+      "title": "golang_tutorial_14",
+      "file": "chapters/015-golang-tutorial-14.md"
+    },
+    {
+      "slug": "016-golang-tutorial-15",
+      "title": "golang_tutorial_15",
+      "file": "chapters/016-golang-tutorial-15.md"
+    },
+    {
+      "slug": "017-golang-tutorial-16",
+      "title": "golang_tutorial_16",
+      "file": "chapters/017-golang-tutorial-16.md"
+    },
+    {
+      "slug": "018-golang-tutorial-17",
+      "title": "golang_tutorial_17",
+      "file": "chapters/018-golang-tutorial-17.md"
+    },
+    {
+      "slug": "019-golang-tutorial-18-1",
+      "title": "golang_tutorial_18-1",
+      "file": "chapters/019-golang-tutorial-18-1.md"
+    },
+    {
+      "slug": "020-golang-tutorial-21",
+      "title": "golang_tutorial_21",
+      "file": "chapters/020-golang-tutorial-21.md"
+    },
+    {
+      "slug": "021-golang-tutorial-22",
+      "title": "golang_tutorial_22",
+      "file": "chapters/021-golang-tutorial-22.md"
+    },
+    {
+      "slug": "022-golang-tutorial-35",
+      "title": "golang_tutorial_35",
+      "file": "chapters/022-golang-tutorial-35.md"
+    },
+    {
+      "slug": "023-how-to-write-go-code",
+      "title": "how_to_write_go_code",
+      "file": "chapters/023-how-to-write-go-code.md"
+    },
+    {
+      "slug": "024-index",
+      "title": "index",
+      "file": "chapters/024-index.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

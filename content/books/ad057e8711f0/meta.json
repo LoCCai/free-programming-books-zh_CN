@@ -1,0 +1,86 @@
+{
+  "bookId": "ad057e8711f0",
+  "title": "Apache Cordova 开发指南",
+  "url": "https://github.com/waylau/cordova-dev-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:58.770Z",
+  "chapters": [
+    {
+      "slug": "001-getstarted",
+      "title": "快速开始",
+      "file": "chapters/001-getstarted.md"
+    },
+    {
+      "slug": "002-overview",
+      "title": "概述",
+      "file": "chapters/002-overview.md"
+    },
+    {
+      "slug": "003-cli",
+      "title": "命令行界面（CLI）",
+      "file": "chapters/003-cli.md"
+    },
+    {
+      "slug": "004-platforms",
+      "title": "平台开发指南",
+      "file": "chapters/004-platforms.md"
+    },
+    {
+      "slug": "005-platforms-android",
+      "title": "Android 平台",
+      "file": "chapters/005-platforms-android.md"
+    },
+    {
+      "slug": "006-platforms-android-tools",
+      "title": "Android shell 工具",
+      "file": "chapters/006-platforms-android-tools.md"
+    },
+    {
+      "slug": "007-platforms-android-config",
+      "title": "Android 配置",
+      "file": "chapters/007-platforms-android-config.md"
+    },
+    {
+      "slug": "008-platforms-android-plugin",
+      "title": "Android 插件",
+      "file": "chapters/008-platforms-android-plugin.md"
+    },
+    {
+      "slug": "009-platforms-android-webview",
+      "title": "Android WebViews",
+      "file": "chapters/009-platforms-android-webview.md"
+    },
+    {
+      "slug": "010-platforms-android-upgrade",
+      "title": "Android 升级",
+      "file": "chapters/010-platforms-android-upgrade.md"
+    },
+    {
+      "slug": "011-webviews",
+      "title": "嵌入 WebViews",
+      "file": "chapters/011-webviews.md"
+    },
+    {
+      "slug": "012-hybrid-plugins",
+      "title": "插件开发指南",
+      "file": "chapters/012-hybrid-plugins.md"
+    },
+    {
+      "slug": "013-plugman",
+      "title": "使用 Plugman 来管理插件",
+      "file": "chapters/013-plugman.md"
+    },
+    {
+      "slug": "014-config-ref",
+      "title": "config.xml 文件",
+      "file": "chapters/014-config-ref.md"
+    },
+    {
+      "slug": "015-appendix",
+      "title": "附录",
+      "file": "chapters/015-appendix.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

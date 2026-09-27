@@ -56,7 +56,9 @@ export async function fetchOne(book, { workDir }) {
     mkdirSync(join(outDir, 'chapters'), { recursive: true });
     for (const ch of result.chapters) {
       // file 字段仅用于抓取期定位;产物统一 chapters/<slug>.md
-      writeFileSync(join(outDir, 'chapters', `${ch.slug}.md`), ch.body.trim() + '\n', 'utf8');
+      // 内容以 --- 开头会被 Astro 误判为 frontmatter,加前导注释防御
+      const body = ch.body.startsWith('---') ? `<!-- chapter content -->\n${ch.body}` : ch.body;
+      writeFileSync(join(outDir, 'chapters', `${ch.slug}.md`), body.trim() + '\n', 'utf8');
       meta.chapters.push({ slug: ch.slug, title: ch.title, file: `chapters/${ch.slug}.md` });
     }
     meta.status = 'ok';

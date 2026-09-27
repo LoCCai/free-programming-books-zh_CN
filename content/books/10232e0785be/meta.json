@@ -1,0 +1,130 @@
+{
+  "bookId": "10232e0785be",
+  "title": "Gradle 2 用户指南",
+  "url": "https://github.com/waylau/Gradle-2-User-Guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:10.814Z",
+  "chapters": [
+    {
+      "slug": "001-chapter-01-introduction-介绍",
+      "title": "Chapter 01. Introduction 介绍",
+      "file": "chapters/001-chapter-01-introduction-介绍.md"
+    },
+    {
+      "slug": "002-chapter-02-overview-总览",
+      "title": "Chapter 02. Overview 总览",
+      "file": "chapters/002-chapter-02-overview-总览.md"
+    },
+    {
+      "slug": "003-chapter-03-tutorials-教程",
+      "title": "Chapter 03. Tutorials 教程",
+      "file": "chapters/003-chapter-03-tutorials-教程.md"
+    },
+    {
+      "slug": "004-chapter-04-installing-gradle-安装",
+      "title": "Chapter 04. Installing Gradle 安装",
+      "file": "chapters/004-chapter-04-installing-gradle-安装.md"
+    },
+    {
+      "slug": "005-chapter-05-troubleshooting-问题解决",
+      "title": "Chapter 05. Troubleshooting 问题解决",
+      "file": "chapters/005-chapter-05-troubleshooting-问题解决.md"
+    },
+    {
+      "slug": "006-chapter-06-build-script-basics-构建脚本的基础知识",
+      "title": "Chapter 06. Build Script Basics 构建脚本的基础知识",
+      "file": "chapters/006-chapter-06-build-script-basics-构建脚本的基础知识.md"
+    },
+    {
+      "slug": "007-chapter-07-java-quickstart-快速开始-java",
+      "title": "Chapter 07. Java Quickstart 快速开始 Java",
+      "file": "chapters/007-chapter-07-java-quickstart-快速开始-java.md"
+    },
+    {
+      "slug": "008-chapter-08-dependency-management-basics-依赖管理的基础知识",
+      "title": "Chapter 08. Dependency Management Basics 依赖管理的基础知识",
+      "file": "chapters/008-chapter-08-dependency-management-basics-依赖管理的基础知识.md"
+    },
+    {
+      "slug": "009-chapter-09-groovy-quickstart-快速开始-groovy",
+      "title": "Chapter 09. Groovy Quickstart 快速开始 Groovy",
+      "file": "chapters/009-chapter-09-groovy-quickstart-快速开始-groovy.md"
+    },
+    {
+      "slug": "010-chapter-10-web-application-quickstart-快速开始-web-应用",
+      "title": "Chapter 10. Web Application Quickstart 快速开始 Web 应用",
+      "file": "chapters/010-chapter-10-web-application-quickstart-快速开始-web-应用.md"
+    },
+    {
+      "slug": "011-chapter-11-using-the-gradle-command-line-使用-gradle-命令行",
+      "title": "Chapter 11. Using the Gradle Command-Line 使用 Gradle 命令行",
+      "file": "chapters/011-chapter-11-using-the-gradle-command-line-使用-gradle-命令行.md"
+    },
+    {
+      "slug": "012-chapter-12-using-the-gradle-graphical-user-interface-使用-grad",
+      "title": "Chapter 12. Using the Gradle Graphical User Interface 使用 Gradle 图形化用户界面",
+      "file": "chapters/012-chapter-12-using-the-gradle-graphical-user-interface-使用-grad.md"
+    },
+    {
+      "slug": "013-chapter-13-writing-build-scripts-编写构建脚本",
+      "title": "Chapter 13. Writing Build Scripts 编写构建脚本",
+      "file": "chapters/013-chapter-13-writing-build-scripts-编写构建脚本.md"
+    },
+    {
+      "slug": "014-chapter-14-tutorial-this-and-that-教程-这个那个",
+      "title": "Chapter 14. Tutorial - 'This and That' 教程-这个那个",
+      "file": "chapters/014-chapter-14-tutorial-this-and-that-教程-这个那个.md"
+    },
+    {
+      "slug": "015-chapter-15-more-about-tasks-更多关于任务",
+      "title": "Chapter 15. More about Tasks 更多关于任务",
+      "file": "chapters/015-chapter-15-more-about-tasks-更多关于任务.md"
+    },
+    {
+      "slug": "016-chapter-16-working-with-files-跟文件工作",
+      "title": "Chapter 16. Working With Files 跟文件工作",
+      "file": "chapters/016-chapter-16-working-with-files-跟文件工作.md"
+    },
+    {
+      "slug": "017-chapter-17-using-ant-from-gradle-从-gradle-使用-ant",
+      "title": "Chapter 17. Using Ant from Gradle 从 Gradle 使用 Ant",
+      "file": "chapters/017-chapter-17-using-ant-from-gradle-从-gradle-使用-ant.md"
+    },
+    {
+      "slug": "018-chapter-18-logging-日志",
+      "title": "Chapter 18. Logging 日志.md",
+      "file": "chapters/018-chapter-18-logging-日志.md"
+    },
+    {
+      "slug": "019-chapter-19-the-gradle-daemon-守护进程",
+      "title": "Chapter 19. The Gradle Daemon 守护进程",
+      "file": "chapters/019-chapter-19-the-gradle-daemon-守护进程.md"
+    },
+    {
+      "slug": "020-chapter-20-the-build-environment-构建环境",
+      "title": "Chapter 20. The Build Environment 构建环境",
+      "file": "chapters/020-chapter-20-the-build-environment-构建环境.md"
+    },
+    {
+      "slug": "021-chapter-21-gradle-plugins-插件",
+      "title": "Chapter 21. Gradle Plugins 插件",
+      "file": "chapters/021-chapter-21-gradle-plugins-插件.md"
+    },
+    {
+      "slug": "022-chapter-22-standard-gradle-plugins-标准-gradle-插件",
+      "title": "Chapter 22. Standard Gradle plugins 标准 Gradle 插件",
+      "file": "chapters/022-chapter-22-standard-gradle-plugins-标准-gradle-插件.md"
+    },
+    {
+      "slug": "023-chapter-23-the-java-plugin-关于-java-插件",
+      "title": "Chapter 23. The Java Plugin 关于 Java 插件",
+      "file": "chapters/023-chapter-23-the-java-plugin-关于-java-插件.md"
+    },
+    {
+      "slug": "024-appendix-e-existing-ide-support-and-how-to-cope-without-it-支",
+      "title": "Appendix E. Existing IDE Support and how to cope without it 支持的 IDE 以及如何应对没有它",
+      "file": "chapters/024-appendix-e-existing-ide-support-and-how-to-cope-without-it-支.md"
+    }
+  ],
+  "sourceType": "github"
+}

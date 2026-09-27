@@ -1,0 +1,3 @@
+# 部署描述符
+
+这个版本规范的部署描述文件可在此下载：http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd

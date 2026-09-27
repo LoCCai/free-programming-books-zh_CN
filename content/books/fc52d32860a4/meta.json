@@ -1,0 +1,16 @@
+{
+  "bookId": "fc52d32860a4",
+  "title": "Vim中文文档",
+  "url": "https://github.com/vimcn/vimcdoc",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:45.011Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

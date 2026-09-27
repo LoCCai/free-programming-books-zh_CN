@@ -1,0 +1,20 @@
+{
+  "bookId": "fd2448712dcc",
+  "title": "Stanford 公开课，Developing iOS 8 Apps with Swift 字幕翻译文件",
+  "url": "https://github.com/x140yu/Developing_iOS_8_Apps_With_Swift",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:26.629Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-proofread-rules",
+      "title": "proofread-rules",
+      "file": "chapters/002-proofread-rules.md"
+    }
+  ],
+  "sourceType": "github"
+}

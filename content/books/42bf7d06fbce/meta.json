@@ -1,0 +1,16 @@
+{
+  "bookId": "42bf7d06fbce",
+  "title": "Beautiful Soup 4.2.0 中文文档",
+  "url": "https://beautifulsoup.readthedocs.io/zh_CN/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:16.741Z",
+  "chapters": [
+    {
+      "slug": "001-1e",
+      "title": "Beautiful Soup 4.4.0 文档 — beautifulsoup 4.4.0q 文档",
+      "file": "chapters/001-1e.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Beautiful Soup 4.4.0 文档 — beautifulsoup 4.4.0q 文档"
+}

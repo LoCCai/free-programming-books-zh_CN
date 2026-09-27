@@ -1,0 +1,16 @@
+{
+  "bookId": "e29057cb2c68",
+  "title": "Grunt中文文档",
+  "url": "http://www.gruntjs.net/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:24.416Z",
+  "chapters": [
+    {
+      "slug": "001-n",
+      "title": "Grunt: JavaScript 世界的构建工具 | Grunt中文网",
+      "file": "chapters/001-n.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Grunt: JavaScript 世界的构建工具 | Grunt中文网"
+}

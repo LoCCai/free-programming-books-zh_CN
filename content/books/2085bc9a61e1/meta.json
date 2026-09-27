@@ -1,0 +1,55 @@
+{
+  "bookId": "2085bc9a61e1",
+  "title": "Go语言博客实践",
+  "url": "https://github.com/achun/Go-Blog-In-Action",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:55.803Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-chapter01",
+      "title": "Chapter01",
+      "file": "chapters/002-chapter01.md"
+    },
+    {
+      "slug": "003-chapter02",
+      "title": "Chapter02",
+      "file": "chapters/003-chapter02.md"
+    },
+    {
+      "slug": "004-chapter03",
+      "title": "Chapter03",
+      "file": "chapters/004-chapter03.md"
+    },
+    {
+      "slug": "005-chapter04",
+      "title": "Chapter04",
+      "file": "chapters/005-chapter04.md"
+    },
+    {
+      "slug": "006-chapter05",
+      "title": "Chapter05",
+      "file": "chapters/006-chapter05.md"
+    },
+    {
+      "slug": "007-chapter06",
+      "title": "Chapter06",
+      "file": "chapters/007-chapter06.md"
+    },
+    {
+      "slug": "008-chapter07",
+      "title": "ABNF",
+      "file": "chapters/008-chapter07.md"
+    },
+    {
+      "slug": "009-chapter08",
+      "title": "Chapter08",
+      "file": "chapters/009-chapter08.md"
+    }
+  ],
+  "sourceType": "github"
+}

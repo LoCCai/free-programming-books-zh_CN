@@ -1,0 +1,16 @@
+{
+  "bookId": "c878045a2af8",
+  "title": "Sass Guidelines 中文",
+  "url": "http://sass-guidelin.es/zh/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:47.856Z",
+  "chapters": [
+    {
+      "slug": "001-r",
+      "title": "Sass Guidelines — Chinese translation",
+      "file": "chapters/001-r.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Sass Guidelines — Chinese translation"
+}

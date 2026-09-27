@@ -1,0 +1,9 @@
+{
+  "bookId": "8642ee901c3f",
+  "title": "Material Design 中文版",
+  "url": "http://wiki.jikexueyuan.com/project/material-design/",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:25:54.328Z",
+  "chapters": [],
+  "error": "First argument to Readability constructor should be a document object."
+}

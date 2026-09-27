@@ -1,0 +1,75 @@
+{
+  "bookId": "baa818191fc0",
+  "title": "Real World OCaml",
+  "url": "https://github.com/zforget/translation/tree/master/real_world_ocaml",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:00.612Z",
+  "chapters": [
+    {
+      "slug": "001-00-prologue",
+      "title": "序言",
+      "file": "chapters/001-00-prologue.md"
+    },
+    {
+      "slug": "002-1-01-a-guide-tour",
+      "title": "I. 语言概念",
+      "file": "chapters/002-1-01-a-guide-tour.md"
+    },
+    {
+      "slug": "003-1-02-variables-and-functions",
+      "title": "let x = 3;;",
+      "file": "chapters/003-1-02-variables-and-functions.md"
+    },
+    {
+      "slug": "004-1-03-lists-and-patterns",
+      "title": "[1;2;3];;",
+      "file": "chapters/004-1-03-lists-and-patterns.md"
+    },
+    {
+      "slug": "005-1-04-files-modules-and-programs",
+      "title": "let assoc = [(\"one\", 1); (\"two\",2); (\"three\",3)] ;;",
+      "file": "chapters/005-1-04-files-modules-and-programs.md"
+    },
+    {
+      "slug": "006-1-05-records",
+      "title": "type host_info =",
+      "file": "chapters/006-1-05-records.md"
+    },
+    {
+      "slug": "007-1-06-variants",
+      "title": "type basic_color =",
+      "file": "chapters/007-1-06-variants.md"
+    },
+    {
+      "slug": "008-1-07-error-handling",
+      "title": "List.find;;",
+      "file": "chapters/008-1-07-error-handling.md"
+    },
+    {
+      "slug": "009-1-08-imperative-programming",
+      "title": "List.find_map;;",
+      "file": "chapters/009-1-08-imperative-programming.md"
+    },
+    {
+      "slug": "010-1-09-functors",
+      "title": "module type X_int = sig val x : int end;;",
+      "file": "chapters/010-1-09-functors.md"
+    },
+    {
+      "slug": "011-1-10-first-class-modules",
+      "title": "module type X_int = sig val x : int end;;",
+      "file": "chapters/011-1-10-first-class-modules.md"
+    },
+    {
+      "slug": "012-1-11-objects",
+      "title": "1_11_objects",
+      "file": "chapters/012-1-11-objects.md"
+    },
+    {
+      "slug": "013-appendix-a-installation",
+      "title": "apt-get install \\",
+      "file": "chapters/013-appendix-a-installation.md"
+    }
+  ],
+  "sourceType": "github"
+}

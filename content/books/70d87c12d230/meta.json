@@ -1,0 +1,440 @@
+{
+  "bookId": "70d87c12d230",
+  "title": "程序员编程艺术",
+  "url": "https://github.com/julycoding/The-Art-Of-Programming-by-July",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:44.743Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Readme",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Readme",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Readme",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-01-0",
+      "title": "01.0",
+      "file": "chapters/004-01-0.md"
+    },
+    {
+      "slug": "005-03-0",
+      "title": "03.0",
+      "file": "chapters/005-03-0.md"
+    },
+    {
+      "slug": "006-07-0",
+      "title": "07.0",
+      "file": "chapters/006-07-0.md"
+    },
+    {
+      "slug": "007-11-0",
+      "title": "11.0",
+      "file": "chapters/007-11-0.md"
+    },
+    {
+      "slug": "008-25-0",
+      "title": "25.0",
+      "file": "chapters/008-25-0.md"
+    },
+    {
+      "slug": "009-28-0",
+      "title": "28.0",
+      "file": "chapters/009-28-0.md"
+    },
+    {
+      "slug": "010-35-0",
+      "title": "35.0",
+      "file": "chapters/010-35-0.md"
+    },
+    {
+      "slug": "011-00-01",
+      "title": "程序员如何准备面试中的算法 #",
+      "file": "chapters/011-00-01.md"
+    },
+    {
+      "slug": "012-01-00",
+      "title": "01.00",
+      "file": "chapters/012-01-00.md"
+    },
+    {
+      "slug": "013-01-01",
+      "title": "01.01",
+      "file": "chapters/013-01-01.md"
+    },
+    {
+      "slug": "014-01-02",
+      "title": "字符串包含",
+      "file": "chapters/014-01-02.md"
+    },
+    {
+      "slug": "015-01-03",
+      "title": "字符串转换成整数",
+      "file": "chapters/015-01-03.md"
+    },
+    {
+      "slug": "016-01-04",
+      "title": "01.04",
+      "file": "chapters/016-01-04.md"
+    },
+    {
+      "slug": "017-01-05",
+      "title": "01.05",
+      "file": "chapters/017-01-05.md"
+    },
+    {
+      "slug": "018-01-06",
+      "title": "01.06",
+      "file": "chapters/018-01-06.md"
+    },
+    {
+      "slug": "019-01-10",
+      "title": "01.10",
+      "file": "chapters/019-01-10.md"
+    },
+    {
+      "slug": "020-02-00",
+      "title": "02.00",
+      "file": "chapters/020-02-00.md"
+    },
+    {
+      "slug": "021-02-01",
+      "title": "寻找最小的k个数",
+      "file": "chapters/021-02-01.md"
+    },
+    {
+      "slug": "022-02-02",
+      "title": "寻找和为定值的两个数",
+      "file": "chapters/022-02-02.md"
+    },
+    {
+      "slug": "023-02-03",
+      "title": "寻找和为定值的多个数",
+      "file": "chapters/023-02-03.md"
+    },
+    {
+      "slug": "024-02-04",
+      "title": "最大连续子数组和",
+      "file": "chapters/024-02-04.md"
+    },
+    {
+      "slug": "025-02-05",
+      "title": "02.05",
+      "file": "chapters/025-02-05.md"
+    },
+    {
+      "slug": "026-02-06",
+      "title": "02.06",
+      "file": "chapters/026-02-06.md"
+    },
+    {
+      "slug": "027-02-07",
+      "title": "荷兰国旗",
+      "file": "chapters/027-02-07.md"
+    },
+    {
+      "slug": "028-02-08",
+      "title": "矩阵相乘",
+      "file": "chapters/028-02-08.md"
+    },
+    {
+      "slug": "029-02-09",
+      "title": "02.09",
+      "file": "chapters/029-02-09.md"
+    },
+    {
+      "slug": "030-02-10",
+      "title": "K个最小和 (UVA 11997 K Smallest Sums)",
+      "file": "chapters/030-02-10.md"
+    },
+    {
+      "slug": "031-02-15",
+      "title": "02.15",
+      "file": "chapters/031-02-15.md"
+    },
+    {
+      "slug": "032-03-00",
+      "title": "03.00",
+      "file": "chapters/032-03-00.md"
+    },
+    {
+      "slug": "033-03-01",
+      "title": "教你透彻了解红黑树",
+      "file": "chapters/033-03-01.md"
+    },
+    {
+      "slug": "034-03-02",
+      "title": "03.02",
+      "file": "chapters/034-03-02.md"
+    },
+    {
+      "slug": "035-03-03",
+      "title": "最近公共祖先LCA问题",
+      "file": "chapters/035-03-03.md"
+    },
+    {
+      "slug": "036-03-05",
+      "title": "03.05",
+      "file": "chapters/036-03-05.md"
+    },
+    {
+      "slug": "037-03-10",
+      "title": "03.10",
+      "file": "chapters/037-03-10.md"
+    },
+    {
+      "slug": "038-04-01",
+      "title": "04.01",
+      "file": "chapters/038-04-01.md"
+    },
+    {
+      "slug": "039-04-02",
+      "title": "行列递增矩阵的查找",
+      "file": "chapters/039-04-02.md"
+    },
+    {
+      "slug": "040-04-03",
+      "title": "出现次数超过一半的数字",
+      "file": "chapters/040-04-03.md"
+    },
+    {
+      "slug": "041-05-00",
+      "title": "05.00",
+      "file": "chapters/041-05-00.md"
+    },
+    {
+      "slug": "042-05-01",
+      "title": "05.01",
+      "file": "chapters/042-05-01.md"
+    },
+    {
+      "slug": "043-05-02",
+      "title": "字符串编辑距离",
+      "file": "chapters/043-05-02.md"
+    },
+    {
+      "slug": "044-05-03",
+      "title": "格子取数问题",
+      "file": "chapters/044-05-03.md"
+    },
+    {
+      "slug": "045-05-04",
+      "title": "05.04",
+      "file": "chapters/045-05-04.md"
+    },
+    {
+      "slug": "046-05-06",
+      "title": "05.06",
+      "file": "chapters/046-05-06.md"
+    },
+    {
+      "slug": "047-05-10",
+      "title": "05.10",
+      "file": "chapters/047-05-10.md"
+    },
+    {
+      "slug": "048-06-00",
+      "title": "06.00",
+      "file": "chapters/048-06-00.md"
+    },
+    {
+      "slug": "049-06-01",
+      "title": "关联式容器",
+      "file": "chapters/049-06-01.md"
+    },
+    {
+      "slug": "050-06-02",
+      "title": "06.02",
+      "file": "chapters/050-06-02.md"
+    },
+    {
+      "slug": "051-06-03",
+      "title": "simhash算法",
+      "file": "chapters/051-06-03.md"
+    },
+    {
+      "slug": "052-06-04",
+      "title": "外排序",
+      "file": "chapters/052-06-04.md"
+    },
+    {
+      "slug": "053-06-05",
+      "title": "分布式处理之MapReduce",
+      "file": "chapters/053-06-05.md"
+    },
+    {
+      "slug": "054-06-06",
+      "title": "多层划分",
+      "file": "chapters/054-06-06.md"
+    },
+    {
+      "slug": "055-06-07",
+      "title": "Bitmap",
+      "file": "chapters/055-06-07.md"
+    },
+    {
+      "slug": "056-06-08",
+      "title": "Bloom Filter",
+      "file": "chapters/056-06-08.md"
+    },
+    {
+      "slug": "057-06-09",
+      "title": "Trie树（字典树）",
+      "file": "chapters/057-06-09.md"
+    },
+    {
+      "slug": "058-06-10",
+      "title": "数据库",
+      "file": "chapters/058-06-10.md"
+    },
+    {
+      "slug": "059-06-11",
+      "title": "倒排索引(Inverted index)",
+      "file": "chapters/059-06-11.md"
+    },
+    {
+      "slug": "060-06-15",
+      "title": "06.15",
+      "file": "chapters/060-06-15.md"
+    },
+    {
+      "slug": "061-07-01",
+      "title": "K近邻算法",
+      "file": "chapters/061-07-01.md"
+    },
+    {
+      "slug": "062-07-02-svm",
+      "title": "支持向量机",
+      "file": "chapters/062-07-02-svm.md"
+    },
+    {
+      "slug": "063-08-00",
+      "title": "08.00",
+      "file": "chapters/063-08-00.md"
+    },
+    {
+      "slug": "064-08-01",
+      "title": "08.01",
+      "file": "chapters/064-08-01.md"
+    },
+    {
+      "slug": "065-08-02",
+      "title": "08.02",
+      "file": "chapters/065-08-02.md"
+    },
+    {
+      "slug": "066-08-03",
+      "title": "08.03",
+      "file": "chapters/066-08-03.md"
+    },
+    {
+      "slug": "067-08-04",
+      "title": "08.04",
+      "file": "chapters/067-08-04.md"
+    },
+    {
+      "slug": "068-08-05",
+      "title": "08.05",
+      "file": "chapters/068-08-05.md"
+    },
+    {
+      "slug": "069-10-01-01",
+      "title": "10.01.01",
+      "file": "chapters/069-10-01-01.md"
+    },
+    {
+      "slug": "070-10-01-02",
+      "title": "10.01.02",
+      "file": "chapters/070-10-01-02.md"
+    },
+    {
+      "slug": "071-10-01-03",
+      "title": "10.01.03",
+      "file": "chapters/071-10-01-03.md"
+    },
+    {
+      "slug": "072-40亿个数中快速查找",
+      "title": "40亿个数中快速查找",
+      "file": "chapters/072-40亿个数中快速查找.md"
+    },
+    {
+      "slug": "073-倒排索引关键词不重复hash编码",
+      "title": "倒排索引关键词不重复Hash编码",
+      "file": "chapters/073-倒排索引关键词不重复hash编码.md"
+    },
+    {
+      "slug": "074-附近地点搜索",
+      "title": "附近地点搜索",
+      "file": "chapters/074-附近地点搜索.md"
+    },
+    {
+      "slug": "075-傅里叶变换算法-上",
+      "title": "傅里叶变换算法、上",
+      "file": "chapters/075-傅里叶变换算法-上.md"
+    },
+    {
+      "slug": "076-傅里叶变换算法-下",
+      "title": "傅里叶变换算法、下",
+      "file": "chapters/076-傅里叶变换算法-下.md"
+    },
+    {
+      "slug": "077-后缀树",
+      "title": "后缀树",
+      "file": "chapters/077-后缀树.md"
+    },
+    {
+      "slug": "078-基于给定的文档生成倒排索引的编码与实践",
+      "title": "基于给定的文档生成倒排索引的编码与实践",
+      "file": "chapters/078-基于给定的文档生成倒排索引的编码与实践.md"
+    },
+    {
+      "slug": "079-木块砌墙原稿",
+      "title": "木块砌墙",
+      "file": "chapters/079-木块砌墙原稿.md"
+    },
+    {
+      "slug": "080-搜索关键词智能提示suggestion",
+      "title": "搜索关键词智能提示suggestion",
+      "file": "chapters/080-搜索关键词智能提示suggestion.md"
+    },
+    {
+      "slug": "081-随机取出其中之一元素",
+      "title": "随机取出其中之一元素",
+      "file": "chapters/081-随机取出其中之一元素.md"
+    },
+    {
+      "slug": "082-一致性哈希算法",
+      "title": "一致性哈希算法",
+      "file": "chapters/082-一致性哈希算法.md"
+    },
+    {
+      "slug": "083-最短摘要的生成",
+      "title": "最短摘要的生成",
+      "file": "chapters/083-最短摘要的生成.md"
+    },
+    {
+      "slug": "084-最小操作数",
+      "title": "最小操作数",
+      "file": "chapters/084-最小操作数.md"
+    },
+    {
+      "slug": "085-最长公共子序列",
+      "title": "最长公共子序列",
+      "file": "chapters/085-最长公共子序列.md"
+    },
+    {
+      "slug": "086-hash表算法",
+      "title": "hash表算法",
+      "file": "chapters/086-hash表算法.md"
+    }
+  ],
+  "sourceType": "github"
+}

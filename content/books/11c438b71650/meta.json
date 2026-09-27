@@ -2,8 +2,130 @@
   "bookId": "11c438b71650",
   "title": "SystemTap新手指南",
   "url": "https://spacewander.gitbooks.io/systemtapbeginnersguide_zh/content/index.html",
-  "status": "failed",
-  "fetchedAt": "2026-09-26T18:52:32.578Z",
-  "chapters": [],
-  "error": "HTTP 401"
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:19:39.278Z",
+  "chapters": [
+    {
+      "slug": "001-25",
+      "title": "介紹 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/001-25.md"
+    },
+    {
+      "slug": "002-2m",
+      "title": "编写本文档的目标 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/002-2m.md"
+    },
+    {
+      "slug": "003-2p",
+      "title": "SystemTap的能力 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/003-2p.md"
+    },
+    {
+      "slug": "004-2q",
+      "title": "SystemTap的局限 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/004-2q.md"
+    },
+    {
+      "slug": "005-2o",
+      "title": "安装和配置 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/005-2o.md"
+    },
+    {
+      "slug": "006-3a",
+      "title": "为其它计算机生成检测模块 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/006-3a.md"
+    },
+    {
+      "slug": "007-2r",
+      "title": "运行SystemTap脚本 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/007-2r.md"
+    },
+    {
+      "slug": "008-2w",
+      "title": "工作细节 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/008-2w.md"
+    },
+    {
+      "slug": "009-2g",
+      "title": "结构 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/009-2g.md"
+    },
+    {
+      "slug": "010-2k",
+      "title": "脚本 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/010-2k.md"
+    },
+    {
+      "slug": "011-2z",
+      "title": "处理程序的基本结构 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/011-2z.md"
+    },
+    {
+      "slug": "012-2l",
+      "title": "关联数组 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/012-2l.md"
+    },
+    {
+      "slug": "013-2u",
+      "title": "数组操作 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/013-2u.md"
+    },
+    {
+      "slug": "014-2b",
+      "title": "Tapsets | SystemTapBeginnersGuide_zh",
+      "file": "chapters/014-2b.md"
+    },
+    {
+      "slug": "015-2i",
+      "title": "用户空间探测 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/015-2i.md"
+    },
+    {
+      "slug": "016-2j",
+      "title": "用户空间事件 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/016-2j.md"
+    },
+    {
+      "slug": "017-31",
+      "title": "访问用户空间目标变量 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/017-31.md"
+    },
+    {
+      "slug": "018-2s",
+      "title": "用户空间栈回溯 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/018-2s.md"
+    },
+    {
+      "slug": "019-2b",
+      "title": "网络 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/019-2b.md"
+    },
+    {
+      "slug": "020-28",
+      "title": "磁盘 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/020-28.md"
+    },
+    {
+      "slug": "021-2d",
+      "title": "剖析 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/021-2d.md"
+    },
+    {
+      "slug": "022-32",
+      "title": "标识用户空间锁竞争 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/022-32.md"
+    },
+    {
+      "slug": "023-2q",
+      "title": "解析和文法错误 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/023-2q.md"
+    },
+    {
+      "slug": "024-2s",
+      "title": "运行时错误和警告 | SystemTapBeginnersGuide_zh",
+      "file": "chapters/024-2s.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "介紹 | SystemTapBeginnersGuide_zh"
 }

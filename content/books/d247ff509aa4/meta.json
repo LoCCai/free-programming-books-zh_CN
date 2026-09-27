@@ -1,0 +1,15 @@
+{
+  "bookId": "d247ff509aa4",
+  "title": "Scipy 讲义",
+  "url": "https://github.com/cloga/scipy-lecture-notes_cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:30.685Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

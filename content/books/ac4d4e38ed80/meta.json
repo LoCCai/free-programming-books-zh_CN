@@ -1,0 +1,16 @@
+{
+  "bookId": "ac4d4e38ed80",
+  "title": "Git 参考手册",
+  "url": "http://gitref.justjavac.com",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:14.765Z",
+  "chapters": [
+    {
+      "slug": "001-r",
+      "title": "Git 参考手册",
+      "file": "chapters/001-r.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Git 参考手册"
+}

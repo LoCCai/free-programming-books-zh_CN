@@ -1,0 +1,16 @@
+{
+  "bookId": "7c753b9a3c59",
+  "title": "ElasticSearch 权威指南",
+  "url": "https://www.gitbook.com/book/fuxiaopang/learnelasticsearch/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:06.869Z",
+  "chapters": [
+    {
+      "slug": "001-1u",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1u.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

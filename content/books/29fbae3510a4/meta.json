@@ -1,0 +1,70 @@
+{
+  "bookId": "29fbae3510a4",
+  "title": "编码规范",
+  "url": "https://github.com/ecomfe/spec",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:12.211Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-chart",
+      "title": "百度图表库标准（1.0）",
+      "file": "chapters/002-chart.md"
+    },
+    {
+      "slug": "003-css-style-guide",
+      "title": "CSS编码规范",
+      "file": "chapters/003-css-style-guide.md"
+    },
+    {
+      "slug": "004-directory",
+      "title": "项目目录结构规范",
+      "file": "chapters/004-directory.md"
+    },
+    {
+      "slug": "005-e-json",
+      "title": "E-JSON数据传输标准",
+      "file": "chapters/005-e-json.md"
+    },
+    {
+      "slug": "006-es-next-style-guide",
+      "title": "JavaScript 编码规范 - ESNext 补充篇（草案）",
+      "file": "chapters/006-es-next-style-guide.md"
+    },
+    {
+      "slug": "007-html-style-guide",
+      "title": "HTML编码规范",
+      "file": "chapters/007-html-style-guide.md"
+    },
+    {
+      "slug": "008-javascript-style-guide",
+      "title": "JavaScript编码规范",
+      "file": "chapters/008-javascript-style-guide.md"
+    },
+    {
+      "slug": "009-less-code-style",
+      "title": "Less 编码规范 (1.1)",
+      "file": "chapters/009-less-code-style.md"
+    },
+    {
+      "slug": "010-module",
+      "title": "模块和加载器规范",
+      "file": "chapters/010-module.md"
+    },
+    {
+      "slug": "011-package",
+      "title": "包结构规范 (1.1)",
+      "file": "chapters/011-package.md"
+    },
+    {
+      "slug": "012-react-style-guide",
+      "title": "React规范",
+      "file": "chapters/012-react-style-guide.md"
+    }
+  ],
+  "sourceType": "github"
+}

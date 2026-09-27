@@ -1,0 +1,85 @@
+{
+  "bookId": "440bd273d897",
+  "title": "Go实战开发",
+  "url": "https://github.com/astaxie/Go-in-Action",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:28.208Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-0001",
+      "title": "第一部分 基础篇",
+      "file": "chapters/002-0001.md"
+    },
+    {
+      "slug": "003-01-0",
+      "title": "第一章 开发环境配置",
+      "file": "chapters/003-01-0.md"
+    },
+    {
+      "slug": "004-01-1",
+      "title": "1.1 Vagrant的介绍",
+      "file": "chapters/004-01-1.md"
+    },
+    {
+      "slug": "005-01-2",
+      "title": "1.2 Vagrant安装配置",
+      "file": "chapters/005-01-2.md"
+    },
+    {
+      "slug": "006-01-3",
+      "title": "3 Vgrant使用入门",
+      "file": "chapters/006-01-3.md"
+    },
+    {
+      "slug": "007-01-4",
+      "title": "4 Go环境安装配置",
+      "file": "chapters/007-01-4.md"
+    },
+    {
+      "slug": "008-01-5",
+      "title": "5 总结",
+      "file": "chapters/008-01-5.md"
+    },
+    {
+      "slug": "009-01-6",
+      "title": "6 每章一练",
+      "file": "chapters/009-01-6.md"
+    },
+    {
+      "slug": "010-02-0",
+      "title": "第二章 开发工具配置",
+      "file": "chapters/010-02-0.md"
+    },
+    {
+      "slug": "011-02-1",
+      "title": "2.1 LiteIDE的安装和配置",
+      "file": "chapters/011-02-1.md"
+    },
+    {
+      "slug": "012-02-2",
+      "title": "2.2 Sublime Text的安装和配置",
+      "file": "chapters/012-02-2.md"
+    },
+    {
+      "slug": "013-02-3",
+      "title": "2.3 总结",
+      "file": "chapters/013-02-3.md"
+    },
+    {
+      "slug": "014-02-4",
+      "title": "2.4 每章一练",
+      "file": "chapters/014-02-4.md"
+    },
+    {
+      "slug": "015-preface",
+      "title": "Go实战开发之目录",
+      "file": "chapters/015-preface.md"
+    }
+  ],
+  "sourceType": "github"
+}

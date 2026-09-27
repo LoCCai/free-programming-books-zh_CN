@@ -1,0 +1,16 @@
+{
+  "bookId": "419bcc16e18f",
+  "title": "Lumen 中文文档",
+  "url": "https://learnku.com/docs/lumen/5.7/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:14.438Z",
+  "chapters": [
+    {
+      "slug": "001-z",
+      "title": "《Lumen 中文文档》 | Laravel China 社区",
+      "file": "chapters/001-z.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "《Lumen 中文文档》 | Laravel China 社区"
+}

@@ -1,0 +1,1010 @@
+{
+  "bookId": "cc3f1436e63f",
+  "title": "老齐的技术资料",
+  "url": "https://github.com/qiwsir/ITArticles",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:37.327Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "README",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-001",
+      "title": "001",
+      "file": "chapters/003-001.md"
+    },
+    {
+      "slug": "004-101",
+      "title": "101",
+      "file": "chapters/004-101.md"
+    },
+    {
+      "slug": "005-102",
+      "title": "102",
+      "file": "chapters/005-102.md"
+    },
+    {
+      "slug": "006-103",
+      "title": "103",
+      "file": "chapters/006-103.md"
+    },
+    {
+      "slug": "007-104",
+      "title": "104",
+      "file": "chapters/007-104.md"
+    },
+    {
+      "slug": "008-105",
+      "title": "105",
+      "file": "chapters/008-105.md"
+    },
+    {
+      "slug": "009-106",
+      "title": "106",
+      "file": "chapters/009-106.md"
+    },
+    {
+      "slug": "010-107",
+      "title": "107",
+      "file": "chapters/010-107.md"
+    },
+    {
+      "slug": "011-108",
+      "title": "108",
+      "file": "chapters/011-108.md"
+    },
+    {
+      "slug": "012-109",
+      "title": "109",
+      "file": "chapters/012-109.md"
+    },
+    {
+      "slug": "013-110",
+      "title": "110",
+      "file": "chapters/013-110.md"
+    },
+    {
+      "slug": "014-111",
+      "title": "111",
+      "file": "chapters/014-111.md"
+    },
+    {
+      "slug": "015-112",
+      "title": "112",
+      "file": "chapters/015-112.md"
+    },
+    {
+      "slug": "016-113",
+      "title": "113",
+      "file": "chapters/016-113.md"
+    },
+    {
+      "slug": "017-114",
+      "title": "114",
+      "file": "chapters/017-114.md"
+    },
+    {
+      "slug": "018-115",
+      "title": "115",
+      "file": "chapters/018-115.md"
+    },
+    {
+      "slug": "019-116",
+      "title": "116",
+      "file": "chapters/019-116.md"
+    },
+    {
+      "slug": "020-117",
+      "title": "117",
+      "file": "chapters/020-117.md"
+    },
+    {
+      "slug": "021-118",
+      "title": "118",
+      "file": "chapters/021-118.md"
+    },
+    {
+      "slug": "022-119",
+      "title": "119",
+      "file": "chapters/022-119.md"
+    },
+    {
+      "slug": "023-120",
+      "title": "120",
+      "file": "chapters/023-120.md"
+    },
+    {
+      "slug": "024-121",
+      "title": "121",
+      "file": "chapters/024-121.md"
+    },
+    {
+      "slug": "025-122",
+      "title": "122",
+      "file": "chapters/025-122.md"
+    },
+    {
+      "slug": "026-123",
+      "title": "123",
+      "file": "chapters/026-123.md"
+    },
+    {
+      "slug": "027-124",
+      "title": "124",
+      "file": "chapters/027-124.md"
+    },
+    {
+      "slug": "028-125",
+      "title": "125",
+      "file": "chapters/028-125.md"
+    },
+    {
+      "slug": "029-126",
+      "title": "126",
+      "file": "chapters/029-126.md"
+    },
+    {
+      "slug": "030-127",
+      "title": "127",
+      "file": "chapters/030-127.md"
+    },
+    {
+      "slug": "031-128",
+      "title": "128",
+      "file": "chapters/031-128.md"
+    },
+    {
+      "slug": "032-129",
+      "title": "129",
+      "file": "chapters/032-129.md"
+    },
+    {
+      "slug": "033-130",
+      "title": "130",
+      "file": "chapters/033-130.md"
+    },
+    {
+      "slug": "034-131",
+      "title": "131",
+      "file": "chapters/034-131.md"
+    },
+    {
+      "slug": "035-201",
+      "title": "201",
+      "file": "chapters/035-201.md"
+    },
+    {
+      "slug": "036-202",
+      "title": "202",
+      "file": "chapters/036-202.md"
+    },
+    {
+      "slug": "037-203",
+      "title": "203",
+      "file": "chapters/037-203.md"
+    },
+    {
+      "slug": "038-204",
+      "title": "204",
+      "file": "chapters/038-204.md"
+    },
+    {
+      "slug": "039-205",
+      "title": "205",
+      "file": "chapters/039-205.md"
+    },
+    {
+      "slug": "040-206",
+      "title": "206",
+      "file": "chapters/040-206.md"
+    },
+    {
+      "slug": "041-207",
+      "title": "207",
+      "file": "chapters/041-207.md"
+    },
+    {
+      "slug": "042-208",
+      "title": "208",
+      "file": "chapters/042-208.md"
+    },
+    {
+      "slug": "043-209",
+      "title": "209",
+      "file": "chapters/043-209.md"
+    },
+    {
+      "slug": "044-210",
+      "title": "210",
+      "file": "chapters/044-210.md"
+    },
+    {
+      "slug": "045-211",
+      "title": "211",
+      "file": "chapters/045-211.md"
+    },
+    {
+      "slug": "046-212",
+      "title": "212",
+      "file": "chapters/046-212.md"
+    },
+    {
+      "slug": "047-213",
+      "title": "213",
+      "file": "chapters/047-213.md"
+    },
+    {
+      "slug": "048-214",
+      "title": "214",
+      "file": "chapters/048-214.md"
+    },
+    {
+      "slug": "049-215",
+      "title": "215",
+      "file": "chapters/049-215.md"
+    },
+    {
+      "slug": "050-216",
+      "title": "216",
+      "file": "chapters/050-216.md"
+    },
+    {
+      "slug": "051-217",
+      "title": "217",
+      "file": "chapters/051-217.md"
+    },
+    {
+      "slug": "052-218",
+      "title": "218",
+      "file": "chapters/052-218.md"
+    },
+    {
+      "slug": "053-219",
+      "title": "219",
+      "file": "chapters/053-219.md"
+    },
+    {
+      "slug": "054-220",
+      "title": "220",
+      "file": "chapters/054-220.md"
+    },
+    {
+      "slug": "055-221",
+      "title": "221",
+      "file": "chapters/055-221.md"
+    },
+    {
+      "slug": "056-222",
+      "title": "222",
+      "file": "chapters/056-222.md"
+    },
+    {
+      "slug": "057-223",
+      "title": "223",
+      "file": "chapters/057-223.md"
+    },
+    {
+      "slug": "058-224",
+      "title": "224",
+      "file": "chapters/058-224.md"
+    },
+    {
+      "slug": "059-225",
+      "title": "225",
+      "file": "chapters/059-225.md"
+    },
+    {
+      "slug": "060-226",
+      "title": "226",
+      "file": "chapters/060-226.md"
+    },
+    {
+      "slug": "061-301",
+      "title": "301",
+      "file": "chapters/061-301.md"
+    },
+    {
+      "slug": "062-302",
+      "title": "302",
+      "file": "chapters/062-302.md"
+    },
+    {
+      "slug": "063-303",
+      "title": "303",
+      "file": "chapters/063-303.md"
+    },
+    {
+      "slug": "064-304",
+      "title": "304",
+      "file": "chapters/064-304.md"
+    },
+    {
+      "slug": "065-305",
+      "title": "305",
+      "file": "chapters/065-305.md"
+    },
+    {
+      "slug": "066-306",
+      "title": "306",
+      "file": "chapters/066-306.md"
+    },
+    {
+      "slug": "067-307",
+      "title": "307",
+      "file": "chapters/067-307.md"
+    },
+    {
+      "slug": "068-308",
+      "title": "308",
+      "file": "chapters/068-308.md"
+    },
+    {
+      "slug": "069-309",
+      "title": "309",
+      "file": "chapters/069-309.md"
+    },
+    {
+      "slug": "070-311",
+      "title": "311",
+      "file": "chapters/070-311.md"
+    },
+    {
+      "slug": "071-312",
+      "title": "312",
+      "file": "chapters/071-312.md"
+    },
+    {
+      "slug": "072-313",
+      "title": "313",
+      "file": "chapters/072-313.md"
+    },
+    {
+      "slug": "073-314",
+      "title": "314",
+      "file": "chapters/073-314.md"
+    },
+    {
+      "slug": "074-401",
+      "title": "401",
+      "file": "chapters/074-401.md"
+    },
+    {
+      "slug": "075-402",
+      "title": "402",
+      "file": "chapters/075-402.md"
+    },
+    {
+      "slug": "076-403",
+      "title": "403",
+      "file": "chapters/076-403.md"
+    },
+    {
+      "slug": "077-501",
+      "title": "501",
+      "file": "chapters/077-501.md"
+    },
+    {
+      "slug": "078-502",
+      "title": "502",
+      "file": "chapters/078-502.md"
+    },
+    {
+      "slug": "079-503",
+      "title": "503",
+      "file": "chapters/079-503.md"
+    },
+    {
+      "slug": "080-index",
+      "title": "index",
+      "file": "chapters/080-index.md"
+    },
+    {
+      "slug": "081-01",
+      "title": "01",
+      "file": "chapters/081-01.md"
+    },
+    {
+      "slug": "082-why-i-start-this-column",
+      "title": "Why-I-start-this-column",
+      "file": "chapters/082-why-i-start-this-column.md"
+    },
+    {
+      "slug": "083-互联网思维到底是什么",
+      "title": "互联网思维到底是什么？",
+      "file": "chapters/083-互联网思维到底是什么.md"
+    },
+    {
+      "slug": "084-让员工感到公平",
+      "title": "让员工感到公平",
+      "file": "chapters/084-让员工感到公平.md"
+    },
+    {
+      "slug": "085-谈谈对程序员的管理",
+      "title": "谈谈对程序员的管理",
+      "file": "chapters/085-谈谈对程序员的管理.md"
+    },
+    {
+      "slug": "086-网上推广随想",
+      "title": "网上推广随想",
+      "file": "chapters/086-网上推广随想.md"
+    },
+    {
+      "slug": "087-一个新的app该如何推广",
+      "title": "一个新的App该如何推广",
+      "file": "chapters/087-一个新的app该如何推广.md"
+    },
+    {
+      "slug": "088-云技术如何改变世界变更管理",
+      "title": "云技术如何改变世界变更管理？",
+      "file": "chapters/088-云技术如何改变世界变更管理.md"
+    },
+    {
+      "slug": "089-c2b-不断消融传统商业ing",
+      "title": "C2B：不断消融传统商业ing",
+      "file": "chapters/089-c2b-不断消融传统商业ing.md"
+    },
+    {
+      "slug": "090-why-your-startup-can-t-find-developers",
+      "title": "Why Your Startup Can’t Find Developers",
+      "file": "chapters/090-why-your-startup-can-t-find-developers.md"
+    },
+    {
+      "slug": "091-dockerapplicationdevelopement",
+      "title": "DockerApplicationDevelopement",
+      "file": "chapters/091-dockerapplicationdevelopement.md"
+    },
+    {
+      "slug": "092-爱国主义教育",
+      "title": "爱国主义教育",
+      "file": "chapters/092-爱国主义教育.md"
+    },
+    {
+      "slug": "093-超越信息素养",
+      "title": "超越信息素养",
+      "file": "chapters/093-超越信息素养.md"
+    },
+    {
+      "slug": "094-程序员的-非程序员-之路",
+      "title": "程序员的“非程序员”之路",
+      "file": "chapters/094-程序员的-非程序员-之路.md"
+    },
+    {
+      "slug": "095-高等教育的困境",
+      "title": "高等教育的困境",
+      "file": "chapters/095-高等教育的困境.md"
+    },
+    {
+      "slug": "096-毫无征兆的一跳-19岁高三学生的最后时刻",
+      "title": "毫无征兆的一跳  19岁高三学生的最后时刻",
+      "file": "chapters/096-毫无征兆的一跳-19岁高三学生的最后时刻.md"
+    },
+    {
+      "slug": "097-教育的本质",
+      "title": "教育的本质",
+      "file": "chapters/097-教育的本质.md"
+    },
+    {
+      "slug": "098-教育短语",
+      "title": "教育短语",
+      "file": "chapters/098-教育短语.md"
+    },
+    {
+      "slug": "099-纽约的中学教育",
+      "title": "纽约的中学教育",
+      "file": "chapters/099-纽约的中学教育.md"
+    },
+    {
+      "slug": "100-上海教育第一的真相",
+      "title": "上海教育第一的真相",
+      "file": "chapters/100-上海教育第一的真相.md"
+    },
+    {
+      "slug": "101-我为什么说电子书包是一条-歧路-和-弯路",
+      "title": "我为什么说电子书包是一条“歧路”和“弯路”？",
+      "file": "chapters/101-我为什么说电子书包是一条-歧路-和-弯路.md"
+    },
+    {
+      "slug": "102-开发者日常使用的git命令",
+      "title": "开发者日常使用的Git命令",
+      "file": "chapters/102-开发者日常使用的git命令.md"
+    },
+    {
+      "slug": "103-七款出色的github功能集成工具",
+      "title": "七款出色的GitHub功能集成工具",
+      "file": "chapters/103-七款出色的github功能集成工具.md"
+    },
+    {
+      "slug": "104-使用gitolite搭建轻量级的git服务器",
+      "title": "使用Gitolite搭建轻量级的Git服务器",
+      "file": "chapters/104-使用gitolite搭建轻量级的git服务器.md"
+    },
+    {
+      "slug": "105-git-诞生记",
+      "title": "Git 诞生记",
+      "file": "chapters/105-git-诞生记.md"
+    },
+    {
+      "slug": "106-git服务器搭建-局域网",
+      "title": "git服务器搭建（局域网）",
+      "file": "chapters/106-git服务器搭建-局域网.md"
+    },
+    {
+      "slug": "107-github公钥和推送",
+      "title": "github公钥和推送",
+      "file": "chapters/107-github公钥和推送.md"
+    },
+    {
+      "slug": "108-github如何运作-时间并不决定一切",
+      "title": "GitHub如何运作：时间并不决定一切",
+      "file": "chapters/108-github如何运作-时间并不决定一切.md"
+    },
+    {
+      "slug": "109-windows下使用github或bitbucket",
+      "title": "windows下使用github或bitbucket",
+      "file": "chapters/109-windows下使用github或bitbucket.md"
+    },
+    {
+      "slug": "110-自适应网页设计",
+      "title": "自适应网页设计",
+      "file": "chapters/110-自适应网页设计.md"
+    },
+    {
+      "slug": "111-css3打造的精美效果",
+      "title": "CSS3打造的精美效果",
+      "file": "chapters/111-css3打造的精美效果.md"
+    },
+    {
+      "slug": "112-css中单位px和em-rem",
+      "title": "css中单位px和em,rem",
+      "file": "chapters/112-css中单位px和em-rem.md"
+    },
+    {
+      "slug": "113-html5优秀技术网站",
+      "title": "HTML5优秀技术网站",
+      "file": "chapters/113-html5优秀技术网站.md"
+    },
+    {
+      "slug": "114-编程范式-程序员的编程世界观",
+      "title": "编程范式，程序员的编程世界观",
+      "file": "chapters/114-编程范式-程序员的编程世界观.md"
+    },
+    {
+      "slug": "115-编程技术面试的五大要点",
+      "title": "编程技术面试的五大要点",
+      "file": "chapters/115-编程技术面试的五大要点.md"
+    },
+    {
+      "slug": "116-编程趋势",
+      "title": "编程趋势",
+      "file": "chapters/116-编程趋势.md"
+    },
+    {
+      "slug": "117-开发人员需要知道如何做-做什么-和为什么做",
+      "title": "开发人员需要知道如何做，做什么，和为什么做",
+      "file": "chapters/117-开发人员需要知道如何做-做什么-和为什么做.md"
+    },
+    {
+      "slug": "118-码农提高工作效率",
+      "title": "码农提高工作效率",
+      "file": "chapters/118-码农提高工作效率.md"
+    },
+    {
+      "slug": "119-全栈工程师到底有什么用",
+      "title": "全栈工程师到底有什么用",
+      "file": "chapters/119-全栈工程师到底有什么用.md"
+    },
+    {
+      "slug": "120-如何判断自己是否具有成为一名优秀程序员的潜质",
+      "title": "如何判断自己是否具有成为一名优秀程序员的潜质",
+      "file": "chapters/120-如何判断自己是否具有成为一名优秀程序员的潜质.md"
+    },
+    {
+      "slug": "121-使用-vagrant-打造跨平台开发环境",
+      "title": "使用 Vagrant 打造跨平台开发环境",
+      "file": "chapters/121-使用-vagrant-打造跨平台开发环境.md"
+    },
+    {
+      "slug": "122-提升团队编码效率的10个提示",
+      "title": "提升团队编码效率的10个提示",
+      "file": "chapters/122-提升团队编码效率的10个提示.md"
+    },
+    {
+      "slug": "123-英国政府横评11款系统-ubuntu最安全",
+      "title": "英国政府横评11款系统：Ubuntu最安全",
+      "file": "chapters/123-英国政府横评11款系统-ubuntu最安全.md"
+    },
+    {
+      "slug": "124-阅读优秀代码是提高开发人员修为的一种捷径",
+      "title": "阅读优秀代码是提高开发人员修为的一种捷径",
+      "file": "chapters/124-阅读优秀代码是提高开发人员修为的一种捷径.md"
+    },
+    {
+      "slug": "125-主要的编程范型",
+      "title": "主要的编程范型",
+      "file": "chapters/125-主要的编程范型.md"
+    },
+    {
+      "slug": "126-app开发中容易出现的5种错误",
+      "title": "App开发中容易出现的5种错误",
+      "file": "chapters/126-app开发中容易出现的5种错误.md"
+    },
+    {
+      "slug": "127-ios和android的历史起源",
+      "title": "iOS和Android的历史起源",
+      "file": "chapters/127-ios和android的历史起源.md"
+    },
+    {
+      "slug": "128-linux之父-讨厌封闭-回绝乔布斯",
+      "title": "Linux之父：讨厌封闭 回绝乔布斯",
+      "file": "chapters/128-linux之父-讨厌封闭-回绝乔布斯.md"
+    },
+    {
+      "slug": "129-how-to-install-java8",
+      "title": "how_to_install_java8",
+      "file": "chapters/129-how-to-install-java8.md"
+    },
+    {
+      "slug": "130-install-android-studio-sdk-ubuntu",
+      "title": "install_android_studio_sdk_ubuntu",
+      "file": "chapters/130-install-android-studio-sdk-ubuntu.md"
+    },
+    {
+      "slug": "131-防止表单重复提交的方法",
+      "title": "防止表单重复提交的方法",
+      "file": "chapters/131-防止表单重复提交的方法.md"
+    },
+    {
+      "slug": "132-改善jquery的性能和代码",
+      "title": "改善jQuery的性能和代码",
+      "file": "chapters/132-改善jquery的性能和代码.md"
+    },
+    {
+      "slug": "133-纠正jquery获取radio选中值的写法",
+      "title": "纠正jQuery获取radio选中值的写法",
+      "file": "chapters/133-纠正jquery获取radio选中值的写法.md"
+    },
+    {
+      "slug": "134-如何编写好的jquery代码",
+      "title": "如何编写好的jQuery代码",
+      "file": "chapters/134-如何编写好的jquery代码.md"
+    },
+    {
+      "slug": "135-jquery日历",
+      "title": "jQuery日历",
+      "file": "chapters/135-jquery日历.md"
+    },
+    {
+      "slug": "136-js优秀技术网站",
+      "title": "JS优秀技术网站",
+      "file": "chapters/136-js优秀技术网站.md"
+    },
+    {
+      "slug": "137-15条技巧提高你的写作技巧",
+      "title": "15条技巧提高你的写作技巧",
+      "file": "chapters/137-15条技巧提高你的写作技巧.md"
+    },
+    {
+      "slug": "138-斐波纳契数列",
+      "title": "斐波纳契数列",
+      "file": "chapters/138-斐波纳契数列.md"
+    },
+    {
+      "slug": "139-关于八小时工作制",
+      "title": "关于八小时工作制",
+      "file": "chapters/139-关于八小时工作制.md"
+    },
+    {
+      "slug": "140-美国大选日的由来",
+      "title": "美国大选日的由来",
+      "file": "chapters/140-美国大选日的由来.md"
+    },
+    {
+      "slug": "141-为什么选黄金做货币",
+      "title": "为什么选黄金做货币",
+      "file": "chapters/141-为什么选黄金做货币.md"
+    },
+    {
+      "slug": "142-职业发展和年龄",
+      "title": "职业发展和年龄",
+      "file": "chapters/142-职业发展和年龄.md"
+    },
+    {
+      "slug": "143-bad-or-good-software",
+      "title": "bad_or_good_software",
+      "file": "chapters/143-bad-or-good-software.md"
+    },
+    {
+      "slug": "144-gdg苏州2014-7-26活动记录",
+      "title": "GDG苏州2014.7.26活动记录",
+      "file": "chapters/144-gdg苏州2014-7-26活动记录.md"
+    },
+    {
+      "slug": "145-ibm5150",
+      "title": "IBM5150",
+      "file": "chapters/145-ibm5150.md"
+    },
+    {
+      "slug": "146-mac-vs-pc",
+      "title": "Mac_VS_PC",
+      "file": "chapters/146-mac-vs-pc.md"
+    },
+    {
+      "slug": "147-阿里云应用纪实",
+      "title": "阿里云应用纪实",
+      "file": "chapters/147-阿里云应用纪实.md"
+    },
+    {
+      "slug": "148-博客自定义域名经历",
+      "title": "博客自定义域名经历",
+      "file": "chapters/148-博客自定义域名经历.md"
+    },
+    {
+      "slug": "149-大规模web服务-笔记",
+      "title": "大规模WEB服务(笔记)",
+      "file": "chapters/149-大规模web服务-笔记.md"
+    },
+    {
+      "slug": "150-检查远程端口",
+      "title": "检查远程端口",
+      "file": "chapters/150-检查远程端口.md"
+    },
+    {
+      "slug": "151-如何优雅地连接ssh",
+      "title": "如何优雅地连接ssh",
+      "file": "chapters/151-如何优雅地连接ssh.md"
+    },
+    {
+      "slug": "152-使用-linux-命令行测试网速",
+      "title": "使用 Linux 命令行测试网速",
+      "file": "chapters/152-使用-linux-命令行测试网速.md"
+    },
+    {
+      "slug": "153-使用ssh公钥密钥自动登陆linux服务器",
+      "title": "使用ssh公钥密钥自动登陆linux服务器",
+      "file": "chapters/153-使用ssh公钥密钥自动登陆linux服务器.md"
+    },
+    {
+      "slug": "154-通过配置host文件实现本地域名任意设置",
+      "title": "通过配置host文件实现本地域名任意设置",
+      "file": "chapters/154-通过配置host文件实现本地域名任意设置.md"
+    },
+    {
+      "slug": "155-通过ssh连接远程服务器",
+      "title": "通过ssh连接远程服务器",
+      "file": "chapters/155-通过ssh连接远程服务器.md"
+    },
+    {
+      "slug": "156-网站性能压力测试工具webbench",
+      "title": "网站性能压力测试工具WebBench",
+      "file": "chapters/156-网站性能压力测试工具webbench.md"
+    },
+    {
+      "slug": "157-压力测试工具tsung",
+      "title": "压力测试工具tsung",
+      "file": "chapters/157-压力测试工具tsung.md"
+    },
+    {
+      "slug": "158-远程备份工具rsync使用方法",
+      "title": "远程备份工具Rsync使用方法",
+      "file": "chapters/158-远程备份工具rsync使用方法.md"
+    },
+    {
+      "slug": "159-centos-nginx-mysql-php-fpm",
+      "title": "CentOS-nginx + mysql + php-fpm",
+      "file": "chapters/159-centos-nginx-mysql-php-fpm.md"
+    },
+    {
+      "slug": "160-centos7上安装poco",
+      "title": "CentOS7上安装POCO",
+      "file": "chapters/160-centos7上安装poco.md"
+    },
+    {
+      "slug": "161-chmod改变文件和目录权限",
+      "title": "chmod改变文件和目录权限",
+      "file": "chapters/161-chmod改变文件和目录权限.md"
+    },
+    {
+      "slug": "162-chown命令修改文件或目录的所有者",
+      "title": "chown命令修改文件或目录的所有者",
+      "file": "chapters/162-chown命令修改文件或目录的所有者.md"
+    },
+    {
+      "slug": "163-gae-for-ubuntu",
+      "title": "GAE for Ubuntu",
+      "file": "chapters/163-gae-for-ubuntu.md"
+    },
+    {
+      "slug": "164-how-to-solve-glibcxx-3-4-19",
+      "title": "How_to_solve_GLIBCXX_3.4.19",
+      "file": "chapters/164-how-to-solve-glibcxx-3-4-19.md"
+    },
+    {
+      "slug": "165-install-swftools",
+      "title": "install_swftools",
+      "file": "chapters/165-install-swftools.md"
+    },
+    {
+      "slug": "166-installgooglepinyinubuntu",
+      "title": "installGooglePinyinUbuntu",
+      "file": "chapters/166-installgooglepinyinubuntu.md"
+    },
+    {
+      "slug": "167-linux的五个查找命令",
+      "title": "Linux的五个查找命令",
+      "file": "chapters/167-linux的五个查找命令.md"
+    },
+    {
+      "slug": "168-linux命令",
+      "title": "Linux命令",
+      "file": "chapters/168-linux命令.md"
+    },
+    {
+      "slug": "169-linux命令后台运行",
+      "title": "linux命令后台运行",
+      "file": "chapters/169-linux命令后台运行.md"
+    },
+    {
+      "slug": "170-linux下面用ssh上传和下载文件",
+      "title": "linux下面用ssh上传和下载文件",
+      "file": "chapters/170-linux下面用ssh上传和下载文件.md"
+    },
+    {
+      "slug": "171-ubuntu目录文件操作权设置",
+      "title": "ubuntu目录文件操作权设置",
+      "file": "chapters/171-ubuntu目录文件操作权设置.md"
+    },
+    {
+      "slug": "172-ubuntu启动器和菜单不显示",
+      "title": "ubuntu启动器和菜单不显示",
+      "file": "chapters/172-ubuntu启动器和菜单不显示.md"
+    },
+    {
+      "slug": "173-upgrade-gcc-on-centos",
+      "title": "upgrade_gcc_on_Centos",
+      "file": "chapters/173-upgrade-gcc-on-centos.md"
+    },
+    {
+      "slug": "174-export-import-bak",
+      "title": "export_import_bak",
+      "file": "chapters/174-export-import-bak.md"
+    },
+    {
+      "slug": "175-mongodb-command",
+      "title": "mongodb_command",
+      "file": "chapters/175-mongodb-command.md"
+    },
+    {
+      "slug": "176-关于设计表时应该注意的问题",
+      "title": "关于设计表时应该注意的问题",
+      "file": "chapters/176-关于设计表时应该注意的问题.md"
+    },
+    {
+      "slug": "177-mysql-errot-28000-access-denied-for-user-root-localhost",
+      "title": "mysql-ERROT(28000)“Access denied for user 'root'@'localhost' ",
+      "file": "chapters/177-mysql-errot-28000-access-denied-for-user-root-localhost.md"
+    },
+    {
+      "slug": "178-mysql处理海量数据时的一些优化查询速度方法",
+      "title": "mysql处理海量数据时的一些优化查询速度方法",
+      "file": "chapters/178-mysql处理海量数据时的一些优化查询速度方法.md"
+    },
+    {
+      "slug": "179-配置性能优化的方法",
+      "title": "配置性能优化的方法",
+      "file": "chapters/179-配置性能优化的方法.md"
+    },
+    {
+      "slug": "180-articles-online",
+      "title": "articles_online",
+      "file": "chapters/180-articles-online.md"
+    },
+    {
+      "slug": "181-learn-nltk01",
+      "title": "learn_nltk01",
+      "file": "chapters/181-learn-nltk01.md"
+    },
+    {
+      "slug": "182-在ubuntu上安装mongodb",
+      "title": "在ubuntu上安装mongodb",
+      "file": "chapters/182-在ubuntu上安装mongodb.md"
+    },
+    {
+      "slug": "183-php5-fpm支持php程序",
+      "title": "php5-fpm支持php程序",
+      "file": "chapters/183-php5-fpm支持php程序.md"
+    },
+    {
+      "slug": "184-base",
+      "title": "base",
+      "file": "chapters/184-base.md"
+    },
+    {
+      "slug": "185-module",
+      "title": "module",
+      "file": "chapters/185-module.md"
+    },
+    {
+      "slug": "186-practice",
+      "title": "practice",
+      "file": "chapters/186-practice.md"
+    },
+    {
+      "slug": "187-代码里的命名规则",
+      "title": "代码里的命名规则",
+      "file": "chapters/187-代码里的命名规则.md"
+    },
+    {
+      "slug": "188-关键字yield的解释",
+      "title": "关键字yield的解释",
+      "file": "chapters/188-关键字yield的解释.md"
+    },
+    {
+      "slug": "189-获取时间的方法",
+      "title": "获取时间的方法",
+      "file": "chapters/189-获取时间的方法.md"
+    },
+    {
+      "slug": "190-随机函数random",
+      "title": "随机函数random",
+      "file": "chapters/190-随机函数random.md"
+    },
+    {
+      "slug": "191-为什么python数组的索引从0开始",
+      "title": "为什么Python数组的索引从0开始",
+      "file": "chapters/191-为什么python数组的索引从0开始.md"
+    },
+    {
+      "slug": "192-文本文件读写",
+      "title": "文本文件读写",
+      "file": "chapters/192-文本文件读写.md"
+    },
+    {
+      "slug": "193-稳定可靠的文件操作",
+      "title": "稳定可靠的文件操作",
+      "file": "chapters/193-稳定可靠的文件操作.md"
+    },
+    {
+      "slug": "194-字符串的encode和decode",
+      "title": "字符串的encode和decode",
+      "file": "chapters/194-字符串的encode和decode.md"
+    },
+    {
+      "slug": "195-collection小技巧",
+      "title": "Collection小技巧",
+      "file": "chapters/195-collection小技巧.md"
+    },
+    {
+      "slug": "196-collections-counter",
+      "title": "collections_Counter",
+      "file": "chapters/196-collections-counter.md"
+    },
+    {
+      "slug": "197-datetime模块",
+      "title": "datetime模块",
+      "file": "chapters/197-datetime模块.md"
+    },
+    {
+      "slug": "198-dict字典遍历方法",
+      "title": "dict字典遍历方法",
+      "file": "chapters/198-dict字典遍历方法.md"
+    },
+    {
+      "slug": "199-filter-map-reduce-lambda-yield",
+      "title": "filter、map、reduce、lambda、yield",
+      "file": "chapters/199-filter-map-reduce-lambda-yield.md"
+    },
+    {
+      "slug": "200-heapq",
+      "title": "heapq",
+      "file": "chapters/200-heapq.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,75 @@
+{
+  "bookId": "45c3509df73d",
+  "title": "H2 Database 教程",
+  "url": "https://github.com/waylau/h2-database-doc",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:27.359Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "入门",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "安装",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "教程",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-h2-console",
+      "title": "H2 控制台",
+      "file": "chapters/004-h2-console.md"
+    },
+    {
+      "slug": "005-using-database",
+      "title": "使用数据库",
+      "file": "chapters/005-using-database.md"
+    },
+    {
+      "slug": "006-upgrade-backup-and-restore",
+      "title": "数据库升级、备份、恢复",
+      "file": "chapters/006-upgrade-backup-and-restore.md"
+    },
+    {
+      "slug": "007-tools",
+      "title": "工具",
+      "file": "chapters/007-tools.md"
+    },
+    {
+      "slug": "008-user-defined-variables",
+      "title": "用户定义变量",
+      "file": "chapters/008-user-defined-variables.md"
+    },
+    {
+      "slug": "009-date-and-time",
+      "title": "日期和时间",
+      "file": "chapters/009-date-and-time.md"
+    },
+    {
+      "slug": "010-integration",
+      "title": "与第三方集成",
+      "file": "chapters/010-integration.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "特性",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "性能",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "高级",
+      "file": "chapters/013-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "39eb50f42dc9",
+  "title": "PHP 官方手册",
+  "url": "http://php.net/manual/zh/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:03.662Z",
+  "chapters": [
+    {
+      "slug": "001-p",
+      "title": "PHP: 序言 - Manual",
+      "file": "chapters/001-p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "PHP: 序言 - Manual"
+}

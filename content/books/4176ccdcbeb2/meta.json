@@ -1,0 +1,16 @@
+{
+  "bookId": "4176ccdcbeb2",
+  "title": "git-flow 备忘清单",
+  "url": "http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:39.698Z",
+  "chapters": [
+    {
+      "slug": "001-1u",
+      "title": "git-flow 备忘清单",
+      "file": "chapters/001-1u.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "git-flow 备忘清单"
+}

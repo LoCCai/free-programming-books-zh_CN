@@ -1,0 +1,16 @@
+{
+  "bookId": "c1b204346f33",
+  "title": "Think Java",
+  "url": "http://www.ituring.com.cn/minibook/69",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:28.533Z",
+  "chapters": [
+    {
+      "slug": "001-11",
+      "title": "图灵社区",
+      "file": "chapters/001-11.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "图灵社区"
+}

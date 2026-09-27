@@ -1,0 +1,850 @@
+{
+  "bookId": "ceb9dc866a2c",
+  "title": "Go语言四十二章经",
+  "url": "https://github.com/ffhelicopter/Go42",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:31.839Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "前言",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-42-01-install",
+      "title": "第一章 Go安装与运行",
+      "file": "chapters/002-42-01-install.md"
+    },
+    {
+      "slug": "003-42-01-install",
+      "title": "1.1 Go 安装",
+      "file": "chapters/003-42-01-install.md"
+    },
+    {
+      "slug": "004-42-01-install",
+      "title": "1.2 Go 语言开发工具",
+      "file": "chapters/004-42-01-install.md"
+    },
+    {
+      "slug": "005-42-02-datatype",
+      "title": "第二章 数据类型",
+      "file": "chapters/005-42-02-datatype.md"
+    },
+    {
+      "slug": "006-42-02-datatype",
+      "title": "2.1 基本数据类型",
+      "file": "chapters/006-42-02-datatype.md"
+    },
+    {
+      "slug": "007-42-02-datatype",
+      "title": "2.2 Unicode（UTF-8）",
+      "file": "chapters/007-42-02-datatype.md"
+    },
+    {
+      "slug": "008-42-02-datatype",
+      "title": "2.3 复数",
+      "file": "chapters/008-42-02-datatype.md"
+    },
+    {
+      "slug": "009-42-03-var",
+      "title": "第三章 变量",
+      "file": "chapters/009-42-03-var.md"
+    },
+    {
+      "slug": "010-42-03-var",
+      "title": "3.1 变量以及声明",
+      "file": "chapters/010-42-03-var.md"
+    },
+    {
+      "slug": "011-42-03-var",
+      "title": "3.2 零值nil",
+      "file": "chapters/011-42-03-var.md"
+    },
+    {
+      "slug": "012-42-04-const",
+      "title": "第四章 常量",
+      "file": "chapters/012-42-04-const.md"
+    },
+    {
+      "slug": "013-42-04-const",
+      "title": "4.1 常量以及iota",
+      "file": "chapters/013-42-04-const.md"
+    },
+    {
+      "slug": "014-42-05-scope",
+      "title": "第五章 作用域",
+      "file": "chapters/014-42-05-scope.md"
+    },
+    {
+      "slug": "015-42-05-scope",
+      "title": "5.1 作用域",
+      "file": "chapters/015-42-05-scope.md"
+    },
+    {
+      "slug": "016-42-06-convention",
+      "title": "第六章 约定和惯例",
+      "file": "chapters/016-42-06-convention.md"
+    },
+    {
+      "slug": "017-42-06-convention",
+      "title": "6.1 可见性规则",
+      "file": "chapters/017-42-06-convention.md"
+    },
+    {
+      "slug": "018-42-06-convention",
+      "title": "6.2 命名规范以及语法惯例",
+      "file": "chapters/018-42-06-convention.md"
+    },
+    {
+      "slug": "019-42-06-convention",
+      "title": "6.3 注释",
+      "file": "chapters/019-42-06-convention.md"
+    },
+    {
+      "slug": "020-42-07-package",
+      "title": "第七章 代码结构化",
+      "file": "chapters/020-42-07-package.md"
+    },
+    {
+      "slug": "021-42-07-package",
+      "title": "7.1 包的概念",
+      "file": "chapters/021-42-07-package.md"
+    },
+    {
+      "slug": "022-42-07-package",
+      "title": "7.2 包的导入",
+      "file": "chapters/022-42-07-package.md"
+    },
+    {
+      "slug": "023-42-07-package",
+      "title": "7.3 标准包",
+      "file": "chapters/023-42-07-package.md"
+    },
+    {
+      "slug": "024-42-07-package",
+      "title": "7.4 从GitHub安装包",
+      "file": "chapters/024-42-07-package.md"
+    },
+    {
+      "slug": "025-42-07-package",
+      "title": "7.5 导入外部安装包",
+      "file": "chapters/025-42-07-package.md"
+    },
+    {
+      "slug": "026-42-07-package",
+      "title": "7.6 包的初始化",
+      "file": "chapters/026-42-07-package.md"
+    },
+    {
+      "slug": "027-42-08-project",
+      "title": "第八章 Go项目开发与编译",
+      "file": "chapters/027-42-08-project.md"
+    },
+    {
+      "slug": "028-42-08-project",
+      "title": "8.1 项目结构",
+      "file": "chapters/028-42-08-project.md"
+    },
+    {
+      "slug": "029-42-08-project",
+      "title": "8.2 使用godoc",
+      "file": "chapters/029-42-08-project.md"
+    },
+    {
+      "slug": "030-42-08-project",
+      "title": "8.3 Go程序的编译",
+      "file": "chapters/030-42-08-project.md"
+    },
+    {
+      "slug": "031-42-09-operator",
+      "title": "第九章 运算符",
+      "file": "chapters/031-42-09-operator.md"
+    },
+    {
+      "slug": "032-42-09-operator",
+      "title": "9.1 内置运算符",
+      "file": "chapters/032-42-09-operator.md"
+    },
+    {
+      "slug": "033-42-09-operator",
+      "title": "9.2 运算符优先级",
+      "file": "chapters/033-42-09-operator.md"
+    },
+    {
+      "slug": "034-42-09-operator",
+      "title": "9.3 几个特殊运算符",
+      "file": "chapters/034-42-09-operator.md"
+    },
+    {
+      "slug": "035-42-10-string",
+      "title": "第十章 string",
+      "file": "chapters/035-42-10-string.md"
+    },
+    {
+      "slug": "036-42-10-string",
+      "title": "10.1 字符串介绍",
+      "file": "chapters/036-42-10-string.md"
+    },
+    {
+      "slug": "037-42-10-string",
+      "title": "10.2 字符串拼接",
+      "file": "chapters/037-42-10-string.md"
+    },
+    {
+      "slug": "038-42-10-string",
+      "title": "10.3 有关string处理",
+      "file": "chapters/038-42-10-string.md"
+    },
+    {
+      "slug": "039-42-11-array",
+      "title": "第十一章 数组(Array)",
+      "file": "chapters/039-42-11-array.md"
+    },
+    {
+      "slug": "040-42-11-array",
+      "title": "11.1 数组(Array)",
+      "file": "chapters/040-42-11-array.md"
+    },
+    {
+      "slug": "041-42-12-slice",
+      "title": "第十二章 切片(slice)",
+      "file": "chapters/041-42-12-slice.md"
+    },
+    {
+      "slug": "042-42-12-slice",
+      "title": "12.1 切片(slice)",
+      "file": "chapters/042-42-12-slice.md"
+    },
+    {
+      "slug": "043-42-12-slice",
+      "title": "12.2 切片重组(reslice)",
+      "file": "chapters/043-42-12-slice.md"
+    },
+    {
+      "slug": "044-42-12-slice",
+      "title": "12.3 陈旧的(Stale)Slices",
+      "file": "chapters/044-42-12-slice.md"
+    },
+    {
+      "slug": "045-42-13-map",
+      "title": "第十三章 字典(Map)",
+      "file": "chapters/045-42-13-map.md"
+    },
+    {
+      "slug": "046-42-13-map",
+      "title": "13.1 字典(Map)",
+      "file": "chapters/046-42-13-map.md"
+    },
+    {
+      "slug": "047-42-13-map",
+      "title": "13.2 range语句中更新引用元素的值",
+      "file": "chapters/047-42-13-map.md"
+    },
+    {
+      "slug": "048-42-14-flow",
+      "title": "第十四章 流程控制",
+      "file": "chapters/048-42-14-flow.md"
+    },
+    {
+      "slug": "049-42-14-flow",
+      "title": "14.1 switch 语句",
+      "file": "chapters/049-42-14-flow.md"
+    },
+    {
+      "slug": "050-42-14-flow",
+      "title": "14.2 select控制",
+      "file": "chapters/050-42-14-flow.md"
+    },
+    {
+      "slug": "051-42-14-flow",
+      "title": "14.3 for循环",
+      "file": "chapters/051-42-14-flow.md"
+    },
+    {
+      "slug": "052-42-14-flow",
+      "title": "14.4 for-range 结构",
+      "file": "chapters/052-42-14-flow.md"
+    },
+    {
+      "slug": "053-42-15-errors",
+      "title": "第十五章 错误处理",
+      "file": "chapters/053-42-15-errors.md"
+    },
+    {
+      "slug": "054-42-15-errors",
+      "title": "15.1 错误类型",
+      "file": "chapters/054-42-15-errors.md"
+    },
+    {
+      "slug": "055-42-15-errors",
+      "title": "15.2 panic",
+      "file": "chapters/055-42-15-errors.md"
+    },
+    {
+      "slug": "056-42-15-errors",
+      "title": "15.3 recover：从 panic 中恢复",
+      "file": "chapters/056-42-15-errors.md"
+    },
+    {
+      "slug": "057-42-15-errors",
+      "title": "15.4 有关于defer",
+      "file": "chapters/057-42-15-errors.md"
+    },
+    {
+      "slug": "058-42-16-function",
+      "title": "第十六章 函数",
+      "file": "chapters/058-42-16-function.md"
+    },
+    {
+      "slug": "059-42-16-function",
+      "title": "16.1 函数分类",
+      "file": "chapters/059-42-16-function.md"
+    },
+    {
+      "slug": "060-42-16-function",
+      "title": "16.2 函数调用",
+      "file": "chapters/060-42-16-function.md"
+    },
+    {
+      "slug": "061-42-16-function",
+      "title": "16.3 内置函数",
+      "file": "chapters/061-42-16-function.md"
+    },
+    {
+      "slug": "062-42-16-function",
+      "title": "16.4 递归与回调",
+      "file": "chapters/062-42-16-function.md"
+    },
+    {
+      "slug": "063-42-16-function",
+      "title": "16.5 匿名函数",
+      "file": "chapters/063-42-16-function.md"
+    },
+    {
+      "slug": "064-42-16-function",
+      "title": "16.6 闭包函数",
+      "file": "chapters/064-42-16-function.md"
+    },
+    {
+      "slug": "065-42-16-function",
+      "title": "16.7 变参函数",
+      "file": "chapters/065-42-16-function.md"
+    },
+    {
+      "slug": "066-42-17-type",
+      "title": "第十七章 type关键字",
+      "file": "chapters/066-42-17-type.md"
+    },
+    {
+      "slug": "067-42-17-type",
+      "title": "17.1 type",
+      "file": "chapters/067-42-17-type.md"
+    },
+    {
+      "slug": "068-42-18-struct",
+      "title": "第十八章 struct 结构体",
+      "file": "chapters/068-42-18-struct.md"
+    },
+    {
+      "slug": "069-42-18-struct",
+      "title": "18.1 结构体(struct)",
+      "file": "chapters/069-42-18-struct.md"
+    },
+    {
+      "slug": "070-42-18-struct",
+      "title": "18.2 结构体特性",
+      "file": "chapters/070-42-18-struct.md"
+    },
+    {
+      "slug": "071-42-18-struct",
+      "title": "18.3 匿名成员",
+      "file": "chapters/071-42-18-struct.md"
+    },
+    {
+      "slug": "072-42-18-struct",
+      "title": "18.4 嵌入与聚合",
+      "file": "chapters/072-42-18-struct.md"
+    },
+    {
+      "slug": "073-42-18-struct",
+      "title": "18.5 命名冲突",
+      "file": "chapters/073-42-18-struct.md"
+    },
+    {
+      "slug": "074-42-19-interface",
+      "title": "第十九章 接口",
+      "file": "chapters/074-42-19-interface.md"
+    },
+    {
+      "slug": "075-42-19-interface",
+      "title": "19.1 接口是什么",
+      "file": "chapters/075-42-19-interface.md"
+    },
+    {
+      "slug": "076-42-19-interface",
+      "title": "19.2 接口嵌套",
+      "file": "chapters/076-42-19-interface.md"
+    },
+    {
+      "slug": "077-42-19-interface",
+      "title": "19.3 类型断言",
+      "file": "chapters/077-42-19-interface.md"
+    },
+    {
+      "slug": "078-42-19-interface",
+      "title": "19.4 接口与动态类型",
+      "file": "chapters/078-42-19-interface.md"
+    },
+    {
+      "slug": "079-42-19-interface",
+      "title": "19.5 接口的提取",
+      "file": "chapters/079-42-19-interface.md"
+    },
+    {
+      "slug": "080-42-19-interface",
+      "title": "19.6 接口的继承",
+      "file": "chapters/080-42-19-interface.md"
+    },
+    {
+      "slug": "081-42-20-method",
+      "title": "第二十章 方法",
+      "file": "chapters/081-42-20-method.md"
+    },
+    {
+      "slug": "082-42-20-method",
+      "title": "20.1 方法的定义",
+      "file": "chapters/082-42-20-method.md"
+    },
+    {
+      "slug": "083-42-20-method",
+      "title": "20.2 函数和方法的区别",
+      "file": "chapters/083-42-20-method.md"
+    },
+    {
+      "slug": "084-42-20-method",
+      "title": "20.3 指针或值方法",
+      "file": "chapters/084-42-20-method.md"
+    },
+    {
+      "slug": "085-42-20-method",
+      "title": "20.4 内嵌类型的方法提升",
+      "file": "chapters/085-42-20-method.md"
+    },
+    {
+      "slug": "086-42-21-goroutine",
+      "title": "第二十一章 协程(goroutine)",
+      "file": "chapters/086-42-21-goroutine.md"
+    },
+    {
+      "slug": "087-42-21-goroutine",
+      "title": "21.1 并发",
+      "file": "chapters/087-42-21-goroutine.md"
+    },
+    {
+      "slug": "088-42-21-goroutine",
+      "title": "21.2 goroutine",
+      "file": "chapters/088-42-21-goroutine.md"
+    },
+    {
+      "slug": "089-42-22-channel",
+      "title": "第二十二章 通道(channel)",
+      "file": "chapters/089-42-22-channel.md"
+    },
+    {
+      "slug": "090-42-22-channel",
+      "title": "22.1 通道(channel)",
+      "file": "chapters/090-42-22-channel.md"
+    },
+    {
+      "slug": "091-42-23-sync",
+      "title": "第二十三章 同步与锁",
+      "file": "chapters/091-42-23-sync.md"
+    },
+    {
+      "slug": "092-42-23-sync",
+      "title": "23.1 同步锁",
+      "file": "chapters/092-42-23-sync.md"
+    },
+    {
+      "slug": "093-42-23-sync",
+      "title": "23.2 读写锁",
+      "file": "chapters/093-42-23-sync.md"
+    },
+    {
+      "slug": "094-42-23-sync",
+      "title": "23.3 sync.WaitGroup",
+      "file": "chapters/094-42-23-sync.md"
+    },
+    {
+      "slug": "095-42-23-sync",
+      "title": "23.4 sync.Once",
+      "file": "chapters/095-42-23-sync.md"
+    },
+    {
+      "slug": "096-42-23-sync",
+      "title": "23.5 sync.Map",
+      "file": "chapters/096-42-23-sync.md"
+    },
+    {
+      "slug": "097-42-24-pointer",
+      "title": "第二十四章 指针和内存",
+      "file": "chapters/097-42-24-pointer.md"
+    },
+    {
+      "slug": "098-42-24-pointer",
+      "title": "24.1 指针",
+      "file": "chapters/098-42-24-pointer.md"
+    },
+    {
+      "slug": "099-42-24-pointer",
+      "title": "24.2 new() 和 make() 的区别",
+      "file": "chapters/099-42-24-pointer.md"
+    },
+    {
+      "slug": "100-42-24-pointer",
+      "title": "24.3 垃圾回收和 SetFinalizer",
+      "file": "chapters/100-42-24-pointer.md"
+    },
+    {
+      "slug": "101-42-25-oo",
+      "title": "第二十五章 面向对象",
+      "file": "chapters/101-42-25-oo.md"
+    },
+    {
+      "slug": "102-42-25-oo",
+      "title": "25.1 Go 中的面向对象",
+      "file": "chapters/102-42-25-oo.md"
+    },
+    {
+      "slug": "103-42-25-oo",
+      "title": "25.2 多重继承",
+      "file": "chapters/103-42-25-oo.md"
+    },
+    {
+      "slug": "104-42-26-testing",
+      "title": "第二十六章 测试",
+      "file": "chapters/104-42-26-testing.md"
+    },
+    {
+      "slug": "105-42-26-testing",
+      "title": "26.1 单元测试",
+      "file": "chapters/105-42-26-testing.md"
+    },
+    {
+      "slug": "106-42-26-testing",
+      "title": "26.2 基准测试",
+      "file": "chapters/106-42-26-testing.md"
+    },
+    {
+      "slug": "107-42-26-testing",
+      "title": "26.3 分析并优化 Go 程序",
+      "file": "chapters/107-42-26-testing.md"
+    },
+    {
+      "slug": "108-42-26-testing",
+      "title": "26.4 用 pprof 调试",
+      "file": "chapters/108-42-26-testing.md"
+    },
+    {
+      "slug": "109-42-27-reflect",
+      "title": "第二十七章 反射(reflect)",
+      "file": "chapters/109-42-27-reflect.md"
+    },
+    {
+      "slug": "110-42-27-reflect",
+      "title": "27.1 反射(reflect)",
+      "file": "chapters/110-42-27-reflect.md"
+    },
+    {
+      "slug": "111-42-27-reflect",
+      "title": "27.2 反射结构体",
+      "file": "chapters/111-42-27-reflect.md"
+    },
+    {
+      "slug": "112-42-28-unsafe",
+      "title": "第二十八章 unsafe包",
+      "file": "chapters/112-42-28-unsafe.md"
+    },
+    {
+      "slug": "113-42-28-unsafe",
+      "title": "28.1 unsafe 包",
+      "file": "chapters/113-42-28-unsafe.md"
+    },
+    {
+      "slug": "114-42-28-unsafe",
+      "title": "28.2 指针运算",
+      "file": "chapters/114-42-28-unsafe.md"
+    },
+    {
+      "slug": "115-42-29-sort",
+      "title": "第二十九章 排序(sort)",
+      "file": "chapters/115-42-29-sort.md"
+    },
+    {
+      "slug": "116-42-29-sort",
+      "title": "29.1 sort包介绍",
+      "file": "chapters/116-42-29-sort.md"
+    },
+    {
+      "slug": "117-42-29-sort",
+      "title": "29.2 自定义sort.Interface排序",
+      "file": "chapters/117-42-29-sort.md"
+    },
+    {
+      "slug": "118-42-29-sort",
+      "title": "29.3 sort.Slice",
+      "file": "chapters/118-42-29-sort.md"
+    },
+    {
+      "slug": "119-42-30-os",
+      "title": "第三十章 os包",
+      "file": "chapters/119-42-30-os.md"
+    },
+    {
+      "slug": "120-42-30-os",
+      "title": "30.1 启动外部命令和程序",
+      "file": "chapters/120-42-30-os.md"
+    },
+    {
+      "slug": "121-42-30-os",
+      "title": "30.2 os/signal 信号处理",
+      "file": "chapters/121-42-30-os.md"
+    },
+    {
+      "slug": "122-42-31-io",
+      "title": "第三十一章 文件操作与I/O",
+      "file": "chapters/122-42-31-io.md"
+    },
+    {
+      "slug": "123-42-31-io",
+      "title": "31.1 文件系统",
+      "file": "chapters/123-42-31-io.md"
+    },
+    {
+      "slug": "124-42-31-io",
+      "title": "31.2 I/O读写",
+      "file": "chapters/124-42-31-io.md"
+    },
+    {
+      "slug": "125-42-31-io",
+      "title": "31.3 ioutil包",
+      "file": "chapters/125-42-31-io.md"
+    },
+    {
+      "slug": "126-42-31-io",
+      "title": "31.4 bufio包",
+      "file": "chapters/126-42-31-io.md"
+    },
+    {
+      "slug": "127-42-32-fmt",
+      "title": "第三十二章 fmt包与日志log包",
+      "file": "chapters/127-42-32-fmt.md"
+    },
+    {
+      "slug": "128-42-32-fmt",
+      "title": "32.1 fmt包格式化I/O",
+      "file": "chapters/128-42-32-fmt.md"
+    },
+    {
+      "slug": "129-42-32-fmt",
+      "title": "32.2 格式化verb应用",
+      "file": "chapters/129-42-32-fmt.md"
+    },
+    {
+      "slug": "130-42-32-fmt",
+      "title": "32.3 日志log包",
+      "file": "chapters/130-42-32-fmt.md"
+    },
+    {
+      "slug": "131-42-33-socket",
+      "title": "第三十三章 Socket网络",
+      "file": "chapters/131-42-33-socket.md"
+    },
+    {
+      "slug": "132-42-33-socket",
+      "title": "33.1 Socket基础知识",
+      "file": "chapters/132-42-33-socket.md"
+    },
+    {
+      "slug": "133-42-33-socket",
+      "title": "33.2 TCP 与 UDP",
+      "file": "chapters/133-42-33-socket.md"
+    },
+    {
+      "slug": "134-42-34-flag",
+      "title": "第三十四章 命令行flag包",
+      "file": "chapters/134-42-34-flag.md"
+    },
+    {
+      "slug": "135-42-34-flag",
+      "title": "34.1 命令行",
+      "file": "chapters/135-42-34-flag.md"
+    },
+    {
+      "slug": "136-42-34-flag",
+      "title": "34.2 flag包",
+      "file": "chapters/136-42-34-flag.md"
+    },
+    {
+      "slug": "137-42-35-template",
+      "title": "第三十五章 模板",
+      "file": "chapters/137-42-35-template.md"
+    },
+    {
+      "slug": "138-42-35-template",
+      "title": "35.1 text/template",
+      "file": "chapters/138-42-35-template.md"
+    },
+    {
+      "slug": "139-42-35-template",
+      "title": "35.2 html/template",
+      "file": "chapters/139-42-35-template.md"
+    },
+    {
+      "slug": "140-42-35-template",
+      "title": "35.3 模板语法",
+      "file": "chapters/140-42-35-template.md"
+    },
+    {
+      "slug": "141-42-36-http",
+      "title": "第三十六章 net/http包",
+      "file": "chapters/141-42-36-http.md"
+    },
+    {
+      "slug": "142-42-36-http",
+      "title": "36.1 Request",
+      "file": "chapters/142-42-36-http.md"
+    },
+    {
+      "slug": "143-42-36-http",
+      "title": "36.2 Response",
+      "file": "chapters/143-42-36-http.md"
+    },
+    {
+      "slug": "144-42-36-http",
+      "title": "36.3 client",
+      "file": "chapters/144-42-36-http.md"
+    },
+    {
+      "slug": "145-42-36-http",
+      "title": "36.4 server",
+      "file": "chapters/145-42-36-http.md"
+    },
+    {
+      "slug": "146-42-36-http",
+      "title": "36.5 自定义处理器（Custom Handlers）",
+      "file": "chapters/146-42-36-http.md"
+    },
+    {
+      "slug": "147-42-36-http",
+      "title": "36.6 将函数作为处理器",
+      "file": "chapters/147-42-36-http.md"
+    },
+    {
+      "slug": "148-42-36-http",
+      "title": "36.7 中间件Middleware",
+      "file": "chapters/148-42-36-http.md"
+    },
+    {
+      "slug": "149-42-36-http",
+      "title": "36.8 静态站点",
+      "file": "chapters/149-42-36-http.md"
+    },
+    {
+      "slug": "150-42-37-context",
+      "title": "第三十七章 context包",
+      "file": "chapters/150-42-37-context.md"
+    },
+    {
+      "slug": "151-42-37-context",
+      "title": "37.1 context包",
+      "file": "chapters/151-42-37-context.md"
+    },
+    {
+      "slug": "152-42-37-context",
+      "title": "37.2 context应用",
+      "file": "chapters/152-42-37-context.md"
+    },
+    {
+      "slug": "153-42-38-json",
+      "title": "第三十八章 数据序列化",
+      "file": "chapters/153-42-38-json.md"
+    },
+    {
+      "slug": "154-42-38-json",
+      "title": "38.1 序列化与反序列化",
+      "file": "chapters/154-42-38-json.md"
+    },
+    {
+      "slug": "155-42-38-json",
+      "title": "38.2 JSON数据格式",
+      "file": "chapters/155-42-38-json.md"
+    },
+    {
+      "slug": "156-42-38-json",
+      "title": "38.3 Protocol Buffer数据格式",
+      "file": "chapters/156-42-38-json.md"
+    },
+    {
+      "slug": "157-42-39-mysql",
+      "title": "第三十九章 MySQL数据库",
+      "file": "chapters/157-42-39-mysql.md"
+    },
+    {
+      "slug": "158-42-39-mysql",
+      "title": "39.1 database/sql包",
+      "file": "chapters/158-42-39-mysql.md"
+    },
+    {
+      "slug": "159-42-39-mysql",
+      "title": "39.2 MySQL数据库操作",
+      "file": "chapters/159-42-39-mysql.md"
+    },
+    {
+      "slug": "160-42-40-kvdb",
+      "title": "第四十章 LevelDB与BoltDB",
+      "file": "chapters/160-42-40-kvdb.md"
+    },
+    {
+      "slug": "161-42-40-kvdb",
+      "title": "40.1 LevelDB",
+      "file": "chapters/161-42-40-kvdb.md"
+    },
+    {
+      "slug": "162-42-40-kvdb",
+      "title": "40.2 BoltDB",
+      "file": "chapters/162-42-40-kvdb.md"
+    },
+    {
+      "slug": "163-42-41-crawler",
+      "title": "第四十一章 网络爬虫",
+      "file": "chapters/163-42-41-crawler.md"
+    },
+    {
+      "slug": "164-42-41-crawler",
+      "title": "41.1 Colly网络爬虫框架",
+      "file": "chapters/164-42-41-crawler.md"
+    },
+    {
+      "slug": "165-42-41-crawler",
+      "title": "41.2 goquery HTML解析",
+      "file": "chapters/165-42-41-crawler.md"
+    },
+    {
+      "slug": "166-42-42-gin",
+      "title": "第四十二章 WEB框架(Gin)",
+      "file": "chapters/166-42-42-gin.md"
+    },
+    {
+      "slug": "167-42-42-gin",
+      "title": "42.1 有关于Gin",
+      "file": "chapters/167-42-42-gin.md"
+    },
+    {
+      "slug": "168-42-42-gin",
+      "title": "42.2 Gin实际应用",
+      "file": "chapters/168-42-42-gin.md"
+    }
+  ],
+  "sourceType": "github"
+}

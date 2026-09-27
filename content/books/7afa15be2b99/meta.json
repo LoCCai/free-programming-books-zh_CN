@@ -1,0 +1,226 @@
+{
+  "bookId": "7afa15be2b99",
+  "title": "译本一",
+  "url": "https://wcc723.gitbooks.io/google_design_translate/content/style-icons.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:20:22.280Z",
+  "chapters": [
+    {
+      "slug": "001-23",
+      "title": "* 圖示 | Google Material Design 正體中文版",
+      "file": "chapters/001-23.md"
+    },
+    {
+      "slug": "002-25",
+      "title": "圖像 | Google Material Design 正體中文版",
+      "file": "chapters/002-25.md"
+    },
+    {
+      "slug": "003-29",
+      "title": "原則 | Google Material Design 正體中文版",
+      "file": "chapters/003-29.md"
+    },
+    {
+      "slug": "004-2j",
+      "title": "指標及標線 | Google Material Design 正體中文版",
+      "file": "chapters/004-2j.md"
+    },
+    {
+      "slug": "005-28",
+      "title": "結構 | Google Material Design 正體中文版",
+      "file": "chapters/005-28.md"
+    },
+    {
+      "slug": "006-2g",
+      "title": "底部工作表 | Google Material Design 正體中文版",
+      "file": "chapters/006-2g.md"
+    },
+    {
+      "slug": "007-2a",
+      "title": "按鈕 | Google Material Design 正體中文版",
+      "file": "chapters/007-2a.md"
+    },
+    {
+      "slug": "008-28",
+      "title": "卡片 | Google Material Design 正體中文版",
+      "file": "chapters/008-28.md"
+    },
+    {
+      "slug": "009-28",
+      "title": "芯片 | Google Material Design 正體中文版",
+      "file": "chapters/009-28.md"
+    },
+    {
+      "slug": "010-2a",
+      "title": "* 對話框 | Google Material Design 正體中文版",
+      "file": "chapters/010-2a.md"
+    },
+    {
+      "slug": "011-2b",
+      "title": "分隔器 | Google Material Design 正體中文版",
+      "file": "chapters/011-2b.md"
+    },
+    {
+      "slug": "012-28",
+      "title": "網格 | Google Material Design 正體中文版",
+      "file": "chapters/012-28.md"
+    },
+    {
+      "slug": "013-28",
+      "title": "清單 | Google Material Design 正體中文版",
+      "file": "chapters/013-28.md"
+    },
+    {
+      "slug": "014-2g",
+      "title": "清單控制器 | Google Material Design 正體中文版",
+      "file": "chapters/014-2g.md"
+    },
+    {
+      "slug": "015-28",
+      "title": "菜單 | Google Material Design 正體中文版",
+      "file": "chapters/015-28.md"
+    },
+    {
+      "slug": "016-2a",
+      "title": "* 選擇器 | Google Material Design 正體中文版",
+      "file": "chapters/016-2a.md"
+    },
+    {
+      "slug": "017-2p",
+      "title": "進度與活動 | Google Material Design 正體中文版",
+      "file": "chapters/017-2p.md"
+    },
+    {
+      "slug": "018-2a",
+      "title": "滑軌 | Google Material Design 正體中文版",
+      "file": "chapters/018-2a.md"
+    },
+    {
+      "slug": "019-2n",
+      "title": "Snackbars and Toasts | Google Material Design 正體中文版",
+      "file": "chapters/019-2n.md"
+    },
+    {
+      "slug": "020-2d",
+      "title": "副標題 | Google Material Design 正體中文版",
+      "file": "chapters/020-2d.md"
+    },
+    {
+      "slug": "021-2b",
+      "title": "開關 | Google Material Design 正體中文版",
+      "file": "chapters/021-2b.md"
+    },
+    {
+      "slug": "022-27",
+      "title": "頁籤 | Google Material Design 正體中文版",
+      "file": "chapters/022-27.md"
+    },
+    {
+      "slug": "023-2e",
+      "title": "文字輸入框 | Google Material Design 正體中文版",
+      "file": "chapters/023-2e.md"
+    },
+    {
+      "slug": "024-2b",
+      "title": "工具提示 | Google Material Design 正體中文版",
+      "file": "chapters/024-2b.md"
+    },
+    {
+      "slug": "025-2d",
+      "title": "* 資料格式 | Google Material Design 正體中文版",
+      "file": "chapters/025-2d.md"
+    },
+    {
+      "slug": "026-27",
+      "title": "* 錯誤 | Google Material Design 正體中文版",
+      "file": "chapters/026-27.md"
+    },
+    {
+      "slug": "027-2a",
+      "title": "選擇 | Google Material Design 正體中文版",
+      "file": "chapters/027-2a.md"
+    },
+    {
+      "slug": "028-29",
+      "title": "手勢 | Google Material Design 正體中文版",
+      "file": "chapters/028-29.md"
+    },
+    {
+      "slug": "029-2i",
+      "title": "* 抽出式導覽面板 | Google Material Design 正體中文版",
+      "file": "chapters/029-2i.md"
+    },
+    {
+      "slug": "030-2n",
+      "title": "* 導覽式動畫 | Google Material Design 正體中文版",
+      "file": "chapters/030-2n.md"
+    },
+    {
+      "slug": "031-2l",
+      "title": "* 捲動方式 | Google Material Design 正體中文版",
+      "file": "chapters/031-2l.md"
+    },
+    {
+      "slug": "032-2h",
+      "title": "促進式指令 | Google Material Design 正體中文版",
+      "file": "chapters/032-2h.md"
+    },
+    {
+      "slug": "033-29",
+      "title": "設定 | Google Material Design 正體中文版",
+      "file": "chapters/033-29.md"
+    },
+    {
+      "slug": "034-2i",
+      "title": "影像處理 | Google Material Design 正體中文版",
+      "file": "chapters/034-2i.md"
+    },
+    {
+      "slug": "035-27",
+      "title": "搜尋 | Google Material Design 正體中文版",
+      "file": "chapters/035-27.md"
+    },
+    {
+      "slug": "036-2h",
+      "title": "* 滑動更新 | Google Material Design 正體中文版",
+      "file": "chapters/036-2h.md"
+    },
+    {
+      "slug": "037-2f",
+      "title": "親和性 | Google Material Design 正體中文版",
+      "file": "chapters/037-2f.md"
+    },
+    {
+      "slug": "038-2i",
+      "title": "* 雙向性 | Google Material Design 正體中文版",
+      "file": "chapters/038-2i.md"
+    },
+    {
+      "slug": "039-2i",
+      "title": "版型架構 | Google Material Design 正體中文版",
+      "file": "chapters/039-2i.md"
+    },
+    {
+      "slug": "040-2g",
+      "title": "貼紙範本 | Google Material Design 正體中文版",
+      "file": "chapters/040-2g.md"
+    },
+    {
+      "slug": "041-2d",
+      "title": "Roboto 字型 | Google Material Design 正體中文版",
+      "file": "chapters/041-2d.md"
+    },
+    {
+      "slug": "042-2g",
+      "title": "調色板 | Google Material Design 正體中文版",
+      "file": "chapters/042-2g.md"
+    },
+    {
+      "slug": "043-21",
+      "title": "* What's new | Google Material Design 正體中文版",
+      "file": "chapters/043-21.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "* 圖示 | Google Material Design 正體中文版"
+}

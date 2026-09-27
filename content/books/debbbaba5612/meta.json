@@ -1,0 +1,61 @@
+{
+  "bookId": "debbbaba5612",
+  "title": "HTTP 下午茶",
+  "url": "https://ccbikai.gitbooks.io/http-book/content/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:42.370Z",
+  "chapters": [
+    {
+      "slug": "001-1a",
+      "title": "总览 | HTTP下午茶",
+      "file": "chapters/001-1a.md"
+    },
+    {
+      "slug": "002-1t",
+      "title": "简介 | HTTP下午茶",
+      "file": "chapters/002-1t.md"
+    },
+    {
+      "slug": "003-1r",
+      "title": "背景 | HTTP下午茶",
+      "file": "chapters/003-1r.md"
+    },
+    {
+      "slug": "004-1s",
+      "title": "什么是 URL？ | HTTP下午茶",
+      "file": "chapters/004-1s.md"
+    },
+    {
+      "slug": "005-1t",
+      "title": "准备工作 | HTTP下午茶",
+      "file": "chapters/005-1t.md"
+    },
+    {
+      "slug": "006-1w",
+      "title": "发起HTTP请求 | HTTP下午茶",
+      "file": "chapters/006-1w.md"
+    },
+    {
+      "slug": "007-21",
+      "title": "处理响应 | HTTP下午茶",
+      "file": "chapters/007-21.md"
+    },
+    {
+      "slug": "008-26",
+      "title": "有状态的 web 应用 | HTTP下午茶",
+      "file": "chapters/008-26.md"
+    },
+    {
+      "slug": "009-1p",
+      "title": "安全 | HTTP下午茶",
+      "file": "chapters/009-1p.md"
+    },
+    {
+      "slug": "010-26",
+      "title": "祝贺你 | HTTP下午茶",
+      "file": "chapters/010-26.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "总览 | HTTP下午茶"
+}

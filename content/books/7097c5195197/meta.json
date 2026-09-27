@@ -2,8 +2,15 @@
   "bookId": "7097c5195197",
   "title": "嵌入式 Linux 知识库 (eLinux.org 中文版)",
   "url": "https://www.gitbook.com/book/tinylab/elinux/details",
-  "status": "failed",
-  "error": "上游标记疑似失效,未尝试抓取",
-  "fetchedAt": "2026-09-26T18:52:30.570Z",
-  "chapters": []
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:35.348Z",
+  "chapters": [
+    {
+      "slug": "001-1f",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1f.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
 }

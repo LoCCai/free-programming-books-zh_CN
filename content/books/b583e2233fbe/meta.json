@@ -1,0 +1,16 @@
+{
+  "bookId": "b583e2233fbe",
+  "title": "学习Go语言",
+  "url": "http://mikespook.com/learning-go/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:52.432Z",
+  "chapters": [
+    {
+      "slug": "001-x",
+      "title": "《学习Go语言》中文版 - Gopher beyond El[i]phants",
+      "file": "chapters/001-x.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "《学习Go语言》中文版 - Gopher beyond El[i]phants"
+}

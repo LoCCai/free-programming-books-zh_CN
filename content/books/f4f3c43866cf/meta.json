@@ -1,0 +1,46 @@
+{
+  "bookId": "f4f3c43866cf",
+  "title": "C/C++ Primer",
+  "url": "https://github.com/andycai/cprimer",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:24.979Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-00",
+      "title": "目录 Table Of Contents",
+      "file": "chapters/002-00.md"
+    },
+    {
+      "slug": "003-01",
+      "title": "Chapter 1 - const, inline，static, this",
+      "file": "chapters/003-01.md"
+    },
+    {
+      "slug": "004-02",
+      "title": "Chapter 2 - pointers, refrence",
+      "file": "chapters/004-02.md"
+    },
+    {
+      "slug": "005-03",
+      "title": "Chapter 3 - char*, char[], string",
+      "file": "chapters/005-03.md"
+    },
+    {
+      "slug": "006-04",
+      "title": "Chapter 4 - uint8\\_t, uint16\\_t, uint32\\_t, uint64\\_t",
+      "file": "chapters/006-04.md"
+    },
+    {
+      "slug": "007-05",
+      "title": "Chapter 5 - new, delete",
+      "file": "chapters/007-05.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

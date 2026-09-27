@@ -1,0 +1,261 @@
+{
+  "bookId": "58e19a11adf8",
+  "title": "svn 手册",
+  "url": "http://svnbook.red-bean.com/nightly/zh/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:09.583Z",
+  "chapters": [
+    {
+      "slug": "001-1d",
+      "title": "Subversion 版本控制 [草稿]",
+      "file": "chapters/001-1d.md"
+    },
+    {
+      "slug": "002-1k",
+      "title": "写在前面",
+      "file": "chapters/002-1k.md"
+    },
+    {
+      "slug": "003-1j",
+      "title": "前言",
+      "file": "chapters/003-1j.md"
+    },
+    {
+      "slug": "004-1o",
+      "title": "什么是 Subversion?",
+      "file": "chapters/004-1o.md"
+    },
+    {
+      "slug": "005-1s",
+      "title": "目标听众",
+      "file": "chapters/005-1s.md"
+    },
+    {
+      "slug": "006-1r",
+      "title": "如何阅读本书",
+      "file": "chapters/006-1r.md"
+    },
+    {
+      "slug": "007-1w",
+      "title": "本书组织",
+      "file": "chapters/007-1w.md"
+    },
+    {
+      "slug": "008-1o",
+      "title": "本书是免费的",
+      "file": "chapters/008-1o.md"
+    },
+    {
+      "slug": "009-1o",
+      "title": "致谢",
+      "file": "chapters/009-1o.md"
+    },
+    {
+      "slug": "010-1j",
+      "title": "部分 I. 初识 Subversion",
+      "file": "chapters/010-1j.md"
+    },
+    {
+      "slug": "011-1h",
+      "title": "第 1 章 基本概念",
+      "file": "chapters/011-1h.md"
+    },
+    {
+      "slug": "012-24",
+      "title": "版本控制基础",
+      "file": "chapters/012-24.md"
+    },
+    {
+      "slug": "013-1r",
+      "title": "Subversion 的版本控制方法",
+      "file": "chapters/013-1r.md"
+    },
+    {
+      "slug": "014-1p",
+      "title": "小结",
+      "file": "chapters/014-1p.md"
+    },
+    {
+      "slug": "015-1g",
+      "title": "第 2 章 基本用法",
+      "file": "chapters/015-1g.md"
+    },
+    {
+      "slug": "016-1l",
+      "title": "帮助!",
+      "file": "chapters/016-1l.md"
+    },
+    {
+      "slug": "017-1q",
+      "title": "往仓库中添加数据",
+      "file": "chapters/017-1q.md"
+    },
+    {
+      "slug": "018-1o",
+      "title": "创建工作副本",
+      "file": "chapters/018-1o.md"
+    },
+    {
+      "slug": "019-1m",
+      "title": "基本工作周期",
+      "file": "chapters/019-1m.md"
+    },
+    {
+      "slug": "020-1o",
+      "title": "检查历史",
+      "file": "chapters/020-1o.md"
+    },
+    {
+      "slug": "021-1o",
+      "title": "有时候你需要的只是清理一下",
+      "file": "chapters/021-1o.md"
+    },
+    {
+      "slug": "022-1u",
+      "title": "处理目录冲突",
+      "file": "chapters/022-1u.md"
+    },
+    {
+      "slug": "023-1o",
+      "title": "小结",
+      "file": "chapters/023-1o.md"
+    },
+    {
+      "slug": "024-1k",
+      "title": "第 3 章 高级主题",
+      "file": "chapters/024-1k.md"
+    },
+    {
+      "slug": "025-1w",
+      "title": "版本号指示器",
+      "file": "chapters/025-1w.md"
+    },
+    {
+      "slug": "026-1s",
+      "title": "限定版本号与实施版本号",
+      "file": "chapters/026-1s.md"
+    },
+    {
+      "slug": "027-1q",
+      "title": "属性",
+      "file": "chapters/027-1q.md"
+    },
+    {
+      "slug": "028-27",
+      "title": "文件的可移植性",
+      "file": "chapters/028-27.md"
+    },
+    {
+      "slug": "029-25",
+      "title": "忽略未被版本控制的项",
+      "file": "chapters/029-25.md"
+    },
+    {
+      "slug": "030-27",
+      "title": "关键字替换",
+      "file": "chapters/030-27.md"
+    },
+    {
+      "slug": "031-1v",
+      "title": "稀疏目录",
+      "file": "chapters/031-1v.md"
+    },
+    {
+      "slug": "032-1s",
+      "title": "锁",
+      "file": "chapters/032-1s.md"
+    },
+    {
+      "slug": "033-1u",
+      "title": "外部定义",
+      "file": "chapters/033-1u.md"
+    },
+    {
+      "slug": "034-1w",
+      "title": "变更列表",
+      "file": "chapters/034-1w.md"
+    },
+    {
+      "slug": "035-1x",
+      "title": "网络模型",
+      "file": "chapters/035-1x.md"
+    },
+    {
+      "slug": "036-25",
+      "title": "在没有工作副本的情况下工作",
+      "file": "chapters/036-25.md"
+    },
+    {
+      "slug": "037-1s",
+      "title": "小结",
+      "file": "chapters/037-1s.md"
+    },
+    {
+      "slug": "038-1n",
+      "title": "第 4 章 分支与合并",
+      "file": "chapters/038-1n.md"
+    },
+    {
+      "slug": "039-1u",
+      "title": "什么是分支",
+      "file": "chapters/039-1u.md"
+    },
+    {
+      "slug": "040-1t",
+      "title": "使用分支",
+      "file": "chapters/040-1t.md"
+    },
+    {
+      "slug": "041-20",
+      "title": "基本合并",
+      "file": "chapters/041-20.md"
+    },
+    {
+      "slug": "042-1w",
+      "title": "高级合并",
+      "file": "chapters/042-1w.md"
+    },
+    {
+      "slug": "043-1w",
+      "title": "遍历分支",
+      "file": "chapters/043-1w.md"
+    },
+    {
+      "slug": "044-1s",
+      "title": "标签",
+      "file": "chapters/044-1s.md"
+    },
+    {
+      "slug": "045-1t",
+      "title": "分支维护",
+      "file": "chapters/045-1t.md"
+    },
+    {
+      "slug": "046-22",
+      "title": "常见的分支模式",
+      "file": "chapters/046-22.md"
+    },
+    {
+      "slug": "047-1t",
+      "title": "供方分支",
+      "file": "chapters/047-1t.md"
+    },
+    {
+      "slug": "048-1s",
+      "title": "分支, 还是不分支?",
+      "file": "chapters/048-1s.md"
+    },
+    {
+      "slug": "049-1v",
+      "title": "小结",
+      "file": "chapters/049-1v.md"
+    },
+    {
+      "slug": "050-1m",
+      "title": "第 5 章 仓库管理",
+      "file": "chapters/050-1m.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Subversion 版本控制 [草稿]"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "8efc841ecb21",
+  "title": "express.js 中文文档",
+  "url": "http://expressjs.jser.us/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:39.642Z",
+  "chapters": [
+    {
+      "slug": "001-p",
+      "title": "Express - 中文文档( node.js Web应用框架 )",
+      "file": "chapters/001-p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Express - 中文文档( node.js Web应用框架 )"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "c2537f120dd7",
+  "title": "Scala课堂",
+  "url": "http://twitter.github.io/scala_school/zh_cn/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:21.341Z",
+  "chapters": [
+    {
+      "slug": "001-1i",
+      "title": "Scala 课堂",
+      "file": "chapters/001-1i.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Scala 课堂"
+}

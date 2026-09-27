@@ -1,0 +1,16 @@
+{
+  "bookId": "888fed689fa5",
+  "title": "MDN CSS 中文文档",
+  "url": "https://developer.mozilla.org/zh-CN/docs/Web/CSS",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:46.505Z",
+  "chapters": [
+    {
+      "slug": "001-1c",
+      "title": "CSS：层叠样式表 | MDN",
+      "file": "chapters/001-1c.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "CSS：层叠样式表 | MDN"
+}

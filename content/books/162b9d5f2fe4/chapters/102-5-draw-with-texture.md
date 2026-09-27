@@ -1,0 +1,10 @@
+# 5. 绘制贴图
+
+没有颜色的世界是枯燥的，想用心去欣赏，却没有太多细节。
+就例如下面的模型，看起来是一个鱼缸，仅此而已。
+
+![](https://raw.githubusercontent.com/ThisisGame/cpp-game-engine-book/HEAD/imgs/texture_make_beautiful/texture_make_beautiful/blender_render_without_color.png)
+
+给模型添加上贴图，鱼缸就有了生机。
+
+![](https://raw.githubusercontent.com/ThisisGame/cpp-game-engine-book/HEAD/imgs/texture_make_beautiful/texture_make_beautiful/blender_render_with_texture.png)

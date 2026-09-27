@@ -1,0 +1,16 @@
+{
+  "bookId": "cd75d7508def",
+  "title": "On Java 8 中文版",
+  "url": "https://github.com/LingCoder/OnJava8",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:30.644Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "《On Java 8》中文版",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

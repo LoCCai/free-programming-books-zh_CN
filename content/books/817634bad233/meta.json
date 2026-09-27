@@ -1,0 +1,261 @@
+{
+  "bookId": "817634bad233",
+  "title": "You-Dont-Know-JS",
+  "url": "https://github.com/getify/You-Dont-Know-JS",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:36.858Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "You Don't Know JS Yet: ES.Next & Beyond - 2nd Edition",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "You Don't Know JS Yet (book series) - 2nd Edition",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "You Don't Know JS Yet: Async & Performance - 2nd Edition",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-ch1",
+      "title": "You Don't Know JS Yet: ES.Next & Beyond - 2nd Edition",
+      "file": "chapters/008-ch1.md"
+    },
+    {
+      "slug": "009-foreword",
+      "title": "You Don't Know JS Yet: ES.Next & Beyond - 2nd Edition",
+      "file": "chapters/009-foreword.md"
+    },
+    {
+      "slug": "010-toc",
+      "title": "You Don't Know JS Yet: ES.Next & Beyond - 2nd Edition",
+      "file": "chapters/010-toc.md"
+    },
+    {
+      "slug": "011-apa",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/011-apa.md"
+    },
+    {
+      "slug": "012-apb",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/012-apb.md"
+    },
+    {
+      "slug": "013-ch1",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/013-ch1.md"
+    },
+    {
+      "slug": "014-ch2",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/014-ch2.md"
+    },
+    {
+      "slug": "015-ch3",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/015-ch3.md"
+    },
+    {
+      "slug": "016-ch4",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/016-ch4.md"
+    },
+    {
+      "slug": "017-foreword",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/017-foreword.md"
+    },
+    {
+      "slug": "018-toc",
+      "title": "You Don't Know JS Yet: Get Started - 2nd Edition",
+      "file": "chapters/018-toc.md"
+    },
+    {
+      "slug": "019-ch1",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/019-ch1.md"
+    },
+    {
+      "slug": "020-ch2",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/020-ch2.md"
+    },
+    {
+      "slug": "021-ch3",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/021-ch3.md"
+    },
+    {
+      "slug": "022-ch4",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/022-ch4.md"
+    },
+    {
+      "slug": "023-ch5",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/023-ch5.md"
+    },
+    {
+      "slug": "024-foreword",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/024-foreword.md"
+    },
+    {
+      "slug": "025-thanks",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/025-thanks.md"
+    },
+    {
+      "slug": "026-toc",
+      "title": "You Don't Know JS Yet: Objects & Classes - 2nd Edition",
+      "file": "chapters/026-toc.md"
+    },
+    {
+      "slug": "027-preface",
+      "title": "You Don't Know JS Yet - 2nd Edition",
+      "file": "chapters/027-preface.md"
+    },
+    {
+      "slug": "028-pull-request-template",
+      "title": "PULL_REQUEST_TEMPLATE",
+      "file": "chapters/028-pull-request-template.md"
+    },
+    {
+      "slug": "029-apa",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/029-apa.md"
+    },
+    {
+      "slug": "030-apb",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/030-apb.md"
+    },
+    {
+      "slug": "031-ch1",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/031-ch1.md"
+    },
+    {
+      "slug": "032-ch2",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/032-ch2.md"
+    },
+    {
+      "slug": "033-ch3",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/033-ch3.md"
+    },
+    {
+      "slug": "034-ch4",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/034-ch4.md"
+    },
+    {
+      "slug": "035-ch5",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/035-ch5.md"
+    },
+    {
+      "slug": "036-ch6",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/036-ch6.md"
+    },
+    {
+      "slug": "037-ch7",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/037-ch7.md"
+    },
+    {
+      "slug": "038-ch8",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/038-ch8.md"
+    },
+    {
+      "slug": "039-foreword",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/039-foreword.md"
+    },
+    {
+      "slug": "040-toc",
+      "title": "You Don't Know JS Yet: Scope & Closures - 2nd Edition",
+      "file": "chapters/040-toc.md"
+    },
+    {
+      "slug": "041-ch1",
+      "title": "You Don't Know JS Yet: Sync & Async - 2nd Edition",
+      "file": "chapters/041-ch1.md"
+    },
+    {
+      "slug": "042-foreword",
+      "title": "You Don't Know JS Yet: Async & Performance - 2nd Edition",
+      "file": "chapters/042-foreword.md"
+    },
+    {
+      "slug": "043-toc",
+      "title": "You Don't Know JS Yet: Sync & Async - 2nd Edition",
+      "file": "chapters/043-toc.md"
+    },
+    {
+      "slug": "044-ch1",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/044-ch1.md"
+    },
+    {
+      "slug": "045-ch2",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/045-ch2.md"
+    },
+    {
+      "slug": "046-ch3",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/046-ch3.md"
+    },
+    {
+      "slug": "047-ch4",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/047-ch4.md"
+    },
+    {
+      "slug": "048-foreword",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/048-foreword.md"
+    },
+    {
+      "slug": "049-thanks",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/049-thanks.md"
+    },
+    {
+      "slug": "050-toc",
+      "title": "You Don't Know JS Yet: Types & Grammar - 2nd Edition",
+      "file": "chapters/050-toc.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

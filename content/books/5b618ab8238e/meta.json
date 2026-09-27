@@ -1,0 +1,16 @@
+{
+  "bookId": "5b618ab8238e",
+  "title": "Node debug 三法三例",
+  "url": "http://i5ting.github.io/node-debug-tutorial/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:41.395Z",
+  "chapters": [
+    {
+      "slug": "001-18",
+      "title": "README",
+      "file": "chapters/001-18.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "README"
+}

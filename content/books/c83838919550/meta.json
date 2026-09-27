@@ -1,0 +1,16 @@
+{
+  "bookId": "c83838919550",
+  "title": "AsciiDoc简明指南",
+  "url": "https://github.com/stanzgy/wiki/blob/master/markup/asciidoc-guide.asciidoc",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:36.328Z",
+  "chapters": [
+    {
+      "slug": "001-asciidoc-guide-asciidoc",
+      "title": "asciidoc-guide",
+      "file": "chapters/001-asciidoc-guide-asciidoc.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

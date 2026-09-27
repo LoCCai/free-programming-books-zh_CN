@@ -1,0 +1,9 @@
+{
+  "bookId": "0de3e7a599da",
+  "title": "SICP 解题集",
+  "url": "https://sicp.readthedocs.io/en/latest/",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:26:27.861Z",
+  "chapters": [],
+  "error": "HTTP 429"
+}

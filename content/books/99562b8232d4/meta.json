@@ -1,0 +1,111 @@
+{
+  "bookId": "99562b8232d4",
+  "title": "Backbone.js入门教程第二版",
+  "url": "https://github.com/the5fire/backbonejs-learning-note",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:39.433Z",
+  "chapters": [
+    {
+      "slug": "001-00-preface",
+      "title": "00-preface",
+      "file": "chapters/001-00-preface.md"
+    },
+    {
+      "slug": "002-01-hello-backbonejs",
+      "title": "01-hello-backbonejs",
+      "file": "chapters/002-01-hello-backbonejs.md"
+    },
+    {
+      "slug": "003-02-backbonejs-model",
+      "title": "02-backbonejs-model",
+      "file": "chapters/003-02-backbonejs-model.md"
+    },
+    {
+      "slug": "004-03-backbonejs-collection",
+      "title": "03-backbonejs-collection",
+      "file": "chapters/004-03-backbonejs-collection.md"
+    },
+    {
+      "slug": "005-04-backbonejs-router",
+      "title": "04-backbonejs-router",
+      "file": "chapters/005-04-backbonejs-router.md"
+    },
+    {
+      "slug": "006-05-backbonejs-view",
+      "title": "05-backbonejs-view",
+      "file": "chapters/006-05-backbonejs-view.md"
+    },
+    {
+      "slug": "007-06-backbonejs-todos-1",
+      "title": "06-backbonejs-todos-1",
+      "file": "chapters/007-06-backbonejs-todos-1.md"
+    },
+    {
+      "slug": "008-07-backbonejs-todos-2",
+      "title": "07-backbonejs-todos-2",
+      "file": "chapters/008-07-backbonejs-todos-2.md"
+    },
+    {
+      "slug": "009-08-backbonejs-todos-3",
+      "title": "08-backbonejs-todos-3",
+      "file": "chapters/009-08-backbonejs-todos-3.md"
+    },
+    {
+      "slug": "010-09-intro-webpy",
+      "title": "09-intro-webpy",
+      "file": "chapters/010-09-intro-webpy.md"
+    },
+    {
+      "slug": "011-10-expand-todos-with-server",
+      "title": "10-expand-todos-with-server",
+      "file": "chapters/011-10-expand-todos-with-server.md"
+    },
+    {
+      "slug": "012-11-web-chatroom-base-on-backbonejs-1",
+      "title": "11-web-chatroom-base-on-backbonejs-1",
+      "file": "chapters/012-11-web-chatroom-base-on-backbonejs-1.md"
+    },
+    {
+      "slug": "013-12-web-chatroom-base-on-backbonejs-2",
+      "title": "12-web-chatroom-base-on-backbonejs-2",
+      "file": "chapters/013-12-web-chatroom-base-on-backbonejs-2.md"
+    },
+    {
+      "slug": "014-13-web-chatroom-base-on-backbonejs-3",
+      "title": "13-web-chatroom-base-on-backbonejs-3",
+      "file": "chapters/014-13-web-chatroom-base-on-backbonejs-3.md"
+    },
+    {
+      "slug": "015-14-web-chatroom-base-on-backbonejs-4",
+      "title": "14-web-chatroom-base-on-backbonejs-4",
+      "file": "chapters/015-14-web-chatroom-base-on-backbonejs-4.md"
+    },
+    {
+      "slug": "016-15-import-requirejs",
+      "title": "15-import-requirejs",
+      "file": "chapters/016-15-import-requirejs.md"
+    },
+    {
+      "slug": "017-16-exception-in-backbone",
+      "title": "16-exception-in-backbone",
+      "file": "chapters/017-16-exception-in-backbone.md"
+    },
+    {
+      "slug": "018-17-customize-backbonejs-sync",
+      "title": "17-customize-backbonejs-sync",
+      "file": "chapters/018-17-customize-backbonejs-sync.md"
+    },
+    {
+      "slug": "019-18-backbone-summary",
+      "title": "18-backbone-summary",
+      "file": "chapters/019-18-backbone-summary.md"
+    },
+    {
+      "slug": "020-19-backbone-js-resource",
+      "title": "19-backbone-js-resource",
+      "file": "chapters/020-19-backbone-js-resource.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

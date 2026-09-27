@@ -1,0 +1,30 @@
+{
+  "bookId": "2e0b9920dfce-2",
+  "title": "Linux工具快速教程",
+  "url": "https://github.com/me115/linuxtools_rst",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:25.028Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "linux_tools",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-020-file-manage",
+      "title": "文件及目录管理",
+      "file": "chapters/002-020-file-manage.md"
+    },
+    {
+      "slug": "003-crontab",
+      "title": "(put your own initials here)echo the date to the console every",
+      "file": "chapters/003-crontab.md"
+    },
+    {
+      "slug": "004-top",
+      "title": "top",
+      "file": "chapters/004-top.md"
+    }
+  ],
+  "sourceType": "github"
+}

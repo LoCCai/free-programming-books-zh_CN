@@ -1,0 +1,26 @@
+{
+  "bookId": "5849579e76d8",
+  "title": "TextGrocery 中文 API",
+  "url": "https://textgrocery.readthedocs.io/zh/latest/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:49.725Z",
+  "chapters": [
+    {
+      "slug": "001-1j",
+      "title": "欢迎使用TextGrocery — TextGrocery 0.1.3 文档",
+      "file": "chapters/001-1j.md"
+    },
+    {
+      "slug": "002-1p",
+      "title": "快速开始 — TextGrocery 0.1.3 文档",
+      "file": "chapters/002-1p.md"
+    },
+    {
+      "slug": "003-1h",
+      "title": "API文档 — TextGrocery 0.1.3 文档",
+      "file": "chapters/003-1h.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "欢迎使用TextGrocery — TextGrocery 0.1.3 文档"
+}

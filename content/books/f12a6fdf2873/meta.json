@@ -1,0 +1,16 @@
+{
+  "bookId": "f12a6fdf2873",
+  "title": "21分钟MySQL入门教程",
+  "url": "http://www.cnblogs.com/mr-wid/archive/2013/05/09/3068229.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:03.466Z",
+  "chapters": [
+    {
+      "slug": "001-1p",
+      "title": "21分钟 MySQL 入门教程 - wid",
+      "file": "chapters/001-1p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "21分钟 MySQL 入门教程 - wid"
+}

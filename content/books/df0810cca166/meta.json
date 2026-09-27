@@ -1,0 +1,15 @@
+{
+  "bookId": "df0810cca166",
+  "title": "用jersey构建REST服务",
+  "url": "https://github.com/waylau/RestDemo",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:23.761Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

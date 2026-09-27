@@ -1,0 +1,20 @@
+{
+  "bookId": "2689b9413f08",
+  "title": "PHP 最佳实践",
+  "url": "https://github.com/justjavac/PHP-Best-Practices-zh_CN",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:04.162Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-php-best-practices",
+      "title": "php-best-practices",
+      "file": "chapters/002-php-best-practices.md"
+    }
+  ],
+  "sourceType": "github"
+}

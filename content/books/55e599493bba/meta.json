@@ -1,0 +1,16 @@
+{
+  "bookId": "55e599493bba",
+  "title": "Python 绘图库 matplotlib 官方指南中文翻译",
+  "url": "http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:30.606Z",
+  "chapters": [
+    {
+      "slug": "001-1k",
+      "title": "liam0205.me",
+      "file": "chapters/001-1k.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "liam0205.me"
+}

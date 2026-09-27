@@ -1,0 +1,146 @@
+{
+  "bookId": "d499fca9174d",
+  "title": "PHP 开发者实践",
+  "url": "https://ryancao.gitbooks.io/php-developer-prepares/content/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:20:49.792Z",
+  "chapters": [
+    {
+      "slug": "001-1n",
+      "title": "Introduction · PHP 开发者实践",
+      "file": "chapters/001-1n.md"
+    },
+    {
+      "slug": "002-1v",
+      "title": "前言 · PHP 开发者实践",
+      "file": "chapters/002-1v.md"
+    },
+    {
+      "slug": "003-23",
+      "title": "源起 · PHP 开发者实践",
+      "file": "chapters/003-23.md"
+    },
+    {
+      "slug": "004-2d",
+      "title": "科学上网 · PHP 开发者实践",
+      "file": "chapters/004-2d.md"
+    },
+    {
+      "slug": "005-1v",
+      "title": "LA/NMP 介绍 · PHP 开发者实践",
+      "file": "chapters/005-1v.md"
+    },
+    {
+      "slug": "006-2g",
+      "title": "Linux 操作系统 · PHP 开发者实践",
+      "file": "chapters/006-2g.md"
+    },
+    {
+      "slug": "007-29",
+      "title": "Web 服务器 · PHP 开发者实践",
+      "file": "chapters/007-29.md"
+    },
+    {
+      "slug": "008-28",
+      "title": "数据库服务器 · PHP 开发者实践",
+      "file": "chapters/008-28.md"
+    },
+    {
+      "slug": "009-23",
+      "title": "PHP 语言 · PHP 开发者实践",
+      "file": "chapters/009-23.md"
+    },
+    {
+      "slug": "010-2k",
+      "title": "网站系统架构 · PHP 开发者实践",
+      "file": "chapters/010-2k.md"
+    },
+    {
+      "slug": "011-2d",
+      "title": "一致性开发环境 · PHP 开发者实践",
+      "file": "chapters/011-2d.md"
+    },
+    {
+      "slug": "012-2w",
+      "title": "虚拟化技术 · PHP 开发者实践",
+      "file": "chapters/012-2w.md"
+    },
+    {
+      "slug": "013-2u",
+      "title": "集成环境安装包 · PHP 开发者实践",
+      "file": "chapters/013-2u.md"
+    },
+    {
+      "slug": "014-2p",
+      "title": "编辑器 · PHP 开发者实践",
+      "file": "chapters/014-2p.md"
+    },
+    {
+      "slug": "015-21",
+      "title": "设计 & 开发 · PHP 开发者实践",
+      "file": "chapters/015-21.md"
+    },
+    {
+      "slug": "016-2b",
+      "title": "开发规范 · PHP 开发者实践",
+      "file": "chapters/016-2b.md"
+    },
+    {
+      "slug": "017-2f",
+      "title": "诊断与调优 · PHP 开发者实践",
+      "file": "chapters/017-2f.md"
+    },
+    {
+      "slug": "018-2e",
+      "title": "安全 · PHP 开发者实践",
+      "file": "chapters/018-2e.md"
+    },
+    {
+      "slug": "019-2j",
+      "title": "文档 · PHP 开发者实践",
+      "file": "chapters/019-2j.md"
+    },
+    {
+      "slug": "020-29",
+      "title": "过程 & 实践 · PHP 开发者实践",
+      "file": "chapters/020-29.md"
+    },
+    {
+      "slug": "021-2u",
+      "title": "开发过程 · PHP 开发者实践",
+      "file": "chapters/021-2u.md"
+    },
+    {
+      "slug": "022-2t",
+      "title": "版本管理 · PHP 开发者实践",
+      "file": "chapters/022-2t.md"
+    },
+    {
+      "slug": "023-2g",
+      "title": "持续集成 · PHP 开发者实践",
+      "file": "chapters/023-2g.md"
+    },
+    {
+      "slug": "024-2o",
+      "title": "上线部署 · PHP 开发者实践",
+      "file": "chapters/024-2o.md"
+    },
+    {
+      "slug": "025-23",
+      "title": "PHP Internals · PHP 开发者实践",
+      "file": "chapters/025-23.md"
+    },
+    {
+      "slug": "026-2l",
+      "title": "PHP 扩展开发 · PHP 开发者实践",
+      "file": "chapters/026-2l.md"
+    },
+    {
+      "slug": "027-2e",
+      "title": "PHP 虚拟机 · PHP 开发者实践",
+      "file": "chapters/027-2e.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction · PHP 开发者实践"
+}

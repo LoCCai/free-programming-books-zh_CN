@@ -1,0 +1,16 @@
+{
+  "bookId": "dd36cd59cd96",
+  "title": "Fortran77和90/95编程入门",
+  "url": "http://micro.ustc.edu.cn/Fortran/ZJDing/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:47.517Z",
+  "chapters": [
+    {
+      "slug": "001-14",
+      "title": "FORTRAN",
+      "file": "chapters/001-14.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "FORTRAN"
+}

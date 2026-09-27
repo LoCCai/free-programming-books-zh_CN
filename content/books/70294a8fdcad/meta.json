@@ -1,0 +1,261 @@
+{
+  "bookId": "70294a8fdcad",
+  "title": "Linux C编程一站式学习",
+  "url": "http://akaedu.github.io/book/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:24.285Z",
+  "chapters": [
+    {
+      "slug": "001-t",
+      "title": "Linux C编程一站式学习",
+      "file": "chapters/001-t.md"
+    },
+    {
+      "slug": "002-12",
+      "title": "历史",
+      "file": "chapters/002-12.md"
+    },
+    {
+      "slug": "003-12",
+      "title": "前言",
+      "file": "chapters/003-12.md"
+    },
+    {
+      "slug": "004-12",
+      "title": "部分 I. C语言入门",
+      "file": "chapters/004-12.md"
+    },
+    {
+      "slug": "005-12",
+      "title": "第 1 章 程序的基本概念",
+      "file": "chapters/005-12.md"
+    },
+    {
+      "slug": "006-1b",
+      "title": "1. 程序和编程语言",
+      "file": "chapters/006-1b.md"
+    },
+    {
+      "slug": "007-1h",
+      "title": "2. 自然语言和形式语言",
+      "file": "chapters/007-1h.md"
+    },
+    {
+      "slug": "008-15",
+      "title": "3. 程序的调试",
+      "file": "chapters/008-15.md"
+    },
+    {
+      "slug": "009-1e",
+      "title": "4. 第一个程序",
+      "file": "chapters/009-1e.md"
+    },
+    {
+      "slug": "010-12",
+      "title": "第 2 章 常量、变量和表达式",
+      "file": "chapters/010-12.md"
+    },
+    {
+      "slug": "011-15",
+      "title": "1. 继续Hello World",
+      "file": "chapters/011-15.md"
+    },
+    {
+      "slug": "012-15",
+      "title": "2. 常量",
+      "file": "chapters/012-15.md"
+    },
+    {
+      "slug": "013-1b",
+      "title": "3. 变量",
+      "file": "chapters/013-1b.md"
+    },
+    {
+      "slug": "014-15",
+      "title": "4. 赋值",
+      "file": "chapters/014-15.md"
+    },
+    {
+      "slug": "015-1d",
+      "title": "5. 表达式",
+      "file": "chapters/015-1d.md"
+    },
+    {
+      "slug": "016-15",
+      "title": "6. 字符类型与字符编码",
+      "file": "chapters/016-15.md"
+    },
+    {
+      "slug": "017-12",
+      "title": "第 3 章 简单函数",
+      "file": "chapters/017-12.md"
+    },
+    {
+      "slug": "018-15",
+      "title": "1. 数学函数",
+      "file": "chapters/018-15.md"
+    },
+    {
+      "slug": "019-15",
+      "title": "2. 自定义函数",
+      "file": "chapters/019-15.md"
+    },
+    {
+      "slug": "020-15",
+      "title": "3. 形参和实参",
+      "file": "chapters/020-15.md"
+    },
+    {
+      "slug": "021-15",
+      "title": "4. 全局变量、局部变量和作用域",
+      "file": "chapters/021-15.md"
+    },
+    {
+      "slug": "022-12",
+      "title": "第 4 章 分支语句",
+      "file": "chapters/022-12.md"
+    },
+    {
+      "slug": "023-15",
+      "title": "1. if语句",
+      "file": "chapters/023-15.md"
+    },
+    {
+      "slug": "024-15",
+      "title": "2. if/else语句",
+      "file": "chapters/024-15.md"
+    },
+    {
+      "slug": "025-15",
+      "title": "3. 布尔代数",
+      "file": "chapters/025-15.md"
+    },
+    {
+      "slug": "026-15",
+      "title": "4. switch语句",
+      "file": "chapters/026-15.md"
+    },
+    {
+      "slug": "027-12",
+      "title": "第 5 章 深入理解函数",
+      "file": "chapters/027-12.md"
+    },
+    {
+      "slug": "028-15",
+      "title": "1. return语句",
+      "file": "chapters/028-15.md"
+    },
+    {
+      "slug": "029-15",
+      "title": "2. 增量式开发",
+      "file": "chapters/029-15.md"
+    },
+    {
+      "slug": "030-15",
+      "title": "3. 递归",
+      "file": "chapters/030-15.md"
+    },
+    {
+      "slug": "031-12",
+      "title": "第 6 章 循环语句",
+      "file": "chapters/031-12.md"
+    },
+    {
+      "slug": "032-15",
+      "title": "1. while语句",
+      "file": "chapters/032-15.md"
+    },
+    {
+      "slug": "033-15",
+      "title": "2. do/while语句",
+      "file": "chapters/033-15.md"
+    },
+    {
+      "slug": "034-15",
+      "title": "3. for语句",
+      "file": "chapters/034-15.md"
+    },
+    {
+      "slug": "035-15",
+      "title": "4. break和continue语句",
+      "file": "chapters/035-15.md"
+    },
+    {
+      "slug": "036-15",
+      "title": "5. 嵌套循环",
+      "file": "chapters/036-15.md"
+    },
+    {
+      "slug": "037-15",
+      "title": "6. goto语句和标号",
+      "file": "chapters/037-15.md"
+    },
+    {
+      "slug": "038-12",
+      "title": "第 7 章 结构体",
+      "file": "chapters/038-12.md"
+    },
+    {
+      "slug": "039-15",
+      "title": "1. 复合类型与结构体",
+      "file": "chapters/039-15.md"
+    },
+    {
+      "slug": "040-15",
+      "title": "2. 数据抽象",
+      "file": "chapters/040-15.md"
+    },
+    {
+      "slug": "041-15",
+      "title": "3. 数据类型标志",
+      "file": "chapters/041-15.md"
+    },
+    {
+      "slug": "042-15",
+      "title": "4. 嵌套结构体",
+      "file": "chapters/042-15.md"
+    },
+    {
+      "slug": "043-12",
+      "title": "第 8 章 数组",
+      "file": "chapters/043-12.md"
+    },
+    {
+      "slug": "044-15",
+      "title": "1. 数组的基本概念",
+      "file": "chapters/044-15.md"
+    },
+    {
+      "slug": "045-15",
+      "title": "2. 数组应用实例：统计随机数",
+      "file": "chapters/045-15.md"
+    },
+    {
+      "slug": "046-15",
+      "title": "3. 数组应用实例：直方图",
+      "file": "chapters/046-15.md"
+    },
+    {
+      "slug": "047-15",
+      "title": "4. 字符串",
+      "file": "chapters/047-15.md"
+    },
+    {
+      "slug": "048-15",
+      "title": "5. 多维数组",
+      "file": "chapters/048-15.md"
+    },
+    {
+      "slug": "049-12",
+      "title": "第 9 章 编码风格",
+      "file": "chapters/049-12.md"
+    },
+    {
+      "slug": "050-15",
+      "title": "1. 缩进和空白",
+      "file": "chapters/050-15.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Linux C编程一站式学习"
+}

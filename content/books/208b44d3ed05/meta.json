@@ -1,0 +1,16 @@
+{
+  "bookId": "208b44d3ed05",
+  "title": "Rails 5 开发进阶(Beta)",
+  "url": "https://www.gitbook.com/book/kelby/rails-beginner-s-guide/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:16.453Z",
+  "chapters": [
+    {
+      "slug": "001-1t",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1t.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

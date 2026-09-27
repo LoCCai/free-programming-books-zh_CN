@@ -1,0 +1,15 @@
+{
+  "bookId": "5be591676d95",
+  "title": "构建自己的AngularJS",
+  "url": "https://github.com/xufei/Make-Your-Own-AngularJS/blob/master/01.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:46.486Z",
+  "chapters": [
+    {
+      "slug": "001-01",
+      "title": "01",
+      "file": "chapters/001-01.md"
+    }
+  ],
+  "sourceType": "github"
+}

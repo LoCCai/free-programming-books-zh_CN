@@ -1,0 +1,16 @@
+{
+  "bookId": "7f6a97bb5db1",
+  "title": "You Don't Need jQuery",
+  "url": "https://github.com/oneuijs/You-Dont-Need-jQuery/blob/master/README.zh-CN.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:38.390Z",
+  "chapters": [
+    {
+      "slug": "001-readme-zh-cn",
+      "title": "License",
+      "file": "chapters/001-readme-zh-cn.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

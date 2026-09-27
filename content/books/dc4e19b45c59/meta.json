@@ -1,0 +1,16 @@
+{
+  "bookId": "dc4e19b45c59",
+  "title": "Lua 5.1 参考手册 中文翻译",
+  "url": "http://www.codingnow.com/2000/download/lua_manual.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:59.229Z",
+  "chapters": [
+    {
+      "slug": "001-1i",
+      "title": "Lua 5.1 �ο��ֲ�",
+      "file": "chapters/001-1i.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Lua 5.1 �ο��ֲ�"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "2ffc9d8904ac",
+  "title": "一站式学习Wireshark",
+  "url": "https://community.emc.com/thread/194901",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:39.905Z",
+  "chapters": [
+    {
+      "slug": "001-13",
+      "title": "支持主页 | Dell 中国",
+      "file": "chapters/001-13.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "支持主页 | Dell 中国"
+}

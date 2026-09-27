@@ -1,0 +1,21 @@
+{
+  "bookId": "afc21c2476ab",
+  "title": "带有详细注释的 Redis 3.0 代码",
+  "url": "https://github.com/huangz1990/redis-3.0-annotated",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:53.786Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "HIREDIS",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Linenoise",
+      "file": "chapters/002-readme.md"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "sourceType": "github"
+}

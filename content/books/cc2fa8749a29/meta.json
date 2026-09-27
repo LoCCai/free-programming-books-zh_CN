@@ -1,0 +1,16 @@
+{
+  "bookId": "cc2fa8749a29",
+  "title": "koa 中文文档",
+  "url": "https://github.com/guo-yu/koa-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:39.725Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

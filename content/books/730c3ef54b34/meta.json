@@ -1,0 +1,16 @@
+{
+  "bookId": "730c3ef54b34",
+  "title": "[笔记]前端工程师的入门与进阶",
+  "url": "https://shenbao.github.io/2017/04/22/justjavac-live/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:30.684Z",
+  "chapters": [
+    {
+      "slug": "001-1g",
+      "title": "知乎live — justjavac《前端工程师的入门与进阶》 - 小宝的博客",
+      "file": "chapters/001-1g.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "知乎live — justjavac《前端工程师的入门与进阶》 - 小宝的博客"
+}

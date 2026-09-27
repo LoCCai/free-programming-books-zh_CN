@@ -1,0 +1,15 @@
+{
+  "bookId": "bb24be305d9d",
+  "title": "swoole文档及入门教程",
+  "url": "https://github.com/LinkedDestiny/swoole-doc",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:13.958Z",
+  "chapters": [
+    {
+      "slug": "001-01-环境搭建及扩展安装",
+      "title": "**1.环境搭建及扩展安装**",
+      "file": "chapters/001-01-环境搭建及扩展安装.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,130 @@
+{
+  "bookId": "0fb0b83be795",
+  "title": "GitHub漫游指南",
+  "url": "https://github.com/phodal/github-roam",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:43.693Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "GitHub 漫游指南",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/003-sidebar.md"
+    },
+    {
+      "slug": "004-01-introduction",
+      "title": "介绍",
+      "file": "chapters/004-01-introduction.md"
+    },
+    {
+      "slug": "005-01-start-project",
+      "title": "01-start-project",
+      "file": "chapters/005-01-start-project.md"
+    },
+    {
+      "slug": "006-02-github-fundamentals",
+      "title": "Git 基本知识与 GitHub 使用",
+      "file": "chapters/006-02-github-fundamentals.md"
+    },
+    {
+      "slug": "007-03-build-github-project",
+      "title": "构建 GitHub 项目",
+      "file": "chapters/007-03-build-github-project.md"
+    },
+    {
+      "slug": "008-04-commit-message",
+      "title": "04-commit-message",
+      "file": "chapters/008-04-commit-message.md"
+    },
+    {
+      "slug": "009-05-create-project-documents",
+      "title": "创建项目文档",
+      "file": "chapters/009-05-create-project-documents.md"
+    },
+    {
+      "slug": "010-06-refactor-project",
+      "title": "改善 GitHub 项目代码质量：重构",
+      "file": "chapters/010-06-refactor-project.md"
+    },
+    {
+      "slug": "011-07-tdd-with-autotest",
+      "title": "改善 GitHub 项目代码质量：测试",
+      "file": "chapters/011-07-tdd-with-autotest.md"
+    },
+    {
+      "slug": "012-08-github-marketing",
+      "title": "08-github-marketing",
+      "file": "chapters/012-08-github-marketing.md"
+    },
+    {
+      "slug": "013-09-maintain-project",
+      "title": "09-maintain-project",
+      "file": "chapters/013-09-maintain-project.md"
+    },
+    {
+      "slug": "014-10-git-tools",
+      "title": "10-git-tools",
+      "file": "chapters/014-10-git-tools.md"
+    },
+    {
+      "slug": "015-11-analytics",
+      "title": "GitHub 用户分析",
+      "file": "chapters/015-11-analytics.md"
+    },
+    {
+      "slug": "016-12-find-github-project",
+      "title": "12-find-github-project",
+      "file": "chapters/016-12-find-github-project.md"
+    },
+    {
+      "slug": "017-13-read-code",
+      "title": "13-read-code",
+      "file": "chapters/017-13-read-code.md"
+    },
+    {
+      "slug": "018-14-streak-your-github",
+      "title": "14-streak-your-github",
+      "file": "chapters/018-14-streak-your-github.md"
+    },
+    {
+      "slug": "019-15-milestone",
+      "title": "15-milestone",
+      "file": "chapters/019-15-milestone.md"
+    },
+    {
+      "slug": "020-16-find-in-github",
+      "title": "GitHub 寻宝指南",
+      "file": "chapters/020-16-find-in-github.md"
+    },
+    {
+      "slug": "021-18-get-star",
+      "title": "GitHub 获 Star 指南",
+      "file": "chapters/021-18-get-star.md"
+    },
+    {
+      "slug": "022-19-joke",
+      "title": "GitHub 上有趣的故事",
+      "file": "chapters/022-19-joke.md"
+    },
+    {
+      "slug": "023-999-faq",
+      "title": "999-faq",
+      "file": "chapters/023-999-faq.md"
+    },
+    {
+      "slug": "024-github-roam",
+      "title": "介绍",
+      "file": "chapters/024-github-roam.md"
+    }
+  ],
+  "sourceType": "github"
+}

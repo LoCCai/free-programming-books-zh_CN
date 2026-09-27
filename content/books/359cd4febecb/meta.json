@@ -1,0 +1,16 @@
+{
+  "bookId": "359cd4febecb",
+  "title": "PHPUnit 中文文档",
+  "url": "https://www.w3cschool.cn/phpunit5/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:14.210Z",
+  "chapters": [
+    {
+      "slug": "001-y",
+      "title": "PHPUnit5.0中文手册_w3cschool",
+      "file": "chapters/001-y.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "PHPUnit5.0中文手册_w3cschool"
+}

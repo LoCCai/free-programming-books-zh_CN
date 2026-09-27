@@ -1,0 +1,26 @@
+{
+  "bookId": "bb34552140d9",
+  "title": "awk中文指南",
+  "url": "https://awk.readthedocs.io/en/latest/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:00.652Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "AWK程序设计语言 — AWK程序设计语言",
+      "file": "chapters/001-1b.md"
+    },
+    {
+      "slug": "002-1h",
+      "title": "一. AWK入门指南 — AWK程序设计语言",
+      "file": "chapters/002-1h.md"
+    },
+    {
+      "slug": "003-1h",
+      "title": "二. AWK语言详解 — AWK程序设计语言",
+      "file": "chapters/003-1h.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "AWK程序设计语言 — AWK程序设计语言"
+}

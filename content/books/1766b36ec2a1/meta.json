@@ -1,0 +1,245 @@
+{
+  "bookId": "1766b36ec2a1",
+  "title": "RAG 技术全栈指南",
+  "url": "https://github.com/datawhalechina/all-in-rag",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:45.593Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Agentic RAG 端到端实践",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-ai-agent-readme",
+      "title": "AI菜谱知识图谱生成器",
+      "file": "chapters/002-ai-agent-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "All-in-RAG | Large Model Application Development Practice: RAG Technology Full-Stack Guide",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "All-in-RAG | 大模型应用开发实战一：RAG技术全栈指南",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "多模态 Omni Embedding 实践（Jina v5-omni）",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "Neo4J 简单应用",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "PowerRAG SDK 文本问答检索 Demo",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "README",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme-en",
+      "title": "All-in-RAG | Large Model Application Development Practice: RAG Technology Full-Stack Guide",
+      "file": "chapters/009-readme-en.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "All-in-RAG | 大模型应用开发实战一：RAG技术全栈指南",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-recipe-ontology-design",
+      "title": "菜谱知识图谱设计方案",
+      "file": "chapters/011-recipe-ontology-design.md"
+    },
+    {
+      "slug": "012-easy-rl-chapter1",
+      "title": "第1章 强化学习基础",
+      "file": "chapters/012-easy-rl-chapter1.md"
+    },
+    {
+      "slug": "013-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/013-sidebar.md"
+    },
+    {
+      "slug": "014-01-rag-intro",
+      "title": "第一节 RAG 简介",
+      "file": "chapters/014-01-rag-intro.md"
+    },
+    {
+      "slug": "015-02-preparation",
+      "title": "第二节 准备工作",
+      "file": "chapters/015-02-preparation.md"
+    },
+    {
+      "slug": "016-03-get-start-rag",
+      "title": "第三节 四步构建RAG",
+      "file": "chapters/016-03-get-start-rag.md"
+    },
+    {
+      "slug": "017-virtualenv",
+      "title": "附：Python虚拟环境部署方案补充",
+      "file": "chapters/017-virtualenv.md"
+    },
+    {
+      "slug": "018-04-data-load",
+      "title": "第一节 数据加载",
+      "file": "chapters/018-04-data-load.md"
+    },
+    {
+      "slug": "019-05-text-chunking",
+      "title": "第二节 文本分块",
+      "file": "chapters/019-05-text-chunking.md"
+    },
+    {
+      "slug": "020-06-vector-embedding",
+      "title": "第一节 向量嵌入",
+      "file": "chapters/020-06-vector-embedding.md"
+    },
+    {
+      "slug": "021-07-multimodal-embedding",
+      "title": "第二节 多模态嵌入",
+      "file": "chapters/021-07-multimodal-embedding.md"
+    },
+    {
+      "slug": "022-08-vector-db",
+      "title": "第三节 向量数据库",
+      "file": "chapters/022-08-vector-db.md"
+    },
+    {
+      "slug": "023-09-milvus",
+      "title": "第四节 Milvus介绍及多模态检索实践",
+      "file": "chapters/023-09-milvus.md"
+    },
+    {
+      "slug": "024-10-index-optimization",
+      "title": "第五节 索引优化",
+      "file": "chapters/024-10-index-optimization.md"
+    },
+    {
+      "slug": "025-11-hybrid-search",
+      "title": "第一节 混合检索",
+      "file": "chapters/025-11-hybrid-search.md"
+    },
+    {
+      "slug": "026-12-query-construction",
+      "title": "第二节 查询构建",
+      "file": "chapters/026-12-query-construction.md"
+    },
+    {
+      "slug": "027-13-text2sql",
+      "title": "第三节 文本到SQL",
+      "file": "chapters/027-13-text2sql.md"
+    },
+    {
+      "slug": "028-14-query-rewriting",
+      "title": "第四节 查询重构与分发",
+      "file": "chapters/028-14-query-rewriting.md"
+    },
+    {
+      "slug": "029-15-advanced-retrieval-techniques",
+      "title": "第五节 检索进阶",
+      "file": "chapters/029-15-advanced-retrieval-techniques.md"
+    },
+    {
+      "slug": "030-16-formatted-generation",
+      "title": "第一节 格式化生成",
+      "file": "chapters/030-16-formatted-generation.md"
+    },
+    {
+      "slug": "031-18-system-evaluation",
+      "title": "第一节 评估介绍",
+      "file": "chapters/031-18-system-evaluation.md"
+    },
+    {
+      "slug": "032-19-common-tools",
+      "title": "第二节 评估常用工具",
+      "file": "chapters/032-19-common-tools.md"
+    },
+    {
+      "slug": "033-20-kg-rag",
+      "title": "第一节 基于知识图谱的RAG",
+      "file": "chapters/033-20-kg-rag.md"
+    },
+    {
+      "slug": "034-21-agentic-rag",
+      "title": "第二节 Agentic RAG：让 RAG 具备自主决策能力",
+      "file": "chapters/034-21-agentic-rag.md"
+    },
+    {
+      "slug": "035-01-env-architecture",
+      "title": "第一节 环境配置与项目架构",
+      "file": "chapters/035-01-env-architecture.md"
+    },
+    {
+      "slug": "036-02-data-preparation",
+      "title": "第二节 数据准备模块实现",
+      "file": "chapters/036-02-data-preparation.md"
+    },
+    {
+      "slug": "037-03-index-retrieval",
+      "title": "第三节 索引构建与检索优化",
+      "file": "chapters/037-03-index-retrieval.md"
+    },
+    {
+      "slug": "038-04-generation-sys",
+      "title": "第四节 生成集成与系统整合",
+      "file": "chapters/038-04-generation-sys.md"
+    },
+    {
+      "slug": "039-01-graph-rag-architecture",
+      "title": "第一节 图RAG系统架构与环境配置",
+      "file": "chapters/039-01-graph-rag-architecture.md"
+    },
+    {
+      "slug": "040-02-graph-data-modeling",
+      "title": "第二节 图数据建模与Neo4j集成",
+      "file": "chapters/040-02-graph-data-modeling.md"
+    },
+    {
+      "slug": "041-03-index-construction",
+      "title": "第三节 Milvus索引构建",
+      "file": "chapters/041-03-index-construction.md"
+    },
+    {
+      "slug": "042-04-intelligent-query-routing",
+      "title": "第四节 智能查询路由与检索策略",
+      "file": "chapters/042-04-intelligent-query-routing.md"
+    },
+    {
+      "slug": "043-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/043-sidebar.md"
+    },
+    {
+      "slug": "044-01-rag-intro",
+      "title": "Chapter 1: Introduction to RAG",
+      "file": "chapters/044-01-rag-intro.md"
+    },
+    {
+      "slug": "045-02-preparation",
+      "title": "Chapter 2: Preparation",
+      "file": "chapters/045-02-preparation.md"
+    },
+    {
+      "slug": "046-03-get-start-rag",
+      "title": "Chapter 3: Four Steps to Build RAG",
+      "file": "chapters/046-03-get-start-rag.md"
+    },
+    {
+      "slug": "047-sample",
+      "title": "PowerRAG 文本问答 Demo · 示例文档",
+      "file": "chapters/047-sample.md"
+    }
+  ],
+  "sourceType": "github"
+}

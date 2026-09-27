@@ -1,0 +1,311 @@
+{
+  "bookId": "df666d733f8d",
+  "title": "vim 实操教程",
+  "url": "https://github.com/dofy/learn-vim",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:15:13.857Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Vim Hands-On Tutorial（Learning Vim）",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Vim 実践チュートリアル（Learning Vim）",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Vim Hands-On Tutorial (Learning Vi and Vims)",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "Vim 实操教程（Learning Vim）",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-claude",
+      "title": "CLAUDE.md",
+      "file": "chapters/005-claude.md"
+    },
+    {
+      "slug": "006-chapter01",
+      "title": "Chapter 1: Cursor Movement",
+      "file": "chapters/006-chapter01.md"
+    },
+    {
+      "slug": "007-chapter02",
+      "title": "Chapter 2: Opening Files, Finding Content",
+      "file": "chapters/007-chapter02.md"
+    },
+    {
+      "slug": "008-chapter03",
+      "title": "Chapter 3: Modifying and Saving Files",
+      "file": "chapters/008-chapter03.md"
+    },
+    {
+      "slug": "009-chapter04",
+      "title": "Chapter 4: Some Tips",
+      "file": "chapters/009-chapter04.md"
+    },
+    {
+      "slug": "010-chapter05",
+      "title": "Chapter 5: Splitting Windows and Tabs",
+      "file": "chapters/010-chapter05.md"
+    },
+    {
+      "slug": "011-chapter06",
+      "title": "Chapter 6: Visual Block Editing",
+      "file": "chapters/011-chapter06.md"
+    },
+    {
+      "slug": "012-chapter07",
+      "title": "Chapter 7: Macros in Vim",
+      "file": "chapters/012-chapter07.md"
+    },
+    {
+      "slug": "013-chapter08",
+      "title": "Chapter 8: Text Objects",
+      "file": "chapters/013-chapter08.md"
+    },
+    {
+      "slug": "014-chapter09",
+      "title": "Chapter 9: Registers and Clipboard",
+      "file": "chapters/014-chapter09.md"
+    },
+    {
+      "slug": "015-chapter10",
+      "title": "Chapter 10: Marks and Jumps",
+      "file": "chapters/015-chapter10.md"
+    },
+    {
+      "slug": "016-chapter11",
+      "title": "Chapter 11: Multi-file Search and Replace",
+      "file": "chapters/016-chapter11.md"
+    },
+    {
+      "slug": "017-airline",
+      "title": "Airline & Themes",
+      "file": "chapters/017-airline.md"
+    },
+    {
+      "slug": "018-easyalign",
+      "title": "EasyAlign",
+      "file": "chapters/018-easyalign.md"
+    },
+    {
+      "slug": "019-index",
+      "title": "Plugin Recommendations",
+      "file": "chapters/019-index.md"
+    },
+    {
+      "slug": "020-nerdtree",
+      "title": "NERDTree",
+      "file": "chapters/020-nerdtree.md"
+    },
+    {
+      "slug": "021-surround",
+      "title": "surround.vim",
+      "file": "chapters/021-surround.md"
+    },
+    {
+      "slug": "022-vim-modes",
+      "title": "Vim Modes",
+      "file": "chapters/022-vim-modes.md"
+    },
+    {
+      "slug": "023-vim-plugin",
+      "title": "Vim Plugins",
+      "file": "chapters/023-vim-plugin.md"
+    },
+    {
+      "slug": "024-index",
+      "title": "index",
+      "file": "chapters/024-index.md"
+    },
+    {
+      "slug": "025-chapter01",
+      "title": "第 1 章：カーソルの移動",
+      "file": "chapters/025-chapter01.md"
+    },
+    {
+      "slug": "026-chapter02",
+      "title": "第 2 章：ファイルを開く、内容を検索する",
+      "file": "chapters/026-chapter02.md"
+    },
+    {
+      "slug": "027-chapter03",
+      "title": "第 3 章：ファイルの編集と保存",
+      "file": "chapters/027-chapter03.md"
+    },
+    {
+      "slug": "028-chapter04",
+      "title": "第 4 章：便利なテクニック",
+      "file": "chapters/028-chapter04.md"
+    },
+    {
+      "slug": "029-chapter05",
+      "title": "第 5 章：ウィンドウ分割とタブ",
+      "file": "chapters/029-chapter05.md"
+    },
+    {
+      "slug": "030-chapter06",
+      "title": "第 6 章：矩形編集",
+      "file": "chapters/030-chapter06.md"
+    },
+    {
+      "slug": "031-chapter07",
+      "title": "第 7 章：Vim のマクロ",
+      "file": "chapters/031-chapter07.md"
+    },
+    {
+      "slug": "032-chapter08",
+      "title": "第 8 章：テキストオブジェクト",
+      "file": "chapters/032-chapter08.md"
+    },
+    {
+      "slug": "033-chapter09",
+      "title": "第 9 章：レジスタとクリップボード",
+      "file": "chapters/033-chapter09.md"
+    },
+    {
+      "slug": "034-chapter10",
+      "title": "第 10 章：マークとジャンプ",
+      "file": "chapters/034-chapter10.md"
+    },
+    {
+      "slug": "035-chapter11",
+      "title": "第 11 章：複数ファイルの検索と置換",
+      "file": "chapters/035-chapter11.md"
+    },
+    {
+      "slug": "036-airline",
+      "title": "Airline とテーマ",
+      "file": "chapters/036-airline.md"
+    },
+    {
+      "slug": "037-easyalign",
+      "title": "EasyAlign",
+      "file": "chapters/037-easyalign.md"
+    },
+    {
+      "slug": "038-index",
+      "title": "おすすめプラグイン",
+      "file": "chapters/038-index.md"
+    },
+    {
+      "slug": "039-nerdtree",
+      "title": "NERDTree",
+      "file": "chapters/039-nerdtree.md"
+    },
+    {
+      "slug": "040-surround",
+      "title": "surround.vim",
+      "file": "chapters/040-surround.md"
+    },
+    {
+      "slug": "041-vim-modes",
+      "title": "Vim のモード",
+      "file": "chapters/041-vim-modes.md"
+    },
+    {
+      "slug": "042-vim-plugin",
+      "title": "Vim プラグイン",
+      "file": "chapters/042-vim-plugin.md"
+    },
+    {
+      "slug": "043-chapter01",
+      "title": "第一章：光标移动",
+      "file": "chapters/043-chapter01.md"
+    },
+    {
+      "slug": "044-chapter02",
+      "title": "第二章：打开文件、查找内容",
+      "file": "chapters/044-chapter02.md"
+    },
+    {
+      "slug": "045-chapter03",
+      "title": "第三章：文档的修改与保存",
+      "file": "chapters/045-chapter03.md"
+    },
+    {
+      "slug": "046-chapter04",
+      "title": "第四章：一些小技巧",
+      "file": "chapters/046-chapter04.md"
+    },
+    {
+      "slug": "047-chapter05",
+      "title": "第五章：分屏与标签页",
+      "file": "chapters/047-chapter05.md"
+    },
+    {
+      "slug": "048-chapter06",
+      "title": "第六章：块操作",
+      "file": "chapters/048-chapter06.md"
+    },
+    {
+      "slug": "049-chapter07",
+      "title": "第七章：Vim 中的宏",
+      "file": "chapters/049-chapter07.md"
+    },
+    {
+      "slug": "050-chapter08",
+      "title": "第八章：文本对象",
+      "file": "chapters/050-chapter08.md"
+    },
+    {
+      "slug": "051-chapter09",
+      "title": "第九章：寄存器与剪贴板",
+      "file": "chapters/051-chapter09.md"
+    },
+    {
+      "slug": "052-chapter10",
+      "title": "第十章：跳转与标记",
+      "file": "chapters/052-chapter10.md"
+    },
+    {
+      "slug": "053-chapter11",
+      "title": "第十一章：多文件搜索与替换",
+      "file": "chapters/053-chapter11.md"
+    },
+    {
+      "slug": "054-airline",
+      "title": "Airline & Themes",
+      "file": "chapters/054-airline.md"
+    },
+    {
+      "slug": "055-easyalign",
+      "title": "EasyAlign",
+      "file": "chapters/055-easyalign.md"
+    },
+    {
+      "slug": "056-index",
+      "title": "插件推荐",
+      "file": "chapters/056-index.md"
+    },
+    {
+      "slug": "057-nerdtree",
+      "title": "NERDTree",
+      "file": "chapters/057-nerdtree.md"
+    },
+    {
+      "slug": "058-surround",
+      "title": "surround.vim",
+      "file": "chapters/058-surround.md"
+    },
+    {
+      "slug": "059-vim-modes",
+      "title": "Vim 的模式",
+      "file": "chapters/059-vim-modes.md"
+    },
+    {
+      "slug": "060-vim-plugin",
+      "title": "Vim 插件",
+      "file": "chapters/060-vim-plugin.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

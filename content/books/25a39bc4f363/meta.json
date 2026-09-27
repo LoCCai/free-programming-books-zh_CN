@@ -1,0 +1,16 @@
+{
+  "bookId": "25a39bc4f363",
+  "title": "MySQL索引背后的数据结构及算法原理",
+  "url": "http://blog.codinglabs.org/articles/theory-of-mysql-index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:03.171Z",
+  "chapters": [
+    {
+      "slug": "001-1q",
+      "title": "http://blog.codinglabs.org/articles/theory-of-mysql-index.html",
+      "file": "chapters/001-1q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://blog.codinglabs.org/articles/theory-of-mysql-index.html"
+}

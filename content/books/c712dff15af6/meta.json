@@ -1,0 +1,85 @@
+{
+  "bookId": "c712dff15af6",
+  "title": "javascript 的 12 个怪癖",
+  "url": "https://github.com/justjavac/12-javascript-quirks",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:33.025Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-implicit-conversion-of-values",
+      "title": "1-implicit-conversion-of-values",
+      "file": "chapters/002-1-implicit-conversion-of-values.md"
+    },
+    {
+      "slug": "003-2-two-non-values-undefined-and-null",
+      "title": "2-two-non-values-undefined-and-null",
+      "file": "chapters/003-2-two-non-values-undefined-and-null.md"
+    },
+    {
+      "slug": "004-3-normal-equality-vs-the-double-equals",
+      "title": "3-normal-equality-vs-the-double-equals",
+      "file": "chapters/004-3-normal-equality-vs-the-double-equals.md"
+    },
+    {
+      "slug": "005-4-unknown-variable-names-create-global-variables",
+      "title": "4-unknown-variable-names-create-global-variables",
+      "file": "chapters/005-4-unknown-variable-names-create-global-variables.md"
+    },
+    {
+      "slug": "006-5-parameter-handling",
+      "title": "5-parameter-handling",
+      "file": "chapters/006-5-parameter-handling.md"
+    },
+    {
+      "slug": "007-6-the-scope-of-variables",
+      "title": "6-the-scope-of-variables",
+      "file": "chapters/007-6-the-scope-of-variables.md"
+    },
+    {
+      "slug": "008-7-inadvertent-sharing-of-variables-via-closures",
+      "title": "7-inadvertent-sharing-of-variables-via-closures",
+      "file": "chapters/008-7-inadvertent-sharing-of-variables-via-closures.md"
+    },
+    {
+      "slug": "009-8-array-like-objects",
+      "title": "8-array-like-objects",
+      "file": "chapters/009-8-array-like-objects.md"
+    },
+    {
+      "slug": "010-content",
+      "title": "content",
+      "file": "chapters/010-content.md"
+    },
+    {
+      "slug": "011-4-unknown-variable-names-create-global-variables",
+      "title": "4-unknown-variable-names-create-global-variables",
+      "file": "chapters/011-4-unknown-variable-names-create-global-variables.md"
+    },
+    {
+      "slug": "012-5-parameter-handling",
+      "title": "5-parameter-handling",
+      "file": "chapters/012-5-parameter-handling.md"
+    },
+    {
+      "slug": "013-6-the-scope-of-variables",
+      "title": "6-the-scope-of-variables",
+      "file": "chapters/013-6-the-scope-of-variables.md"
+    },
+    {
+      "slug": "014-7-inadvertent-sharing-of-variables-via-closures",
+      "title": "7-inadvertent-sharing-of-variables-via-closures",
+      "file": "chapters/014-7-inadvertent-sharing-of-variables-via-closures.md"
+    },
+    {
+      "slug": "015-8-array-like-objects",
+      "title": "8-array-like-objects",
+      "file": "chapters/015-8-array-like-objects.md"
+    }
+  ],
+  "sourceType": "github"
+}

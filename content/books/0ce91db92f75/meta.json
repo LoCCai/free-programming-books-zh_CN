@@ -1,0 +1,61 @@
+{
+  "bookId": "0ce91db92f75",
+  "title": "Hello Sea.js",
+  "url": "http://island205.github.io/HelloSea.js/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:50.888Z",
+  "chapters": [
+    {
+      "slug": "001-13",
+      "title": "Introduction | Hello Sea.js",
+      "file": "chapters/001-13.md"
+    },
+    {
+      "slug": "002-1k",
+      "title": "前言 | Hello Sea.js",
+      "file": "chapters/002-1k.md"
+    },
+    {
+      "slug": "003-1n",
+      "title": "感谢 | Hello Sea.js",
+      "file": "chapters/003-1n.md"
+    },
+    {
+      "slug": "004-1l",
+      "title": "Sea.js是什么？ | Hello Sea.js",
+      "file": "chapters/004-1l.md"
+    },
+    {
+      "slug": "005-1n",
+      "title": "快速入门 | Hello Sea.js",
+      "file": "chapters/005-1n.md"
+    },
+    {
+      "slug": "006-1j",
+      "title": "使用指南 | Hello Sea.js",
+      "file": "chapters/006-1j.md"
+    },
+    {
+      "slug": "007-1n",
+      "title": "开发实战 | Hello Sea.js",
+      "file": "chapters/007-1n.md"
+    },
+    {
+      "slug": "008-1n",
+      "title": "Sea.js是如何工作的？ | Hello Sea.js",
+      "file": "chapters/008-1n.md"
+    },
+    {
+      "slug": "009-1w",
+      "title": "编写自己的模块加载器 | Hello Sea.js",
+      "file": "chapters/009-1w.md"
+    },
+    {
+      "slug": "010-1h",
+      "title": "参考资料 | Hello Sea.js",
+      "file": "chapters/010-1h.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction | Hello Sea.js"
+}

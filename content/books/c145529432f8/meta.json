@@ -1,0 +1,16 @@
+{
+  "bookId": "c145529432f8",
+  "title": "JavaScript 标准参考教程（alpha）",
+  "url": "http://javascript.ruanyifeng.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:32.310Z",
+  "chapters": [
+    {
+      "slug": "001-x",
+      "title": "JavaScript 标准参考教程（alpha） -- JavaScript 标准参考教程（alpha）",
+      "file": "chapters/001-x.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "JavaScript 标准参考教程（alpha） -- JavaScript 标准参考教程（alpha）"
+}

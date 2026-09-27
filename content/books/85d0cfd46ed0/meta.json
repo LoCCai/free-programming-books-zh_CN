@@ -1,0 +1,16 @@
+{
+  "bookId": "85d0cfd46ed0",
+  "title": "笨办法学 Python",
+  "url": "http://liam0205.me/attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:29.713Z",
+  "chapters": [
+    {
+      "slug": "001-2a",
+      "title": "liam0205.me",
+      "file": "chapters/001-2a.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "liam0205.me"
+}

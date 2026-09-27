@@ -1,0 +1,405 @@
+{
+  "bookId": "0289d5d9797c",
+  "title": "labuladong 的算法小抄",
+  "url": "https://github.com/labuladong/fucking-algorithm",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:48.917Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "动态规划系列",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "高频面试系列",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "数据结构系列",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "算法思维系列",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "labuladong 的算法笔记",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-背包问题",
+      "title": "经典动态规划：0-1 背包问题",
+      "file": "chapters/006-背包问题.md"
+    },
+    {
+      "slug": "007-编辑距离",
+      "title": "经典动态规划：编辑距离",
+      "file": "chapters/007-编辑距离.md"
+    },
+    {
+      "slug": "008-单词拼接",
+      "title": "动态规划和回溯算法的思维转换",
+      "file": "chapters/008-单词拼接.md"
+    },
+    {
+      "slug": "009-动态规划设计-最长递增子序列",
+      "title": "动态规划设计：最长递增子序列",
+      "file": "chapters/009-动态规划设计-最长递增子序列.md"
+    },
+    {
+      "slug": "010-动态规划详解进阶",
+      "title": "动态规划解题套路框架",
+      "file": "chapters/010-动态规划详解进阶.md"
+    },
+    {
+      "slug": "011-动态规划之博弈问题",
+      "title": "经典动态规划：博弈问题",
+      "file": "chapters/011-动态规划之博弈问题.md"
+    },
+    {
+      "slug": "012-动态规划之四键键盘",
+      "title": "动态规划之四键键盘",
+      "file": "chapters/012-动态规划之四键键盘.md"
+    },
+    {
+      "slug": "013-动态规划之正则表达",
+      "title": "经典动态规划：正则表达式",
+      "file": "chapters/013-动态规划之正则表达.md"
+    },
+    {
+      "slug": "014-动态规划之kmp字符匹配算法",
+      "title": "动态规划之KMP字符匹配算法",
+      "file": "chapters/014-动态规划之kmp字符匹配算法.md"
+    },
+    {
+      "slug": "015-高楼扔鸡蛋问题",
+      "title": "经典动态规划：高楼扔鸡蛋",
+      "file": "chapters/015-高楼扔鸡蛋问题.md"
+    },
+    {
+      "slug": "016-魔塔",
+      "title": "动态规划帮我通关了《魔塔》",
+      "file": "chapters/016-魔塔.md"
+    },
+    {
+      "slug": "017-抢房子",
+      "title": "一个方法团灭 LeetCode 打家劫舍问题",
+      "file": "chapters/017-抢房子.md"
+    },
+    {
+      "slug": "018-贪心算法之区间调度问题",
+      "title": "贪心算法之区间调度问题",
+      "file": "chapters/018-贪心算法之区间调度问题.md"
+    },
+    {
+      "slug": "019-团灭股票问题",
+      "title": "一个方法团灭 LeetCode 股票买卖问题",
+      "file": "chapters/019-团灭股票问题.md"
+    },
+    {
+      "slug": "020-状态压缩技巧",
+      "title": "对动态规划进行降维打击",
+      "file": "chapters/020-状态压缩技巧.md"
+    },
+    {
+      "slug": "021-子序列问题模板",
+      "title": "动态规划之子序列问题解题模板",
+      "file": "chapters/021-子序列问题模板.md"
+    },
+    {
+      "slug": "022-最优子结构",
+      "title": "最优子结构原理和 dp 数组遍历方向",
+      "file": "chapters/022-最优子结构.md"
+    },
+    {
+      "slug": "023-lcs",
+      "title": "经典动态规划：最长公共子序列",
+      "file": "chapters/023-lcs.md"
+    },
+    {
+      "slug": "024-contribution-guide",
+      "title": "修正 labuladong 刷题插件中的错误",
+      "file": "chapters/024-contribution-guide.md"
+    },
+    {
+      "slug": "025-solution-code",
+      "title": "by chatGPT (python)",
+      "file": "chapters/025-solution-code.md"
+    },
+    {
+      "slug": "026-安排会议室",
+      "title": "扫描线技巧：安排会议室",
+      "file": "chapters/026-安排会议室.md"
+    },
+    {
+      "slug": "027-打印素数",
+      "title": "如何高效寻找素数",
+      "file": "chapters/027-打印素数.md"
+    },
+    {
+      "slug": "028-岛屿题目",
+      "title": "一文秒杀所有岛屿题目",
+      "file": "chapters/028-岛屿题目.md"
+    },
+    {
+      "slug": "029-二分查找判定子序列",
+      "title": "二分查找高效判定子序列",
+      "file": "chapters/029-二分查找判定子序列.md"
+    },
+    {
+      "slug": "030-二分运用",
+      "title": "实际运用二分搜索时的思维框架",
+      "file": "chapters/030-二分运用.md"
+    },
+    {
+      "slug": "031-接雨水",
+      "title": "如何高效解决接雨水问题",
+      "file": "chapters/031-接雨水.md"
+    },
+    {
+      "slug": "032-名人问题",
+      "title": "众里寻他千百度：名流问题",
+      "file": "chapters/032-名人问题.md"
+    },
+    {
+      "slug": "033-判断回文链表",
+      "title": "如何判断回文链表",
+      "file": "chapters/033-判断回文链表.md"
+    },
+    {
+      "slug": "034-缺失和重复的元素",
+      "title": "如何同时寻找缺失和重复的元素",
+      "file": "chapters/034-缺失和重复的元素.md"
+    },
+    {
+      "slug": "035-随机权重",
+      "title": "带权重的随机选择算法",
+      "file": "chapters/035-随机权重.md"
+    },
+    {
+      "slug": "036-一行代码解决的智力题",
+      "title": "一行代码就能解决的算法题",
+      "file": "chapters/036-一行代码解决的智力题.md"
+    },
+    {
+      "slug": "037-子集排列组合",
+      "title": "回溯算法秒杀所有排列/组合/子集问题",
+      "file": "chapters/037-子集排列组合.md"
+    },
+    {
+      "slug": "038-座位调度",
+      "title": "如何调度考生的座位",
+      "file": "chapters/038-座位调度.md"
+    },
+    {
+      "slug": "039-k个一组反转链表",
+      "title": "如何k个一组反转链表",
+      "file": "chapters/039-k个一组反转链表.md"
+    },
+    {
+      "slug": "040-lru算法",
+      "title": "算法就像搭乐高：手撸 LRU 算法",
+      "file": "chapters/040-lru算法.md"
+    },
+    {
+      "slug": "041-密码技术",
+      "title": "密码算法的前世今生",
+      "file": "chapters/041-密码技术.md"
+    },
+    {
+      "slug": "042-刷题技巧",
+      "title": "算法笔试「骗分」套路",
+      "file": "chapters/042-刷题技巧.md"
+    },
+    {
+      "slug": "043-在线练习平台",
+      "title": "在线刷题学习平台",
+      "file": "chapters/043-在线练习平台.md"
+    },
+    {
+      "slug": "044-linux进程",
+      "title": "Linux的进程、线程、文件描述符是什么",
+      "file": "chapters/044-linux进程.md"
+    },
+    {
+      "slug": "045-linuxshell",
+      "title": "关于 Linux shell 你必须知道的技巧",
+      "file": "chapters/045-linuxshell.md"
+    },
+    {
+      "slug": "046-redis入侵",
+      "title": "Redis 入侵",
+      "file": "chapters/046-redis入侵.md"
+    },
+    {
+      "slug": "047-session和cookie",
+      "title": "一文读懂 session 和 cookie",
+      "file": "chapters/047-session和cookie.md"
+    },
+    {
+      "slug": "048-单调队列",
+      "title": "单调队列结构解决滑动窗口问题",
+      "file": "chapters/048-单调队列.md"
+    },
+    {
+      "slug": "049-单调栈",
+      "title": "单调栈算法模板解决三道例题",
+      "file": "chapters/049-单调栈.md"
+    },
+    {
+      "slug": "050-递归反转链表的一部分",
+      "title": "单链表的花式反转方法汇总",
+      "file": "chapters/050-递归反转链表的一部分.md"
+    },
+    {
+      "slug": "051-队列实现栈栈实现队列",
+      "title": "队列实现栈以及栈实现队列",
+      "file": "chapters/051-队列实现栈栈实现队列.md"
+    },
+    {
+      "slug": "052-二叉堆详解实现优先级队列",
+      "title": "二叉堆详解实现优先级队列",
+      "file": "chapters/052-二叉堆详解实现优先级队列.md"
+    },
+    {
+      "slug": "053-二叉树系列1",
+      "title": "二叉树心法（思路篇）",
+      "file": "chapters/053-二叉树系列1.md"
+    },
+    {
+      "slug": "054-二叉树系列2",
+      "title": "二叉树心法（构造篇）",
+      "file": "chapters/054-二叉树系列2.md"
+    },
+    {
+      "slug": "055-二叉树总结",
+      "title": "二叉树系列算法核心纲领",
+      "file": "chapters/055-二叉树总结.md"
+    },
+    {
+      "slug": "056-设计twitter",
+      "title": "设计朋友圈时间线功能",
+      "file": "chapters/056-设计twitter.md"
+    },
+    {
+      "slug": "057-实现计算器",
+      "title": "拓展：如何实现一个计算器",
+      "file": "chapters/057-实现计算器.md"
+    },
+    {
+      "slug": "058-拓扑排序",
+      "title": "环检测及拓扑排序算法",
+      "file": "chapters/058-拓扑排序.md"
+    },
+    {
+      "slug": "059-图",
+      "title": "图论算法基础",
+      "file": "chapters/059-图.md"
+    },
+    {
+      "slug": "060-bst1",
+      "title": "二叉搜索树心法（特性篇）",
+      "file": "chapters/060-bst1.md"
+    },
+    {
+      "slug": "061-bst2",
+      "title": "二叉搜索树心法（基操篇）",
+      "file": "chapters/061-bst2.md"
+    },
+    {
+      "slug": "062-dijkstra算法",
+      "title": "Dijkstra 算法模板及应用",
+      "file": "chapters/062-dijkstra算法.md"
+    },
+    {
+      "slug": "063-差分技巧",
+      "title": "小而美的算法技巧：差分数组",
+      "file": "chapters/063-差分技巧.md"
+    },
+    {
+      "slug": "064-常用的位操作",
+      "title": "常用的位操作",
+      "file": "chapters/064-常用的位操作.md"
+    },
+    {
+      "slug": "065-二分查找详解",
+      "title": "二分搜索算法核心代码模板",
+      "file": "chapters/065-二分查找详解.md"
+    },
+    {
+      "slug": "066-花式遍历",
+      "title": "二维数组的花式遍历技巧",
+      "file": "chapters/066-花式遍历.md"
+    },
+    {
+      "slug": "067-滑动窗口技巧进阶",
+      "title": "滑动窗口算法核心代码模板",
+      "file": "chapters/067-滑动窗口技巧进阶.md"
+    },
+    {
+      "slug": "068-回溯算法详解修订版",
+      "title": "回溯算法解题套路框架",
+      "file": "chapters/068-回溯算法详解修订版.md"
+    },
+    {
+      "slug": "069-集合划分",
+      "title": "回溯算法实践：集合划分",
+      "file": "chapters/069-集合划分.md"
+    },
+    {
+      "slug": "070-几个反直觉的概率问题",
+      "title": "几个反直觉的概率问题",
+      "file": "chapters/070-几个反直觉的概率问题.md"
+    },
+    {
+      "slug": "071-前缀和技巧",
+      "title": "小而美的算法技巧：前缀和数组",
+      "file": "chapters/071-前缀和技巧.md"
+    },
+    {
+      "slug": "072-烧饼排序",
+      "title": "烧饼排序算法",
+      "file": "chapters/072-烧饼排序.md"
+    },
+    {
+      "slug": "073-双指针技巧",
+      "title": "双指针技巧秒杀七道数组题目",
+      "file": "chapters/073-双指针技巧.md"
+    },
+    {
+      "slug": "074-洗牌算法",
+      "title": "洗牌算法",
+      "file": "chapters/074-洗牌算法.md"
+    },
+    {
+      "slug": "075-学习数据结构和算法的高效方法",
+      "title": "学习数据结构和算法的框架思维",
+      "file": "chapters/075-学习数据结构和算法的高效方法.md"
+    },
+    {
+      "slug": "076-字符串乘法",
+      "title": "字符串乘法计算",
+      "file": "chapters/076-字符串乘法.md"
+    },
+    {
+      "slug": "077-bfs解决滑动拼图",
+      "title": "BFS 算法秒杀各种益智游戏",
+      "file": "chapters/077-bfs解决滑动拼图.md"
+    },
+    {
+      "slug": "078-bfs框架",
+      "title": "BFS 算法解题套路框架",
+      "file": "chapters/078-bfs框架.md"
+    },
+    {
+      "slug": "079-unionfind算法详解",
+      "title": "Union-Find 并查集算法",
+      "file": "chapters/079-unionfind算法详解.md"
+    }
+  ],
+  "sourceType": "github"
+}

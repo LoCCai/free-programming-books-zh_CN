@@ -1,0 +1,16 @@
+{
+  "bookId": "a593130bc0c0",
+  "title": "Discover Meteor",
+  "url": "https://github.com/DiscoverMeteor/DiscoverMeteor_zh",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:51.510Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Discover Meteor 中文版",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "4915eedcbad2",
+  "title": "沉浸式学 Git",
+  "url": "http://igit.linuxtoy.org",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:37.654Z",
+  "chapters": [
+    {
+      "slug": "001-o",
+      "title": "Welcome to nginx!",
+      "file": "chapters/001-o.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Welcome to nginx!"
+}

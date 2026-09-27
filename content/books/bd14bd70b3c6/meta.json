@@ -1,0 +1,21 @@
+{
+  "bookId": "bd14bd70b3c6",
+  "title": "Composer 中文网",
+  "url": "http://www.phpcomposer.com",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:13.281Z",
+  "chapters": [
+    {
+      "slug": "001-q",
+      "title": "Packagist中国全量镜像",
+      "file": "chapters/001-q.md"
+    },
+    {
+      "slug": "002-y",
+      "title": "Packagist中国全量镜像",
+      "file": "chapters/002-y.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Packagist中国全量镜像"
+}

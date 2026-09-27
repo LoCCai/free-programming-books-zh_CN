@@ -1,0 +1,126 @@
+{
+  "bookId": "4417582cfa6d",
+  "title": "React 入门教程",
+  "url": "https://hulufei.gitbooks.io/react-tutorial/content/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:49.964Z",
+  "chapters": [
+    {
+      "slug": "001-1f",
+      "title": "介紹 | React 入门教程",
+      "file": "chapters/001-1f.md"
+    },
+    {
+      "slug": "002-1w",
+      "title": "React 概览 | React 入门教程",
+      "file": "chapters/002-1w.md"
+    },
+    {
+      "slug": "003-1v",
+      "title": "开发环境配置 | React 入门教程",
+      "file": "chapters/003-1v.md"
+    },
+    {
+      "slug": "004-1r",
+      "title": "Webpack | React 入门教程",
+      "file": "chapters/004-1r.md"
+    },
+    {
+      "slug": "005-1n",
+      "title": "JSX | React 入门教程",
+      "file": "chapters/005-1n.md"
+    },
+    {
+      "slug": "006-1w",
+      "title": "使用 JSX | React 入门教程",
+      "file": "chapters/006-1w.md"
+    },
+    {
+      "slug": "007-25",
+      "title": "属性扩散 | React 入门教程",
+      "file": "chapters/007-25.md"
+    },
+    {
+      "slug": "008-1v",
+      "title": "和 HTML 的差异 | React 入门教程",
+      "file": "chapters/008-1v.md"
+    },
+    {
+      "slug": "009-1t",
+      "title": "组件 | React 入门教程",
+      "file": "chapters/009-1t.md"
+    },
+    {
+      "slug": "010-23",
+      "title": "组件生命周期 | React 入门教程",
+      "file": "chapters/010-23.md"
+    },
+    {
+      "slug": "011-1q",
+      "title": "事件处理 | React 入门教程",
+      "file": "chapters/011-1q.md"
+    },
+    {
+      "slug": "012-1n",
+      "title": "DOM 操作 | React 入门教程",
+      "file": "chapters/012-1n.md"
+    },
+    {
+      "slug": "013-21",
+      "title": "组合组件 | React 入门教程",
+      "file": "chapters/013-21.md"
+    },
+    {
+      "slug": "014-25",
+      "title": "组件间通信 | React 入门教程",
+      "file": "chapters/014-25.md"
+    },
+    {
+      "slug": "015-1p",
+      "title": "Mixins | React 入门教程",
+      "file": "chapters/015-1p.md"
+    },
+    {
+      "slug": "016-1t",
+      "title": "Data Flow | React 入门教程",
+      "file": "chapters/016-1t.md"
+    },
+    {
+      "slug": "017-1o",
+      "title": "Flux | React 入门教程",
+      "file": "chapters/017-1o.md"
+    },
+    {
+      "slug": "018-1p",
+      "title": "Redux | React 入门教程",
+      "file": "chapters/018-1p.md"
+    },
+    {
+      "slug": "019-1y",
+      "title": "进化 Flux | React 入门教程",
+      "file": "chapters/019-1y.md"
+    },
+    {
+      "slug": "020-1v",
+      "title": "Redux 基础 | React 入门教程",
+      "file": "chapters/020-1v.md"
+    },
+    {
+      "slug": "021-20",
+      "title": "和 React 配合使用 | React 入门教程",
+      "file": "chapters/021-20.md"
+    },
+    {
+      "slug": "022-1p",
+      "title": "表单 | React 入门教程",
+      "file": "chapters/022-1p.md"
+    },
+    {
+      "slug": "023-20",
+      "title": "服务端渲染 | React 入门教程",
+      "file": "chapters/023-20.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "介紹 | React 入门教程"
+}

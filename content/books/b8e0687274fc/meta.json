@@ -1,0 +1,16 @@
+{
+  "bookId": "b8e0687274fc",
+  "title": "21天学会Emacs",
+  "url": "http://book.emacs-china.org/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:45.236Z",
+  "chapters": [
+    {
+      "slug": "001-s",
+      "title": "Master Emacs in 21 Days",
+      "file": "chapters/001-s.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Master Emacs in 21 Days"
+}

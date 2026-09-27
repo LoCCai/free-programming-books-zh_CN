@@ -1,0 +1,561 @@
+{
+  "bookId": "97ca836aff05",
+  "title": "深入理解PHP内核",
+  "url": "https://github.com/reeze/tipi",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:06.811Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "TIPI示例哈希表实现",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "深入理解PHP内核(Thinking In PHP Internals)",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "tipi",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-a-php-zend-api",
+      "title": "A-PHP-Zend-API",
+      "file": "chapters/004-a-php-zend-api.md"
+    },
+    {
+      "slug": "005-b-php-versions-and-history",
+      "title": "附录B PHP的历史",
+      "file": "chapters/005-b-php-versions-and-history.md"
+    },
+    {
+      "slug": "006-c-php-vld",
+      "title": "附录C VLD扩展使用指南",
+      "file": "chapters/006-c-php-vld.md"
+    },
+    {
+      "slug": "007-01-00-prepare-and-background",
+      "title": "第一章 准备工作和背景知识",
+      "file": "chapters/007-01-00-prepare-and-background.md"
+    },
+    {
+      "slug": "008-01-01-php-env-building",
+      "title": "第一节 环境搭建",
+      "file": "chapters/008-01-01-php-env-building.md"
+    },
+    {
+      "slug": "009-01-02-code-structure",
+      "title": "第二节 源码结构、阅读代码方法",
+      "file": "chapters/009-01-02-code-structure.md"
+    },
+    {
+      "slug": "010-01-03-comm-code-in-php-src",
+      "title": "第三节 常用代码",
+      "file": "chapters/010-01-03-comm-code-in-php-src.md"
+    },
+    {
+      "slug": "011-01-04-summary",
+      "title": "第四节 小结",
+      "file": "chapters/011-01-04-summary.md"
+    },
+    {
+      "slug": "012-02-00-overview",
+      "title": "第二章 用户代码的执行",
+      "file": "chapters/012-02-00-overview.md"
+    },
+    {
+      "slug": "013-02-01-php-life-cycle-and-zend-engine",
+      "title": "第一节 生命周期和Zend引擎",
+      "file": "chapters/013-02-01-php-life-cycle-and-zend-engine.md"
+    },
+    {
+      "slug": "014-02-02-00-overview",
+      "title": "第二节 SAPI概述",
+      "file": "chapters/014-02-02-00-overview.md"
+    },
+    {
+      "slug": "015-02-02-01-apache-php-module",
+      "title": "Apache模块",
+      "file": "chapters/015-02-02-01-apache-php-module.md"
+    },
+    {
+      "slug": "016-02-02-02-embedding-php",
+      "title": "嵌入式",
+      "file": "chapters/016-02-02-02-embedding-php.md"
+    },
+    {
+      "slug": "017-02-02-03-fastcgi",
+      "title": "FastCGI",
+      "file": "chapters/017-02-02-03-fastcgi.md"
+    },
+    {
+      "slug": "018-02-03-00-how-php-script-get-executed",
+      "title": "第三节 PHP脚本的执行",
+      "file": "chapters/018-02-03-00-how-php-script-get-executed.md"
+    },
+    {
+      "slug": "019-02-03-01-lex-and-yacc",
+      "title": "词法分析和语法分析",
+      "file": "chapters/019-02-03-01-lex-and-yacc.md"
+    },
+    {
+      "slug": "020-02-03-02-opcode",
+      "title": "opcode",
+      "file": "chapters/020-02-03-02-opcode.md"
+    },
+    {
+      "slug": "021-02-03-03-from-opcode-to-handler",
+      "title": "opcode处理函数查找",
+      "file": "chapters/021-02-03-03-from-opcode-to-handler.md"
+    },
+    {
+      "slug": "022-02-04-summary",
+      "title": "第四节 小结",
+      "file": "chapters/022-02-04-summary.md"
+    },
+    {
+      "slug": "023-03-00-variable-and-data-types",
+      "title": "第三章 变量及数据类型",
+      "file": "chapters/023-03-00-variable-and-data-types.md"
+    },
+    {
+      "slug": "024-03-01-00-variables-structure",
+      "title": "第一节 变量的结构和类型",
+      "file": "chapters/024-03-01-00-variables-structure.md"
+    },
+    {
+      "slug": "025-03-01-01-hashtable",
+      "title": "哈希表(HashTable)",
+      "file": "chapters/025-03-01-01-hashtable.md"
+    },
+    {
+      "slug": "026-03-01-02-hashtable-in-php",
+      "title": "PHP的哈希表实现",
+      "file": "chapters/026-03-01-02-hashtable-in-php.md"
+    },
+    {
+      "slug": "027-03-01-03-zend-llist",
+      "title": "链表简介",
+      "file": "chapters/027-03-01-03-zend-llist.md"
+    },
+    {
+      "slug": "028-03-02-const-var",
+      "title": "第二节 常量",
+      "file": "chapters/028-03-02-const-var.md"
+    },
+    {
+      "slug": "029-03-03-pre-defined-variable",
+      "title": "第三节 预定义变量",
+      "file": "chapters/029-03-03-pre-defined-variable.md"
+    },
+    {
+      "slug": "030-03-04-static-var",
+      "title": "第四节 静态变量",
+      "file": "chapters/030-03-04-static-var.md"
+    },
+    {
+      "slug": "031-03-05-impl-of-type-hint",
+      "title": "第五节 类型提示的实现",
+      "file": "chapters/031-03-05-impl-of-type-hint.md"
+    },
+    {
+      "slug": "032-03-06-00-var-lifecycle",
+      "title": "第六节 变量的生命周期",
+      "file": "chapters/032-03-06-00-var-lifecycle.md"
+    },
+    {
+      "slug": "033-03-06-01-var-define-and-init",
+      "title": "变量的赋值和销毁",
+      "file": "chapters/033-03-06-01-var-define-and-init.md"
+    },
+    {
+      "slug": "034-03-06-02-var-scope",
+      "title": "变量的作用域",
+      "file": "chapters/034-03-06-02-var-scope.md"
+    },
+    {
+      "slug": "035-03-06-03-var-global",
+      "title": "global语句",
+      "file": "chapters/035-03-06-03-var-global.md"
+    },
+    {
+      "slug": "036-03-07-type-cast",
+      "title": "第七节 数据类型转换",
+      "file": "chapters/036-03-07-type-cast.md"
+    },
+    {
+      "slug": "037-03-08-summary",
+      "title": "第八节 小结",
+      "file": "chapters/037-03-08-summary.md"
+    },
+    {
+      "slug": "038-04-00-php-function",
+      "title": "第四章 函数的实现",
+      "file": "chapters/038-04-00-php-function.md"
+    },
+    {
+      "slug": "039-04-01-00-function-struct-overview",
+      "title": "第一节 函数的内部结构",
+      "file": "chapters/039-04-01-00-function-struct-overview.md"
+    },
+    {
+      "slug": "040-04-01-01-function-struct",
+      "title": "函数的内部结构",
+      "file": "chapters/040-04-01-01-function-struct.md"
+    },
+    {
+      "slug": "041-04-01-02-function-union",
+      "title": "函数间的转换",
+      "file": "chapters/041-04-01-02-function-union.md"
+    },
+    {
+      "slug": "042-04-02-00-function-define-param-return",
+      "title": "第二节 函数的定义，传参及返回值",
+      "file": "chapters/042-04-02-00-function-define-param-return.md"
+    },
+    {
+      "slug": "043-04-02-01-function-define",
+      "title": "函数的定义",
+      "file": "chapters/043-04-02-01-function-define.md"
+    },
+    {
+      "slug": "044-04-02-02-function-param",
+      "title": "函数的参数",
+      "file": "chapters/044-04-02-02-function-param.md"
+    },
+    {
+      "slug": "045-04-02-03-function-return",
+      "title": "函数的返回值",
+      "file": "chapters/045-04-02-03-function-return.md"
+    },
+    {
+      "slug": "046-04-03-function-call",
+      "title": "第三节 函数的调用和执行",
+      "file": "chapters/046-04-03-function-call.md"
+    },
+    {
+      "slug": "047-04-04-anonymous-function",
+      "title": "第四节 匿名函数及闭包",
+      "file": "chapters/047-04-04-anonymous-function.md"
+    },
+    {
+      "slug": "048-04-05-summary",
+      "title": "第五节 小结",
+      "file": "chapters/048-04-05-summary.md"
+    },
+    {
+      "slug": "049-05-00-class-and-oop",
+      "title": "第五章 类和面向对象",
+      "file": "chapters/049-05-00-class-and-oop.md"
+    },
+    {
+      "slug": "050-05-01-class-struct",
+      "title": "第一节 类的结构和实现",
+      "file": "chapters/050-05-01-class-struct.md"
+    },
+    {
+      "slug": "051-05-02-class-member-variables-and-methods",
+      "title": "第二节 类的成员变量及方法",
+      "file": "chapters/051-05-02-class-member-variables-and-methods.md"
+    },
+    {
+      "slug": "052-05-03-class-visibility",
+      "title": "第三节 访问控制的实现",
+      "file": "chapters/052-05-03-class-visibility.md"
+    },
+    {
+      "slug": "053-05-04-class-inherit-abstract",
+      "title": "第四节 类的继承，多态及抽象类",
+      "file": "chapters/053-05-04-class-inherit-abstract.md"
+    },
+    {
+      "slug": "054-05-05-class-magic-methods-latebinding",
+      "title": "第五节 魔术方法，延迟绑定及静态成员",
+      "file": "chapters/054-05-05-class-magic-methods-latebinding.md"
+    },
+    {
+      "slug": "055-05-06-class-reserved-and-special-classes",
+      "title": "第六节 PHP保留类及特殊类",
+      "file": "chapters/055-05-06-class-reserved-and-special-classes.md"
+    },
+    {
+      "slug": "056-05-07-class-object",
+      "title": "第七节 对象",
+      "file": "chapters/056-05-07-class-object.md"
+    },
+    {
+      "slug": "057-05-08-class-namespace",
+      "title": "第八节 命名空间",
+      "file": "chapters/057-05-08-class-namespace.md"
+    },
+    {
+      "slug": "058-05-09-spl",
+      "title": "第九节 标准类",
+      "file": "chapters/058-05-09-spl.md"
+    },
+    {
+      "slug": "059-05-10-summary",
+      "title": "第十节 小结",
+      "file": "chapters/059-05-10-summary.md"
+    },
+    {
+      "slug": "060-06-00-memory-management",
+      "title": "第六章 内存管理",
+      "file": "chapters/060-06-00-memory-management.md"
+    },
+    {
+      "slug": "061-06-01-memory-management-overview",
+      "title": "第一节 内存管理概述",
+      "file": "chapters/061-06-01-memory-management-overview.md"
+    },
+    {
+      "slug": "062-06-02-php-memory-manager",
+      "title": "第二节 PHP中的内存管理",
+      "file": "chapters/062-06-02-php-memory-manager.md"
+    },
+    {
+      "slug": "063-06-03-php-memory-request-free",
+      "title": "第三节 内存使用：申请和销毁",
+      "file": "chapters/063-06-03-php-memory-request-free.md"
+    },
+    {
+      "slug": "064-06-04-00-garbage-collection",
+      "title": "第四节 垃圾回收",
+      "file": "chapters/064-06-04-00-garbage-collection.md"
+    },
+    {
+      "slug": "065-06-04-01-new-garbage-collection",
+      "title": "新的垃圾回收",
+      "file": "chapters/065-06-04-01-new-garbage-collection.md"
+    },
+    {
+      "slug": "066-06-05-php-memory-cache",
+      "title": "第五节 内存管理中的缓存",
+      "file": "chapters/066-06-05-php-memory-cache.md"
+    },
+    {
+      "slug": "067-06-06-copy-on-write",
+      "title": "第六节 写时复制（Copy On Write）",
+      "file": "chapters/067-06-06-copy-on-write.md"
+    },
+    {
+      "slug": "068-06-07-memory-leaks",
+      "title": "第七节 内存泄漏",
+      "file": "chapters/068-06-07-memory-leaks.md"
+    },
+    {
+      "slug": "069-06-08-summary",
+      "title": "第八节 小结",
+      "file": "chapters/069-06-08-summary.md"
+    },
+    {
+      "slug": "070-07-00-zend-vm",
+      "title": "第七章 Zend虚拟机",
+      "file": "chapters/070-07-00-zend-vm.md"
+    },
+    {
+      "slug": "071-07-01-zend-vm-overview",
+      "title": "第一节 Zend虚拟机概述",
+      "file": "chapters/071-07-01-zend-vm-overview.md"
+    },
+    {
+      "slug": "072-07-02-00-php-syntax",
+      "title": "第二节 语法的实现",
+      "file": "chapters/072-07-02-00-php-syntax.md"
+    },
+    {
+      "slug": "073-07-02-01-zend-re2c-scanner",
+      "title": "词法解析",
+      "file": "chapters/073-07-02-01-zend-re2c-scanner.md"
+    },
+    {
+      "slug": "074-07-02-02-zend-yacc-parser",
+      "title": "语法分析",
+      "file": "chapters/074-07-02-02-zend-yacc-parser.md"
+    },
+    {
+      "slug": "075-07-02-03-custom-php-syntax",
+      "title": "实现自己的语法",
+      "file": "chapters/075-07-02-03-custom-php-syntax.md"
+    },
+    {
+      "slug": "076-07-03-opcode-exec",
+      "title": "第三节 中间代码的执行",
+      "file": "chapters/076-07-03-opcode-exec.md"
+    },
+    {
+      "slug": "077-07-04-source-code-encrypt",
+      "title": "第四节 PHP代码的加密解密",
+      "file": "chapters/077-07-04-source-code-encrypt.md"
+    },
+    {
+      "slug": "078-07-05-summary",
+      "title": "第五节 小结",
+      "file": "chapters/078-07-05-summary.md"
+    },
+    {
+      "slug": "079-08-00-thread-safe",
+      "title": "第八章 线程安全",
+      "file": "chapters/079-08-00-thread-safe.md"
+    },
+    {
+      "slug": "080-08-02-thread-process-and-concurrent",
+      "title": "第二节 线程，进程和并发",
+      "file": "chapters/080-08-02-thread-process-and-concurrent.md"
+    },
+    {
+      "slug": "081-08-03-zend-thread-safe-in-php",
+      "title": "第三节 PHP中的线程安全",
+      "file": "chapters/081-08-03-zend-thread-safe-in-php.md"
+    },
+    {
+      "slug": "082-09-00-error-and-exception-handle",
+      "title": "第九章 错误和异常处理",
+      "file": "chapters/082-09-00-error-and-exception-handle.md"
+    },
+    {
+      "slug": "083-10-00-output-buffer",
+      "title": "第十章 输出缓冲",
+      "file": "chapters/083-10-00-output-buffer.md"
+    },
+    {
+      "slug": "084-11-02-00-extension-hello-world",
+      "title": "第二节 创建第一个扩展",
+      "file": "chapters/084-11-02-00-extension-hello-world.md"
+    },
+    {
+      "slug": "085-11-02-01-zend-parse-parameters",
+      "title": "扩展中参数的解析",
+      "file": "chapters/085-11-02-01-zend-parse-parameters.md"
+    },
+    {
+      "slug": "086-11-02-02-php-function",
+      "title": "在扩展中使用函数",
+      "file": "chapters/086-11-02-02-php-function.md"
+    },
+    {
+      "slug": "087-11-03-00-global-var",
+      "title": "第三节 使用全局变量",
+      "file": "chapters/087-11-03-00-global-var.md"
+    },
+    {
+      "slug": "088-11-03-01-global-var",
+      "title": "第三节 使用全局变量原理分析",
+      "file": "chapters/088-11-03-01-global-var.md"
+    },
+    {
+      "slug": "089-11-04-00-ini-set",
+      "title": "第四节 使用 INI 指令",
+      "file": "chapters/089-11-04-00-ini-set.md"
+    },
+    {
+      "slug": "090-11-04-01-ini-set",
+      "title": "11-04-01-ini-set",
+      "file": "chapters/090-11-04-01-ini-set.md"
+    },
+    {
+      "slug": "091-11-04-02-ini-set",
+      "title": "11-04-02-ini-set",
+      "file": "chapters/091-11-04-02-ini-set.md"
+    },
+    {
+      "slug": "092-11-05-00-zend-resource",
+      "title": "PHP7 使用资源包裹第三方扩展",
+      "file": "chapters/092-11-05-00-zend-resource.md"
+    },
+    {
+      "slug": "093-11-05-01-zend-resource",
+      "title": "PHP7 使用资源包裹第三方扩展原理分析",
+      "file": "chapters/093-11-05-01-zend-resource.md"
+    },
+    {
+      "slug": "094-16-00-php-features",
+      "title": "第十六章 PHP语言特性的实现",
+      "file": "chapters/094-16-00-php-features.md"
+    },
+    {
+      "slug": "095-16-01-00-php-loop",
+      "title": "第一节 循环语句",
+      "file": "chapters/095-16-01-00-php-loop.md"
+    },
+    {
+      "slug": "096-16-01-01-php-foreach",
+      "title": "foreach的实现",
+      "file": "chapters/096-16-01-01-php-foreach.md"
+    },
+    {
+      "slug": "097-16-01-02-php-for",
+      "title": "16-01-02-php-for",
+      "file": "chapters/097-16-01-02-php-for.md"
+    },
+    {
+      "slug": "098-20-00-guide-how-to",
+      "title": "第二十章 怎么样系列(how to)",
+      "file": "chapters/098-20-00-guide-how-to.md"
+    },
+    {
+      "slug": "099-d-how-to-contribute-to-php",
+      "title": "附录D 怎样为PHP贡献",
+      "file": "chapters/099-d-how-to-contribute-to-php.md"
+    },
+    {
+      "slug": "100-e-phpt-file",
+      "title": "附录E phpt测试文件说明",
+      "file": "chapters/100-e-phpt-file.md"
+    },
+    {
+      "slug": "101-f-upgrade-to-php-5-4-explain",
+      "title": "附录F PHP5.4新功能升级解析",
+      "file": "chapters/101-f-upgrade-to-php-5-4-explain.md"
+    },
+    {
+      "slug": "102-g-re2c-mannual",
+      "title": "附录G：re2c中文手册",
+      "file": "chapters/102-g-re2c-mannual.md"
+    },
+    {
+      "slug": "103-index",
+      "title": "index",
+      "file": "chapters/103-index.md"
+    },
+    {
+      "slug": "104-2011-04-06-weekly-summary",
+      "title": "2011-04-06 微博发布及团队博客相关内容的会议纪要",
+      "file": "chapters/104-2011-04-06-weekly-summary.md"
+    },
+    {
+      "slug": "105-2011-04-11-weekly-report",
+      "title": "本周汇总",
+      "file": "chapters/105-2011-04-11-weekly-report.md"
+    },
+    {
+      "slug": "106-2011-04-17-weekly-report",
+      "title": "本周汇总",
+      "file": "chapters/106-2011-04-17-weekly-report.md"
+    },
+    {
+      "slug": "107-2011-03-20-first-release",
+      "title": "er结婚了，深入理解PHP内核(TIPI)项目第一阶段发布了",
+      "file": "chapters/107-2011-03-20-first-release.md"
+    },
+    {
+      "slug": "108-2011-04-01-add-sections-typo-fix-and-improvement",
+      "title": "[新增内容及更新]提供PDF版下载，增加HashTable等数据结构内容及网站功能的优化",
+      "file": "chapters/108-2011-04-01-add-sections-typo-fix-and-improvement.md"
+    },
+    {
+      "slug": "109-2011-06-01-children-s-day-release",
+      "title": "[新版本发布]儿童节版发布",
+      "file": "chapters/109-2011-06-01-children-s-day-release.md"
+    },
+    {
+      "slug": "110-2011-07-29-add-chapter6",
+      "title": "[第六章 内存管理发布]增加第六章，增加CHM格式",
+      "file": "chapters/110-2011-07-29-add-chapter6.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

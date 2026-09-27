@@ -1,0 +1,226 @@
+{
+  "bookId": "8a40d1bb2b30",
+  "title": "高速上手 C++11/14/17",
+  "url": "https://github.com/changkun/modern-cpp-tutorial",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:35.620Z",
+  "chapters": [
+    {
+      "slug": "001-readme-zh-cn",
+      "title": "现代 C++ 教程：高速上手 C++11 到 C++26",
+      "file": "chapters/001-readme-zh-cn.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Modern C++ Tutorial: C++11 to C++26 On the Fly",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "changkun.de/modern-cpp",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-donate",
+      "title": "资助",
+      "file": "chapters/004-donate.md"
+    },
+    {
+      "slug": "005-00-preface",
+      "title": "Preface",
+      "file": "chapters/005-00-preface.md"
+    },
+    {
+      "slug": "006-01-intro",
+      "title": "Chapter 01: Towards Modern C++",
+      "file": "chapters/006-01-intro.md"
+    },
+    {
+      "slug": "007-02-usability",
+      "title": "Chapter 02: Language Usability Enhancements",
+      "file": "chapters/007-02-usability.md"
+    },
+    {
+      "slug": "008-03-runtime",
+      "title": "Chapter 03: Language Runtime Enhancements",
+      "file": "chapters/008-03-runtime.md"
+    },
+    {
+      "slug": "009-04-containers",
+      "title": "Chapter 04: Containers",
+      "file": "chapters/009-04-containers.md"
+    },
+    {
+      "slug": "010-05-pointers",
+      "title": "Chapter 05: Smart Pointers and Memory Management",
+      "file": "chapters/010-05-pointers.md"
+    },
+    {
+      "slug": "011-06-regex",
+      "title": "Chapter 06: Regular Expression",
+      "file": "chapters/011-06-regex.md"
+    },
+    {
+      "slug": "012-07-thread",
+      "title": "Chapter 07: Parallelism and Concurrency",
+      "file": "chapters/012-07-thread.md"
+    },
+    {
+      "slug": "013-08-filesystem",
+      "title": "Chapter 08: File System",
+      "file": "chapters/013-08-filesystem.md"
+    },
+    {
+      "slug": "014-09-others",
+      "title": "Chapter 09: Minor Features",
+      "file": "chapters/014-09-others.md"
+    },
+    {
+      "slug": "015-10-cpp20",
+      "title": "Chapter 10: C++20",
+      "file": "chapters/015-10-cpp20.md"
+    },
+    {
+      "slug": "016-11-cpp23",
+      "title": "Chapter 11: C++23",
+      "file": "chapters/016-11-cpp23.md"
+    },
+    {
+      "slug": "017-12-cpp26",
+      "title": "Chapter 12: C++26 (Outlook)",
+      "file": "chapters/017-12-cpp26.md"
+    },
+    {
+      "slug": "018-appendix1",
+      "title": "Appendix 1: Further Study Materials",
+      "file": "chapters/018-appendix1.md"
+    },
+    {
+      "slug": "019-appendix2",
+      "title": "Appendix 2: Modern C++ Best Practices",
+      "file": "chapters/019-appendix2.md"
+    },
+    {
+      "slug": "020-appendix3",
+      "title": "Appendix 3: Modern C++ Feature Index",
+      "file": "chapters/020-appendix3.md"
+    },
+    {
+      "slug": "021-toc",
+      "title": "C++11 to C++26 On The Fly",
+      "file": "chapters/021-toc.md"
+    },
+    {
+      "slug": "022-00-preface",
+      "title": "序言",
+      "file": "chapters/022-00-preface.md"
+    },
+    {
+      "slug": "023-01-intro",
+      "title": "第 1 章 迈向现代 C++",
+      "file": "chapters/023-01-intro.md"
+    },
+    {
+      "slug": "024-02-usability",
+      "title": "第 2 章 语言可用性的强化",
+      "file": "chapters/024-02-usability.md"
+    },
+    {
+      "slug": "025-03-runtime",
+      "title": "第 3 章 语言运行期的强化",
+      "file": "chapters/025-03-runtime.md"
+    },
+    {
+      "slug": "026-04-containers",
+      "title": "第 4 章 容器",
+      "file": "chapters/026-04-containers.md"
+    },
+    {
+      "slug": "027-05-pointers",
+      "title": "第 5 章 智能指针与内存管理",
+      "file": "chapters/027-05-pointers.md"
+    },
+    {
+      "slug": "028-06-regex",
+      "title": "第 6 章 正则表达式",
+      "file": "chapters/028-06-regex.md"
+    },
+    {
+      "slug": "029-07-thread",
+      "title": "第 7 章 并行与并发",
+      "file": "chapters/029-07-thread.md"
+    },
+    {
+      "slug": "030-08-filesystem",
+      "title": "第 8 章 文件系统",
+      "file": "chapters/030-08-filesystem.md"
+    },
+    {
+      "slug": "031-09-others",
+      "title": "第 9 章 其他杂项",
+      "file": "chapters/031-09-others.md"
+    },
+    {
+      "slug": "032-10-cpp20",
+      "title": "第 10 章 C++20",
+      "file": "chapters/032-10-cpp20.md"
+    },
+    {
+      "slug": "033-11-cpp23",
+      "title": "第 11 章 C++23",
+      "file": "chapters/033-11-cpp23.md"
+    },
+    {
+      "slug": "034-12-cpp26",
+      "title": "第 12 章 C++26（展望）",
+      "file": "chapters/034-12-cpp26.md"
+    },
+    {
+      "slug": "035-appendix1",
+      "title": "附录 1：进一步阅读的学习材料",
+      "file": "chapters/035-appendix1.md"
+    },
+    {
+      "slug": "036-appendix2",
+      "title": "附录 2：现代 C++ 的最佳实践",
+      "file": "chapters/036-appendix2.md"
+    },
+    {
+      "slug": "037-appendix3",
+      "title": "附录 3：现代 C++ 特性索引",
+      "file": "chapters/037-appendix3.md"
+    },
+    {
+      "slug": "038-toc",
+      "title": "现代 C++ 教程：高速上手 C++11 到 C++26",
+      "file": "chapters/038-toc.md"
+    },
+    {
+      "slug": "039-index",
+      "title": "index",
+      "file": "chapters/039-index.md"
+    },
+    {
+      "slug": "040-ack",
+      "title": "致谢",
+      "file": "chapters/040-ack.md"
+    },
+    {
+      "slug": "041-copyright",
+      "title": "版权声明",
+      "file": "chapters/041-copyright.md"
+    },
+    {
+      "slug": "042-donate",
+      "title": "资助",
+      "file": "chapters/042-donate.md"
+    },
+    {
+      "slug": "043-index",
+      "title": "index",
+      "file": "chapters/043-index.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

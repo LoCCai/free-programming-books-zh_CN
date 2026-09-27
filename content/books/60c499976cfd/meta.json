@@ -1,0 +1,16 @@
+{
+  "bookId": "60c499976cfd",
+  "title": "Emmet 文档",
+  "url": "http://yanxyz.github.io/emmet-docs/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:44.250Z",
+  "chapters": [
+    {
+      "slug": "001-z",
+      "title": "http://yanxyz.github.io/emmet-docs/",
+      "file": "chapters/001-z.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://yanxyz.github.io/emmet-docs/"
+}

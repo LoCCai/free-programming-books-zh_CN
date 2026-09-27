@@ -1,0 +1,16 @@
+{
+  "bookId": "f78003e53849",
+  "title": "前端代码规范 及 最佳实践",
+  "url": "http://coderlmn.github.io/code-standards/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:33.951Z",
+  "chapters": [
+    {
+      "slug": "001-15",
+      "title": "前端代码规范 及 最佳实践 | Isobar",
+      "file": "chapters/001-15.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "前端代码规范 及 最佳实践 | Isobar"
+}

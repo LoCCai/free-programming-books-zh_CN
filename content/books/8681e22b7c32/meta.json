@@ -1,0 +1,16 @@
+{
+  "bookId": "8681e22b7c32",
+  "title": "Scheme语言简明教程",
+  "url": "http://songjinghe.github.io/TYS-zh-translation/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:55.167Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "译：Teach Yourself Scheme in Fixnum Days",
+      "file": "chapters/001-1b.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "译：Teach Yourself Scheme in Fixnum Days"
+}

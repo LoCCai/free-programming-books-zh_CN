@@ -1,0 +1,215 @@
+{
+  "bookId": "0a061879f7cb",
+  "title": "Markdown 入门参考",
+  "url": "https://github.com/LearnShare/Learning-Markdown",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:36.905Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "关于 Markdown",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-helloworld",
+      "title": "第一个 Markdown 文档",
+      "file": "chapters/002-helloworld.md"
+    },
+    {
+      "slug": "003-hello",
+      "title": "Hello.md",
+      "file": "chapters/003-hello.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "语法",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-paragraphs-and-line-breaks",
+      "title": "段落与换行",
+      "file": "chapters/005-paragraphs-and-line-breaks.md"
+    },
+    {
+      "slug": "006-headers",
+      "title": "标题",
+      "file": "chapters/006-headers.md"
+    },
+    {
+      "slug": "007-blockquotes",
+      "title": "引用",
+      "file": "chapters/007-blockquotes.md"
+    },
+    {
+      "slug": "008-lists",
+      "title": "列表",
+      "file": "chapters/008-lists.md"
+    },
+    {
+      "slug": "009-code",
+      "title": "代码",
+      "file": "chapters/009-code.md"
+    },
+    {
+      "slug": "010-horizontal-rule",
+      "title": "分隔线",
+      "file": "chapters/010-horizontal-rule.md"
+    },
+    {
+      "slug": "011-links",
+      "title": "超链接",
+      "file": "chapters/011-links.md"
+    },
+    {
+      "slug": "012-images",
+      "title": "图片",
+      "file": "chapters/012-images.md"
+    },
+    {
+      "slug": "013-emphasis",
+      "title": "强调",
+      "file": "chapters/013-emphasis.md"
+    },
+    {
+      "slug": "014-blackslash-escapes",
+      "title": "字符转义",
+      "file": "chapters/014-blackslash-escapes.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "扩展语法",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-strikethrougn",
+      "title": "删除线",
+      "file": "chapters/016-strikethrougn.md"
+    },
+    {
+      "slug": "017-code-blocks-and-highlighting",
+      "title": "代码块和语法高亮",
+      "file": "chapters/017-code-blocks-and-highlighting.md"
+    },
+    {
+      "slug": "018-table",
+      "title": "表格",
+      "file": "chapters/018-table.md"
+    },
+    {
+      "slug": "019-task-list",
+      "title": "Task List",
+      "file": "chapters/019-task-list.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "编辑器与扩展",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-markdownpad",
+      "title": "MarkdownPad",
+      "file": "chapters/021-markdownpad.md"
+    },
+    {
+      "slug": "022-texts",
+      "title": "Texts",
+      "file": "chapters/022-texts.md"
+    },
+    {
+      "slug": "023-markpad",
+      "title": "MarkPad",
+      "file": "chapters/023-markpad.md"
+    },
+    {
+      "slug": "024-mdcharm",
+      "title": "MdCharm",
+      "file": "chapters/024-mdcharm.md"
+    },
+    {
+      "slug": "025-markdown-edit",
+      "title": "Markdown Edit",
+      "file": "chapters/025-markdown-edit.md"
+    },
+    {
+      "slug": "026-cutemarked",
+      "title": "CuteMarkEd",
+      "file": "chapters/026-cutemarked.md"
+    },
+    {
+      "slug": "027-haroopad",
+      "title": "Haroopad",
+      "file": "chapters/027-haroopad.md"
+    },
+    {
+      "slug": "028-mou",
+      "title": "Mou",
+      "file": "chapters/028-mou.md"
+    },
+    {
+      "slug": "029-macdown",
+      "title": "MacDown",
+      "file": "chapters/029-macdown.md"
+    },
+    {
+      "slug": "030-markdown-pro",
+      "title": "Markdown Pro",
+      "file": "chapters/030-markdown-pro.md"
+    },
+    {
+      "slug": "031-retext",
+      "title": "ReText",
+      "file": "chapters/031-retext.md"
+    },
+    {
+      "slug": "032-sublime-markdown-extended",
+      "title": "sublime-markdown-extended",
+      "file": "chapters/032-sublime-markdown-extended.md"
+    },
+    {
+      "slug": "033-atom-markdown-preview",
+      "title": "Atom Markdown Preview",
+      "file": "chapters/033-atom-markdown-preview.md"
+    },
+    {
+      "slug": "034-idea-markdown",
+      "title": "IDEA Markdown",
+      "file": "chapters/034-idea-markdown.md"
+    },
+    {
+      "slug": "035-cmd-markdown",
+      "title": "Cmd Markdown",
+      "file": "chapters/035-cmd-markdown.md"
+    },
+    {
+      "slug": "036-stackedit",
+      "title": "StackEdit",
+      "file": "chapters/036-stackedit.md"
+    },
+    {
+      "slug": "037-dillinger",
+      "title": "Dillinger",
+      "file": "chapters/037-dillinger.md"
+    },
+    {
+      "slug": "038-readme",
+      "title": "格式转换",
+      "file": "chapters/038-readme.md"
+    },
+    {
+      "slug": "039-html",
+      "title": "HTML",
+      "file": "chapters/039-html.md"
+    },
+    {
+      "slug": "040-pdf",
+      "title": "PDF",
+      "file": "chapters/040-pdf.md"
+    },
+    {
+      "slug": "041-word",
+      "title": "Word",
+      "file": "chapters/041-word.md"
+    }
+  ],
+  "sourceType": "github"
+}

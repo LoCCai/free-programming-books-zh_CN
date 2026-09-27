@@ -1,0 +1,16 @@
+{
+  "bookId": "4f9004ff9477",
+  "title": "Go语言定制指南",
+  "url": "https://chai2010.cn/go-ast-book/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:49.149Z",
+  "chapters": [
+    {
+      "slug": "001-w",
+      "title": "Go语言定制指南 - Go语言定制指南",
+      "file": "chapters/001-w.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Go语言定制指南 - Go语言定制指南"
+}

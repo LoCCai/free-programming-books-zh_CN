@@ -1,0 +1,176 @@
+{
+  "bookId": "42c25ce8e2b9",
+  "title": "Java 编程要点",
+  "url": "https://github.com/waylau/essential-java",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:28.910Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Introduction",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-getstarted",
+      "title": "快速开始",
+      "file": "chapters/002-getstarted.md"
+    },
+    {
+      "slug": "003-overview",
+      "title": "Java概述",
+      "file": "chapters/003-overview.md"
+    },
+    {
+      "slug": "004-oop",
+      "title": "面向对象编程",
+      "file": "chapters/004-oop.md"
+    },
+    {
+      "slug": "005-basics",
+      "title": "语言基础",
+      "file": "chapters/005-basics.md"
+    },
+    {
+      "slug": "006-variables",
+      "title": "变量",
+      "file": "chapters/006-variables.md"
+    },
+    {
+      "slug": "007-operators",
+      "title": "运算符",
+      "file": "chapters/007-operators.md"
+    },
+    {
+      "slug": "008-expressions",
+      "title": "表达式、语句和块",
+      "file": "chapters/008-expressions.md"
+    },
+    {
+      "slug": "009-control-flow",
+      "title": "控制流程语句",
+      "file": "chapters/009-control-flow.md"
+    },
+    {
+      "slug": "010-classes-and-objects",
+      "title": "类和对象",
+      "file": "chapters/010-classes-and-objects.md"
+    },
+    {
+      "slug": "011-annotations",
+      "title": "注解",
+      "file": "chapters/011-annotations.md"
+    },
+    {
+      "slug": "012-generics",
+      "title": "泛型",
+      "file": "chapters/012-generics.md"
+    },
+    {
+      "slug": "013-keywords",
+      "title": "关键字",
+      "file": "chapters/013-keywords.md"
+    },
+    {
+      "slug": "014-io",
+      "title": "IO",
+      "file": "chapters/014-io.md"
+    },
+    {
+      "slug": "015-io-streams",
+      "title": "I/O 流",
+      "file": "chapters/015-io-streams.md"
+    },
+    {
+      "slug": "016-file-io",
+      "title": "文件 I/O",
+      "file": "chapters/016-file-io.md"
+    },
+    {
+      "slug": "017-concurrency",
+      "title": "并发",
+      "file": "chapters/017-concurrency.md"
+    },
+    {
+      "slug": "018-concurrency-synchronization",
+      "title": "同步",
+      "file": "chapters/018-concurrency-synchronization.md"
+    },
+    {
+      "slug": "019-concurrency-liveness",
+      "title": "活跃度（Liveness）",
+      "file": "chapters/019-concurrency-liveness.md"
+    },
+    {
+      "slug": "020-collection-framework",
+      "title": "集合框架",
+      "file": "chapters/020-collection-framework.md"
+    },
+    {
+      "slug": "021-networking",
+      "title": "网络基础",
+      "file": "chapters/021-networking.md"
+    },
+    {
+      "slug": "022-socket",
+      "title": "Socket",
+      "file": "chapters/022-socket.md"
+    },
+    {
+      "slug": "023-io-model",
+      "title": "I/O 模型的演进",
+      "file": "chapters/023-io-model.md"
+    },
+    {
+      "slug": "024-jdbc",
+      "title": "JDBC",
+      "file": "chapters/024-jdbc.md"
+    },
+    {
+      "slug": "025-exceptions",
+      "title": "异常",
+      "file": "chapters/025-exceptions.md"
+    },
+    {
+      "slug": "026-exceptions-catch-and-handle",
+      "title": "异常捕获与处理",
+      "file": "chapters/026-exceptions-catch-and-handle.md"
+    },
+    {
+      "slug": "027-exceptions-specify-exceptions-thrown",
+      "title": "通过方法声明异常抛出",
+      "file": "chapters/027-exceptions-specify-exceptions-thrown.md"
+    },
+    {
+      "slug": "028-exceptions-throw",
+      "title": "如何抛出异常",
+      "file": "chapters/028-exceptions-throw.md"
+    },
+    {
+      "slug": "029-exceptions-chained-exceptions",
+      "title": "异常链",
+      "file": "chapters/029-exceptions-chained-exceptions.md"
+    },
+    {
+      "slug": "030-exceptions-create-exception-class",
+      "title": "创建异常类",
+      "file": "chapters/030-exceptions-create-exception-class.md"
+    },
+    {
+      "slug": "031-exceptions-unchecked-exception",
+      "title": "未检查异常",
+      "file": "chapters/031-exceptions-unchecked-exception.md"
+    },
+    {
+      "slug": "032-exceptions-advantages",
+      "title": "使用异常带来的优势",
+      "file": "chapters/032-exceptions-advantages.md"
+    },
+    {
+      "slug": "033-appendix",
+      "title": "附录",
+      "file": "chapters/033-appendix.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

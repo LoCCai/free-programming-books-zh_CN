@@ -1,0 +1,16 @@
+{
+  "bookId": "a6e4449d8769",
+  "title": "OpenWrt智能、自动、透明翻墙路由器教程",
+  "url": "https://www.gitbook.com/book/softwaredownload/openwrt-fanqiang/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:46.141Z",
+  "chapters": [
+    {
+      "slug": "001-1y",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1y.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

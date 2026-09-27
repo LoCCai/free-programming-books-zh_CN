@@ -1,0 +1,16 @@
+{
+  "bookId": "0cefd5edfb42",
+  "title": "前端代码规范",
+  "url": "http://alloyteam.github.io/CodeGuide/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:44.769Z",
+  "chapters": [
+    {
+      "slug": "001-11",
+      "title": "Code Guide by @AlloyTeam",
+      "file": "chapters/001-11.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Code Guide by @AlloyTeam"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "dea15a06d875",
+  "title": "iPhone 6 屏幕揭秘",
+  "url": "http://wileam.com/iphone-6-screen-cn/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:15.176Z",
+  "chapters": [
+    {
+      "slug": "001-11",
+      "title": "iPhone 6屏幕揭秘",
+      "file": "chapters/001-11.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "iPhone 6屏幕揭秘"
+}

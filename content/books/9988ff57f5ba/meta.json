@@ -1,0 +1,255 @@
+{
+  "bookId": "9988ff57f5ba",
+  "title": "Go 语言标准库",
+  "url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:54.694Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "简介",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-01-0",
+      "title": "第一章 输入输出 (Input/Output)",
+      "file": "chapters/002-01-0.md"
+    },
+    {
+      "slug": "003-01-1",
+      "title": "io — 基本的 IO 接口",
+      "file": "chapters/003-01-1.md"
+    },
+    {
+      "slug": "004-01-2",
+      "title": "ioutil — 方便的 IO 操作函数集",
+      "file": "chapters/004-01-2.md"
+    },
+    {
+      "slug": "005-01-3",
+      "title": "fmt — 格式化 IO",
+      "file": "chapters/005-01-3.md"
+    },
+    {
+      "slug": "006-01-4",
+      "title": "bufio — 缓存 IO",
+      "file": "chapters/006-01-4.md"
+    },
+    {
+      "slug": "007-02-0",
+      "title": "第二章 文本",
+      "file": "chapters/007-02-0.md"
+    },
+    {
+      "slug": "008-02-1",
+      "title": "strings — 字符串操作",
+      "file": "chapters/008-02-1.md"
+    },
+    {
+      "slug": "009-02-2",
+      "title": "bytes — byte slice 便利操作",
+      "file": "chapters/009-02-2.md"
+    },
+    {
+      "slug": "010-02-3",
+      "title": "strconv — 字符串和基本数据类型之间转换",
+      "file": "chapters/010-02-3.md"
+    },
+    {
+      "slug": "011-02-4",
+      "title": "regexp — 正则表达式",
+      "file": "chapters/011-02-4.md"
+    },
+    {
+      "slug": "012-02-5",
+      "title": "unicode — Unicode 码点、UTF-8/16 编码",
+      "file": "chapters/012-02-5.md"
+    },
+    {
+      "slug": "013-03-0",
+      "title": "第三章 数据结构与算法",
+      "file": "chapters/013-03-0.md"
+    },
+    {
+      "slug": "014-03-1",
+      "title": "sort — 排序算法",
+      "file": "chapters/014-03-1.md"
+    },
+    {
+      "slug": "015-03-3",
+      "title": "container — 容器数据类型：heap、list 和 ring",
+      "file": "chapters/015-03-3.md"
+    },
+    {
+      "slug": "016-04-0",
+      "title": "第四章 日期与时间",
+      "file": "chapters/016-04-0.md"
+    },
+    {
+      "slug": "017-04-1",
+      "title": "主要类型概述",
+      "file": "chapters/017-04-1.md"
+    },
+    {
+      "slug": "018-04-2",
+      "title": "时区",
+      "file": "chapters/018-04-2.md"
+    },
+    {
+      "slug": "019-04-3",
+      "title": "Time类型详解",
+      "file": "chapters/019-04-3.md"
+    },
+    {
+      "slug": "020-04-4",
+      "title": "定时器",
+      "file": "chapters/020-04-4.md"
+    },
+    {
+      "slug": "021-05-1",
+      "title": "math — 基本数学函数",
+      "file": "chapters/021-05-1.md"
+    },
+    {
+      "slug": "022-06-0",
+      "title": "第六章 文件系统",
+      "file": "chapters/022-06-0.md"
+    },
+    {
+      "slug": "023-06-1",
+      "title": "os — 平台无关的操作系统功能实现",
+      "file": "chapters/023-06-1.md"
+    },
+    {
+      "slug": "024-06-2",
+      "title": "path/filepath — 操作路径",
+      "file": "chapters/024-06-2.md"
+    },
+    {
+      "slug": "025-06-3",
+      "title": "io/fs - 抽象文件系统",
+      "file": "chapters/025-06-3.md"
+    },
+    {
+      "slug": "026-07-0",
+      "title": "第七章 数据持久存储与交换",
+      "file": "chapters/026-07-0.md"
+    },
+    {
+      "slug": "027-07-1",
+      "title": "database/sql — SQL/SQL-Like 数据库操作接口",
+      "file": "chapters/027-07-1.md"
+    },
+    {
+      "slug": "028-08-0",
+      "title": "第八章 数据压缩与归档",
+      "file": "chapters/028-08-0.md"
+    },
+    {
+      "slug": "029-08-1",
+      "title": "flate - DEFLATE 压缩算法",
+      "file": "chapters/029-08-1.md"
+    },
+    {
+      "slug": "030-09-0",
+      "title": "第九章 测试",
+      "file": "chapters/030-09-0.md"
+    },
+    {
+      "slug": "031-09-1",
+      "title": "testing - 单元测试",
+      "file": "chapters/031-09-1.md"
+    },
+    {
+      "slug": "032-09-2",
+      "title": "testing - 基准测试",
+      "file": "chapters/032-09-2.md"
+    },
+    {
+      "slug": "033-09-3",
+      "title": "testing - 子测试与子基准测试",
+      "file": "chapters/033-09-3.md"
+    },
+    {
+      "slug": "034-09-4",
+      "title": "testing - 运行并验证示例",
+      "file": "chapters/034-09-4.md"
+    },
+    {
+      "slug": "035-09-5",
+      "title": "testing - 其他功能",
+      "file": "chapters/035-09-5.md"
+    },
+    {
+      "slug": "036-09-6",
+      "title": "httptest - HTTP 测试辅助工具",
+      "file": "chapters/036-09-6.md"
+    },
+    {
+      "slug": "037-09-7",
+      "title": "总结",
+      "file": "chapters/037-09-7.md"
+    },
+    {
+      "slug": "038-10-0",
+      "title": "第十章 进程、线程与 goroutine",
+      "file": "chapters/038-10-0.md"
+    },
+    {
+      "slug": "039-10-1",
+      "title": "创建进程",
+      "file": "chapters/039-10-1.md"
+    },
+    {
+      "slug": "040-10-2",
+      "title": "进程属性和控制",
+      "file": "chapters/040-10-2.md"
+    },
+    {
+      "slug": "041-10-3",
+      "title": "线程",
+      "file": "chapters/041-10-3.md"
+    },
+    {
+      "slug": "042-10-4",
+      "title": "进程间通信",
+      "file": "chapters/042-10-4.md"
+    },
+    {
+      "slug": "043-13-0",
+      "title": "第十三章 应用构建 与 debug",
+      "file": "chapters/043-13-0.md"
+    },
+    {
+      "slug": "044-13-1",
+      "title": "flag - 命令行参数解析",
+      "file": "chapters/044-13-1.md"
+    },
+    {
+      "slug": "045-13-3",
+      "title": "expvar - 公共变量的标准化接口",
+      "file": "chapters/045-13-3.md"
+    },
+    {
+      "slug": "046-15-02",
+      "title": "unsafe — 非类型安全操作",
+      "file": "chapters/046-15-02.md"
+    },
+    {
+      "slug": "047-16-01",
+      "title": "sync - 处理同步需求",
+      "file": "chapters/047-16-01.md"
+    },
+    {
+      "slug": "048-16-02",
+      "title": "sync/atomic - 原子操作",
+      "file": "chapters/048-16-02.md"
+    },
+    {
+      "slug": "049-16-03",
+      "title": "os/signal - 信号",
+      "file": "chapters/049-16-03.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,63 @@
+1.4. Creating a JavaEE Web Application 创建一个JavaEE的Web项目
+========================
+
+与 1.1 类似的创建项目的流程，创建 JavaEE Web 项目仅需要打包成 WAR 并且部署到 Servlet 容器。除了基于 Grizzly 的 archetype,
+ Jersey 也提供了 Maven archetype 用来创建 web 项目，命令如下：
+
+```
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-webapp \
+                -DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false \
+                -DgroupId=com.example -DartifactId=simple-service-webapp -Dpackage=com.example \
+                -DarchetypeVersion=2.16
+                
+```
+在你的项目里面随意调整pom.xml内的groupId，包号和版本号就可以成为一个新的项目。
+
+此时，`simple-service-webapp`已经创建， 符合Maven的项目结构：
+
+* 标准的管理配置文件 pom.xml
+* 原文件路径 src/main/java
+* 资源文件路径 src/main/resources
+* web应用文件 src/main/webapp
+
+![simple-service-webapp](http://i1288.photobucket.com/albums/b484/waylau/waylau%20blog/Jersey-2-User-Guide/14-001_zps51654e50.jpg)
+
+
+该项目包含相同的 MyResouce JAX-RS资源类。它不包含任何单元测试以及它不包含一个主类，这在以前是用在 Grizzly 容器的项目设置。相反， 在 src/main/webapp/WEB-INF 下，它包含了标准的JavaEE Web 应用的 web.xml 部署描述符。项目中的最后一个组件是一个 index.jsp 页面作为这次 MyResource  资源类打包和部署的应用程序客户端。
+
+项目打包成WAR,执行:
+
+	mvn clean package
+
+打包成功，如下：
+	
+	[INFO]
+	[INFO] --- maven-war-plugin:2.2:war (default-war) @ simple-service-webapp ---
+	[INFO] Packaging webapp
+	[INFO] Assembling webapp [simple-service-webapp] in [D:\workspaceGithub\Jersey-2
+	.x-User-Guide-Demos\demo-1.4\simple-service-webapp\target\simple-service-webapp]
+	
+	[INFO] Processing war project
+	[INFO] Copying webapp resources [D:\workspaceGithub\Jersey-2.x-User-Guide-Demos\
+	demo-1.4\simple-service-webapp\src\main\webapp]
+	[INFO] Webapp assembled in [176 msecs]
+	[INFO] Building war: D:\workspaceGithub\Jersey-2.x-User-Guide-Demos\demo-1.4\sim
+	ple-service-webapp\target\simple-service-webapp.war
+	[INFO] WEB-INF\web.xml already added, skipping
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time: 02:29 min
+	[INFO] Finished at: 2014-08-30T10:05:56+08:00
+	[INFO] Final Memory: 12M/29M
+	[INFO] ------------------------------------------------------------------------
+
+打包的 WAR（位于`./target/simple-service-webapp.war`）可以将它部署到您任意的 Servlet 容器版。
+ 
+![target](http://i1288.photobucket.com/albums/b484/waylau/waylau%20blog/Jersey-2-User-Guide/14-002_zps4abe828a.jpg)
+
+![Servlet](http://i1288.photobucket.com/albums/b484/waylau/waylau%20blog/Jersey-2-User-Guide/14-003_zpsea860000.jpg)
+
+![got it]](http://i1288.photobucket.com/albums/b484/waylau/waylau%20blog/Jersey-2-User-Guide/14-004_zpse1995c15.jpg)
+
+**注意**：部署 Jersey 项目，Servlet 容器版本应该是不低于2.5，如果想支持更高的特性(比如 JAX-RS 2.0 Async Support) ，Servlet容器版本应该是不低于3.0

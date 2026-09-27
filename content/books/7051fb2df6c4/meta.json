@@ -1,0 +1,9 @@
+{
+  "bookId": "7051fb2df6c4",
+  "title": "GNU make中文手册",
+  "url": "https://github.com/Jing--Li/book/blob/master/PL%20GNU%20make%20%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C.pdf",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:26:05.829Z",
+  "chapters": [],
+  "error": "目标文件不存在: PL%20GNU%20make%20%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C.pdf"
+}

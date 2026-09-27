@@ -1,0 +1,140 @@
+{
+  "bookId": "27335a7889b4",
+  "title": "一步步搭建物联网系统",
+  "url": "https://github.com/phodal/designiot",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:19:28.604Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-iot",
+      "title": "物联网毕业设计#",
+      "file": "chapters/002-iot.md"
+    },
+    {
+      "slug": "003-help",
+      "title": "help",
+      "file": "chapters/003-help.md"
+    },
+    {
+      "slug": "004-1-1-anywhere-html",
+      "title": "1.1.anywhere-html",
+      "file": "chapters/004-1-1-anywhere-html.md"
+    },
+    {
+      "slug": "005-1-2-anywhere-javascript",
+      "title": "1.2.anywhere-javascript",
+      "file": "chapters/005-1-2-anywhere-javascript.md"
+    },
+    {
+      "slug": "006-1-3-anywhere-css",
+      "title": "1.3.anywhere-css",
+      "file": "chapters/006-1-3-anywhere-css.md"
+    },
+    {
+      "slug": "007-1-4-anywhere-hjc",
+      "title": "无处不在的三剑客#",
+      "file": "chapters/007-1-4-anywhere-hjc.md"
+    },
+    {
+      "slug": "008-1-5-linux",
+      "title": "1.5.linux",
+      "file": "chapters/008-1-5-linux.md"
+    },
+    {
+      "slug": "009-1-6-arduino",
+      "title": "1.6.arduino",
+      "file": "chapters/009-1-6-arduino.md"
+    },
+    {
+      "slug": "010-1-7-python",
+      "title": "1.7.python",
+      "file": "chapters/010-1-7-python.md"
+    },
+    {
+      "slug": "011-1-8-rpi",
+      "title": "1.8.rpi",
+      "file": "chapters/011-1-8-rpi.md"
+    },
+    {
+      "slug": "012-1-9-server",
+      "title": "1.9.server",
+      "file": "chapters/012-1-9-server.md"
+    },
+    {
+      "slug": "013-2-0-webservices",
+      "title": "2.0.webservices",
+      "file": "chapters/013-2-0-webservices.md"
+    },
+    {
+      "slug": "014-2-1-http",
+      "title": "2.1.http",
+      "file": "chapters/014-2-1-http.md"
+    },
+    {
+      "slug": "015-2-1-restful",
+      "title": "2.1.restful",
+      "file": "chapters/015-2-1-restful.md"
+    },
+    {
+      "slug": "016-2-2-init-env",
+      "title": "2.2.init_env",
+      "file": "chapters/016-2-2-init-env.md"
+    },
+    {
+      "slug": "017-2-3-create-laravel",
+      "title": "2.3.create_laravel",
+      "file": "chapters/017-2-3-create-laravel.md"
+    },
+    {
+      "slug": "018-2-5-frontend",
+      "title": "2.5.frontend",
+      "file": "chapters/018-2-5-frontend.md"
+    },
+    {
+      "slug": "019-3-1-coap",
+      "title": "3.1.coap",
+      "file": "chapters/019-3-1-coap.md"
+    },
+    {
+      "slug": "020-3-1-iot-coap",
+      "title": "3.1.iot-coap",
+      "file": "chapters/020-3-1-iot-coap.md"
+    },
+    {
+      "slug": "021-4-0-easyiot",
+      "title": "4.0.easyiot",
+      "file": "chapters/021-4-0-easyiot.md"
+    },
+    {
+      "slug": "022-5-0-android",
+      "title": "5.0.android",
+      "file": "chapters/022-5-0-android.md"
+    },
+    {
+      "slug": "023-qa",
+      "title": "qa",
+      "file": "chapters/023-qa.md"
+    },
+    {
+      "slug": "024-3-2-mqtt",
+      "title": "3.2.mqtt",
+      "file": "chapters/024-3-2-mqtt.md"
+    },
+    {
+      "slug": "025-1-pre",
+      "title": "1.pre",
+      "file": "chapters/025-1-pre.md"
+    },
+    {
+      "slug": "026-2-intro",
+      "title": "2.intro",
+      "file": "chapters/026-2-intro.md"
+    }
+  ],
+  "sourceType": "github"
+}

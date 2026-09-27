@@ -1,0 +1,60 @@
+{
+  "bookId": "ca357bb5ad18",
+  "title": "libuv中文教程",
+  "url": "https://github.com/luohaha/Chinese-uvbook",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:32.641Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "libuv中文教程",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-about",
+      "title": "About",
+      "file": "chapters/002-about.md"
+    },
+    {
+      "slug": "003-advanced-event-loops",
+      "title": "Advanced event loops",
+      "file": "chapters/003-advanced-event-loops.md"
+    },
+    {
+      "slug": "004-basics-of-libuv",
+      "title": "Basics of libuv",
+      "file": "chapters/004-basics-of-libuv.md"
+    },
+    {
+      "slug": "005-filesystem",
+      "title": "Filesystem",
+      "file": "chapters/005-filesystem.md"
+    },
+    {
+      "slug": "006-introduction",
+      "title": "Introduction",
+      "file": "chapters/006-introduction.md"
+    },
+    {
+      "slug": "007-networking",
+      "title": "Networking",
+      "file": "chapters/007-networking.md"
+    },
+    {
+      "slug": "008-processes",
+      "title": "Processes",
+      "file": "chapters/008-processes.md"
+    },
+    {
+      "slug": "009-threads",
+      "title": "Threads",
+      "file": "chapters/009-threads.md"
+    },
+    {
+      "slug": "010-utilities",
+      "title": "Utilities",
+      "file": "chapters/010-utilities.md"
+    }
+  ],
+  "sourceType": "github"
+}

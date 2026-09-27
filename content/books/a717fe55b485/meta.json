@@ -1,0 +1,16 @@
+{
+  "bookId": "a717fe55b485",
+  "title": "iOS7人机界面指南",
+  "url": "http://isux.tencent.com/ios-human-interface-guidelines-ui-design-basics-ios7.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:13.892Z",
+  "chapters": [
+    {
+      "slug": "001-29",
+      "title": "404",
+      "file": "chapters/001-29.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "404"
+}

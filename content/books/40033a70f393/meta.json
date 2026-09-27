@@ -1,0 +1,261 @@
+{
+  "bookId": "40033a70f393",
+  "title": "PyMOTW 中文版",
+  "url": "https://pymotwcn.readthedocs.io/en/latest/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:28.417Z",
+  "chapters": [
+    {
+      "slug": "001-1x",
+      "title": "ConfigParser — PyMOTW Document v1.6 documentation",
+      "file": "chapters/001-1x.md"
+    },
+    {
+      "slug": "002-1q",
+      "title": "Queue — PyMOTW Document v1.6 documentation",
+      "file": "chapters/002-1q.md"
+    },
+    {
+      "slug": "003-1t",
+      "title": "StringIO and cStringIO — PyMOTW Document v1.6 documentation",
+      "file": "chapters/003-1t.md"
+    },
+    {
+      "slug": "004-1t",
+      "title": "textwrap — PyMOTW Document v1.6 documentation",
+      "file": "chapters/004-1t.md"
+    },
+    {
+      "slug": "005-1u",
+      "title": "linecache — PyMOTW Document v1.6 documentation",
+      "file": "chapters/005-1u.md"
+    },
+    {
+      "slug": "006-1r",
+      "title": "bisect — PyMOTW Document v1.6 documentation",
+      "file": "chapters/006-1r.md"
+    },
+    {
+      "slug": "007-1s",
+      "title": "logging — PyMOTW Document v1.6 documentation",
+      "file": "chapters/007-1s.md"
+    },
+    {
+      "slug": "008-1r",
+      "title": "locale — PyMOTW Document v1.6 documentation",
+      "file": "chapters/008-1r.md"
+    },
+    {
+      "slug": "009-1n",
+      "title": "os — PyMOTW Document v1.6 documentation",
+      "file": "chapters/009-1n.md"
+    },
+    {
+      "slug": "010-1o",
+      "title": "os(2) — PyMOTW Document v1.6 documentation",
+      "file": "chapters/010-1o.md"
+    },
+    {
+      "slug": "011-1o",
+      "title": "os(3) — PyMOTW Document v1.6 documentation",
+      "file": "chapters/011-1o.md"
+    },
+    {
+      "slug": "012-1o",
+      "title": "os(4) — PyMOTW Document v1.6 documentation",
+      "file": "chapters/012-1o.md"
+    },
+    {
+      "slug": "013-1r",
+      "title": "pickle & cPickle — PyMOTW Document v1.6 documentation",
+      "file": "chapters/013-1r.md"
+    },
+    {
+      "slug": "014-1p",
+      "title": "glob — PyMOTW Document v1.6 documentation",
+      "file": "chapters/014-1p.md"
+    },
+    {
+      "slug": "015-1r",
+      "title": "shelve — PyMOTW Document v1.6 documentation",
+      "file": "chapters/015-1r.md"
+    },
+    {
+      "slug": "016-1t",
+      "title": "optparse — PyMOTW Document v1.6 documentation",
+      "file": "chapters/016-1t.md"
+    },
+    {
+      "slug": "017-1r",
+      "title": "shutil — PyMOTW Document v1.6 documentation",
+      "file": "chapters/017-1r.md"
+    },
+    {
+      "slug": "018-1t",
+      "title": "urlparse — PyMOTW Document v1.6 documentation",
+      "file": "chapters/018-1t.md"
+    },
+    {
+      "slug": "019-1s",
+      "title": "os.path — PyMOTW Document v1.6 documentation",
+      "file": "chapters/019-1s.md"
+    },
+    {
+      "slug": "020-1p",
+      "title": "time — PyMOTW Document v1.6 documentation",
+      "file": "chapters/020-1p.md"
+    },
+    {
+      "slug": "021-1t",
+      "title": "datetime — PyMOTW Document v1.6 documentation",
+      "file": "chapters/021-1t.md"
+    },
+    {
+      "slug": "022-1r",
+      "title": "urllib — PyMOTW Document v1.6 documentation",
+      "file": "chapters/022-1r.md"
+    },
+    {
+      "slug": "023-1s",
+      "title": "fnmatch — PyMOTW Document v1.6 documentation",
+      "file": "chapters/023-1s.md"
+    },
+    {
+      "slug": "024-1r",
+      "title": "Cookie — PyMOTW Document v1.6 documentation",
+      "file": "chapters/024-1r.md"
+    },
+    {
+      "slug": "025-1r",
+      "title": "base64 — PyMOTW Document v1.6 documentation",
+      "file": "chapters/025-1r.md"
+    },
+    {
+      "slug": "026-1v",
+      "title": "webbrowser — PyMOTW Document v1.6 documentation",
+      "file": "chapters/026-1v.md"
+    },
+    {
+      "slug": "027-1r",
+      "title": "anydbm — PyMOTW Document v1.6 documentation",
+      "file": "chapters/027-1r.md"
+    },
+    {
+      "slug": "028-1s",
+      "title": "smtplib — PyMOTW Document v1.6 documentation",
+      "file": "chapters/028-1s.md"
+    },
+    {
+      "slug": "029-1q",
+      "title": "Trace — PyMOTW Document v1.6 documentation",
+      "file": "chapters/029-1q.md"
+    },
+    {
+      "slug": "030-1r",
+      "title": "Struct — PyMOTW Document v1.6 documentation",
+      "file": "chapters/030-1r.md"
+    },
+    {
+      "slug": "031-1q",
+      "title": "array — PyMOTW Document v1.6 documentation",
+      "file": "chapters/031-1q.md"
+    },
+    {
+      "slug": "032-1s",
+      "title": "getpass — PyMOTW Document v1.6 documentation",
+      "file": "chapters/032-1s.md"
+    },
+    {
+      "slug": "033-1r",
+      "title": "string — PyMOTW Document v1.6 documentation",
+      "file": "chapters/033-1r.md"
+    },
+    {
+      "slug": "034-1v",
+      "title": "exceptions — PyMOTW Document v1.6 documentation",
+      "file": "chapters/034-1v.md"
+    },
+    {
+      "slug": "035-1u",
+      "title": "itertools — PyMOTW Document v1.6 documentation",
+      "file": "chapters/035-1u.md"
+    },
+    {
+      "slug": "036-1s",
+      "title": "zipfile — PyMOTW Document v1.6 documentation",
+      "file": "chapters/036-1s.md"
+    },
+    {
+      "slug": "037-1z",
+      "title": "BaseHTTPServer — PyMOTW Document v1.6 documentation",
+      "file": "chapters/037-1z.md"
+    },
+    {
+      "slug": "038-1r",
+      "title": "pprint — PyMOTW Document v1.6 documentation",
+      "file": "chapters/038-1r.md"
+    },
+    {
+      "slug": "039-1x",
+      "title": "SocketServer — PyMOTW Document v1.6 documentation",
+      "file": "chapters/039-1x.md"
+    },
+    {
+      "slug": "040-1t",
+      "title": "asyncore — PyMOTW Document v1.6 documentation",
+      "file": "chapters/040-1t.md"
+    },
+    {
+      "slug": "041-1t",
+      "title": "tempfile — PyMOTW Document v1.6 documentation",
+      "file": "chapters/041-1t.md"
+    },
+    {
+      "slug": "042-1q",
+      "title": "sched — PyMOTW Document v1.6 documentation",
+      "file": "chapters/042-1q.md"
+    },
+    {
+      "slug": "043-1o",
+      "title": "csv — PyMOTW Document v1.6 documentation",
+      "file": "chapters/043-1o.md"
+    },
+    {
+      "slug": "044-1t",
+      "title": "calendar — PyMOTW Document v1.6 documentation",
+      "file": "chapters/044-1t.md"
+    },
+    {
+      "slug": "045-1t",
+      "title": "commands — PyMOTW Document v1.6 documentation",
+      "file": "chapters/045-1t.md"
+    },
+    {
+      "slug": "046-1r",
+      "title": "atexit — PyMOTW Document v1.6 documentation",
+      "file": "chapters/046-1r.md"
+    },
+    {
+      "slug": "047-1w",
+      "title": "collections — PyMOTW Document v1.6 documentation",
+      "file": "chapters/047-1w.md"
+    },
+    {
+      "slug": "048-1u",
+      "title": "fileinput — PyMOTW Document v1.6 documentation",
+      "file": "chapters/048-1u.md"
+    },
+    {
+      "slug": "049-1r",
+      "title": "getopt — PyMOTW Document v1.6 documentation",
+      "file": "chapters/049-1r.md"
+    },
+    {
+      "slug": "050-1s",
+      "title": "hashlib — PyMOTW Document v1.6 documentation",
+      "file": "chapters/050-1s.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "欢迎查阅 PyMOTW 中文版! — PyMOTW Document v1.6 documentation"
+}

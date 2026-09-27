@@ -1,0 +1,16 @@
+{
+  "bookId": "c0e366102d80",
+  "title": "猴子都能懂的GIT入门",
+  "url": "http://backlogtool.com/git-guide/cn/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:14.097Z",
+  "chapters": [
+    {
+      "slug": "001-10",
+      "title": "Simple Git tutorial for beginners | Nulab",
+      "file": "chapters/001-10.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Simple Git tutorial for beginners | Nulab"
+}

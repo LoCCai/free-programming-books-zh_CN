@@ -1,0 +1,16 @@
+{
+  "bookId": "953c73c955d6",
+  "title": "Go语言高级编程",
+  "url": "https://chai2010.cn/advanced-go-programming-book/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:48.652Z",
+  "chapters": [
+    {
+      "slug": "001-1d",
+      "title": "Go语言高级编程 - Go语言高级编程",
+      "file": "chapters/001-1d.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Go语言高级编程 - Go语言高级编程"
+}

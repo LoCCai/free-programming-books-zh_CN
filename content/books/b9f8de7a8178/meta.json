@@ -1,0 +1,16 @@
+{
+  "bookId": "b9f8de7a8178",
+  "title": "Laravel 5.1 LTS 速查表",
+  "url": "https://learninglaravel.net/cheatsheet-chinese",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:07.240Z",
+  "chapters": [
+    {
+      "slug": "001-1a",
+      "title": "Laravel 5.1 LTS 速查表",
+      "file": "chapters/001-1a.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Laravel 5.1 LTS 速查表"
+}

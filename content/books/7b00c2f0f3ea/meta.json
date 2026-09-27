@@ -1,0 +1,16 @@
+{
+  "bookId": "7b00c2f0f3ea",
+  "title": "所需即所获：像 IDE 一样使用 vim",
+  "url": "https://github.com/yangyangwithgnu/use_vim_as_ide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:49.023Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "#include \"...\"",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "CC0-1.0",
+  "sourceType": "github"
+}

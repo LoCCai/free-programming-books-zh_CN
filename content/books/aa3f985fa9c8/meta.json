@@ -1,0 +1,240 @@
+{
+  "bookId": "aa3f985fa9c8",
+  "title": "Spring Framework 4.x参考文档",
+  "url": "https://github.com/waylau/spring-framework-4-reference",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:18.418Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "I. Spring Framework 总览",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-getting-started-with-spring",
+      "title": "开始",
+      "file": "chapters/002-1-getting-started-with-spring.md"
+    },
+    {
+      "slug": "003-2-introduction-to-the-spring-framework",
+      "title": "介绍 Spring Framework",
+      "file": "chapters/003-2-introduction-to-the-spring-framework.md"
+    },
+    {
+      "slug": "004-2-1-dependency-injection-and-inversion-of-control",
+      "title": "依赖注入和控制反转",
+      "file": "chapters/004-2-1-dependency-injection-and-inversion-of-control.md"
+    },
+    {
+      "slug": "005-2-2-modules",
+      "title": "模块",
+      "file": "chapters/005-2-2-modules.md"
+    },
+    {
+      "slug": "006-2-3-usage-scenarios",
+      "title": "使用场景",
+      "file": "chapters/006-2-3-usage-scenarios.md"
+    },
+    {
+      "slug": "007-3-new-features-and-enhancements-in-spring-framework-4-0",
+      "title": "Spring Framework 4.0中的新功能和增强功能",
+      "file": "chapters/007-3-new-features-and-enhancements-in-spring-framework-4-0.md"
+    },
+    {
+      "slug": "008-3-1-improved-getting-started-experience",
+      "title": "改进的入门体验",
+      "file": "chapters/008-3-1-improved-getting-started-experience.md"
+    },
+    {
+      "slug": "009-3-2-removed-deprecated-packages-and-methods",
+      "title": "移除不推荐的包和方法",
+      "file": "chapters/009-3-2-removed-deprecated-packages-and-methods.md"
+    },
+    {
+      "slug": "010-3-3-java-8-as-well-as-6-and-7",
+      "title": "Java 8(以及6和7)",
+      "file": "chapters/010-3-3-java-8-as-well-as-6-and-7.md"
+    },
+    {
+      "slug": "011-3-4-java-ee-6-and-7",
+      "title": "Java EE 6 和 7",
+      "file": "chapters/011-3-4-java-ee-6-and-7.md"
+    },
+    {
+      "slug": "012-3-5-groovy-bean-definition-dsl",
+      "title": "Groovy Bean Definition DSL",
+      "file": "chapters/012-3-5-groovy-bean-definition-dsl.md"
+    },
+    {
+      "slug": "013-3-6-core-container-improvement",
+      "title": "核心容器改进",
+      "file": "chapters/013-3-6-core-container-improvement.md"
+    },
+    {
+      "slug": "014-3-7-general-web-improvements",
+      "title": "常规Web改进",
+      "file": "chapters/014-3-7-general-web-improvements.md"
+    },
+    {
+      "slug": "015-3-8-websocket-sockjs-and-stomp-messaging",
+      "title": "WebSocket, SockJS, 和 STOMP 消息",
+      "file": "chapters/015-3-8-websocket-sockjs-and-stomp-messaging.md"
+    },
+    {
+      "slug": "016-3-9-testing-improvements",
+      "title": "测试改进",
+      "file": "chapters/016-3-9-testing-improvements.md"
+    },
+    {
+      "slug": "017-4-1-jms-improvements",
+      "title": "JMS 改进",
+      "file": "chapters/017-4-1-jms-improvements.md"
+    },
+    {
+      "slug": "018-4-2-caching-improvement",
+      "title": "缓存改进",
+      "file": "chapters/018-4-2-caching-improvement.md"
+    },
+    {
+      "slug": "019-4-3-web-improvements",
+      "title": "Web 改进",
+      "file": "chapters/019-4-3-web-improvements.md"
+    },
+    {
+      "slug": "020-4-4-websocket-stomp-messaging-improvements",
+      "title": "WebSocket STOMP 消息  改进",
+      "file": "chapters/020-4-4-websocket-stomp-messaging-improvements.md"
+    },
+    {
+      "slug": "021-4-5-testing-improvements",
+      "title": "测试 改进",
+      "file": "chapters/021-4-5-testing-improvements.md"
+    },
+    {
+      "slug": "022-5-1-core-container-improvements",
+      "title": "核心容器改进",
+      "file": "chapters/022-5-1-core-container-improvements.md"
+    },
+    {
+      "slug": "023-5-2-data-access-improvements",
+      "title": "数据访问改进",
+      "file": "chapters/023-5-2-data-access-improvements.md"
+    },
+    {
+      "slug": "024-5-3-jms-improvements",
+      "title": "JMS 改进",
+      "file": "chapters/024-5-3-jms-improvements.md"
+    },
+    {
+      "slug": "025-5-4-web-improvements",
+      "title": "Web 改进",
+      "file": "chapters/025-5-4-web-improvements.md"
+    },
+    {
+      "slug": "026-5-5-websocket-messaging-improvements",
+      "title": "WebSocket 消息改进",
+      "file": "chapters/026-5-5-websocket-messaging-improvements.md"
+    },
+    {
+      "slug": "027-5-6-testing-improvements",
+      "title": "测试改进",
+      "file": "chapters/027-5-6-testing-improvements.md"
+    },
+    {
+      "slug": "028-new-features-and-enhancements-in-spring-framework-4-3",
+      "title": "Spring Framework 4.3中的新功能和增强功能",
+      "file": "chapters/028-new-features-and-enhancements-in-spring-framework-4-3.md"
+    },
+    {
+      "slug": "029-readme",
+      "title": "III. 核心技术",
+      "file": "chapters/029-readme.md"
+    },
+    {
+      "slug": "030-introduction-to-the-spring-ioc-container-and-beans",
+      "title": "介绍  Spring IoC 容器和 bean",
+      "file": "chapters/030-introduction-to-the-spring-ioc-container-and-beans.md"
+    },
+    {
+      "slug": "031-container-overview",
+      "title": "容器总览",
+      "file": "chapters/031-container-overview.md"
+    },
+    {
+      "slug": "032-bean-overview",
+      "title": "Bean 总览",
+      "file": "chapters/032-bean-overview.md"
+    },
+    {
+      "slug": "033-dependencies",
+      "title": "依赖",
+      "file": "chapters/033-dependencies.md"
+    },
+    {
+      "slug": "034-bean-scopes",
+      "title": "Bean作用域",
+      "file": "chapters/034-bean-scopes.md"
+    },
+    {
+      "slug": "035-customizing-the-nature-of-a-bean",
+      "title": "定制Bean的回调函数",
+      "file": "chapters/035-customizing-the-nature-of-a-bean.md"
+    },
+    {
+      "slug": "036-bean-definition-inheritance",
+      "title": "Bean definition inheritance",
+      "file": "chapters/036-bean-definition-inheritance.md"
+    },
+    {
+      "slug": "037-container-extension-points",
+      "title": "容器扩展点",
+      "file": "chapters/037-container-extension-points.md"
+    },
+    {
+      "slug": "038-classpath-scanning-and-managed-components",
+      "title": "Classpath扫描和管理组件",
+      "file": "chapters/038-classpath-scanning-and-managed-components.md"
+    },
+    {
+      "slug": "039-using-jsr-330-standard-annotations",
+      "title": "使用JSR 330标准注解",
+      "file": "chapters/039-using-jsr-330-standard-annotations.md"
+    },
+    {
+      "slug": "040-java-based-container-configuration",
+      "title": "基于Java的容器配置",
+      "file": "chapters/040-java-based-container-configuration.md"
+    },
+    {
+      "slug": "041-environment-abstraction",
+      "title": "环境的抽象",
+      "file": "chapters/041-environment-abstraction.md"
+    },
+    {
+      "slug": "042-7-1-introduction",
+      "title": "7.1. Introduction",
+      "file": "chapters/042-7-1-introduction.md"
+    },
+    {
+      "slug": "043-9-spring-expression-language-spel",
+      "title": "Spring Expression Language-SpEL",
+      "file": "chapters/043-9-spring-expression-language-spel.md"
+    },
+    {
+      "slug": "044-10-aspect-oriented-programming-with-spring",
+      "title": "Spring AOP 编程",
+      "file": "chapters/044-10-aspect-oriented-programming-with-spring.md"
+    },
+    {
+      "slug": "045-9-1-introduction",
+      "title": "10.1. Introduction",
+      "file": "chapters/045-9-1-introduction.md"
+    },
+    {
+      "slug": "046-10-1-introduction",
+      "title": "10.1. Introduction",
+      "file": "chapters/046-10-1-introduction.md"
+    }
+  ],
+  "sourceType": "github"
+}

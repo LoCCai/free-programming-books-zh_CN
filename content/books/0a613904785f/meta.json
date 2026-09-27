@@ -1,0 +1,16 @@
+{
+  "bookId": "0a613904785f",
+  "title": "笨办法学Prolog",
+  "url": "http://fengdidi.github.io/blog/2011/11/15/qian-yan/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:15.471Z",
+  "chapters": [
+    {
+      "slug": "001-1f",
+      "title": "Learn Prolog The Hard Way",
+      "file": "chapters/001-1f.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Learn Prolog The Hard Way"
+}

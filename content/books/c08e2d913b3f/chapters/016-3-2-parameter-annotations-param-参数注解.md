@@ -1,0 +1,167 @@
+3.2.  Parameter Annotations (@*Param) 参数注解
+========================
+
+资源方法中，带有基于参数注解的参数可以从请求中获取信息。前面的一个例子就是在匹配了 [@Path](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/Path.html) 之后，通过 [@PathParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/PathParam.html) 来获取 URL 请求中的路径参数。
+
+[@QueryParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/QueryParam.html) 用于从请求 URL 的查询组件中提取查询参数。下面的例子：
+
+Example 3.8. 查询参数
+
+	@Path("smooth")
+	@GET
+	public Response smooth(
+	    @DefaultValue("2") @QueryParam("step") int step,
+	    @DefaultValue("true") @QueryParam("min-m") boolean hasMin,
+	    @DefaultValue("true") @QueryParam("max-m") boolean hasMax,
+	    @DefaultValue("true") @QueryParam("last-m") boolean hasLast,
+	    @DefaultValue("blue") @QueryParam("min-color") ColorParam minColor,
+	    @DefaultValue("green") @QueryParam("max-color") ColorParam maxColor,
+	    @DefaultValue("red") @QueryParam("last-color") ColorParam lastColor) {
+	    ...
+	}
+
+如果 step 的参数存在的话，那么附值给它，否则默认是 [@DefaultValue](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/DefaultValue.html)定义的值 2。如果 step 的内容不是 32 位的整型，那么会返回404错误。
+
+
+用户定义了一个 Java 类型 ColorParam，实现如下：
+
+Example 3.9. 自定义 Java 类型用作消耗请求的参数
+
+	public class ColorParam extends Color {
+
+	    public ColorParam(String s) {
+	        super(getRGB(s));
+	    }
+
+	    private static int getRGB(String s) {
+	        if (s.charAt(0) == '#') {
+	            try {
+	                Color c = Color.decode("0x" + s.substring(1));
+	                return c.getRGB();
+	            } catch (NumberFormatException e) {
+	                throw new WebApplicationException(400);
+	            }
+	        } else {
+	            try {
+	                Field f = Color.class.getField(s);
+	                return ((Color)f.get(null)).getRGB();
+	            } catch (Exception e) {
+	                throw new WebApplicationException(400);
+	            }
+	        }
+	    }
+	}
+
+
+一般的，Java 方法的参数类型的可能是：
+
+* 一个原始类型；
+* 有一个接收一个字符串参数的构造函数；
+* 有一个命名为 fromstring 或 valueOf 的静态方法，用于接收字符串参数，例如`Integer.valueOf(String)`和`java.util.UUID.fromString(String)`；
+* 有一个`javax.ws.rs.ext.ParamConverterProvider`的 JAX-RS 扩展 SPI 的注册实现， 将返回`javax.ws.rs.ext.ParamConverter`能转化“字符串”类型的实例；
+* 为List<T>, Set<T>或者SortedList<T>, 且在 T 满足上面 2 或者 3 个条件时，将会是 List、Set 或者 SortedSet。这样的集合是只读的。
+
+有时参数可以包含相同名称的多个值。如果是这样的话，上面第5条可以用来获得所有的值。
+
+如果 [@DefaultValue](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/DefaultValue.html)不与 [@QueryParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/QueryParam.html)联合使用，查询参数在请求中如果不存在，List、Set 或者 SortedSet 类型将会是空值集合，对象类型将为空，Java 的定义默认为原始类型。
+
+[@PathParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/PathParam.html) 和其他参数注解 [@MatrixParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/MatrixParam.html)、[@HeaderParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/HeaderParam.html)、[@CookieParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/CookieParam.html)、[@FormParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/FormParam.html) 遵循与 [@QueryParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/QueryParam.html)一样的规则。[@MatrixParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/MatrixParam.html) 从 URL 路径提取信息。[@HeaderParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/HeaderParam.html) 从 HTTP 头部提取信息。[@CookieParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/CookieParam.html)从关联在 HTTP 头部的 cookies 里提取信息。
+
+[@FormParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/FormParam.html) 稍有特殊，因为它提取信息，先是请求所表示的MIME媒体类型为 `application/x-www-form-urlencoded`，并且符合指定的 HTML 编码的形式，正如这里所描述的。此参数提取对于 HTML 表单请求是非常有用的，例如从发布的表单数据中提取名称是 `name` 的参数信息：
+
+Example 3.10. HTML表格处理
+
+	@POST
+	@Consumes("application/x-www-form-urlencoded")
+	public void post(@FormParam("name") String name) {
+	    // Store the message
+	}
+
+
+如果需要通过查询路径参数，从 Map 参数名称获取值，做法以下：
+
+Example 3.11. 从查询参数或者路径获取 Map
+
+	@GET
+	public String get(@Context UriInfo ui) {
+	    MultivaluedMap<String, String> queryParams = ui.getQueryParameters();
+	    MultivaluedMap<String, String> pathParams = ui.getPathParameters();
+	}
+
+header 和 cookie 参数用法如下:
+
+Example 3.12. 从头部参数获取 Map
+
+	@GET
+	public String get(@Context HttpHeaders hh) {
+	    MultivaluedMap<String, String> headerParams = hh.getRequestHeaders();
+	    Map<String, Cookie> pathParams = hh.getCookies();
+	}
+
+[@Context](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Context.html) 一般可以用于获得一个Java类型关联请求或响应的上下文。
+
+因为 form 表单参数（不像其他消息的一部分）是实体，做法如下：
+
+Example 3.13. form 表单参数 获取 Map
+
+	@POST
+	@Consumes("application/x-www-form-urlencoded")
+	public void post(MultivaluedMap<String, String> formParams) {
+	    // Store the message
+	}
+
+就是说，不需要[@Context](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/core/Context.html)注解。
+
+另一种注入是 [@BeanParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/BeanParam.html) 允许注入上述参数到一个 bean 。一个 bean 注明[@BeanParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/BeanParam.html)含任何属性和适当的参数注解（像
+[@PathParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/PathParam.html)）将由预期的相应请求值初始化（如果这些领域在资源类）。然后，跟将请求值（像路径参数）注入到一个构造函数参数或类属性不同的是，[@BeanParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/BeanParam.html)可以用于注入这种 bean 到资源或资源的方法。[@BeanParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/BeanParam.html)就是用这样的方式聚集更多的请求参数为一个单一的 bean 的情况。
+
+
+Example 3.14. @BeanParam 用法
+
+	public class MyBeanParam {
+	    @PathParam("p")
+	    private String pathParam;
+
+	    @MatrixParam("m")
+	    @Encoded
+	    @DefaultValue("default")
+	    private String matrixParam;
+
+	    @HeaderParam("header")
+	    private String headerParam;
+
+	    private String queryParam;
+
+	    public MyBeanParam(@QueryParam("q") String queryParam) {
+		this.queryParam = queryParam;
+	    }
+
+	    public String getPathParam() {
+		return pathParam;
+	    }
+	    ...
+	}
+
+Example 3.15. 将 MyBeanParam 以参数形式注入:
+
+	@POST
+	public void post(@BeanParam MyBeanParam beanParam, String entity) {
+	    final String pathParam = beanParam.getPathParam(); // contains injected path parameter "p"
+	    ...
+	}
+
+实例展示了[@PathParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/PathParam.html)、[@QueryParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/QueryParam.html)、[@MatrixParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/MatrixParam.html)和 [@HeaderParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/HeaderParam.html)集中在一个 bean 里面。里面的 bean 注射规则如上这些注射相同。[@DefaultValue](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/DefaultValue.html)是用来定义矩阵参数的默认值。同时[@Encoded](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/Encoded.html)注释都有同样的行为，如果它是用来在资源的方法直接注入。将 bean 参数注入到 注解为 @Singleton 的资源类字段是不允许的（注射方法的参数必须替换）。
+
+[@BeanParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/BeanParam.html) 可以包含所有的注入参数([@PathParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/PathParam.html)、[@QueryParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/QueryParam.html)、[@MatrixParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/MatrixParam.html)、[@HeaderParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/HeaderParam.html)
+、[@CookieParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/CookieParam.html)、 [@FormParam](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/FormParam.html) )。
+
+多个 bean 可以被注入到一个资源或方法的参数，即使他们注入相同的请求值。例如，以下是可能的：
+
+Example 3.16. 多个 bean 注入到一个资源或方法
+
+	@POST
+	public void post(@BeanParam MyBeanParam beanParam, @BeanParam AnotherBean anotherBean, @PathParam("p") pathParam,
+	String entity) {
+	    // beanParam.getPathParam() == pathParam
+	    ...
+	}

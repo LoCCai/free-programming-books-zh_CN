@@ -1,0 +1,570 @@
+{
+  "bookId": "ed186c5f34e2",
+  "title": "Java Servlet 3.1 规范",
+  "url": "https://github.com/waylau/servlet-3.1-specification",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:35.424Z",
+  "chapters": [
+    {
+      "slug": "001-preface",
+      "title": "前言",
+      "file": "chapters/001-preface.md"
+    },
+    {
+      "slug": "002-1-1-what-is-a-servlet",
+      "title": "什么是 Servlet",
+      "file": "chapters/002-1-1-what-is-a-servlet.md"
+    },
+    {
+      "slug": "003-1-2-what-is-a-servlet-container",
+      "title": "什么是 Servlet 容器",
+      "file": "chapters/003-1-2-what-is-a-servlet-container.md"
+    },
+    {
+      "slug": "004-1-3-an-example",
+      "title": "一个例子",
+      "file": "chapters/004-1-3-an-example.md"
+    },
+    {
+      "slug": "005-1-4-comparing-servlets-with-other-technologies",
+      "title": "Servlet 与其他技术的对比",
+      "file": "chapters/005-1-4-comparing-servlets-with-other-technologies.md"
+    },
+    {
+      "slug": "006-1-5-relationship-to-java-platform-enterprise-edition",
+      "title": "与 Java EE 的关系",
+      "file": "chapters/006-1-5-relationship-to-java-platform-enterprise-edition.md"
+    },
+    {
+      "slug": "007-1-6-compatibility-with-java-servlet-specification-version",
+      "title": "与 Servlet 2.5 规范的兼容性",
+      "file": "chapters/007-1-6-compatibility-with-java-servlet-specification-version.md"
+    },
+    {
+      "slug": "008-2-the-servlet-interface",
+      "title": "Servlet 接口",
+      "file": "chapters/008-2-the-servlet-interface.md"
+    },
+    {
+      "slug": "009-2-1-request-handling-methods",
+      "title": "请求处理方法",
+      "file": "chapters/009-2-1-request-handling-methods.md"
+    },
+    {
+      "slug": "010-2-2-number-of-instances",
+      "title": "实例数量",
+      "file": "chapters/010-2-2-number-of-instances.md"
+    },
+    {
+      "slug": "011-2-3-servlet-life-cycle",
+      "title": "Servlet 生命周期",
+      "file": "chapters/011-2-3-servlet-life-cycle.md"
+    },
+    {
+      "slug": "012-3-the-request",
+      "title": "请求",
+      "file": "chapters/012-3-the-request.md"
+    },
+    {
+      "slug": "013-3-1-http-protocol-parameters",
+      "title": "HTTP 协议参数",
+      "file": "chapters/013-3-1-http-protocol-parameters.md"
+    },
+    {
+      "slug": "014-3-2-file-upload",
+      "title": "文件上传",
+      "file": "chapters/014-3-2-file-upload.md"
+    },
+    {
+      "slug": "015-3-3-attributes",
+      "title": "属性",
+      "file": "chapters/015-3-3-attributes.md"
+    },
+    {
+      "slug": "016-3-4-headers",
+      "title": "头",
+      "file": "chapters/016-3-4-headers.md"
+    },
+    {
+      "slug": "017-3-5-request-path-elements",
+      "title": "请求路径元素",
+      "file": "chapters/017-3-5-request-path-elements.md"
+    },
+    {
+      "slug": "018-3-6-path-translation-methods",
+      "title": "路径转换方法",
+      "file": "chapters/018-3-6-path-translation-methods.md"
+    },
+    {
+      "slug": "019-3-7-non-blocking-io",
+      "title": "非阻塞 IO",
+      "file": "chapters/019-3-7-non-blocking-io.md"
+    },
+    {
+      "slug": "020-3-8-cookies",
+      "title": "Cookie",
+      "file": "chapters/020-3-8-cookies.md"
+    },
+    {
+      "slug": "021-3-9-ssl-attributes",
+      "title": "SSL 属性",
+      "file": "chapters/021-3-9-ssl-attributes.md"
+    },
+    {
+      "slug": "022-3-10-internationalization",
+      "title": "国际化",
+      "file": "chapters/022-3-10-internationalization.md"
+    },
+    {
+      "slug": "023-3-11-request-data-encoding",
+      "title": "请求数据编码",
+      "file": "chapters/023-3-11-request-data-encoding.md"
+    },
+    {
+      "slug": "024-3-12-lifetime-of-the-request-object",
+      "title": "请求对象生命周期",
+      "file": "chapters/024-3-12-lifetime-of-the-request-object.md"
+    },
+    {
+      "slug": "025-4-1-introduction-to-the-servletcontext-interface",
+      "title": "ServletContext 接口介绍",
+      "file": "chapters/025-4-1-introduction-to-the-servletcontext-interface.md"
+    },
+    {
+      "slug": "026-4-2-scope-of-a-servletcontext-interface",
+      "title": "ServletContext 接口作用域",
+      "file": "chapters/026-4-2-scope-of-a-servletcontext-interface.md"
+    },
+    {
+      "slug": "027-4-3-initialization-parameters",
+      "title": "初始化参数",
+      "file": "chapters/027-4-3-initialization-parameters.md"
+    },
+    {
+      "slug": "028-4-4-configuration-methods",
+      "title": "配置方法",
+      "file": "chapters/028-4-4-configuration-methods.md"
+    },
+    {
+      "slug": "029-4-5-context-attributes",
+      "title": "上下文属性",
+      "file": "chapters/029-4-5-context-attributes.md"
+    },
+    {
+      "slug": "030-4-6-resources",
+      "title": "资源",
+      "file": "chapters/030-4-6-resources.md"
+    },
+    {
+      "slug": "031-4-7-multiple-hosts-and-servlet-contexts",
+      "title": "多主机和 Servlet 上下文",
+      "file": "chapters/031-4-7-multiple-hosts-and-servlet-contexts.md"
+    },
+    {
+      "slug": "032-4-8-reloading-considerations",
+      "title": "重载注意事项",
+      "file": "chapters/032-4-8-reloading-considerations.md"
+    },
+    {
+      "slug": "033-5-the-response",
+      "title": "响应",
+      "file": "chapters/033-5-the-response.md"
+    },
+    {
+      "slug": "034-5-1-buffering",
+      "title": "缓冲",
+      "file": "chapters/034-5-1-buffering.md"
+    },
+    {
+      "slug": "035-5-2-headers",
+      "title": "头",
+      "file": "chapters/035-5-2-headers.md"
+    },
+    {
+      "slug": "036-5-3-non-blocking-io",
+      "title": "非阻塞 IO",
+      "file": "chapters/036-5-3-non-blocking-io.md"
+    },
+    {
+      "slug": "037-5-4-convenience-methods",
+      "title": "简便方法",
+      "file": "chapters/037-5-4-convenience-methods.md"
+    },
+    {
+      "slug": "038-5-5-internationalization",
+      "title": "国际化",
+      "file": "chapters/038-5-5-internationalization.md"
+    },
+    {
+      "slug": "039-5-6-closure-of-response-object",
+      "title": "结束响应对象",
+      "file": "chapters/039-5-6-closure-of-response-object.md"
+    },
+    {
+      "slug": "040-5-7-lifetime-of-the-response-object",
+      "title": "响应对象的生命周期",
+      "file": "chapters/040-5-7-lifetime-of-the-response-object.md"
+    },
+    {
+      "slug": "041-6-filtering",
+      "title": "过滤",
+      "file": "chapters/041-6-filtering.md"
+    },
+    {
+      "slug": "042-6-1-what-is-a-filter",
+      "title": "什么是过滤器",
+      "file": "chapters/042-6-1-what-is-a-filter.md"
+    },
+    {
+      "slug": "043-6-2-main-concepts",
+      "title": "主要概念",
+      "file": "chapters/043-6-2-main-concepts.md"
+    },
+    {
+      "slug": "044-7-sessions",
+      "title": "会话",
+      "file": "chapters/044-7-sessions.md"
+    },
+    {
+      "slug": "045-7-1-session-tracking-mechanisms",
+      "title": "会话跟踪机制",
+      "file": "chapters/045-7-1-session-tracking-mechanisms.md"
+    },
+    {
+      "slug": "046-7-2-creating-a-session",
+      "title": "创建会话",
+      "file": "chapters/046-7-2-creating-a-session.md"
+    },
+    {
+      "slug": "047-7-3-session-scope",
+      "title": "会话范围",
+      "file": "chapters/047-7-3-session-scope.md"
+    },
+    {
+      "slug": "048-7-4-binding-attributes-into-a-session",
+      "title": "绑定属性到会话",
+      "file": "chapters/048-7-4-binding-attributes-into-a-session.md"
+    },
+    {
+      "slug": "049-7-5-session-timeouts",
+      "title": "会话超时",
+      "file": "chapters/049-7-5-session-timeouts.md"
+    },
+    {
+      "slug": "050-7-6-last-accessed-times",
+      "title": "最后访问时间",
+      "file": "chapters/050-7-6-last-accessed-times.md"
+    },
+    {
+      "slug": "051-7-7-important-session-semantics",
+      "title": "重要会话语义",
+      "file": "chapters/051-7-7-important-session-semantics.md"
+    },
+    {
+      "slug": "052-8-annotations-and-pluggability",
+      "title": "注解和可插拔性",
+      "file": "chapters/052-8-annotations-and-pluggability.md"
+    },
+    {
+      "slug": "053-8-1-annotations-and-pluggability",
+      "title": "注解和可插拔性",
+      "file": "chapters/053-8-1-annotations-and-pluggability.md"
+    },
+    {
+      "slug": "054-8-2-pluggability",
+      "title": "可插拔性",
+      "file": "chapters/054-8-2-pluggability.md"
+    },
+    {
+      "slug": "055-8-3-jsp-container-pluggability",
+      "title": "JSP 容器可插拔性",
+      "file": "chapters/055-8-3-jsp-container-pluggability.md"
+    },
+    {
+      "slug": "056-8-4-processing-annotations-and-fragments",
+      "title": "处理注解和 fragment",
+      "file": "chapters/056-8-4-processing-annotations-and-fragments.md"
+    },
+    {
+      "slug": "057-9-dispatching-requests",
+      "title": "分发请求",
+      "file": "chapters/057-9-dispatching-requests.md"
+    },
+    {
+      "slug": "058-9-1-obtaining-a-requestdispatcher",
+      "title": "获取 RequestDispatcher",
+      "file": "chapters/058-9-1-obtaining-a-requestdispatcher.md"
+    },
+    {
+      "slug": "059-9-2-using-a-request-dispatcher",
+      "title": "使用请求调度器",
+      "file": "chapters/059-9-2-using-a-request-dispatcher.md"
+    },
+    {
+      "slug": "060-9-3-the-include-method",
+      "title": "Include 方法",
+      "file": "chapters/060-9-3-the-include-method.md"
+    },
+    {
+      "slug": "061-9-4-the-forward-method",
+      "title": "Forward 方法",
+      "file": "chapters/061-9-4-the-forward-method.md"
+    },
+    {
+      "slug": "062-9-5-error-handling",
+      "title": "错误处理",
+      "file": "chapters/062-9-5-error-handling.md"
+    },
+    {
+      "slug": "063-9-6-obtaining-an-asynccontext",
+      "title": "获取 AsyncContext",
+      "file": "chapters/063-9-6-obtaining-an-asynccontext.md"
+    },
+    {
+      "slug": "064-9-7-the-dispatch-method",
+      "title": "Dispatch 方法",
+      "file": "chapters/064-9-7-the-dispatch-method.md"
+    },
+    {
+      "slug": "065-10-web-applications",
+      "title": "Web 应用",
+      "file": "chapters/065-10-web-applications.md"
+    },
+    {
+      "slug": "066-10-1-web-applications-within-web-servers",
+      "title": "Web 服务器中的 Web 应用",
+      "file": "chapters/066-10-1-web-applications-within-web-servers.md"
+    },
+    {
+      "slug": "067-10-2-relationship-to-servletcontext",
+      "title": "与 ServletContext 的关系",
+      "file": "chapters/067-10-2-relationship-to-servletcontext.md"
+    },
+    {
+      "slug": "068-10-3-elements-of-a-web-application",
+      "title": "Web 应用的元素",
+      "file": "chapters/068-10-3-elements-of-a-web-application.md"
+    },
+    {
+      "slug": "069-10-4-deployment-hierarchies",
+      "title": "部署层次结构",
+      "file": "chapters/069-10-4-deployment-hierarchies.md"
+    },
+    {
+      "slug": "070-10-5-directory-structure",
+      "title": "目录结构",
+      "file": "chapters/070-10-5-directory-structure.md"
+    },
+    {
+      "slug": "071-10-6-web-application-archive-file",
+      "title": "Web应用归档文件",
+      "file": "chapters/071-10-6-web-application-archive-file.md"
+    },
+    {
+      "slug": "072-10-7-web-application-deployment-descriptor",
+      "title": "Web 应用部署描述符",
+      "file": "chapters/072-10-7-web-application-deployment-descriptor.md"
+    },
+    {
+      "slug": "073-10-8-replacing-a-web-application",
+      "title": "更新 Web 应用",
+      "file": "chapters/073-10-8-replacing-a-web-application.md"
+    },
+    {
+      "slug": "074-10-9-error-handling",
+      "title": "错误处理",
+      "file": "chapters/074-10-9-error-handling.md"
+    },
+    {
+      "slug": "075-10-10-welcome-files",
+      "title": "欢迎文件",
+      "file": "chapters/075-10-10-welcome-files.md"
+    },
+    {
+      "slug": "076-10-11-web-application-environment",
+      "title": "Web 环境",
+      "file": "chapters/076-10-11-web-application-environment.md"
+    },
+    {
+      "slug": "077-10-12-web-application-deployment",
+      "title": "Web 应用部署",
+      "file": "chapters/077-10-12-web-application-deployment.md"
+    },
+    {
+      "slug": "078-10-13-inclusion-of-a-web-xml-deployment-descriptor",
+      "title": "包含 web.xml 部署描述符",
+      "file": "chapters/078-10-13-inclusion-of-a-web-xml-deployment-descriptor.md"
+    },
+    {
+      "slug": "079-11-1-introduction",
+      "title": "介绍",
+      "file": "chapters/079-11-1-introduction.md"
+    },
+    {
+      "slug": "080-11-2-event-listeners",
+      "title": "事件监听器",
+      "file": "chapters/080-11-2-event-listeners.md"
+    },
+    {
+      "slug": "081-11-3-listener-class-configuration",
+      "title": "监听器类的配置",
+      "file": "chapters/081-11-3-listener-class-configuration.md"
+    },
+    {
+      "slug": "082-11-4-deployment-descriptor-example",
+      "title": "部署描述符示例",
+      "file": "chapters/082-11-4-deployment-descriptor-example.md"
+    },
+    {
+      "slug": "083-11-5-listener-instances-and-threading",
+      "title": "监听器实例和线程",
+      "file": "chapters/083-11-5-listener-instances-and-threading.md"
+    },
+    {
+      "slug": "084-11-6-listener-exceptions",
+      "title": "监听器异常",
+      "file": "chapters/084-11-6-listener-exceptions.md"
+    },
+    {
+      "slug": "085-11-7-distributed-containers",
+      "title": "分布式容器",
+      "file": "chapters/085-11-7-distributed-containers.md"
+    },
+    {
+      "slug": "086-11-8-session-events",
+      "title": "会话事件",
+      "file": "chapters/086-11-8-session-events.md"
+    },
+    {
+      "slug": "087-12-mapping-requests-to-servlets",
+      "title": "映射请求到 Servlet",
+      "file": "chapters/087-12-mapping-requests-to-servlets.md"
+    },
+    {
+      "slug": "088-12-1-use-of-url-paths",
+      "title": "使用 URL 路径",
+      "file": "chapters/088-12-1-use-of-url-paths.md"
+    },
+    {
+      "slug": "089-12-2-specification-of-mappings",
+      "title": "映射规范",
+      "file": "chapters/089-12-2-specification-of-mappings.md"
+    },
+    {
+      "slug": "090-13-security",
+      "title": "安全",
+      "file": "chapters/090-13-security.md"
+    },
+    {
+      "slug": "091-13-1-introduction",
+      "title": "介绍",
+      "file": "chapters/091-13-1-introduction.md"
+    },
+    {
+      "slug": "092-13-2-declarative-security",
+      "title": "声明式安全",
+      "file": "chapters/092-13-2-declarative-security.md"
+    },
+    {
+      "slug": "093-13-3-programmatic-security",
+      "title": "编程式安全",
+      "file": "chapters/093-13-3-programmatic-security.md"
+    },
+    {
+      "slug": "094-13-4-programmatic-security-policy-configuration",
+      "title": "编程式安全策略配置",
+      "file": "chapters/094-13-4-programmatic-security-policy-configuration.md"
+    },
+    {
+      "slug": "095-13-5-roles",
+      "title": "角色",
+      "file": "chapters/095-13-5-roles.md"
+    },
+    {
+      "slug": "096-13-6-authentication",
+      "title": "认证",
+      "file": "chapters/096-13-6-authentication.md"
+    },
+    {
+      "slug": "097-13-7-server-tracking-of-authentication-information",
+      "title": "服务器跟踪认证信息",
+      "file": "chapters/097-13-7-server-tracking-of-authentication-information.md"
+    },
+    {
+      "slug": "098-13-8-specifying-security-constraints",
+      "title": "指定安全约束",
+      "file": "chapters/098-13-8-specifying-security-constraints.md"
+    },
+    {
+      "slug": "099-13-9-default-policies",
+      "title": "默认策略",
+      "file": "chapters/099-13-9-default-policies.md"
+    },
+    {
+      "slug": "100-13-10-login-and-logout",
+      "title": "登录和登出",
+      "file": "chapters/100-13-10-login-and-logout.md"
+    },
+    {
+      "slug": "101-14-deployment-descriptor",
+      "title": "部署描述符",
+      "file": "chapters/101-14-deployment-descriptor.md"
+    },
+    {
+      "slug": "102-14-1-deployment-descriptor-elements",
+      "title": "部署描述符元素",
+      "file": "chapters/102-14-1-deployment-descriptor-elements.md"
+    },
+    {
+      "slug": "103-14-2-rules-for-processing-the-deployment-descriptor",
+      "title": "处理部署描述符的规则",
+      "file": "chapters/103-14-2-rules-for-processing-the-deployment-descriptor.md"
+    },
+    {
+      "slug": "104-14-3-deployment-descriptor",
+      "title": "部署描述符",
+      "file": "chapters/104-14-3-deployment-descriptor.md"
+    },
+    {
+      "slug": "105-14-4-deployment-descriptor-diagram",
+      "title": "部署描述符图解",
+      "file": "chapters/105-14-4-deployment-descriptor-diagram.md"
+    },
+    {
+      "slug": "106-14-5-examples",
+      "title": "示例",
+      "file": "chapters/106-14-5-examples.md"
+    },
+    {
+      "slug": "107-15-requirements-related-to-other-specifications",
+      "title": "与其它规范有关的要求",
+      "file": "chapters/107-15-requirements-related-to-other-specifications.md"
+    },
+    {
+      "slug": "108-15-1-sessions",
+      "title": "会话",
+      "file": "chapters/108-15-1-sessions.md"
+    },
+    {
+      "slug": "109-15-2-web-applications",
+      "title": "Web 应用",
+      "file": "chapters/109-15-2-web-applications.md"
+    },
+    {
+      "slug": "110-15-3-security",
+      "title": "安全",
+      "file": "chapters/110-15-3-security.md"
+    },
+    {
+      "slug": "111-15-4-deployment",
+      "title": "部署",
+      "file": "chapters/111-15-4-deployment.md"
+    },
+    {
+      "slug": "112-15-5-annotations-and-resource-injection",
+      "title": "注解和资源注入",
+      "file": "chapters/112-15-5-annotations-and-resource-injection.md"
+    }
+  ],
+  "sourceType": "github"
+}

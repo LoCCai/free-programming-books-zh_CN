@@ -1,0 +1,301 @@
+{
+  "bookId": "74af7c4e3b1b",
+  "title": "前端资源分享（二）",
+  "url": "https://github.com/hacke2/hacke2.github.io/issues/3",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:37.004Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "README",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "README",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "README",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-2014-10-1-mongoose-populate",
+      "title": "Mongoose简单的连表查询",
+      "file": "chapters/005-2014-10-1-mongoose-populate.md"
+    },
+    {
+      "slug": "006-2014-10-11-the-golden-key",
+      "title": "金钥匙",
+      "file": "chapters/006-2014-10-11-the-golden-key.md"
+    },
+    {
+      "slug": "007-2014-10-14-links-share-2014-10-14",
+      "title": "前端资源分享",
+      "file": "chapters/007-2014-10-14-links-share-2014-10-14.md"
+    },
+    {
+      "slug": "008-2014-10-2-great-nodejs",
+      "title": "了不起的Node.js读书笔记",
+      "file": "chapters/008-2014-10-2-great-nodejs.md"
+    },
+    {
+      "slug": "009-2014-10-20-tink-in-ghostjs",
+      "title": "GhostJs源码目录",
+      "file": "chapters/009-2014-10-20-tink-in-ghostjs.md"
+    },
+    {
+      "slug": "010-2014-10-22-html5-javascript-web-dep",
+      "title": "HTML5和JavaScript Web应用开发读书笔记",
+      "file": "chapters/010-2014-10-22-html5-javascript-web-dep.md"
+    },
+    {
+      "slug": "011-2014-10-29-2014-10-d2",
+      "title": "2014.10.25 杭州D2行",
+      "file": "chapters/011-2014-10-29-2014-10-d2.md"
+    },
+    {
+      "slug": "012-2014-10-3-node-westom-mina",
+      "title": "利用Node.js对某智能家居服务器重构",
+      "file": "chapters/012-2014-10-3-node-westom-mina.md"
+    },
+    {
+      "slug": "013-2014-10-31-es6-modules-today-with-6to5",
+      "title": "译-使用6to5，让今天就来写ES6的模块化开发！",
+      "file": "chapters/013-2014-10-31-es6-modules-today-with-6to5.md"
+    },
+    {
+      "slug": "014-2014-11-10-javascript-aop",
+      "title": "简单几行代码，实现JavaScript中的AOP",
+      "file": "chapters/014-2014-11-10-javascript-aop.md"
+    },
+    {
+      "slug": "015-2014-11-11-hello-mobile-aop",
+      "title": "移动Web初级入门",
+      "file": "chapters/015-2014-11-11-hello-mobile-aop.md"
+    },
+    {
+      "slug": "016-2014-11-12-create-github-page",
+      "title": "30秒搭建Github Page",
+      "file": "chapters/016-2014-11-12-create-github-page.md"
+    },
+    {
+      "slug": "017-2014-11-14-answer-how-to-prepare",
+      "title": "还有一年时间，该如何准备？",
+      "file": "chapters/017-2014-11-14-answer-how-to-prepare.md"
+    },
+    {
+      "slug": "018-2014-11-18-about-responsive",
+      "title": "响应式Web初级入门",
+      "file": "chapters/018-2014-11-18-about-responsive.md"
+    },
+    {
+      "slug": "019-2014-11-30-gugong",
+      "title": "故宫&国家博物馆之行",
+      "file": "chapters/019-2014-11-30-gugong.md"
+    },
+    {
+      "slug": "020-2014-11-8-arrow-functions-and-their-scope",
+      "title": "译-ES6箭头函数和它的作用域",
+      "file": "chapters/020-2014-11-8-arrow-functions-and-their-scope.md"
+    },
+    {
+      "slug": "021-2014-12-2-fe-cut-image",
+      "title": "实习初体验之前端切图",
+      "file": "chapters/021-2014-12-2-fe-cut-image.md"
+    },
+    {
+      "slug": "022-2014-12-8-my-university-experience",
+      "title": "给学弟学妹说的话",
+      "file": "chapters/022-2014-12-8-my-university-experience.md"
+    },
+    {
+      "slug": "023-2014-8-29-hello-memory-leak",
+      "title": "JavaScript内存泄漏",
+      "file": "chapters/023-2014-8-29-hello-memory-leak.md"
+    },
+    {
+      "slug": "024-2014-8-29-web-development-process",
+      "title": "高大上Web前端开发环境",
+      "file": "chapters/024-2014-8-29-web-development-process.md"
+    },
+    {
+      "slug": "025-2014-8-31-javascript-quiz",
+      "title": "Javascript Quiz",
+      "file": "chapters/025-2014-8-31-javascript-quiz.md"
+    },
+    {
+      "slug": "026-2014-9-1-cqut-paging",
+      "title": "JavaScript模仿实验室分页组件",
+      "file": "chapters/026-2014-9-1-cqut-paging.md"
+    },
+    {
+      "slug": "027-2014-9-1-oschina-angularjs",
+      "title": "开源中国的 AngularJS 优秀文章汇总",
+      "file": "chapters/027-2014-9-1-oschina-angularjs.md"
+    },
+    {
+      "slug": "028-2014-9-10-level-img-change",
+      "title": "带层次感的图片轮播",
+      "file": "chapters/028-2014-9-10-level-img-change.md"
+    },
+    {
+      "slug": "029-2014-9-11-nodejs-char",
+      "title": "基于Node.js + socket.io实现WebSocket的聊天DEMO",
+      "file": "chapters/029-2014-9-11-nodejs-char.md"
+    },
+    {
+      "slug": "030-2014-9-12-css3-lenove",
+      "title": "JavaScript实现联想校招员工信息展示",
+      "file": "chapters/030-2014-9-12-css3-lenove.md"
+    },
+    {
+      "slug": "031-2014-9-18-no-sleep",
+      "title": "夜未眠",
+      "file": "chapters/031-2014-9-18-no-sleep.md"
+    },
+    {
+      "slug": "032-2014-9-2-what-happens-when-you-type-in-a-url-in-browser",
+      "title": "从输入 URL 到页面加载完成的过程中都发生了什么事情？",
+      "file": "chapters/032-2014-9-2-what-happens-when-you-type-in-a-url-in-browser.md"
+    },
+    {
+      "slug": "033-2014-9-26-div-center",
+      "title": "CSS居中完全解决方案",
+      "file": "chapters/033-2014-9-26-div-center.md"
+    },
+    {
+      "slug": "034-2014-9-26-think-in-seo",
+      "title": "和我一起来了解SEO",
+      "file": "chapters/034-2014-9-26-think-in-seo.md"
+    },
+    {
+      "slug": "035-2014-9-28-gokk",
+      "title": "基于Node.js + jade + Mongoose  模仿gokk.tv",
+      "file": "chapters/035-2014-9-28-gokk.md"
+    },
+    {
+      "slug": "036-2014-9-30-nodejs-sublime-3",
+      "title": "在Sublime Text3 开发Node.js遇到的一个小问题",
+      "file": "chapters/036-2014-9-30-nodejs-sublime-3.md"
+    },
+    {
+      "slug": "037-2014-9-4-javascript-seamless-handover",
+      "title": "JavaScript打造无缝切换",
+      "file": "chapters/037-2014-9-4-javascript-seamless-handover.md"
+    },
+    {
+      "slug": "038-2014-9-4-my-show-4-angularjs",
+      "title": "AngularJs+BootStarp+fontAwesome打造个人展示页面",
+      "file": "chapters/038-2014-9-4-my-show-4-angularjs.md"
+    },
+    {
+      "slug": "039-2015-1-13-what-you-need-to-know-about-block-scope-let",
+      "title": "译-你需要知道的块级作用域 - let",
+      "file": "chapters/039-2015-1-13-what-you-need-to-know-about-block-scope-let.md"
+    },
+    {
+      "slug": "040-2015-1-14-2015-plan",
+      "title": "该是做做计划的时候了！",
+      "file": "chapters/040-2015-1-14-2015-plan.md"
+    },
+    {
+      "slug": "041-2015-10-21-scroll-in-uc",
+      "title": "在移动端上使用原生滑屏解决方案",
+      "file": "chapters/041-2015-10-21-scroll-in-uc.md"
+    },
+    {
+      "slug": "042-2015-10-9-javascript-iterables-and-iterators",
+      "title": "译-Javascript中的Iterables和Iterators",
+      "file": "chapters/042-2015-10-9-javascript-iterables-and-iterators.md"
+    },
+    {
+      "slug": "043-2015-11-17-use-node-build-static-blog",
+      "title": "使用Node.js生成一个静态博客",
+      "file": "chapters/043-2015-11-17-use-node-build-static-blog.md"
+    },
+    {
+      "slug": "044-2015-2-25-variables-and-scoping-in-ecmascript-6",
+      "title": "译-ES6里的变量和作用域",
+      "file": "chapters/044-2015-2-25-variables-and-scoping-in-ecmascript-6.md"
+    },
+    {
+      "slug": "045-2015-3-13-anmi-strange-problem",
+      "title": "Zepto CSS方法一个奇怪的现象",
+      "file": "chapters/045-2015-3-13-anmi-strange-problem.md"
+    },
+    {
+      "slug": "046-2015-3-20-css-multi-row-overflow",
+      "title": "小tip:CSS3控制多行溢出",
+      "file": "chapters/046-2015-3-20-css-multi-row-overflow.md"
+    },
+    {
+      "slug": "047-2015-3-23-frame-animation",
+      "title": "逐帧动画两种实现方式",
+      "file": "chapters/047-2015-3-23-frame-animation.md"
+    },
+    {
+      "slug": "048-2015-3-4-to-teacher",
+      "title": "给老师的一些课程主题",
+      "file": "chapters/048-2015-3-4-to-teacher.md"
+    },
+    {
+      "slug": "049-2015-3-7-share-jsbin",
+      "title": "我在jsbin里存的好东西",
+      "file": "chapters/049-2015-3-7-share-jsbin.md"
+    },
+    {
+      "slug": "050-2015-5-18-how-i-m-using-es6-modules-in-production",
+      "title": "译-我是怎么在项目中使用ES6模块化的",
+      "file": "chapters/050-2015-5-18-how-i-m-using-es6-modules-in-production.md"
+    },
+    {
+      "slug": "051-2015-9-16-express-node-act",
+      "title": "express介绍及实战",
+      "file": "chapters/051-2015-9-16-express-node-act.md"
+    },
+    {
+      "slug": "052-2016-1-1-review-2015",
+      "title": "2015年终小结",
+      "file": "chapters/052-2016-1-1-review-2015.md"
+    },
+    {
+      "slug": "053-2016-2-1-configuring-babel-6-for-node-js",
+      "title": "译-为你的Node.js配置babel 6",
+      "file": "chapters/053-2016-2-1-configuring-babel-6-for-node-js.md"
+    },
+    {
+      "slug": "054-2016-6-19-think-in-react-redux-1",
+      "title": "React + Redux 入门（一）：抛开 React 学 Redux",
+      "file": "chapters/054-2016-6-19-think-in-react-redux-1.md"
+    },
+    {
+      "slug": "055-2017-01-22-review-2016",
+      "title": "2017 is Comming",
+      "file": "chapters/055-2017-01-22-review-2016.md"
+    },
+    {
+      "slug": "056-404",
+      "title": "Page Not Found",
+      "file": "chapters/056-404.md"
+    },
+    {
+      "slug": "057-about",
+      "title": "About Me",
+      "file": "chapters/057-about.md"
+    },
+    {
+      "slug": "058-theme-setup",
+      "title": "Theme Setup",
+      "file": "chapters/058-theme-setup.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

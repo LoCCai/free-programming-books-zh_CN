@@ -1,0 +1,136 @@
+{
+  "bookId": "e38b12ae6127",
+  "title": "Chrome 开发者工具中文手册",
+  "url": "https://github.com/CN-Chrome-DevTools/CN-Chrome-DevTools",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:23.582Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-directory-with-section",
+      "title": "Chrome DevTools",
+      "file": "chapters/002-directory-with-section.md"
+    },
+    {
+      "slug": "003-directory",
+      "title": "Chrome DevTools",
+      "file": "chapters/003-directory.md"
+    },
+    {
+      "slug": "004-blog-posts",
+      "title": "Blog-Posts",
+      "file": "chapters/004-blog-posts.md"
+    },
+    {
+      "slug": "005-mailling-list",
+      "title": "Mailling-List",
+      "file": "chapters/005-mailling-list.md"
+    },
+    {
+      "slug": "006-videos",
+      "title": "Videos",
+      "file": "chapters/006-videos.md"
+    },
+    {
+      "slug": "007-development-workflow",
+      "title": "开发工作流程",
+      "file": "chapters/007-development-workflow.md"
+    },
+    {
+      "slug": "008-overview",
+      "title": "overview",
+      "file": "chapters/008-overview.md"
+    },
+    {
+      "slug": "009-overview",
+      "title": "概览",
+      "file": "chapters/009-overview.md"
+    },
+    {
+      "slug": "010-tips-tricks",
+      "title": "小窍门",
+      "file": "chapters/010-tips-tricks.md"
+    },
+    {
+      "slug": "011-using-the-console",
+      "title": "Using-the-Console",
+      "file": "chapters/011-using-the-console.md"
+    },
+    {
+      "slug": "012-evaluating-network-performance",
+      "title": "Evaluating-network-performance",
+      "file": "chapters/012-evaluating-network-performance.md"
+    },
+    {
+      "slug": "013-javascript-memory-profiling",
+      "title": "JavaScript内存分析",
+      "file": "chapters/013-javascript-memory-profiling.md"
+    },
+    {
+      "slug": "014-demos",
+      "title": "Demos",
+      "file": "chapters/014-demos.md"
+    },
+    {
+      "slug": "015-profiling-javascript-performance",
+      "title": "Profiling-JavaScript-Performance",
+      "file": "chapters/015-profiling-javascript-performance.md"
+    },
+    {
+      "slug": "016-timeline-demo-layout-thrashing",
+      "title": "Timeline-Demo: Layout-Thrashing",
+      "file": "chapters/016-timeline-demo-layout-thrashing.md"
+    },
+    {
+      "slug": "017-using-the-timeline",
+      "title": "Using-the-Timeline",
+      "file": "chapters/017-using-the-timeline.md"
+    },
+    {
+      "slug": "018-console-api-reference",
+      "title": "console-api-reference",
+      "file": "chapters/018-console-api-reference.md"
+    },
+    {
+      "slug": "019-shortcuts",
+      "title": "shortcuts",
+      "file": "chapters/019-shortcuts.md"
+    },
+    {
+      "slug": "020-device-mode",
+      "title": "Device 模块 & 手机模拟器",
+      "file": "chapters/020-device-mode.md"
+    },
+    {
+      "slug": "021-javascript-debugging-副本",
+      "title": "javascript-debugging - 副本",
+      "file": "chapters/021-javascript-debugging-副本.md"
+    },
+    {
+      "slug": "022-javascript-debugging2015年11月27日19时46分",
+      "title": "javascript-debugging2015年11月27日19时46分",
+      "file": "chapters/022-javascript-debugging2015年11月27日19时46分.md"
+    },
+    {
+      "slug": "023-remote-debugging",
+      "title": "使用 Chrome 远程调试 Android 设备",
+      "file": "chapters/023-remote-debugging.md"
+    },
+    {
+      "slug": "024-styleanddom",
+      "title": "样式和DOM编辑器介绍",
+      "file": "chapters/024-styleanddom.md"
+    },
+    {
+      "slug": "025-using-the-console",
+      "title": "Using-the-Console",
+      "file": "chapters/025-using-the-console.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

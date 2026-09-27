@@ -1,0 +1,21 @@
+{
+  "bookId": "59057e626faf",
+  "title": "HTTP 接口设计指北",
+  "url": "https://github.com/bolasblack/http-api-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:33.242Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "HTTP 接口设计指北",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-supplement",
+      "title": "补充内容",
+      "file": "chapters/002-supplement.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

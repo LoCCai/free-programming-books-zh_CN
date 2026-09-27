@@ -1,0 +1,90 @@
+{
+  "bookId": "08dbb3820677",
+  "title": "Go编程基础",
+  "url": "https://github.com/Unknwon/go-fundamental-programming",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:49.818Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-lecture1",
+      "title": "lecture1",
+      "file": "chapters/002-lecture1.md"
+    },
+    {
+      "slug": "003-lecture10",
+      "title": "lecture10",
+      "file": "chapters/003-lecture10.md"
+    },
+    {
+      "slug": "004-lecture11",
+      "title": "lecture11",
+      "file": "chapters/004-lecture11.md"
+    },
+    {
+      "slug": "005-lecture12",
+      "title": "lecture12",
+      "file": "chapters/005-lecture12.md"
+    },
+    {
+      "slug": "006-lecture13",
+      "title": "lecture13",
+      "file": "chapters/006-lecture13.md"
+    },
+    {
+      "slug": "007-lecture14",
+      "title": "lecture14",
+      "file": "chapters/007-lecture14.md"
+    },
+    {
+      "slug": "008-lecture15",
+      "title": "lecture15",
+      "file": "chapters/008-lecture15.md"
+    },
+    {
+      "slug": "009-lecture2",
+      "title": "lecture2",
+      "file": "chapters/009-lecture2.md"
+    },
+    {
+      "slug": "010-lecture3",
+      "title": "lecture3",
+      "file": "chapters/010-lecture3.md"
+    },
+    {
+      "slug": "011-lecture4",
+      "title": "lecture4",
+      "file": "chapters/011-lecture4.md"
+    },
+    {
+      "slug": "012-lecture5",
+      "title": "lecture5",
+      "file": "chapters/012-lecture5.md"
+    },
+    {
+      "slug": "013-lecture6",
+      "title": "lecture6",
+      "file": "chapters/013-lecture6.md"
+    },
+    {
+      "slug": "014-lecture7",
+      "title": "lecture7",
+      "file": "chapters/014-lecture7.md"
+    },
+    {
+      "slug": "015-lecture8",
+      "title": "lecture8",
+      "file": "chapters/015-lecture8.md"
+    },
+    {
+      "slug": "016-lecture9",
+      "title": "lecture9",
+      "file": "chapters/016-lecture9.md"
+    }
+  ],
+  "sourceType": "github"
+}

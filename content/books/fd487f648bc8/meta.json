@@ -1,0 +1,16 @@
+{
+  "bookId": "fd487f648bc8",
+  "title": "leetcode/lintcode题解/算法学习笔记",
+  "url": "https://www.gitbook.com/book/yuanbin/algorithm/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:40.496Z",
+  "chapters": [
+    {
+      "slug": "001-1i",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1i.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

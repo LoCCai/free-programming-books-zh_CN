@@ -1,0 +1,16 @@
+{
+  "bookId": "664907c46294",
+  "title": "Atom官方手册",
+  "url": "https://atom-china.org/t/atom/62",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:52.405Z",
+  "chapters": [
+    {
+      "slug": "001-w",
+      "title": "官方手册：Atom 基础使用",
+      "file": "chapters/001-w.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "官方手册：Atom 基础使用"
+}

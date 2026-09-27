@@ -1,0 +1,81 @@
+{
+  "bookId": "2d161ea679bf",
+  "title": "Go命令教程",
+  "url": "https://github.com/hyper-carrot/go_command_tutorial",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:28.899Z",
+  "chapters": [
+    {
+      "slug": "001-0-0",
+      "title": "标准命令详解",
+      "file": "chapters/001-0-0.md"
+    },
+    {
+      "slug": "002-0-1",
+      "title": "go build",
+      "file": "chapters/002-0-1.md"
+    },
+    {
+      "slug": "003-0-2",
+      "title": "go install",
+      "file": "chapters/003-0-2.md"
+    },
+    {
+      "slug": "004-0-3",
+      "title": "go get",
+      "file": "chapters/004-0-3.md"
+    },
+    {
+      "slug": "005-0-4",
+      "title": "go clean",
+      "file": "chapters/005-0-4.md"
+    },
+    {
+      "slug": "006-0-5",
+      "title": "go doc与godoc",
+      "file": "chapters/006-0-5.md"
+    },
+    {
+      "slug": "007-0-6",
+      "title": "go run",
+      "file": "chapters/007-0-6.md"
+    },
+    {
+      "slug": "008-0-7",
+      "title": "go test",
+      "file": "chapters/008-0-7.md"
+    },
+    {
+      "slug": "009-0-8",
+      "title": "go list",
+      "file": "chapters/009-0-8.md"
+    },
+    {
+      "slug": "010-0-10",
+      "title": "go fix与go tool fix",
+      "file": "chapters/010-0-10.md"
+    },
+    {
+      "slug": "011-0-11",
+      "title": "go vet与go tool vet",
+      "file": "chapters/011-0-11.md"
+    },
+    {
+      "slug": "012-0-12",
+      "title": "go tool pprof",
+      "file": "chapters/012-0-12.md"
+    },
+    {
+      "slug": "013-0-13",
+      "title": "go tool cgo",
+      "file": "chapters/013-0-13.md"
+    },
+    {
+      "slug": "014-0-14",
+      "title": "go env",
+      "file": "chapters/014-0-14.md"
+    }
+  ],
+  "license": "GPL-3.0",
+  "sourceType": "github"
+}

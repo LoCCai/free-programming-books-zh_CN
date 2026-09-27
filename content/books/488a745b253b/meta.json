@@ -1,0 +1,16 @@
+{
+  "bookId": "488a745b253b",
+  "title": "Mercurial 使用教程",
+  "url": "https://www.mercurial-scm.org/wiki/ChineseTutorial",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:37.425Z",
+  "chapters": [
+    {
+      "slug": "001-1e",
+      "title": "ChineseTutorial - Mercurial",
+      "file": "chapters/001-1e.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "ChineseTutorial - Mercurial"
+}

@@ -1,0 +1,15 @@
+{
+  "bookId": "38e9d62f4fb3",
+  "title": "CoffeeScript 编码风格指南",
+  "url": "https://github.com/geekplux/coffeescript-style-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:50.382Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "CoffeeScript 编码风格指南",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

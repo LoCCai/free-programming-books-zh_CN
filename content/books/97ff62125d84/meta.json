@@ -1,0 +1,160 @@
+{
+  "bookId": "97ff62125d84",
+  "title": "Apache Shiro 用户指南",
+  "url": "https://github.com/waylau/apache-shiro-1.2.x-reference",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:15.910Z",
+  "chapters": [
+    {
+      "slug": "001-1-introduction",
+      "title": "1. Introduction 介绍",
+      "file": "chapters/001-1-introduction.md"
+    },
+    {
+      "slug": "002-2-tutorial",
+      "title": "2. Tutorial 教程",
+      "file": "chapters/002-2-tutorial.md"
+    },
+    {
+      "slug": "003-3-architecture",
+      "title": "3. Architecture 架构",
+      "file": "chapters/003-3-architecture.md"
+    },
+    {
+      "slug": "004-4-configuration",
+      "title": "4. Configuration 配置",
+      "file": "chapters/004-4-configuration.md"
+    },
+    {
+      "slug": "005-5-authentication",
+      "title": "5. Authentication 认证",
+      "file": "chapters/005-5-authentication.md"
+    },
+    {
+      "slug": "006-6-authorization",
+      "title": "6. Authorization 授权",
+      "file": "chapters/006-6-authorization.md"
+    },
+    {
+      "slug": "007-6-1-permissions",
+      "title": "6.1. Permissions 权限",
+      "file": "chapters/007-6-1-permissions.md"
+    },
+    {
+      "slug": "008-7-realms",
+      "title": "7. Realms",
+      "file": "chapters/008-7-realms.md"
+    },
+    {
+      "slug": "009-8-session-management",
+      "title": "8. Session Management",
+      "file": "chapters/009-8-session-management.md"
+    },
+    {
+      "slug": "010-9-cryptography",
+      "title": "9. Cryptography 密码",
+      "file": "chapters/010-9-cryptography.md"
+    },
+    {
+      "slug": "011-10-web",
+      "title": "10. Web",
+      "file": "chapters/011-10-web.md"
+    },
+    {
+      "slug": "012-10-1-configuration",
+      "title": "10.1. Configuration 配置",
+      "file": "chapters/012-10-1-configuration.md"
+    },
+    {
+      "slug": "013-10-2-urls-path-based-security",
+      "title": "10.2. 基于路径的 url 安全",
+      "file": "chapters/013-10-2-urls-path-based-security.md"
+    },
+    {
+      "slug": "014-10-3-default-filters",
+      "title": "10.3. Default Filters 默认过滤器",
+      "file": "chapters/014-10-3-default-filters.md"
+    },
+    {
+      "slug": "015-10-4-session-management",
+      "title": "10.4. Session Management",
+      "file": "chapters/015-10-4-session-management.md"
+    },
+    {
+      "slug": "016-10-5-jsp-tag-library",
+      "title": "10.5. JSP Tag Library",
+      "file": "chapters/016-10-5-jsp-tag-library.md"
+    },
+    {
+      "slug": "017-11-caching",
+      "title": "11. Caching 缓存",
+      "file": "chapters/017-11-caching.md"
+    },
+    {
+      "slug": "018-12-concurrency-multithreading",
+      "title": "12. Concurrency & Multithreading 并发与多线程",
+      "file": "chapters/018-12-concurrency-multithreading.md"
+    },
+    {
+      "slug": "019-13-testing",
+      "title": "13. Testing 测试",
+      "file": "chapters/019-13-testing.md"
+    },
+    {
+      "slug": "020-14-custom-subjects",
+      "title": "14. Custom Subjects 自定义 Subject",
+      "file": "chapters/020-14-custom-subjects.md"
+    },
+    {
+      "slug": "021-15-spring-framework",
+      "title": "15. Spring Framework",
+      "file": "chapters/021-15-spring-framework.md"
+    },
+    {
+      "slug": "022-16-guice",
+      "title": "16. Guice",
+      "file": "chapters/022-16-guice.md"
+    },
+    {
+      "slug": "023-17-cas",
+      "title": "17. CAS",
+      "file": "chapters/023-17-cas.md"
+    },
+    {
+      "slug": "024-18-command-line-hasher",
+      "title": "18. Command Line Hasher",
+      "file": "chapters/024-18-command-line-hasher.md"
+    },
+    {
+      "slug": "025-19-terminology",
+      "title": "19. Terminology 术语",
+      "file": "chapters/025-19-terminology.md"
+    },
+    {
+      "slug": "026-20-ten-minute-tutorial",
+      "title": "20. 10 Minute Tutorial 十分钟教程",
+      "file": "chapters/026-20-ten-minute-tutorial.md"
+    },
+    {
+      "slug": "027-21-beginner-webapp-tutorial",
+      "title": "21. Beginner's Webapp Tutorial 初学者web应用教程",
+      "file": "chapters/027-21-beginner-webapp-tutorial.md"
+    },
+    {
+      "slug": "028-22-application-security-with-apache-shiro",
+      "title": "22. Application Security With Apache Shiro 用Shiro保护你的应用安全",
+      "file": "chapters/028-22-application-security-with-apache-shiro.md"
+    },
+    {
+      "slug": "029-23-cachemanager",
+      "title": "23. CacheManager 缓存管理",
+      "file": "chapters/029-23-cachemanager.md"
+    },
+    {
+      "slug": "030-24-apache-shiro-cryptography-features",
+      "title": "24. Apache Shiro Cryptography Features 加密功能",
+      "file": "chapters/030-24-apache-shiro-cryptography-features.md"
+    }
+  ],
+  "sourceType": "github"
+}

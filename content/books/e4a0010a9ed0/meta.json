@@ -1,0 +1,16 @@
+{
+  "bookId": "e4a0010a9ed0",
+  "title": "MDN JavaScript 中文文档",
+  "url": "https://developer.mozilla.org/zh-CN/docs/Web/JavaScript",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:37.239Z",
+  "chapters": [
+    {
+      "slug": "001-1j",
+      "title": "JavaScript | MDN",
+      "file": "chapters/001-1j.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "JavaScript | MDN"
+}

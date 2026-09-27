@@ -1,0 +1,16 @@
+{
+  "bookId": "c489b315124c",
+  "title": "C++ 并发编程(基于C++11)",
+  "url": "https://www.gitbook.com/book/chenxiaowei/cpp_concurrency_in_action/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:29.778Z",
+  "chapters": [
+    {
+      "slug": "001-22",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-22.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

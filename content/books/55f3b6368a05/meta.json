@@ -1,0 +1,141 @@
+{
+  "bookId": "55f3b6368a05",
+  "title": "JSSE 参考指南",
+  "url": "https://github.com/waylau/jsse-reference-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:28.256Z",
+  "chapters": [
+    {
+      "slug": "001-introduction",
+      "title": "引言",
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-features-and-benefits",
+      "title": "特性和用途",
+      "file": "chapters/002-features-and-benefits.md"
+    },
+    {
+      "slug": "003-jsse-standard-api",
+      "title": "JSSE 标准 API",
+      "file": "chapters/003-jsse-standard-api.md"
+    },
+    {
+      "slug": "004-sunjsse-provider",
+      "title": "SunJSSE 供应商",
+      "file": "chapters/004-sunjsse-provider.md"
+    },
+    {
+      "slug": "005-related-documentation",
+      "title": "相关文档",
+      "file": "chapters/005-related-documentation.md"
+    },
+    {
+      "slug": "006-the-jre-installation-directory",
+      "title": "JRE 安装目录",
+      "file": "chapters/006-the-jre-installation-directory.md"
+    },
+    {
+      "slug": "007-terms-and-definitions",
+      "title": "术语和定义",
+      "file": "chapters/007-terms-and-definitions.md"
+    },
+    {
+      "slug": "008-secure-sockets-layer-protocol-overview",
+      "title": "SSL 协议总览",
+      "file": "chapters/008-secure-sockets-layer-protocol-overview.md"
+    },
+    {
+      "slug": "009-why-use-ssl",
+      "title": "为何使用 SSL",
+      "file": "chapters/009-why-use-ssl.md"
+    },
+    {
+      "slug": "010-how-ssl-works",
+      "title": "SSL 如何工作",
+      "file": "chapters/010-how-ssl-works.md"
+    },
+    {
+      "slug": "011-jsse-classes-and-interfaces",
+      "title": "JSSE 类和接口",
+      "file": "chapters/011-jsse-classes-and-interfaces.md"
+    },
+    {
+      "slug": "012-core-classes-and-interfaces",
+      "title": "核心类和接口",
+      "file": "chapters/012-core-classes-and-interfaces.md"
+    },
+    {
+      "slug": "013-support-classes-and-interfacess",
+      "title": "支持类和接口",
+      "file": "chapters/013-support-classes-and-interfacess.md"
+    },
+    {
+      "slug": "014-secondary-support-classes-and-interfaces",
+      "title": "次要支持类和接口",
+      "file": "chapters/014-secondary-support-classes-and-interfaces.md"
+    },
+    {
+      "slug": "015-customizing-jsse",
+      "title": "自定义 JSSE",
+      "file": "chapters/015-customizing-jsse.md"
+    },
+    {
+      "slug": "016-transport-layer-security-renegotiation-issue",
+      "title": "TLS 重新协商问题",
+      "file": "chapters/016-transport-layer-security-renegotiation-issue.md"
+    },
+    {
+      "slug": "017-hardware-acceleration-and-smartcard-support",
+      "title": "硬件加速和智能卡的支持",
+      "file": "chapters/017-hardware-acceleration-and-smartcard-support.md"
+    },
+    {
+      "slug": "018-kerberos-cipher-suites",
+      "title": "Kerberos密码套件",
+      "file": "chapters/018-kerberos-cipher-suites.md"
+    },
+    {
+      "slug": "019-additional-keystore-formats",
+      "title": "额外的 Keystore 格式(PKCS12)",
+      "file": "chapters/019-additional-keystore-formats.md"
+    },
+    {
+      "slug": "020-server-name-indication-extension",
+      "title": "SNI 扩展",
+      "file": "chapters/020-server-name-indication-extension.md"
+    },
+    {
+      "slug": "021-troubleshooting",
+      "title": "问题解决",
+      "file": "chapters/021-troubleshooting.md"
+    },
+    {
+      "slug": "022-code-examples",
+      "title": "代码示例",
+      "file": "chapters/022-code-examples.md"
+    },
+    {
+      "slug": "023-converting-an-unsecure-socket-to-a-secure-socket",
+      "title": "将不安全的 Socket 转为安全的 Socket",
+      "file": "chapters/023-converting-an-unsecure-socket-to-a-secure-socket.md"
+    },
+    {
+      "slug": "024-running-the-jsse-sample-code",
+      "title": "运行 JSSE 示例代码",
+      "file": "chapters/024-running-the-jsse-sample-code.md"
+    },
+    {
+      "slug": "025-creating-a-keystore-to-use-with-jsse",
+      "title": "使用 JSSE 创建 Keystore",
+      "file": "chapters/025-creating-a-keystore-to-use-with-jsse.md"
+    },
+    {
+      "slug": "026-using-the-server-name-indication-extension",
+      "title": "使用 SNI 扩展",
+      "file": "chapters/026-using-the-server-name-indication-extension.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

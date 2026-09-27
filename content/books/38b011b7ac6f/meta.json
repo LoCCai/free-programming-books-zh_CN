@@ -1,0 +1,15 @@
+{
+  "bookId": "38b011b7ac6f",
+  "title": "ThinkPython 2ed",
+  "url": "https://github.com/bingjin/ThinkPython2-CN",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:35.189Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "《Think Python 2ed》最新版中文翻译",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

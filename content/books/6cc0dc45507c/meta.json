@@ -1,0 +1,90 @@
+{
+  "bookId": "6cc0dc45507c",
+  "title": "orm2 中文文档",
+  "url": "https://github.com/wizardforcel/orm2-doc-zh-cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:42.643Z",
+  "chapters": [
+    {
+      "slug": "001-0-object-relational-mapping",
+      "title": "orm2 中文文档",
+      "file": "chapters/001-0-object-relational-mapping.md"
+    },
+    {
+      "slug": "002-1-connecting-to-database",
+      "title": "连接到数据库",
+      "file": "chapters/002-1-connecting-to-database.md"
+    },
+    {
+      "slug": "003-2-settings",
+      "title": "设置",
+      "file": "chapters/003-2-settings.md"
+    },
+    {
+      "slug": "004-3-defining-models",
+      "title": "定义模型",
+      "file": "chapters/004-3-defining-models.md"
+    },
+    {
+      "slug": "005-3-1-model-properties",
+      "title": "模型属性",
+      "file": "chapters/005-3-1-model-properties.md"
+    },
+    {
+      "slug": "006-3-2-model-validations",
+      "title": "模型验证器",
+      "file": "chapters/006-3-2-model-validations.md"
+    },
+    {
+      "slug": "007-3-3-model-hooks",
+      "title": "模型钩子",
+      "file": "chapters/007-3-3-model-hooks.md"
+    },
+    {
+      "slug": "008-3-4-model-cache",
+      "title": "模型缓存",
+      "file": "chapters/008-3-4-model-cache.md"
+    },
+    {
+      "slug": "009-4-defining-associations",
+      "title": "定义关联",
+      "file": "chapters/009-4-defining-associations.md"
+    },
+    {
+      "slug": "010-4-1-hasone",
+      "title": "hasOne（多对一关系）",
+      "file": "chapters/010-4-1-hasone.md"
+    },
+    {
+      "slug": "011-4-2-hasmany",
+      "title": "hasMany（多对多关系）",
+      "file": "chapters/011-4-2-hasmany.md"
+    },
+    {
+      "slug": "012-4-3-extendsto",
+      "title": "extendsTo（一对一关系）",
+      "file": "chapters/012-4-3-extendsto.md"
+    },
+    {
+      "slug": "013-5-syncing-and-dropping-models",
+      "title": "同步和删除模型",
+      "file": "chapters/013-5-syncing-and-dropping-models.md"
+    },
+    {
+      "slug": "014-6-finding-items",
+      "title": "查找记录",
+      "file": "chapters/014-6-finding-items.md"
+    },
+    {
+      "slug": "015-7-creating-and-updating-items",
+      "title": "创建和更新记录",
+      "file": "chapters/015-7-creating-and-updating-items.md"
+    },
+    {
+      "slug": "016-8-aggregation",
+      "title": "聚合",
+      "file": "chapters/016-8-aggregation.md"
+    }
+  ],
+  "sourceType": "github"
+}

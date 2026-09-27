@@ -1,0 +1,16 @@
+{
+  "bookId": "1a385afa9a8e",
+  "title": "Python Cookbook 中文版",
+  "url": "http://www.kancloud.cn/thinkphp/python-cookbook",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:17.053Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "Python 菜谱 · 看云",
+      "file": "chapters/001-1b.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Python 菜谱 · 看云"
+}

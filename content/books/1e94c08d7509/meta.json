@@ -1,0 +1,960 @@
+{
+  "bookId": "1e94c08d7509",
+  "title": "PHP-LeetCode",
+  "url": "https://github.com/wuqinqiang/leetcode-php",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:16.490Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-11",
+      "title": "11",
+      "file": "chapters/002-11.md"
+    },
+    {
+      "slug": "003-12",
+      "title": "12",
+      "file": "chapters/003-12.md"
+    },
+    {
+      "slug": "004-14",
+      "title": "14",
+      "file": "chapters/004-14.md"
+    },
+    {
+      "slug": "005-15",
+      "title": "15",
+      "file": "chapters/005-15.md"
+    },
+    {
+      "slug": "006-16",
+      "title": "16",
+      "file": "chapters/006-16.md"
+    },
+    {
+      "slug": "007-17",
+      "title": "17",
+      "file": "chapters/007-17.md"
+    },
+    {
+      "slug": "008-18",
+      "title": "18",
+      "file": "chapters/008-18.md"
+    },
+    {
+      "slug": "009-19",
+      "title": "19",
+      "file": "chapters/009-19.md"
+    },
+    {
+      "slug": "010-2",
+      "title": "2",
+      "file": "chapters/010-2.md"
+    },
+    {
+      "slug": "011-20",
+      "title": "20",
+      "file": "chapters/011-20.md"
+    },
+    {
+      "slug": "012-21",
+      "title": "21",
+      "file": "chapters/012-21.md"
+    },
+    {
+      "slug": "013-22",
+      "title": "22",
+      "file": "chapters/013-22.md"
+    },
+    {
+      "slug": "014-23",
+      "title": "23",
+      "file": "chapters/014-23.md"
+    },
+    {
+      "slug": "015-24",
+      "title": "24",
+      "file": "chapters/015-24.md"
+    },
+    {
+      "slug": "016-25",
+      "title": "25",
+      "file": "chapters/016-25.md"
+    },
+    {
+      "slug": "017-3",
+      "title": "3",
+      "file": "chapters/017-3.md"
+    },
+    {
+      "slug": "018-31",
+      "title": "31",
+      "file": "chapters/018-31.md"
+    },
+    {
+      "slug": "019-32",
+      "title": "32",
+      "file": "chapters/019-32.md"
+    },
+    {
+      "slug": "020-33",
+      "title": "33",
+      "file": "chapters/020-33.md"
+    },
+    {
+      "slug": "021-34",
+      "title": "34",
+      "file": "chapters/021-34.md"
+    },
+    {
+      "slug": "022-35",
+      "title": "35",
+      "file": "chapters/022-35.md"
+    },
+    {
+      "slug": "023-39",
+      "title": "39",
+      "file": "chapters/023-39.md"
+    },
+    {
+      "slug": "024-40",
+      "title": "40",
+      "file": "chapters/024-40.md"
+    },
+    {
+      "slug": "025-41",
+      "title": "41",
+      "file": "chapters/025-41.md"
+    },
+    {
+      "slug": "026-42",
+      "title": "42",
+      "file": "chapters/026-42.md"
+    },
+    {
+      "slug": "027-46",
+      "title": "46",
+      "file": "chapters/027-46.md"
+    },
+    {
+      "slug": "028-47",
+      "title": "47",
+      "file": "chapters/028-47.md"
+    },
+    {
+      "slug": "029-48",
+      "title": "48",
+      "file": "chapters/029-48.md"
+    },
+    {
+      "slug": "030-49",
+      "title": "49",
+      "file": "chapters/030-49.md"
+    },
+    {
+      "slug": "031-5",
+      "title": "5",
+      "file": "chapters/031-5.md"
+    },
+    {
+      "slug": "032-50",
+      "title": "50",
+      "file": "chapters/032-50.md"
+    },
+    {
+      "slug": "033-7",
+      "title": "7",
+      "file": "chapters/033-7.md"
+    },
+    {
+      "slug": "034-9",
+      "title": "9",
+      "file": "chapters/034-9.md"
+    },
+    {
+      "slug": "035-101",
+      "title": "101",
+      "file": "chapters/035-101.md"
+    },
+    {
+      "slug": "036-102",
+      "title": "102",
+      "file": "chapters/036-102.md"
+    },
+    {
+      "slug": "037-103",
+      "title": "103",
+      "file": "chapters/037-103.md"
+    },
+    {
+      "slug": "038-104",
+      "title": "104",
+      "file": "chapters/038-104.md"
+    },
+    {
+      "slug": "039-105",
+      "title": "105",
+      "file": "chapters/039-105.md"
+    },
+    {
+      "slug": "040-106",
+      "title": "106",
+      "file": "chapters/040-106.md"
+    },
+    {
+      "slug": "041-107",
+      "title": "107",
+      "file": "chapters/041-107.md"
+    },
+    {
+      "slug": "042-108",
+      "title": "108",
+      "file": "chapters/042-108.md"
+    },
+    {
+      "slug": "043-109",
+      "title": "109",
+      "file": "chapters/043-109.md"
+    },
+    {
+      "slug": "044-110",
+      "title": "110",
+      "file": "chapters/044-110.md"
+    },
+    {
+      "slug": "045-111",
+      "title": "111",
+      "file": "chapters/045-111.md"
+    },
+    {
+      "slug": "046-112",
+      "title": "112",
+      "file": "chapters/046-112.md"
+    },
+    {
+      "slug": "047-113",
+      "title": "113",
+      "file": "chapters/047-113.md"
+    },
+    {
+      "slug": "048-114",
+      "title": "114",
+      "file": "chapters/048-114.md"
+    },
+    {
+      "slug": "049-115",
+      "title": "115",
+      "file": "chapters/049-115.md"
+    },
+    {
+      "slug": "050-116",
+      "title": "116",
+      "file": "chapters/050-116.md"
+    },
+    {
+      "slug": "051-117",
+      "title": "117",
+      "file": "chapters/051-117.md"
+    },
+    {
+      "slug": "052-118",
+      "title": "118",
+      "file": "chapters/052-118.md"
+    },
+    {
+      "slug": "053-119",
+      "title": "119",
+      "file": "chapters/053-119.md"
+    },
+    {
+      "slug": "054-120",
+      "title": "120",
+      "file": "chapters/054-120.md"
+    },
+    {
+      "slug": "055-121",
+      "title": "121",
+      "file": "chapters/055-121.md"
+    },
+    {
+      "slug": "056-122",
+      "title": "122",
+      "file": "chapters/056-122.md"
+    },
+    {
+      "slug": "057-123",
+      "title": "123",
+      "file": "chapters/057-123.md"
+    },
+    {
+      "slug": "058-124",
+      "title": "124",
+      "file": "chapters/058-124.md"
+    },
+    {
+      "slug": "059-125",
+      "title": "125",
+      "file": "chapters/059-125.md"
+    },
+    {
+      "slug": "060-128",
+      "title": "128",
+      "file": "chapters/060-128.md"
+    },
+    {
+      "slug": "061-129",
+      "title": "129",
+      "file": "chapters/061-129.md"
+    },
+    {
+      "slug": "062-130",
+      "title": "130",
+      "file": "chapters/062-130.md"
+    },
+    {
+      "slug": "063-131",
+      "title": "131",
+      "file": "chapters/063-131.md"
+    },
+    {
+      "slug": "064-134",
+      "title": "134",
+      "file": "chapters/064-134.md"
+    },
+    {
+      "slug": "065-135",
+      "title": "135",
+      "file": "chapters/065-135.md"
+    },
+    {
+      "slug": "066-136",
+      "title": "136",
+      "file": "chapters/066-136.md"
+    },
+    {
+      "slug": "067-137",
+      "title": "137",
+      "file": "chapters/067-137.md"
+    },
+    {
+      "slug": "068-139",
+      "title": "139",
+      "file": "chapters/068-139.md"
+    },
+    {
+      "slug": "069-143",
+      "title": "143",
+      "file": "chapters/069-143.md"
+    },
+    {
+      "slug": "070-144",
+      "title": "144",
+      "file": "chapters/070-144.md"
+    },
+    {
+      "slug": "071-145",
+      "title": "145",
+      "file": "chapters/071-145.md"
+    },
+    {
+      "slug": "072-146",
+      "title": "146",
+      "file": "chapters/072-146.md"
+    },
+    {
+      "slug": "073-147",
+      "title": "147",
+      "file": "chapters/073-147.md"
+    },
+    {
+      "slug": "074-148",
+      "title": "148",
+      "file": "chapters/074-148.md"
+    },
+    {
+      "slug": "075-150",
+      "title": "150",
+      "file": "chapters/075-150.md"
+    },
+    {
+      "slug": "076-152",
+      "title": "152",
+      "file": "chapters/076-152.md"
+    },
+    {
+      "slug": "077-153",
+      "title": "153",
+      "file": "chapters/077-153.md"
+    },
+    {
+      "slug": "078-154",
+      "title": "154",
+      "file": "chapters/078-154.md"
+    },
+    {
+      "slug": "079-155",
+      "title": "155",
+      "file": "chapters/079-155.md"
+    },
+    {
+      "slug": "080-162",
+      "title": "162",
+      "file": "chapters/080-162.md"
+    },
+    {
+      "slug": "081-164",
+      "title": "164",
+      "file": "chapters/081-164.md"
+    },
+    {
+      "slug": "082-165",
+      "title": "165",
+      "file": "chapters/082-165.md"
+    },
+    {
+      "slug": "083-167",
+      "title": "167",
+      "file": "chapters/083-167.md"
+    },
+    {
+      "slug": "084-168",
+      "title": "168",
+      "file": "chapters/084-168.md"
+    },
+    {
+      "slug": "085-169",
+      "title": "169",
+      "file": "chapters/085-169.md"
+    },
+    {
+      "slug": "086-171",
+      "title": "171",
+      "file": "chapters/086-171.md"
+    },
+    {
+      "slug": "087-172",
+      "title": "172",
+      "file": "chapters/087-172.md"
+    },
+    {
+      "slug": "088-173",
+      "title": "173",
+      "file": "chapters/088-173.md"
+    },
+    {
+      "slug": "089-187",
+      "title": "187",
+      "file": "chapters/089-187.md"
+    },
+    {
+      "slug": "090-189",
+      "title": "189",
+      "file": "chapters/090-189.md"
+    },
+    {
+      "slug": "091-198",
+      "title": "198",
+      "file": "chapters/091-198.md"
+    },
+    {
+      "slug": "092-199",
+      "title": "199",
+      "file": "chapters/092-199.md"
+    },
+    {
+      "slug": "093-200",
+      "title": "200",
+      "file": "chapters/093-200.md"
+    },
+    {
+      "slug": "094-201",
+      "title": "201",
+      "file": "chapters/094-201.md"
+    },
+    {
+      "slug": "095-202",
+      "title": "202",
+      "file": "chapters/095-202.md"
+    },
+    {
+      "slug": "096-203",
+      "title": "203",
+      "file": "chapters/096-203.md"
+    },
+    {
+      "slug": "097-204",
+      "title": "204",
+      "file": "chapters/097-204.md"
+    },
+    {
+      "slug": "098-205",
+      "title": "205",
+      "file": "chapters/098-205.md"
+    },
+    {
+      "slug": "099-206",
+      "title": "206",
+      "file": "chapters/099-206.md"
+    },
+    {
+      "slug": "100-208",
+      "title": "208",
+      "file": "chapters/100-208.md"
+    },
+    {
+      "slug": "101-209",
+      "title": "209",
+      "file": "chapters/101-209.md"
+    },
+    {
+      "slug": "102-213",
+      "title": "213",
+      "file": "chapters/102-213.md"
+    },
+    {
+      "slug": "103-215",
+      "title": "215",
+      "file": "chapters/103-215.md"
+    },
+    {
+      "slug": "104-216",
+      "title": "216",
+      "file": "chapters/104-216.md"
+    },
+    {
+      "slug": "105-217",
+      "title": "217",
+      "file": "chapters/105-217.md"
+    },
+    {
+      "slug": "106-219",
+      "title": "219",
+      "file": "chapters/106-219.md"
+    },
+    {
+      "slug": "107-221",
+      "title": "221",
+      "file": "chapters/107-221.md"
+    },
+    {
+      "slug": "108-222",
+      "title": "222",
+      "file": "chapters/108-222.md"
+    },
+    {
+      "slug": "109-225",
+      "title": "225",
+      "file": "chapters/109-225.md"
+    },
+    {
+      "slug": "110-226",
+      "title": "226",
+      "file": "chapters/110-226.md"
+    },
+    {
+      "slug": "111-229",
+      "title": "229",
+      "file": "chapters/111-229.md"
+    },
+    {
+      "slug": "112-230",
+      "title": "230",
+      "file": "chapters/112-230.md"
+    },
+    {
+      "slug": "113-231",
+      "title": "231",
+      "file": "chapters/113-231.md"
+    },
+    {
+      "slug": "114-232",
+      "title": "232",
+      "file": "chapters/114-232.md"
+    },
+    {
+      "slug": "115-234",
+      "title": "234",
+      "file": "chapters/115-234.md"
+    },
+    {
+      "slug": "116-235",
+      "title": "235",
+      "file": "chapters/116-235.md"
+    },
+    {
+      "slug": "117-237",
+      "title": "237",
+      "file": "chapters/117-237.md"
+    },
+    {
+      "slug": "118-238",
+      "title": "238",
+      "file": "chapters/118-238.md"
+    },
+    {
+      "slug": "119-240",
+      "title": "240",
+      "file": "chapters/119-240.md"
+    },
+    {
+      "slug": "120-242",
+      "title": "242",
+      "file": "chapters/120-242.md"
+    },
+    {
+      "slug": "121-257",
+      "title": "257",
+      "file": "chapters/121-257.md"
+    },
+    {
+      "slug": "122-258",
+      "title": "258",
+      "file": "chapters/122-258.md"
+    },
+    {
+      "slug": "123-260",
+      "title": "260",
+      "file": "chapters/123-260.md"
+    },
+    {
+      "slug": "124-263",
+      "title": "263",
+      "file": "chapters/124-263.md"
+    },
+    {
+      "slug": "125-268",
+      "title": "268",
+      "file": "chapters/125-268.md"
+    },
+    {
+      "slug": "126-278",
+      "title": "278",
+      "file": "chapters/126-278.md"
+    },
+    {
+      "slug": "127-283",
+      "title": "283",
+      "file": "chapters/127-283.md"
+    },
+    {
+      "slug": "128-287",
+      "title": "287",
+      "file": "chapters/128-287.md"
+    },
+    {
+      "slug": "129-290",
+      "title": "290",
+      "file": "chapters/129-290.md"
+    },
+    {
+      "slug": "130-292",
+      "title": "292",
+      "file": "chapters/130-292.md"
+    },
+    {
+      "slug": "131-300",
+      "title": "300",
+      "file": "chapters/131-300.md"
+    },
+    {
+      "slug": "132-303",
+      "title": "303",
+      "file": "chapters/132-303.md"
+    },
+    {
+      "slug": "133-309",
+      "title": "309",
+      "file": "chapters/133-309.md"
+    },
+    {
+      "slug": "134-326",
+      "title": "326",
+      "file": "chapters/134-326.md"
+    },
+    {
+      "slug": "135-337",
+      "title": "337",
+      "file": "chapters/135-337.md"
+    },
+    {
+      "slug": "136-342",
+      "title": "342",
+      "file": "chapters/136-342.md"
+    },
+    {
+      "slug": "137-344",
+      "title": "344",
+      "file": "chapters/137-344.md"
+    },
+    {
+      "slug": "138-349",
+      "title": "349",
+      "file": "chapters/138-349.md"
+    },
+    {
+      "slug": "139-350",
+      "title": "350",
+      "file": "chapters/139-350.md"
+    },
+    {
+      "slug": "140-367",
+      "title": "367",
+      "file": "chapters/140-367.md"
+    },
+    {
+      "slug": "141-371",
+      "title": "371",
+      "file": "chapters/141-371.md"
+    },
+    {
+      "slug": "142-374",
+      "title": "374",
+      "file": "chapters/142-374.md"
+    },
+    {
+      "slug": "143-378",
+      "title": "378",
+      "file": "chapters/143-378.md"
+    },
+    {
+      "slug": "144-392",
+      "title": "392",
+      "file": "chapters/144-392.md"
+    },
+    {
+      "slug": "145-441",
+      "title": "441",
+      "file": "chapters/145-441.md"
+    },
+    {
+      "slug": "146-513",
+      "title": "513",
+      "file": "chapters/146-513.md"
+    },
+    {
+      "slug": "147-53",
+      "title": "53",
+      "file": "chapters/147-53.md"
+    },
+    {
+      "slug": "148-54",
+      "title": "54",
+      "file": "chapters/148-54.md"
+    },
+    {
+      "slug": "149-55",
+      "title": "55",
+      "file": "chapters/149-55.md"
+    },
+    {
+      "slug": "150-56",
+      "title": "56",
+      "file": "chapters/150-56.md"
+    },
+    {
+      "slug": "151-57",
+      "title": "57",
+      "file": "chapters/151-57.md"
+    },
+    {
+      "slug": "152-59",
+      "title": "59",
+      "file": "chapters/152-59.md"
+    },
+    {
+      "slug": "153-61",
+      "title": "61",
+      "file": "chapters/153-61.md"
+    },
+    {
+      "slug": "154-62",
+      "title": "62",
+      "file": "chapters/154-62.md"
+    },
+    {
+      "slug": "155-63",
+      "title": "63",
+      "file": "chapters/155-63.md"
+    },
+    {
+      "slug": "156-64",
+      "title": "64",
+      "file": "chapters/156-64.md"
+    },
+    {
+      "slug": "157-66",
+      "title": "66",
+      "file": "chapters/157-66.md"
+    },
+    {
+      "slug": "158-69",
+      "title": "69",
+      "file": "chapters/158-69.md"
+    },
+    {
+      "slug": "159-70",
+      "title": "70",
+      "file": "chapters/159-70.md"
+    },
+    {
+      "slug": "160-72",
+      "title": "72",
+      "file": "chapters/160-72.md"
+    },
+    {
+      "slug": "161-73",
+      "title": "73",
+      "file": "chapters/161-73.md"
+    },
+    {
+      "slug": "162-74",
+      "title": "74",
+      "file": "chapters/162-74.md"
+    },
+    {
+      "slug": "163-75",
+      "title": "75",
+      "file": "chapters/163-75.md"
+    },
+    {
+      "slug": "164-77",
+      "title": "77",
+      "file": "chapters/164-77.md"
+    },
+    {
+      "slug": "165-78",
+      "title": "78",
+      "file": "chapters/165-78.md"
+    },
+    {
+      "slug": "166-79",
+      "title": "79",
+      "file": "chapters/166-79.md"
+    },
+    {
+      "slug": "167-81",
+      "title": "81",
+      "file": "chapters/167-81.md"
+    },
+    {
+      "slug": "168-82",
+      "title": "82",
+      "file": "chapters/168-82.md"
+    },
+    {
+      "slug": "169-84",
+      "title": "84",
+      "file": "chapters/169-84.md"
+    },
+    {
+      "slug": "170-86",
+      "title": "86",
+      "file": "chapters/170-86.md"
+    },
+    {
+      "slug": "171-88",
+      "title": "88",
+      "file": "chapters/171-88.md"
+    },
+    {
+      "slug": "172-92",
+      "title": "92",
+      "file": "chapters/172-92.md"
+    },
+    {
+      "slug": "173-93",
+      "title": "93",
+      "file": "chapters/173-93.md"
+    },
+    {
+      "slug": "174-94",
+      "title": "94",
+      "file": "chapters/174-94.md"
+    },
+    {
+      "slug": "175-96",
+      "title": "96",
+      "file": "chapters/175-96.md"
+    },
+    {
+      "slug": "176-98",
+      "title": "98",
+      "file": "chapters/176-98.md"
+    },
+    {
+      "slug": "177-633",
+      "title": "633",
+      "file": "chapters/177-633.md"
+    },
+    {
+      "slug": "178-680",
+      "title": "680",
+      "file": "chapters/178-680.md"
+    },
+    {
+      "slug": "179-堆栈",
+      "title": "堆栈",
+      "file": "chapters/179-堆栈.md"
+    },
+    {
+      "slug": "180-队列",
+      "title": "队列",
+      "file": "chapters/180-队列.md"
+    },
+    {
+      "slug": "181-二叉树",
+      "title": "二叉树",
+      "file": "chapters/181-二叉树.md"
+    },
+    {
+      "slug": "182-散列表",
+      "title": "散列表",
+      "file": "chapters/182-散列表.md"
+    },
+    {
+      "slug": "183-数组和链表",
+      "title": "数组和链表",
+      "file": "chapters/183-数组和链表.md"
+    },
+    {
+      "slug": "184-leetcode经典二叉树题目集合",
+      "title": "Leetcode经典二叉树题目集合",
+      "file": "chapters/184-leetcode经典二叉树题目集合.md"
+    },
+    {
+      "slug": "185-动态规划",
+      "title": "动态规划",
+      "file": "chapters/185-动态规划.md"
+    },
+    {
+      "slug": "186-二分查找",
+      "title": "二分查找",
+      "file": "chapters/186-二分查找.md"
+    },
+    {
+      "slug": "187-归并快速排序",
+      "title": "归并快速排序",
+      "file": "chapters/187-归并快速排序.md"
+    },
+    {
+      "slug": "188-冒泡插入选择",
+      "title": "冒泡插入选择",
+      "file": "chapters/188-冒泡插入选择.md"
+    },
+    {
+      "slug": "189-十分好用的二分查找模板",
+      "title": "十分好用的二分查找模板",
+      "file": "chapters/189-十分好用的二分查找模板.md"
+    },
+    {
+      "slug": "190-lru",
+      "title": "LRU",
+      "file": "chapters/190-lru.md"
+    }
+  ],
+  "sourceType": "github"
+}

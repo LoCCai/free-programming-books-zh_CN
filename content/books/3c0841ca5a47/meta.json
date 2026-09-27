@@ -1,0 +1,16 @@
+{
+  "bookId": "3c0841ca5a47",
+  "title": "Google Java编程风格指南",
+  "url": "https://hawstein.com/2014/01/20/google-java-style/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:25.151Z",
+  "chapters": [
+    {
+      "slug": "001-1e",
+      "title": "Google Java 编程风格指南 - Hawstein 的博客",
+      "file": "chapters/001-1e.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Google Java 编程风格指南 - Hawstein 的博客"
+}

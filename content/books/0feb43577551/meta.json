@@ -1,0 +1,16 @@
+{
+  "bookId": "0feb43577551",
+  "title": "笨方法学Vimscript 中译本",
+  "url": "http://learnvimscriptthehardway.onefloweroneworld.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:43.587Z",
+  "chapters": [
+    {
+      "slug": "001-1i",
+      "title": "OneFlowerOneWorld.com is for sale | HugeDomains",
+      "file": "chapters/001-1i.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "OneFlowerOneWorld.com is for sale | HugeDomains"
+}

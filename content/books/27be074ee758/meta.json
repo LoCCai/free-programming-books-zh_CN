@@ -1,0 +1,16 @@
+{
+  "bookId": "27be074ee758",
+  "title": "HTML和CSS编码规范",
+  "url": "http://codeguide.bootcss.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:45.283Z",
+  "chapters": [
+    {
+      "slug": "001-t",
+      "title": "编码规范 by @mdo",
+      "file": "chapters/001-t.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "编码规范 by @mdo"
+}

@@ -1,0 +1,165 @@
+{
+  "bookId": "e1286749d441",
+  "title": "Software Engineering at Google",
+  "url": "https://github.com/qiangmzsx/Software-Engineering-at-Google",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:19.744Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Software-Engineering-at-Google",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-coverpage",
+      "title": "Software Engineering at Google <small>中文版</small>",
+      "file": "chapters/002-coverpage.md"
+    },
+    {
+      "slug": "003-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/003-sidebar.md"
+    },
+    {
+      "slug": "004-afterword",
+      "title": "后记",
+      "file": "chapters/004-afterword.md"
+    },
+    {
+      "slug": "005-chapter-1-what-is-software-engineering",
+      "title": "What Is Software Engineering?",
+      "file": "chapters/005-chapter-1-what-is-software-engineering.md"
+    },
+    {
+      "slug": "006-chapter-10-documentatio",
+      "title": "Documentation",
+      "file": "chapters/006-chapter-10-documentatio.md"
+    },
+    {
+      "slug": "007-chapter-11-testing-overview",
+      "title": "Testing Overview",
+      "file": "chapters/007-chapter-11-testing-overview.md"
+    },
+    {
+      "slug": "008-chapter-12-unit-testing",
+      "title": "Unit Testing",
+      "file": "chapters/008-chapter-12-unit-testing.md"
+    },
+    {
+      "slug": "009-chapter-13-test-doubles",
+      "title": "Test Doubles",
+      "file": "chapters/009-chapter-13-test-doubles.md"
+    },
+    {
+      "slug": "010-chapter-14-larger-testing",
+      "title": "Larger Testing",
+      "file": "chapters/010-chapter-14-larger-testing.md"
+    },
+    {
+      "slug": "011-chapter-15-deprecation",
+      "title": "Deprecation",
+      "file": "chapters/011-chapter-15-deprecation.md"
+    },
+    {
+      "slug": "012-chapter-16-version-control-and-branch-management",
+      "title": "Version Control and Branch Management",
+      "file": "chapters/012-chapter-16-version-control-and-branch-management.md"
+    },
+    {
+      "slug": "013-chapter-17-code-search",
+      "title": "Code Search",
+      "file": "chapters/013-chapter-17-code-search.md"
+    },
+    {
+      "slug": "014-chapter-18-build-systems-and-build-philosophy",
+      "title": "Build Systems and Build Philosophy",
+      "file": "chapters/014-chapter-18-build-systems-and-build-philosophy.md"
+    },
+    {
+      "slug": "015-chapter-19-critique-googles-code-review-tool",
+      "title": "Critique: Google’s Code Review Tool",
+      "file": "chapters/015-chapter-19-critique-googles-code-review-tool.md"
+    },
+    {
+      "slug": "016-chapter-2-how-to-work-well-on-teams",
+      "title": "How to Work Well on Teams",
+      "file": "chapters/016-chapter-2-how-to-work-well-on-teams.md"
+    },
+    {
+      "slug": "017-chapter-20-static-analysis",
+      "title": "Static Analysis",
+      "file": "chapters/017-chapter-20-static-analysis.md"
+    },
+    {
+      "slug": "018-chapter-21-dependency-management",
+      "title": "Dependency Management",
+      "file": "chapters/018-chapter-21-dependency-management.md"
+    },
+    {
+      "slug": "019-chapter-22-large-scale-changes",
+      "title": "Large-Scale Changes",
+      "file": "chapters/019-chapter-22-large-scale-changes.md"
+    },
+    {
+      "slug": "020-chapter-23-continuous-integration",
+      "title": "Continuous Integration",
+      "file": "chapters/020-chapter-23-continuous-integration.md"
+    },
+    {
+      "slug": "021-chapter-24-continuous-delivery",
+      "title": "Continuous Delivery",
+      "file": "chapters/021-chapter-24-continuous-delivery.md"
+    },
+    {
+      "slug": "022-chapter-25-compute-as-a-service",
+      "title": "Compute as a Service",
+      "file": "chapters/022-chapter-25-compute-as-a-service.md"
+    },
+    {
+      "slug": "023-chapter-3-knowledge-sharing",
+      "title": "Knowledge Sharing",
+      "file": "chapters/023-chapter-3-knowledge-sharing.md"
+    },
+    {
+      "slug": "024-chapter-4-engineering-for-equity",
+      "title": "Engineering for Equity",
+      "file": "chapters/024-chapter-4-engineering-for-equity.md"
+    },
+    {
+      "slug": "025-chapter-5-how-to-lead-a-team",
+      "title": "How to Lead a Team",
+      "file": "chapters/025-chapter-5-how-to-lead-a-team.md"
+    },
+    {
+      "slug": "026-chapter-6-leading-at-scale",
+      "title": "Leading at Scale",
+      "file": "chapters/026-chapter-6-leading-at-scale.md"
+    },
+    {
+      "slug": "027-chapter-7-measuring-engineering-productivity",
+      "title": "Measuring Engineering Productivity",
+      "file": "chapters/027-chapter-7-measuring-engineering-productivity.md"
+    },
+    {
+      "slug": "028-chapter-8-style-guides-and-rules",
+      "title": "Style Guides and Rules",
+      "file": "chapters/028-chapter-8-style-guides-and-rules.md"
+    },
+    {
+      "slug": "029-chapter-9-code-review",
+      "title": "Code Review",
+      "file": "chapters/029-chapter-9-code-review.md"
+    },
+    {
+      "slug": "030-foreword",
+      "title": "Foreword",
+      "file": "chapters/030-foreword.md"
+    },
+    {
+      "slug": "031-preface",
+      "title": "Preface",
+      "file": "chapters/031-preface.md"
+    }
+  ],
+  "sourceType": "github"
+}

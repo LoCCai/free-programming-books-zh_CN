@@ -1,0 +1,1011 @@
+{
+  "bookId": "cf4cfc1e0770",
+  "title": "开源大模型食用指南 Self-LLM",
+  "url": "https://github.com/datawhalechina/self-llm",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:15:24.577Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "如何练就一个我",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "AMchat 高等数学大模型",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Chat-嬛嬛 是如何炼成的",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "Examples",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "天机简介",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme-00-amd-aup免费云平台使用指南",
+      "title": "AMD ROCm 云平台使用指南（AUP Learning Cloud 优先）",
+      "file": "chapters/006-readme-00-amd-aup免费云平台使用指南.md"
+    },
+    {
+      "slug": "007-readme-en",
+      "title": "Create Conda virtual environment",
+      "file": "chapters/007-readme-en.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "创建 Conda 虚拟环境",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "readme",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "代码检索场景微调实战，基于pytorch微调BGE-M3 embedding模型",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "readme",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "CharacterGLM-6B",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "readme",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "readme",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "Kimi-VL 多模态对话助手",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "Llama-4-Scout 对话助手",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "README",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "readme",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "Qwen2.5",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "SpatialLM 3D点云理解与目标检测模型部署",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "README",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "README",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme-en",
+      "title": "README_en",
+      "file": "chapters/023-readme-en.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "README",
+      "file": "chapters/024-readme.md"
+    },
+    {
+      "slug": "025-1-env-prepare-ubuntu24-rocm7",
+      "title": "安装 uv（如已安装可跳过）",
+      "file": "chapters/025-1-env-prepare-ubuntu24-rocm7.md"
+    },
+    {
+      "slug": "026-2-gemma4-model",
+      "title": "2-gemma4_model",
+      "file": "chapters/026-2-gemma4-model.md"
+    },
+    {
+      "slug": "027-3-lm-studio-rocm7-deploy",
+      "title": "3-lm-studio-rocm7-deploy",
+      "file": "chapters/027-3-lm-studio-rocm7-deploy.md"
+    },
+    {
+      "slug": "028-4-vllm-rocm7-deploy",
+      "title": "4-vllm-rocm7-deploy",
+      "file": "chapters/028-4-vllm-rocm7-deploy.md"
+    },
+    {
+      "slug": "029-5-ollama-rocm7-deploy",
+      "title": "列出所有模型",
+      "file": "chapters/029-5-ollama-rocm7-deploy.md"
+    },
+    {
+      "slug": "030-6-llamacpp-rocm7-deploy",
+      "title": "创建模型存放目录",
+      "file": "chapters/030-6-llamacpp-rocm7-deploy.md"
+    },
+    {
+      "slug": "031-1-env-prepare-ubuntu24-rocm7",
+      "title": "安装 uv（如已安装可跳过）",
+      "file": "chapters/031-1-env-prepare-ubuntu24-rocm7.md"
+    },
+    {
+      "slug": "032-2-lm-studio-rocm7-deploy",
+      "title": "2-lm-studio-rocm7-deploy",
+      "file": "chapters/032-2-lm-studio-rocm7-deploy.md"
+    },
+    {
+      "slug": "033-3-vllm-rocm7-deploy",
+      "title": "3-vllm-rocm7-deploy",
+      "file": "chapters/033-3-vllm-rocm7-deploy.md"
+    },
+    {
+      "slug": "034-4-ollama-rocm7-deploy",
+      "title": "示例：请以 ollama 官方模型库实际标签为准 https://ollama.com/library/qwen3.5",
+      "file": "chapters/034-4-ollama-rocm7-deploy.md"
+    },
+    {
+      "slug": "035-5-llamacpp-rocm7-deploy",
+      "title": "5-llamacpp-rocm7-deploy",
+      "file": "chapters/035-5-llamacpp-rocm7-deploy.md"
+    },
+    {
+      "slug": "036-01-qwen3-6-35b-a3b-vllm-ascend部署调用",
+      "title": "Qwen3.6-35B-A3B vllm-ascend 部署调用",
+      "file": "chapters/036-01-qwen3-6-35b-a3b-vllm-ascend部署调用.md"
+    },
+    {
+      "slug": "037-01-qwen3-8b-mindie部署调用",
+      "title": "Qwen3-8B MindIE 部署调用",
+      "file": "chapters/037-01-qwen3-8b-mindie部署调用.md"
+    },
+    {
+      "slug": "038-02-qwen3-8b-vllm-ascend部署调用",
+      "title": "Qwen3-8B vllm-ascend 部署调用",
+      "file": "chapters/038-02-qwen3-8b-vllm-ascend部署调用.md"
+    },
+    {
+      "slug": "039-03-qwen3-8b-sglang-ascend部署调用",
+      "title": "Qwen3-8B sglang-ascend部署调用",
+      "file": "chapters/039-03-qwen3-8b-sglang-ascend部署调用.md"
+    },
+    {
+      "slug": "040-mlx-lm-intro",
+      "title": "vLLM 架构示意图",
+      "file": "chapters/040-mlx-lm-intro.md"
+    },
+    {
+      "slug": "041-01-atom-7b-chat-webdemo",
+      "title": "Atom-7B-chat",
+      "file": "chapters/041-01-atom-7b-chat-webdemo.md"
+    },
+    {
+      "slug": "042-02-atom-7b-chat-lora-微调",
+      "title": "Atom-7B-Chat 的 Lora 指令微调",
+      "file": "chapters/042-02-atom-7b-chat-lora-微调.md"
+    },
+    {
+      "slug": "043-03-atom-7b-chat-接入langchain搭建知识库助手",
+      "title": "Atom-7B-Chat 接入langchain搭建知识库助手",
+      "file": "chapters/043-03-atom-7b-chat-接入langchain搭建知识库助手.md"
+    },
+    {
+      "slug": "044-04-atom-7b-chat-全量微调",
+      "title": "Atom-7B-chat 全量微调",
+      "file": "chapters/044-04-atom-7b-chat-全量微调.md"
+    },
+    {
+      "slug": "045-01-baichuan2-7b-chat-fastapi-部署调用",
+      "title": "Baichuan2-7B-chat FastApi 部署调用",
+      "file": "chapters/045-01-baichuan2-7b-chat-fastapi-部署调用.md"
+    },
+    {
+      "slug": "046-02-baichuan-7b-chat-webdemo",
+      "title": "Baichuan-7B-chat WebDemo 部署调用",
+      "file": "chapters/046-02-baichuan-7b-chat-webdemo.md"
+    },
+    {
+      "slug": "047-03-baichuan2-7b-chat接入langchain框架",
+      "title": "Baichuan2-7B-chat langchain 接入",
+      "file": "chapters/047-03-baichuan2-7b-chat接入langchain框架.md"
+    },
+    {
+      "slug": "048-04-baichuan2-7b-chat-lora-微调",
+      "title": "Baichuan2-7B-chat lora 微调",
+      "file": "chapters/048-04-baichuan2-7b-chat-lora-微调.md"
+    },
+    {
+      "slug": "049-01-index-1-9b-chat-fastapi-部署调用",
+      "title": "Index-1.9B-Chat FastApi 部署调用",
+      "file": "chapters/049-01-index-1-9b-chat-fastapi-部署调用.md"
+    },
+    {
+      "slug": "050-02-index-1-9b-chat-langchain-接入",
+      "title": "Index-1.9B-Chat LangChain 接入",
+      "file": "chapters/050-02-index-1-9b-chat-langchain-接入.md"
+    },
+    {
+      "slug": "051-03-index-1-9b-chat-webdemo-部署",
+      "title": "Index-1.9B-Chat WebDemo 部署",
+      "file": "chapters/051-03-index-1-9b-chat-webdemo-部署.md"
+    },
+    {
+      "slug": "052-04-index-1-9b-chat-lora-微调",
+      "title": "Index-1.9B-Chat Lora 微调",
+      "file": "chapters/052-04-index-1-9b-chat-lora-微调.md"
+    },
+    {
+      "slug": "053-01-bluelm-7b-chat-fastapi-部署",
+      "title": "BlueLM-7B-Chat FastApi 部署",
+      "file": "chapters/053-01-bluelm-7b-chat-fastapi-部署.md"
+    },
+    {
+      "slug": "054-02-bluelm-7b-chat-langchain-接入",
+      "title": "BlueLM-7B-Chat langchain 接入",
+      "file": "chapters/054-02-bluelm-7b-chat-langchain-接入.md"
+    },
+    {
+      "slug": "055-03-bluelm-7b-chat-webdemo-部署",
+      "title": "BlueLM-7B-Chat WebDemo 部署",
+      "file": "chapters/055-03-bluelm-7b-chat-webdemo-部署.md"
+    },
+    {
+      "slug": "056-04-bluelm-7b-chat-lora-微调",
+      "title": "BlueLM-7B-Chat Lora 微调",
+      "file": "chapters/056-04-bluelm-7b-chat-lora-微调.md"
+    },
+    {
+      "slug": "057-01-characterglm-6b-transformer部署调用",
+      "title": "CharacterGLM-6B Transformers部署调用",
+      "file": "chapters/057-01-characterglm-6b-transformer部署调用.md"
+    },
+    {
+      "slug": "058-02-characterglm-6b-fastapi部署调用",
+      "title": "CharacterGLM-6B FastApi部署调用",
+      "file": "chapters/058-02-characterglm-6b-fastapi部署调用.md"
+    },
+    {
+      "slug": "059-03-characterglm-6b-chat",
+      "title": "CharacterGLM-6B-chat",
+      "file": "chapters/059-03-characterglm-6b-chat.md"
+    },
+    {
+      "slug": "060-04-characterglm-6b-lora微调",
+      "title": "04-CharacterGLM-6B-Chat Lora微调",
+      "file": "chapters/060-04-characterglm-6b-lora微调.md"
+    },
+    {
+      "slug": "061-01-chatglm3-6b-transformer部署调用",
+      "title": "ChatGLM3-6B Transformers部署调用",
+      "file": "chapters/061-01-chatglm3-6b-transformer部署调用.md"
+    },
+    {
+      "slug": "062-02-chatglm3-6b-fastapi部署调用",
+      "title": "ChatGLM3-6B FastApi 部署调用",
+      "file": "chapters/062-02-chatglm3-6b-fastapi部署调用.md"
+    },
+    {
+      "slug": "063-03-chatglm3-6b-chat",
+      "title": "ChatGLM3-6B-chat",
+      "file": "chapters/063-03-chatglm3-6b-chat.md"
+    },
+    {
+      "slug": "064-04-chatglm3-6b-code-interpreter",
+      "title": "ChatGLM3-6B Code Interpreter",
+      "file": "chapters/064-04-chatglm3-6b-code-interpreter.md"
+    },
+    {
+      "slug": "065-05-chatglm3-6b接入langchain搭建知识库助手",
+      "title": "基于 ChatGLM3 和 LangChain 搭建知识库助手",
+      "file": "chapters/065-05-chatglm3-6b接入langchain搭建知识库助手.md"
+    },
+    {
+      "slug": "066-06-chatglm3-6b-lora微调",
+      "title": "06-ChatGLM3-6B-chat Lora 微调",
+      "file": "chapters/066-06-chatglm3-6b-lora微调.md"
+    },
+    {
+      "slug": "067-extra-chatglm3-6b-pipeline",
+      "title": "ChatGLM3-6B Pipeline",
+      "file": "chapters/067-extra-chatglm3-6b-pipeline.md"
+    },
+    {
+      "slug": "068-01-deepseek-coder-v2-lite-instruct-fastapi-部署调用",
+      "title": "DeepSeek-Coder-V2-Lite-Instruct FastApi 部署调用",
+      "file": "chapters/068-01-deepseek-coder-v2-lite-instruct-fastapi-部署调用.md"
+    },
+    {
+      "slug": "069-02-deepseek-coder-v2-lite-instruct-接入-langchain",
+      "title": "DeepSeek-Coder-V2-Lite-Instruct 接入 LangChain",
+      "file": "chapters/069-02-deepseek-coder-v2-lite-instruct-接入-langchain.md"
+    },
+    {
+      "slug": "070-03-deepseek-coder-v2-lite-instruct-webdemo-部署",
+      "title": "DeepSeek-Coder-V2-Lite-Instruct WebDemo 部署",
+      "file": "chapters/070-03-deepseek-coder-v2-lite-instruct-webdemo-部署.md"
+    },
+    {
+      "slug": "071-04-deepseek-coder-v2-lite-instruct-lora-微调",
+      "title": "DeepSeek-Coder-V2-Lite-Instruct Lora 微调",
+      "file": "chapters/071-04-deepseek-coder-v2-lite-instruct-lora-微调.md"
+    },
+    {
+      "slug": "072-01-deepseek-r1-distill-qwen-7b-fastapi-部署调用",
+      "title": "DeepSeek-R1-Distill-Qwen-7B FastApi 部署调用",
+      "file": "chapters/072-01-deepseek-r1-distill-qwen-7b-fastapi-部署调用.md"
+    },
+    {
+      "slug": "073-02-deepseek-r1-distill-qwen-7b-langchain-接入",
+      "title": "DeepSeek-R1-Distill-Qwen-7B Langchain 接入",
+      "file": "chapters/073-02-deepseek-r1-distill-qwen-7b-langchain-接入.md"
+    },
+    {
+      "slug": "074-03-deepseek-r1-distill-qwen-7b-webdemo-部署",
+      "title": "DeepSeek-R1-Distill-Qwen-7B WebDemo 部署",
+      "file": "chapters/074-03-deepseek-r1-distill-qwen-7b-webdemo-部署.md"
+    },
+    {
+      "slug": "075-04-deepseek-r1-distill-qwen-7b-vllm-部署调用",
+      "title": "04-DeepSeek-R1-Distill-Qwen-7B vLLM 部署调用",
+      "file": "chapters/075-04-deepseek-r1-distill-qwen-7b-vllm-部署调用.md"
+    },
+    {
+      "slug": "076-05-deepseek-r1-0528-qwen3-8b-grpo及swanlab可视化",
+      "title": "DeepSeek-R1-Distill-Qwen3-8B GRPO微调教程",
+      "file": "chapters/076-05-deepseek-r1-0528-qwen3-8b-grpo及swanlab可视化.md"
+    },
+    {
+      "slug": "077-01-deepseek-v4-flash-lora及swanlab可视化记录",
+      "title": "01-DeepSeek-V4-Flash-LoRA 及 SwanLab 可视化记录",
+      "file": "chapters/077-01-deepseek-v4-flash-lora及swanlab可视化记录.md"
+    },
+    {
+      "slug": "078-02-deepseek-v4-flash-sglang部署",
+      "title": "02-DeepSeek-V4-Flash SGLang 部署",
+      "file": "chapters/078-02-deepseek-v4-flash-sglang部署.md"
+    },
+    {
+      "slug": "079-03-deepseek-v4-flash-vllm部署",
+      "title": "03-DeepSeek-V4-Flash vLLM 部署",
+      "file": "chapters/079-03-deepseek-v4-flash-vllm部署.md"
+    },
+    {
+      "slug": "080-01-deepseek-7b-chat-fastapi",
+      "title": "DeepSeek-7B-chat FastApi 部署调用",
+      "file": "chapters/080-01-deepseek-7b-chat-fastapi.md"
+    },
+    {
+      "slug": "081-02-deepseek-7b-chat-langchain",
+      "title": "DeepSeek-7B-chat langchain 接入",
+      "file": "chapters/081-02-deepseek-7b-chat-langchain.md"
+    },
+    {
+      "slug": "082-03-deepseek-7b-chat-webdemo",
+      "title": "DeepSeek-7B-chat WebDemo 部署",
+      "file": "chapters/082-03-deepseek-7b-chat-webdemo.md"
+    },
+    {
+      "slug": "083-04-deepseek-7b-chat-lora-微调",
+      "title": "DeepSeek-7B-chat Lora 微调",
+      "file": "chapters/083-04-deepseek-7b-chat-lora-微调.md"
+    },
+    {
+      "slug": "084-05-deepseek-7b-chat-4bits量化-qlora-微调",
+      "title": "DeepSeek-7B-chat 4bits量化 QLora 微调",
+      "file": "chapters/084-05-deepseek-7b-chat-4bits量化-qlora-微调.md"
+    },
+    {
+      "slug": "085-06-deepseek-moe-16b-chat-fastapi部署调用",
+      "title": "06-DeepSeek-MoE-16b-chat FastApi 部署调用",
+      "file": "chapters/085-06-deepseek-moe-16b-chat-fastapi部署调用.md"
+    },
+    {
+      "slug": "086-06-deepseek-moe-16b-chat-transformer部署调用",
+      "title": "DeepSeek-MoE-16b-chat Transformers 部署调用",
+      "file": "chapters/086-06-deepseek-moe-16b-chat-transformer部署调用.md"
+    },
+    {
+      "slug": "087-01-ernie-4-5-0-3b-pt-lora-微调及-swanlab-可视化记录",
+      "title": "01-ERNIE-4.5-0.3B-PT Lora 微调及 SwanLab 可视化记录",
+      "file": "chapters/087-01-ernie-4-5-0-3b-pt-lora-微调及-swanlab-可视化记录.md"
+    },
+    {
+      "slug": "088-01-gemma-2b-instruct-fastapi-部署调用",
+      "title": "01-Gemma-2B-Instruct FastApi 部署调用",
+      "file": "chapters/088-01-gemma-2b-instruct-fastapi-部署调用.md"
+    },
+    {
+      "slug": "089-02-gemma-2b-instruct-langchain-接入",
+      "title": "Gemma-2B langchain 接入",
+      "file": "chapters/089-02-gemma-2b-instruct-langchain-接入.md"
+    },
+    {
+      "slug": "090-03-gemma-2b-instruct-webdemo-部署",
+      "title": "03-Gemma-2B-Chat WebDemo 部署",
+      "file": "chapters/090-03-gemma-2b-instruct-webdemo-部署.md"
+    },
+    {
+      "slug": "091-04-gemma-2b-instruct-lora微调",
+      "title": "Gemma2b-Instruct Lora 微调",
+      "file": "chapters/091-04-gemma-2b-instruct-lora微调.md"
+    },
+    {
+      "slug": "092-01-gemma-2-9b-it-fastapi-部署调用",
+      "title": "Gemma-2-9b-it FastApi 部署调用",
+      "file": "chapters/092-01-gemma-2-9b-it-fastapi-部署调用.md"
+    },
+    {
+      "slug": "093-02-gemma-2-9b-it-langchain-接入",
+      "title": "02-Gemma-2-9b-it langchain 接入",
+      "file": "chapters/093-02-gemma-2-9b-it-langchain-接入.md"
+    },
+    {
+      "slug": "094-03-gemma-2-9b-it-webdemo-部署",
+      "title": "Yuan2.0-2B WebDemo部署",
+      "file": "chapters/094-03-gemma-2-9b-it-webdemo-部署.md"
+    },
+    {
+      "slug": "095-04-gemma-2-9b-it-peft-lora微调",
+      "title": "Gemma-2-9b-it peft lora微调",
+      "file": "chapters/095-04-gemma-2-9b-it-peft-lora微调.md"
+    },
+    {
+      "slug": "096-01-gemma-3-4b-it-fastapi-部署调用",
+      "title": "gemma-3-4b-it FastApi 部署调用",
+      "file": "chapters/096-01-gemma-3-4b-it-fastapi-部署调用.md"
+    },
+    {
+      "slug": "097-03-gemma-3-4b-it-ollama-open-webui部署",
+      "title": "ollama + open-webui 部署 gemma 3-4b 模型",
+      "file": "chapters/097-03-gemma-3-4b-it-ollama-open-webui部署.md"
+    },
+    {
+      "slug": "098-04-gemma3-4b-evalscope智商情商评测",
+      "title": "04-Gemma3-4b  evalscope智商情商评测",
+      "file": "chapters/098-04-gemma3-4b-evalscope智商情商评测.md"
+    },
+    {
+      "slug": "099-05-gemma-3-4b-it-lora",
+      "title": "05-gemma-3-4b-it LoRA 微调",
+      "file": "chapters/099-05-gemma-3-4b-it-lora.md"
+    },
+    {
+      "slug": "100-6-gemma3-4b-itgrpo微调及通过swanlab可视化",
+      "title": "Gemma3-4B GRPO微调教程",
+      "file": "chapters/100-6-gemma3-4b-itgrpo微调及通过swanlab可视化.md"
+    },
+    {
+      "slug": "101-7-gemma3-4b-it-amd环境准备",
+      "title": "gemma-3-4b-it AMD环境准备",
+      "file": "chapters/101-7-gemma3-4b-it-amd环境准备.md"
+    },
+    {
+      "slug": "102-8-gemma3-4b-it-模型服务部署",
+      "title": "8-gemma3-4b-it 模型服务部署",
+      "file": "chapters/102-8-gemma3-4b-it-模型服务部署.md"
+    },
+    {
+      "slug": "103-01-gemma-4-e4b-it-fastapi-部署调用",
+      "title": "gemma-4-E4B-it FastApi 部署调用",
+      "file": "chapters/103-01-gemma-4-e4b-it-fastapi-部署调用.md"
+    },
+    {
+      "slug": "104-03-gemma-4-e4b-it-ollama-open-webui部署",
+      "title": "ollama + open-webui 部署 Gemma 4 E4B-it 模型",
+      "file": "chapters/104-03-gemma-4-e4b-it-ollama-open-webui部署.md"
+    },
+    {
+      "slug": "105-04-gemma4-e4b-it-evalscope智商情商评测",
+      "title": "04-Gemma4-E4B-it  evalscope智商情商评测",
+      "file": "chapters/105-04-gemma4-e4b-it-evalscope智商情商评测.md"
+    },
+    {
+      "slug": "106-05-gemma-4-e4b-it-lora",
+      "title": "05-gemma-4-E4B-it LoRA 微调",
+      "file": "chapters/106-05-gemma-4-e4b-it-lora.md"
+    },
+    {
+      "slug": "107-6-gemma4-e4b-itgrpo微调及通过swanlab可视化",
+      "title": "Gemma 4 E4B GRPO微调教程",
+      "file": "chapters/107-6-gemma4-e4b-itgrpo微调及通过swanlab可视化.md"
+    },
+    {
+      "slug": "108-7-gemma4-e4b-it-amd环境准备",
+      "title": "gemma-4-E4B-it AMD环境准备",
+      "file": "chapters/108-7-gemma4-e4b-it-amd环境准备.md"
+    },
+    {
+      "slug": "109-8-gemma4-e4b-it-模型服务部署",
+      "title": "8-gemma4-E4B-it 模型服务部署",
+      "file": "chapters/109-8-gemma4-e4b-it-模型服务部署.md"
+    },
+    {
+      "slug": "110-01-pip-conda换源",
+      "title": "01-pip、conda换源",
+      "file": "chapters/110-01-pip-conda换源.md"
+    },
+    {
+      "slug": "111-02-autodl开放端口",
+      "title": "02-AutoDL开放端口",
+      "file": "chapters/111-02-autodl开放端口.md"
+    },
+    {
+      "slug": "112-03-模型下载",
+      "title": "下载模型",
+      "file": "chapters/112-03-模型下载.md"
+    },
+    {
+      "slug": "113-04-issue-pr-update",
+      "title": "1.Github提交PR与修改pr",
+      "file": "chapters/113-04-issue-pr-update.md"
+    },
+    {
+      "slug": "114-01-glm-4-1v-thinking-vllm部署调用",
+      "title": "01-GLM-4.1V-Thinking vLLM部署调用",
+      "file": "chapters/114-01-glm-4-1v-thinking-vllm部署调用.md"
+    },
+    {
+      "slug": "115-02-glm-4-1v-thinking-gradio部署",
+      "title": "02-GLM-4.1V-Thinking Gradio部署",
+      "file": "chapters/115-02-glm-4-1v-thinking-gradio部署.md"
+    },
+    {
+      "slug": "116-03-glm-4-1v-thinking-lora-及-swanlab-可视化记录",
+      "title": "03-GLM-4.1V-Thinking LoRA 及 SwanLab 可视化记录",
+      "file": "chapters/116-03-glm-4-1v-thinking-lora-及-swanlab-可视化记录.md"
+    },
+    {
+      "slug": "117-01-glm-4-5-air-vllm-部署调用",
+      "title": "01-GLM-4.5-Air vLLM 部署调用",
+      "file": "chapters/117-01-glm-4-5-air-vllm-部署调用.md"
+    },
+    {
+      "slug": "118-02-glm-4-5-air-evalscope-并发测试",
+      "title": "02-GLM-4.5-Air EvalScope 智商情商&&并发评测",
+      "file": "chapters/118-02-glm-4-5-air-evalscope-并发测试.md"
+    },
+    {
+      "slug": "119-03-glm-4-5-air-lora-及-swanlab-可视化微调",
+      "title": "03-GLM-4.5-Air-LoRA 及 SwanLab 可视化记录",
+      "file": "chapters/119-03-glm-4-5-air-lora-及-swanlab-可视化微调.md"
+    },
+    {
+      "slug": "120-01-glm-4-7-flash-vllm-部署调用",
+      "title": "01-GLM-4.7-Flash vLLM 部署调用",
+      "file": "chapters/120-01-glm-4-7-flash-vllm-部署调用.md"
+    },
+    {
+      "slug": "121-02-glm-4-7-flash-sglang-部署调用",
+      "title": "02-GLM-4.7-Flash SGLang 部署调用",
+      "file": "chapters/121-02-glm-4-7-flash-sglang-部署调用.md"
+    },
+    {
+      "slug": "122-03-glm-4-7-flash-lora微调及docker镜像",
+      "title": "03-GLM-4.7-Flash-Lora微调及Docker镜像",
+      "file": "chapters/122-03-glm-4-7-flash-lora微调及docker镜像.md"
+    },
+    {
+      "slug": "123-01-glm-4-9b-chat-fastapi-部署调用",
+      "title": "GLM-4-9B-chat FastApi 部署调用",
+      "file": "chapters/123-01-glm-4-9b-chat-fastapi-部署调用.md"
+    },
+    {
+      "slug": "124-02-glm-4-9b-chat-langchain-接入",
+      "title": "GLM-4-9b-Chat 接入 LangChain",
+      "file": "chapters/124-02-glm-4-9b-chat-langchain-接入.md"
+    },
+    {
+      "slug": "125-03-glm-4-9b-chat-webdemo",
+      "title": "GLM-4-9B-Chat WebDemo 部署",
+      "file": "chapters/125-03-glm-4-9b-chat-webdemo.md"
+    },
+    {
+      "slug": "126-04-glm-4-9b-chat-vllm-部署调用",
+      "title": "04-GLM-4-9B-Chat vLLM 部署调用",
+      "file": "chapters/126-04-glm-4-9b-chat-vllm-部署调用.md"
+    },
+    {
+      "slug": "127-05-glm-4-9b-chat-lora-微调",
+      "title": "GLM4-9B-chat Lora 微调.",
+      "file": "chapters/127-05-glm-4-9b-chat-lora-微调.md"
+    },
+    {
+      "slug": "128-05-glm-4-9b-chat-hf-lora-微调",
+      "title": "GLM4-9B-chat-hf Lora 微调.",
+      "file": "chapters/128-05-glm-4-9b-chat-hf-lora-微调.md"
+    },
+    {
+      "slug": "129-1-glm-5-2-技术报告解读",
+      "title": "01 GLM-5.2 技术报告解读：从 GLM-5 到长上下文 Agentic Engineering",
+      "file": "chapters/129-1-glm-5-2-技术报告解读.md"
+    },
+    {
+      "slug": "130-2-glm-5-2-vllm",
+      "title": "02 GLM-5.2 vLLM 部署调用",
+      "file": "chapters/130-2-glm-5-2-vllm.md"
+    },
+    {
+      "slug": "131-3-glm-5-2-sglang",
+      "title": "03 GLM-5.2 SGLang 部署调用",
+      "file": "chapters/131-3-glm-5-2-sglang.md"
+    },
+    {
+      "slug": "132-1-gpt-oss-20b-vllm-部署调用",
+      "title": "**01-GPT-OSS-20b** **vLLM** **部署调用**",
+      "file": "chapters/132-1-gpt-oss-20b-vllm-部署调用.md"
+    },
+    {
+      "slug": "133-2-gpt-oss-20b-evalscope并发测试",
+      "title": "02-gpt-oss-20b EvalScope 评测",
+      "file": "chapters/133-2-gpt-oss-20b-evalscope并发测试.md"
+    },
+    {
+      "slug": "134-3-gpt-oss-20b-lmstudio-本地部署调用",
+      "title": "03-gpt-oss-20b lmstudio 本地部署调用",
+      "file": "chapters/134-3-gpt-oss-20b-lmstudio-本地部署调用.md"
+    },
+    {
+      "slug": "135-4-gpt-oss-20b-lora-微调及-swanlab-可视化记录",
+      "title": "04-gpt-oss-20b Lora微调以及Swanlab可视化",
+      "file": "chapters/135-4-gpt-oss-20b-lora-微调及-swanlab-可视化记录.md"
+    },
+    {
+      "slug": "136-5-gpt-oss-20b-dpo-微调及-swanlab-可视化记录",
+      "title": "05-gpt-oss-20b DPO微调以及Swanlab可视化",
+      "file": "chapters/136-5-gpt-oss-20b-dpo-微调及-swanlab-可视化记录.md"
+    },
+    {
+      "slug": "137-01-hunyuan-a13b-instruct-模型架构解析-blog",
+      "title": "01-Hunyuan-A13B-Instruct 模型架构解析 Blog",
+      "file": "chapters/137-01-hunyuan-a13b-instruct-模型架构解析-blog.md"
+    },
+    {
+      "slug": "138-02-hunyuan-a13b-instruct-vllm",
+      "title": "02-Hunyuan-A13B-Instruct-vLLM",
+      "file": "chapters/138-02-hunyuan-a13b-instruct-vllm.md"
+    },
+    {
+      "slug": "139-03-hunyuan-a13b-instruct-sglang部署调用",
+      "title": "03-Hunyuan-A13B-Instruct-SGLang部署调用",
+      "file": "chapters/139-03-hunyuan-a13b-instruct-sglang部署调用.md"
+    },
+    {
+      "slug": "140-04-hunyuan-a13b-instruct-evalscope-并发测试",
+      "title": "04-Hunyuan-A13B-Instruct EvalScope 并发测试",
+      "file": "chapters/140-04-hunyuan-a13b-instruct-evalscope-并发测试.md"
+    },
+    {
+      "slug": "141-05-hunyuan-a13b-instruct-lora及swanlab可视化记录",
+      "title": "Hunyuan-A13B-Instruct-LoRA 及 SwanLab 可视化记录",
+      "file": "chapters/141-05-hunyuan-a13b-instruct-lora及swanlab可视化记录.md"
+    },
+    {
+      "slug": "142-01-hunyuan3d-2-系列模型部署",
+      "title": "Hunyuan3D-2.0系列模型部署",
+      "file": "chapters/142-01-hunyuan3d-2-系列模型部署.md"
+    },
+    {
+      "slug": "143-02-hunyuan3d-2-系列模型代码调用",
+      "title": "Hunyuan3D-2系列模型代码调用",
+      "file": "chapters/143-02-hunyuan3d-2-系列模型代码调用.md"
+    },
+    {
+      "slug": "144-03-hunyuan3d-2-系列模型gradio部署",
+      "title": "Hunyuan3D-2系列Gradio App",
+      "file": "chapters/144-03-hunyuan3d-2-系列模型gradio部署.md"
+    },
+    {
+      "slug": "145-04-hunyuan3d-2-系列模型api-server",
+      "title": "Hunyuan3D-2系列 API Server",
+      "file": "chapters/145-04-hunyuan3d-2-系列模型api-server.md"
+    },
+    {
+      "slug": "146-01-hy3-vllm-docker部署调用",
+      "title": "01-Hy3-vLLM docker部署调用",
+      "file": "chapters/146-01-hy3-vllm-docker部署调用.md"
+    },
+    {
+      "slug": "147-01-internlm-chat-7b-transformers-部署调用",
+      "title": "升级pip",
+      "file": "chapters/147-01-internlm-chat-7b-transformers-部署调用.md"
+    },
+    {
+      "slug": "148-02-internlm-chat-7b-fastapi",
+      "title": "internLM-Chat-7B FastApi 部署调用",
+      "file": "chapters/148-02-internlm-chat-7b-fastapi.md"
+    },
+    {
+      "slug": "149-03-internlm-chat-7b",
+      "title": "InternLM-Chat-7B 对话 Web",
+      "file": "chapters/149-03-internlm-chat-7b.md"
+    },
+    {
+      "slug": "150-04-lagent-internlm-chat-7b-v1-1",
+      "title": "Lagent+InternLM-Chat-7B-V1.1",
+      "file": "chapters/150-04-lagent-internlm-chat-7b-v1-1.md"
+    },
+    {
+      "slug": "151-05-浦语灵笔图文理解-创作",
+      "title": "浦语灵笔图文理解&创作",
+      "file": "chapters/151-05-浦语灵笔图文理解-创作.md"
+    },
+    {
+      "slug": "152-06-internlm接入langchain搭建知识库助手",
+      "title": "基于 InternLM 和 LangChain 搭建知识库助手",
+      "file": "chapters/152-06-internlm接入langchain搭建知识库助手.md"
+    },
+    {
+      "slug": "153-01-internlm2-7b-chat-fastapi部署",
+      "title": "InternLM2-7B-chat FastAPI 部署",
+      "file": "chapters/153-01-internlm2-7b-chat-fastapi部署.md"
+    },
+    {
+      "slug": "154-02-internlm2-7b-chat-langchain-接入",
+      "title": "InternLM2-7B-chat langchain 接入",
+      "file": "chapters/154-02-internlm2-7b-chat-langchain-接入.md"
+    },
+    {
+      "slug": "155-03-internlm2-7b-chat-webdemo-部署",
+      "title": "InternLM2-7B-chat WebDemo 部署",
+      "file": "chapters/155-03-internlm2-7b-chat-webdemo-部署.md"
+    },
+    {
+      "slug": "156-04-internlm2-7b-chat-xtuner-qlora-微调",
+      "title": "InternLM2-7B-chat Xtuner Qlora 微调",
+      "file": "chapters/156-04-internlm2-7b-chat-xtuner-qlora-微调.md"
+    },
+    {
+      "slug": "157-01-internlm3-8b-instruct-fastapi",
+      "title": "InternLM3-8B-instruct FastAPI部署",
+      "file": "chapters/157-01-internlm3-8b-instruct-fastapi.md"
+    },
+    {
+      "slug": "158-02-internlm3-8b-instruct-langchain-接入",
+      "title": "InternLM3-8B-Instruct Langchain 接入",
+      "file": "chapters/158-02-internlm3-8b-instruct-langchain-接入.md"
+    },
+    {
+      "slug": "159-03-internlm3-8b-instruct-webdemo部署",
+      "title": "InternLM3-8B-Instruct WebDemo 部署",
+      "file": "chapters/159-03-internlm3-8b-instruct-webdemo部署.md"
+    },
+    {
+      "slug": "160-04-internlm3-8b-instruct-lora",
+      "title": "InternLM3-8b-Instruct LoRA 微调",
+      "file": "chapters/160-04-internlm3-8b-instruct-lora.md"
+    },
+    {
+      "slug": "161-05-internlm3-8b-instruct-与o1",
+      "title": "升级pip",
+      "file": "chapters/161-05-internlm3-8b-instruct-与o1.md"
+    },
+    {
+      "slug": "162-01-kimi-k2-5-论文解读",
+      "title": "Kimi-K2.5 论文解读",
+      "file": "chapters/162-01-kimi-k2-5-论文解读.md"
+    },
+    {
+      "slug": "163-02-kimi-2-5-vllm-部署调用",
+      "title": "02-KiMi-2.5 vLLM 部署调用",
+      "file": "chapters/163-02-kimi-2-5-vllm-部署调用.md"
+    },
+    {
+      "slug": "164-03-kimi-2-5-sglang部署应用",
+      "title": "03-Kimi-2.5-SGLang部署应用",
+      "file": "chapters/164-03-kimi-2-5-sglang部署应用.md"
+    },
+    {
+      "slug": "165-01-kimi-vl-对话助手",
+      "title": "Kimi-VL-多模态推理对话助手",
+      "file": "chapters/165-01-kimi-vl-对话助手.md"
+    },
+    {
+      "slug": "166-02-kimi-vl-技术报告解读",
+      "title": "Kimi-VL技术报告解读",
+      "file": "chapters/166-02-kimi-vl-技术报告解读.md"
+    },
+    {
+      "slug": "167-01-llama3-1-8b-instruct-fastapi-部署调用",
+      "title": "Llama3_1-8B-Instruct FastApi 部署调用",
+      "file": "chapters/167-01-llama3-1-8b-instruct-fastapi-部署调用.md"
+    },
+    {
+      "slug": "168-02-llama3-1-8b-instruct-langchain接入",
+      "title": "LLaMA3_1-8B-Instruct langchain 接入",
+      "file": "chapters/168-02-llama3-1-8b-instruct-langchain接入.md"
+    },
+    {
+      "slug": "169-03-llama3-1-8b-instruct-webdemo部署",
+      "title": "LLaMA3_1-8B-Instruct WebDemo 部署",
+      "file": "chapters/169-03-llama3-1-8b-instruct-webdemo部署.md"
+    },
+    {
+      "slug": "170-04-llama3-1-8b-instruct-lora-微调",
+      "title": "LLaMA3_1-8B-Instruct Lora 微调",
+      "file": "chapters/170-04-llama3-1-8b-instruct-lora-微调.md"
+    },
+    {
+      "slug": "171-05-llama3-1-8b-instruct-o1-like-推理链实现",
+      "title": "05-Llama3_1-8B-Instruct o1-like 推理链实现",
+      "file": "chapters/171-05-llama3-1-8b-instruct-o1-like-推理链实现.md"
+    },
+    {
+      "slug": "172-动手转换gguf模型并使用ollama本地部署",
+      "title": "总结",
+      "file": "chapters/172-动手转换gguf模型并使用ollama本地部署.md"
+    },
+    {
+      "slug": "173-01-llama3-8b-instruct-fastapi-部署调用",
+      "title": "Llama-3-8B-Instruct FastApi 部署调用",
+      "file": "chapters/173-01-llama3-8b-instruct-fastapi-部署调用.md"
+    },
+    {
+      "slug": "174-02-llama3-8b-instruct-langchain-接入",
+      "title": "LLaMA3-8B-Instruct langchain 接入",
+      "file": "chapters/174-02-llama3-8b-instruct-langchain-接入.md"
+    },
+    {
+      "slug": "175-03-llama3-8b-instruct-webdemo-部署",
+      "title": "LLaMA3-8B-Instruct WebDemo 部署",
+      "file": "chapters/175-03-llama3-8b-instruct-webdemo-部署.md"
+    },
+    {
+      "slug": "176-04-llama3-8b-instruct-lora-微调",
+      "title": "LLaMA3-8B-Instruct Lora 微调",
+      "file": "chapters/176-04-llama3-8b-instruct-lora-微调.md"
+    },
+    {
+      "slug": "177-01-llama4-对话助手",
+      "title": "Llama4-对话助手",
+      "file": "chapters/177-01-llama4-对话助手.md"
+    },
+    {
+      "slug": "178-01minicpm-o-2-6-fastapi部署调用",
+      "title": "MiniCPM-o 2.6 FastApi部署调用",
+      "file": "chapters/178-01minicpm-o-2-6-fastapi部署调用.md"
+    },
+    {
+      "slug": "179-02minicpm-o-2-6webdemo部署",
+      "title": "InternLM3-8B-Instruct WebDemo 部署",
+      "file": "chapters/179-02minicpm-o-2-6webdemo部署.md"
+    },
+    {
+      "slug": "180-03-minicpm-o-2-6-多模态语音能力",
+      "title": "MiniCPM-o-2.6 多模态语音能力",
+      "file": "chapters/180-03-minicpm-o-2-6-多模态语音能力.md"
+    },
+    {
+      "slug": "181-04-minicpm-0-2-6-lora微调",
+      "title": "MiniCPM-o-2.6 Lora 微调",
+      "file": "chapters/181-04-minicpm-0-2-6-lora微调.md"
+    },
+    {
+      "slug": "182-minicpm-2b-chat-fastapi-部署调用",
+      "title": "MiniCPM-2B-chat FastApi 部署调用",
+      "file": "chapters/182-minicpm-2b-chat-fastapi-部署调用.md"
+    },
+    {
+      "slug": "183-minicpm-2b-chat-langchain接入",
+      "title": "MiniCPM-2B-chat transformers 部署调用",
+      "file": "chapters/183-minicpm-2b-chat-langchain接入.md"
+    },
+    {
+      "slug": "184-minicpm-2b-chat-lora-full-微调",
+      "title": "MiniCPM-2B-chat transformers 部署调用",
+      "file": "chapters/184-minicpm-2b-chat-lora-full-微调.md"
+    },
+    {
+      "slug": "185-minicpm-2b-chat-transformers-部署调用",
+      "title": "MiniCPM-2B-chat transformers 部署调用",
+      "file": "chapters/185-minicpm-2b-chat-transformers-部署调用.md"
+    },
+    {
+      "slug": "186-minicpm-2b-chat-webdemo部署",
+      "title": "MiniCPM-2B-chat WebDemo部署",
+      "file": "chapters/186-minicpm-2b-chat-webdemo部署.md"
+    },
+    {
+      "slug": "187-01-minicpm5-1b-vllm-部署调用",
+      "title": "01-MiniCPM5-1B vLLM 部署调用",
+      "file": "chapters/187-01-minicpm5-1b-vllm-部署调用.md"
+    },
+    {
+      "slug": "188-02-minicpm5-1b-sglang-部署调用",
+      "title": "02-MiniCPM5-1B SGLang 部署调用",
+      "file": "chapters/188-02-minicpm5-1b-sglang-部署调用.md"
+    },
+    {
+      "slug": "189-03-minicpm5-1b-lora及swanlab可视化记录",
+      "title": "MiniCPM5-1B-LoRA 及 SwanLab 可视化记录",
+      "file": "chapters/189-03-minicpm5-1b-lora及swanlab可视化记录.md"
+    },
+    {
+      "slug": "190-1-minimax-m2-5-vllm",
+      "title": "MiniMax-M2.5 vLLM 部署调用",
+      "file": "chapters/190-1-minimax-m2-5-vllm.md"
+    },
+    {
+      "slug": "191-2-minimax-m2-5-sglang",
+      "title": "MiniMax-M2.5 SGLang 部署调用",
+      "file": "chapters/191-2-minimax-m2-5-sglang.md"
+    },
+    {
+      "slug": "192-3-minimax-m2-5-transformers",
+      "title": "MiniMax-M2.5 Transformers 部署调用",
+      "file": "chapters/192-3-minimax-m2-5-transformers.md"
+    },
+    {
+      "slug": "193-1-minimax-m2-7-vllm",
+      "title": "MiniMax-M2.7 vLLM Deployment Guide",
+      "file": "chapters/193-1-minimax-m2-7-vllm.md"
+    },
+    {
+      "slug": "194-2-minimax-m2-7-sglang",
+      "title": "MiniMax-M2.7 SGLang Deployment Guide",
+      "file": "chapters/194-2-minimax-m2-7-sglang.md"
+    },
+    {
+      "slug": "195-3-minimax-m2-7-transformers",
+      "title": "MiniMax-M2.7 Transformers Deployment Guide",
+      "file": "chapters/195-3-minimax-m2-7-transformers.md"
+    },
+    {
+      "slug": "196-1-minimax-m2-blog",
+      "title": "2-MiniMax-M2 模型架构解析 Blog",
+      "file": "chapters/196-1-minimax-m2-blog.md"
+    },
+    {
+      "slug": "197-2-minimax-m2-vllm",
+      "title": "2-MiniMax-M2 vLLM 部署调用",
+      "file": "chapters/197-2-minimax-m2-vllm.md"
+    },
+    {
+      "slug": "198-3-minimax-m2-sglang",
+      "title": "3-MiniMax-M2 SGLang 部署调用",
+      "file": "chapters/198-3-minimax-m2-sglang.md"
+    },
+    {
+      "slug": "199-4-minimax-m2-evalscope",
+      "title": "4-MiniMax-M2 EvalScope",
+      "file": "chapters/199-4-minimax-m2-evalscope.md"
+    },
+    {
+      "slug": "200-1-minimax-m3-vllm",
+      "title": "MiniMax-M3 vLLM 部署调用",
+      "file": "chapters/200-1-minimax-m3-vllm.md"
+    }
+  ],
+  "license": "Apache-2.0",
+  "sourceType": "github"
+}

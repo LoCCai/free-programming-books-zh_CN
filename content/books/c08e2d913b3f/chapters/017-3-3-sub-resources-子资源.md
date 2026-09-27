@@ -1,0 +1,141 @@
+3.3. Sub-resources 子资源
+========================
+
+[@Path](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/Path.html) 可以用在类上，这样的类称为根资源类。也可以被用来根资源类的方法上。这使得许多资源的方法被组合在一起，能够被重用。
+
+第一种方法，[@Path](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/Path.html) 是用在资源的方法上，这类方法是被称为*子资源方法（sub-resource method）*。下面的例子显示一个资源类 jmaki 后端签名方法的示例：
+
+Example 3.17. 子资源方法
+
+	@Singleton
+	@Path("/printers")
+	public class PrintersResource {
+	 
+	    @GET
+	    @Produces({"application/json", "application/xml"})
+	    public WebResourceList getMyResources() { ... }
+	 
+	    @GET @Path("/list")
+	    @Produces({"application/json", "application/xml"})
+	    public WebResourceList getListOfPrinters() { ... }
+	 
+	    @GET @Path("/jMakiTable")
+	    @Produces("application/json")
+	    public PrinterTableModel getTable() { ... }
+	 
+	    @GET @Path("/jMakiTree")
+	    @Produces("application/json")
+	    public TreeModel getTree() { ... }
+	 
+	    @GET @Path("/ids/{printerid}")
+	    @Produces({"application/json", "application/xml"})
+	    public Printer getPrinter(@PathParam("printerid") String printerId) { ... }
+	 
+	    @PUT @Path("/ids/{printerid}")
+	    @Consumes({"application/json", "application/xml"})
+	    public void putPrinter(@PathParam("printerid") String printerId, Printer printer) { ... }
+	 
+	    @DELETE @Path("/ids/{printerid}")
+	    public void deletePrinter(@PathParam("printerid") String printerId) { ... }
+	}
+
+如果请求 URL 的路径是“printers”，那么资源的方法中没有 [@Path](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/Path.html) 注解的将被选择。如果请求的 URL 请求的路径是“printers/list”，则首先在根资源类中进行匹配，然后在子资源中，相匹配的方法“list”将被选择，在这种情况下，子资源方法是 getListOfPrinters 。因此，在这个例子中的 URL 路径将会分层匹配进行。
+
+第二种用法 [@Path](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/Path.html) 可能用在那些没有用资源指示器（像 [@GET](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/GET.html) 或者 [@POST](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/POST.html)）注解的方法上。这种方法被称为子资源定位器（sub-resource locator）。下面的示例显示一个根资源类和乐观并发的资源类的方法签名：
+
+Example 3.18. 子资源定位器
+
+	@Path("/item")
+	public class ItemResource {
+	    @Context UriInfo uriInfo;
+	 
+	    @Path("content")
+	    public ItemContentResource getItemContentResource() {
+	        return new ItemContentResource();
+	    }
+	 
+	    @GET
+	    @Produces("application/xml")
+	        public Item get() { ... }
+	    }
+	}
+	 
+	public class ItemContentResource {
+	 
+	    @GET
+	    public Response get() { ... }
+	 
+	    @PUT
+	    @Path("{version}")
+	    public void put(@PathParam("version") int version,
+	                    @Context HttpHeaders headers,
+	                    byte[] in) {
+	        ...
+	    }
+	}
+	
+根资源类 ItemResource 包含子资源定位方法 getItemContentResource，用于返回一个新的资源类。如果请求 URL 的路径是“item/content”，首先在根资源进行匹配，而后则子资源定位器将会匹配和调用，它将返回 ItemContentResource 资源类的一个实例。子资源定位器使得资源类的能够被重用。方法上可以有空路径的 [@Path](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/Path.html)注解，如 @Path("/") 或 @Path("")，这意味着子资源定位器匹配了一个封闭的资源路径匹配（无子资源的路径）。
+
+Example 3.19. 空路径的子资源定位器
+
+	@Path("/item")
+	public class ItemResource {
+	 
+	    @Path("/")
+	    public ItemContentResource getItemContentResource() {
+	        return new ItemContentResource();
+	    }
+	}
+
+上面例子，子资源定位器方法 getItemContentResource 将会匹配请求路径是“/item/locator”或“/item”。
+
+此外，由于资源类中由子资源定位器在运行时返回处理结果，从而支持多态性。子资源定位器返回怎么样的不同的子类型，这取决于请求（例如一次资源定位器可以返回怎么样的子类型取决于不同的认证请求）。例如，下面的子资源定位器是有效的：
+
+Example 3.20. 子资源定位器返回子类型
+
+	@Path("/item")
+	public class ItemResource {
+	 
+	    @Path("/")
+	    public Object getItemContentResource() {
+	        return new AnyResource();
+	    }
+	}
+
+注意，运行时将没有生命周期管理或执行任何字段注入到子资源定位方法返回的实例。这是因为运行时不知道实例的生命周期是什么。如果必需要运行时管理子资源作为标准的资源，类应按以下示例返回：
+
+Example 3.21. 从类中创建子资源定位器
+
+	import javax.inject.Singleton;
+	 
+	@Path("/item")
+	public class ItemResource {
+	    @Path("content")
+	    public Class<ItemContentSingletonResource> getItemContentResource() {
+	        return ItemContentSingletonResource.class;
+	    }
+	}
+	 
+	@Singleton
+	public class ItemContentSingletonResource {
+	    // this class is managed in the singleton life cycle
+	}
+
+JAX-RS 资源默认情况下，在每个请求范围受到管理，这意味着为每个请求创建新的资源。在这个例子中，`javax.inject.Singleton`注解是说，资源将是单例模式，不受请求范围管理。子资源定位方法返回一个类，这意味着运行时将托管资源的实例及其生命周期。相反，如果方法返回的是实例，那么注释将没有效果，返回的实例将被使用。
+
+子资源定位器也可以返回一个 programmatic resource model (可编程的资源模型)。更多关于可编程资源模型的构建，请看 [resource builder 章节](https://jersey.java.net/documentation/latest/resource-builder.html) 内容。下面的示例显示子资源定位方法返回的非常简单的资源。
+
+Example 3.22. 子资源定位返回资源模型
+
+	import org.glassfish.jersey.server.model.Resource;
+	 
+	@Path("/item")
+	public class ItemResource {
+	 
+	    @Path("content")
+	    public Resource getItemContentResource() {
+	        return Resource.from(ItemContentSingletonResource.class);
+	    }
+	}
+
+上面的代码与之前的例子有同样的效果。Resource 是一种来自  ItemContentSingletonResource 构造的简单的资源。只要是有效的资源，都可以返回更复杂的编程化资源。

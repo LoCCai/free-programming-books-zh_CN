@@ -1,0 +1,510 @@
+{
+  "bookId": "51d988dce1c2",
+  "title": "Netty 实战(精髓)",
+  "url": "https://github.com/waylau/essential-netty-in-action",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:25.663Z",
+  "chapters": [
+    {
+      "slug": "001-asynchronous-and-event-driven",
+      "title": "Netty-异步和数据驱动",
+      "file": "chapters/001-asynchronous-and-event-driven.md"
+    },
+    {
+      "slug": "002-introducing-netty",
+      "title": "Netty 介绍",
+      "file": "chapters/002-introducing-netty.md"
+    },
+    {
+      "slug": "003-building-blocks",
+      "title": "构成部分",
+      "file": "chapters/003-building-blocks.md"
+    },
+    {
+      "slug": "004-about-this-book",
+      "title": "关于本书",
+      "file": "chapters/004-about-this-book.md"
+    },
+    {
+      "slug": "005-your-first-netty-application",
+      "title": "第一个 Netty 应用",
+      "file": "chapters/005-your-first-netty-application.md"
+    },
+    {
+      "slug": "006-setting-up-the-development-environment",
+      "title": "设置开发环境",
+      "file": "chapters/006-setting-up-the-development-environment.md"
+    },
+    {
+      "slug": "007-netty-client-server-overview",
+      "title": "Netty 客户端/服务端 总览",
+      "file": "chapters/007-netty-client-server-overview.md"
+    },
+    {
+      "slug": "008-writing-the-echo-server",
+      "title": "写一个 echo 服务器",
+      "file": "chapters/008-writing-the-echo-server.md"
+    },
+    {
+      "slug": "009-writing-an-echo-client",
+      "title": "写一个 echo 客户端",
+      "file": "chapters/009-writing-an-echo-client.md"
+    },
+    {
+      "slug": "010-building-and-running-the-echo-server-and-client",
+      "title": "编译和运行 Echo 服务器和客户端",
+      "file": "chapters/010-building-and-running-the-echo-server-and-client.md"
+    },
+    {
+      "slug": "011-summary",
+      "title": "总结",
+      "file": "chapters/011-summary.md"
+    },
+    {
+      "slug": "012-netty-overview",
+      "title": "Netty 总览",
+      "file": "chapters/012-netty-overview.md"
+    },
+    {
+      "slug": "013-netty-crash-course",
+      "title": "Netty 快速入门",
+      "file": "chapters/013-netty-crash-course.md"
+    },
+    {
+      "slug": "014-channels-and-events-and-io",
+      "title": "Channel, Event 和 I/O",
+      "file": "chapters/014-channels-and-events-and-io.md"
+    },
+    {
+      "slug": "015-the-what-and-why-of-bootstrapping",
+      "title": "什么是 Bootstrapping 为什么要用",
+      "file": "chapters/015-the-what-and-why-of-bootstrapping.md"
+    },
+    {
+      "slug": "016-channelhandler-and-channelpipeline",
+      "title": "ChannelHandler 和 ChannelPipeline",
+      "file": "chapters/016-channelhandler-and-channelpipeline.md"
+    },
+    {
+      "slug": "017-a-closer-look-at-channelhandlers",
+      "title": "近距离观察 ChannelHandler",
+      "file": "chapters/017-a-closer-look-at-channelhandlers.md"
+    },
+    {
+      "slug": "018-3-6-summary",
+      "title": "总结",
+      "file": "chapters/018-3-6-summary.md"
+    },
+    {
+      "slug": "019-transports",
+      "title": "Transport（传输）",
+      "file": "chapters/019-transports.md"
+    },
+    {
+      "slug": "020-case-study-transport-migration",
+      "title": "案例研究:Transport 的迁移",
+      "file": "chapters/020-case-study-transport-migration.md"
+    },
+    {
+      "slug": "021-transport-api",
+      "title": "Transport API",
+      "file": "chapters/021-transport-api.md"
+    },
+    {
+      "slug": "022-included-transports",
+      "title": "包含的 Transport",
+      "file": "chapters/022-included-transports.md"
+    },
+    {
+      "slug": "023-transport-use-cases",
+      "title": "Transport 使用情况",
+      "file": "chapters/023-transport-use-cases.md"
+    },
+    {
+      "slug": "024-4-5-summary",
+      "title": "总结",
+      "file": "chapters/024-4-5-summary.md"
+    },
+    {
+      "slug": "025-buffers",
+      "title": "Buffer（缓冲）",
+      "file": "chapters/025-buffers.md"
+    },
+    {
+      "slug": "026-buffer-api",
+      "title": "Buffer API",
+      "file": "chapters/026-buffer-api.md"
+    },
+    {
+      "slug": "027-bytebuf-the-byte-data-container",
+      "title": "ByteBuf - 字节数据的容器",
+      "file": "chapters/027-bytebuf-the-byte-data-container.md"
+    },
+    {
+      "slug": "028-byte-level-operations",
+      "title": "字节级别的操作",
+      "file": "chapters/028-byte-level-operations.md"
+    },
+    {
+      "slug": "029-bytebufholder",
+      "title": "ByteBufHolder",
+      "file": "chapters/029-bytebufholder.md"
+    },
+    {
+      "slug": "030-bytebuf-allocation",
+      "title": "ByteBuf 分配",
+      "file": "chapters/030-bytebuf-allocation.md"
+    },
+    {
+      "slug": "031-reference-counting",
+      "title": "引用计数器",
+      "file": "chapters/031-reference-counting.md"
+    },
+    {
+      "slug": "032-5-7-summary",
+      "title": "总结",
+      "file": "chapters/032-5-7-summary.md"
+    },
+    {
+      "slug": "033-channelhandler-and-channelpipeline",
+      "title": "ChannelHandler 和 ChannelPipeline",
+      "file": "chapters/033-channelhandler-and-channelpipeline.md"
+    },
+    {
+      "slug": "034-the-channelhandler-family",
+      "title": "ChannelHandler 家族",
+      "file": "chapters/034-the-channelhandler-family.md"
+    },
+    {
+      "slug": "035-channelpipeline",
+      "title": "ChannelPipeline",
+      "file": "chapters/035-channelpipeline.md"
+    },
+    {
+      "slug": "036-channelhandlercontext",
+      "title": "ChannelHandlerContext",
+      "file": "chapters/036-channelhandlercontext.md"
+    },
+    {
+      "slug": "037-6-4-summary",
+      "title": "总结",
+      "file": "chapters/037-6-4-summary.md"
+    },
+    {
+      "slug": "038-the-codec-framework",
+      "title": "Codec 框架",
+      "file": "chapters/038-the-codec-framework.md"
+    },
+    {
+      "slug": "039-what-is-a-codec",
+      "title": "什么是 Codec",
+      "file": "chapters/039-what-is-a-codec.md"
+    },
+    {
+      "slug": "040-decoders",
+      "title": "Decoder(解码器)",
+      "file": "chapters/040-decoders.md"
+    },
+    {
+      "slug": "041-encoders",
+      "title": "Encoder(编码器)",
+      "file": "chapters/041-encoders.md"
+    },
+    {
+      "slug": "042-abstract-codec-classes",
+      "title": "抽象 Codec(编解码器)类",
+      "file": "chapters/042-abstract-codec-classes.md"
+    },
+    {
+      "slug": "043-7-5-summary",
+      "title": "总结",
+      "file": "chapters/043-7-5-summary.md"
+    },
+    {
+      "slug": "044-provided-channelhandlers-and-codecs",
+      "title": "提供了的 ChannelHandler 和 Codec",
+      "file": "chapters/044-provided-channelhandlers-and-codecs.md"
+    },
+    {
+      "slug": "045-securing-netty-applications-with-ssltls",
+      "title": "使用 SSL/TLS 加密 Netty 程序",
+      "file": "chapters/045-securing-netty-applications-with-ssltls.md"
+    },
+    {
+      "slug": "046-building-netty-httphttps-applications",
+      "title": "构建 Netty HTTP/HTTPS 应用",
+      "file": "chapters/046-building-netty-httphttps-applications.md"
+    },
+    {
+      "slug": "047-idle-connections-and-timeouts",
+      "title": "空闲连接以及超时",
+      "file": "chapters/047-idle-connections-and-timeouts.md"
+    },
+    {
+      "slug": "048-decoding-delimited-and-length-based-protocols",
+      "title": "解码分隔符和基于长度的协议",
+      "file": "chapters/048-decoding-delimited-and-length-based-protocols.md"
+    },
+    {
+      "slug": "049-writing-big-data",
+      "title": "编写大型数据",
+      "file": "chapters/049-writing-big-data.md"
+    },
+    {
+      "slug": "050-serializing-data",
+      "title": "序列化数据",
+      "file": "chapters/050-serializing-data.md"
+    },
+    {
+      "slug": "051-8-7-summary",
+      "title": "总结",
+      "file": "chapters/051-8-7-summary.md"
+    },
+    {
+      "slug": "052-bootstrapping",
+      "title": "引导",
+      "file": "chapters/052-bootstrapping.md"
+    },
+    {
+      "slug": "053-bootstrap-types",
+      "title": "Bootstrap 类型",
+      "file": "chapters/053-bootstrap-types.md"
+    },
+    {
+      "slug": "054-bootstrapping-clients-and-connectionless-protocols",
+      "title": "引导客户端和无连接协议",
+      "file": "chapters/054-bootstrapping-clients-and-connectionless-protocols.md"
+    },
+    {
+      "slug": "055-bootstrapping-servers",
+      "title": "引导服务器",
+      "file": "chapters/055-bootstrapping-servers.md"
+    },
+    {
+      "slug": "056-bootstrapping-clients-from-a-channel",
+      "title": "从 Channel 引导客户端",
+      "file": "chapters/056-bootstrapping-clients-from-a-channel.md"
+    },
+    {
+      "slug": "057-adding-multiple-channelhandlers-during-a-bootstrap",
+      "title": "在一个引导中添加多个 ChannelHandler",
+      "file": "chapters/057-adding-multiple-channelhandlers-during-a-bootstrap.md"
+    },
+    {
+      "slug": "058-using-netty-channeloptions-and-attributes",
+      "title": "使用Netty 的 ChannelOption 和属性",
+      "file": "chapters/058-using-netty-channeloptions-and-attributes.md"
+    },
+    {
+      "slug": "059-shutting-down-a-previously-bootstrapped-client-or-server",
+      "title": "关闭之前已经引导的客户端或服务器",
+      "file": "chapters/059-shutting-down-a-previously-bootstrapped-client-or-server.md"
+    },
+    {
+      "slug": "060-9-9-summary",
+      "title": "总结",
+      "file": "chapters/060-9-9-summary.md"
+    },
+    {
+      "slug": "061-unit-testing",
+      "title": "单元测试",
+      "file": "chapters/061-unit-testing.md"
+    },
+    {
+      "slug": "062-overview",
+      "title": "总览",
+      "file": "chapters/062-overview.md"
+    },
+    {
+      "slug": "063-testing-channelhandler",
+      "title": "测试 ChannelHandler",
+      "file": "chapters/063-testing-channelhandler.md"
+    },
+    {
+      "slug": "064-testing-exception-handling",
+      "title": "测试异常处理",
+      "file": "chapters/064-testing-exception-handling.md"
+    },
+    {
+      "slug": "065-10-4-summary",
+      "title": "总结",
+      "file": "chapters/065-10-4-summary.md"
+    },
+    {
+      "slug": "066-websockets",
+      "title": "WebSocket",
+      "file": "chapters/066-websockets.md"
+    },
+    {
+      "slug": "067-the-example-websockets-application",
+      "title": "WebSocket 程序示例",
+      "file": "chapters/067-the-example-websockets-application.md"
+    },
+    {
+      "slug": "068-adding-websockets-support",
+      "title": "添加 WebSocket 支持",
+      "file": "chapters/068-adding-websockets-support.md"
+    },
+    {
+      "slug": "069-testing-the-application",
+      "title": "测试程序",
+      "file": "chapters/069-testing-the-application.md"
+    },
+    {
+      "slug": "070-11-4-summary",
+      "title": "总结",
+      "file": "chapters/070-11-4-summary.md"
+    },
+    {
+      "slug": "071-spdy",
+      "title": "SPDY",
+      "file": "chapters/071-spdy.md"
+    },
+    {
+      "slug": "072-spdy-background",
+      "title": "SPDY 背景",
+      "file": "chapters/072-spdy-background.md"
+    },
+    {
+      "slug": "073-the-sample-application",
+      "title": "示例程序",
+      "file": "chapters/073-the-sample-application.md"
+    },
+    {
+      "slug": "074-implementation",
+      "title": "实现",
+      "file": "chapters/074-implementation.md"
+    },
+    {
+      "slug": "075-start-the-spdyserver-and-test-it",
+      "title": "启动 SpdyServer 并测试",
+      "file": "chapters/075-start-the-spdyserver-and-test-it.md"
+    },
+    {
+      "slug": "076-12-5-summary",
+      "title": "总结",
+      "file": "chapters/076-12-5-summary.md"
+    },
+    {
+      "slug": "077-broadcasting-events-with-udp",
+      "title": "通过 UDP 广播事件",
+      "file": "chapters/077-broadcasting-events-with-udp.md"
+    },
+    {
+      "slug": "078-udp-basics",
+      "title": "UDP 基础",
+      "file": "chapters/078-udp-basics.md"
+    },
+    {
+      "slug": "079-udp-broadcast",
+      "title": "UDP 广播",
+      "file": "chapters/079-udp-broadcast.md"
+    },
+    {
+      "slug": "080-the-udp-sample-application",
+      "title": "UDP 示例",
+      "file": "chapters/080-the-udp-sample-application.md"
+    },
+    {
+      "slug": "081-eventlog-pojos",
+      "title": "EventLog 的 POJO",
+      "file": "chapters/081-eventlog-pojos.md"
+    },
+    {
+      "slug": "082-writing-the-broadcaster",
+      "title": "写广播器",
+      "file": "chapters/082-writing-the-broadcaster.md"
+    },
+    {
+      "slug": "083-writing-the-monitor",
+      "title": "写监视器",
+      "file": "chapters/083-writing-the-monitor.md"
+    },
+    {
+      "slug": "084-running-the-logeventbroadcaster-and-logeventmonitor",
+      "title": "运行 LogEventBroadcaster 和 LogEventMonitor",
+      "file": "chapters/084-running-the-logeventbroadcaster-and-logeventmonitor.md"
+    },
+    {
+      "slug": "085-13-8-summary",
+      "title": "总结",
+      "file": "chapters/085-13-8-summary.md"
+    },
+    {
+      "slug": "086-implement-a-custom-codec",
+      "title": "实现自定义的编解码器",
+      "file": "chapters/086-implement-a-custom-codec.md"
+    },
+    {
+      "slug": "087-scope-of-the-codec",
+      "title": "编解码器的范围",
+      "file": "chapters/087-scope-of-the-codec.md"
+    },
+    {
+      "slug": "088-implementing-the-memcached-codec",
+      "title": "实现 Memcached 编解码器",
+      "file": "chapters/088-implementing-the-memcached-codec.md"
+    },
+    {
+      "slug": "089-getting-to-know-the-memcached-binary-protocol",
+      "title": "了解 Memcached 二进制协议",
+      "file": "chapters/089-getting-to-know-the-memcached-binary-protocol.md"
+    },
+    {
+      "slug": "090-netty-encoders-and-decoders",
+      "title": "Netty 编码器和解码器",
+      "file": "chapters/090-netty-encoders-and-decoders.md"
+    },
+    {
+      "slug": "091-testing-the-codec",
+      "title": "测试编解码器",
+      "file": "chapters/091-testing-the-codec.md"
+    },
+    {
+      "slug": "092-14-6-summary",
+      "title": "总结",
+      "file": "chapters/092-14-6-summary.md"
+    },
+    {
+      "slug": "093-eventloop-and-thread-model",
+      "title": "EventLoop 和线程模型",
+      "file": "chapters/093-eventloop-and-thread-model.md"
+    },
+    {
+      "slug": "094-thread-model-overview",
+      "title": "线程模型的总览",
+      "file": "chapters/094-thread-model-overview.md"
+    },
+    {
+      "slug": "095-the-eventloop",
+      "title": "EventLoop",
+      "file": "chapters/095-the-eventloop.md"
+    },
+    {
+      "slug": "096-scheduling-tasks-for-later-execution",
+      "title": "EventLoop",
+      "file": "chapters/096-scheduling-tasks-for-later-execution.md"
+    },
+    {
+      "slug": "097-io-eventloop-thread-allocation-in-detail",
+      "title": "I/O EventLoop/Thread 分配细节",
+      "file": "chapters/097-io-eventloop-thread-allocation-in-detail.md"
+    },
+    {
+      "slug": "098-15-6-summary",
+      "title": "总结",
+      "file": "chapters/098-15-6-summary.md"
+    },
+    {
+      "slug": "099-droplr-firebase-and-urban-airship",
+      "title": "用例1：Droplr Firebase 和 Urban Airship",
+      "file": "chapters/099-droplr-firebase-and-urban-airship.md"
+    },
+    {
+      "slug": "100-facebook-and-twitter",
+      "title": "用例2：Facebook 和 Twitter",
+      "file": "chapters/100-facebook-and-twitter.md"
+    }
+  ],
+  "sourceType": "github"
+}

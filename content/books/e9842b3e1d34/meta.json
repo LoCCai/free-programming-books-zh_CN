@@ -1,0 +1,16 @@
+{
+  "bookId": "e9842b3e1d34",
+  "title": "How to Think Like a Computer Scientist",
+  "url": "http://www.ituring.com.cn/book/1203",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:09.755Z",
+  "chapters": [
+    {
+      "slug": "001-z",
+      "title": "图灵社区",
+      "file": "chapters/001-z.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "图灵社区"
+}

@@ -1,0 +1,1011 @@
+{
+  "bookId": "5535012bfb20",
+  "title": "Hello-Agents：从零开始构建智能体",
+  "url": "https://github.com/datawhalechina/hello-agents",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:58.334Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "DataAnalysisAgent - 智能数据分析助手",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "数据库Agent助手",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Windows",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "猜猜我是谁 (GuessWhoAmI)",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "ThinkFlow - AI 思维教练",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "商品销售数据分析智能体",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "🌤️ 多智能体天气穿衣建议系统",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "SoftwareDevHelper - 软件开发学习助手",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "InnoCore AI - 研创·智核",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "🍳 智能菜谱助手 (Smart Recipe Agent)",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "智能数据分析师（Data Analyst Agent）",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "智能邮件助手（EmailSmartAssistant）",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "Geometry Problem Solving Agent",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "StockInsightAgent — 智能股票分析助手",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "智能编程导师 (Intelligent Programming Tutor)",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "PaperAssistant - 智能论文助手",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "智能竞品分析Agent",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "StowageAgent - 集装箱船配载智能体",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "Vue 3 + TypeScript + Vite",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "🎭 MADF: Multi-Agent Discussion Framework",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "项目名称",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "UniversalAgent - 通用智能体系统",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme",
+      "title": "Academic-Data-Agent",
+      "file": "chapters/023-readme.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "MeetingActionAgent",
+      "file": "chapters/024-readme.md"
+    },
+    {
+      "slug": "025-readme",
+      "title": "deep_research",
+      "file": "chapters/025-readme.md"
+    },
+    {
+      "slug": "026-readme",
+      "title": "RSS Digest",
+      "file": "chapters/026-readme.md"
+    },
+    {
+      "slug": "027-readme",
+      "title": "AgentPlatformBase - 双智能体任务平台",
+      "file": "chapters/027-readme.md"
+    },
+    {
+      "slug": "028-readme",
+      "title": "🎁 GiftGenius: 智能送礼助手",
+      "file": "chapters/028-readme.md"
+    },
+    {
+      "slug": "029-readme",
+      "title": "DeepCast",
+      "file": "chapters/029-readme.md"
+    },
+    {
+      "slug": "030-readme",
+      "title": "CodeReviewAgent - 智能代码审查助手",
+      "file": "chapters/030-readme.md"
+    },
+    {
+      "slug": "031-readme",
+      "title": "邮件智能摘要助手（EmailDigestAgent）",
+      "file": "chapters/031-readme.md"
+    },
+    {
+      "slug": "032-readme",
+      "title": "FinReportAgent - 金融研报智能体",
+      "file": "chapters/032-readme.md"
+    },
+    {
+      "slug": "033-readme",
+      "title": "项目名称",
+      "file": "chapters/033-readme.md"
+    },
+    {
+      "slug": "034-readme-en",
+      "title": "Intelligent Stock Analysis Assistant",
+      "file": "chapters/034-readme-en.md"
+    },
+    {
+      "slug": "035-readme",
+      "title": "智能股票分析助手",
+      "file": "chapters/035-readme.md"
+    },
+    {
+      "slug": "036-readme",
+      "title": "Multi‑Agent 日程规划助手",
+      "file": "chapters/036-readme.md"
+    },
+    {
+      "slug": "037-readme",
+      "title": "NovelGenerator - 智能小说创作助手",
+      "file": "chapters/037-readme.md"
+    },
+    {
+      "slug": "038-readme",
+      "title": "提醒图片说明",
+      "file": "chapters/038-readme.md"
+    },
+    {
+      "slug": "039-readme",
+      "title": "编程题库数据集（Practice Question Bank）",
+      "file": "chapters/039-readme.md"
+    },
+    {
+      "slug": "040-readme",
+      "title": "TutorAgent",
+      "file": "chapters/040-readme.md"
+    },
+    {
+      "slug": "041-readme",
+      "title": "沉浸式角色扮演智能体 (Python版)",
+      "file": "chapters/041-readme.md"
+    },
+    {
+      "slug": "042-readme",
+      "title": "多角色历史辩论智能体",
+      "file": "chapters/042-readme.md"
+    },
+    {
+      "slug": "043-readme",
+      "title": "README",
+      "file": "chapters/043-readme.md"
+    },
+    {
+      "slug": "044-readme",
+      "title": "专栏作家智能体 (Column Writer Agent)",
+      "file": "chapters/044-readme.md"
+    },
+    {
+      "slug": "045-readme",
+      "title": "DataAnalyst - 智能数据分析助手",
+      "file": "chapters/045-readme.md"
+    },
+    {
+      "slug": "046-readme",
+      "title": "NetworkHealthReportAgent",
+      "file": "chapters/046-readme.md"
+    },
+    {
+      "slug": "047-readme",
+      "title": "爱情分析师 (Love Analyst Agent)",
+      "file": "chapters/047-readme.md"
+    },
+    {
+      "slug": "048-readme",
+      "title": "MindEchoAgent · 心境回响",
+      "file": "chapters/048-readme.md"
+    },
+    {
+      "slug": "049-readme",
+      "title": "Hello-Agents 共创项目",
+      "file": "chapters/049-readme.md"
+    },
+    {
+      "slug": "050-readme",
+      "title": "智能API测试助手（API Test Assistant）",
+      "file": "chapters/050-readme.md"
+    },
+    {
+      "slug": "051-readme",
+      "title": "HealthRecordAgent · 健康档案助手",
+      "file": "chapters/051-readme.md"
+    },
+    {
+      "slug": "052-readme",
+      "title": "HelloClaw - 个性化 AI Agent 助手",
+      "file": "chapters/052-readme.md"
+    },
+    {
+      "slug": "053-readme",
+      "title": "智能流程图生成工具(AutoFlow)",
+      "file": "chapters/053-readme.md"
+    },
+    {
+      "slug": "054-readme",
+      "title": "股票专家",
+      "file": "chapters/054-readme.md"
+    },
+    {
+      "slug": "055-readme",
+      "title": "英语句子扩写智能体",
+      "file": "chapters/055-readme.md"
+    },
+    {
+      "slug": "056-readme",
+      "title": "CodePlanAgent",
+      "file": "chapters/056-readme.md"
+    },
+    {
+      "slug": "057-readme",
+      "title": "LearningAgent - AI 智能学习助手",
+      "file": "chapters/057-readme.md"
+    },
+    {
+      "slug": "058-readme",
+      "title": "Prompts",
+      "file": "chapters/058-readme.md"
+    },
+    {
+      "slug": "059-readme",
+      "title": "Code Agent（HelloAgents CLI）",
+      "file": "chapters/059-readme.md"
+    },
+    {
+      "slug": "060-readme",
+      "title": "HelloAgents Code Agent CLI",
+      "file": "chapters/060-readme.md"
+    },
+    {
+      "slug": "061-readme",
+      "title": "RequirementClarifierAgent - 多智能体需求澄清与技术方案助手",
+      "file": "chapters/061-readme.md"
+    },
+    {
+      "slug": "062-readme",
+      "title": "SRE On-Call Agent",
+      "file": "chapters/062-readme.md"
+    },
+    {
+      "slug": "063-readme",
+      "title": "语言学习助手Language-Learn-Agent",
+      "file": "chapters/063-readme.md"
+    },
+    {
+      "slug": "064-my-readme",
+      "title": "my_README",
+      "file": "chapters/064-my-readme.md"
+    },
+    {
+      "slug": "065-readme",
+      "title": "Weather MCP Server",
+      "file": "chapters/065-readme.md"
+    },
+    {
+      "slug": "066-readme",
+      "title": "Accelerate配置文件说明",
+      "file": "chapters/066-readme.md"
+    },
+    {
+      "slug": "067-readme",
+      "title": "第十二章示例代码",
+      "file": "chapters/067-readme.md"
+    },
+    {
+      "slug": "068-readme",
+      "title": "HelloAgents智能旅行助手 🌍✈️",
+      "file": "chapters/068-readme.md"
+    },
+    {
+      "slug": "069-readme",
+      "title": "赛博小镇 - FastAPI后端",
+      "file": "chapters/069-readme.md"
+    },
+    {
+      "slug": "070-readme",
+      "title": "赛博小镇 - AI NPC对话系统",
+      "file": "chapters/070-readme.md"
+    },
+    {
+      "slug": "071-readme",
+      "title": "AgentScope 三国狼人杀案例",
+      "file": "chapters/071-readme.md"
+    },
+    {
+      "slug": "072-readme",
+      "title": "AutoGen 软件开发团队协作案例",
+      "file": "chapters/072-readme.md"
+    },
+    {
+      "slug": "073-readme",
+      "title": "项目演示目录",
+      "file": "chapters/073-readme.md"
+    },
+    {
+      "slug": "074-readme",
+      "title": "Chapter 9 - 上下文工程示例代码",
+      "file": "chapters/074-readme.md"
+    },
+    {
+      "slug": "075-readme-en",
+      "title": "README_EN",
+      "file": "chapters/075-readme-en.md"
+    },
+    {
+      "slug": "076-readme",
+      "title": "README",
+      "file": "chapters/076-readme.md"
+    },
+    {
+      "slug": "077-readme",
+      "title": "readme",
+      "file": "chapters/077-readme.md"
+    },
+    {
+      "slug": "078-readme-en",
+      "title": "README_EN",
+      "file": "chapters/078-readme-en.md"
+    },
+    {
+      "slug": "079-readme",
+      "title": "README",
+      "file": "chapters/079-readme.md"
+    },
+    {
+      "slug": "080-n8n-install-guide",
+      "title": "N8N_INSTALL_GUIDE",
+      "file": "chapters/080-n8n-install-guide.md"
+    },
+    {
+      "slug": "081-nodejs-install-guide",
+      "title": "Node.js 和 npx 安装教程",
+      "file": "chapters/081-nodejs-install-guide.md"
+    },
+    {
+      "slug": "082-report",
+      "title": "数据分析报告",
+      "file": "chapters/082-report.md"
+    },
+    {
+      "slug": "083-和千问大模型聊天信息-关键部分",
+      "title": "Role：认知脚手架工程师",
+      "file": "chapters/083-和千问大模型聊天信息-关键部分.md"
+    },
+    {
+      "slug": "084-终端互动问题",
+      "title": "终端互动问题",
+      "file": "chapters/084-终端互动问题.md"
+    },
+    {
+      "slug": "085-agent-design",
+      "title": "SoftwareDevHelper 智能体设计文档",
+      "file": "chapters/085-agent-design.md"
+    },
+    {
+      "slug": "086-model-guide",
+      "title": "InnoCore AI 模型选择指南",
+      "file": "chapters/086-model-guide.md"
+    },
+    {
+      "slug": "087-features",
+      "title": "InnoCore AI 功能清单",
+      "file": "chapters/087-features.md"
+    },
+    {
+      "slug": "088-quickstart",
+      "title": "InnoCore AI - Quick Start Guide",
+      "file": "chapters/088-quickstart.md"
+    },
+    {
+      "slug": "089-usage-guide",
+      "title": "InnoCore AI 使用指南",
+      "file": "chapters/089-usage-guide.md"
+    },
+    {
+      "slug": "090-demo-result-20260409-134543",
+      "title": "竞品分析报告",
+      "file": "chapters/090-demo-result-20260409-134543.md"
+    },
+    {
+      "slug": "091-demo-result-20260409-140100",
+      "title": "竞品分析报告",
+      "file": "chapters/091-demo-result-20260409-140100.md"
+    },
+    {
+      "slug": "092-demo-result-20260409-142128",
+      "title": "竞品分析报告",
+      "file": "chapters/092-demo-result-20260409-142128.md"
+    },
+    {
+      "slug": "093-001-backend-framework-fastapi",
+      "title": "1. 选用 FastAPI 作为后端框架",
+      "file": "chapters/093-001-backend-framework-fastapi.md"
+    },
+    {
+      "slug": "094-002-frontend-framework-vue3",
+      "title": "2. 选用 Vue 3 + Vite 作为前端技术栈",
+      "file": "chapters/094-002-frontend-framework-vue3.md"
+    },
+    {
+      "slug": "095-003-database-selection-sqlite",
+      "title": "3. 选用 SQLite 作为默认数据库",
+      "file": "chapters/095-003-database-selection-sqlite.md"
+    },
+    {
+      "slug": "096-demo-results",
+      "title": "UniversalAgent 演示结果",
+      "file": "chapters/096-demo-results.md"
+    },
+    {
+      "slug": "097-improvements-summary",
+      "title": "智能体工具调用优化总结",
+      "file": "chapters/097-improvements-summary.md"
+    },
+    {
+      "slug": "098-example-minutes",
+      "title": "新用户注册功能迭代",
+      "file": "chapters/098-example-minutes.md"
+    },
+    {
+      "slug": "099-gift-plan-output",
+      "title": "gift_plan_output",
+      "file": "chapters/099-gift-plan-output.md"
+    },
+    {
+      "slug": "100-review-report",
+      "title": "配置日志记录",
+      "file": "chapters/100-review-report.md"
+    },
+    {
+      "slug": "101-deploy",
+      "title": "智能股票分析助手 — 部署文档 (DEPLOY.md)",
+      "file": "chapters/101-deploy.md"
+    },
+    {
+      "slug": "102-完整使用流程说明",
+      "title": "维度提取与主题修正系统 - 完整使用流程",
+      "file": "chapters/102-完整使用流程说明.md"
+    },
+    {
+      "slug": "103-维度分析系统使用说明",
+      "title": "维度分析系统使用说明（V1 简化版）",
+      "file": "chapters/103-维度分析系统使用说明.md"
+    },
+    {
+      "slug": "104-桌面提醒设置说明",
+      "title": "Windows任务计划程序设置说明",
+      "file": "chapters/104-桌面提醒设置说明.md"
+    },
+    {
+      "slug": "105-note-20251222-001617-12",
+      "title": "学习计划",
+      "file": "chapters/105-note-20251222-001617-12.md"
+    },
+    {
+      "slug": "106-note-20251222-001749-13",
+      "title": "学习计划",
+      "file": "chapters/106-note-20251222-001749-13.md"
+    },
+    {
+      "slug": "107-note-20251222-002318-14",
+      "title": "学习计划",
+      "file": "chapters/107-note-20251222-002318-14.md"
+    },
+    {
+      "slug": "108-note-20251222-003209-15",
+      "title": "学习计划",
+      "file": "chapters/108-note-20251222-003209-15.md"
+    },
+    {
+      "slug": "109-report",
+      "title": "JavaScript异步编程精解：从原理到实践",
+      "file": "chapters/109-report.md"
+    },
+    {
+      "slug": "110-topic-001-揭秘javascript异步编程的本质与event-loop机制",
+      "title": "揭秘JavaScript异步编程的本质与Event Loop机制",
+      "file": "chapters/110-topic-001-揭秘javascript异步编程的本质与event-loop机制.md"
+    },
+    {
+      "slug": "111-topic-002-从回调地狱到优雅的promise与asyncawait",
+      "title": "从回调地狱到优雅的Promise与async/await",
+      "file": "chapters/111-topic-002-从回调地狱到优雅的promise与asyncawait.md"
+    },
+    {
+      "slug": "112-topic-003-精通javascript异步高级模式并发控制与性能优化",
+      "title": "精通JavaScript异步：高级模式、并发控制与性能优化",
+      "file": "chapters/112-topic-003-精通javascript异步高级模式并发控制与性能优化.md"
+    },
+    {
+      "slug": "113-report",
+      "title": "前端工程化深度解析与实战：构建高效、高质量的现代前端研发体系",
+      "file": "chapters/113-report.md"
+    },
+    {
+      "slug": "114-topic-001-前端工程化导论与基础构建",
+      "title": "前端工程化导论与基础构建",
+      "file": "chapters/114-topic-001-前端工程化导论与基础构建.md"
+    },
+    {
+      "slug": "115-topic-002-自动化构建与开发效率提升",
+      "title": "自动化构建与开发效率提升",
+      "file": "chapters/115-topic-002-自动化构建与开发效率提升.md"
+    },
+    {
+      "slug": "116-topic-003-质量保障与持续交付实践",
+      "title": "质量保障与持续交付实践",
+      "file": "chapters/116-topic-003-质量保障与持续交付实践.md"
+    },
+    {
+      "slug": "117-topic-004-高级优化架构与未来趋势",
+      "title": "高级优化、架构与未来趋势",
+      "file": "chapters/117-topic-004-高级优化架构与未来趋势.md"
+    },
+    {
+      "slug": "118-analysis-report",
+      "title": "销售数据分析报告",
+      "file": "chapters/118-analysis-report.md"
+    },
+    {
+      "slug": "119-review-report",
+      "title": "Network Health Report Demo Output",
+      "file": "chapters/119-review-report.md"
+    },
+    {
+      "slug": "120-site-cd-west-2026-05-25-2026-05-31-20260531-191908",
+      "title": "成都西区办公室 近一周网络健康报告",
+      "file": "chapters/120-site-cd-west-2026-05-25-2026-05-31-20260531-191908.md"
+    },
+    {
+      "slug": "121-review-report",
+      "title": "自动审查报告",
+      "file": "chapters/121-review-report.md"
+    },
+    {
+      "slug": "122-todo-app-plan",
+      "title": "todo_app_plan",
+      "file": "chapters/122-todo-app-plan.md"
+    },
+    {
+      "slug": "123-note-20251217-155009-0",
+      "title": "发现问题: 你好...",
+      "file": "chapters/123-note-20251217-155009-0.md"
+    },
+    {
+      "slug": "124-note-20251217-155543-1",
+      "title": "发现问题: 你好...",
+      "file": "chapters/124-note-20251217-155543-1.md"
+    },
+    {
+      "slug": "125-note-20251217-160215-2",
+      "title": "项目结构分析",
+      "file": "chapters/125-note-20251217-160215-2.md"
+    },
+    {
+      "slug": "126-note-20251217-160218-3",
+      "title": "发现问题: 分析项目结构...",
+      "file": "chapters/126-note-20251217-160218-3.md"
+    },
+    {
+      "slug": "127-note-20251218-190919-4",
+      "title": "Patch failed",
+      "file": "chapters/127-note-20251218-190919-4.md"
+    },
+    {
+      "slug": "128-note-20251218-191113-5",
+      "title": "Patch failed",
+      "file": "chapters/128-note-20251218-191113-5.md"
+    },
+    {
+      "slug": "129-note-20251218-191343-6",
+      "title": "Patch failed",
+      "file": "chapters/129-note-20251218-191343-6.md"
+    },
+    {
+      "slug": "130-note-20251218-191554-7",
+      "title": "Patch failed",
+      "file": "chapters/130-note-20251218-191554-7.md"
+    },
+    {
+      "slug": "131-note-20251218-192121-8",
+      "title": "Patch applied",
+      "file": "chapters/131-note-20251218-192121-8.md"
+    },
+    {
+      "slug": "132-note-20251218-192253-9",
+      "title": "Patch failed",
+      "file": "chapters/132-note-20251218-192253-9.md"
+    },
+    {
+      "slug": "133-note-20251218-192612-10",
+      "title": "Patch failed",
+      "file": "chapters/133-note-20251218-192612-10.md"
+    },
+    {
+      "slug": "134-note-20251218-192912-11",
+      "title": "Patch failed",
+      "file": "chapters/134-note-20251218-192912-11.md"
+    },
+    {
+      "slug": "135-note-20251218-200446-12",
+      "title": "Patch failed",
+      "file": "chapters/135-note-20251218-200446-12.md"
+    },
+    {
+      "slug": "136-note-20251218-200920-13",
+      "title": "Patch applied",
+      "file": "chapters/136-note-20251218-200920-13.md"
+    },
+    {
+      "slug": "137-note-20251218-201216-14",
+      "title": "Patch applied",
+      "file": "chapters/137-note-20251218-201216-14.md"
+    },
+    {
+      "slug": "138-note-20251218-201409-15",
+      "title": "Patch applied",
+      "file": "chapters/138-note-20251218-201409-15.md"
+    },
+    {
+      "slug": "139-note-20251218-202749-16",
+      "title": "Patch applied",
+      "file": "chapters/139-note-20251218-202749-16.md"
+    },
+    {
+      "slug": "140-note-20251219-150917-17",
+      "title": "Patch failed",
+      "file": "chapters/140-note-20251219-150917-17.md"
+    },
+    {
+      "slug": "141-note-20251219-153949-18",
+      "title": "Patch applied",
+      "file": "chapters/141-note-20251219-153949-18.md"
+    },
+    {
+      "slug": "142-note-20251219-161406-19",
+      "title": "Patch applied",
+      "file": "chapters/142-note-20251219-161406-19.md"
+    },
+    {
+      "slug": "143-note-20251219-164354-20",
+      "title": "Patch applied",
+      "file": "chapters/143-note-20251219-164354-20.md"
+    },
+    {
+      "slug": "144-note-20251219-171820-21",
+      "title": "Patch applied",
+      "file": "chapters/144-note-20251219-171820-21.md"
+    },
+    {
+      "slug": "145-note-20251219-191656-22",
+      "title": "Patch applied",
+      "file": "chapters/145-note-20251219-191656-22.md"
+    },
+    {
+      "slug": "146-note-20251219-192206-23",
+      "title": "Patch applied",
+      "file": "chapters/146-note-20251219-192206-23.md"
+    },
+    {
+      "slug": "147-plan",
+      "title": "plan",
+      "file": "chapters/147-plan.md"
+    },
+    {
+      "slug": "148-react",
+      "title": "react",
+      "file": "chapters/148-react.md"
+    },
+    {
+      "slug": "149-summarize-observation",
+      "title": "summarize_observation",
+      "file": "chapters/149-summarize-observation.md"
+    },
+    {
+      "slug": "150-system",
+      "title": "system",
+      "file": "chapters/150-system.md"
+    },
+    {
+      "slug": "151-tools",
+      "title": "工具使用指南（Claude Code 风格精简版）",
+      "file": "chapters/151-tools.md"
+    },
+    {
+      "slug": "152-requirement-report",
+      "title": "社区活动报名小程序需求澄清与技术方案",
+      "file": "chapters/152-requirement-report.md"
+    },
+    {
+      "slug": "153-a2a-document-20251009-024100",
+      "title": "人工智能在智慧城市建设中的应用",
+      "file": "chapters/153-a2a-document-20251009-024100.md"
+    },
+    {
+      "slug": "154-report",
+      "title": "AI Agent框架研究报告",
+      "file": "chapters/154-report.md"
+    },
+    {
+      "slug": "155-publish-checklist",
+      "title": "发布检查清单",
+      "file": "chapters/155-publish-checklist.md"
+    },
+    {
+      "slug": "156-运行指南",
+      "title": "AIME数据生成与评估完整运行指南",
+      "file": "chapters/156-运行指南.md"
+    },
+    {
+      "slug": "157-generation-report-20251011-042741",
+      "title": "AIME题目生成统计报告",
+      "file": "chapters/157-generation-report-20251011-042741.md"
+    },
+    {
+      "slug": "158-bfcl-report-20251011-010343",
+      "title": "BFCL评估报告",
+      "file": "chapters/158-bfcl-report-20251011-010343.md"
+    },
+    {
+      "slug": "159-gaia-report-20251011-012648",
+      "title": "GAIA评估报告",
+      "file": "chapters/159-gaia-report-20251011-012648.md"
+    },
+    {
+      "slug": "160-affinity-system-guide",
+      "title": "💖 NPC好感度系统使用指南",
+      "file": "chapters/160-affinity-system-guide.md"
+    },
+    {
+      "slug": "161-dialogue-log-guide",
+      "title": "对话日志系统使用指南",
+      "file": "chapters/161-dialogue-log-guide.md"
+    },
+    {
+      "slug": "162-memory-system-guide",
+      "title": "🧠 NPC记忆系统使用指南",
+      "file": "chapters/162-memory-system-guide.md"
+    },
+    {
+      "slug": "163-setup-guide",
+      "title": "赛博小镇 - 安装配置指南",
+      "file": "chapters/163-setup-guide.md"
+    },
+    {
+      "slug": "164-共创路径",
+      "title": "共创路径",
+      "file": "chapters/164-共创路径.md"
+    },
+    {
+      "slug": "165-sidebar-en",
+      "title": "_sidebar_en",
+      "file": "chapters/165-sidebar-en.md"
+    },
+    {
+      "slug": "166-sidebar",
+      "title": "_sidebar",
+      "file": "chapters/166-sidebar.md"
+    },
+    {
+      "slug": "167-前言",
+      "title": "前言",
+      "file": "chapters/167-前言.md"
+    },
+    {
+      "slug": "168-第一章-初识智能体",
+      "title": "第一章 初识智能体",
+      "file": "chapters/168-第一章-初识智能体.md"
+    },
+    {
+      "slug": "169-chapter1-introduction-to-agents",
+      "title": "Chapter 1: Introduction to Agents",
+      "file": "chapters/169-chapter1-introduction-to-agents.md"
+    },
+    {
+      "slug": "170-第十章-智能体通信协议",
+      "title": "第十章 智能体通信协议",
+      "file": "chapters/170-第十章-智能体通信协议.md"
+    },
+    {
+      "slug": "171-chapter10-agent-communication-protocols",
+      "title": "Chapter 10: Agent Communication Protocols",
+      "file": "chapters/171-chapter10-agent-communication-protocols.md"
+    },
+    {
+      "slug": "172-第十一章-agentic-rl",
+      "title": "第十一章 Agentic-RL",
+      "file": "chapters/172-第十一章-agentic-rl.md"
+    },
+    {
+      "slug": "173-chapter11-agentic-rl",
+      "title": "Chapter 11 Agentic-RL",
+      "file": "chapters/173-chapter11-agentic-rl.md"
+    },
+    {
+      "slug": "174-第十二章-智能体性能评估",
+      "title": "第十二章 智能体性能评估",
+      "file": "chapters/174-第十二章-智能体性能评估.md"
+    },
+    {
+      "slug": "175-chapter12-agent-performance-evaluation",
+      "title": "Chapter 12: Agent Performance Evaluation",
+      "file": "chapters/175-chapter12-agent-performance-evaluation.md"
+    },
+    {
+      "slug": "176-第十三章-智能旅行助手",
+      "title": "第十三章 智能旅行助手",
+      "file": "chapters/176-第十三章-智能旅行助手.md"
+    },
+    {
+      "slug": "177-chapter13-intelligent-travel-assistant",
+      "title": "Chapter 13 Intelligent Travel Assistant",
+      "file": "chapters/177-chapter13-intelligent-travel-assistant.md"
+    },
+    {
+      "slug": "178-第十四章-自动化深度研究智能体",
+      "title": "第十四章 自动化深度研究智能体",
+      "file": "chapters/178-第十四章-自动化深度研究智能体.md"
+    },
+    {
+      "slug": "179-chapter14-automated-deep-research-agent",
+      "title": "Chapter 14: Automated Deep Research Agent",
+      "file": "chapters/179-chapter14-automated-deep-research-agent.md"
+    },
+    {
+      "slug": "180-第十五章-构建赛博小镇",
+      "title": "第十五章 构建赛博小镇",
+      "file": "chapters/180-第十五章-构建赛博小镇.md"
+    },
+    {
+      "slug": "181-chapter15-building-cyber-town",
+      "title": "Chapter 15: Building Cyber Town",
+      "file": "chapters/181-chapter15-building-cyber-town.md"
+    },
+    {
+      "slug": "182-第十六章-毕业设计",
+      "title": "第十六章 毕业设计：构建属于你的多智能体应用",
+      "file": "chapters/182-第十六章-毕业设计.md"
+    },
+    {
+      "slug": "183-chapter16-graduation-project",
+      "title": "Chapter 16: Graduation Project - Building Your Own Multi-Agent Application",
+      "file": "chapters/183-chapter16-graduation-project.md"
+    },
+    {
+      "slug": "184-第二章-智能体发展史",
+      "title": "第二章 智能体发展史",
+      "file": "chapters/184-第二章-智能体发展史.md"
+    },
+    {
+      "slug": "185-chapter2-history-of-agents",
+      "title": "Chapter 2: History of Agents",
+      "file": "chapters/185-chapter2-history-of-agents.md"
+    },
+    {
+      "slug": "186-第三章-大语言模型基础",
+      "title": "示例语料库，与上方案例讲解中的语料库保持一致",
+      "file": "chapters/186-第三章-大语言模型基础.md"
+    },
+    {
+      "slug": "187-chapter3-fundamentals-of-large-language-models",
+      "title": "Chapter 3: Fundamentals of Large Language Models",
+      "file": "chapters/187-chapter3-fundamentals-of-large-language-models.md"
+    },
+    {
+      "slug": "188-第四章-智能体经典范式构建",
+      "title": "第四章 智能体经典范式构建",
+      "file": "chapters/188-第四章-智能体经典范式构建.md"
+    },
+    {
+      "slug": "189-chapter4-building-classic-agent-paradigms",
+      "title": "Chapter 4: Building Classic Agent Paradigms",
+      "file": "chapters/189-chapter4-building-classic-agent-paradigms.md"
+    },
+    {
+      "slug": "190-第五章-基于低代码平台的智能体搭建",
+      "title": "第五章 基于低代码平台的智能体搭建",
+      "file": "chapters/190-第五章-基于低代码平台的智能体搭建.md"
+    },
+    {
+      "slug": "191-chapter5-building-agents-with-low-code-platforms",
+      "title": "Chapter 5: Building Agents with Low-Code Platforms",
+      "file": "chapters/191-chapter5-building-agents-with-low-code-platforms.md"
+    },
+    {
+      "slug": "192-第六章-框架开发实践",
+      "title": "第六章 框架开发实践",
+      "file": "chapters/192-第六章-框架开发实践.md"
+    },
+    {
+      "slug": "193-chapter6-framework-development-practice",
+      "title": "Chapter 6 Framework Development Practice",
+      "file": "chapters/193-chapter6-framework-development-practice.md"
+    },
+    {
+      "slug": "194-第七章-构建你的agent框架",
+      "title": "第七章 构建你的智能体框架",
+      "file": "chapters/194-第七章-构建你的agent框架.md"
+    },
+    {
+      "slug": "195-chapter7-building-your-agent-framework",
+      "title": "Chapter 7 Building Your Agent Framework",
+      "file": "chapters/195-chapter7-building-your-agent-framework.md"
+    },
+    {
+      "slug": "196-第八章-记忆与检索",
+      "title": "第八章 记忆与检索",
+      "file": "chapters/196-第八章-记忆与检索.md"
+    },
+    {
+      "slug": "197-chapter8-memory-and-retrieval",
+      "title": "Chapter 8 Memory and Retrieval",
+      "file": "chapters/197-chapter8-memory-and-retrieval.md"
+    },
+    {
+      "slug": "198-第九章-上下文工程",
+      "title": "第九章 上下文工程",
+      "file": "chapters/198-第九章-上下文工程.md"
+    },
+    {
+      "slug": "199-chapter9-context-engineering",
+      "title": "Chapter 9 Context Engineering",
+      "file": "chapters/199-chapter9-context-engineering.md"
+    },
+    {
+      "slug": "200-preface",
+      "title": "Preface",
+      "file": "chapters/200-preface.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

@@ -1,0 +1,205 @@
+{
+  "bookId": "1ea59dac6e61",
+  "title": "Java开源实现及最佳实践",
+  "url": "https://github.com/biezhi/jb",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:29.281Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "介绍",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-开源组件实现",
+      "title": "开源组件实现",
+      "file": "chapters/002-开源组件实现.md"
+    },
+    {
+      "slug": "003-mvc框架实现篇",
+      "title": "MVC框架实现篇",
+      "file": "chapters/003-mvc框架实现篇.md"
+    },
+    {
+      "slug": "004-index",
+      "title": "MVC框架实现篇",
+      "file": "chapters/004-index.md"
+    },
+    {
+      "slug": "005-1-plan",
+      "title": "项目规划",
+      "file": "chapters/005-1-plan.md"
+    },
+    {
+      "slug": "006-2-route",
+      "title": "路由设计",
+      "file": "chapters/006-2-route.md"
+    },
+    {
+      "slug": "007-3-controller",
+      "title": "控制器设计",
+      "file": "chapters/007-3-controller.md"
+    },
+    {
+      "slug": "008-4-config",
+      "title": "配置设计",
+      "file": "chapters/008-4-config.md"
+    },
+    {
+      "slug": "009-5-view",
+      "title": "视图设计",
+      "file": "chapters/009-5-view.md"
+    },
+    {
+      "slug": "010-6-dbutil",
+      "title": "数据库操作",
+      "file": "chapters/010-6-dbutil.md"
+    },
+    {
+      "slug": "011-7-crud",
+      "title": "增删改查",
+      "file": "chapters/011-7-crud.md"
+    },
+    {
+      "slug": "012-ioc容器实现篇",
+      "title": "IOC容器实现篇",
+      "file": "chapters/012-ioc容器实现篇.md"
+    },
+    {
+      "slug": "013-1-concept",
+      "title": "IOC的概念",
+      "file": "chapters/013-1-concept.md"
+    },
+    {
+      "slug": "014-2-spring",
+      "title": "Spring中怎么用",
+      "file": "chapters/014-2-spring.md"
+    },
+    {
+      "slug": "015-3-myioc",
+      "title": "设计一个IOC",
+      "file": "chapters/015-3-myioc.md"
+    },
+    {
+      "slug": "016-4-principle",
+      "title": "原理分析",
+      "file": "chapters/016-4-principle.md"
+    },
+    {
+      "slug": "017-设计模式系列",
+      "title": "设计模式系列",
+      "file": "chapters/017-设计模式系列.md"
+    },
+    {
+      "slug": "018-singleton",
+      "title": "如何正确地写出单例模式",
+      "file": "chapters/018-singleton.md"
+    },
+    {
+      "slug": "019-proxy",
+      "title": "代理模式剖析",
+      "file": "chapters/019-proxy.md"
+    },
+    {
+      "slug": "020-strategy",
+      "title": "什么是策略模式",
+      "file": "chapters/020-strategy.md"
+    },
+    {
+      "slug": "021-java8系列",
+      "title": "Java8系列",
+      "file": "chapters/021-java8系列.md"
+    },
+    {
+      "slug": "022-java8-guide",
+      "title": "Java8简明教程",
+      "file": "chapters/022-java8-guide.md"
+    },
+    {
+      "slug": "023-foreach",
+      "title": "Java8 Foreach",
+      "file": "chapters/023-foreach.md"
+    },
+    {
+      "slug": "024-hexo搭建博客",
+      "title": "Hexo搭建博客",
+      "file": "chapters/024-hexo搭建博客.md"
+    },
+    {
+      "slug": "025-hello",
+      "title": "分分钟部署一个Hexo环境",
+      "file": "chapters/025-hello.md"
+    },
+    {
+      "slug": "026-config",
+      "title": "各种配置详解",
+      "file": "chapters/026-config.md"
+    },
+    {
+      "slug": "027-writing",
+      "title": "开始写作吧",
+      "file": "chapters/027-writing.md"
+    },
+    {
+      "slug": "028-开发者指南",
+      "title": "开发者指南",
+      "file": "chapters/028-开发者指南.md"
+    },
+    {
+      "slug": "029-guide",
+      "title": "git - 简明指南",
+      "file": "chapters/029-guide.md"
+    },
+    {
+      "slug": "030-google-java8-guide",
+      "title": "Google Java编程风格指南",
+      "file": "chapters/030-google-java8-guide.md"
+    },
+    {
+      "slug": "031-运维相关",
+      "title": "运维相关",
+      "file": "chapters/031-运维相关.md"
+    },
+    {
+      "slug": "032-test-tool",
+      "title": "Web性能测试工具",
+      "file": "chapters/032-test-tool.md"
+    },
+    {
+      "slug": "033-readme",
+      "title": "写给java开发的运维笔记",
+      "file": "chapters/033-readme.md"
+    },
+    {
+      "slug": "034-经典文章",
+      "title": "经典文章",
+      "file": "chapters/034-经典文章.md"
+    },
+    {
+      "slug": "035-request-message",
+      "title": "HTTP请求报文解剖",
+      "file": "chapters/035-request-message.md"
+    },
+    {
+      "slug": "036-software-architecture-patterns",
+      "title": "软件架构模式",
+      "file": "chapters/036-software-architecture-patterns.md"
+    },
+    {
+      "slug": "037-electrical-business-architecture",
+      "title": "电商网站架构案例",
+      "file": "chapters/037-electrical-business-architecture.md"
+    },
+    {
+      "slug": "038-服务器相关",
+      "title": "服务器/域名/SSL证书",
+      "file": "chapters/038-服务器相关.md"
+    },
+    {
+      "slug": "039-实用工具",
+      "title": "实用工具/API",
+      "file": "chapters/039-实用工具.md"
+    }
+  ],
+  "sourceType": "github"
+}

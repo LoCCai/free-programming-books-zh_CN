@@ -1,0 +1,16 @@
+{
+  "bookId": "a5717a6f97bb",
+  "title": "Twisted 与异步编程入门",
+  "url": "https://www.gitbook.com/book/likebeta/twisted-intro-cn/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:47.754Z",
+  "chapters": [
+    {
+      "slug": "001-1q",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

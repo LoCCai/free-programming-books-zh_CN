@@ -1,0 +1,15 @@
+{
+  "bookId": "0ceff9326204",
+  "title": "JSON风格指南",
+  "url": "https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:32.563Z",
+  "chapters": [
+    {
+      "slug": "001-jsonstyleguide",
+      "title": "JSON风格指南 #",
+      "file": "chapters/001-jsonstyleguide.md"
+    }
+  ],
+  "sourceType": "github"
+}

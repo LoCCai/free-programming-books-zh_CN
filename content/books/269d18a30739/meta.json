@@ -1,0 +1,585 @@
+{
+  "bookId": "269d18a30739",
+  "title": "Activiti 5.x 用户指南",
+  "url": "https://github.com/waylau/activiti-5.x-user-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:32.407Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Chapter 1. Introduction 介绍",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-one-minute-version-一分钟版",
+      "title": "One minute version 一分钟版",
+      "file": "chapters/002-one-minute-version-一分钟版.md"
+    },
+    {
+      "slug": "003-activiti-setup-安装",
+      "title": "Activiti setup 安装",
+      "file": "chapters/003-activiti-setup-安装.md"
+    },
+    {
+      "slug": "004-activiti-database-setup-数据库安装",
+      "title": "Activiti database setup 数据库安装",
+      "file": "chapters/004-activiti-database-setup-数据库安装.md"
+    },
+    {
+      "slug": "005-include-the-activiti-jar-and-its-dependencies-包含-jar-和依赖",
+      "title": "Include the Activiti jar and its dependencies 包含 jar 和依赖",
+      "file": "chapters/005-include-the-activiti-jar-and-its-dependencies-包含-jar-和依赖.md"
+    },
+    {
+      "slug": "006-next-steps-下步",
+      "title": "Next steps 下步",
+      "file": "chapters/006-next-steps-下步.md"
+    },
+    {
+      "slug": "007-creating-a-processengine-创建-processengine",
+      "title": "Creating a ProcessEngine 创建 ProcessEngine",
+      "file": "chapters/007-creating-a-processengine-创建-processengine.md"
+    },
+    {
+      "slug": "008-processengineconfiguration-bean",
+      "title": "ProcessEngineConfiguration bean",
+      "file": "chapters/008-processengineconfiguration-bean.md"
+    },
+    {
+      "slug": "009-database-configuration-数据库配置",
+      "title": "Database configuration 数据库配置",
+      "file": "chapters/009-database-configuration-数据库配置.md"
+    },
+    {
+      "slug": "010-jndi-datasource-configuration-数据源配置",
+      "title": "JNDI Datasource Configuration 数据源配置",
+      "file": "chapters/010-jndi-datasource-configuration-数据源配置.md"
+    },
+    {
+      "slug": "011-supported-databases-支持的数据库",
+      "title": "Supported databases 支持的数据库",
+      "file": "chapters/011-supported-databases-支持的数据库.md"
+    },
+    {
+      "slug": "012-creating-the-database-tables-创建数据库表",
+      "title": "Creating the database tables 创建数据库表",
+      "file": "chapters/012-creating-the-database-tables-创建数据库表.md"
+    },
+    {
+      "slug": "013-database-table-names-explained-理解数据库表名字",
+      "title": "Database table names explained 理解数据库表名字",
+      "file": "chapters/013-database-table-names-explained-理解数据库表名字.md"
+    },
+    {
+      "slug": "014-database-upgrade-数据库升级",
+      "title": "Database upgrade 数据库升级",
+      "file": "chapters/014-database-upgrade-数据库升级.md"
+    },
+    {
+      "slug": "015-job-executor-and-async-executor",
+      "title": "Job Executor and Async Executor",
+      "file": "chapters/015-job-executor-and-async-executor.md"
+    },
+    {
+      "slug": "016-job-executor-activation-启用-job-executor",
+      "title": "Job executor activation 启用 Job executor",
+      "file": "chapters/016-job-executor-activation-启用-job-executor.md"
+    },
+    {
+      "slug": "017-async-executor-activation-启用-async-executor",
+      "title": "Async executor activation 启用 Async executor",
+      "file": "chapters/017-async-executor-activation-启用-async-executor.md"
+    },
+    {
+      "slug": "018-mail-server-configuration-配置邮件服务器",
+      "title": "Mail server configuration 配置邮件服务器",
+      "file": "chapters/018-mail-server-configuration-配置邮件服务器.md"
+    },
+    {
+      "slug": "019-history-configuration-配置历史",
+      "title": "History configuration 配置历史",
+      "file": "chapters/019-history-configuration-配置历史.md"
+    },
+    {
+      "slug": "020-exposing-configuration-beans-in-expressions-and-scripts-在表达式",
+      "title": "Exposing configuration beans in expressions and scripts 在表达式和脚本中暴露配置",
+      "file": "chapters/020-exposing-configuration-beans-in-expressions-and-scripts-在表达式.md"
+    },
+    {
+      "slug": "021-deployment-cache-configuration-配置部署缓存",
+      "title": "Deployment cache configuration 配置部署缓存",
+      "file": "chapters/021-deployment-cache-configuration-配置部署缓存.md"
+    },
+    {
+      "slug": "022-logging-日志",
+      "title": "Logging 日志",
+      "file": "chapters/022-logging-日志.md"
+    },
+    {
+      "slug": "023-mapped-diagnostic-contexts-映射诊断上下文",
+      "title": "Mapped Diagnostic Contexts 映射诊断上下文",
+      "file": "chapters/023-mapped-diagnostic-contexts-映射诊断上下文.md"
+    },
+    {
+      "slug": "024-event-handlers-事件处理",
+      "title": "Event handlers 事件处理",
+      "file": "chapters/024-event-handlers-事件处理.md"
+    },
+    {
+      "slug": "025-the-process-engine-api-and-services-流程引擎的-api-和服务",
+      "title": "The Process Engine API and services 流程引擎的 API 和服务",
+      "file": "chapters/025-the-process-engine-api-and-services-流程引擎的-api-和服务.md"
+    },
+    {
+      "slug": "026-exception-strategy-异常策略",
+      "title": "Exception strategy 异常策略",
+      "file": "chapters/026-exception-strategy-异常策略.md"
+    },
+    {
+      "slug": "027-working-with-the-activiti-services-使用-activiti-服务",
+      "title": "Working with the Activiti services 使用 Activiti 服务",
+      "file": "chapters/027-working-with-the-activiti-services-使用-activiti-服务.md"
+    },
+    {
+      "slug": "028-query-api-查询-api",
+      "title": "Query API 查询 API",
+      "file": "chapters/028-query-api-查询-api.md"
+    },
+    {
+      "slug": "029-variables-变量",
+      "title": "Variables 变量",
+      "file": "chapters/029-variables-变量.md"
+    },
+    {
+      "slug": "030-expressions-表达式",
+      "title": "Expressions 表达式",
+      "file": "chapters/030-expressions-表达式.md"
+    },
+    {
+      "slug": "031-unit-testing-单元测试",
+      "title": "Unit testing 单元测试",
+      "file": "chapters/031-unit-testing-单元测试.md"
+    },
+    {
+      "slug": "032-debugging-unit-tests-调试单元测试",
+      "title": "Debugging unit tests 调试单元测试",
+      "file": "chapters/032-debugging-unit-tests-调试单元测试.md"
+    },
+    {
+      "slug": "033-the-process-engine-in-a-web-application-在-web-应用中的流程引擎",
+      "title": "The process engine in a web application 在 web 应用中的流程引擎",
+      "file": "chapters/033-the-process-engine-in-a-web-application-在-web-应用中的流程引擎.md"
+    },
+    {
+      "slug": "034-readme",
+      "title": "Chapter 5. Spring integration 集成 Spring",
+      "file": "chapters/034-readme.md"
+    },
+    {
+      "slug": "035-processenginefactorybean",
+      "title": "ProcessEngineFactoryBean",
+      "file": "chapters/035-processenginefactorybean.md"
+    },
+    {
+      "slug": "036-transactions-事务",
+      "title": "Transactions 事务",
+      "file": "chapters/036-transactions-事务.md"
+    },
+    {
+      "slug": "037-expressions-表达式",
+      "title": "Expressions 表达式",
+      "file": "chapters/037-expressions-表达式.md"
+    },
+    {
+      "slug": "038-automatic-resource-deployment-资源自动部署",
+      "title": "Automatic resource deployment 资源自动部署",
+      "file": "chapters/038-automatic-resource-deployment-资源自动部署.md"
+    },
+    {
+      "slug": "039-unit-testing-单元测试",
+      "title": "Unit testing 单元测试",
+      "file": "chapters/039-unit-testing-单元测试.md"
+    },
+    {
+      "slug": "040-annotation-based-configuration-基于注解的配置",
+      "title": "Annotation-based configuration 基于注解的配置",
+      "file": "chapters/040-annotation-based-configuration-基于注解的配置.md"
+    },
+    {
+      "slug": "041-jpa-with-hibernate-4-2-x",
+      "title": "JPA with Hibernate 4.2.x",
+      "file": "chapters/041-jpa-with-hibernate-4-2-x.md"
+    },
+    {
+      "slug": "042-business-archives-业务文档",
+      "title": "Business archives 业务文档",
+      "file": "chapters/042-business-archives-业务文档.md"
+    },
+    {
+      "slug": "043-external-resources-外部资源",
+      "title": "External resources 外部资源",
+      "file": "chapters/043-external-resources-外部资源.md"
+    },
+    {
+      "slug": "044-versioning-of-process-definitions-流程定义的版本",
+      "title": "Versioning of process definitions 流程定义的版本",
+      "file": "chapters/044-versioning-of-process-definitions-流程定义的版本.md"
+    },
+    {
+      "slug": "045-providing-a-process-diagram-提供流程图",
+      "title": "Providing a process diagram 提供流程图",
+      "file": "chapters/045-providing-a-process-diagram-提供流程图.md"
+    },
+    {
+      "slug": "046-generating-a-process-diagram-生成流程图",
+      "title": "Generating a process diagram 生成流程图",
+      "file": "chapters/046-generating-a-process-diagram-生成流程图.md"
+    },
+    {
+      "slug": "047-category-类别",
+      "title": "Category 类别",
+      "file": "chapters/047-category-类别.md"
+    },
+    {
+      "slug": "048-what-is-bpmn-什么是-bpmn",
+      "title": "What is BPMN? 什么是 BPMN",
+      "file": "chapters/048-what-is-bpmn-什么是-bpmn.md"
+    },
+    {
+      "slug": "049-defining-a-process-定义流程",
+      "title": "Defining a process 定义流程",
+      "file": "chapters/049-defining-a-process-定义流程.md"
+    },
+    {
+      "slug": "050-getting-started-10-minute-tutorial-快速开始-十分钟教程",
+      "title": "Getting started 10 minute tutorial 快速开始-十分钟教程",
+      "file": "chapters/050-getting-started-10-minute-tutorial-快速开始-十分钟教程.md"
+    },
+    {
+      "slug": "051-readme",
+      "title": "Chapter 8. BPMN 2.0 Constructs 关于 BPMN 2.0 架构",
+      "file": "chapters/051-readme.md"
+    },
+    {
+      "slug": "052-custom-extensions-自定义扩展",
+      "title": "Custom extensions 自定义扩展",
+      "file": "chapters/052-custom-extensions-自定义扩展.md"
+    },
+    {
+      "slug": "053-events-事件",
+      "title": "Events 事件",
+      "file": "chapters/053-events-事件.md"
+    },
+    {
+      "slug": "054-sequence-flow-顺序流",
+      "title": "Sequence Flow 顺序流",
+      "file": "chapters/054-sequence-flow-顺序流.md"
+    },
+    {
+      "slug": "055-gateways-网关",
+      "title": "Gateways 网关",
+      "file": "chapters/055-gateways-网关.md"
+    },
+    {
+      "slug": "056-tasks-任务",
+      "title": "Tasks 任务",
+      "file": "chapters/056-tasks-任务.md"
+    },
+    {
+      "slug": "057-sub-processes-and-call-activities-子流程和调用节点",
+      "title": "Sub-Processes and Call Activities 子流程和调用节点",
+      "file": "chapters/057-sub-processes-and-call-activities-子流程和调用节点.md"
+    },
+    {
+      "slug": "058-transactions-and-concurrency-事务与并发",
+      "title": "Transactions and Concurrency 事务与并发",
+      "file": "chapters/058-transactions-and-concurrency-事务与并发.md"
+    },
+    {
+      "slug": "059-process-initiation-authorization-流程起始授权",
+      "title": "Process Initiation Authorization 流程起始授权",
+      "file": "chapters/059-process-initiation-authorization-流程起始授权.md"
+    },
+    {
+      "slug": "060-data-objects-数据对象",
+      "title": "Data objects 数据对象",
+      "file": "chapters/060-data-objects-数据对象.md"
+    },
+    {
+      "slug": "061-readme",
+      "title": "Chapter 9. Forms 表单",
+      "file": "chapters/061-readme.md"
+    },
+    {
+      "slug": "062-form-properties-表单属性",
+      "title": "Form properties 表单属性",
+      "file": "chapters/062-form-properties-表单属性.md"
+    },
+    {
+      "slug": "063-external-form-rendering-外部表单的渲染",
+      "title": "External form rendering 外部表单的渲染",
+      "file": "chapters/063-external-form-rendering-外部表单的渲染.md"
+    },
+    {
+      "slug": "064-readme",
+      "title": "Chapter 10. JPA",
+      "file": "chapters/064-readme.md"
+    },
+    {
+      "slug": "065-requirements-要求",
+      "title": "Requirements 要求",
+      "file": "chapters/065-requirements-要求.md"
+    },
+    {
+      "slug": "066-configuration-配置",
+      "title": "Configuration 配置",
+      "file": "chapters/066-configuration-配置.md"
+    },
+    {
+      "slug": "067-usage-使用",
+      "title": "Usage 使用",
+      "file": "chapters/067-usage-使用.md"
+    },
+    {
+      "slug": "068-readme",
+      "title": "Chapter 11. History 历史",
+      "file": "chapters/068-readme.md"
+    },
+    {
+      "slug": "069-querying-history-查询",
+      "title": "Querying history 查询",
+      "file": "chapters/069-querying-history-查询.md"
+    },
+    {
+      "slug": "070-history-configuration-配置",
+      "title": "History configuration 配置",
+      "file": "chapters/070-history-configuration-配置.md"
+    },
+    {
+      "slug": "071-history-for-audit-purposes-审计目的的历史",
+      "title": "History for audit purposes 审计目的的历史",
+      "file": "chapters/071-history-for-audit-purposes-审计目的的历史.md"
+    },
+    {
+      "slug": "072-readme",
+      "title": "Chapter 12. Eclipse Designer",
+      "file": "chapters/072-readme.md"
+    },
+    {
+      "slug": "073-installation-安装",
+      "title": "Installation 安装",
+      "file": "chapters/073-installation-安装.md"
+    },
+    {
+      "slug": "074-activiti-designer-editor-features-编辑器特性",
+      "title": "Activiti Designer editor features 编辑器特性",
+      "file": "chapters/074-activiti-designer-editor-features-编辑器特性.md"
+    },
+    {
+      "slug": "075-activiti-designer-bpmn-features-关于-bpmn-的特性",
+      "title": "Activiti Designer BPMN features 关于 BPMN 的特性",
+      "file": "chapters/075-activiti-designer-bpmn-features-关于-bpmn-的特性.md"
+    },
+    {
+      "slug": "076-activiti-designer-deployment-features-部署的特性",
+      "title": "Activiti Designer deployment features 部署的特性",
+      "file": "chapters/076-activiti-designer-deployment-features-部署的特性.md"
+    },
+    {
+      "slug": "077-extending-activiti-designer-扩展",
+      "title": "Extending Activiti Designer 扩展",
+      "file": "chapters/077-extending-activiti-designer-扩展.md"
+    },
+    {
+      "slug": "078-readme",
+      "title": "Chapter 13. Activiti Explorer",
+      "file": "chapters/078-readme.md"
+    },
+    {
+      "slug": "079-process-diagram-流程图",
+      "title": "Process diagram 流程图",
+      "file": "chapters/079-process-diagram-流程图.md"
+    },
+    {
+      "slug": "080-tasks-任务",
+      "title": "Tasks 任务",
+      "file": "chapters/080-tasks-任务.md"
+    },
+    {
+      "slug": "081-start-process-instances-开始流程实例",
+      "title": "Start process instances 开始流程实例",
+      "file": "chapters/081-start-process-instances-开始流程实例.md"
+    },
+    {
+      "slug": "082-my-instances-我的实例",
+      "title": "My instances 我的实例",
+      "file": "chapters/082-my-instances-我的实例.md"
+    },
+    {
+      "slug": "083-administration-管理",
+      "title": "Administration 管理",
+      "file": "chapters/083-administration-管理.md"
+    },
+    {
+      "slug": "084-reporting-报告",
+      "title": "Reporting 报告",
+      "file": "chapters/084-reporting-报告.md"
+    },
+    {
+      "slug": "085-changing-the-database-修改数据库",
+      "title": "Changing the database 修改数据库",
+      "file": "chapters/085-changing-the-database-修改数据库.md"
+    },
+    {
+      "slug": "086-readme",
+      "title": "Chapter 14. Activiti Modeler",
+      "file": "chapters/086-readme.md"
+    },
+    {
+      "slug": "087-model-editing-编辑模型",
+      "title": "Model editing 编辑模型",
+      "file": "chapters/087-model-editing-编辑模型.md"
+    },
+    {
+      "slug": "088-importing-existing-models-导入模型",
+      "title": "Importing existing models 导入模型",
+      "file": "chapters/088-importing-existing-models-导入模型.md"
+    },
+    {
+      "slug": "089-convert-deployed-definitions-to-a-editeable-model转换部署定义到可编辑模",
+      "title": "Convert deployed definitions to a editeable model转换部署定义到可编辑模型",
+      "file": "chapters/089-convert-deployed-definitions-to-a-editeable-model转换部署定义到可编辑模.md"
+    },
+    {
+      "slug": "090-export-model-to-bpmn-xml-导出模型到-xml",
+      "title": "Export model to BPMN XML 导出模型到 XML",
+      "file": "chapters/090-export-model-to-bpmn-xml-导出模型到-xml.md"
+    },
+    {
+      "slug": "091-deploy-model-to-the-activiti-engine-部署模型到引擎",
+      "title": "Deploy model to the Activiti Engine 部署模型到引擎",
+      "file": "chapters/091-deploy-model-to-the-activiti-engine-部署模型到引擎.md"
+    },
+    {
+      "slug": "092-general-activiti-rest-principles-通用原则",
+      "title": "General Activiti REST principles 通用原则",
+      "file": "chapters/092-general-activiti-rest-principles-通用原则.md"
+    },
+    {
+      "slug": "093-readme",
+      "title": "Chapter 16. CDI integration 集成 CDI",
+      "file": "chapters/093-readme.md"
+    },
+    {
+      "slug": "094-setting-up-activiti-cdi-设置-activiti-cdi",
+      "title": "Setting up activiti-cdi 设置 activiti-cdi",
+      "file": "chapters/094-setting-up-activiti-cdi-设置-activiti-cdi.md"
+    },
+    {
+      "slug": "095-contextual-process-execution-with-cdi-基于-cdi-的流程执行",
+      "title": "Contextual Process Execution with CDI 基于 CDI 的流程执行",
+      "file": "chapters/095-contextual-process-execution-with-cdi-基于-cdi-的流程执行.md"
+    },
+    {
+      "slug": "096-known-limitations-已知的限制",
+      "title": "Known Limitations 已知的限制",
+      "file": "chapters/096-known-limitations-已知的限制.md"
+    },
+    {
+      "slug": "097-readme",
+      "title": "Chapter 17. LDAP integration 集成 LDAP",
+      "file": "chapters/097-readme.md"
+    },
+    {
+      "slug": "098-usage-用法",
+      "title": "Usage 用法",
+      "file": "chapters/098-usage-用法.md"
+    },
+    {
+      "slug": "099-use-cases-用例",
+      "title": "Use cases 用例",
+      "file": "chapters/099-use-cases-用例.md"
+    },
+    {
+      "slug": "100-configuration-配置",
+      "title": "Configuration 配置",
+      "file": "chapters/100-configuration-配置.md"
+    },
+    {
+      "slug": "101-properties-属性",
+      "title": "Properties 属性",
+      "file": "chapters/101-properties-属性.md"
+    },
+    {
+      "slug": "102-integrate-ldap-in-explorer-在-explorer-集成",
+      "title": "Integrate LDAP in Explorer 在 Explorer 集成",
+      "file": "chapters/102-integrate-ldap-in-explorer-在-explorer-集成.md"
+    },
+    {
+      "slug": "103-readme",
+      "title": "Chapter 18. Advanced 高级",
+      "file": "chapters/103-readme.md"
+    },
+    {
+      "slug": "104-hooking-into-process-parsing-监听流程解析",
+      "title": "Hooking into process parsing 监听流程解析",
+      "file": "chapters/104-hooking-into-process-parsing-监听流程解析.md"
+    },
+    {
+      "slug": "105-高并发的-uuid生成器",
+      "title": "UUID id generator for high concurrency 高并发的 UUID生成器",
+      "file": "chapters/105-高并发的-uuid生成器.md"
+    },
+    {
+      "slug": "106-multitenancy-多租户",
+      "title": "Multitenancy 多租户",
+      "file": "chapters/106-multitenancy-多租户.md"
+    },
+    {
+      "slug": "107-execute-custom-sql-执行自定义-sql",
+      "title": "Execute custom SQL 执行自定义 SQL",
+      "file": "chapters/107-execute-custom-sql-执行自定义-sql.md"
+    },
+    {
+      "slug": "108-advanced-process-engine-configuration-with-a-processengineco",
+      "title": "Advanced Process Engine configuration with a ProcessEngineConfigurator 用 ProcessEngineConfigurator实现高级引擎配置",
+      "file": "chapters/108-advanced-process-engine-configuration-with-a-processengineco.md"
+    },
+    {
+      "slug": "109-advanced-query-api-seamless-switching-between-runtime-and-hi",
+      "title": "Advanced query API seamless switching between runtime and historic task querying 高级查询 API-运行时无缝任务切换和历史任务查询",
+      "file": "chapters/109-advanced-query-api-seamless-switching-between-runtime-and-hi.md"
+    },
+    {
+      "slug": "110-custom-identity-management-by-overriding-standard-sessionfac",
+      "title": "Custom identity management by overriding standard SessionFactory 通过重写标准的 SessionFactory 实现自定义身份的管理",
+      "file": "chapters/110-custom-identity-management-by-overriding-standard-sessionfac.md"
+    },
+    {
+      "slug": "111-enable-safe-bpmn-2-0-xml-启用安全的-bpmn-2-0-xml",
+      "title": "Enable safe BPMN 2.0 xml 启用安全的 BPMN 2.0 xml",
+      "file": "chapters/111-enable-safe-bpmn-2-0-xml-启用安全的-bpmn-2-0-xml.md"
+    },
+    {
+      "slug": "112-event-logging-experimental-事件日志-实验",
+      "title": "Event logging Experimental 事件日志-实验",
+      "file": "chapters/112-event-logging-experimental-事件日志-实验.md"
+    },
+    {
+      "slug": "113-introduction-介绍",
+      "title": "Introduction 介绍",
+      "file": "chapters/113-introduction-介绍.md"
+    },
+    {
+      "slug": "114-crystalball-inside-内部",
+      "title": "CrystalBall inside 内部",
+      "file": "chapters/114-crystalball-inside-内部.md"
+    },
+    {
+      "slug": "115-history-analysis-历史分析",
+      "title": "History analysis 历史分析",
+      "file": "chapters/115-history-analysis-历史分析.md"
+    }
+  ],
+  "sourceType": "github"
+}

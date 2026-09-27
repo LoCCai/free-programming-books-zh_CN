@@ -1,0 +1,16 @@
+{
+  "bookId": "a6b90b5fb99f",
+  "title": "Pro Git 中文版",
+  "url": "https://www.gitbook.com/book/0532/progit/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:19.400Z",
+  "chapters": [
+    {
+      "slug": "001-1c",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1c.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

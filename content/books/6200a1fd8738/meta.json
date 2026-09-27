@@ -1,0 +1,16 @@
+{
+  "bookId": "6200a1fd8738",
+  "title": "On Lisp 中文翻译版本",
+  "url": "http://www.ituring.com.cn/minibook/862",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:54.568Z",
+  "chapters": [
+    {
+      "slug": "001-12",
+      "title": "图灵社区",
+      "file": "chapters/001-12.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "图灵社区"
+}

@@ -1,0 +1,15 @@
+{
+  "bookId": "7383fd497fd8-2",
+  "title": "一年成为 Emacs 高手",
+  "url": "https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:50.266Z",
+  "chapters": [
+    {
+      "slug": "001-guide-zh-org",
+      "title": "guide-zh",
+      "file": "chapters/001-guide-zh-org.md"
+    }
+  ],
+  "sourceType": "github"
+}

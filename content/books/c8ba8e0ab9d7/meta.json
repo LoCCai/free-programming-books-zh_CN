@@ -1,0 +1,1011 @@
+{
+  "bookId": "c8ba8e0ab9d7",
+  "title": "Spring Boot参考指南",
+  "url": "https://github.com/qibaoguang/Spring-Boot-Reference-Guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:19.287Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "I. Spring Boot文档",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-about-the-documentation",
+      "title": "1. 关于本文档",
+      "file": "chapters/002-1-about-the-documentation.md"
+    },
+    {
+      "slug": "003-2-getting-help",
+      "title": "2. 获取帮助",
+      "file": "chapters/003-2-getting-help.md"
+    },
+    {
+      "slug": "004-3-first-steps",
+      "title": "3. 第一步",
+      "file": "chapters/004-3-first-steps.md"
+    },
+    {
+      "slug": "005-4-working-with-spring-boot",
+      "title": "4. 使用Spring Boot",
+      "file": "chapters/005-4-working-with-spring-boot.md"
+    },
+    {
+      "slug": "006-5-learning-about-spring-boot-features",
+      "title": "5. 了解Spring Boot特性",
+      "file": "chapters/006-5-learning-about-spring-boot-features.md"
+    },
+    {
+      "slug": "007-6-moving-to-production",
+      "title": "6. 迁移到生产环境",
+      "file": "chapters/007-6-moving-to-production.md"
+    },
+    {
+      "slug": "008-7-advanced-topics",
+      "title": "7. 高级主题",
+      "file": "chapters/008-7-advanced-topics.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "II. 开始",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-8-introducing-spring-boot",
+      "title": "8. Spring Boot介绍",
+      "file": "chapters/010-8-introducing-spring-boot.md"
+    },
+    {
+      "slug": "011-9-system-requirements",
+      "title": "9. 系统要求",
+      "file": "chapters/011-9-system-requirements.md"
+    },
+    {
+      "slug": "012-9-1-servlet-containers",
+      "title": "9.1. Servlet容器",
+      "file": "chapters/012-9-1-servlet-containers.md"
+    },
+    {
+      "slug": "013-10-installing-spring-boot",
+      "title": "10. Spring Boot安装",
+      "file": "chapters/013-10-installing-spring-boot.md"
+    },
+    {
+      "slug": "014-10-1-installation-instructions-for-the-java-developer",
+      "title": "10.1. 为Java开发者准备的安装指南",
+      "file": "chapters/014-10-1-installation-instructions-for-the-java-developer.md"
+    },
+    {
+      "slug": "015-10-1-1-maven-installation",
+      "title": "10.1.1. Maven安装",
+      "file": "chapters/015-10-1-1-maven-installation.md"
+    },
+    {
+      "slug": "016-10-1-2-gradle-installation",
+      "title": "10.1.2. Gradle安装",
+      "file": "chapters/016-10-1-2-gradle-installation.md"
+    },
+    {
+      "slug": "017-10-2-installing-the-spring-boot-cli",
+      "title": "10.2. Spring Boot CLI安装",
+      "file": "chapters/017-10-2-installing-the-spring-boot-cli.md"
+    },
+    {
+      "slug": "018-10-2-1-manual-installation",
+      "title": "10.2.1. 手动安装",
+      "file": "chapters/018-10-2-1-manual-installation.md"
+    },
+    {
+      "slug": "019-10-2-2-installation-with-sdkman",
+      "title": "10.2.2. 使用SDKMAN进行安装",
+      "file": "chapters/019-10-2-2-installation-with-sdkman.md"
+    },
+    {
+      "slug": "020-10-2-3-osx-homebrew-installation",
+      "title": "10.2.3. 使用OSX Homebrew进行安装",
+      "file": "chapters/020-10-2-3-osx-homebrew-installation.md"
+    },
+    {
+      "slug": "021-10-2-4-macports-installation",
+      "title": "10.2.4. 使用MacPorts进行安装",
+      "file": "chapters/021-10-2-4-macports-installation.md"
+    },
+    {
+      "slug": "022-10-2-5-command-line-completion",
+      "title": "10.2.5. 命令行实现",
+      "file": "chapters/022-10-2-5-command-line-completion.md"
+    },
+    {
+      "slug": "023-10-2-6-quick-start-spring-cli-example",
+      "title": "10.2.6. Spring CLI示例快速入门",
+      "file": "chapters/023-10-2-6-quick-start-spring-cli-example.md"
+    },
+    {
+      "slug": "024-10-3-upgrading-from-an-earlier-version-of-spring-boot",
+      "title": "10.3. 从Spring Boot早期版本升级",
+      "file": "chapters/024-10-3-upgrading-from-an-earlier-version-of-spring-boot.md"
+    },
+    {
+      "slug": "025-11-developing-your-first-spring-boot-application",
+      "title": "11. 开发你的第一个Spring Boot应用",
+      "file": "chapters/025-11-developing-your-first-spring-boot-application.md"
+    },
+    {
+      "slug": "026-11-1-creating-the-pom",
+      "title": "11.1. 创建POM",
+      "file": "chapters/026-11-1-creating-the-pom.md"
+    },
+    {
+      "slug": "027-11-2-adding-classpath-dependencies",
+      "title": "11.2. 添加classpath依赖",
+      "file": "chapters/027-11-2-adding-classpath-dependencies.md"
+    },
+    {
+      "slug": "028-11-3-writing-the-code",
+      "title": "11.3. 编写代码",
+      "file": "chapters/028-11-3-writing-the-code.md"
+    },
+    {
+      "slug": "029-11-3-1-the-restcontroller-and-requestmapping-annotations",
+      "title": "11.3.1. @RestController和@RequestMapping注解",
+      "file": "chapters/029-11-3-1-the-restcontroller-and-requestmapping-annotations.md"
+    },
+    {
+      "slug": "030-11-3-2-the-enableautoconfiguration-annotation",
+      "title": "11.3.2. @EnableAutoConfiguration注解",
+      "file": "chapters/030-11-3-2-the-enableautoconfiguration-annotation.md"
+    },
+    {
+      "slug": "031-11-3-3-the-main-method",
+      "title": "11.3.3. main方法",
+      "file": "chapters/031-11-3-3-the-main-method.md"
+    },
+    {
+      "slug": "032-11-4-running-the-example",
+      "title": "11.4. 运行示例",
+      "file": "chapters/032-11-4-running-the-example.md"
+    },
+    {
+      "slug": "033-11-5-creating-an-executable-jar",
+      "title": "11.5. 创建一个可执行jar",
+      "file": "chapters/033-11-5-creating-an-executable-jar.md"
+    },
+    {
+      "slug": "034-12-what-to-read-next",
+      "title": "12. 接下来阅读什么",
+      "file": "chapters/034-12-what-to-read-next.md"
+    },
+    {
+      "slug": "035-readme",
+      "title": "III. 使用Spring Boot",
+      "file": "chapters/035-readme.md"
+    },
+    {
+      "slug": "036-13-build-systems",
+      "title": "13. 构建系统",
+      "file": "chapters/036-13-build-systems.md"
+    },
+    {
+      "slug": "037-13-1-dependency-management",
+      "title": "13.1. 依赖管理",
+      "file": "chapters/037-13-1-dependency-management.md"
+    },
+    {
+      "slug": "038-13-2-maven",
+      "title": "13.2. Maven",
+      "file": "chapters/038-13-2-maven.md"
+    },
+    {
+      "slug": "039-13-2-1-inheriting-the-starter-parent",
+      "title": "13.2.1. 继承starter parent",
+      "file": "chapters/039-13-2-1-inheriting-the-starter-parent.md"
+    },
+    {
+      "slug": "040-13-2-2-using-spring-boot-without-the-parent-pom",
+      "title": "13.2.2. 在不使用parent POM的情况下玩转Spring Boot",
+      "file": "chapters/040-13-2-2-using-spring-boot-without-the-parent-pom.md"
+    },
+    {
+      "slug": "041-13-2-3-changing-the-java-version",
+      "title": "13.2.3. 改变Java版本",
+      "file": "chapters/041-13-2-3-changing-the-java-version.md"
+    },
+    {
+      "slug": "042-13-2-4-using-the-spring-boot-maven-plugin",
+      "title": "13.2.4. 使用Spring Boot Maven插件",
+      "file": "chapters/042-13-2-4-using-the-spring-boot-maven-plugin.md"
+    },
+    {
+      "slug": "043-13-3-gradle",
+      "title": "13.3. Gradle",
+      "file": "chapters/043-13-3-gradle.md"
+    },
+    {
+      "slug": "044-13-4-ant",
+      "title": "13.4. Ant",
+      "file": "chapters/044-13-4-ant.md"
+    },
+    {
+      "slug": "045-13-5-starters",
+      "title": "13.5. Starters",
+      "file": "chapters/045-13-5-starters.md"
+    },
+    {
+      "slug": "046-14-structuring-your-code",
+      "title": "14. 组织你的代码",
+      "file": "chapters/046-14-structuring-your-code.md"
+    },
+    {
+      "slug": "047-14-1-using-the-default-package",
+      "title": "14.1. 使用\"default\"包",
+      "file": "chapters/047-14-1-using-the-default-package.md"
+    },
+    {
+      "slug": "048-14-2-locating-the-main-application-class",
+      "title": "14.2. 放置应用的main类",
+      "file": "chapters/048-14-2-locating-the-main-application-class.md"
+    },
+    {
+      "slug": "049-15-configuration-classes",
+      "title": "15. 配置类",
+      "file": "chapters/049-15-configuration-classes.md"
+    },
+    {
+      "slug": "050-15-1-importing-additional-configuration-classes",
+      "title": "15.1. 导入其他配置类",
+      "file": "chapters/050-15-1-importing-additional-configuration-classes.md"
+    },
+    {
+      "slug": "051-15-2-importing-xml-configuration",
+      "title": "15.2. 导入XML配置",
+      "file": "chapters/051-15-2-importing-xml-configuration.md"
+    },
+    {
+      "slug": "052-16-auto-configuration",
+      "title": "16. 自动配置",
+      "file": "chapters/052-16-auto-configuration.md"
+    },
+    {
+      "slug": "053-16-1-gradually-replacing-auto-configuration",
+      "title": "16.1. 逐步替换自动配置",
+      "file": "chapters/053-16-1-gradually-replacing-auto-configuration.md"
+    },
+    {
+      "slug": "054-16-2-disabling-specific-auto-configuration",
+      "title": "16.2. 禁用特定的自动配置",
+      "file": "chapters/054-16-2-disabling-specific-auto-configuration.md"
+    },
+    {
+      "slug": "055-17-spring-beans-and-dependency-injection",
+      "title": "17. Spring Beans和依赖注入",
+      "file": "chapters/055-17-spring-beans-and-dependency-injection.md"
+    },
+    {
+      "slug": "056-18-using-the-springbootapplication-annotation",
+      "title": "18. 使用@SpringBootApplication注解",
+      "file": "chapters/056-18-using-the-springbootapplication-annotation.md"
+    },
+    {
+      "slug": "057-19-running-your-application",
+      "title": "19. 运行应用程序",
+      "file": "chapters/057-19-running-your-application.md"
+    },
+    {
+      "slug": "058-19-1-running-from-an-ide",
+      "title": "19.1. 从IDE中运行",
+      "file": "chapters/058-19-1-running-from-an-ide.md"
+    },
+    {
+      "slug": "059-19-2-running-as-a-packaged-application",
+      "title": "19.2. 作为一个打包后的应用运行",
+      "file": "chapters/059-19-2-running-as-a-packaged-application.md"
+    },
+    {
+      "slug": "060-19-3-using-the-maven-plugin",
+      "title": "19.3. 使用Maven插件运行",
+      "file": "chapters/060-19-3-using-the-maven-plugin.md"
+    },
+    {
+      "slug": "061-19-4-using-the-gradle-plugin",
+      "title": "19.4. 使用Gradle插件运行",
+      "file": "chapters/061-19-4-using-the-gradle-plugin.md"
+    },
+    {
+      "slug": "062-19-5-hot-swapping",
+      "title": "19.5. 热交换",
+      "file": "chapters/062-19-5-hot-swapping.md"
+    },
+    {
+      "slug": "063-20-developer-tools",
+      "title": "20. 开发者工具",
+      "file": "chapters/063-20-developer-tools.md"
+    },
+    {
+      "slug": "064-20-1-property-defaults",
+      "title": "20.1 默认属性",
+      "file": "chapters/064-20-1-property-defaults.md"
+    },
+    {
+      "slug": "065-20-2-automatic-restart",
+      "title": "20.2 自动重启",
+      "file": "chapters/065-20-2-automatic-restart.md"
+    },
+    {
+      "slug": "066-20-2-1-excluding-resources",
+      "title": "20.2.1 排除资源",
+      "file": "chapters/066-20-2-1-excluding-resources.md"
+    },
+    {
+      "slug": "067-20-2-2-watching-additional-paths",
+      "title": "20.2.2 查看其他路径",
+      "file": "chapters/067-20-2-2-watching-additional-paths.md"
+    },
+    {
+      "slug": "068-20-2-3-disabling-restart",
+      "title": "20.2.3 禁用重启",
+      "file": "chapters/068-20-2-3-disabling-restart.md"
+    },
+    {
+      "slug": "069-20-2-4-using-a-trigger-file",
+      "title": "20.2.4 使用触发器文件",
+      "file": "chapters/069-20-2-4-using-a-trigger-file.md"
+    },
+    {
+      "slug": "070-20-2-5-customizing-the-restart-classloader",
+      "title": "20.2.5 自定义restart类加载器",
+      "file": "chapters/070-20-2-5-customizing-the-restart-classloader.md"
+    },
+    {
+      "slug": "071-20-2-6-known-limitations",
+      "title": "20.2.6 已知限制",
+      "file": "chapters/071-20-2-6-known-limitations.md"
+    },
+    {
+      "slug": "072-20-3-livereload",
+      "title": "20.3 LiveReload",
+      "file": "chapters/072-20-3-livereload.md"
+    },
+    {
+      "slug": "073-20-4-global-settings",
+      "title": "20.4 全局设置",
+      "file": "chapters/073-20-4-global-settings.md"
+    },
+    {
+      "slug": "074-20-5-remote-applications",
+      "title": "20.5 远程应用",
+      "file": "chapters/074-20-5-remote-applications.md"
+    },
+    {
+      "slug": "075-20-5-1-running-the-remote-client-application",
+      "title": "20.5.1 运行远程客户端应用",
+      "file": "chapters/075-20-5-1-running-the-remote-client-application.md"
+    },
+    {
+      "slug": "076-20-5-2-remote-update",
+      "title": "20.5.2 远程更新",
+      "file": "chapters/076-20-5-2-remote-update.md"
+    },
+    {
+      "slug": "077-20-5-3-remote-debug-tunnel",
+      "title": "20.5.3 远程调试通道",
+      "file": "chapters/077-20-5-3-remote-debug-tunnel.md"
+    },
+    {
+      "slug": "078-21-packaging-your-application-for-production",
+      "title": "21. 打包用于生产的应用",
+      "file": "chapters/078-21-packaging-your-application-for-production.md"
+    },
+    {
+      "slug": "079-22-what-to-read-next",
+      "title": "22. 接下来阅读什么",
+      "file": "chapters/079-22-what-to-read-next.md"
+    },
+    {
+      "slug": "080-readme",
+      "title": "IV. Spring Boot特性",
+      "file": "chapters/080-readme.md"
+    },
+    {
+      "slug": "081-23-springapplication",
+      "title": "23. SpringApplication",
+      "file": "chapters/081-23-springapplication.md"
+    },
+    {
+      "slug": "082-23-1-startup-failure",
+      "title": "23.1 启动失败",
+      "file": "chapters/082-23-1-startup-failure.md"
+    },
+    {
+      "slug": "083-23-2-customizing-the-banner",
+      "title": "23.2. 自定义Banner",
+      "file": "chapters/083-23-2-customizing-the-banner.md"
+    },
+    {
+      "slug": "084-23-3-customizing-springapplication",
+      "title": "23.3. 自定义SpringApplication",
+      "file": "chapters/084-23-3-customizing-springapplication.md"
+    },
+    {
+      "slug": "085-23-4-fluent-builder-api",
+      "title": "23.4. 流式构建API",
+      "file": "chapters/085-23-4-fluent-builder-api.md"
+    },
+    {
+      "slug": "086-23-5-application-events-and-listeners",
+      "title": "23.5. Application事件和监听器",
+      "file": "chapters/086-23-5-application-events-and-listeners.md"
+    },
+    {
+      "slug": "087-23-6-web-environment",
+      "title": "23.6. Web环境",
+      "file": "chapters/087-23-6-web-environment.md"
+    },
+    {
+      "slug": "088-23-7-accessing-application-arguments",
+      "title": "23.7 访问应用参数",
+      "file": "chapters/088-23-7-accessing-application-arguments.md"
+    },
+    {
+      "slug": "089-23-8-using-the-applicationrunner-or-commandlinerunner",
+      "title": "23.8. 使用ApplicationRunner或CommandLineRunner",
+      "file": "chapters/089-23-8-using-the-applicationrunner-or-commandlinerunner.md"
+    },
+    {
+      "slug": "090-23-9-application-exit",
+      "title": "23.9 Application退出",
+      "file": "chapters/090-23-9-application-exit.md"
+    },
+    {
+      "slug": "091-24-externalized-configuration",
+      "title": "24.外化配置",
+      "file": "chapters/091-24-externalized-configuration.md"
+    },
+    {
+      "slug": "092-24-1-configuring-random-values",
+      "title": "24.1. 配置随机值",
+      "file": "chapters/092-24-1-configuring-random-values.md"
+    },
+    {
+      "slug": "093-24-2-accessing-command-line-properties",
+      "title": "24.2. 访问命令行属性",
+      "file": "chapters/093-24-2-accessing-command-line-properties.md"
+    },
+    {
+      "slug": "094-24-3-application-property-files",
+      "title": "24.3. Application属性文件",
+      "file": "chapters/094-24-3-application-property-files.md"
+    },
+    {
+      "slug": "095-24-4-profile-specific-properties",
+      "title": "24.4. Profile-specific属性",
+      "file": "chapters/095-24-4-profile-specific-properties.md"
+    },
+    {
+      "slug": "096-24-5-placeholders-in-properties",
+      "title": "24.5. 属性占位符",
+      "file": "chapters/096-24-5-placeholders-in-properties.md"
+    },
+    {
+      "slug": "097-24-6-using-yaml-instead-of-properties",
+      "title": "24.6. 使用YAML代替Properties",
+      "file": "chapters/097-24-6-using-yaml-instead-of-properties.md"
+    },
+    {
+      "slug": "098-24-6-1-loading-yaml",
+      "title": "24.6.1. 加载YAML",
+      "file": "chapters/098-24-6-1-loading-yaml.md"
+    },
+    {
+      "slug": "099-24-6-2-exposing-yaml-as-properties-in-the-spring-environment",
+      "title": "24.6.2. 在Spring环境中使用YAML暴露属性",
+      "file": "chapters/099-24-6-2-exposing-yaml-as-properties-in-the-spring-environment.md"
+    },
+    {
+      "slug": "100-24-6-3-multi-profile-yaml-documents",
+      "title": "24.6.3. Multi-profile YAML文档",
+      "file": "chapters/100-24-6-3-multi-profile-yaml-documents.md"
+    },
+    {
+      "slug": "101-24-6-4-yaml-shortcomings",
+      "title": "24.6.4. YAML缺点",
+      "file": "chapters/101-24-6-4-yaml-shortcomings.md"
+    },
+    {
+      "slug": "102-24-6-5-merging-yaml-lists",
+      "title": "24.6.5 合并YAML列表",
+      "file": "chapters/102-24-6-5-merging-yaml-lists.md"
+    },
+    {
+      "slug": "103-24-7-1-third-party-configuration",
+      "title": "24.7.1. 第三方配置",
+      "file": "chapters/103-24-7-1-third-party-configuration.md"
+    },
+    {
+      "slug": "104-24-7-2-relaxed-binding",
+      "title": "24.7.2. Relaxed绑定",
+      "file": "chapters/104-24-7-2-relaxed-binding.md"
+    },
+    {
+      "slug": "105-24-7-3-properties-conversion",
+      "title": "24.7.3 属性转换",
+      "file": "chapters/105-24-7-3-properties-conversion.md"
+    },
+    {
+      "slug": "106-24-7-4-configurationproperties-validation",
+      "title": "24.7.4. @ConfigurationProperties校验",
+      "file": "chapters/106-24-7-4-configurationproperties-validation.md"
+    },
+    {
+      "slug": "107-24-7-5-configurationproperties-vs-value",
+      "title": "24.7.5 @ConfigurationProperties vs @Value",
+      "file": "chapters/107-24-7-5-configurationproperties-vs-value.md"
+    },
+    {
+      "slug": "108-25-profiles",
+      "title": "25. Profiles",
+      "file": "chapters/108-25-profiles.md"
+    },
+    {
+      "slug": "109-25-1-adding-active-profiles",
+      "title": "25.1. 添加激活的profiles",
+      "file": "chapters/109-25-1-adding-active-profiles.md"
+    },
+    {
+      "slug": "110-25-2-programmatically-setting-profiles",
+      "title": "25.2.以编程方式设置profiles",
+      "file": "chapters/110-25-2-programmatically-setting-profiles.md"
+    },
+    {
+      "slug": "111-25-3-profile-specific-configuration-files",
+      "title": "25.3. Profile-specific配置文件",
+      "file": "chapters/111-25-3-profile-specific-configuration-files.md"
+    },
+    {
+      "slug": "112-26-1-log-format",
+      "title": "26.1. 日志格式",
+      "file": "chapters/112-26-1-log-format.md"
+    },
+    {
+      "slug": "113-26-2-console-output",
+      "title": "26.2. 控制台输出",
+      "file": "chapters/113-26-2-console-output.md"
+    },
+    {
+      "slug": "114-26-2-1-color-coded-output",
+      "title": "26.2.1 Color-coded输出",
+      "file": "chapters/114-26-2-1-color-coded-output.md"
+    },
+    {
+      "slug": "115-26-3-file-output",
+      "title": "26.3. 文件输出",
+      "file": "chapters/115-26-3-file-output.md"
+    },
+    {
+      "slug": "116-26-4-log-levels",
+      "title": "26.4. 日志级别",
+      "file": "chapters/116-26-4-log-levels.md"
+    },
+    {
+      "slug": "117-26-5-custom-log-configuration",
+      "title": "26.5. 自定义日志配置",
+      "file": "chapters/117-26-5-custom-log-configuration.md"
+    },
+    {
+      "slug": "118-26-6-logback-extensions",
+      "title": "26.6 Logback扩展",
+      "file": "chapters/118-26-6-logback-extensions.md"
+    },
+    {
+      "slug": "119-26-6-1-profile-specific-configuration",
+      "title": "26.6.1 Profile-specific配置",
+      "file": "chapters/119-26-6-1-profile-specific-configuration.md"
+    },
+    {
+      "slug": "120-26-6-2-environment-properties",
+      "title": "26.6.2 Environment属性",
+      "file": "chapters/120-26-6-2-environment-properties.md"
+    },
+    {
+      "slug": "121-27-developing-web-applications",
+      "title": "27. 开发Web应用",
+      "file": "chapters/121-27-developing-web-applications.md"
+    },
+    {
+      "slug": "122-27-1-the-spring-web-mvc-framework",
+      "title": "27.1. Spring Web MVC框架",
+      "file": "chapters/122-27-1-the-spring-web-mvc-framework.md"
+    },
+    {
+      "slug": "123-27-1-1-spring-mvc-auto-configuration",
+      "title": "27.1.1. Spring MVC自动配置",
+      "file": "chapters/123-27-1-1-spring-mvc-auto-configuration.md"
+    },
+    {
+      "slug": "124-27-1-2-httpmessageconverters",
+      "title": "27.1.2. HttpMessageConverters",
+      "file": "chapters/124-27-1-2-httpmessageconverters.md"
+    },
+    {
+      "slug": "125-27-1-3-custom-json-serializers-and-deserializers",
+      "title": "27.1.3 自定义JSON序列化器和反序列化器",
+      "file": "chapters/125-27-1-3-custom-json-serializers-and-deserializers.md"
+    },
+    {
+      "slug": "126-27-1-4-messagecodesresolver",
+      "title": "27.1.4 MessageCodesResolver",
+      "file": "chapters/126-27-1-4-messagecodesresolver.md"
+    },
+    {
+      "slug": "127-27-1-5-static-content",
+      "title": "27.1.5 静态内容",
+      "file": "chapters/127-27-1-5-static-content.md"
+    },
+    {
+      "slug": "128-27-1-6-configurablewebbindinginitializer",
+      "title": "27.1.6 ConfigurableWebBindingInitializer",
+      "file": "chapters/128-27-1-6-configurablewebbindinginitializer.md"
+    },
+    {
+      "slug": "129-27-1-7-template-engines",
+      "title": "27.1.7 模板引擎",
+      "file": "chapters/129-27-1-7-template-engines.md"
+    },
+    {
+      "slug": "130-27-1-8-error-handling",
+      "title": "27.1.8 错误处理",
+      "file": "chapters/130-27-1-8-error-handling.md"
+    },
+    {
+      "slug": "131-27-1-9-spring-hateoas",
+      "title": "27.1.9 Spring HATEOAS",
+      "file": "chapters/131-27-1-9-spring-hateoas.md"
+    },
+    {
+      "slug": "132-27-1-10-cors-support",
+      "title": "27.1.10 CORS支持",
+      "file": "chapters/132-27-1-10-cors-support.md"
+    },
+    {
+      "slug": "133-27-2-jax-rs-and-jersey",
+      "title": "27.2 JAX-RS和Jersey",
+      "file": "chapters/133-27-2-jax-rs-and-jersey.md"
+    },
+    {
+      "slug": "134-27-3-embedded-servlet-container-support",
+      "title": "27.3 内嵌servlet容器支持",
+      "file": "chapters/134-27-3-embedded-servlet-container-support.md"
+    },
+    {
+      "slug": "135-27-3-1-servlets-filters-and-listeners",
+      "title": "27.3.1 Servlets, Filters和listeners",
+      "file": "chapters/135-27-3-1-servlets-filters-and-listeners.md"
+    },
+    {
+      "slug": "136-27-3-2-servlet-context-initialization",
+      "title": "27.3.2 Servlet上下文初始化",
+      "file": "chapters/136-27-3-2-servlet-context-initialization.md"
+    },
+    {
+      "slug": "137-27-3-4-customizing-embedded-servlet-containers",
+      "title": "27.3.4 自定义内嵌servlet容器",
+      "file": "chapters/137-27-3-4-customizing-embedded-servlet-containers.md"
+    },
+    {
+      "slug": "138-27-3-5-jsp-limitations",
+      "title": "27.3.5 JSP的限制",
+      "file": "chapters/138-27-3-5-jsp-limitations.md"
+    },
+    {
+      "slug": "139-28-security",
+      "title": "28. 安全",
+      "file": "chapters/139-28-security.md"
+    },
+    {
+      "slug": "140-28-1-oauth2",
+      "title": "28.1 OAuth2",
+      "file": "chapters/140-28-1-oauth2.md"
+    },
+    {
+      "slug": "141-28-1-1-authorization-server",
+      "title": "28.1.1 授权服务器",
+      "file": "chapters/141-28-1-1-authorization-server.md"
+    },
+    {
+      "slug": "142-28-1-2-resource-server",
+      "title": "28.1.2 资源服务器",
+      "file": "chapters/142-28-1-2-resource-server.md"
+    },
+    {
+      "slug": "143-28-2-token-type-in-user-info",
+      "title": "28.2 User Info中的Token类型",
+      "file": "chapters/143-28-2-token-type-in-user-info.md"
+    },
+    {
+      "slug": "144-28-3-customizing-the-user-info-resttemplate",
+      "title": "28.3 自定义User Info RestTemplate",
+      "file": "chapters/144-28-3-customizing-the-user-info-resttemplate.md"
+    },
+    {
+      "slug": "145-28-3-1-client",
+      "title": "28.3.1 客户端",
+      "file": "chapters/145-28-3-1-client.md"
+    },
+    {
+      "slug": "146-28-3-2-single-sign-on",
+      "title": "28.3.2 单点登陆",
+      "file": "chapters/146-28-3-2-single-sign-on.md"
+    },
+    {
+      "slug": "147-28-4-actuator-security",
+      "title": "28.4 Actuator安全",
+      "file": "chapters/147-28-4-actuator-security.md"
+    },
+    {
+      "slug": "148-29-working-with-sql-databases",
+      "title": "29. 使用SQL数据库",
+      "file": "chapters/148-29-working-with-sql-databases.md"
+    },
+    {
+      "slug": "149-29-1-configure-a-datasource",
+      "title": "29.1. 配置DataSource",
+      "file": "chapters/149-29-1-configure-a-datasource.md"
+    },
+    {
+      "slug": "150-29-1-1-embedded-database-support",
+      "title": "29.1.1. 对内嵌数据库的支持",
+      "file": "chapters/150-29-1-1-embedded-database-support.md"
+    },
+    {
+      "slug": "151-29-1-2-connection-to-a-production-database",
+      "title": "29.1.2. 连接生产环境数据库",
+      "file": "chapters/151-29-1-2-connection-to-a-production-database.md"
+    },
+    {
+      "slug": "152-29-1-3-connection-to-a-jndi-datasource",
+      "title": "29.1.3. 连接JNDI数据库",
+      "file": "chapters/152-29-1-3-connection-to-a-jndi-datasource.md"
+    },
+    {
+      "slug": "153-29-2-using-jdbctemplate",
+      "title": "29.2. 使用JdbcTemplate",
+      "file": "chapters/153-29-2-using-jdbctemplate.md"
+    },
+    {
+      "slug": "154-29-3-jpa-and-spring-data",
+      "title": "29.3. JPA和Spring Data",
+      "file": "chapters/154-29-3-jpa-and-spring-data.md"
+    },
+    {
+      "slug": "155-29-3-1-entity-classes",
+      "title": "29.3.1. 实体类",
+      "file": "chapters/155-29-3-1-entity-classes.md"
+    },
+    {
+      "slug": "156-29-3-2-spring-data-jpa-repositories",
+      "title": "29.3.2. Spring Data JPA仓库",
+      "file": "chapters/156-29-3-2-spring-data-jpa-repositories.md"
+    },
+    {
+      "slug": "157-29-3-3-creating-and-dropping-jpa-databases",
+      "title": "29.3.3. 创建和删除JPA数据库",
+      "file": "chapters/157-29-3-3-creating-and-dropping-jpa-databases.md"
+    },
+    {
+      "slug": "158-29-4-using-h2-s-web-console",
+      "title": "29.4 使用H2的web控制台",
+      "file": "chapters/158-29-4-using-h2-s-web-console.md"
+    },
+    {
+      "slug": "159-29-4-1-changing-the-h2-console-s-path",
+      "title": "29.4.1 改变H2控制台路径",
+      "file": "chapters/159-29-4-1-changing-the-h2-console-s-path.md"
+    },
+    {
+      "slug": "160-29-4-2-securing-the-h2-console",
+      "title": "29.4.2 保护H2控制台",
+      "file": "chapters/160-29-4-2-securing-the-h2-console.md"
+    },
+    {
+      "slug": "161-29-5-using-jooq",
+      "title": "29.5 使用jOOQ",
+      "file": "chapters/161-29-5-using-jooq.md"
+    },
+    {
+      "slug": "162-29-5-1-code-generation",
+      "title": "29.5.1 代码生成",
+      "file": "chapters/162-29-5-1-code-generation.md"
+    },
+    {
+      "slug": "163-29-5-2-using-dslcontext",
+      "title": "29.5.2 使用DSLContext",
+      "file": "chapters/163-29-5-2-using-dslcontext.md"
+    },
+    {
+      "slug": "164-29-5-3-customizing-jooq",
+      "title": "29.5.3 自定义jOOQ",
+      "file": "chapters/164-29-5-3-customizing-jooq.md"
+    },
+    {
+      "slug": "165-30-working-with-nosql-technologies",
+      "title": "30. 使用NoSQL技术",
+      "file": "chapters/165-30-working-with-nosql-technologies.md"
+    },
+    {
+      "slug": "166-30-1-redis",
+      "title": "30.1. Redis",
+      "file": "chapters/166-30-1-redis.md"
+    },
+    {
+      "slug": "167-30-1-1-connecting-to-redis",
+      "title": "30.1.1. 连接Redis",
+      "file": "chapters/167-30-1-1-connecting-to-redis.md"
+    },
+    {
+      "slug": "168-30-2-mongodb",
+      "title": "30.2. MongoDB",
+      "file": "chapters/168-30-2-mongodb.md"
+    },
+    {
+      "slug": "169-30-2-1-connecting-to-a-mongodb-database",
+      "title": "30.2.1. 连接MongoDB数据库",
+      "file": "chapters/169-30-2-1-connecting-to-a-mongodb-database.md"
+    },
+    {
+      "slug": "170-30-2-2-mongotemplate",
+      "title": "30.2.2. MongoDBTemplate",
+      "file": "chapters/170-30-2-2-mongotemplate.md"
+    },
+    {
+      "slug": "171-30-2-3-spring-data-mongodb-repositories",
+      "title": "30.2.3. Spring Data MongoDB仓库",
+      "file": "chapters/171-30-2-3-spring-data-mongodb-repositories.md"
+    },
+    {
+      "slug": "172-30-2-4-embedded-mongo",
+      "title": "30.2.4 内嵌的Mongo",
+      "file": "chapters/172-30-2-4-embedded-mongo.md"
+    },
+    {
+      "slug": "173-30-3-neo4j",
+      "title": "30.3 Neo4j",
+      "file": "chapters/173-30-3-neo4j.md"
+    },
+    {
+      "slug": "174-30-3-1-connecting-to-a-neo4j-database",
+      "title": "30.3.1 连接Neo4j数据库",
+      "file": "chapters/174-30-3-1-connecting-to-a-neo4j-database.md"
+    },
+    {
+      "slug": "175-30-3-2-using-the-embedded-mode",
+      "title": "30.3.2 使用内嵌模式",
+      "file": "chapters/175-30-3-2-using-the-embedded-mode.md"
+    },
+    {
+      "slug": "176-30-3-3-neo4jsession",
+      "title": "30.3.3 Neo4jSession",
+      "file": "chapters/176-30-3-3-neo4jsession.md"
+    },
+    {
+      "slug": "177-30-3-4-spring-data-neo4j-repositories",
+      "title": "30.3.4 Spring Data Neo4j仓库",
+      "file": "chapters/177-30-3-4-spring-data-neo4j-repositories.md"
+    },
+    {
+      "slug": "178-30-3-5-repository-example",
+      "title": "30.3.5 仓库示例",
+      "file": "chapters/178-30-3-5-repository-example.md"
+    },
+    {
+      "slug": "179-30-4-gemfire",
+      "title": "30.4 Gemfire",
+      "file": "chapters/179-30-4-gemfire.md"
+    },
+    {
+      "slug": "180-30-5-solr",
+      "title": "30.5 Solr",
+      "file": "chapters/180-30-5-solr.md"
+    },
+    {
+      "slug": "181-30-5-1-connecting-to-solr",
+      "title": "30.5.1 连接Solr",
+      "file": "chapters/181-30-5-1-connecting-to-solr.md"
+    },
+    {
+      "slug": "182-30-5-2-spring-data-solr-repositories",
+      "title": "30.5.2 Spring Data Solr仓库",
+      "file": "chapters/182-30-5-2-spring-data-solr-repositories.md"
+    },
+    {
+      "slug": "183-30-6-elasticsearch",
+      "title": "30.6 Elasticsearch",
+      "file": "chapters/183-30-6-elasticsearch.md"
+    },
+    {
+      "slug": "184-30-6-1-connecting-to-elasticsearch-using-jest",
+      "title": "30.6.1 使用Jest连接Elasticsearch",
+      "file": "chapters/184-30-6-1-connecting-to-elasticsearch-using-jest.md"
+    },
+    {
+      "slug": "185-30-6-2-connecting-to-elasticsearch-using-spring-data",
+      "title": "30.6.2 使用Spring Data连接Elasticsearch",
+      "file": "chapters/185-30-6-2-connecting-to-elasticsearch-using-spring-data.md"
+    },
+    {
+      "slug": "186-30-6-3-spring-data-elasticsearch-repositories",
+      "title": "30.6.3 Spring Data Elasticseach仓库",
+      "file": "chapters/186-30-6-3-spring-data-elasticsearch-repositories.md"
+    },
+    {
+      "slug": "187-30-7-cassandra",
+      "title": "30.7 Cassandra",
+      "file": "chapters/187-30-7-cassandra.md"
+    },
+    {
+      "slug": "188-30-7-1-connecting-to-cassandra",
+      "title": "30.7.1 连接Cassandra",
+      "file": "chapters/188-30-7-1-connecting-to-cassandra.md"
+    },
+    {
+      "slug": "189-30-7-2-spring-data-cassandra-repositories",
+      "title": "30.7.2 Spring Data Cassandra仓库",
+      "file": "chapters/189-30-7-2-spring-data-cassandra-repositories.md"
+    },
+    {
+      "slug": "190-30-8-couchbase",
+      "title": "30.8 Couchbase",
+      "file": "chapters/190-30-8-couchbase.md"
+    },
+    {
+      "slug": "191-30-8-1-connecting-to-couchbase",
+      "title": "30.8.1 连接Couchbase",
+      "file": "chapters/191-30-8-1-connecting-to-couchbase.md"
+    },
+    {
+      "slug": "192-30-8-2-spring-data-couchbase-repositories",
+      "title": "30.8.2 Spring Data Couchbase仓库",
+      "file": "chapters/192-30-8-2-spring-data-couchbase-repositories.md"
+    },
+    {
+      "slug": "193-31-caching",
+      "title": "31. 缓存",
+      "file": "chapters/193-31-caching.md"
+    },
+    {
+      "slug": "194-31-1-supported-cache-providers",
+      "title": "31.1 支持的缓存提供商",
+      "file": "chapters/194-31-1-supported-cache-providers.md"
+    },
+    {
+      "slug": "195-31-1-1-generic",
+      "title": "31.1.1 Generic",
+      "file": "chapters/195-31-1-1-generic.md"
+    },
+    {
+      "slug": "196-31-1-3-ehcache-2-x",
+      "title": "31.1.3 EhCache 2.x",
+      "file": "chapters/196-31-1-3-ehcache-2-x.md"
+    },
+    {
+      "slug": "197-31-1-4-hazelcast",
+      "title": "31.1.4 Hazelcast",
+      "file": "chapters/197-31-1-4-hazelcast.md"
+    },
+    {
+      "slug": "198-31-1-5-infinispan",
+      "title": "31.1.5 Infinispan",
+      "file": "chapters/198-31-1-5-infinispan.md"
+    },
+    {
+      "slug": "199-31-1-6-couchbase",
+      "title": "31.1.6 Couchbase",
+      "file": "chapters/199-31-1-6-couchbase.md"
+    },
+    {
+      "slug": "200-31-1-7-redis",
+      "title": "31.1.7 Redis",
+      "file": "chapters/200-31-1-7-redis.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "56909e9b38c7",
+  "title": "Rails 102",
+  "url": "https://www.gitbook.com/book/rocodev/rails-102/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:17.008Z",
+  "chapters": [
+    {
+      "slug": "001-1i",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1i.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

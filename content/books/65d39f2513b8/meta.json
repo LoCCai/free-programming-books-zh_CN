@@ -1,0 +1,16 @@
+{
+  "bookId": "65d39f2513b8",
+  "title": "Python快速教程",
+  "url": "http://www.cnblogs.com/vamei/archive/2012/09/13/2682778.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:35.415Z",
+  "chapters": [
+    {
+      "slug": "001-1o",
+      "title": "Python快速教程 - Vamei - 博客园",
+      "file": "chapters/001-1o.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Python快速教程 - Vamei - 博客园"
+}

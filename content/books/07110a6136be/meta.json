@@ -1,0 +1,275 @@
+{
+  "bookId": "07110a6136be",
+  "title": "Logstash 最佳实践",
+  "url": "https://github.com/chenryn/logstash-best-practice-cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:06.961Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "简介",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "基础知识",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-introduction",
+      "title": "介绍",
+      "file": "chapters/003-introduction.md"
+    },
+    {
+      "slug": "004-install",
+      "title": "安装",
+      "file": "chapters/004-install.md"
+    },
+    {
+      "slug": "005-hello-world",
+      "title": "Hello World",
+      "file": "chapters/005-hello-world.md"
+    },
+    {
+      "slug": "006-daemon",
+      "title": "长期运行",
+      "file": "chapters/006-daemon.md"
+    },
+    {
+      "slug": "007-full-config",
+      "title": "配置语法",
+      "file": "chapters/007-full-config.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "输入插件(Input)",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-stdin",
+      "title": "标准输入(Stdin)",
+      "file": "chapters/009-stdin.md"
+    },
+    {
+      "slug": "010-file",
+      "title": "读取文件(File)",
+      "file": "chapters/010-file.md"
+    },
+    {
+      "slug": "011-tcp",
+      "title": "读取网络数据(TCP)",
+      "file": "chapters/011-tcp.md"
+    },
+    {
+      "slug": "012-generator",
+      "title": "生成测试数据(Generator)",
+      "file": "chapters/012-generator.md"
+    },
+    {
+      "slug": "013-syslog",
+      "title": "读取 Syslog 数据",
+      "file": "chapters/013-syslog.md"
+    },
+    {
+      "slug": "014-redis",
+      "title": "读取 Redis 数据",
+      "file": "chapters/014-redis.md"
+    },
+    {
+      "slug": "015-collectd",
+      "title": "读取 Collectd 数据",
+      "file": "chapters/015-collectd.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "编码插件(Codec)",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-json",
+      "title": "采用 JSON 编码",
+      "file": "chapters/017-json.md"
+    },
+    {
+      "slug": "018-multiline",
+      "title": "合并多行数据(Multiline)",
+      "file": "chapters/018-multiline.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "过滤器插件(Filter)",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-grok",
+      "title": "Grok 正则捕获",
+      "file": "chapters/020-grok.md"
+    },
+    {
+      "slug": "021-date",
+      "title": "时间处理(Date)",
+      "file": "chapters/021-date.md"
+    },
+    {
+      "slug": "022-mutate",
+      "title": "数据修改(Mutate)",
+      "file": "chapters/022-mutate.md"
+    },
+    {
+      "slug": "023-geoip",
+      "title": "GeoIP 查询归类",
+      "file": "chapters/023-geoip.md"
+    },
+    {
+      "slug": "024-json",
+      "title": "JSON 编解码",
+      "file": "chapters/024-json.md"
+    },
+    {
+      "slug": "025-split",
+      "title": "split 拆分事件",
+      "file": "chapters/025-split.md"
+    },
+    {
+      "slug": "026-useragent",
+      "title": "UserAgent 匹配归类",
+      "file": "chapters/026-useragent.md"
+    },
+    {
+      "slug": "027-kv",
+      "title": "Key-Value 切分",
+      "file": "chapters/027-kv.md"
+    },
+    {
+      "slug": "028-ruby",
+      "title": "随心所欲的 Ruby 处理",
+      "file": "chapters/028-ruby.md"
+    },
+    {
+      "slug": "029-metrics",
+      "title": "数值统计(Metrics)",
+      "file": "chapters/029-metrics.md"
+    },
+    {
+      "slug": "030-readme",
+      "title": "输出插件(Output)",
+      "file": "chapters/030-readme.md"
+    },
+    {
+      "slug": "031-stdout",
+      "title": "标准输出(Stdout)",
+      "file": "chapters/031-stdout.md"
+    },
+    {
+      "slug": "032-file",
+      "title": "保存成文件(File)",
+      "file": "chapters/032-file.md"
+    },
+    {
+      "slug": "033-elasticsearch",
+      "title": "保存进 Elasticsearch",
+      "file": "chapters/033-elasticsearch.md"
+    },
+    {
+      "slug": "034-redis",
+      "title": "输出到 Redis",
+      "file": "chapters/034-redis.md"
+    },
+    {
+      "slug": "035-tcp",
+      "title": "输出网络数据(TCP)",
+      "file": "chapters/035-tcp.md"
+    },
+    {
+      "slug": "036-statsd",
+      "title": "输出到 Statsd",
+      "file": "chapters/036-statsd.md"
+    },
+    {
+      "slug": "037-nagios",
+      "title": "报警到 Nagios",
+      "file": "chapters/037-nagios.md"
+    },
+    {
+      "slug": "038-email",
+      "title": "发送邮件(Email)",
+      "file": "chapters/038-email.md"
+    },
+    {
+      "slug": "039-exec",
+      "title": "调用命令执行(Exec)",
+      "file": "chapters/039-exec.md"
+    },
+    {
+      "slug": "040-readme",
+      "title": "尚未进入官方库的常用插件",
+      "file": "chapters/040-readme.md"
+    },
+    {
+      "slug": "041-kafka",
+      "title": "Kafka",
+      "file": "chapters/041-kafka.md"
+    },
+    {
+      "slug": "042-hdfs",
+      "title": "HDFS",
+      "file": "chapters/042-hdfs.md"
+    },
+    {
+      "slug": "043-scribe",
+      "title": "Scribe",
+      "file": "chapters/043-scribe.md"
+    },
+    {
+      "slug": "044-readme",
+      "title": "深入了解",
+      "file": "chapters/044-readme.md"
+    },
+    {
+      "slug": "045-write-your-own",
+      "title": "自己写一个插件",
+      "file": "chapters/045-write-your-own.md"
+    },
+    {
+      "slug": "046-why-jvm-and-howto-run-with-mri",
+      "title": "为什么用 JRuby? 能用 MRI 运行么?",
+      "file": "chapters/046-why-jvm-and-howto-run-with-mri.md"
+    },
+    {
+      "slug": "047-readme",
+      "title": "周边项目",
+      "file": "chapters/047-readme.md"
+    },
+    {
+      "slug": "048-rsyslog",
+      "title": "Rsyslog",
+      "file": "chapters/048-rsyslog.md"
+    },
+    {
+      "slug": "049-logstash-forwarder",
+      "title": "logstash-forwarder",
+      "file": "chapters/049-logstash-forwarder.md"
+    },
+    {
+      "slug": "050-nxlog",
+      "title": "nxlog",
+      "file": "chapters/050-nxlog.md"
+    },
+    {
+      "slug": "051-heka",
+      "title": "heka",
+      "file": "chapters/051-heka.md"
+    },
+    {
+      "slug": "052-message-passing",
+      "title": "Message::Passing",
+      "file": "chapters/052-message-passing.md"
+    },
+    {
+      "slug": "053-fluent",
+      "title": "fluent",
+      "file": "chapters/053-fluent.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "f3e7afc80b3d",
+  "title": "Perl 程序员应该知道的事",
+  "url": "http://perl.linuxtoy.org/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:01.685Z",
+  "chapters": [
+    {
+      "slug": "001-p",
+      "title": "Perl 程序员应该知道的事",
+      "file": "chapters/001-p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Perl 程序员应该知道的事"
+}

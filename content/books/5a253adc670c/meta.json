@@ -1,0 +1,16 @@
+{
+  "bookId": "5a253adc670c",
+  "title": "Rust编程语言 中文翻译",
+  "url": "https://kaisery.github.io/trpl-zh-cn/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:18.808Z",
+  "chapters": [
+    {
+      "slug": "001-11",
+      "title": "Rust 程序设计语言 - Rust 程序设计语言 简体中文版",
+      "file": "chapters/001-11.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Rust 程序设计语言 - Rust 程序设计语言 简体中文版"
+}

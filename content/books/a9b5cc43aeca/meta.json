@@ -1,0 +1,16 @@
+{
+  "bookId": "a9b5cc43aeca",
+  "title": "《不可替代的团队领袖培养计划》",
+  "url": "https://leader.js.cool/#/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:40.650Z",
+  "chapters": [
+    {
+      "slug": "001-p",
+      "title": "《不可替代的团队领袖培养计划》",
+      "file": "chapters/001-p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "《不可替代的团队领袖培养计划》"
+}

@@ -1,0 +1,9 @@
+{
+  "bookId": "10ec709f3b19",
+  "title": "Web安全学习笔记",
+  "url": "https://websec.readthedocs.io",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:25:49.851Z",
+  "chapters": [],
+  "error": "HTTP 429"
+}

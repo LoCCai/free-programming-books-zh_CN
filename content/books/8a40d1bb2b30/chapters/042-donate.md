@@ -1,0 +1,11 @@
+## 资助
+
+如果你认为本书对你起到了帮助，并希望赞助作者，可以通过下面的二维码给予支持：
+
+|微信|支付宝|
+|:--:|:--:|
+|![](https://raw.githubusercontent.com/changkun/modern-cpp-tutorial/HEAD/website/src/modern-cpp/assets/wechat.jpg) | ![](https://raw.githubusercontent.com/changkun/modern-cpp-tutorial/HEAD/website/src/modern-cpp/assets/alipay.jpg)|
+
+你也可以通过 PayPal 资助：
+
+[![](https://img.shields.io/badge/donate-PayPal-104098.svg?style=popout-square&logo=PayPal)](https://www.paypal.me/changkunde/4.99eur)

@@ -1,0 +1,9 @@
+{
+  "bookId": "189343c5e2dc",
+  "title": "Fabric 中文文档",
+  "url": "https://fabric-chs.readthedocs.io",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:26:20.566Z",
+  "chapters": [],
+  "error": "HTTP 429"
+}

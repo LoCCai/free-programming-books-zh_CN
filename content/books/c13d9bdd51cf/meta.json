@@ -1,0 +1,16 @@
+{
+  "bookId": "c13d9bdd51cf",
+  "title": "笨方法學 Ruby",
+  "url": "http://lrthw.github.io/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:13.250Z",
+  "chapters": [
+    {
+      "slug": "001-n",
+      "title": "Learn Ruby The Hard Way",
+      "file": "chapters/001-n.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Learn Ruby The Hard Way"
+}

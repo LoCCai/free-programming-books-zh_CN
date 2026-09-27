@@ -1,0 +1,690 @@
+{
+  "bookId": "15385aa1d6e4",
+  "title": "中文版《QmlBook》",
+  "url": "https://github.com/cwc1987/QmlBook-In-Chinese",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:31.349Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Introduction",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Qt5概述",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-preface",
+      "title": "序",
+      "file": "chapters/003-preface.md"
+    },
+    {
+      "slug": "004-qt5-introduction",
+      "title": "Qt5介绍",
+      "file": "chapters/004-qt5-introduction.md"
+    },
+    {
+      "slug": "005-qt-building-blocks",
+      "title": "Qt构建模块（Qt Building Blocks）",
+      "file": "chapters/005-qt-building-blocks.md"
+    },
+    {
+      "slug": "006-qt-project",
+      "title": "Qt项目（Qt Project）",
+      "file": "chapters/006-qt-project.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "开始学习（Get Start）",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-qt5installing-qt-5-sdk",
+      "title": "安装Qt5软件工具包（Installing Qt 5 SDK）",
+      "file": "chapters/008-qt5installing-qt-5-sdk.md"
+    },
+    {
+      "slug": "009-hello-world",
+      "title": "你好世界（Hello World）",
+      "file": "chapters/009-hello-world.md"
+    },
+    {
+      "slug": "010-application-types",
+      "title": "应用程序类型（Application Types）",
+      "file": "chapters/010-application-types.md"
+    },
+    {
+      "slug": "011-summary",
+      "title": "总结（ Summary）",
+      "file": "chapters/011-summary.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "Qt Creator集成开发环境（Qt Creator IDE）",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-the-user-interface",
+      "title": "用户界面（The User Interface）",
+      "file": "chapters/013-the-user-interface.md"
+    },
+    {
+      "slug": "014-qtregistering-your-qt-kit",
+      "title": "注册你的Qt工具箱（Registering your Qt Kit）",
+      "file": "chapters/014-qtregistering-your-qt-kit.md"
+    },
+    {
+      "slug": "015-managing-projects",
+      "title": "项目管理（Managing Projects）",
+      "file": "chapters/015-managing-projects.md"
+    },
+    {
+      "slug": "016-using-the-editor",
+      "title": "使用编辑器（Using the Editor）",
+      "file": "chapters/016-using-the-editor.md"
+    },
+    {
+      "slug": "017-locator",
+      "title": "定位器（Locator）",
+      "file": "chapters/017-locator.md"
+    },
+    {
+      "slug": "018-debugging",
+      "title": "调试（Debugging）",
+      "file": "chapters/018-debugging.md"
+    },
+    {
+      "slug": "019-shortcuts",
+      "title": "快捷键（Shortcuts）",
+      "file": "chapters/019-shortcuts.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "QML快速入门（Quick Starter）",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-qmlqml-syntax",
+      "title": "QML语法（QML Syntax）",
+      "file": "chapters/021-qmlqml-syntax.md"
+    },
+    {
+      "slug": "022-basic-elements",
+      "title": "基本元素（Basic Elements）",
+      "file": "chapters/022-basic-elements.md"
+    },
+    {
+      "slug": "023-compontents",
+      "title": "组件（Compontents）",
+      "file": "chapters/023-compontents.md"
+    },
+    {
+      "slug": "024-simple-transformations",
+      "title": "简单的转换（Simple Transformations）",
+      "file": "chapters/024-simple-transformations.md"
+    },
+    {
+      "slug": "025-positioning-element",
+      "title": "定位元素（Positioning Element）",
+      "file": "chapters/025-positioning-element.md"
+    },
+    {
+      "slug": "026-layout-items",
+      "title": "布局元素（Layout Items）",
+      "file": "chapters/026-layout-items.md"
+    },
+    {
+      "slug": "027-input-element",
+      "title": "输入元素（Input Element）",
+      "file": "chapters/027-input-element.md"
+    },
+    {
+      "slug": "028-advanced-techniques",
+      "title": "高级用法（Advanced Techniques）",
+      "file": "chapters/028-advanced-techniques.md"
+    },
+    {
+      "slug": "029-readme",
+      "title": "动态元素（Fluid Elements）",
+      "file": "chapters/029-readme.md"
+    },
+    {
+      "slug": "030-animations",
+      "title": "动画（Animations）",
+      "file": "chapters/030-animations.md"
+    },
+    {
+      "slug": "031-states-and-transitions",
+      "title": "状态与过渡（States and Transitions）",
+      "file": "chapters/031-states-and-transitions.md"
+    },
+    {
+      "slug": "032-advanced-techniques",
+      "title": "高级用法（Advanced Techniques）",
+      "file": "chapters/032-advanced-techniques.md"
+    },
+    {
+      "slug": "033-readme",
+      "title": "模型-视图-代理（Model-View-Delegate）",
+      "file": "chapters/033-readme.md"
+    },
+    {
+      "slug": "034-concept",
+      "title": "概念（Concept）",
+      "file": "chapters/034-concept.md"
+    },
+    {
+      "slug": "035-basic-model",
+      "title": "基础模型（Basic Model）",
+      "file": "chapters/035-basic-model.md"
+    },
+    {
+      "slug": "036-dynamic-views",
+      "title": "动态视图（Dynamic Views）",
+      "file": "chapters/036-dynamic-views.md"
+    },
+    {
+      "slug": "037-delegate",
+      "title": "代理（Delegate）",
+      "file": "chapters/037-delegate.md"
+    },
+    {
+      "slug": "038-advanced-techniques",
+      "title": "高级用法（Advanced Techniques）",
+      "file": "chapters/038-advanced-techniques.md"
+    },
+    {
+      "slug": "039-summary",
+      "title": "总结（Summary）",
+      "file": "chapters/039-summary.md"
+    },
+    {
+      "slug": "040-readme",
+      "title": "画布元素（Canvas Element）",
+      "file": "chapters/040-readme.md"
+    },
+    {
+      "slug": "041-convenient-api",
+      "title": "便捷的接口（Convenient API）",
+      "file": "chapters/041-convenient-api.md"
+    },
+    {
+      "slug": "042-gradients",
+      "title": "渐变（Gradients）",
+      "file": "chapters/042-gradients.md"
+    },
+    {
+      "slug": "043-shadows",
+      "title": "阴影（Shadows）",
+      "file": "chapters/043-shadows.md"
+    },
+    {
+      "slug": "044-images",
+      "title": "图片（Images）",
+      "file": "chapters/044-images.md"
+    },
+    {
+      "slug": "045-transformation",
+      "title": "转换（Transformation）",
+      "file": "chapters/045-transformation.md"
+    },
+    {
+      "slug": "046-composition-mode",
+      "title": "组合模式（Composition Mode）",
+      "file": "chapters/046-composition-mode.md"
+    },
+    {
+      "slug": "047-pixels-buffer",
+      "title": "像素缓冲（Pixels Buffer）",
+      "file": "chapters/047-pixels-buffer.md"
+    },
+    {
+      "slug": "048-canvas-paint",
+      "title": "画布绘制（Canvas Paint）",
+      "file": "chapters/048-canvas-paint.md"
+    },
+    {
+      "slug": "049-html5porting-from-html5-canvas",
+      "title": "HTML5画布移植（Porting from HTML5 Canvas）",
+      "file": "chapters/049-html5porting-from-html5-canvas.md"
+    },
+    {
+      "slug": "050-readme",
+      "title": "粒子模拟（Particle Simulations）",
+      "file": "chapters/050-readme.md"
+    },
+    {
+      "slug": "051-concept",
+      "title": "概念（Concept）",
+      "file": "chapters/051-concept.md"
+    },
+    {
+      "slug": "052-simple-simulation",
+      "title": "简单的模拟（Simple Simulation）",
+      "file": "chapters/052-simple-simulation.md"
+    },
+    {
+      "slug": "053-particle-parameters",
+      "title": "粒子参数（Particle Parameters）",
+      "file": "chapters/053-particle-parameters.md"
+    },
+    {
+      "slug": "054-directed-particle",
+      "title": "粒子方向（Directed Particle）",
+      "file": "chapters/054-directed-particle.md"
+    },
+    {
+      "slug": "055-particle-painter",
+      "title": "粒子画笔（Particle Painter）",
+      "file": "chapters/055-particle-painter.md"
+    },
+    {
+      "slug": "056-affecting-particles",
+      "title": "粒子控制（Affecting Particles）",
+      "file": "chapters/056-affecting-particles.md"
+    },
+    {
+      "slug": "057-particle-group",
+      "title": "粒子组（Particle Group）",
+      "file": "chapters/057-particle-group.md"
+    },
+    {
+      "slug": "058-summary",
+      "title": "总结（Summary）",
+      "file": "chapters/058-summary.md"
+    },
+    {
+      "slug": "059-readme",
+      "title": "着色器效果（Shader Effect）",
+      "file": "chapters/059-readme.md"
+    },
+    {
+      "slug": "060-openglopengl-shader",
+      "title": "OpenGL着色器（OpenGL Shader）",
+      "file": "chapters/060-openglopengl-shader.md"
+    },
+    {
+      "slug": "061-shader-elements",
+      "title": "着色器元素（Shader Elements）",
+      "file": "chapters/061-shader-elements.md"
+    },
+    {
+      "slug": "062-fragement-shader",
+      "title": "片段着色器（Fragement Shader）",
+      "file": "chapters/062-fragement-shader.md"
+    },
+    {
+      "slug": "063-wave-effect",
+      "title": "波浪效果（Wave Effect）",
+      "file": "chapters/063-wave-effect.md"
+    },
+    {
+      "slug": "064-vertex-shader",
+      "title": "顶点着色器（Vertex Shader）",
+      "file": "chapters/064-vertex-shader.md"
+    },
+    {
+      "slug": "065-curtain-effect",
+      "title": "剧幕效果（Curtain Effect）",
+      "file": "chapters/065-curtain-effect.md"
+    },
+    {
+      "slug": "066-qtqt-graphicseffect-library",
+      "title": "Qt图像效果库（Qt GraphicsEffect Library）",
+      "file": "chapters/066-qtqt-graphicseffect-library.md"
+    },
+    {
+      "slug": "067-readme",
+      "title": "多媒体（Multimedia）",
+      "file": "chapters/067-readme.md"
+    },
+    {
+      "slug": "068-playing-media",
+      "title": "媒体播放（Playing Media）",
+      "file": "chapters/068-playing-media.md"
+    },
+    {
+      "slug": "069-sounds-effects",
+      "title": "声音效果（Sounds Effects）",
+      "file": "chapters/069-sounds-effects.md"
+    },
+    {
+      "slug": "070-video-streams",
+      "title": "视频流（Video Streams）",
+      "file": "chapters/070-video-streams.md"
+    },
+    {
+      "slug": "071-capturing-images",
+      "title": "捕捉图像（Capturing Images）",
+      "file": "chapters/071-capturing-images.md"
+    },
+    {
+      "slug": "072-advanced-techniques",
+      "title": "高级用法（Advanced Techniques）",
+      "file": "chapters/072-advanced-techniques.md"
+    },
+    {
+      "slug": "073-summary",
+      "title": "总结（Summary）",
+      "file": "chapters/073-summary.md"
+    },
+    {
+      "slug": "074-readme",
+      "title": "网络（Networking）",
+      "file": "chapters/074-readme.md"
+    },
+    {
+      "slug": "075-httpuiserving-ui-via-http",
+      "title": "通过HTTP服务用户界面（Serving UI via HTTP）",
+      "file": "chapters/075-httpuiserving-ui-via-http.md"
+    },
+    {
+      "slug": "076-templating",
+      "title": "模板（Templating）",
+      "file": "chapters/076-templating.md"
+    },
+    {
+      "slug": "077-httphttp-requests",
+      "title": "HTTP请求（HTTP Requests）",
+      "file": "chapters/077-httphttp-requests.md"
+    },
+    {
+      "slug": "078-local-files",
+      "title": "本地文件（Local files）",
+      "file": "chapters/078-local-files.md"
+    },
+    {
+      "slug": "079-restrest-api",
+      "title": "REST接口（REST API）",
+      "file": "chapters/079-restrest-api.md"
+    },
+    {
+      "slug": "080-authentication-using-oauth",
+      "title": "使用开放授权登陆验证（Authentication using OAuth）",
+      "file": "chapters/080-authentication-using-oauth.md"
+    },
+    {
+      "slug": "081-engine-io",
+      "title": "云服务（Engine IO）",
+      "file": "chapters/081-engine-io.md"
+    },
+    {
+      "slug": "082-web-sockets",
+      "title": "Web Sockets",
+      "file": "chapters/082-web-sockets.md"
+    },
+    {
+      "slug": "083-summary",
+      "title": "总结（Summary）",
+      "file": "chapters/083-summary.md"
+    },
+    {
+      "slug": "084-readme",
+      "title": "存储（Storage）",
+      "file": "chapters/084-readme.md"
+    },
+    {
+      "slug": "085-settings",
+      "title": "配置（Settings）",
+      "file": "chapters/085-settings.md"
+    },
+    {
+      "slug": "086-local-storage-sql",
+      "title": "本地存储 - SQL（Local Storage - SQL）",
+      "file": "chapters/086-local-storage-sql.md"
+    },
+    {
+      "slug": "087-other-storage-apis",
+      "title": "其它存储接口（Other Storage APIs）",
+      "file": "chapters/087-other-storage-apis.md"
+    },
+    {
+      "slug": "088-readme",
+      "title": "动态QML（Dynamic QML）",
+      "file": "chapters/088-readme.md"
+    },
+    {
+      "slug": "089-loading-components-dynamically",
+      "title": "动态加载组件（Loading Components Dynamically）",
+      "file": "chapters/089-loading-components-dynamically.md"
+    },
+    {
+      "slug": "090-connecting-indirectly",
+      "title": "间接连接（Connecting Indirectly）",
+      "file": "chapters/090-connecting-indirectly.md"
+    },
+    {
+      "slug": "091-binding-indirectly",
+      "title": "间接绑定（Binding Indirectly）",
+      "file": "chapters/091-binding-indirectly.md"
+    },
+    {
+      "slug": "092-creating-and-destroying-objects",
+      "title": "创建与销毁对象（Creating and Destroying Objects）",
+      "file": "chapters/092-creating-and-destroying-objects.md"
+    },
+    {
+      "slug": "093-dynamically-loading-and-instantiating-items",
+      "title": "动态加载和实例化项（Dynamically Loading and Instantiating Items）",
+      "file": "chapters/093-dynamically-loading-and-instantiating-items.md"
+    },
+    {
+      "slug": "094-dynamically-instantiating-items-from-text",
+      "title": "从文本中动态实例化项（Dynamically Instantiating Items from Text）",
+      "file": "chapters/094-dynamically-instantiating-items-from-text.md"
+    },
+    {
+      "slug": "095-managing-dynamically-created-elements",
+      "title": "管理动态创建的元素（Managing Dynamically Created Elements）",
+      "file": "chapters/095-managing-dynamically-created-elements.md"
+    },
+    {
+      "slug": "096-tracking-dynamic-objects",
+      "title": "跟踪动态对象（Tracking Dynamic Objects）",
+      "file": "chapters/096-tracking-dynamic-objects.md"
+    },
+    {
+      "slug": "097-summary",
+      "title": "总结（Summary）",
+      "file": "chapters/097-summary.md"
+    },
+    {
+      "slug": "098-readme",
+      "title": "JavaScript",
+      "file": "chapters/098-readme.md"
+    },
+    {
+      "slug": "099-browserhtml-vs-qtquickqml",
+      "title": "浏览器/HTML与QtQuick/QML对比（Browser/HTML vs QtQuick/QML）",
+      "file": "chapters/099-browserhtml-vs-qtquickqml.md"
+    },
+    {
+      "slug": "100-the-language",
+      "title": "JavaScript语法（The Language）",
+      "file": "chapters/100-the-language.md"
+    },
+    {
+      "slug": "101-js-objects",
+      "title": "JS对象（JS Objects）",
+      "file": "chapters/101-js-objects.md"
+    },
+    {
+      "slug": "102-creating-a-js-console",
+      "title": "创建JS控制台（Creating a JS Console）",
+      "file": "chapters/102-creating-a-js-console.md"
+    },
+    {
+      "slug": "103-readme",
+      "title": "Qt and C++",
+      "file": "chapters/103-readme.md"
+    },
+    {
+      "slug": "104-a-boilerplate-application",
+      "title": "演示程序（A Boilerplate Application）",
+      "file": "chapters/104-a-boilerplate-application.md"
+    },
+    {
+      "slug": "105-the-qobject",
+      "title": "Qt对象（The QObject）",
+      "file": "chapters/105-the-qobject.md"
+    },
+    {
+      "slug": "106-build-systems",
+      "title": "编译系统（Build Systems）",
+      "file": "chapters/106-build-systems.md"
+    },
+    {
+      "slug": "107-qmake",
+      "title": "QMake",
+      "file": "chapters/107-qmake.md"
+    },
+    {
+      "slug": "108-cmake",
+      "title": "CMake",
+      "file": "chapters/108-cmake.md"
+    },
+    {
+      "slug": "109-common-qt-classes",
+      "title": "Qt通用类（Common Qt Classes）",
+      "file": "chapters/109-common-qt-classes.md"
+    },
+    {
+      "slug": "110-qstring",
+      "title": "QString",
+      "file": "chapters/110-qstring.md"
+    },
+    {
+      "slug": "111-sequential-containers",
+      "title": "顺序容器（Sequential Containers）",
+      "file": "chapters/111-sequential-containers.md"
+    },
+    {
+      "slug": "112-associative-containers",
+      "title": "组合容器（Associative Containers）",
+      "file": "chapters/112-associative-containers.md"
+    },
+    {
+      "slug": "113-file-io",
+      "title": "文件IO（File IO）",
+      "file": "chapters/113-file-io.md"
+    },
+    {
+      "slug": "114-models-in-c",
+      "title": "C++数据模型（Models in C++）",
+      "file": "chapters/114-models-in-c.md"
+    },
+    {
+      "slug": "115-a-simple-model",
+      "title": "一个简单的模型（A simple model）",
+      "file": "chapters/115-a-simple-model.md"
+    },
+    {
+      "slug": "116-more-complex-data",
+      "title": "更复杂的数据（More Complex Data）",
+      "file": "chapters/116-more-complex-data.md"
+    },
+    {
+      "slug": "117-dynamic-data",
+      "title": "动态数据（Dynamic Data）",
+      "file": "chapters/117-dynamic-data.md"
+    },
+    {
+      "slug": "118-advanced-techniques",
+      "title": "进阶技巧（Advanced Techniques）",
+      "file": "chapters/118-advanced-techniques.md"
+    },
+    {
+      "slug": "119-readme",
+      "title": "C++扩展QML（Extending QML with C++）",
+      "file": "chapters/119-readme.md"
+    },
+    {
+      "slug": "120-understanding-the-qml-run-time",
+      "title": "理解QML运行环境（Understanding the QML Run-time）",
+      "file": "chapters/120-understanding-the-qml-run-time.md"
+    },
+    {
+      "slug": "121-plugin-content",
+      "title": "插件内容（Plugin Content）",
+      "file": "chapters/121-plugin-content.md"
+    },
+    {
+      "slug": "122-creating-the-plugin",
+      "title": "创建插件（Creating the plugin）",
+      "file": "chapters/122-creating-the-plugin.md"
+    },
+    {
+      "slug": "123-fileio-implementation",
+      "title": "FileIO实现（FileIO Implementation）",
+      "file": "chapters/123-fileio-implementation.md"
+    },
+    {
+      "slug": "124-using-fileio",
+      "title": "使用FileIO（Using FileIO）",
+      "file": "chapters/124-using-fileio.md"
+    },
+    {
+      "slug": "125-the-application-window",
+      "title": "应用程序窗口（The Application Window）",
+      "file": "chapters/125-the-application-window.md"
+    },
+    {
+      "slug": "126-using-actions",
+      "title": "使用动作（Using Actions）",
+      "file": "chapters/126-using-actions.md"
+    },
+    {
+      "slug": "127-formatting-the-table",
+      "title": "格式化表格（Formatting the Table）",
+      "file": "chapters/127-formatting-the-table.md"
+    },
+    {
+      "slug": "128-reading-data",
+      "title": "读取数据（Reading Data）",
+      "file": "chapters/128-reading-data.md"
+    },
+    {
+      "slug": "129-writing-data",
+      "title": "写入数据（Writing Data）",
+      "file": "chapters/129-writing-data.md"
+    },
+    {
+      "slug": "130-finishing-touch",
+      "title": "收尾工作（Finishing Touch）",
+      "file": "chapters/130-finishing-touch.md"
+    },
+    {
+      "slug": "131-summary",
+      "title": "总结（Summary）",
+      "file": "chapters/131-summary.md"
+    },
+    {
+      "slug": "132-readme",
+      "title": "其它（Other）",
+      "file": "chapters/132-readme.md"
+    },
+    {
+      "slug": "133-assets",
+      "title": "示例源码",
+      "file": "chapters/133-assets.md"
+    },
+    {
+      "slug": "134-enginsh-to-chinses",
+      "title": "术语英汉对照表",
+      "file": "chapters/134-enginsh-to-chinses.md"
+    },
+    {
+      "slug": "135-book-format",
+      "title": "格式定义",
+      "file": "chapters/135-book-format.md"
+    },
+    {
+      "slug": "136-collaboration-correction",
+      "title": "协作校正",
+      "file": "chapters/136-collaboration-correction.md"
+    }
+  ],
+  "sourceType": "github"
+}

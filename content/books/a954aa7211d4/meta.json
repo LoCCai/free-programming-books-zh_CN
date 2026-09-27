@@ -1,0 +1,16 @@
+{
+  "bookId": "a954aa7211d4",
+  "title": "HTTP/2.0 中文翻译",
+  "url": "http://yuedu.baidu.com/ebook/478d1a62376baf1ffc4fad99?pn=1",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:38.337Z",
+  "chapters": [
+    {
+      "slug": "001-1m",
+      "title": "百度阅读wap首页",
+      "file": "chapters/001-1m.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "百度阅读wap首页"
+}

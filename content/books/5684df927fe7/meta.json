@@ -1,0 +1,16 @@
+{
+  "bookId": "5684df927fe7",
+  "title": "PostgreSQL 9.5.3 中文文档",
+  "url": "http://www.postgres.cn/docs/9.5/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:02.937Z",
+  "chapters": [
+    {
+      "slug": "001-16",
+      "title": "PostgreSQL 手册",
+      "file": "chapters/001-16.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "PostgreSQL 手册"
+}

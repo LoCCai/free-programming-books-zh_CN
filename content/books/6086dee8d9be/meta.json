@@ -1,0 +1,275 @@
+{
+  "bookId": "6086dee8d9be",
+  "title": "笨办法学C",
+  "url": "https://github.com/wizardforcel/lcthw-zh",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:34.120Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "笨办法学C 中文版",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-preface",
+      "title": "前言",
+      "file": "chapters/002-preface.md"
+    },
+    {
+      "slug": "003-introduction",
+      "title": "导言：C的笛卡尔之梦",
+      "file": "chapters/003-introduction.md"
+    },
+    {
+      "slug": "004-ex0",
+      "title": "练习0：准备",
+      "file": "chapters/004-ex0.md"
+    },
+    {
+      "slug": "005-ex1",
+      "title": "练习1：启用编译器",
+      "file": "chapters/005-ex1.md"
+    },
+    {
+      "slug": "006-ex2",
+      "title": "练习2：用Make来代替Python",
+      "file": "chapters/006-ex2.md"
+    },
+    {
+      "slug": "007-ex3",
+      "title": "练习3：格式化输出",
+      "file": "chapters/007-ex3.md"
+    },
+    {
+      "slug": "008-ex4",
+      "title": "练习4：Valgrind 介绍",
+      "file": "chapters/008-ex4.md"
+    },
+    {
+      "slug": "009-ex5",
+      "title": "练习5：一个C程序的结构",
+      "file": "chapters/009-ex5.md"
+    },
+    {
+      "slug": "010-ex6",
+      "title": "练习6：变量类型",
+      "file": "chapters/010-ex6.md"
+    },
+    {
+      "slug": "011-ex7",
+      "title": "练习7：更多变量和一些算术",
+      "file": "chapters/011-ex7.md"
+    },
+    {
+      "slug": "012-ex8",
+      "title": "练习8：大小和数组",
+      "file": "chapters/012-ex8.md"
+    },
+    {
+      "slug": "013-ex9",
+      "title": "练习9：数组和字符串",
+      "file": "chapters/013-ex9.md"
+    },
+    {
+      "slug": "014-ex10",
+      "title": "练习10：字符串数组和循环",
+      "file": "chapters/014-ex10.md"
+    },
+    {
+      "slug": "015-ex11",
+      "title": "练习11：While循环和布尔表达式",
+      "file": "chapters/015-ex11.md"
+    },
+    {
+      "slug": "016-ex12",
+      "title": "练习12：If，Else If，Else",
+      "file": "chapters/016-ex12.md"
+    },
+    {
+      "slug": "017-ex13",
+      "title": "练习13：Switch语句",
+      "file": "chapters/017-ex13.md"
+    },
+    {
+      "slug": "018-ex14",
+      "title": "练习14：编写并使用函数",
+      "file": "chapters/018-ex14.md"
+    },
+    {
+      "slug": "019-ex15",
+      "title": "练习15：指针，可怕的指针",
+      "file": "chapters/019-ex15.md"
+    },
+    {
+      "slug": "020-ex16",
+      "title": "练习16：结构体和指向它们的指针",
+      "file": "chapters/020-ex16.md"
+    },
+    {
+      "slug": "021-ex17",
+      "title": "练习17：堆和栈的内存分配",
+      "file": "chapters/021-ex17.md"
+    },
+    {
+      "slug": "022-ex18",
+      "title": "练习18：函数指针",
+      "file": "chapters/022-ex18.md"
+    },
+    {
+      "slug": "023-ex19",
+      "title": "练习19：一个简单的对象系统",
+      "file": "chapters/023-ex19.md"
+    },
+    {
+      "slug": "024-ex20",
+      "title": "练习20：Zed的强大的调试宏",
+      "file": "chapters/024-ex20.md"
+    },
+    {
+      "slug": "025-ex21",
+      "title": "练习21：高级数据类型和控制结构",
+      "file": "chapters/025-ex21.md"
+    },
+    {
+      "slug": "026-ex22",
+      "title": "练习22：栈、作用域和全局",
+      "file": "chapters/026-ex22.md"
+    },
+    {
+      "slug": "027-ex23",
+      "title": "练习23：认识达夫设备",
+      "file": "chapters/027-ex23.md"
+    },
+    {
+      "slug": "028-ex24",
+      "title": "练习24：输入输出和文件",
+      "file": "chapters/028-ex24.md"
+    },
+    {
+      "slug": "029-ex25",
+      "title": "练习25：变参函数",
+      "file": "chapters/029-ex25.md"
+    },
+    {
+      "slug": "030-ex26",
+      "title": "练习26：编写第一个真正的程序",
+      "file": "chapters/030-ex26.md"
+    },
+    {
+      "slug": "031-ex27",
+      "title": "练习27：创造性和防御性编程",
+      "file": "chapters/031-ex27.md"
+    },
+    {
+      "slug": "032-ex28",
+      "title": "练习28：Makefile 进阶",
+      "file": "chapters/032-ex28.md"
+    },
+    {
+      "slug": "033-ex29",
+      "title": "练习29：库和链接",
+      "file": "chapters/033-ex29.md"
+    },
+    {
+      "slug": "034-ex30",
+      "title": "练习30：自动化测试",
+      "file": "chapters/034-ex30.md"
+    },
+    {
+      "slug": "035-ex31",
+      "title": "练习31：代码调试",
+      "file": "chapters/035-ex31.md"
+    },
+    {
+      "slug": "036-ex32",
+      "title": "练习32：双向链表",
+      "file": "chapters/036-ex32.md"
+    },
+    {
+      "slug": "037-ex33",
+      "title": "练习33：链表算法",
+      "file": "chapters/037-ex33.md"
+    },
+    {
+      "slug": "038-ex34",
+      "title": "练习34：动态数组",
+      "file": "chapters/038-ex34.md"
+    },
+    {
+      "slug": "039-ex35",
+      "title": "练习35：排序和搜索",
+      "file": "chapters/039-ex35.md"
+    },
+    {
+      "slug": "040-ex36",
+      "title": "练习36：更安全的字符串",
+      "file": "chapters/040-ex36.md"
+    },
+    {
+      "slug": "041-ex37",
+      "title": "练习37：哈希表",
+      "file": "chapters/041-ex37.md"
+    },
+    {
+      "slug": "042-ex38",
+      "title": "练习38：哈希算法",
+      "file": "chapters/042-ex38.md"
+    },
+    {
+      "slug": "043-ex39",
+      "title": "练习39：字符串算法",
+      "file": "chapters/043-ex39.md"
+    },
+    {
+      "slug": "044-ex40",
+      "title": "练习40：二叉搜索树",
+      "file": "chapters/044-ex40.md"
+    },
+    {
+      "slug": "045-ex41",
+      "title": "练习41：将 Cachegrind 和 Callgrind 用于性能调优",
+      "file": "chapters/045-ex41.md"
+    },
+    {
+      "slug": "046-ex42",
+      "title": "练习42：栈和队列",
+      "file": "chapters/046-ex42.md"
+    },
+    {
+      "slug": "047-ex43",
+      "title": "练习43：一个简单的统计引擎",
+      "file": "chapters/047-ex43.md"
+    },
+    {
+      "slug": "048-ex44",
+      "title": "练习44：环形缓冲区",
+      "file": "chapters/048-ex44.md"
+    },
+    {
+      "slug": "049-ex45",
+      "title": "练习45：一个简单的TCP/IP客户端",
+      "file": "chapters/049-ex45.md"
+    },
+    {
+      "slug": "050-ex46",
+      "title": "练习46：三叉搜索树",
+      "file": "chapters/050-ex46.md"
+    },
+    {
+      "slug": "051-ex47",
+      "title": "练习47：一个快速的URL路由",
+      "file": "chapters/051-ex47.md"
+    },
+    {
+      "slug": "052-postscript",
+      "title": "后记：“解构 K&R C” 已死",
+      "file": "chapters/052-postscript.md"
+    },
+    {
+      "slug": "053-donors",
+      "title": "捐赠名单",
+      "file": "chapters/053-donors.md"
+    }
+  ],
+  "sourceType": "github"
+}

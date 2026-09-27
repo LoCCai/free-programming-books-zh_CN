@@ -1,0 +1,16 @@
+{
+  "bookId": "6352d1a8251f",
+  "title": "gulp中文文档",
+  "url": "http://www.gulpjs.com.cn/docs/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:24.922Z",
+  "chapters": [
+    {
+      "slug": "001-u",
+      "title": "快速入门 | gulp.js中文网",
+      "file": "chapters/001-u.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "快速入门 | gulp.js中文网"
+}

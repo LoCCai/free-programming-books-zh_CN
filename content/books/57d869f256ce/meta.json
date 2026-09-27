@@ -1,0 +1,16 @@
+{
+  "bookId": "57d869f256ce",
+  "title": "零基础学 Python 第二版",
+  "url": "http://www.kancloud.cn/kancloud/starter-learning-python",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:16.765Z",
+  "chapters": [
+    {
+      "slug": "001-1j",
+      "title": "零基础学python（第二版） · 看云",
+      "file": "chapters/001-1j.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "零基础学python（第二版） · 看云"
+}

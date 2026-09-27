@@ -1,0 +1,16 @@
+{
+  "bookId": "a4a4bc556974",
+  "title": "Ruby 源码解读",
+  "url": "https://ruby-china.org/topics/22386",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:18.312Z",
+  "chapters": [
+    {
+      "slug": "001-z",
+      "title": "试译 Ruby 源码解读",
+      "file": "chapters/001-z.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "试译 Ruby 源码解读"
+}

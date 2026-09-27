@@ -1,0 +1,16 @@
+{
+  "bookId": "831523cbfe4a",
+  "title": "ThinkPHP5.1完全开发手册",
+  "url": "https://www.kancloud.cn/manual/thinkphp5_1",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:14.790Z",
+  "chapters": [
+    {
+      "slug": "001-16",
+      "title": "ThinkPHP5.1完全开发手册 · 看云",
+      "file": "chapters/001-16.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "ThinkPHP5.1完全开发手册 · 看云"
+}

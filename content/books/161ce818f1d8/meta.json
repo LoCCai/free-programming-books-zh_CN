@@ -1,0 +1,16 @@
+{
+  "bookId": "161ce818f1d8",
+  "title": "Django Girls 學習指南",
+  "url": "https://www.gitbook.com/book/djangogirlstaipei/django-girls-taipei-tutorial/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:57.622Z",
+  "chapters": [
+    {
+      "slug": "001-2b",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-2b.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

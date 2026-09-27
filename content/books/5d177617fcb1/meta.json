@@ -1,0 +1,16 @@
+{
+  "bookId": "5d177617fcb1",
+  "title": "Tornado源码解析",
+  "url": "http://www.nowamagic.net/academy/detail/13321002",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:09.246Z",
+  "chapters": [
+    {
+      "slug": "001-1c",
+      "title": "http://www.nowamagic.net/academy/detail/13321002",
+      "file": "chapters/001-1c.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://www.nowamagic.net/academy/detail/13321002"
+}

@@ -1,0 +1,9 @@
+{
+  "bookId": "73f3f445ac0d",
+  "title": "JavaScript语言精粹",
+  "url": "https://github.com/qibaoguang/Study-Step-by-Step/blob/master/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/javascript_the_good_parts.md",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:26:00.333Z",
+  "chapters": [],
+  "error": "目标文件不存在: %E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/javascript_the_good_parts.md"
+}

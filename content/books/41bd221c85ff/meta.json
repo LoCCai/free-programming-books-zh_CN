@@ -1,0 +1,15 @@
+{
+  "bookId": "41bd221c85ff",
+  "title": ".NET控件开发基础",
+  "url": "https://github.com/JackWangCUMT/customcontrol",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:39.440Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "custom control",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

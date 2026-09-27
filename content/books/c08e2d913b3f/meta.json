@@ -1,0 +1,345 @@
+{
+  "bookId": "c08e2d913b3f",
+  "title": "Jersey 2.x 用户指南",
+  "url": "https://github.com/waylau/Jersey-2.x-User-Guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:17.148Z",
+  "chapters": [
+    {
+      "slug": "001-preface-前言",
+      "title": "前言",
+      "file": "chapters/001-preface-前言.md"
+    },
+    {
+      "slug": "002-chapter-1-getting-started-开始",
+      "title": "第1章 开始",
+      "file": "chapters/002-chapter-1-getting-started-开始.md"
+    },
+    {
+      "slug": "003-1-1-creating-a-new-project-from-maven-archetype-从maven-arche",
+      "title": "1.1 从Maven原型创建一个新项目",
+      "file": "chapters/003-1-1-creating-a-new-project-from-maven-archetype-从maven-arche.md"
+    },
+    {
+      "slug": "004-1-2-exploring-the-newly-created-project-探索新项目",
+      "title": "1.2 探索新项目",
+      "file": "chapters/004-1-2-exploring-the-newly-created-project-探索新项目.md"
+    },
+    {
+      "slug": "005-1-3-running-the-project-运行项目",
+      "title": "1.3 运行项目",
+      "file": "chapters/005-1-3-running-the-project-运行项目.md"
+    },
+    {
+      "slug": "006-1-4-creating-a-javaee-web-application-创建一个javaee的web项目",
+      "title": "1.4 创建一个JavaEE的Web项目",
+      "file": "chapters/006-1-4-creating-a-javaee-web-application-创建一个javaee的web项目.md"
+    },
+    {
+      "slug": "007-1-5-creating-a-web-application-that-can-be-deployed-on-herok",
+      "title": "1.5 创建能部署在Heroku上面的Web项目",
+      "file": "chapters/007-1-5-creating-a-web-application-that-can-be-deployed-on-herok.md"
+    },
+    {
+      "slug": "008-1-6-exploring-other-jersey-examples-探索其他例子",
+      "title": "1.6 探索其他例子",
+      "file": "chapters/008-1-6-exploring-other-jersey-examples-探索其他例子.md"
+    },
+    {
+      "slug": "009-chapter-2-modules-and-dependencies-模块和依赖",
+      "title": "第2章 模块和依赖",
+      "file": "chapters/009-chapter-2-modules-and-dependencies-模块和依赖.md"
+    },
+    {
+      "slug": "010-2-1-java-se-compatibility-与-java-se-兼容性",
+      "title": "2.1 与 Java SE 兼容性",
+      "file": "chapters/010-2-1-java-se-compatibility-与-java-se-兼容性.md"
+    },
+    {
+      "slug": "011-2-2-introduction-to-jersey-dependencies-介绍jersey的依赖",
+      "title": "2.2 介绍Jersey的依赖",
+      "file": "chapters/011-2-2-introduction-to-jersey-dependencies-介绍jersey的依赖.md"
+    },
+    {
+      "slug": "012-2-3-common-jersey-use-cases-常见jersey示例",
+      "title": "2.3 常见Jersey示例",
+      "file": "chapters/012-2-3-common-jersey-use-cases-常见jersey示例.md"
+    },
+    {
+      "slug": "013-2-4-list-of-modules-模块列表",
+      "title": "2.4 模块列表",
+      "file": "chapters/013-2-4-list-of-modules-模块列表.md"
+    },
+    {
+      "slug": "014-chapter-3-jax-rs-application-resources-and-sub-resources-关于j",
+      "title": "第3章 关于JAX-RS应用，资源和子资源",
+      "file": "chapters/014-chapter-3-jax-rs-application-resources-and-sub-resources-关于j.md"
+    },
+    {
+      "slug": "015-3-1-root-resource-classes-根资源类",
+      "title": "3.1 根资源类",
+      "file": "chapters/015-3-1-root-resource-classes-根资源类.md"
+    },
+    {
+      "slug": "016-3-2-parameter-annotations-param-参数注解",
+      "title": "3.2 (@*Param)参数注解",
+      "file": "chapters/016-3-2-parameter-annotations-param-参数注解.md"
+    },
+    {
+      "slug": "017-3-3-sub-resources-子资源",
+      "title": "3.3 子资源",
+      "file": "chapters/017-3-3-sub-resources-子资源.md"
+    },
+    {
+      "slug": "018-3-4-life-cycle-of-root-resource-classes-根资源类生命周期",
+      "title": "3.4 根资源类生命周期",
+      "file": "chapters/018-3-4-life-cycle-of-root-resource-classes-根资源类生命周期.md"
+    },
+    {
+      "slug": "019-3-5-rules-of-injection-注入规则",
+      "title": "3.5 注入规则",
+      "file": "chapters/019-3-5-rules-of-injection-注入规则.md"
+    },
+    {
+      "slug": "020-3-6-use-of-context-使用-context",
+      "title": "3.6 使用 @Context",
+      "file": "chapters/020-3-6-use-of-context-使用-context.md"
+    },
+    {
+      "slug": "021-3-7-programmatic-resource-model-可编程的资源模型",
+      "title": "3.7 可编程的资源模型",
+      "file": "chapters/021-3-7-programmatic-resource-model-可编程的资源模型.md"
+    },
+    {
+      "slug": "022-chapter-4-application-deployment-and-runtime-environments-应用",
+      "title": "第4章 应用部署和运行时环境",
+      "file": "chapters/022-chapter-4-application-deployment-and-runtime-environments-应用.md"
+    },
+    {
+      "slug": "023-4-1-introduction-介绍",
+      "title": "4.1 介绍",
+      "file": "chapters/023-4-1-introduction-介绍.md"
+    },
+    {
+      "slug": "024-4-2-jax-rs-application-model-应用模型",
+      "title": "4.2 JAX-RS 应用模型",
+      "file": "chapters/024-4-2-jax-rs-application-model-应用模型.md"
+    },
+    {
+      "slug": "025-4-3-auto-discoverable-features-自动发现的特性",
+      "title": "4.3 自动发现功能",
+      "file": "chapters/025-4-3-auto-discoverable-features-自动发现的特性.md"
+    },
+    {
+      "slug": "026-4-4-configuring-the-classpath-scanning-配置-classpath-扫描",
+      "title": "4.4 配置 Classpath 扫描",
+      "file": "chapters/026-4-4-configuring-the-classpath-scanning-配置-classpath-扫描.md"
+    },
+    {
+      "slug": "027-4-5-java-se-deployment-environments-java-部署环境",
+      "title": "4.5 部署在 Java SE 环境",
+      "file": "chapters/027-4-5-java-se-deployment-environments-java-部署环境.md"
+    },
+    {
+      "slug": "028-4-6-creating-programmatic-jax-rs-endpoint-创建可编程的-jax-rs-端点",
+      "title": "4.6 创建可编程的 JAX-RS 端点",
+      "file": "chapters/028-4-6-creating-programmatic-jax-rs-endpoint-创建可编程的-jax-rs-端点.md"
+    },
+    {
+      "slug": "029-4-7-servlet-based-deployment-基于-servlet-的部署",
+      "title": "4.7 基于 Servlet 的部署",
+      "file": "chapters/029-4-7-servlet-based-deployment-基于-servlet-的部署.md"
+    },
+    {
+      "slug": "030-4-8-java-ee-platform-在-java-ee-平台",
+      "title": "4.8 Java EE 平台",
+      "file": "chapters/030-4-8-java-ee-platform-在-java-ee-平台.md"
+    },
+    {
+      "slug": "031-4-9-osgi",
+      "title": "4.9 OSGi",
+      "file": "chapters/031-4-9-osgi.md"
+    },
+    {
+      "slug": "032-4-10-other-environments-其他环境",
+      "title": "4.10 其他环境",
+      "file": "chapters/032-4-10-other-environments-其他环境.md"
+    },
+    {
+      "slug": "033-chapter-5-client-api-客户端-api",
+      "title": "第5章 客户端 API",
+      "file": "chapters/033-chapter-5-client-api-客户端-api.md"
+    },
+    {
+      "slug": "034-5-1-uniform-interface-constraint-统一接口约束",
+      "title": "5.1 统一接口约束",
+      "file": "chapters/034-5-1-uniform-interface-constraint-统一接口约束.md"
+    },
+    {
+      "slug": "035-5-2-ease-of-use-and-reusing-jax-rs-artifacts-易于使用和可重用的-jax-r",
+      "title": "5.2 易于使用和可重用的 JAX-RS 工件",
+      "file": "chapters/035-5-2-ease-of-use-and-reusing-jax-rs-artifacts-易于使用和可重用的-jax-r.md"
+    },
+    {
+      "slug": "036-5-3-overview-of-the-client-api-客户端-api-总览",
+      "title": "5.3 客户端 API 总览",
+      "file": "chapters/036-5-3-overview-of-the-client-api-客户端-api-总览.md"
+    },
+    {
+      "slug": "037-chapter-6-reactive-jersey-client-api",
+      "title": "第6章 Reactive Jersey 客户端 API",
+      "file": "chapters/037-chapter-6-reactive-jersey-client-api.md"
+    },
+    {
+      "slug": "038-6-1-motivation-for-reactive-client-extension",
+      "title": "6.1. Motivation for Reactive Client Extension",
+      "file": "chapters/038-6-1-motivation-for-reactive-client-extension.md"
+    },
+    {
+      "slug": "039-6-2-usage-and-extension-modules",
+      "title": "6.2. Usage and Extension Modules",
+      "file": "chapters/039-6-2-usage-and-extension-modules.md"
+    },
+    {
+      "slug": "040-6-3-supported-reactive-libraries",
+      "title": "6.3. Supported Reactive Libraries",
+      "file": "chapters/040-6-3-supported-reactive-libraries.md"
+    },
+    {
+      "slug": "041-6-4-implementing-support-for-custom-reactive-libraries",
+      "title": "6.4. Implementing Support for Custom Reactive Libraries (SPI)",
+      "file": "chapters/041-6-4-implementing-support-for-custom-reactive-libraries.md"
+    },
+    {
+      "slug": "042-6-5-examples",
+      "title": "6.5. Examples",
+      "file": "chapters/042-6-5-examples.md"
+    },
+    {
+      "slug": "043-chapter-7-representations-and-responses",
+      "title": "第7章 表现与响应",
+      "file": "chapters/043-chapter-7-representations-and-responses.md"
+    },
+    {
+      "slug": "044-7-1-representations-and-java-types",
+      "title": "7.1 表示与 Java 类型",
+      "file": "chapters/044-7-1-representations-and-java-types.md"
+    },
+    {
+      "slug": "045-7-2-building-responses",
+      "title": "7.2 构建响应",
+      "file": "chapters/045-7-2-building-responses.md"
+    },
+    {
+      "slug": "046-7-3-webapplicationexception-and-mapping-exceptions-to-respon",
+      "title": "7.3 WebApplicationException and Mapping Exceptions to Response",
+      "file": "chapters/046-7-3-webapplicationexception-and-mapping-exceptions-to-respon.md"
+    },
+    {
+      "slug": "047-7-4-conditional-gets-and-returning-304-not-modified-response",
+      "title": "7.4 条件 GET 和返回304响应",
+      "file": "chapters/047-7-4-conditional-gets-and-returning-304-not-modified-response.md"
+    },
+    {
+      "slug": "048-readme",
+      "title": "第9章 对常用媒体类型的支持",
+      "file": "chapters/048-readme.md"
+    },
+    {
+      "slug": "049-9-1-json",
+      "title": "9.1 JSON",
+      "file": "chapters/049-9-1-json.md"
+    },
+    {
+      "slug": "050-9-2-xml",
+      "title": "9.2 XML",
+      "file": "chapters/050-9-2-xml.md"
+    },
+    {
+      "slug": "051-9-3-multipart",
+      "title": "9.3 Multipart",
+      "file": "chapters/051-9-3-multipart.md"
+    },
+    {
+      "slug": "052-chapter-10-filters-and-interceptors-过滤器和拦截器",
+      "title": "第10章 过滤器和拦截器",
+      "file": "chapters/052-chapter-10-filters-and-interceptors-过滤器和拦截器.md"
+    },
+    {
+      "slug": "053-chapter-11-asynchronous-services-and-clients-异步服务器和客户端",
+      "title": "第11章 异步服务器和客户端",
+      "file": "chapters/053-chapter-11-asynchronous-services-and-clients-异步服务器和客户端.md"
+    },
+    {
+      "slug": "054-chapter-20-mvc-templates",
+      "title": "第20章 MVC 模板",
+      "file": "chapters/054-chapter-20-mvc-templates.md"
+    },
+    {
+      "slug": "055-20-1-viewable",
+      "title": "20.1. Viewable",
+      "file": "chapters/055-20-1-viewable.md"
+    },
+    {
+      "slug": "056-20-2-template",
+      "title": "20.2. 模板",
+      "file": "chapters/056-20-2-template.md"
+    },
+    {
+      "slug": "057-20-3-absolute-vs-relative-template-reference",
+      "title": "20.3. 绝对 vs. 相对模块引用",
+      "file": "chapters/057-20-3-absolute-vs-relative-template-reference.md"
+    },
+    {
+      "slug": "058-20-4-handling-errors-with-mvc",
+      "title": "20.4. MVC 错误处理",
+      "file": "chapters/058-20-4-handling-errors-with-mvc.md"
+    },
+    {
+      "slug": "059-20-5-registration-and-configuration",
+      "title": "20.5. 注册和配置",
+      "file": "chapters/059-20-5-registration-and-configuration.md"
+    },
+    {
+      "slug": "060-20-6-supported-templating-engines",
+      "title": "20.6. 支持的模板引擎",
+      "file": "chapters/060-20-6-supported-templating-engines.md"
+    },
+    {
+      "slug": "061-20-7-writing-custom-templating-engines",
+      "title": "20.7. 写自定义的模板引擎",
+      "file": "chapters/061-20-7-writing-custom-templating-engines.md"
+    },
+    {
+      "slug": "062-20-8-other-examples",
+      "title": "20.8. 其他例子",
+      "file": "chapters/062-20-8-other-examples.md"
+    },
+    {
+      "slug": "063-readme",
+      "title": "第23章 使用 Spring 注入",
+      "file": "chapters/063-readme.md"
+    },
+    {
+      "slug": "064-readme",
+      "title": "第23章 使用 Spring 注入",
+      "file": "chapters/064-readme.md"
+    },
+    {
+      "slug": "065-23-1-dependencies-依赖",
+      "title": "23.1 依赖",
+      "file": "chapters/065-23-1-dependencies-依赖.md"
+    },
+    {
+      "slug": "066-23-2-registration-and-configuration-注册和配置",
+      "title": "23.2 注册和配置",
+      "file": "chapters/066-23-2-registration-and-configuration-注册和配置.md"
+    },
+    {
+      "slug": "067-23-3-example-示例",
+      "title": "23.3 示例",
+      "file": "chapters/067-23-3-example-示例.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "3c4667080c1e",
+  "title": "前端工程师手册",
+  "url": "https://www.gitbook.com/book/leohxj/front-end-database/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:37.954Z",
+  "chapters": [
+    {
+      "slug": "001-1q",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1q.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

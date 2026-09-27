@@ -1,0 +1,25 @@
+## 1.1 Unity的组成
+
+一个大型的软件，不可能每行代码都自己写，Unity这样一个大型的商用游戏引擎，也依赖特别多的开源库。
+
+点击Unity菜单的 Help - Software Licensee，就会打开Unity使用的三方库版权声明文件。
+
+![](https://raw.githubusercontent.com/ThisisGame/cpp-game-engine-book/HEAD/imgs/1/1.1/unity_software_lincensee.png)
+
+这里面很多开源库，都是我们后面需要用到的，例如 字体引擎freetype2、fmod音效库、freeimage图片解析库。
+
+这些开源库以及另外的不开源的库，再加上Unity自己写的逻辑层，就组成了Unity引擎核心部分。
+
+| 依赖库  | 作用  |
+|---|---|
+|  7z | Lzma压缩算法，打包Assetbundle用Lzma压缩。  |
+| Allegorithmic|Substance系列软件协同工作插件，解析PBR材质。 |
+| tlsf|内存分配管理器，类似的有jemalloc。 |
+| FMOD| 3D音效|
+| libvorbis|ogg音频解析 |
+| lz4| 压缩算法|
+| smol-v|SPIR-V压缩工具，SPIR-V是OpenCL和OpenGL的中间语言。 |
+| FreeImage| 图片文件解析库|
+| freetype| ttf字体解析库|
+| libjpeg-turbo| 解析jpeg库，libjpeg升级版|
+| libpng|png解析库 |

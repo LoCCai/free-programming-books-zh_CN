@@ -1,0 +1,56 @@
+{
+  "bookId": "0ac1317339a9",
+  "title": "Ruby中的元编程",
+  "url": "http://deathking.github.io/metaprogramming-in-ruby/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:20.735Z",
+  "chapters": [
+    {
+      "slug": "001-1f",
+      "title": "Introduction | Ruby中的元编程",
+      "file": "chapters/001-1f.md"
+    },
+    {
+      "slug": "002-1t",
+      "title": "前言 | Ruby中的元编程",
+      "file": "chapters/002-1t.md"
+    },
+    {
+      "slug": "003-1t",
+      "title": "实例变量、方法、类 | Ruby中的元编程",
+      "file": "chapters/003-1t.md"
+    },
+    {
+      "slug": "004-1t",
+      "title": "方法的调用 | Ruby中的元编程",
+      "file": "chapters/004-1t.md"
+    },
+    {
+      "slug": "005-1t",
+      "title": "实用元编程方法 | Ruby中的元编程",
+      "file": "chapters/005-1t.md"
+    },
+    {
+      "slug": "006-1t",
+      "title": "绑定 | Ruby中的元编程",
+      "file": "chapters/006-1t.md"
+    },
+    {
+      "slug": "007-1t",
+      "title": "块和绑定 | Ruby中的元编程",
+      "file": "chapters/007-1t.md"
+    },
+    {
+      "slug": "008-1t",
+      "title": "元编程实战 | Ruby中的元编程",
+      "file": "chapters/008-1t.md"
+    },
+    {
+      "slug": "009-1t",
+      "title": "结语 | Ruby中的元编程",
+      "file": "chapters/009-1t.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction | Ruby中的元编程"
+}

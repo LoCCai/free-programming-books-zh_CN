@@ -1,0 +1,15 @@
+{
+  "bookId": "7383fd497fd8",
+  "title": "一年成为Emacs高手 (像神一样使用编辑器)",
+  "url": "https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:46.671Z",
+  "chapters": [
+    {
+      "slug": "001-guide-zh-org",
+      "title": "guide-zh",
+      "file": "chapters/001-guide-zh-org.md"
+    }
+  ],
+  "sourceType": "github"
+}

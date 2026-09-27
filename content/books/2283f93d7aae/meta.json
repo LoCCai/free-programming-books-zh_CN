@@ -1,0 +1,15 @@
+{
+  "bookId": "2283f93d7aae",
+  "title": "iOS开发60分钟入门",
+  "url": "https://github.com/qinjx/30min_guides/blob/master/ios.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:14.086Z",
+  "chapters": [
+    {
+      "slug": "001-ios",
+      "title": "ios",
+      "file": "chapters/001-ios.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "d4ba5f3a30d9",
+  "title": "ECMAScript 5.1 中文版",
+  "url": "http://yanhaijing.com/es5",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:36.436Z",
+  "chapters": [
+    {
+      "slug": "001-p",
+      "title": "ECMAScript5.1中文版 + ECMAScript3 + ECMAScript（合集）",
+      "file": "chapters/001-p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "ECMAScript5.1中文版 + ECMAScript3 + ECMAScript（合集）"
+}

@@ -1,0 +1,81 @@
+{
+  "bookId": "8e75c5c280a1",
+  "title": "Lua编程入门",
+  "url": "https://github.com/andycai/luaprimer",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:56.864Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "《Lua编程入门》",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-00",
+      "title": "目录 Table Of Contents",
+      "file": "chapters/002-00.md"
+    },
+    {
+      "slug": "003-01",
+      "title": "Lua - 基础知识",
+      "file": "chapters/003-01.md"
+    },
+    {
+      "slug": "004-02",
+      "title": "Lua - 环境与模块",
+      "file": "chapters/004-02.md"
+    },
+    {
+      "slug": "005-03",
+      "title": "Lua - 函数与面向对象",
+      "file": "chapters/005-03.md"
+    },
+    {
+      "slug": "006-04",
+      "title": "Lua - 标准库",
+      "file": "chapters/006-04.md"
+    },
+    {
+      "slug": "007-05",
+      "title": "Lua - 协程 Coroutine",
+      "file": "chapters/007-05.md"
+    },
+    {
+      "slug": "008-06",
+      "title": "Lua - Table 数据结构",
+      "file": "chapters/008-06.md"
+    },
+    {
+      "slug": "009-07",
+      "title": "Lua - 常用的 C API",
+      "file": "chapters/009-07.md"
+    },
+    {
+      "slug": "010-08",
+      "title": "Lua - Lua 与 C/C++ 交互",
+      "file": "chapters/010-08.md"
+    },
+    {
+      "slug": "011-09",
+      "title": "Lua - 编译 Lua 字节码",
+      "file": "chapters/011-09.md"
+    },
+    {
+      "slug": "012-10",
+      "title": "Lua - LuaJIT 介绍",
+      "file": "chapters/012-10.md"
+    },
+    {
+      "slug": "013-11",
+      "title": "附录一 Lua 5.1 程序接口",
+      "file": "chapters/013-11.md"
+    },
+    {
+      "slug": "014-12",
+      "title": "附录二 Lua 5.2 程序接口",
+      "file": "chapters/014-12.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

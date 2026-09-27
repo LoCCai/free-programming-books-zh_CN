@@ -1,0 +1,20 @@
+{
+  "bookId": "29e7ff67f465",
+  "title": "Airbnb JavaScript 规范",
+  "url": "https://github.com/adamlu/javascript-style-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:31.350Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "JavaScript规范",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-css-style-guide",
+      "title": "CSS编码规范",
+      "file": "chapters/002-css-style-guide.md"
+    }
+  ],
+  "sourceType": "github"
+}

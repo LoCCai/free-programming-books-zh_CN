@@ -1,0 +1,260 @@
+{
+  "bookId": "4b898bf912c2",
+  "title": "编译原理（紫龙书）中文第2版习题答案",
+  "url": "https://github.com/fool2fish/dragon-book-exercise-answers",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:27.915Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Compilers Principles, Techniques, &amp; Tools (purple dragon book) second edition exercise answers",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-1",
+      "title": "Exercises for Section 1.1",
+      "file": "chapters/002-1-1.md"
+    },
+    {
+      "slug": "003-1-3",
+      "title": "Exercises for Section 1.3",
+      "file": "chapters/003-1-3.md"
+    },
+    {
+      "slug": "004-1-6",
+      "title": "Exercises for Section 1.6",
+      "file": "chapters/004-1-6.md"
+    },
+    {
+      "slug": "005-2-2",
+      "title": "Exercises for Section 2.2",
+      "file": "chapters/005-2-2.md"
+    },
+    {
+      "slug": "006-2-3",
+      "title": "2.3 Exercises for Section 2.3",
+      "file": "chapters/006-2-3.md"
+    },
+    {
+      "slug": "007-2-4",
+      "title": "2.4",
+      "file": "chapters/007-2-4.md"
+    },
+    {
+      "slug": "008-2-6",
+      "title": "Exercises for Section 2.6",
+      "file": "chapters/008-2-6.md"
+    },
+    {
+      "slug": "009-2-8",
+      "title": "Exercises for Section 2.8",
+      "file": "chapters/009-2-8.md"
+    },
+    {
+      "slug": "010-key-point",
+      "title": "第2章要点",
+      "file": "chapters/010-key-point.md"
+    },
+    {
+      "slug": "011-3-1",
+      "title": "Exercises for Section 3.1",
+      "file": "chapters/011-3-1.md"
+    },
+    {
+      "slug": "012-3-3",
+      "title": "Exercises for Section 3.3",
+      "file": "chapters/012-3-3.md"
+    },
+    {
+      "slug": "013-3-4",
+      "title": "3.4 节的练习",
+      "file": "chapters/013-3-4.md"
+    },
+    {
+      "slug": "014-3-5",
+      "title": "Exercises for Section 3.5",
+      "file": "chapters/014-3-5.md"
+    },
+    {
+      "slug": "015-3-6",
+      "title": "3.6 Exercises for Section 3.6",
+      "file": "chapters/015-3-6.md"
+    },
+    {
+      "slug": "016-3-7",
+      "title": "Exercises for Section 3.7",
+      "file": "chapters/016-3-7.md"
+    },
+    {
+      "slug": "017-3-8",
+      "title": "Exercises for Section 3.8",
+      "file": "chapters/017-3-8.md"
+    },
+    {
+      "slug": "018-3-9",
+      "title": "Exercises for Section 3.9",
+      "file": "chapters/018-3-9.md"
+    },
+    {
+      "slug": "019-key-point",
+      "title": "第3章要点",
+      "file": "chapters/019-key-point.md"
+    },
+    {
+      "slug": "020-4-2",
+      "title": "Exercises for Section 4.2",
+      "file": "chapters/020-4-2.md"
+    },
+    {
+      "slug": "021-4-3",
+      "title": "4.3 节的练习",
+      "file": "chapters/021-4-3.md"
+    },
+    {
+      "slug": "022-4-4",
+      "title": "4.4 节的练习",
+      "file": "chapters/022-4-4.md"
+    },
+    {
+      "slug": "023-4-5",
+      "title": "4.5 节的练习",
+      "file": "chapters/023-4-5.md"
+    },
+    {
+      "slug": "024-4-6",
+      "title": "4.6 节的练习",
+      "file": "chapters/024-4-6.md"
+    },
+    {
+      "slug": "025-4-7",
+      "title": "4.7 节的练习",
+      "file": "chapters/025-4-7.md"
+    },
+    {
+      "slug": "026-key-point",
+      "title": "第4章要点",
+      "file": "chapters/026-key-point.md"
+    },
+    {
+      "slug": "027-5-1",
+      "title": "5.1 节的练习",
+      "file": "chapters/027-5-1.md"
+    },
+    {
+      "slug": "028-5-2",
+      "title": "5.2 节的练习",
+      "file": "chapters/028-5-2.md"
+    },
+    {
+      "slug": "029-5-3",
+      "title": "5.3 节的练习",
+      "file": "chapters/029-5-3.md"
+    },
+    {
+      "slug": "030-5-4",
+      "title": "5.4 节的练习",
+      "file": "chapters/030-5-4.md"
+    },
+    {
+      "slug": "031-5-5",
+      "title": "5.5 节的练习",
+      "file": "chapters/031-5-5.md"
+    },
+    {
+      "slug": "032-6-1",
+      "title": "6.1 节的练习",
+      "file": "chapters/032-6-1.md"
+    },
+    {
+      "slug": "033-6-2",
+      "title": "6.2 节的练习",
+      "file": "chapters/033-6-2.md"
+    },
+    {
+      "slug": "034-6-3",
+      "title": "6.3 节的练习",
+      "file": "chapters/034-6-3.md"
+    },
+    {
+      "slug": "035-6-4",
+      "title": "6.4 节的练习",
+      "file": "chapters/035-6-4.md"
+    },
+    {
+      "slug": "036-6-5",
+      "title": "6.5 节的练习",
+      "file": "chapters/036-6-5.md"
+    },
+    {
+      "slug": "037-6-6",
+      "title": "6.6 节的练习",
+      "file": "chapters/037-6-6.md"
+    },
+    {
+      "slug": "038-6-7",
+      "title": "6.7 节的练习",
+      "file": "chapters/038-6-7.md"
+    },
+    {
+      "slug": "039-7-2",
+      "title": "Exercises for Section 7.2",
+      "file": "chapters/039-7-2.md"
+    },
+    {
+      "slug": "040-7-3",
+      "title": "Exercises for Section 7.3",
+      "file": "chapters/040-7-3.md"
+    },
+    {
+      "slug": "041-7-4",
+      "title": "Exercises for Section 7.4",
+      "file": "chapters/041-7-4.md"
+    },
+    {
+      "slug": "042-7-5",
+      "title": "Exercises for Section 7.5",
+      "file": "chapters/042-7-5.md"
+    },
+    {
+      "slug": "043-7-6",
+      "title": "Exercises for Section 7.6",
+      "file": "chapters/043-7-6.md"
+    },
+    {
+      "slug": "044-7-7",
+      "title": "Exercises for Section 7.7",
+      "file": "chapters/044-7-7.md"
+    },
+    {
+      "slug": "045-8-2",
+      "title": "Exercises for Section 8.2",
+      "file": "chapters/045-8-2.md"
+    },
+    {
+      "slug": "046-8-3",
+      "title": "Exercises for Section 8.3",
+      "file": "chapters/046-8-3.md"
+    },
+    {
+      "slug": "047-8-4",
+      "title": "Exercises for Section 8.4",
+      "file": "chapters/047-8-4.md"
+    },
+    {
+      "slug": "048-8-5",
+      "title": "Exercises for Section 8.5",
+      "file": "chapters/048-8-5.md"
+    },
+    {
+      "slug": "049-12-3",
+      "title": "Exercises for Section 12.3",
+      "file": "chapters/049-12-3.md"
+    },
+    {
+      "slug": "050-12-7",
+      "title": "Exercises for Section 12.7",
+      "file": "chapters/050-12-7.md"
+    }
+  ],
+  "sourceType": "github"
+}

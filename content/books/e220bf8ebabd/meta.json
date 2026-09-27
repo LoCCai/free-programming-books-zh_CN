@@ -1,0 +1,16 @@
+{
+  "bookId": "e220bf8ebabd",
+  "title": "exvim--vim 改良成IDE项目",
+  "url": "http://exvim.github.io/docs-zh/intro/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:40.626Z",
+  "chapters": [
+    {
+      "slug": "001-11",
+      "title": "exVim: 简介",
+      "file": "chapters/001-11.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "exVim: 简介"
+}

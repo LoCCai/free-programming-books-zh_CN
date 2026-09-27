@@ -1,0 +1,265 @@
+{
+  "bookId": "dce585da2b6e",
+  "title": "Go RPC 开发指南",
+  "url": "https://github.com/smallnest/go-rpc-programming-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:29.872Z",
+  "chapters": [
+    {
+      "slug": "001-quickstart",
+      "title": "快速起步",
+      "file": "chapters/001-quickstart.md"
+    },
+    {
+      "slug": "002-server",
+      "title": "服务端开发示例",
+      "file": "chapters/002-server.md"
+    },
+    {
+      "slug": "003-client",
+      "title": "客户端开发示例",
+      "file": "chapters/003-client.md"
+    },
+    {
+      "slug": "004-transport",
+      "title": "传输",
+      "file": "chapters/004-transport.md"
+    },
+    {
+      "slug": "005-transport",
+      "title": "TCP",
+      "file": "chapters/005-transport.md"
+    },
+    {
+      "slug": "006-transport",
+      "title": "HTTP",
+      "file": "chapters/006-transport.md"
+    },
+    {
+      "slug": "007-transport",
+      "title": "UnixDomain",
+      "file": "chapters/007-transport.md"
+    },
+    {
+      "slug": "008-transport",
+      "title": "QUIC",
+      "file": "chapters/008-transport.md"
+    },
+    {
+      "slug": "009-transport",
+      "title": "KCP",
+      "file": "chapters/009-transport.md"
+    },
+    {
+      "slug": "010-function",
+      "title": "函数为服务",
+      "file": "chapters/010-function.md"
+    },
+    {
+      "slug": "011-registry",
+      "title": "注册中心",
+      "file": "chapters/011-registry.md"
+    },
+    {
+      "slug": "012-registry",
+      "title": "点对点",
+      "file": "chapters/012-registry.md"
+    },
+    {
+      "slug": "013-registry",
+      "title": "点对多",
+      "file": "chapters/013-registry.md"
+    },
+    {
+      "slug": "014-registry",
+      "title": "Zookeeper",
+      "file": "chapters/014-registry.md"
+    },
+    {
+      "slug": "015-registry",
+      "title": "Etcd",
+      "file": "chapters/015-registry.md"
+    },
+    {
+      "slug": "016-registry",
+      "title": "Consul",
+      "file": "chapters/016-registry.md"
+    },
+    {
+      "slug": "017-registry",
+      "title": "mDNS",
+      "file": "chapters/017-registry.md"
+    },
+    {
+      "slug": "018-registry",
+      "title": "进程内调用",
+      "file": "chapters/018-registry.md"
+    },
+    {
+      "slug": "019-codec",
+      "title": "编解码",
+      "file": "chapters/019-codec.md"
+    },
+    {
+      "slug": "020-failmode",
+      "title": "失败模式",
+      "file": "chapters/020-failmode.md"
+    },
+    {
+      "slug": "021-failmode",
+      "title": "Failfast",
+      "file": "chapters/021-failmode.md"
+    },
+    {
+      "slug": "022-failmode",
+      "title": "Failover",
+      "file": "chapters/022-failmode.md"
+    },
+    {
+      "slug": "023-failmode",
+      "title": "Failtry",
+      "file": "chapters/023-failmode.md"
+    },
+    {
+      "slug": "024-failmode",
+      "title": "Failbackup",
+      "file": "chapters/024-failmode.md"
+    },
+    {
+      "slug": "025-fork",
+      "title": "Fork模式",
+      "file": "chapters/025-fork.md"
+    },
+    {
+      "slug": "026-broadcast",
+      "title": "广播模式",
+      "file": "chapters/026-broadcast.md"
+    },
+    {
+      "slug": "027-selector",
+      "title": "路由",
+      "file": "chapters/027-selector.md"
+    },
+    {
+      "slug": "028-selector",
+      "title": "随机选择",
+      "file": "chapters/028-selector.md"
+    },
+    {
+      "slug": "029-selector",
+      "title": "轮询",
+      "file": "chapters/029-selector.md"
+    },
+    {
+      "slug": "030-selector",
+      "title": "一致性哈希",
+      "file": "chapters/030-selector.md"
+    },
+    {
+      "slug": "031-selector",
+      "title": "权重",
+      "file": "chapters/031-selector.md"
+    },
+    {
+      "slug": "032-selector",
+      "title": "网络质量优先",
+      "file": "chapters/032-selector.md"
+    },
+    {
+      "slug": "033-selector",
+      "title": "地理位置优先",
+      "file": "chapters/033-selector.md"
+    },
+    {
+      "slug": "034-selector",
+      "title": "定制路由规则",
+      "file": "chapters/034-selector.md"
+    },
+    {
+      "slug": "035-timeout",
+      "title": "超时",
+      "file": "chapters/035-timeout.md"
+    },
+    {
+      "slug": "036-metadata",
+      "title": "元数据",
+      "file": "chapters/036-metadata.md"
+    },
+    {
+      "slug": "037-heartbeat",
+      "title": "心跳",
+      "file": "chapters/037-heartbeat.md"
+    },
+    {
+      "slug": "038-group",
+      "title": "分组",
+      "file": "chapters/038-group.md"
+    },
+    {
+      "slug": "039-state",
+      "title": "服务状态",
+      "file": "chapters/039-state.md"
+    },
+    {
+      "slug": "040-circuit-breaker",
+      "title": "断路器",
+      "file": "chapters/040-circuit-breaker.md"
+    },
+    {
+      "slug": "041-metrics",
+      "title": "Metrics",
+      "file": "chapters/041-metrics.md"
+    },
+    {
+      "slug": "042-rate-limiting",
+      "title": "限流",
+      "file": "chapters/042-rate-limiting.md"
+    },
+    {
+      "slug": "043-alias",
+      "title": "别名",
+      "file": "chapters/043-alias.md"
+    },
+    {
+      "slug": "044-auth",
+      "title": "身份认证",
+      "file": "chapters/044-auth.md"
+    },
+    {
+      "slug": "045-plugin-dev",
+      "title": "插件开发",
+      "file": "chapters/045-plugin-dev.md"
+    },
+    {
+      "slug": "046-benchmark",
+      "title": "Benchmark",
+      "file": "chapters/046-benchmark.md"
+    },
+    {
+      "slug": "047-ui",
+      "title": "UI管理工具",
+      "file": "chapters/047-ui.md"
+    },
+    {
+      "slug": "048-protocol",
+      "title": "协议详解",
+      "file": "chapters/048-protocol.md"
+    },
+    {
+      "slug": "049-gateway",
+      "title": "Gateway",
+      "file": "chapters/049-gateway.md"
+    },
+    {
+      "slug": "050-http-invoke",
+      "title": "HTTP 方式调用",
+      "file": "chapters/050-http-invoke.md"
+    },
+    {
+      "slug": "051-bidirectional",
+      "title": "双向通讯",
+      "file": "chapters/051-bidirectional.md"
+    }
+  ],
+  "sourceType": "github"
+}

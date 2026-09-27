@@ -1,0 +1,16 @@
+{
+  "bookId": "740e93dd3855",
+  "title": "制造开源软件",
+  "url": "http://producingoss.com/zh/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:35.791Z",
+  "chapters": [
+    {
+      "slug": "001-r",
+      "title": "Index of /zh",
+      "file": "chapters/001-r.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Index of /zh"
+}

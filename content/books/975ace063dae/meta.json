@@ -1,0 +1,16 @@
+{
+  "bookId": "975ace063dae",
+  "title": "Redis 设计与实现",
+  "url": "http://redisbook.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:01.759Z",
+  "chapters": [
+    {
+      "slug": "001-l",
+      "title": "MDG99: Panduan Streetwear, Sneakers, dan Fashion Urban",
+      "file": "chapters/001-l.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "MDG99: Panduan Streetwear, Sneakers, dan Fashion Urban"
+}

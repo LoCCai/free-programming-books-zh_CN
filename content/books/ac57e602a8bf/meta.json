@@ -1,0 +1,311 @@
+{
+  "bookId": "ac57e602a8bf",
+  "title": "Serverless 架构应用开发指南",
+  "url": "https://github.com/phodal/serverless",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:42.442Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "Serverless IoT Event",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Serverless REST API",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "API Gateway Authorizer Function for Auth0 or AWS Cognito using the [JWKS](https://auth0.com/docs/jwks) method.",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "Serverless REST API",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "Serverless REST API",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "Serverless Kinesis Firehose 持久化数据到 S3",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "Serverless Github webhook listener",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "GraphQL query endpoint in NodeJS on AWS with DynamoDB",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "README",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "Serverless Kinesis streams",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "README",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "Serving Dynamic HTML via API Gateway Example",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "README",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "AWS Node Scheduled Cron Example",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "Serverless CRUD with S3",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "README",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "README",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "README",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "README",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-readme",
+      "title": "Serverless OwnTracks HTTP Backend",
+      "file": "chapters/021-readme.md"
+    },
+    {
+      "slug": "022-readme",
+      "title": "[Serverless Shrink](https://github.com/vannio/serverless-shrink)",
+      "file": "chapters/022-readme.md"
+    },
+    {
+      "slug": "023-readme",
+      "title": "README",
+      "file": "chapters/023-readme.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "README",
+      "file": "chapters/024-readme.md"
+    },
+    {
+      "slug": "025-cognito",
+      "title": "cognito",
+      "file": "chapters/025-cognito.md"
+    },
+    {
+      "slug": "026-00-appendix",
+      "title": "00-appendix",
+      "file": "chapters/026-00-appendix.md"
+    },
+    {
+      "slug": "027-01-intro",
+      "title": "01-intro",
+      "file": "chapters/027-01-intro.md"
+    },
+    {
+      "slug": "028-02-hello-world",
+      "title": "02-hello-world",
+      "file": "chapters/028-02-hello-world.md"
+    },
+    {
+      "slug": "029-03-dynamic",
+      "title": "03-dynamic",
+      "file": "chapters/029-03-dynamic.md"
+    },
+    {
+      "slug": "030-03-s3-static-website",
+      "title": "03-s3-static-website",
+      "file": "chapters/030-03-s3-static-website.md"
+    },
+    {
+      "slug": "031-04-s3-crud",
+      "title": "04-s3-crud",
+      "file": "chapters/031-04-s3-crud.md"
+    },
+    {
+      "slug": "032-05-dynamodb-crud",
+      "title": "05-dynamodb-crud",
+      "file": "chapters/032-05-dynamodb-crud.md"
+    },
+    {
+      "slug": "033-06-express-react",
+      "title": "06-express-react",
+      "file": "chapters/033-06-express-react.md"
+    },
+    {
+      "slug": "034-07-wechat-mp",
+      "title": "07-wechat-mp",
+      "file": "chapters/034-07-wechat-mp.md"
+    },
+    {
+      "slug": "035-08-kinesis",
+      "title": "08-kinesis",
+      "file": "chapters/035-08-kinesis.md"
+    },
+    {
+      "slug": "036-09-ses",
+      "title": "09-ses",
+      "file": "chapters/036-09-ses.md"
+    },
+    {
+      "slug": "037-10-short-url",
+      "title": "10-short-url",
+      "file": "chapters/037-10-short-url.md"
+    },
+    {
+      "slug": "038-11-auth",
+      "title": "11-auth",
+      "file": "chapters/038-11-auth.md"
+    },
+    {
+      "slug": "039-12-offline",
+      "title": "12-offline",
+      "file": "chapters/039-12-offline.md"
+    },
+    {
+      "slug": "040-13-test",
+      "title": "13-test",
+      "file": "chapters/040-13-test.md"
+    },
+    {
+      "slug": "041-14-multiple",
+      "title": "14-multiple",
+      "file": "chapters/041-14-multiple.md"
+    },
+    {
+      "slug": "042-15-iot",
+      "title": "15-iot",
+      "file": "chapters/042-15-iot.md"
+    },
+    {
+      "slug": "043-16-warmup",
+      "title": "16-warmup",
+      "file": "chapters/043-16-warmup.md"
+    },
+    {
+      "slug": "044-17-cron",
+      "title": "17-cron",
+      "file": "chapters/044-17-cron.md"
+    },
+    {
+      "slug": "045-18-simulate",
+      "title": "18-simulate",
+      "file": "chapters/045-18-simulate.md"
+    },
+    {
+      "slug": "046-19-graphql",
+      "title": "19-graphql",
+      "file": "chapters/046-19-graphql.md"
+    },
+    {
+      "slug": "047-20-molog",
+      "title": "20-molog",
+      "file": "chapters/047-20-molog.md"
+    },
+    {
+      "slug": "048-21-qrcode",
+      "title": "21-qrcode",
+      "file": "chapters/048-21-qrcode.md"
+    },
+    {
+      "slug": "049-22-mopass",
+      "title": "22-mopass",
+      "file": "chapters/049-22-mopass.md"
+    },
+    {
+      "slug": "050-23-openwhisk",
+      "title": "Serverless 框架 OpenWhisk 开发指南",
+      "file": "chapters/050-23-openwhisk.md"
+    },
+    {
+      "slug": "051-cognito",
+      "title": "cognito",
+      "file": "chapters/051-cognito.md"
+    },
+    {
+      "slug": "052-logs",
+      "title": "logs",
+      "file": "chapters/052-logs.md"
+    },
+    {
+      "slug": "053-logs",
+      "title": "logs",
+      "file": "chapters/053-logs.md"
+    },
+    {
+      "slug": "054-logs",
+      "title": "logs",
+      "file": "chapters/054-logs.md"
+    },
+    {
+      "slug": "055-webhook",
+      "title": "webhook",
+      "file": "chapters/055-webhook.md"
+    },
+    {
+      "slug": "056-guide",
+      "title": "guide",
+      "file": "chapters/056-guide.md"
+    },
+    {
+      "slug": "057-logs",
+      "title": "logs",
+      "file": "chapters/057-logs.md"
+    },
+    {
+      "slug": "058-cron",
+      "title": "cron",
+      "file": "chapters/058-cron.md"
+    },
+    {
+      "slug": "059-serverless",
+      "title": "Serverless 框架 OpenWhisk 开发指南",
+      "file": "chapters/059-serverless.md"
+    },
+    {
+      "slug": "060-logs",
+      "title": "logs",
+      "file": "chapters/060-logs.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

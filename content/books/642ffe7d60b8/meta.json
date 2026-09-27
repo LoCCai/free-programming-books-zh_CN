@@ -1,0 +1,91 @@
+{
+  "bookId": "642ffe7d60b8",
+  "title": "借助开源项目，学习软件开发",
+  "url": "https://github.com/zhuangbiaowei/learn-with-open-source",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:38.685Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Learn Coding with Open Source",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "著作权申明",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-contributor",
+      "title": "Contributor",
+      "file": "chapters/003-contributor.md"
+    },
+    {
+      "slug": "004-before-start",
+      "title": "Before the Beginning",
+      "file": "chapters/004-before-start.md"
+    },
+    {
+      "slug": "005-start",
+      "title": "Start",
+      "file": "chapters/005-start.md"
+    },
+    {
+      "slug": "006-useful-websites-to-learn-how-to-code-quickly",
+      "title": "Website recommendations for developers to learn programming",
+      "file": "chapters/006-useful-websites-to-learn-how-to-code-quickly.md"
+    },
+    {
+      "slug": "007-langs",
+      "title": "Language",
+      "file": "chapters/007-langs.md"
+    },
+    {
+      "slug": "008-before-start",
+      "title": "开始之前",
+      "file": "chapters/008-before-start.md"
+    },
+    {
+      "slug": "009-contributor",
+      "title": "Contributor",
+      "file": "chapters/009-contributor.md"
+    },
+    {
+      "slug": "010-hello-world",
+      "title": "Hello World",
+      "file": "chapters/010-hello-world.md"
+    },
+    {
+      "slug": "011-modify-the-open-source-project",
+      "title": "Modify-the-open-source-project",
+      "file": "chapters/011-modify-the-open-source-project.md"
+    },
+    {
+      "slug": "012-select-an-open-source-project",
+      "title": "Select-an-open-source-project",
+      "file": "chapters/012-select-an-open-source-project.md"
+    },
+    {
+      "slug": "013-start",
+      "title": "Start",
+      "file": "chapters/013-start.md"
+    },
+    {
+      "slug": "014-summary",
+      "title": "SUMMARY",
+      "file": "chapters/014-summary.md"
+    },
+    {
+      "slug": "015-understanding-the-source-code",
+      "title": "理解源代码",
+      "file": "chapters/015-understanding-the-source-code.md"
+    },
+    {
+      "slug": "016-useful-websites-to-learn-how-to-code-quickly",
+      "title": "指导开发者快速学习编程的网站推荐",
+      "file": "chapters/016-useful-websites-to-learn-how-to-code-quickly.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

@@ -1,0 +1,16 @@
+{
+  "bookId": "039eac54a0d5",
+  "title": "git - 简易指南",
+  "url": "http://rogerdudler.github.io/git-guide/index.zh.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:11.261Z",
+  "chapters": [
+    {
+      "slug": "001-1g",
+      "title": "git - the simple guide",
+      "file": "chapters/001-1g.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "git - the simple guide"
+}

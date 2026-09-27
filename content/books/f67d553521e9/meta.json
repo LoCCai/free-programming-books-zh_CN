@@ -1,0 +1,20 @@
+{
+  "bookId": "f67d553521e9",
+  "title": "Network programming with Go 中文翻译版本",
+  "url": "https://github.com/astaxie/NPWG_zh",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:54.320Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-errata",
+      "title": "Errata",
+      "file": "chapters/002-errata.md"
+    }
+  ],
+  "sourceType": "github"
+}

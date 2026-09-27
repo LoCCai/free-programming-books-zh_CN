@@ -1,0 +1,16 @@
+{
+  "bookId": "47291bbbbe5e",
+  "title": "Web.py Cookbook 简体中文版",
+  "url": "http://webpy.org/cookbook/index.zh-cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:09.811Z",
+  "chapters": [
+    {
+      "slug": "001-11",
+      "title": "Web.py Cookbook 简体中文版 (web.py)",
+      "file": "chapters/001-11.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Web.py Cookbook 简体中文版 (web.py)"
+}

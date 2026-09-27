@@ -1,0 +1,16 @@
+{
+  "bookId": "fcaab2741f1a",
+  "title": "Sketch 中文手册",
+  "url": "http://sketchcn.com/sketch-chinese-user-manual.html#introduce",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:53.162Z",
+  "chapters": [
+    {
+      "slug": "001-1p",
+      "title": "sketchcn.com",
+      "file": "chapters/001-1p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "sketchcn.com"
+}

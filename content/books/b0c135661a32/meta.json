@@ -1,0 +1,260 @@
+{
+  "bookId": "b0c135661a32",
+  "title": "深入解析Go",
+  "url": "https://github.com/tiancaiamao/go-internals",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:56.696Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "《深入解析Go》",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "《深入解析Go》",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-langs",
+      "title": "LANGS",
+      "file": "chapters/003-langs.md"
+    },
+    {
+      "slug": "004-01-0",
+      "title": "1 如何阅读",
+      "file": "chapters/004-01-0.md"
+    },
+    {
+      "slug": "005-01-1",
+      "title": "1.1 从源代码安装Go",
+      "file": "chapters/005-01-1.md"
+    },
+    {
+      "slug": "006-01-2",
+      "title": "1.2 本书的组织结构",
+      "file": "chapters/006-01-2.md"
+    },
+    {
+      "slug": "007-01-3",
+      "title": "1.3 基本技巧",
+      "file": "chapters/007-01-3.md"
+    },
+    {
+      "slug": "008-02-0",
+      "title": "2 基本数据结构",
+      "file": "chapters/008-02-0.md"
+    },
+    {
+      "slug": "009-02-1",
+      "title": "2.1 基本类型",
+      "file": "chapters/009-02-1.md"
+    },
+    {
+      "slug": "010-02-2",
+      "title": "2.2 slice",
+      "file": "chapters/010-02-2.md"
+    },
+    {
+      "slug": "011-02-3",
+      "title": "2.3 map的实现",
+      "file": "chapters/011-02-3.md"
+    },
+    {
+      "slug": "012-02-4",
+      "title": "2.4 nil的语义",
+      "file": "chapters/012-02-4.md"
+    },
+    {
+      "slug": "013-03-0",
+      "title": "3 函数调用协议",
+      "file": "chapters/013-03-0.md"
+    },
+    {
+      "slug": "014-03-1",
+      "title": "3.1 Go调用汇编和C",
+      "file": "chapters/014-03-1.md"
+    },
+    {
+      "slug": "015-03-2",
+      "title": "3.2 多值返回",
+      "file": "chapters/015-03-2.md"
+    },
+    {
+      "slug": "016-03-3",
+      "title": "3.2 go关键字",
+      "file": "chapters/016-03-3.md"
+    },
+    {
+      "slug": "017-03-4",
+      "title": "3.4 defer关键字",
+      "file": "chapters/017-03-4.md"
+    },
+    {
+      "slug": "018-03-5",
+      "title": "3.5 连续栈",
+      "file": "chapters/018-03-5.md"
+    },
+    {
+      "slug": "019-03-6",
+      "title": "3.6 闭包的实现",
+      "file": "chapters/019-03-6.md"
+    },
+    {
+      "slug": "020-04-0",
+      "title": "4 Go语言程序初始化过程",
+      "file": "chapters/020-04-0.md"
+    },
+    {
+      "slug": "021-04-1",
+      "title": "4.1 系统初始化",
+      "file": "chapters/021-04-1.md"
+    },
+    {
+      "slug": "022-04-2",
+      "title": "4.2 main.main之前的准备",
+      "file": "chapters/022-04-2.md"
+    },
+    {
+      "slug": "023-05-0",
+      "title": "5. goroutine调度",
+      "file": "chapters/023-05-0.md"
+    },
+    {
+      "slug": "024-05-1",
+      "title": "5.1 调度器相关数据结构",
+      "file": "chapters/024-05-1.md"
+    },
+    {
+      "slug": "025-05-2",
+      "title": "5.2 goroutine的生老病死",
+      "file": "chapters/025-05-2.md"
+    },
+    {
+      "slug": "026-05-3",
+      "title": "5.3 设计与演化",
+      "file": "chapters/026-05-3.md"
+    },
+    {
+      "slug": "027-05-4",
+      "title": "5.4 死锁检测和竞态检测",
+      "file": "chapters/027-05-4.md"
+    },
+    {
+      "slug": "028-05-5",
+      "title": "5.5 抢占式调度",
+      "file": "chapters/028-05-5.md"
+    },
+    {
+      "slug": "029-06-0",
+      "title": "6 内存管理",
+      "file": "chapters/029-06-0.md"
+    },
+    {
+      "slug": "030-06-1",
+      "title": "6.1 内存池",
+      "file": "chapters/030-06-1.md"
+    },
+    {
+      "slug": "031-06-2",
+      "title": "6.2 垃圾回收",
+      "file": "chapters/031-06-2.md"
+    },
+    {
+      "slug": "032-06-3",
+      "title": "6.3 垃圾回收",
+      "file": "chapters/032-06-3.md"
+    },
+    {
+      "slug": "033-07-1",
+      "title": "7.1 channel",
+      "file": "chapters/033-07-1.md"
+    },
+    {
+      "slug": "034-07-2",
+      "title": "7.2 interface",
+      "file": "chapters/034-07-2.md"
+    },
+    {
+      "slug": "035-07-3",
+      "title": "7.3 方法调用",
+      "file": "chapters/035-07-3.md"
+    },
+    {
+      "slug": "036-08-0",
+      "title": "8 网络",
+      "file": "chapters/036-08-0.md"
+    },
+    {
+      "slug": "037-08-1",
+      "title": "8.1 非阻塞io",
+      "file": "chapters/037-08-1.md"
+    },
+    {
+      "slug": "038-09-0",
+      "title": "9 cgo",
+      "file": "chapters/038-09-0.md"
+    },
+    {
+      "slug": "039-09-1",
+      "title": "9.1 预备知识",
+      "file": "chapters/039-09-1.md"
+    },
+    {
+      "slug": "040-09-2",
+      "title": "9.2 cgo关键技术",
+      "file": "chapters/040-09-2.md"
+    },
+    {
+      "slug": "041-09-3",
+      "title": "9.3 Go调用C",
+      "file": "chapters/041-09-3.md"
+    },
+    {
+      "slug": "042-09-4",
+      "title": "9.4 C调用Go",
+      "file": "chapters/042-09-4.md"
+    },
+    {
+      "slug": "043-10-1",
+      "title": "10.1 内存模型",
+      "file": "chapters/043-10-1.md"
+    },
+    {
+      "slug": "044-10-4",
+      "title": "10.4 系统调用",
+      "file": "chapters/044-10-4.md"
+    },
+    {
+      "slug": "045-10-7",
+      "title": "10.6 运行时符号信息",
+      "file": "chapters/045-10-7.md"
+    },
+    {
+      "slug": "046-preface",
+      "title": "preface",
+      "file": "chapters/046-preface.md"
+    },
+    {
+      "slug": "047-ref",
+      "title": "附录A 参考资料",
+      "file": "chapters/047-ref.md"
+    },
+    {
+      "slug": "048-ref2",
+      "title": "附录B Go的源代码目录结构",
+      "file": "chapters/048-ref2.md"
+    },
+    {
+      "slug": "049-ref3",
+      "title": "allow all.bash to avoid double-build of everything",
+      "file": "chapters/049-ref3.md"
+    },
+    {
+      "slug": "050-summary",
+      "title": "SUMMARY",
+      "file": "chapters/050-summary.md"
+    }
+  ],
+  "sourceType": "github"
+}

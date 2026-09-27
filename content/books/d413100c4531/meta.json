@@ -1,0 +1,115 @@
+{
+  "bookId": "d413100c4531",
+  "title": "Node.js 包教不包会",
+  "url": "https://github.com/alsotang/node-lessons",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:41.428Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "《搭建 Node.js 开发环境》",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "《一个最简单的 express 应用》",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "《benchmark 怎么写》",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "《作用域与闭包：this，var，(function () {})》",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "《线上部署：heroku》",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "《持续集成平台：travis》",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "《js 中的那些最佳实践》",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "《Mongodb 与 Mongoose 的使用》",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "cookie 和 session",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "《使用 promise 替代回调函数》",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "《何为 connect 中间件》",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "《学习使用外部模块》",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "《使用 superagent 与 cheerio 完成简单爬虫》",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-readme",
+      "title": "《使用 eventproxy 控制并发》",
+      "file": "chapters/014-readme.md"
+    },
+    {
+      "slug": "015-readme",
+      "title": "《使用 async 控制并发》",
+      "file": "chapters/015-readme.md"
+    },
+    {
+      "slug": "016-readme",
+      "title": "《测试用例：mocha，should，istanbul》",
+      "file": "chapters/016-readme.md"
+    },
+    {
+      "slug": "017-readme",
+      "title": "《浏览器端测试：mocha，chai，phantomjs》",
+      "file": "chapters/017-readme.md"
+    },
+    {
+      "slug": "018-readme",
+      "title": "《测试用例：supertest》",
+      "file": "chapters/018-readme.md"
+    },
+    {
+      "slug": "019-readme",
+      "title": "《正则表达式》",
+      "file": "chapters/019-readme.md"
+    },
+    {
+      "slug": "020-readme",
+      "title": "《Node.js 包教不包会》 -- by alsotang",
+      "file": "chapters/020-readme.md"
+    },
+    {
+      "slug": "021-解密设计模式-王垠",
+      "title": "解密设计模式-王垠",
+      "file": "chapters/021-解密设计模式-王垠.md"
+    }
+  ],
+  "sourceType": "github"
+}

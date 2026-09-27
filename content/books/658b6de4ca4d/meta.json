@@ -1,0 +1,55 @@
+{
+  "bookId": "658b6de4ca4d",
+  "title": "前端开发体系建设日记",
+  "url": "https://github.com/fouber/blog/issues/2",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:30.936Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "个人博客",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-01",
+      "title": "前端开发体系建设日记",
+      "file": "chapters/002-01.md"
+    },
+    {
+      "slug": "003-01",
+      "title": "前端工程与性能优化",
+      "file": "chapters/003-01.md"
+    },
+    {
+      "slug": "004-01",
+      "title": "前端工程与模块化框架",
+      "file": "chapters/004-01.md"
+    },
+    {
+      "slug": "005-01",
+      "title": "01",
+      "file": "chapters/005-01.md"
+    },
+    {
+      "slug": "006-01",
+      "title": "前端工程",
+      "file": "chapters/006-01.md"
+    },
+    {
+      "slug": "007-01",
+      "title": "前端工程——基础篇",
+      "file": "chapters/007-01.md"
+    },
+    {
+      "slug": "008-02",
+      "title": "写在FIS3发布之前（下）",
+      "file": "chapters/008-02.md"
+    },
+    {
+      "slug": "009-01",
+      "title": "一个程序员的成长之路",
+      "file": "chapters/009-01.md"
+    }
+  ],
+  "sourceType": "github"
+}

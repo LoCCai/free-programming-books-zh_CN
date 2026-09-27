@@ -1,0 +1,16 @@
+{
+  "bookId": "64876a52cf4a",
+  "title": "《Real-Time Rendering 3rd》提炼总结",
+  "url": "https://github.com/QianMo/Real-Time-Rendering-3rd-Summary-Ebook",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:02.656Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "电子书《《Real-Time Rendering 3rd》提炼总结》",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "license": "GPL-3.0",
+  "sourceType": "github"
+}

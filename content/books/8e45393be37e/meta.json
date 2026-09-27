@@ -1,0 +1,16 @@
+{
+  "bookId": "8e45393be37e",
+  "title": "ThinkPHP3.2.3完全开发手册",
+  "url": "https://www.kancloud.cn/manual/thinkphp",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:15.019Z",
+  "chapters": [
+    {
+      "slug": "001-13",
+      "title": "ThinkPHP3.2.3完全开发手册 · 看云",
+      "file": "chapters/001-13.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "ThinkPHP3.2.3完全开发手册 · 看云"
+}

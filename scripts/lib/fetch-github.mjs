@@ -189,16 +189,28 @@ function toChapter(rel, title, i, rootDir) {
   };
 }
 
-/** 相对链接/图片 → raw.githubusercontent 绝对地址 */
+/** 相对链接/图片 → raw.githubusercontent 绝对地址。
+ * 覆盖:内联 `](rel)`、HTML `src="rel"`、引用式定义 `[id]: rel` */
 export function absolutizeMd(md, rawBase, currentRelPath) {
   const baseDir = posix.dirname(currentRelPath);
-  return md.replace(
-    /(\]\(|src=")(?!https?:\/\/|#|data:|mailto:)([^)"\s]+)/g,
-    (full, prefix, target) => {
-      const abs = posix.normalize(posix.join(baseDir, decodeURI(target)));
-      const cleaned = abs.replace(/^\.\//, '');
-      return `${prefix}${rawBase}/${cleaned}`;
-    },
+  const toAbs = (target) => {
+    const abs = posix.normalize(posix.join(baseDir, decodeURI(target)));
+    return `${rawBase}/${abs.replace(/^\.\//, '')}`;
+  };
+  return (
+    md
+      .replace(
+        /(\]\(|src="|src=')(?!https?:\/\/|#|data:|mailto:)([^)"'\s]+)/g,
+        (full, prefix, target) => `${prefix}${toAbs(target)}`,
+      )
+      // 引用式定义:行首(或空白后) [label]: 相对路径
+      .replace(/^(\s*\[[^\]\n]+\]:\s*)(?!https?:\/\/|#|data:|mailto:)(\S+)$/gm, (full, prefix, target) => {
+        try {
+          return `${prefix}${toAbs(target)}`;
+        } catch {
+          return full;
+        }
+      })
   );
 }
 

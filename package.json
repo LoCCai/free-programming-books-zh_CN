@@ -11,7 +11,7 @@
     "sync:inputs": "node scripts/sync-web-inputs.mjs",
     "fetch:all": "node scripts/fetch-all.mjs",
     "fetch:book": "node scripts/fetch-book.mjs",
-    "build": "npm run parse && npm run validate && npm run sync:inputs && cd web && npm run build",
+    "build": "npm run parse && npm run validate && node scripts/redact-secrets.mjs && node scripts/fix-md-frontmatter.mjs && npm run sync:inputs && cd web && npm run build",
     "preview": "cd web && npm run preview"
   },
   "dependencies": {

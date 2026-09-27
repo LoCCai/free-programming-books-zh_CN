@@ -1,0 +1,107 @@
+# 第四章：一些小技巧
+
+## 简单设置 Vim
+
+“工欲善其事，必先利其器”。尽管 Vim 非常强大，但默认配置的 Vim 看起来还是比较朴素
+的，为了适合我们的开发需求，要对 Vim 进行一些简单的配置。
+
+- `:set number` 显示行号
+- `:set relativenumber` 显示相对行号（这个非常重要，慢慢体会）
+- `:set hlsearch` 搜索结果高亮
+- `:set autoindent` 自动缩进
+- `:set smartindent` 智能缩进
+- `:set tabstop=4` 设置 tab 制表符所占宽度为 4
+- `:set softtabstop=4` 设置按 `tab` 时缩进的宽度为 4
+- `:set shiftwidth=4` 设置自动缩进宽度为 4
+- `:set expandtab` 缩进时将 tab 制表符转换为空格
+- `:filetype on` 开启文件类型检测
+- `:syntax on` 开启语法高亮
+
+这里列出的是命令，你可以通过在 Vim 中输入进行设置，但这种方式设置的参数只在本次
+关闭 Vim 前生效，如果你退出 Vim 再打开，之前的设置就失效了。
+
+若要永久生效，需要修改 Vim 的一个自动配置文件，一般文件路径是
+`/home/<user>/.vimrc`（Linux 系统）或 `/Users/<user>/.vimrc`（Mac OS 系统）
+
+如果没有就新建一个，以 Mac OS 系统为例：
+
+> 在控制台执行如下命令，每行结尾记得回车
+
+```bash
+cd ~
+vim .vimrc
+```
+
+> 现在你已经在 Vim 中打开了你的 Vim 专属配置文件，将上面提到的配置复制到你的文件
+> 中，记得要删除每行开头的 `:`
+>
+> 修改完成执行 `:wq` 或者 `ZZ` 保存退出，再次进入 Vim 时，你的这些配置就已经生效
+> 了
+>
+> 当然，机智如我也为你准备好了一份 [vimrc](https://raw.githubusercontent.com/dofy/learn-vim/HEAD/zh-CN/vimrc.vim) 样本文件，你可以在控制台执
+> 行 `cp vimrc.vim ~/.vimrc` 直接使用，再次启动 Vim 或在 Vim 中执行
+> `:source ~/.vimrc`你的配置就应该生效了。
+
+_**[ AD ]** 当然你也可以在我维护的另外一个项目
+[The 7th Vim](https://github.com/dofy/7th-vim) 中找到一个更为完整的配置方案。_
+
+## 清除搜索高亮
+
+前面提到的配置中，有一项是高亮全部搜索结果 `:set hlsearch`，其作用是当你执行 `/`
+、`?`、`*` 或 `#` 搜索后高亮所有匹配结果。
+
+> 如果你已经设置了这个选项，尝试执行 `/set`
+
+看到效果了吧，搜索结果一目了然，但这有时候也是一种困扰，因为知道搜索结果后高亮就
+没用了，但高亮本人并不这样认为，它会一直高亮下去，直到你用 `:set nohlsearch` 将
+其关闭。
+
+更直接的做法是执行 `:nohlsearch`（可缩写为 `:noh`）暂时清除高亮。它不会关闭
+`hlsearch` 设置，下一次搜索时匹配结果仍会正常高亮。
+
+> 执行 `/set` 产生高亮，再执行 `:noh` 清除，最后按 `n`。你会发现搜索记录仍然保留，
+> 只是高亮被关掉了。
+
+如果经常使用，可以在 `.vimrc` 中加入 `nnoremap <Esc><Esc> :nohlsearch<CR>`，以后连按
+两次 `Esc` 即可清除。这里使用 `nnoremap`，是为了只在 Normal 模式中建立一个不会递归
+展开的按键映射。
+
+## 重复上一次命令
+
+Vim 有一个特殊的命令 `.`，你可以用它重复执行上一个命令。
+
+> 按下面的说明进行操作
+
+```
+按 dd 删除本行
+按 . 重复删除操作
+2. 再删除两行
+这行也没了
+p 把刚才删掉的粘回来
+3. 又多出 6 行
+```
+
+## 缩进
+
+- `>>` 向右缩进当前行
+- `<<` 向左缩进当前行
+
+> 在这一行上依次按 `3>>`，`<<` 和 `<G` 看看效果
+>
+> 打酱油行
+
+## 自动排版
+
+- `==` 自动排版当前行
+- `gg=G` 当前文档全文自动排版
+- `<N>==` 对从当前行开始的 N 行进行自动排版
+- `=<N>j` 对当前行以及向下 N 行进行自动排版
+- `=<N>k` 对当前行以及向上 N 行进行自动排版
+
+> 另外，还可以利用[第二章](https://raw.githubusercontent.com/dofy/learn-vim/HEAD/zh-CN/chapter02.md)中提到的匹配搜索对代码块进行批量排版，尝
+> 试用 `gf` 命令打开 [chapter04-demo.js](https://raw.githubusercontent.com/dofy/learn-vim/HEAD/zh-CN/chapter04-demo.js) 按照里面的说明进行操
+> 作
+
+如果智能缩进设置生效了，执行后会看到如[第二章](https://raw.githubusercontent.com/dofy/learn-vim/HEAD/zh-CN/chapter02.md)中一样的排版效果。
+
+[下一章](https://raw.githubusercontent.com/dofy/learn-vim/HEAD/zh-CN/chapter05.md)将介绍分屏和标签页。

@@ -1,0 +1,106 @@
+{
+  "bookId": "7e917c4b1840",
+  "title": "python 安全编程教程",
+  "url": "https://github.com/smartFlash/pySecurity",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:36:18.690Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Introduction",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-0x0",
+      "title": "入门",
+      "file": "chapters/002-0x0.md"
+    },
+    {
+      "slug": "003-0x02",
+      "title": "入门 Pt.2",
+      "file": "chapters/003-0x02.md"
+    },
+    {
+      "slug": "004-0x1",
+      "title": "端口扫描",
+      "file": "chapters/004-0x1.md"
+    },
+    {
+      "slug": "005-0x2",
+      "title": "反向shell",
+      "file": "chapters/005-0x2.md"
+    },
+    {
+      "slug": "006-0x3",
+      "title": "模糊测试",
+      "file": "chapters/006-0x3.md"
+    },
+    {
+      "slug": "007-0x4",
+      "title": "Python转exe",
+      "file": "chapters/007-0x4.md"
+    },
+    {
+      "slug": "008-0x5",
+      "title": "Web请求",
+      "file": "chapters/008-0x5.md"
+    },
+    {
+      "slug": "009-0x6",
+      "title": "爬虫",
+      "file": "chapters/009-0x6.md"
+    },
+    {
+      "slug": "010-0x7",
+      "title": "Web扫描和利用",
+      "file": "chapters/010-0x7.md"
+    },
+    {
+      "slug": "011-0x8",
+      "title": "Whois查询",
+      "file": "chapters/011-0x8.md"
+    },
+    {
+      "slug": "012-0x9",
+      "title": "系统命令调用",
+      "file": "chapters/012-0x9.md"
+    },
+    {
+      "slug": "013-0x10",
+      "title": "Python版的Metasploit",
+      "file": "chapters/013-0x10.md"
+    },
+    {
+      "slug": "014-0x11",
+      "title": "伪终端",
+      "file": "chapters/014-0x11.md"
+    },
+    {
+      "slug": "015-0xc",
+      "title": "exp编写",
+      "file": "chapters/015-0xc.md"
+    },
+    {
+      "slug": "016-0x13",
+      "title": "用例1: CVE-2014-6271",
+      "file": "chapters/016-0x13.md"
+    },
+    {
+      "slug": "017-0x14",
+      "title": "用例2: CVE-2012-1823",
+      "file": "chapters/017-0x14.md"
+    },
+    {
+      "slug": "018-0x15",
+      "title": "用例3: CVE-2012-3152",
+      "file": "chapters/018-0x15.md"
+    },
+    {
+      "slug": "019-0x16",
+      "title": "用例4: CVE-2014-3704",
+      "file": "chapters/019-0x16.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

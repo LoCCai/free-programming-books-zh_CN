@@ -1,0 +1,61 @@
+{
+  "bookId": "3e2b7f09060d",
+  "title": "Jsoup 学习笔记",
+  "url": "https://github.com/code4craft/jsoup-learning",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:32.410Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-htmlcleaner",
+      "title": "htmlcleaner",
+      "file": "chapters/002-htmlcleaner.md"
+    },
+    {
+      "slug": "003-jsoup1",
+      "title": "jsoup1",
+      "file": "chapters/003-jsoup1.md"
+    },
+    {
+      "slug": "004-jsoup2",
+      "title": "jsoup2",
+      "file": "chapters/004-jsoup2.md"
+    },
+    {
+      "slug": "005-jsoup3",
+      "title": "jsoup3",
+      "file": "chapters/005-jsoup3.md"
+    },
+    {
+      "slug": "006-jsoup4",
+      "title": "jsoup4",
+      "file": "chapters/006-jsoup4.md"
+    },
+    {
+      "slug": "007-jsoup5",
+      "title": "jsoup5",
+      "file": "chapters/007-jsoup5.md"
+    },
+    {
+      "slug": "008-jsoup6",
+      "title": "jsoup6",
+      "file": "chapters/008-jsoup6.md"
+    },
+    {
+      "slug": "009-jsoup7",
+      "title": "jsoup7",
+      "file": "chapters/009-jsoup7.md"
+    },
+    {
+      "slug": "010-jsoup8",
+      "title": "jsoup8",
+      "file": "chapters/010-jsoup8.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

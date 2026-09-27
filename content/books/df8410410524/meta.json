@@ -1,0 +1,81 @@
+{
+  "bookId": "df8410410524",
+  "title": "Flask之旅",
+  "url": "http://spacewander.github.io/explore-flask-zh/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:07.992Z",
+  "chapters": [
+    {
+      "slug": "001-1a",
+      "title": "Introduction · Flask之旅",
+      "file": "chapters/001-1a.md"
+    },
+    {
+      "slug": "002-1t",
+      "title": "前言 · Flask之旅",
+      "file": "chapters/002-1t.md"
+    },
+    {
+      "slug": "003-1z",
+      "title": "代码约定 · Flask之旅",
+      "file": "chapters/003-1z.md"
+    },
+    {
+      "slug": "004-1s",
+      "title": "环境 · Flask之旅",
+      "file": "chapters/004-1s.md"
+    },
+    {
+      "slug": "005-24",
+      "title": "组织你的项目 · Flask之旅",
+      "file": "chapters/005-24.md"
+    },
+    {
+      "slug": "006-1u",
+      "title": "配置 · Flask之旅",
+      "file": "chapters/006-1u.md"
+    },
+    {
+      "slug": "007-2k",
+      "title": "关于视图和路由的进阶技巧 · Flask之旅",
+      "file": "chapters/007-2k.md"
+    },
+    {
+      "slug": "008-1r",
+      "title": "蓝图 · Flask之旅",
+      "file": "chapters/008-1r.md"
+    },
+    {
+      "slug": "009-1q",
+      "title": "模板 · Flask之旅",
+      "file": "chapters/009-1q.md"
+    },
+    {
+      "slug": "010-1t",
+      "title": "静态文件 · Flask之旅",
+      "file": "chapters/010-1t.md"
+    },
+    {
+      "slug": "011-1u",
+      "title": "存储 · Flask之旅",
+      "file": "chapters/011-1u.md"
+    },
+    {
+      "slug": "012-1w",
+      "title": "处理表单 · Flask之旅",
+      "file": "chapters/012-1w.md"
+    },
+    {
+      "slug": "013-1w",
+      "title": "用户管理的规范 · Flask之旅",
+      "file": "chapters/013-1w.md"
+    },
+    {
+      "slug": "014-1s",
+      "title": "部署 · Flask之旅",
+      "file": "chapters/014-1s.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction · Flask之旅"
+}

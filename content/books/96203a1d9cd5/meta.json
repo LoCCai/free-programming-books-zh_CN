@@ -1,0 +1,16 @@
+{
+  "bookId": "96203a1d9cd5",
+  "title": "100个gdb小技巧",
+  "url": "https://github.com/hellogcc/100-gdb-tips/blob/master/src/index.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:06.796Z",
+  "chapters": [
+    {
+      "slug": "001-index",
+      "title": "信息显示",
+      "file": "chapters/001-index.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

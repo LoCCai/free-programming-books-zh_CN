@@ -1,0 +1,55 @@
+{
+  "bookId": "c6bbfa5b16d7",
+  "title": "前端技能汇总",
+  "url": "https://github.com/JacksonTian/fks",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:37.769Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "angular-marked",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "packaged angular",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Data-Driven Documents",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "marked",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme-en",
+      "title": "README.en",
+      "file": "chapters/005-readme-en.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "README",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-todo",
+      "title": "Todo list",
+      "file": "chapters/007-todo.md"
+    },
+    {
+      "slug": "008-broken",
+      "title": "Markdown is broken",
+      "file": "chapters/008-broken.md"
+    },
+    {
+      "slug": "009-todo",
+      "title": "Todo",
+      "file": "chapters/009-todo.md"
+    }
+  ],
+  "sourceType": "github"
+}

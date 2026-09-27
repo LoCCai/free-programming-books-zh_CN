@@ -1,0 +1,9 @@
+{
+  "bookId": "90fe27cdb777",
+  "title": "TypeScript Handbook",
+  "url": "https://zhongsp.gitbooks.io/typescript-handbook/content/",
+  "status": "failed",
+  "fetchedAt": "2026-09-27T06:26:07.369Z",
+  "chapters": [],
+  "error": "HTTP 401"
+}

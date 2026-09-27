@@ -1,0 +1,251 @@
+{
+  "bookId": "1adea12ffcfd",
+  "title": "Python最佳实践指南",
+  "url": "http://pythonguidecn.readthedocs.io/zh/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:03.510Z",
+  "chapters": [
+    {
+      "slug": "001-1a",
+      "title": "Python最佳实践指南！ — The Hitchhiker's Guide to Python",
+      "file": "chapters/001-1a.md"
+    },
+    {
+      "slug": "002-20",
+      "title": "选择一个 Python 解释器（3 vs 2） — The Hitchhiker's Guide to Python",
+      "file": "chapters/002-20.md"
+    },
+    {
+      "slug": "003-20",
+      "title": "正确地安装 Python — The Hitchhiker's Guide to Python",
+      "file": "chapters/003-20.md"
+    },
+    {
+      "slug": "004-20",
+      "title": "在Mac OS X上安装Python 3 — The Hitchhiker's Guide to Python",
+      "file": "chapters/004-20.md"
+    },
+    {
+      "slug": "005-20",
+      "title": "Setuptools + Pip — The Hitchhiker's Guide to Python",
+      "file": "chapters/005-20.md"
+    },
+    {
+      "slug": "006-22",
+      "title": "在Linux上安装Python 3 — The Hitchhiker's Guide to Python",
+      "file": "chapters/006-22.md"
+    },
+    {
+      "slug": "007-1z",
+      "title": "在Mac OS X上安装Python 2 — The Hitchhiker's Guide to Python",
+      "file": "chapters/007-1z.md"
+    },
+    {
+      "slug": "008-1z",
+      "title": "在Windows上安装Python 2 — The Hitchhiker's Guide to Python",
+      "file": "chapters/008-1z.md"
+    },
+    {
+      "slug": "009-21",
+      "title": "在Linux上安装Python 2 — The Hitchhiker's Guide to Python",
+      "file": "chapters/009-21.md"
+    },
+    {
+      "slug": "010-1u",
+      "title": "Pipenv & 虚拟环境 — The Hitchhiker's Guide to Python",
+      "file": "chapters/010-1u.md"
+    },
+    {
+      "slug": "011-1m",
+      "title": "您的开发环境 — The Hitchhiker's Guide to Python",
+      "file": "chapters/011-1m.md"
+    },
+    {
+      "slug": "012-1x",
+      "title": "Pip和Virtualenv的更多配置 — The Hitchhiker's Guide to Python",
+      "file": "chapters/012-1x.md"
+    },
+    {
+      "slug": "013-1w",
+      "title": "结构化您的工程 — The Hitchhiker's Guide to Python",
+      "file": "chapters/013-1w.md"
+    },
+    {
+      "slug": "014-1s",
+      "title": "代码风格 — The Hitchhiker's Guide to Python",
+      "file": "chapters/014-1s.md"
+    },
+    {
+      "slug": "015-1u",
+      "title": "阅读好的代码 — The Hitchhiker's Guide to Python",
+      "file": "chapters/015-1u.md"
+    },
+    {
+      "slug": "016-20",
+      "title": "文档 — The Hitchhiker's Guide to Python",
+      "file": "chapters/016-20.md"
+    },
+    {
+      "slug": "017-1s",
+      "title": "测试您的代码 — The Hitchhiker's Guide to Python",
+      "file": "chapters/017-1s.md"
+    },
+    {
+      "slug": "018-1u",
+      "title": "日志（Logging） — The Hitchhiker's Guide to Python",
+      "file": "chapters/018-1u.md"
+    },
+    {
+      "slug": "019-1u",
+      "title": "常见陷阱 — The Hitchhiker's Guide to Python",
+      "file": "chapters/019-1u.md"
+    },
+    {
+      "slug": "020-1u",
+      "title": "选择一个许可 — The Hitchhiker's Guide to Python",
+      "file": "chapters/020-1u.md"
+    },
+    {
+      "slug": "021-1v",
+      "title": "网络应用 — The Hitchhiker's Guide to Python",
+      "file": "chapters/021-1v.md"
+    },
+    {
+      "slug": "022-1s",
+      "title": "Web 应用 & 框架 — The Hitchhiker's Guide to Python",
+      "file": "chapters/022-1s.md"
+    },
+    {
+      "slug": "023-1v",
+      "title": "HTML 抓取 — The Hitchhiker's Guide to Python",
+      "file": "chapters/023-1v.md"
+    },
+    {
+      "slug": "024-1s",
+      "title": "命令行应用 — The Hitchhiker's Guide to Python",
+      "file": "chapters/024-1s.md"
+    },
+    {
+      "slug": "025-1s",
+      "title": "GUI应用 — The Hitchhiker's Guide to Python",
+      "file": "chapters/025-1s.md"
+    },
+    {
+      "slug": "026-1r",
+      "title": "数据库 — The Hitchhiker's Guide to Python",
+      "file": "chapters/026-1r.md"
+    },
+    {
+      "slug": "027-1w",
+      "title": "网络 — The Hitchhiker's Guide to Python",
+      "file": "chapters/027-1w.md"
+    },
+    {
+      "slug": "028-1u",
+      "title": "系统管理 — The Hitchhiker's Guide to Python",
+      "file": "chapters/028-1u.md"
+    },
+    {
+      "slug": "029-1r",
+      "title": "持续集成 — The Hitchhiker's Guide to Python",
+      "file": "chapters/029-1r.md"
+    },
+    {
+      "slug": "030-1u",
+      "title": "速度 — The Hitchhiker's Guide to Python",
+      "file": "chapters/030-1u.md"
+    },
+    {
+      "slug": "031-1z",
+      "title": "科学应用 — The Hitchhiker's Guide to Python",
+      "file": "chapters/031-1z.md"
+    },
+    {
+      "slug": "032-1w",
+      "title": "图像处理 — The Hitchhiker's Guide to Python",
+      "file": "chapters/032-1w.md"
+    },
+    {
+      "slug": "033-22",
+      "title": "数据序列化 — The Hitchhiker's Guide to Python",
+      "file": "chapters/033-22.md"
+    },
+    {
+      "slug": "034-1s",
+      "title": "XML解析 — The Hitchhiker's Guide to Python",
+      "file": "chapters/034-1s.md"
+    },
+    {
+      "slug": "035-1t",
+      "title": "JSON — The Hitchhiker's Guide to Python",
+      "file": "chapters/035-1t.md"
+    },
+    {
+      "slug": "036-1v",
+      "title": "密码学 — The Hitchhiker's Guide to Python",
+      "file": "chapters/036-1v.md"
+    },
+    {
+      "slug": "037-1r",
+      "title": "机器学习 — The Hitchhiker's Guide to Python",
+      "file": "chapters/037-1r.md"
+    },
+    {
+      "slug": "038-1u",
+      "title": "与C/C++库交互 — The Hitchhiker's Guide to Python",
+      "file": "chapters/038-1u.md"
+    },
+    {
+      "slug": "039-1x",
+      "title": "打包您的代码 — The Hitchhiker's Guide to Python",
+      "file": "chapters/039-1x.md"
+    },
+    {
+      "slug": "040-1w",
+      "title": "冻结（freezing）您的代码 — The Hitchhiker's Guide to Python",
+      "file": "chapters/040-1w.md"
+    },
+    {
+      "slug": "041-1s",
+      "title": "介绍 — The Hitchhiker's Guide to Python",
+      "file": "chapters/041-1s.md"
+    },
+    {
+      "slug": "042-1u",
+      "title": "社区 — The Hitchhiker's Guide to Python",
+      "file": "chapters/042-1u.md"
+    },
+    {
+      "slug": "043-1t",
+      "title": "学习Python — The Hitchhiker's Guide to Python",
+      "file": "chapters/043-1t.md"
+    },
+    {
+      "slug": "044-1y",
+      "title": "文档 — The Hitchhiker's Guide to Python",
+      "file": "chapters/044-1y.md"
+    },
+    {
+      "slug": "045-1p",
+      "title": "新闻 — The Hitchhiker's Guide to Python",
+      "file": "chapters/045-1p.md"
+    },
+    {
+      "slug": "046-1v",
+      "title": "贡献 — The Hitchhiker's Guide to Python",
+      "file": "chapters/046-1v.md"
+    },
+    {
+      "slug": "047-1s",
+      "title": "许可证 — The Hitchhiker's Guide to Python",
+      "file": "chapters/047-1s.md"
+    },
+    {
+      "slug": "048-1v",
+      "title": "风格指南指引 — The Hitchhiker's Guide to Python",
+      "file": "chapters/048-1v.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Python最佳实践指南！ — The Hitchhiker's Guide to Python"
+}

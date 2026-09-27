@@ -1,0 +1,16 @@
+{
+  "bookId": "59c2c8ce4eda",
+  "title": "AngularJS最佳实践和风格指南",
+  "url": "https://github.com/mgechev/angularjs-style-guide/blob/master/README-zh-cn.md",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:44.920Z",
+  "chapters": [
+    {
+      "slug": "001-readme-zh-cn",
+      "title": "简介",
+      "file": "chapters/001-readme-zh-cn.md"
+    }
+  ],
+  "license": "MIT",
+  "sourceType": "github"
+}

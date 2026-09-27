@@ -1,0 +1,16 @@
+{
+  "bookId": "b2739f567e76",
+  "title": "Kotlin 参考文档",
+  "url": "http://www.liying-cn.net/kotlin/docs/reference/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:53.313Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "http://www.liying-cn.net/kotlin/docs/reference/",
+      "file": "chapters/001-1b.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "http://www.liying-cn.net/kotlin/docs/reference/"
+}

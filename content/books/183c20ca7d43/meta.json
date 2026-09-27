@@ -1,0 +1,15 @@
+{
+  "bookId": "183c20ca7d43",
+  "title": "ThinkPython",
+  "url": "https://github.com/carfly/thinkpython-cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:33.838Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

@@ -1,0 +1,326 @@
+{
+  "bookId": "db614d3adf35",
+  "title": "大模型基础",
+  "url": "https://github.com/ZJU-LLMs/Foundations-of-LLMs",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:41.337Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "大模型基础论文列表",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "readme",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "readme",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-精准思考-智能分配算力",
+      "title": "LEARNING HOW HARD TO THINK: INPUT-ADAPTIVE ALLOCATION OF LM COMPUTATION",
+      "file": "chapters/004-精准思考-智能分配算力.md"
+    },
+    {
+      "slug": "005-利用-kg-rag-提升病理解释性能-并保护隐私",
+      "title": "LLaVA Needs More Knowledge: Retrieval Augmented Natural Language Generation with Knowledge Graph for Explaining Thoracic Pathologies",
+      "file": "chapters/005-利用-kg-rag-提升病理解释性能-并保护隐私.md"
+    },
+    {
+      "slug": "006-零额外推理开销-提升rag性能",
+      "title": "PEAR: Position-Embedding-Agnostic Attention Re-weighting Enhances Retrieval-Augmented Generation with Zero Inference Overhead",
+      "file": "chapters/006-零额外推理开销-提升rag性能.md"
+    },
+    {
+      "slug": "007-重要性采样-解锁token级偏好对齐",
+      "title": "TIS-DPO: Token-Level Importance Sampling for Direct Preference Optimization with Estimated Weights",
+      "file": "chapters/007-重要性采样-解锁token级偏好对齐.md"
+    },
+    {
+      "slug": "008-tablerag-让大模型轻松驾驭大规模表格数据",
+      "title": "TableRAG: Million-Token Table Understanding with Language Models",
+      "file": "chapters/008-tablerag-让大模型轻松驾驭大规模表格数据.md"
+    },
+    {
+      "slug": "009-toolgen-探索agent工具调用新范式",
+      "title": "TOOLGEN: UNIFIED TOOL RETRIEVAL AND CALLING VIA GENERATION",
+      "file": "chapters/009-toolgen-探索agent工具调用新范式.md"
+    },
+    {
+      "slug": "010-北大-parenting-方法登场-参数魔法解锁检索增强语言模型新高度",
+      "title": "Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning",
+      "file": "chapters/010-北大-parenting-方法登场-参数魔法解锁检索增强语言模型新高度.md"
+    },
+    {
+      "slug": "011-打破选择困局-多智能体带你高效选择预训练数据",
+      "title": "Multi-Agent Collaborative Data Selection for Efficient LLM Pretraining",
+      "file": "chapters/011-打破选择困局-多智能体带你高效选择预训练数据.md"
+    },
+    {
+      "slug": "012-谷歌联合cmu提出超强奖励模型-大模型推理能力的新曙光",
+      "title": "Rewarding Progress: Scaling Automated Process Verifiers for LLM Reasoning",
+      "file": "chapters/012-谷歌联合cmu提出超强奖励模型-大模型推理能力的新曙光.md"
+    },
+    {
+      "slug": "013-自回归奖励模型让-llm-对齐不再困难",
+      "title": "GenARM: Reward Guided Generation with Autoregressive Reward Model for Test-Time Alignment",
+      "file": "chapters/013-自回归奖励模型让-llm-对齐不再困难.md"
+    },
+    {
+      "slug": "014-talker-reasoner-继物理和化学后-诺贝尔经济学奖成为新目标",
+      "title": "Agents Thinking Fast and Slow: A Talker-Reasoner Architecture",
+      "file": "chapters/014-talker-reasoner-继物理和化学后-诺贝尔经济学奖成为新目标.md"
+    },
+    {
+      "slug": "015-tpo-平民版-openai-o1-思维能力遥遥领先",
+      "title": "Thinking LLMs: General Instruction Following with Thought Generation",
+      "file": "chapters/015-tpo-平民版-openai-o1-思维能力遥遥领先.md"
+    },
+    {
+      "slug": "016-普林斯顿大学提出-treebon-大语言模型推理效能-提升秘籍-曝光",
+      "title": "TREEBON: Enhancing Inference-Time Alignment with Speculative Tree-Search and Best-of-N Sampling",
+      "file": "chapters/016-普林斯顿大学提出-treebon-大语言模型推理效能-提升秘籍-曝光.md"
+    },
+    {
+      "slug": "017-deepseek最新多模态大模型-理解与生成同时遥遥领先",
+      "title": "DeepSeek最新多模态大模型，理解与生成同时遥遥领先!",
+      "file": "chapters/017-deepseek最新多模态大模型-理解与生成同时遥遥领先.md"
+    },
+    {
+      "slug": "018-longrag-长文本问答的-超级导航仪-精准定位答案",
+      "title": "LongRAG: A Dual-Perspective Retrieval-Augmented Generation Paradigmfor Long-Context Question Answering",
+      "file": "chapters/018-longrag-长文本问答的-超级导航仪-精准定位答案.md"
+    },
+    {
+      "slug": "019-netsafe-探秘多智能体网络安全拓扑-攻守道-1",
+      "title": "NetSafe: Exploring the Topological Safety of Multi-agent Network",
+      "file": "chapters/019-netsafe-探秘多智能体网络安全拓扑-攻守道-1.md"
+    },
+    {
+      "slug": "020-sso-无需人工标注-自动对齐-llm",
+      "title": "Aligning Large Language Models via Self-Steering Optimization",
+      "file": "chapters/020-sso-无需人工标注-自动对齐-llm.md"
+    },
+    {
+      "slug": "021-wma-web-agent-让世界告诉agent决策有风险需谨慎",
+      "title": "WEB AGENTS WITH WORLD MODELS: LEARNING AND LEVERAGING ENVIRONMENT DYNAMICS IN WEB NAVIGATION",
+      "file": "chapters/021-wma-web-agent-让世界告诉agent决策有风险需谨慎.md"
+    },
+    {
+      "slug": "022-2d-dpo-告别-一刀切-多维度对齐-llm-偏好",
+      "title": "2D-DPO: Scaling Direct Preference Optimization with 2-Dimensional Supervision",
+      "file": "chapters/022-2d-dpo-告别-一刀切-多维度对齐-llm-偏好.md"
+    },
+    {
+      "slug": "023-agentstore-智能世界的超级-app-store",
+      "title": "AgentStore: Scalable Integration of Heterogeneous Agents As Specialized Generalist Computer Assistant",
+      "file": "chapters/023-agentstore-智能世界的超级-app-store.md"
+    },
+    {
+      "slug": "024-cmu-与普林斯顿大学携手改进-bon-算法-打破大模型推理时计算效率瓶颈",
+      "title": "Fast Best-of-N Decoding via Speculative Rejection",
+      "file": "chapters/024-cmu-与普林斯顿大学携手改进-bon-算法-打破大模型推理时计算效率瓶颈.md"
+    },
+    {
+      "slug": "025-flow-dpo-像数学老师一样思考-多智能体推理链自动生成",
+      "title": "Flow-DPO: Improving LLM Mathematical Reasoning through Online Multi-Agent Learning",
+      "file": "chapters/025-flow-dpo-像数学老师一样思考-多智能体推理链自动生成.md"
+    },
+    {
+      "slug": "026-pulse-多模态大模型读懂你的心٨ـﮩ٨ـ-ﮩ",
+      "title": "TEACH MULTIMODAL LLMS TO COMPREHEND ELECTROCARDIOGRAPHIC IMAGES",
+      "file": "chapters/026-pulse-多模态大模型读懂你的心٨ـﮩ٨ـ-ﮩ.md"
+    },
+    {
+      "slug": "027-颠覆transformer-神经网络自演化的开端-1",
+      "title": "颠覆Transformer，神经网络自演化的开端！！！1",
+      "file": "chapters/027-颠覆transformer-神经网络自演化的开端-1.md"
+    },
+    {
+      "slug": "028-谷歌出品-sled-解码技术-让大语言模型输出更靠谱",
+      "title": "SLED: Self Logits Evolution Decoding for Improving Factuality in Large Language Models",
+      "file": "chapters/028-谷歌出品-sled-解码技术-让大语言模型输出更靠谱.md"
+    },
+    {
+      "slug": "029-adapting-while-learning-自适应使用智能工具助力科学探索",
+      "title": "**Adapting While Learning: Grounding LLMs for Scientific Problems with Intelligent Tool Usage Adaptation**",
+      "file": "chapters/029-adapting-while-learning-自适应使用智能工具助力科学探索.md"
+    },
+    {
+      "slug": "030-scpo-meta-提出大模型自我进化新方法-突破复杂推理能力",
+      "title": "Self-Consistency Preference Optimization",
+      "file": "chapters/030-scpo-meta-提出大模型自我进化新方法-突破复杂推理能力.md"
+    },
+    {
+      "slug": "031-stepagent-从小白到大神-过程奖励助力-agent-进化",
+      "title": "From Novice to Expert: LLM Agent Policy Optimization via Step-wise Reinforcement Learning",
+      "file": "chapters/031-stepagent-从小白到大神-过程奖励助力-agent-进化.md"
+    },
+    {
+      "slug": "032-iopo-化身超级助手-让-llm-轻松应对复杂指令",
+      "title": "IOPO: Empowering  LLM s with Complex Instruction Following via Input-Output Preference Optimization",
+      "file": "chapters/032-iopo-化身超级助手-让-llm-轻松应对复杂指令.md"
+    },
+    {
+      "slug": "033-spider-2-0-来袭-大语言模型能否应对企业级-text-to-sql-的超强挑战",
+      "title": "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows",
+      "file": "chapters/033-spider-2-0-来袭-大语言模型能否应对企业级-text-to-sql-的超强挑战.md"
+    },
+    {
+      "slug": "034-uc-berkeley-和-cmu-出手-揭开大语言模型泛化的-神秘面纱",
+      "title": "What Do Learning Dynamics Reveal About Generalization in LLM Reasoning?",
+      "file": "chapters/034-uc-berkeley-和-cmu-出手-揭开大语言模型泛化的-神秘面纱.md"
+    },
+    {
+      "slug": "035-一键自动化-claude-3-5与gui-agent的破晓时刻",
+      "title": "**The Dawn of GUI Agent: A Preliminary Case Study with Claude 3.5 Computer Use**",
+      "file": "chapters/035-一键自动化-claude-3-5与gui-agent的破晓时刻.md"
+    },
+    {
+      "slug": "036-lpo-智能控温-自适应调整-llm-解码温度",
+      "title": "Adaptive Decoding via Latent Preference Optimization",
+      "file": "chapters/036-lpo-智能控温-自适应调整-llm-解码温度.md"
+    },
+    {
+      "slug": "037-xiyan-sql-突破性text-to-sql框架-准确率遥遥领先",
+      "title": "XiYan-SQL: A Multi-Generator Ensemble Framework For Text-to-SQL",
+      "file": "chapters/037-xiyan-sql-突破性text-to-sql框架-准确率遥遥领先.md"
+    },
+    {
+      "slug": "038-迈向高效智能-大语言模型的能力密度增长与密度定律",
+      "title": "迈向高效智能：大语言模型的能力密度增长与密度定律",
+      "file": "chapters/038-迈向高效智能-大语言模型的能力密度增长与密度定律.md"
+    },
+    {
+      "slug": "039-coconut-从语言脑到推理脑-大模型连续潜在空间推理",
+      "title": "Training Large Language Models to Reason in a Continuous Latent Space",
+      "file": "chapters/039-coconut-从语言脑到推理脑-大模型连续潜在空间推理.md"
+    },
+    {
+      "slug": "040-rare-登场-大模型推理的-智慧导航仪-精准穿越知识迷宫",
+      "title": "RARE: Retrieval-Augmented Reasoning Enhancement for Large Language Models",
+      "file": "chapters/040-rare-登场-大模型推理的-智慧导航仪-精准穿越知识迷宫.md"
+    },
+    {
+      "slug": "041-visionzip压缩视觉token-提升视觉模型推理效率",
+      "title": "VisionZip: Longer is Better but Not Necessary in Vision Language Models",
+      "file": "chapters/041-visionzip压缩视觉token-提升视觉模型推理效率.md"
+    },
+    {
+      "slug": "042-大语言模型的-幻觉克星-来了-depac-助力精准生成",
+      "title": "Dehallucinating Parallel Context Extension for Retrieval-Augmented Generation",
+      "file": "chapters/042-大语言模型的-幻觉克星-来了-depac-助力精准生成.md"
+    },
+    {
+      "slug": "043-强强联合-meta与斯坦福发布最新视频大模型apollo-揭示扩展一致性新规律",
+      "title": "强强联合，Meta与斯坦福发布最新视频大模型Apollo：揭示扩展一致性新规律",
+      "file": "chapters/043-强强联合-meta与斯坦福发布最新视频大模型apollo-揭示扩展一致性新规律.md"
+    },
+    {
+      "slug": "044-腾讯提出cal-dpo-解决dpo重大缺陷",
+      "title": "Cal-DPO: Calibrated Direct Preference Optimization for Language Model Alignment",
+      "file": "chapters/044-腾讯提出cal-dpo-解决dpo重大缺陷.md"
+    },
+    {
+      "slug": "045-meta-提出大概念模型-lcm-突破词级限制的多语言多模态大语言模型",
+      "title": "Large Concept Models: Language Modeling in a Sentence Representation Space",
+      "file": "chapters/045-meta-提出大概念模型-lcm-突破词级限制的多语言多模态大语言模型.md"
+    },
+    {
+      "slug": "046-modernbert-革新编码器模型-引领高效长上下文处理新时代",
+      "title": "Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference",
+      "file": "chapters/046-modernbert-革新编码器模型-引领高效长上下文处理新时代.md"
+    },
+    {
+      "slug": "047-retrollm-检索生成大融合-鹰眼-精准定位答案",
+      "title": "RetroLLM: Empowering Large Language Models to Retrieve Fine-grained Evidence within Generation",
+      "file": "chapters/047-retrollm-检索生成大融合-鹰眼-精准定位答案.md"
+    },
+    {
+      "slug": "048-shad-rft-面向agent-task的大模型微调新范式",
+      "title": "Disentangling Reasoning Tokens and Boilerplate Tokens For Language Model Fine-tuning",
+      "file": "chapters/048-shad-rft-面向agent-task的大模型微调新范式.md"
+    },
+    {
+      "slug": "049-think-cite-让-llm-不再-空口无凭-句句有出处",
+      "title": "Think&Cite: Improving Attributed Text Generation with Self-Guided Tree Search and Progress Reward Modeling",
+      "file": "chapters/049-think-cite-让-llm-不再-空口无凭-句句有出处.md"
+    },
+    {
+      "slug": "050-大语言模型的-省钱秘籍-tale-框架让推理成本大瘦身",
+      "title": "Token-Budget-Aware LLM Reasoning",
+      "file": "chapters/050-大语言模型的-省钱秘籍-tale-框架让推理成本大瘦身.md"
+    },
+    {
+      "slug": "051-英伟达和高校联合提出数据选择策略-大幅强化模型预训练效果",
+      "title": "英伟达和高校联合提出数据选择策略，大幅强化模型预训练效果",
+      "file": "chapters/051-英伟达和高校联合提出数据选择策略-大幅强化模型预训练效果.md"
+    },
+    {
+      "slug": "052-gme-打破模态界限-全新通用多模态检索器的探索与突破",
+      "title": "GME：打破模态界限，全新通用多模态检索器的探索与突破",
+      "file": "chapters/052-gme-打破模态界限-全新通用多模态检索器的探索与突破.md"
+    },
+    {
+      "slug": "053-mulberry-多模型合作mcts-让mllm进入o1推理时代",
+      "title": "Mulberry: Empowering MLLM with o1-like Reasoning and Reflection via Collective Monte Carlo Tree Search",
+      "file": "chapters/053-mulberry-多模型合作mcts-让mllm进入o1推理时代.md"
+    },
+    {
+      "slug": "054-proactive-agent-主动读取需求-让ai比你更懂你",
+      "title": "PROACTIVE AGENT: SHIFTING LLM AGENTS FROM REACTIVE RESPONSES TO ACTIVE ASSISTANCE",
+      "file": "chapters/054-proactive-agent-主动读取需求-让ai比你更懂你.md"
+    },
+    {
+      "slug": "055-robustrf-打造鲁棒微调框架-大幅提升大模型在噪声环境下的性能",
+      "title": "RobustFT: Robust Supervised Fine-tuning for Large Language Models under Noisy Response",
+      "file": "chapters/055-robustrf-打造鲁棒微调框架-大幅提升大模型在噪声环境下的性能.md"
+    },
+    {
+      "slug": "056-大模型-进化密码-加权偏好优化弥补自身短板",
+      "title": "Plug-and-Play Training Framework for Preference Optimization",
+      "file": "chapters/056-大模型-进化密码-加权偏好优化弥补自身短板.md"
+    },
+    {
+      "slug": "057-减少不必要的计算开销-让模型不再-过度思考",
+      "title": "减少不必要的计算开销，让模型不再“过度思考”",
+      "file": "chapters/057-减少不必要的计算开销-让模型不再-过度思考.md"
+    },
+    {
+      "slug": "058-任务偏好优化-多模态大语言模型的精细视觉任务革命",
+      "title": "Task Preference Optimization: Improving Multimodal Large Language Models with Vision Task Alignment",
+      "file": "chapters/058-任务偏好优化-多模态大语言模型的精细视觉任务革命.md"
+    },
+    {
+      "slug": "059-ccot压缩链式思维框架-极大降低-cot-计算开销",
+      "title": "Compressed Chain of Thought: Efficient Reasoning through Dense Representations",
+      "file": "chapters/059-ccot压缩链式思维框架-极大降低-cot-计算开销.md"
+    },
+    {
+      "slug": "060-陈丹琦团队新作-meco-元数据条件化加速模型预训练",
+      "title": "Metadata Conditioning Accelerates Language Model Pre-training",
+      "file": "chapters/060-陈丹琦团队新作-meco-元数据条件化加速模型预训练.md"
+    },
+    {
+      "slug": "061-微软提出rstar-math-7b小模型数学能力直逼o1",
+      "title": "rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking",
+      "file": "chapters/061-微软提出rstar-math-7b小模型数学能力直逼o1.md"
+    },
+    {
+      "slug": "062-llava-mini-压缩至一个视觉token-高效计算与实时响应的多模态大模型",
+      "title": "LLaVA-Mini: Efficient Image and Video Large Multimodal Models with One Vision Token",
+      "file": "chapters/062-llava-mini-压缩至一个视觉token-高效计算与实时响应的多模态大模型.md"
+    },
+    {
+      "slug": "063-ppt-生成革命-pptagent-ai-帮你一键搞定高质量演示文稿-设计-内容-逻辑全搞定",
+      "title": "**PPTAgent: Generating and Evaluating Presentations Beyond Text-to-Slides**",
+      "file": "chapters/063-ppt-生成革命-pptagent-ai-帮你一键搞定高质量演示文稿-设计-内容-逻辑全搞定.md"
+    }
+  ],
+  "license": "CC",
+  "sourceType": "github"
+}

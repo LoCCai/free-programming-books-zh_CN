@@ -1,0 +1,60 @@
+{
+  "bookId": "e33051302764",
+  "title": "《JavaScript 模式》",
+  "url": "https://github.com/jayli/javascript-patterns",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:33.622Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "JavaScript Patterns",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "README",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-chapter1",
+      "title": "第一章 概述",
+      "file": "chapters/003-chapter1.md"
+    },
+    {
+      "slug": "004-chapter2",
+      "title": "第二章 高质量JavaScript基本要点",
+      "file": "chapters/004-chapter2.md"
+    },
+    {
+      "slug": "005-chapter3",
+      "title": "第三章 直接量和构造函数",
+      "file": "chapters/005-chapter3.md"
+    },
+    {
+      "slug": "006-chapter4",
+      "title": "函数",
+      "file": "chapters/006-chapter4.md"
+    },
+    {
+      "slug": "007-chapter5",
+      "title": "对象创建模式",
+      "file": "chapters/007-chapter5.md"
+    },
+    {
+      "slug": "008-chapter6",
+      "title": "代码复用模式",
+      "file": "chapters/008-chapter6.md"
+    },
+    {
+      "slug": "009-chapter7",
+      "title": "设计模式",
+      "file": "chapters/009-chapter7.md"
+    },
+    {
+      "slug": "010-chapter8",
+      "title": "DOM和浏览器中的模式",
+      "file": "chapters/010-chapter8.md"
+    }
+  ],
+  "sourceType": "github"
+}

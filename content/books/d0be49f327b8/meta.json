@@ -2,8 +2,15 @@
   "bookId": "d0be49f327b8",
   "title": "FreeRADIUS新手入门",
   "url": "http://freeradius.akagi201.org",
-  "status": "failed",
-  "error": "上游标记疑似失效,未尝试抓取",
-  "fetchedAt": "2026-09-26T18:52:27.670Z",
-  "chapters": []
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:32.813Z",
+  "chapters": [
+    {
+      "slug": "001-u",
+      "title": "akagi201.org",
+      "file": "chapters/001-u.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "akagi201.org"
 }

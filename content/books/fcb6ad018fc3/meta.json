@@ -1,0 +1,16 @@
+{
+  "bookId": "fcb6ad018fc3",
+  "title": "前端开发者手册",
+  "url": "https://www.gitbook.com/book/dwqs/frontenddevhandbook/details",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:36.465Z",
+  "chapters": [
+    {
+      "slug": "001-1p",
+      "title": "The knowledge layer for AI | GitBook",
+      "file": "chapters/001-1p.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "The knowledge layer for AI | GitBook"
+}

@@ -1,0 +1,251 @@
+{
+  "bookId": "b3548eae56a3",
+  "title": "Scrapy 0.25 文档",
+  "url": "https://scrapy-chs.readthedocs.io/zh_CN/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:06.494Z",
+  "chapters": [
+    {
+      "slug": "001-1b",
+      "title": "Scrapy 0.25 文档 — Scrapy 0.24.1 文档",
+      "file": "chapters/001-1b.md"
+    },
+    {
+      "slug": "002-1u",
+      "title": "初窥Scrapy — Scrapy 0.24.1 文档",
+      "file": "chapters/002-1u.md"
+    },
+    {
+      "slug": "003-1t",
+      "title": "安装指南 — Scrapy 0.24.1 文档",
+      "file": "chapters/003-1t.md"
+    },
+    {
+      "slug": "004-1u",
+      "title": "Scrapy入门教程 — Scrapy 0.24.1 文档",
+      "file": "chapters/004-1u.md"
+    },
+    {
+      "slug": "005-1u",
+      "title": "例子 — Scrapy 0.24.1 文档",
+      "file": "chapters/005-1u.md"
+    },
+    {
+      "slug": "006-1v",
+      "title": "命令行工具(Command line tools) — Scrapy 0.24.1 文档",
+      "file": "chapters/006-1v.md"
+    },
+    {
+      "slug": "007-1s",
+      "title": "Items — Scrapy 0.24.1 文档",
+      "file": "chapters/007-1s.md"
+    },
+    {
+      "slug": "008-1u",
+      "title": "Spiders — Scrapy 0.24.1 文档",
+      "file": "chapters/008-1u.md"
+    },
+    {
+      "slug": "009-1w",
+      "title": "选择器(Selectors) — Scrapy 0.24.1 文档",
+      "file": "chapters/009-1w.md"
+    },
+    {
+      "slug": "010-1u",
+      "title": "Item Loaders — Scrapy 0.24.1 文档",
+      "file": "chapters/010-1u.md"
+    },
+    {
+      "slug": "011-1s",
+      "title": "Scrapy终端(Scrapy shell) — Scrapy 0.24.1 文档",
+      "file": "chapters/011-1s.md"
+    },
+    {
+      "slug": "012-20",
+      "title": "Item Pipeline — Scrapy 0.24.1 文档",
+      "file": "chapters/012-20.md"
+    },
+    {
+      "slug": "013-1z",
+      "title": "Feed exports — Scrapy 0.24.1 文档",
+      "file": "chapters/013-1z.md"
+    },
+    {
+      "slug": "014-22",
+      "title": "Link Extractors — Scrapy 0.24.1 文档",
+      "file": "chapters/014-22.md"
+    },
+    {
+      "slug": "015-1u",
+      "title": "Logging — Scrapy 0.24.1 文档",
+      "file": "chapters/015-1u.md"
+    },
+    {
+      "slug": "016-1s",
+      "title": "数据收集(Stats Collection) — Scrapy 0.24.1 文档",
+      "file": "chapters/016-1s.md"
+    },
+    {
+      "slug": "017-1s",
+      "title": "发送email — Scrapy 0.24.1 文档",
+      "file": "chapters/017-1s.md"
+    },
+    {
+      "slug": "018-20",
+      "title": "Telnet终端(Telnet Console) — Scrapy 0.24.1 文档",
+      "file": "chapters/018-20.md"
+    },
+    {
+      "slug": "019-1x",
+      "title": "Web Service — Scrapy 0.24.1 文档",
+      "file": "chapters/019-1x.md"
+    },
+    {
+      "slug": "020-1j",
+      "title": "常见问题(FAQ) — Scrapy 0.24.1 文档",
+      "file": "chapters/020-1j.md"
+    },
+    {
+      "slug": "021-1s",
+      "title": "调试(Debugging)Spiders — Scrapy 0.24.1 文档",
+      "file": "chapters/021-1s.md"
+    },
+    {
+      "slug": "022-1w",
+      "title": "Spiders Contracts — Scrapy 0.24.1 文档",
+      "file": "chapters/022-1w.md"
+    },
+    {
+      "slug": "023-1w",
+      "title": "实践经验(Common Practices) — Scrapy 0.24.1 文档",
+      "file": "chapters/023-1w.md"
+    },
+    {
+      "slug": "024-1z",
+      "title": "通用爬虫(Broad Crawls) — Scrapy 0.24.1 文档",
+      "file": "chapters/024-1z.md"
+    },
+    {
+      "slug": "025-1u",
+      "title": "借助Firefox来爬取 — Scrapy 0.24.1 文档",
+      "file": "chapters/025-1u.md"
+    },
+    {
+      "slug": "026-1u",
+      "title": "使用Firebug进行爬取 — Scrapy 0.24.1 文档",
+      "file": "chapters/026-1u.md"
+    },
+    {
+      "slug": "027-1s",
+      "title": "调试内存溢出 — Scrapy 0.24.1 文档",
+      "file": "chapters/027-1s.md"
+    },
+    {
+      "slug": "028-1t",
+      "title": "下载项目图片 — Scrapy 0.24.1 文档",
+      "file": "chapters/028-1t.md"
+    },
+    {
+      "slug": "029-1t",
+      "title": "Ubuntu 软件包 — Scrapy 0.24.1 文档",
+      "file": "chapters/029-1t.md"
+    },
+    {
+      "slug": "030-1u",
+      "title": "Scrapyd — Scrapy 0.24.1 文档",
+      "file": "chapters/030-1u.md"
+    },
+    {
+      "slug": "031-1z",
+      "title": "自动限速(AutoThrottle)扩展 — Scrapy 0.24.1 文档",
+      "file": "chapters/031-1z.md"
+    },
+    {
+      "slug": "032-1z",
+      "title": "Benchmarking — Scrapy 0.24.1 文档",
+      "file": "chapters/032-1z.md"
+    },
+    {
+      "slug": "033-1r",
+      "title": "暂停，恢复爬虫 — Scrapy 0.24.1 文档",
+      "file": "chapters/033-1r.md"
+    },
+    {
+      "slug": "034-1x",
+      "title": "DjangoItem — Scrapy 0.24.1 文档",
+      "file": "chapters/034-1x.md"
+    },
+    {
+      "slug": "035-1z",
+      "title": "架构概览 — Scrapy 0.24.1 文档",
+      "file": "chapters/035-1z.md"
+    },
+    {
+      "slug": "036-28",
+      "title": "下载器中间件(Downloader Middleware) — Scrapy 0.24.1 文档",
+      "file": "chapters/036-28.md"
+    },
+    {
+      "slug": "037-24",
+      "title": "Spider中间件(Middleware) — Scrapy 0.24.1 文档",
+      "file": "chapters/037-24.md"
+    },
+    {
+      "slug": "038-1x",
+      "title": "扩展(Extensions) — Scrapy 0.24.1 文档",
+      "file": "chapters/038-1x.md"
+    },
+    {
+      "slug": "039-1q",
+      "title": "核心API — Scrapy 0.24.1 文档",
+      "file": "chapters/039-1q.md"
+    },
+    {
+      "slug": "040-23",
+      "title": "Requests and Responses — Scrapy 0.24.1 文档",
+      "file": "chapters/040-23.md"
+    },
+    {
+      "slug": "041-1v",
+      "title": "Settings — Scrapy 0.24.1 文档",
+      "file": "chapters/041-1v.md"
+    },
+    {
+      "slug": "042-1u",
+      "title": "信号(Signals) — Scrapy 0.24.1 文档",
+      "file": "chapters/042-1u.md"
+    },
+    {
+      "slug": "043-1x",
+      "title": "异常(Exceptions) — Scrapy 0.24.1 文档",
+      "file": "chapters/043-1x.md"
+    },
+    {
+      "slug": "044-1w",
+      "title": "Item Exporters — Scrapy 0.24.1 文档",
+      "file": "chapters/044-1w.md"
+    },
+    {
+      "slug": "045-1k",
+      "title": "Release notes — Scrapy 0.24.1 文档",
+      "file": "chapters/045-1k.md"
+    },
+    {
+      "slug": "046-1s",
+      "title": "Contributing to Scrapy — Scrapy 0.24.1 文档",
+      "file": "chapters/046-1s.md"
+    },
+    {
+      "slug": "047-1q",
+      "title": "Versioning and API Stability — Scrapy 0.24.1 文档",
+      "file": "chapters/047-1q.md"
+    },
+    {
+      "slug": "048-1y",
+      "title": "试验阶段特性 — Scrapy 0.24.1 文档",
+      "file": "chapters/048-1y.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Scrapy 0.25 文档 — Scrapy 0.24.1 文档"
+}

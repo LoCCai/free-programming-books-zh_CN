@@ -1,0 +1,77 @@
+0. [前言](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Before-start.md)
+  1. 这份文档的目标读者
+  2. 基本条件
+  3. 你需要明确的一些事情
+1. [预备](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Start.md)
+  1. 学习软件开发的几条主要途径
+  2. 为什么借助开源学习是最有效的
+  3. 在学习一门语言之前
+  4. 选择一门语言
+  5. 必须初步掌握的基本功
+  6. MOOC 课程
+  7. 关于开发工具
+    1. 关于开发工具的分类（by 李路）
+    2. 各种参考资料
+  8. [版本管理，包管理和语言环境搭建](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Hello-world.md)
+    1. 下载源代码的N种办法
+      1. 关于源代码管理与版本控制
+      2. 寻找早期开源项目的源代码
+      3. SVN、Git、Mercurial快速介绍
+      4. 基于包管理的方式获取源代码
+    2. 让代码运行起来
+      1. Ruby版
+      2. PHP版
+      3. Java版
+      4. Python版
+      5. JavaScript版
+      6. C/C++版
+    3. 如何克服可能遇到的困难
+2. [如何选择开源项目](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Select-an-open-source-project.md)
+  1. 到哪里去寻找开源项目
+  2. 什么样的开源项目适合初学者
+  3. 值得推荐给大家的开源项目
+  4. 各语言的Awesome List
+  **重点讲解：按语言，按难度选择示例讲解**
+3. [理解源代码](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Understanding-the-source-code.md)
+  1. 寻找文档，熟悉功能，先玩一遍，记下功能。
+  2. 静态理解：
+    1. 目录结构
+    2. 包名与文件名
+    3. 类名、函数名与变量名
+    4. 注释与Readme
+    5. UML图
+    6. 外部文档
+  3. 动态理解
+    1. 输出日志
+    2. 设置断点与单步跟踪
+    3. 抛出异常
+    4. 修改代码，破坏性尝试
+  4. 主线与支线
+    1. 寻找入口
+    2. 跟踪关键流程
+    3. 寻找挂接点
+  5. 外围代码
+    1. 必须存在的外围功能
+    2. demo/example
+    3. 单元测试
+  6. 知其所以然
+4. [修改开源项目](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Modify-the-open-source-project.md)
+  1. 改一个游戏来练手
+  2. 二分查找捉虫记
+5. [为开源项目做贡献](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Contribute-to-an-open-source-project.md)
+  1. 提bug与建议
+  2. 帮助完善文档
+  3. 提交代码（功能代码与测试代码）
+  4. 周边代码（demo/扩展/子项目）
+  5. 外部宣传
+  6. 其他各种杂务
+6. [成为组织的一员](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Join-the-group.md)
+  1. 交流圈
+  2. 组织结构
+  3. 开源项目的组织方式
+  4. 基本礼仪
+7. [自己发起一个开源项目](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Create-an-open-source-project.md)
+8. [延伸阅读](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Read-more.md)
+  1. [指导开发者快速学习编程的网站推荐](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Useful-Websites-to-Learn-How-to-Code-Quickly.md)
+9. [贡献者](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/Contributor.md)
+10. [开源问答](https://raw.githubusercontent.com/zhuangbiaowei/learn-with-open-source/HEAD/zh/FAQ.md)

@@ -1,0 +1,45 @@
+{
+  "bookId": "6a24b79fbdeb",
+  "title": "Gulp 入门指南",
+  "url": "https://github.com/nimojs/gulp-book",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:26.335Z",
+  "chapters": [
+    {
+      "slug": "001-chapter1",
+      "title": "安装 Node 和 gulp",
+      "file": "chapters/001-chapter1.md"
+    },
+    {
+      "slug": "002-chapter2",
+      "title": "使用 gulp 压缩 JS",
+      "file": "chapters/002-chapter2.md"
+    },
+    {
+      "slug": "003-chapter3",
+      "title": "使用 gulp 压缩 CSS",
+      "file": "chapters/003-chapter3.md"
+    },
+    {
+      "slug": "004-chapter4",
+      "title": "使用 gulp 压缩图片",
+      "file": "chapters/004-chapter4.md"
+    },
+    {
+      "slug": "005-chapter5",
+      "title": "使用 gulp 编译 LESS",
+      "file": "chapters/005-chapter5.md"
+    },
+    {
+      "slug": "006-chapter6",
+      "title": "使用 gulp 编译 Sass",
+      "file": "chapters/006-chapter6.md"
+    },
+    {
+      "slug": "007-chapter7",
+      "title": "使用 gulp 构建一个项目",
+      "file": "chapters/007-chapter7.md"
+    }
+  ],
+  "sourceType": "github"
+}

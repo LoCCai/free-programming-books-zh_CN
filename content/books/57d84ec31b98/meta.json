@@ -1,0 +1,16 @@
+{
+  "bookId": "57d84ec31b98",
+  "title": "SAN 管理入门系列",
+  "url": "https://community.emc.com/docs/DOC-16067",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:49.894Z",
+  "chapters": [
+    {
+      "slug": "001-14",
+      "title": "支持主页 | Dell 中国",
+      "file": "chapters/001-14.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "支持主页 | Dell 中国"
+}

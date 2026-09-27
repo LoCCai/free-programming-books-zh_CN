@@ -1,0 +1,16 @@
+{
+  "bookId": "24c9c7e893d0",
+  "title": "命名函数表达式探秘",
+  "url": "http://justjavac.com/named-function-expressions-demystified.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:33.998Z",
+  "chapters": [
+    {
+      "slug": "001-1s",
+      "title": "命名函数表达式探秘 - justjavac的博客",
+      "file": "chapters/001-1s.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "命名函数表达式探秘 - justjavac的博客"
+}

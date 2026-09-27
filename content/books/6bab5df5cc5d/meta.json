@@ -1,0 +1,81 @@
+{
+  "bookId": "6bab5df5cc5d",
+  "title": "Hugging Face Agents Course",
+  "url": "https://github.com/huggingface/agents-course",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:56.048Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Agent Course quiz scripts",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "<a href=\"https://hf.co/learn/agents-course\" target=\"_blank\">The Hugging Face Agents Course</a>",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "Table of Contents",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-readme",
+      "title": "Table of Contents",
+      "file": "chapters/004-readme.md"
+    },
+    {
+      "slug": "005-readme",
+      "title": "Tabla de Contenidos",
+      "file": "chapters/005-readme.md"
+    },
+    {
+      "slug": "006-readme",
+      "title": "Índice de Contenidos",
+      "file": "chapters/006-readme.md"
+    },
+    {
+      "slug": "007-readme",
+      "title": "Table des matières",
+      "file": "chapters/007-readme.md"
+    },
+    {
+      "slug": "008-readme",
+      "title": "Table des matières",
+      "file": "chapters/008-readme.md"
+    },
+    {
+      "slug": "009-readme",
+      "title": "컨텐츠 목록",
+      "file": "chapters/009-readme.md"
+    },
+    {
+      "slug": "010-readme",
+      "title": "목차",
+      "file": "chapters/010-readme.md"
+    },
+    {
+      "slug": "011-readme",
+      "title": "Table of Contents",
+      "file": "chapters/011-readme.md"
+    },
+    {
+      "slug": "012-readme",
+      "title": "目录",
+      "file": "chapters/012-readme.md"
+    },
+    {
+      "slug": "013-readme",
+      "title": "目录",
+      "file": "chapters/013-readme.md"
+    },
+    {
+      "slug": "014-translation-agreements",
+      "title": "TRANSLATION_AGREEMENTS",
+      "file": "chapters/014-translation-agreements.md"
+    }
+  ],
+  "license": "Apache-2.0",
+  "sourceType": "github"
+}

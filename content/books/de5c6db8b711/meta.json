@@ -1,0 +1,16 @@
+{
+  "bookId": "de5c6db8b711",
+  "title": "深入理解 Yii 2.0",
+  "url": "http://www.digpage.com/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:10.754Z",
+  "chapters": [
+    {
+      "slug": "001-n",
+      "title": "DigPage.com is for sale | HugeDomains",
+      "file": "chapters/001-n.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "DigPage.com is for sale | HugeDomains"
+}

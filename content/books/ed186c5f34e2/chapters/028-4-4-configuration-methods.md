@@ -1,0 +1,126 @@
+配置方法
+====
+
+下面的方法从 Servlet 3.0 开始添加到 ServletContext，以便启用编程方式定义 Servlet、Filter 和它们映射到的 url 模式。这些方法只能从 ServletContextListener 实现的 contexInitialized 方法或者ServletContainerInitializer 实现的 onStartup 方法进行的应用初始化过程中调用。 除了添加 Servlet 和 Filter，也可以查找关联到Servlet 或 Filter 的一个 Registration 对象实例，或者到 Servlet 或 Filter 的所有 Registration 对象的 map。
+如果 ServletContext 传到了 ServletContextListener 的contextInitialized 方法，但该 ServletContextListener 既没有在 web.xml 或 web-fragment.xml 中声明也没有使用 @WebListener 注解，则在 ServletContext 中定义的用于
+Servlet、Filter 和 Listener 的编程式配置的所有方法必须抛出UnsupportedOperationException。
+
+### 编程式添加和配置 Servlet
+
+编程式添加 Servlet 到上下文对框架开发者是很有用的。例如，框架可以使用这个方法声明一个控制器 servlet。这个方法将返回一个ServletRegistration 或 ServletRegistration.Dynamic 对象，允许我们进一步配置如 init-params，url-mapping 等 Servlet 的其他参数。下面描述了该方法的三个重载版本。
+
+#### addServlet(String servletName, String className)
+
+该方法允许应用以编程方式声明一个 servlet。它添加给定的servlet名称和class名称到 servlet 上下文。
+
+#### addServlet(String servletName, Servlet servlet)
+
+该方法允许应用以编程方式声明一个 Servlet。它添加给定的名称和Servlet 实例的 Servlet 到 servlet 上下文。
+
+#### addServlet(String servletName, Class <? extends Servlet> servletClass)
+
+该方法允许应用以编程方式声明一个 Servlet。它添加给定的名称和Servlet 类的一个实例的 Servlet 到 servlet 上下文。
+
+#### <T extends Servlet> T createServlet(Class<T> clazz)
+
+该方法实例化一个给定的 Servlet class，该方法必须支持适用于Servlet 的除了 @WebServlet 的所有注解。
+返回的 Servlet 实例通过调用上边定义的 addServlet(String, Servlet) 注册到 ServletContext 之前，可以进行进一步的定制。
+
+#### ServletRegistration getServletRegistration(String servletName)
+
+该方法返回与指定名字的 Servlet 相关的 ServletRegistration，或者如果没有该名字的 ServletRegistration 则返回 null。如果ServletContext 传到了 ServletContextListener 的contextInitialized 方法，但该 ServletContextListener 既没有在web.xml或web-fragment.xml 中声明也没有使用javax.servlet.annotation.WebListener 注解，则必须抛出UnsupportedOperationException。
+
+#### Map<String, ? extends ServletRegistration> getServletRegistrations()
+
+该方法返回 ServletRegistration 对象的 map，由名称作为键并对应着注册到 ServletContext 的所有 Servlet。如果没有 Servlet 注册到ServletContext 则返回一个空的 map。返回的 Map 包括所有声明和注解的 Servlet 对应的 ServletRegistration 对象，也包括那些使用addServlet 方法添加的所有 Servlet 对于的 ServletRegistration 对象。返回的 Map 的任何改变不影响 ServletContext。如果ServletContext 传到了 ServletContextListener 的contextInitialized 方法，但该 ServletContextListener 既没有在web.xml 或 web-fragment.xml 中声明也没有使用javax.servlet.annotation.WebListener 注解，则必须抛出UnsupportedOperationException。
+
+### 编程式添加和配置 Filter
+
+#### addFilter(String filterName, String className)
+
+该方法允许应用以编程方式声明一个 Filter。它添加以给定的名称和class 名称的 Filter 到 web 应用。
+
+#### addFilter(String filterName, Filter filter)
+
+该方法允许应用以编程方式声明一个 Filter。它添加以给定的名称和filter 实例的 Filter 到 web 应用。
+
+#### addFilter(String filterName, Class <? extends Filter> filterClass)
+
+该方法允许应用以编程方式声明一个 Filter。它添加以给定的名称和filter 类的一个实例的 Filter 到 web 应用。
+
+#### <T extends Filter> T createFilter(Class<T> clazz)
+
+该方法实例化一个给定的 Filter class，该方法必须支持适用于 Filter的所有注解。
+
+返回的 Filter 实例通过调用上边定义的 addFilter(String, Filter)注册到 ServletContext 之前，可以进行进一步的定制。给定的 Filter 类必须定义一个用于实例化的空参构造器。
+
+#### FilterRegistration getFilterRegistration(String filterName)
+
+该方法返回与指定名字的 Filter 相关的 FilterRegistration，或者如果没有该名字的 FilterRegistration 则返回 null。如果ServletContext 传到了 ServletContextListener 的contextInitialized 方法，但该 ServletContextListener 既没有在web.xml 或 web-fragment.xml 中声明也没有使用javax.servlet.annotation.WebListener 注解，则必须抛出UnsupportedOperationException。
+
+#### Map<String, ? extends FilterRegistration> getFilterRegistrations()
+
+该方法返回 FilterRegistration 对象的 map，由名称作为键并对应着注册到 ServletContext 的所有 Filter。如果没有 Filter 注册到ServletContext 则返回一个空的 Map。返回的 Map 包括所有声明和注解的 Filter 对应的 FilterRegistration 对象，也包括那些使用addFilter 方法添加的所有 Servlet 对于的 ServletRegistration 对象。返回的 Map 的任何改变不影响 ServletContext。如果ServletContext 传到了 ServletContextListener 的contextInitialized 方法，但该 ServletContextListener 既没有在web.xml 或 web-fragment.xml 中声明也没有使用javax.servlet.annotation.WebListener 注解，则必须抛出UnsupportedOperationException。
+
+### 编程式添加和配置 Listener
+
+#### void addListener(String className)
+
+往 ServletContext 添加指定 class 名称的监听器。ServletContext 将使用由与应用关联的 classloader 装载加载该给定名称的 class，且它们必须实现一个或多个以下接口：
+
+* javax.servlet.ServletContextAttributeListener
+* javax.servlet.ServletRequestListener
+* javax.servlet.ServletRequestAttributeListener
+* javax.servlet.http.HttpSessionListener
+* javax.servlet.http.HttpSessionAttributeListener
+* javax.servlet.http.HttpSessionIdListener
+
+如果 ServletContext 传到了 ServletContainerInitializer 的onStartup 方法，则给定名字的类可以实现除上面列出的接口之外的javax.servlet.ServletContextListener。作为该方法调用的一部分，容器必须装载指定类名的 class，以确保其实现了所需的接口之一。如果给定名字的类实现了一个监听器接口，则其调用顺序和声明顺序是一样的，换句话说，如果它实现了 javax.servlet.ServletRequestListener 或 javax.servlet.http.HttpSessionListener，那么新的监听器将被添加到该接口的有序监听器列表的末尾。
+
+#### <T extends EventListener> void addListener(T t)
+
+往 ServletContext 添加一个给定的监听器。给定的监听器实例必须实现一个或多个如下接口：
+
+* javax.servlet.ServletContextAttributeListener
+* javax.servlet.ServletRequestListener
+* javax.servlet.ServletRequestAttributeListener
+* javax.servlet.http.HttpSessionListener
+* javax.servlet.http.HttpSessionAttributeListener
+* javax.servlet.http.HttpSessionIdListener
+
+如果 ServletContext 传到了 ServletContainerInitializer 的onStartup 方法，则给定的监听器实例可以实现除上面列出的接口之外的javax.servlet.ServletContextListener。如果给定的监听器实例实现了一个监听器接口，则其调用顺序和声明顺序是一样的，换句话说，如果它实现了 javax.servlet.ServletRequestListener 或 javax.servlet.http.HttpSessionListener，那么新的监听器将被添加到该接口的有序监听器列表的末尾。
+
+#### void addListener(Class <? extends EventListener> listenerClass)
+
+往 ServletContext 添加指定 class 类型的监听器。给定的监听器类必须实现是一个或多个如下接口：
+
+* javax.servlet.ServletContextAttributeListener
+* javax.servlet.ServletRequestListener
+* javax.servlet.ServletRequestAttributeListener
+* javax.servlet.http.HttpSessionListener
+* javax.servlet.http.HttpSessionAttributeListener
+* javax.servlet.http.HttpSessionIdListener
+
+如果 ServletContext 传到了 ServletContainerInitializer 的onStartup 方法，则给定的监听器类可以实现除上面列出的接口之外的javax.servlet.ServletContextListener。如果给定的监听器类实现了一个监听器接口，则其调用顺序和声明顺序是一样的，换句话说，如果它实现了 javax.servlet.ServletRequestListener 或 javax.servlet.http.HttpSessionListener，那么新的监听器将被添加到该接口的有序监听器列表的末尾。
+
+#### <T extends EventListener> void createListener(Class<T> clazz)
+
+该方法实例化给定的 EventListener 类。指定的 EventListener 类必须实现至少一个如下接口：
+
+* javax.servlet.ServletContextAttributeListener
+* javax.servlet.ServletRequestListener
+* javax.servlet.ServletRequestAttributeListener
+* javax.servlet.http.HttpSessionListener
+* javax.servlet.http.HttpSessionAttributeListener
+* javax.servlet.http.HttpSessionIdListener
+
+该方法必须支持该规范定义的适用于如上接口的所有注解。返回的EventListener 实例可以在通过调用 addListener(T t) 注册到ServletContext 之前进行进一步的定制。给定的 EventListener 必须定义一个用于实例化的空参构造器。
+
+#### 用于编程式添加 Servlet、Filter 和 Listener 的注解处理需求
+
+除了需要一个实例的 addServlet 之外，当使用编程式API添加Servlet或创建Servlet时，以下类中的有关的注解必须被内省且其定义的元数据必须被使用，除非它被 ServletRegistration.Dynamic / ServletRegistration 中调用的API覆盖了。
+
+@ServletSecurity、@RunAs、@DeclareRoles、@MultipartConfig。
+
+对于 Filter 和 Listener 来说，不需要使用注解来内省。
+除了通过需要一个实例的方法添加的那些组件，编程式添加或创建的所有组件（Servlet，Filter和Listener）上的资源注入，只有当组件是一个CDI Managed Bean时才被支持。进一步了解更多细节请参考15.5.15，“JavaEE 要求的上下文和依赖注入”。

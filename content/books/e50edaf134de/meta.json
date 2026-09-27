@@ -1,0 +1,25 @@
+{
+  "bookId": "e50edaf134de",
+  "title": "傻瓜函数编程",
+  "url": "https://github.com/justinyhuang/Functional-Programming-For-The-Rest-of-Us-Cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:07:59.802Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-functionalprogrammingfortherestofus-cn",
+      "title": "傻瓜函数式编程",
+      "file": "chapters/002-functionalprogrammingfortherestofus-cn.md"
+    },
+    {
+      "slug": "003-functionalprogrammingfortherestofus-en",
+      "title": "FunctionalProgrammingForTheRestOfUs.en",
+      "file": "chapters/003-functionalprogrammingfortherestofus-en.md"
+    }
+  ],
+  "sourceType": "github"
+}

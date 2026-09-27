@@ -1,0 +1,36 @@
+{
+  "bookId": "2cd908b32800",
+  "title": "golang runtime源码分析",
+  "url": "https://github.com/sheepbao/golang_runtime_reading",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:20:25.259Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "初定方案",
+      "file": "chapters/002-readme.md"
+    },
+    {
+      "slug": "003-readme",
+      "title": "README",
+      "file": "chapters/003-readme.md"
+    },
+    {
+      "slug": "004-hacking-cn",
+      "title": "HACKING-cn",
+      "file": "chapters/004-hacking-cn.md"
+    },
+    {
+      "slug": "005-hacking",
+      "title": "HACKING",
+      "file": "chapters/005-hacking.md"
+    }
+  ],
+  "license": "custom",
+  "sourceType": "github"
+}

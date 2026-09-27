@@ -1,0 +1,105 @@
+{
+  "bookId": "9e93145a352f",
+  "title": "Netty 4.x 用户指南",
+  "url": "https://github.com/waylau/netty-4-user-guide",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:24.790Z",
+  "chapters": [
+    {
+      "slug": "001-the-problem",
+      "title": "The Problem 问题",
+      "file": "chapters/001-the-problem.md"
+    },
+    {
+      "slug": "002-the-solution",
+      "title": "The Solution 解决",
+      "file": "chapters/002-the-solution.md"
+    },
+    {
+      "slug": "003-getting-started",
+      "title": "Getting Started 开始",
+      "file": "chapters/003-getting-started.md"
+    },
+    {
+      "slug": "004-before-getting-started",
+      "title": "Before Getting Started 开始之前",
+      "file": "chapters/004-before-getting-started.md"
+    },
+    {
+      "slug": "005-writing-a-discard-server",
+      "title": "Writing a Discard Server 写个抛弃服务器",
+      "file": "chapters/005-writing-a-discard-server.md"
+    },
+    {
+      "slug": "006-looking-into-the-received-data",
+      "title": "Looking into the Received Data 查看收到的数据",
+      "file": "chapters/006-looking-into-the-received-data.md"
+    },
+    {
+      "slug": "007-writing-an-echo-server",
+      "title": "Writing an Echo Server 写个应答服务器",
+      "file": "chapters/007-writing-an-echo-server.md"
+    },
+    {
+      "slug": "008-writing-a-time-server",
+      "title": "Writing a Time Server 写个时间服务器",
+      "file": "chapters/008-writing-a-time-server.md"
+    },
+    {
+      "slug": "009-writing-a-time-client",
+      "title": "Writing a Time Client 写个时间客户端",
+      "file": "chapters/009-writing-a-time-client.md"
+    },
+    {
+      "slug": "010-dealing-with-a-stream-based-transport",
+      "title": "Dealing with a Stream-based Transport 处理一个基于流的传输",
+      "file": "chapters/010-dealing-with-a-stream-based-transport.md"
+    },
+    {
+      "slug": "011-speaking-in-pojo-instead-of-bytebuf",
+      "title": "Speaking in POJO instead of ByteBuf 用 POJO 代替 ByteBuf",
+      "file": "chapters/011-speaking-in-pojo-instead-of-bytebuf.md"
+    },
+    {
+      "slug": "012-shutting-down-your-application",
+      "title": "Shutting Down Your Application 关闭你的应用",
+      "file": "chapters/012-shutting-down-your-application.md"
+    },
+    {
+      "slug": "013-summary",
+      "title": "Summary 总结",
+      "file": "chapters/013-summary.md"
+    },
+    {
+      "slug": "014-architectural-overview",
+      "title": "Architectural Overview 架构总览",
+      "file": "chapters/014-architectural-overview.md"
+    },
+    {
+      "slug": "015-rich-buffer-data-structure",
+      "title": "Rich Buffer Data Structure 丰富的缓冲实现",
+      "file": "chapters/015-rich-buffer-data-structure.md"
+    },
+    {
+      "slug": "016-universal-asynchronous-io-api",
+      "title": "Universal Asynchronous I/O API 统一的异步 I/O API",
+      "file": "chapters/016-universal-asynchronous-io-api.md"
+    },
+    {
+      "slug": "017-event-model-based-on-the-interceptor-chain-pattern",
+      "title": "Event Model based on the Interceptor Chain Pattern 基于拦截链模式的事件模型",
+      "file": "chapters/017-event-model-based-on-the-interceptor-chain-pattern.md"
+    },
+    {
+      "slug": "018-advanced-components-for-more-rapid-development",
+      "title": "Advanced Components for More Rapid Development 适用快速开发的高级组件",
+      "file": "chapters/018-advanced-components-for-more-rapid-development.md"
+    },
+    {
+      "slug": "019-summary",
+      "title": "Summary 总结",
+      "file": "chapters/019-summary.md"
+    }
+  ],
+  "sourceType": "github"
+}

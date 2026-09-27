@@ -1,0 +1,21 @@
+{
+  "bookId": "10ffd6de7641",
+  "title": "Go 官方文档翻译",
+  "url": "https://github.com/golang-china/golangdoc.translations",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:57.625Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Golangdoc 翻译文件",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-readme",
+      "title": "报告文档",
+      "file": "chapters/002-readme.md"
+    }
+  ],
+  "license": "BSD",
+  "sourceType": "github"
+}

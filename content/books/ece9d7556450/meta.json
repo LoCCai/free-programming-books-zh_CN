@@ -1,0 +1,95 @@
+{
+  "bookId": "ece9d7556450",
+  "title": "AngularJS入门教程",
+  "url": "https://github.com/zensh/AngularjsTutorial_cn",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:16:38.668Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-angularjs快速开始",
+      "title": "AngularJS快速开始",
+      "file": "chapters/002-angularjs快速开始.md"
+    },
+    {
+      "slug": "003-angularjs入门教程-导言和准备",
+      "title": "AngularJS入门教程：导言和准备",
+      "file": "chapters/003-angularjs入门教程-导言和准备.md"
+    },
+    {
+      "slug": "004-angularjs入门教程00-引导程序",
+      "title": "AngularJS入门教程00：引导程序",
+      "file": "chapters/004-angularjs入门教程00-引导程序.md"
+    },
+    {
+      "slug": "005-angularjs入门教程01-静态模板",
+      "title": "AngularJS入门教程01：静态模板",
+      "file": "chapters/005-angularjs入门教程01-静态模板.md"
+    },
+    {
+      "slug": "006-angularjs入门教程02-angularjs模板",
+      "title": "AngularJS入门教程02：AngularJS模板",
+      "file": "chapters/006-angularjs入门教程02-angularjs模板.md"
+    },
+    {
+      "slug": "007-angularjs入门教程03-迭代器",
+      "title": "AngularJS入门教程03：迭代器",
+      "file": "chapters/007-angularjs入门教程03-迭代器.md"
+    },
+    {
+      "slug": "008-angularjs入门教程04-双向绑定",
+      "title": "AngularJS入门教程04：双向绑定",
+      "file": "chapters/008-angularjs入门教程04-双向绑定.md"
+    },
+    {
+      "slug": "009-angularjs入门教程05-xhr和依赖注入",
+      "title": "AngularJS入门教程05：XHR和依赖注入",
+      "file": "chapters/009-angularjs入门教程05-xhr和依赖注入.md"
+    },
+    {
+      "slug": "010-angularjs入门教程06-链接与图片模板",
+      "title": "AngularJS入门教程06：链接与图片模板",
+      "file": "chapters/010-angularjs入门教程06-链接与图片模板.md"
+    },
+    {
+      "slug": "011-angularjs入门教程07-路由与多视图",
+      "title": "AngularJS入门教程07：路由与多视图",
+      "file": "chapters/011-angularjs入门教程07-路由与多视图.md"
+    },
+    {
+      "slug": "012-angularjs入门教程08-更多模板",
+      "title": "AngularJS入门教程08：更多模板",
+      "file": "chapters/012-angularjs入门教程08-更多模板.md"
+    },
+    {
+      "slug": "013-angularjs入门教程09-过滤器",
+      "title": "AngularJS入门教程09：过滤器",
+      "file": "chapters/013-angularjs入门教程09-过滤器.md"
+    },
+    {
+      "slug": "014-angularjs入门教程10-事件处理器",
+      "title": "AngularJS入门教程10：事件处理器",
+      "file": "chapters/014-angularjs入门教程10-事件处理器.md"
+    },
+    {
+      "slug": "015-angularjs入门教程11-rest和定制服务",
+      "title": "AngularJS入门教程11：REST和定制服务",
+      "file": "chapters/015-angularjs入门教程11-rest和定制服务.md"
+    },
+    {
+      "slug": "016-angularjs入门教程12-完结篇",
+      "title": "AngularJS入门教程12：完结篇",
+      "file": "chapters/016-angularjs入门教程12-完结篇.md"
+    },
+    {
+      "slug": "017-angularjs入门教程目录",
+      "title": "AngularJS入门教程目录",
+      "file": "chapters/017-angularjs入门教程目录.md"
+    }
+  ],
+  "sourceType": "github"
+}

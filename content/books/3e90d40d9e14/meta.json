@@ -1,0 +1,111 @@
+{
+  "bookId": "3e90d40d9e14",
+  "title": "Nginx开发从入门到精通",
+  "url": "http://tengine.taobao.org/book/index.html",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:04.499Z",
+  "chapters": [
+    {
+      "slug": "001-15",
+      "title": "Nginx开发从入门到精通 — Nginx开发从入门到精通",
+      "file": "chapters/001-15.md"
+    },
+    {
+      "slug": "002-1i",
+      "title": "上篇：nginx模块开发篇 — Nginx开发从入门到精通",
+      "file": "chapters/002-1i.md"
+    },
+    {
+      "slug": "003-1a",
+      "title": "背景介绍 — Nginx开发从入门到精通",
+      "file": "chapters/003-1a.md"
+    },
+    {
+      "slug": "004-1a",
+      "title": "nginx平台初探(100%) — Nginx开发从入门到精通",
+      "file": "chapters/004-1a.md"
+    },
+    {
+      "slug": "005-1a",
+      "title": "handler模块(100%) — Nginx开发从入门到精通",
+      "file": "chapters/005-1a.md"
+    },
+    {
+      "slug": "006-1a",
+      "title": "过滤模块 (90%) — Nginx开发从入门到精通",
+      "file": "chapters/006-1a.md"
+    },
+    {
+      "slug": "007-1a",
+      "title": "upstream模块 — Nginx开发从入门到精通",
+      "file": "chapters/007-1a.md"
+    },
+    {
+      "slug": "008-1a",
+      "title": "其他模块 (40%) — Nginx开发从入门到精通",
+      "file": "chapters/008-1a.md"
+    },
+    {
+      "slug": "009-1a",
+      "title": "模块开发高级篇(30%) — Nginx开发从入门到精通",
+      "file": "chapters/009-1a.md"
+    },
+    {
+      "slug": "010-1f",
+      "title": "下篇：nginx原理解析篇 — Nginx开发从入门到精通",
+      "file": "chapters/010-1f.md"
+    },
+    {
+      "slug": "011-1a",
+      "title": "高性能服务器设计 — Nginx开发从入门到精通",
+      "file": "chapters/011-1a.md"
+    },
+    {
+      "slug": "012-1a",
+      "title": "nginx架构详解(50%) — Nginx开发从入门到精通",
+      "file": "chapters/012-1a.md"
+    },
+    {
+      "slug": "013-1a",
+      "title": "nginx基础设施 — Nginx开发从入门到精通",
+      "file": "chapters/013-1a.md"
+    },
+    {
+      "slug": "014-1a",
+      "title": "nginx的启动阶段 (30%) — Nginx开发从入门到精通",
+      "file": "chapters/014-1a.md"
+    },
+    {
+      "slug": "015-1a",
+      "title": "nginx的请求处理阶段 (90%) — Nginx开发从入门到精通",
+      "file": "chapters/015-1a.md"
+    },
+    {
+      "slug": "016-1a",
+      "title": "nginx的upstream原理解析 — Nginx开发从入门到精通",
+      "file": "chapters/016-1a.md"
+    },
+    {
+      "slug": "017-1a",
+      "title": "nginx的script处理 — Nginx开发从入门到精通",
+      "file": "chapters/017-1a.md"
+    },
+    {
+      "slug": "018-1a",
+      "title": "附录A 编码风格 (100%) — Nginx开发从入门到精通",
+      "file": "chapters/018-1a.md"
+    },
+    {
+      "slug": "019-1a",
+      "title": "附录B 常用API — Nginx开发从入门到精通",
+      "file": "chapters/019-1a.md"
+    },
+    {
+      "slug": "020-1a",
+      "title": "附录C 模块编译，调试与测试 — Nginx开发从入门到精通",
+      "file": "chapters/020-1a.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Nginx开发从入门到精通 — Nginx开发从入门到精通"
+}

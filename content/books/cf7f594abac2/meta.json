@@ -1,0 +1,146 @@
+{
+  "bookId": "cf7f594abac2",
+  "title": "awk实战指南",
+  "url": "https://book.saubcy.com/AwkInAction/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:10:04.275Z",
+  "chapters": [
+    {
+      "slug": "001-10",
+      "title": "前言 · AWK实战指南",
+      "file": "chapters/001-10.md"
+    },
+    {
+      "slug": "002-1a",
+      "title": "使用本书 · AWK实战指南",
+      "file": "chapters/002-1a.md"
+    },
+    {
+      "slug": "003-1q",
+      "title": "Hello World! · AWK实战指南",
+      "file": "chapters/003-1q.md"
+    },
+    {
+      "slug": "004-1q",
+      "title": "程序框架 · AWK实战指南",
+      "file": "chapters/004-1q.md"
+    },
+    {
+      "slug": "005-1q",
+      "title": "处理单元 · AWK实战指南",
+      "file": "chapters/005-1q.md"
+    },
+    {
+      "slug": "006-1q",
+      "title": "注释 · AWK实战指南",
+      "file": "chapters/006-1q.md"
+    },
+    {
+      "slug": "007-1q",
+      "title": "变量 · AWK实战指南",
+      "file": "chapters/007-1q.md"
+    },
+    {
+      "slug": "008-1q",
+      "title": "数组 · AWK实战指南",
+      "file": "chapters/008-1q.md"
+    },
+    {
+      "slug": "009-1q",
+      "title": "流程控制 · AWK实战指南",
+      "file": "chapters/009-1q.md"
+    },
+    {
+      "slug": "010-1q",
+      "title": "自定义函数 · AWK实战指南",
+      "file": "chapters/010-1q.md"
+    },
+    {
+      "slug": "011-1q",
+      "title": "字符串信息 · AWK实战指南",
+      "file": "chapters/011-1q.md"
+    },
+    {
+      "slug": "012-1q",
+      "title": "字符串拼接 · AWK实战指南",
+      "file": "chapters/012-1q.md"
+    },
+    {
+      "slug": "013-1q",
+      "title": "字符串拆分 · AWK实战指南",
+      "file": "chapters/013-1q.md"
+    },
+    {
+      "slug": "014-1q",
+      "title": "字符串截取 · AWK实战指南",
+      "file": "chapters/014-1q.md"
+    },
+    {
+      "slug": "015-1q",
+      "title": "字符串查找替换 · AWK实战指南",
+      "file": "chapters/015-1q.md"
+    },
+    {
+      "slug": "016-1q",
+      "title": "字符串转换 · AWK实战指南",
+      "file": "chapters/016-1q.md"
+    },
+    {
+      "slug": "017-1q",
+      "title": "正则表达式 · AWK实战指南",
+      "file": "chapters/017-1q.md"
+    },
+    {
+      "slug": "018-1q",
+      "title": "算术函数 · AWK实战指南",
+      "file": "chapters/018-1q.md"
+    },
+    {
+      "slug": "019-1q",
+      "title": "时间函数 · AWK实战指南",
+      "file": "chapters/019-1q.md"
+    },
+    {
+      "slug": "020-1q",
+      "title": "文件存取 · AWK实战指南",
+      "file": "chapters/020-1q.md"
+    },
+    {
+      "slug": "021-1q",
+      "title": "外部命令 · AWK实战指南",
+      "file": "chapters/021-1q.md"
+    },
+    {
+      "slug": "022-1l",
+      "title": "实例1 记录去重 · AWK实战指南",
+      "file": "chapters/022-1l.md"
+    },
+    {
+      "slug": "023-1l",
+      "title": "实例2 访问日志分析 · AWK实战指南",
+      "file": "chapters/023-1l.md"
+    },
+    {
+      "slug": "024-1l",
+      "title": "实例3 网络接口检测 · AWK实战指南",
+      "file": "chapters/024-1l.md"
+    },
+    {
+      "slug": "025-1l",
+      "title": "实例4 读写MySQL · AWK实战指南",
+      "file": "chapters/025-1l.md"
+    },
+    {
+      "slug": "026-1l",
+      "title": "实例5 杀死进程 · AWK实战指南",
+      "file": "chapters/026-1l.md"
+    },
+    {
+      "slug": "027-1l",
+      "title": "实例6 监控机器负载 · AWK实战指南",
+      "file": "chapters/027-1l.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "前言 · AWK实战指南"
+}

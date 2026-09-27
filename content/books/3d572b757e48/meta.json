@@ -1,0 +1,16 @@
+{
+  "bookId": "3d572b757e48",
+  "title": "逐行剖析 Vue.js 源码",
+  "url": "https://nlrx-wjc.github.io/Learn-Vue-Source-Code/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:11:51.467Z",
+  "chapters": [
+    {
+      "slug": "001-1d",
+      "title": "逐行剖析 Vue.js 源码",
+      "file": "chapters/001-1d.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "逐行剖析 Vue.js 源码"
+}

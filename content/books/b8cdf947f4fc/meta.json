@@ -1,0 +1,315 @@
+{
+  "bookId": "b8cdf947f4fc",
+  "title": "GitHub帮助文档",
+  "url": "https://github.com/waylau/github-help",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:39.706Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "目录",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-about-git-rebase-关于-git-rebase",
+      "title": "About Git rebase 关于 Git rebase",
+      "file": "chapters/002-about-git-rebase-关于-git-rebase.md"
+    },
+    {
+      "slug": "003-about-releases-关于发布包",
+      "title": "About Releases 关于发布包",
+      "file": "chapters/003-about-releases-关于发布包.md"
+    },
+    {
+      "slug": "004-about-two-factor-authentication-双因素认证",
+      "title": "About Two-Factor Authentication 双因素认证",
+      "file": "chapters/004-about-two-factor-authentication-双因素认证.md"
+    },
+    {
+      "slug": "005-adding-collaborators-to-a-personal-repository-添加合作者到个人的库",
+      "title": "Adding collaborators to a personal repository 添加合作者到个人的库",
+      "file": "chapters/005-adding-collaborators-to-a-personal-repository-添加合作者到个人的库.md"
+    },
+    {
+      "slug": "006-adding-or-inviting-members-to-a-team-in-an-organization-添加或邀",
+      "title": "Adding or inviting members to a team in an organization 添加或邀请组织成员到一个团队中",
+      "file": "chapters/006-adding-or-inviting-members-to-a-team-in-an-organization-添加或邀.md"
+    },
+    {
+      "slug": "007-adding-or-inviting-members-to-a-team-in-an-organization-在组织中",
+      "title": "Adding or inviting members to a team in an organization 在组织中添加或者邀请人员进团队",
+      "file": "chapters/007-adding-or-inviting-members-to-a-team-in-an-organization-在组织中.md"
+    },
+    {
+      "slug": "008-be-social",
+      "title": "Be Social",
+      "file": "chapters/008-be-social.md"
+    },
+    {
+      "slug": "009-caching-your-github-password-in-git-保存你的-github-密码",
+      "title": "Caching your GitHub password in Git 保存你的 Github 密码",
+      "file": "chapters/009-caching-your-github-password-in-git-保存你的-github-密码.md"
+    },
+    {
+      "slug": "010-changing-a-remote-s-url-修改远程-url",
+      "title": "Changing a remote's URL 修改远程 URL",
+      "file": "chapters/010-changing-a-remote-s-url-修改远程-url.md"
+    },
+    {
+      "slug": "011-comparing-commits-across-time-在交叉时间合并提交",
+      "title": "Comparing commits across time 在交叉时间合并提交",
+      "file": "chapters/011-comparing-commits-across-time-在交叉时间合并提交.md"
+    },
+    {
+      "slug": "012-configuring-a-remote-for-a-fork",
+      "title": "Configuring a remote for a fork",
+      "file": "chapters/012-configuring-a-remote-for-a-fork.md"
+    },
+    {
+      "slug": "013-create-a-repo",
+      "title": "Create A Repo",
+      "file": "chapters/013-create-a-repo.md"
+    },
+    {
+      "slug": "014-creating-a-new-organization-account-创建组织账号",
+      "title": "Creating a new organization account 创建组织账号",
+      "file": "chapters/014-creating-a-new-organization-account-创建组织账号.md"
+    },
+    {
+      "slug": "015-creating-a-pull-request-创建-pull-请求",
+      "title": "Creating a pull request 创建 pull 请求",
+      "file": "chapters/015-creating-a-pull-request-创建-pull-请求.md"
+    },
+    {
+      "slug": "016-creating-and-deleting-branches-within-your-repository-在你的库中创",
+      "title": "Creating and deleting branches within your repository 在你的库中创建和删除分支",
+      "file": "chapters/016-creating-and-deleting-branches-within-your-repository-在你的库中创.md"
+    },
+    {
+      "slug": "017-creating-new-files-创建新文件",
+      "title": "Creating new files 创建新文件",
+      "file": "chapters/017-creating-new-files-创建新文件.md"
+    },
+    {
+      "slug": "018-creating-releases-创建发布包",
+      "title": "Creating Releases 创建发布包",
+      "file": "chapters/018-creating-releases-创建发布包.md"
+    },
+    {
+      "slug": "019-dealing-with-non-fast-forward-errors-处理-non-fast-forward-错误",
+      "title": "Grabs online updates and merges them with your local work",
+      "file": "chapters/019-dealing-with-non-fast-forward-errors-处理-non-fast-forward-错误.md"
+    },
+    {
+      "slug": "020-deleting-a-repository-删除库",
+      "title": "Deleting a repository 删除库",
+      "file": "chapters/020-deleting-a-repository-删除库.md"
+    },
+    {
+      "slug": "021-deleting-files-删除文件",
+      "title": "Deleting files 删除文件",
+      "file": "chapters/021-deleting-files-删除文件.md"
+    },
+    {
+      "slug": "022-deleting-unused-branches-删除不使用的分支",
+      "title": "Deleting unused branches 删除不使用的分支",
+      "file": "chapters/022-deleting-unused-branches-删除不使用的分支.md"
+    },
+    {
+      "slug": "023-distributing-large-binaries-分发大型二进制文件",
+      "title": "Distributing large binaries 分发大型二进制文件",
+      "file": "chapters/023-distributing-large-binaries-分发大型二进制文件.md"
+    },
+    {
+      "slug": "024-do-you-have-custom-plans-你有个人计划吗",
+      "title": "Do you have custom plans 你有个人计划吗",
+      "file": "chapters/024-do-you-have-custom-plans-你有个人计划吗.md"
+    },
+    {
+      "slug": "025-editing-files-in-your-repository-修改你库中的文件",
+      "title": "Editing files in your repository 修改你库中的文件",
+      "file": "chapters/025-editing-files-in-your-repository-修改你库中的文件.md"
+    },
+    {
+      "slug": "026-error-repository-not-found-错误-库没有找到",
+      "title": "Error Repository not found 错误 库没有找到",
+      "file": "chapters/026-error-repository-not-found-错误-库没有找到.md"
+    },
+    {
+      "slug": "027-fetching-a-remote-获取远程库",
+      "title": "Fetching a remote 获取远程库",
+      "file": "chapters/027-fetching-a-remote-获取远程库.md"
+    },
+    {
+      "slug": "028-fork-a-repo",
+      "title": "Fork A Repo",
+      "file": "chapters/028-fork-a-repo.md"
+    },
+    {
+      "slug": "029-generating-ssh-keys-生成-ssh-密钥",
+      "title": "Generating SSH keys 生成 SSH 密钥",
+      "file": "chapters/029-generating-ssh-keys-生成-ssh-密钥.md"
+    },
+    {
+      "slug": "030-github-flavored-markdown",
+      "title": "GitHub Flavored Markdown",
+      "file": "chapters/030-github-flavored-markdown.md"
+    },
+    {
+      "slug": "031-github-flow-in-the-browser-在浏览器中的流程",
+      "title": "GitHub Flow in the Browser 在浏览器中的流程",
+      "file": "chapters/031-github-flow-in-the-browser-在浏览器中的流程.md"
+    },
+    {
+      "slug": "032-https-cloning-errors-用-https-克隆常见的错误",
+      "title": "HTTPS cloning errors 用 HTTPS 克隆常见的错误",
+      "file": "chapters/032-https-cloning-errors-用-https-克隆常见的错误.md"
+    },
+    {
+      "slug": "033-linking-to-releases-链接到发布包",
+      "title": "Linking to releases 链接到发布包",
+      "file": "chapters/033-linking-to-releases-链接到发布包.md"
+    },
+    {
+      "slug": "034-making-a-private-repository-public-私人库转为公开",
+      "title": "Making a private repository public 私人库转为公开",
+      "file": "chapters/034-making-a-private-repository-public-私人库转为公开.md"
+    },
+    {
+      "slug": "035-making-a-public-repository-private-开放库转为私有",
+      "title": "Making a public repository private 开放库转为私有",
+      "file": "chapters/035-making-a-public-repository-private-开放库转为私有.md"
+    },
+    {
+      "slug": "036-markdown-basics",
+      "title": "The largest heading (an <h1> tag)",
+      "file": "chapters/036-markdown-basics.md"
+    },
+    {
+      "slug": "037-merging-a-pull-request-合并一个-pull-请求",
+      "title": "Merging a pull request 合并一个 pull 请求",
+      "file": "chapters/037-merging-a-pull-request-合并一个-pull-请求.md"
+    },
+    {
+      "slug": "038-merging-multiple-user-accounts-合并多个用户账号",
+      "title": "Merging multiple user accounts 合并多个用户账号",
+      "file": "chapters/038-merging-multiple-user-accounts-合并多个用户账号.md"
+    },
+    {
+      "slug": "039-moving-a-file-to-a-new-location-移动文件到一个新位置",
+      "title": "Moving a file to a new location 移动文件到一个新位置",
+      "file": "chapters/039-moving-a-file-to-a-new-location-移动文件到一个新位置.md"
+    },
+    {
+      "slug": "040-permission-levels-for-a-user-account-repository-用户库的权限级别",
+      "title": "Permission levels for a user account repository 用户库的权限级别",
+      "file": "chapters/040-permission-levels-for-a-user-account-repository-用户库的权限级别.md"
+    },
+    {
+      "slug": "041-permission-levels-for-an-organization-repository-组织库的权限级别",
+      "title": "Permission levels for an organization repository 组织库的权限级别",
+      "file": "chapters/041-permission-levels-for-an-organization-repository-组织库的权限级别.md"
+    },
+    {
+      "slug": "042-pushing-to-a-remote",
+      "title": "Pushing to a remote",
+      "file": "chapters/042-pushing-to-a-remote.md"
+    },
+    {
+      "slug": "043-remove-sensitive-data-删除敏感数据",
+      "title": "Remove sensitive data 删除敏感数据",
+      "file": "chapters/043-remove-sensitive-data-删除敏感数据.md"
+    },
+    {
+      "slug": "044-renaming-a-file-重命名你的文件",
+      "title": "Renaming a file 重命名你的文件",
+      "file": "chapters/044-renaming-a-file-重命名你的文件.md"
+    },
+    {
+      "slug": "045-set-up-git",
+      "title": "Set Up Git",
+      "file": "chapters/045-set-up-git.md"
+    },
+    {
+      "slug": "046-signing-up-for-a-new-github-account-注册新账号",
+      "title": "Signing up for a new GitHub account 注册新账号",
+      "file": "chapters/046-signing-up-for-a-new-github-account-注册新账号.md"
+    },
+    {
+      "slug": "047-syncing-a-fork",
+      "title": "Syncing a fork",
+      "file": "chapters/047-syncing-a-fork.md"
+    },
+    {
+      "slug": "048-transferring-a-repository-转换库",
+      "title": "Transferring a repository 转换库",
+      "file": "chapters/048-transferring-a-repository-转换库.md"
+    },
+    {
+      "slug": "049-using-pull-requests-使用-pull-请求",
+      "title": "Using pull requests 使用 pull 请求",
+      "file": "chapters/049-using-pull-requests-使用-pull-请求.md"
+    },
+    {
+      "slug": "050-verifying-your-email-address-验证您的电子邮件地址",
+      "title": "Verifying your email address 验证您的电子邮件地址",
+      "file": "chapters/050-verifying-your-email-address-验证您的电子邮件地址.md"
+    },
+    {
+      "slug": "051-what-are-the-different-access-permissions-不同访问权限之间的区别",
+      "title": "What are the different access permissions 不同访问权限之间的区别",
+      "file": "chapters/051-what-are-the-different-access-permissions-不同访问权限之间的区别.md"
+    },
+    {
+      "slug": "052-what-are-the-limits-for-viewing-content-and-diffs-in-my-repo",
+      "title": "What are the limits for viewing content and diffs in my repository 在版本库浏览内容和文件比较f的限制是什么",
+      "file": "chapters/052-what-are-the-limits-for-viewing-content-and-diffs-in-my-repo.md"
+    },
+    {
+      "slug": "053-what-happens-if-my-repository-is-locked-当库锁住时发生了啥",
+      "title": "What happens if my repository is locked 当库锁住时发生了啥",
+      "file": "chapters/053-what-happens-if-my-repository-is-locked-当库锁住时发生了啥.md"
+    },
+    {
+      "slug": "054-what-happens-to-forks-when-a-repository-is-deleted-or-change",
+      "title": "What happens to forks when a repository is deleted or changes visibility 当库删除或者改变了可见性,其 fork 发生了什么",
+      "file": "chapters/054-what-happens-to-forks-when-a-repository-is-deleted-or-change.md"
+    },
+    {
+      "slug": "055-what-is-my-disk-quota-我的磁盘配额是什么",
+      "title": "What is my disk quota 我的磁盘配额是什么",
+      "file": "chapters/055-what-is-my-disk-quota-我的磁盘配额是什么.md"
+    },
+    {
+      "slug": "056-what-s-the-difference-between-user-and-organization-accounts",
+      "title": "What's the difference between user and organization accounts 用户和组织账户的不同点",
+      "file": "chapters/056-what-s-the-difference-between-user-and-organization-accounts.md"
+    },
+    {
+      "slug": "057-which-remote-url-should-i-use-我应该用哪种远程-url",
+      "title": "Which remote URL should I use 我应该用哪种远程 URL ",
+      "file": "chapters/057-which-remote-url-should-i-use-我应该用哪种远程-url.md"
+    },
+    {
+      "slug": "058-why-are-my-contributions-not-showing-up-on-my-profile-为毛gith",
+      "title": "Why are my contributions not showing up on my profile 为毛Github的contributions贡献值不增长了",
+      "file": "chapters/058-why-are-my-contributions-not-showing-up-on-my-profile-为毛gith.md"
+    },
+    {
+      "slug": "059-why-is-git-always-asking-for-my-password-为啥-git-总是要询问我的密码",
+      "title": "Why is Git always asking for my password 为啥 git 总是要询问我的密码",
+      "file": "chapters/059-why-is-git-always-asking-for-my-password-为啥-git-总是要询问我的密码.md"
+    },
+    {
+      "slug": "060-working-with-tags-和标签工作",
+      "title": "Working with Tags 和标签工作",
+      "file": "chapters/060-working-with-tags-和标签工作.md"
+    },
+    {
+      "slug": "061-writing-on-github",
+      "title": "Writing on GitHub",
+      "file": "chapters/061-writing-on-github.md"
+    }
+  ],
+  "sourceType": "github"
+}

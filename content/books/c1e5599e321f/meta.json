@@ -1,0 +1,66 @@
+{
+  "bookId": "c1e5599e321f",
+  "title": "Git Magic",
+  "url": "http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:08:24.257Z",
+  "chapters": [
+    {
+      "slug": "001-1r",
+      "title": "Git Magic - 前言",
+      "file": "chapters/001-1r.md"
+    },
+    {
+      "slug": "002-20",
+      "title": "Git Magic - 第 1 章 入门",
+      "file": "chapters/002-20.md"
+    },
+    {
+      "slug": "003-20",
+      "title": "Git Magic - 第 2 章 基本技巧",
+      "file": "chapters/003-20.md"
+    },
+    {
+      "slug": "004-20",
+      "title": "Git Magic - 第 3 章 克隆代码库",
+      "file": "chapters/004-20.md"
+    },
+    {
+      "slug": "005-20",
+      "title": "Git Magic - 第 4 章 分支巫术",
+      "file": "chapters/005-20.md"
+    },
+    {
+      "slug": "006-20",
+      "title": "Git Magic - 第 5 章 关于历史",
+      "file": "chapters/006-20.md"
+    },
+    {
+      "slug": "007-20",
+      "title": "Git Magic - 第 6 章 多人Git",
+      "file": "chapters/007-20.md"
+    },
+    {
+      "slug": "008-20",
+      "title": "Git Magic - 第 7 章 Git大师技",
+      "file": "chapters/008-20.md"
+    },
+    {
+      "slug": "009-20",
+      "title": "Git Magic - 第 8 章 揭开面纱",
+      "file": "chapters/009-20.md"
+    },
+    {
+      "slug": "010-20",
+      "title": "第 9 章 附录 A: Git的缺点",
+      "file": "chapters/010-20.md"
+    },
+    {
+      "slug": "011-20",
+      "title": "第 10 章 附录 B: 本指南的翻译",
+      "file": "chapters/011-20.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Git Magic - 前言"
+}

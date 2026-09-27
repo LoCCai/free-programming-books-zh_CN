@@ -1,0 +1,101 @@
+{
+  "bookId": "3311162f78a6",
+  "title": "Requests: HTTP for Humans",
+  "url": "https://requests-docs-cn.readthedocs.io/zh_CN/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:13:11.430Z",
+  "chapters": [
+    {
+      "slug": "001-1h",
+      "title": "让 HTTP 服务人类 — Requests 2.18.1 文档",
+      "file": "chapters/001-1h.md"
+    },
+    {
+      "slug": "002-1w",
+      "title": "简介 — Requests 2.18.1 文档",
+      "file": "chapters/002-1w.md"
+    },
+    {
+      "slug": "003-1y",
+      "title": "安装 Requests — Requests 2.18.1 文档",
+      "file": "chapters/003-1y.md"
+    },
+    {
+      "slug": "004-21",
+      "title": "快速上手 — Requests 2.18.1 文档",
+      "file": "chapters/004-21.md"
+    },
+    {
+      "slug": "005-1z",
+      "title": "高级用法 — Requests 2.18.1 文档",
+      "file": "chapters/005-1z.md"
+    },
+    {
+      "slug": "006-25",
+      "title": "身份认证 — Requests 2.18.1 文档",
+      "file": "chapters/006-25.md"
+    },
+    {
+      "slug": "007-1z",
+      "title": "常见问题 — Requests 2.18.1 文档",
+      "file": "chapters/007-1z.md"
+    },
+    {
+      "slug": "008-27",
+      "title": "推荐的库和扩展 — Requests 2.18.1 文档",
+      "file": "chapters/008-27.md"
+    },
+    {
+      "slug": "009-25",
+      "title": "Integrations — Requests 2.18.1 文档",
+      "file": "chapters/009-25.md"
+    },
+    {
+      "slug": "010-23",
+      "title": "支持 — Requests 2.18.1 文档",
+      "file": "chapters/010-23.md"
+    },
+    {
+      "slug": "011-2b",
+      "title": "Vulnerability Disclosure — Requests 2.18.1 文档",
+      "file": "chapters/011-2b.md"
+    },
+    {
+      "slug": "012-23",
+      "title": "更新 — Requests 2.18.1 文档",
+      "file": "chapters/012-23.md"
+    },
+    {
+      "slug": "013-2b",
+      "title": "Release Process and Rules — Requests 2.18.1 文档",
+      "file": "chapters/013-2b.md"
+    },
+    {
+      "slug": "014-1p",
+      "title": "开发接口 — Requests 2.18.1 文档",
+      "file": "chapters/014-1p.md"
+    },
+    {
+      "slug": "015-22",
+      "title": "Contributor's Guide — Requests 2.18.1 文档",
+      "file": "chapters/015-22.md"
+    },
+    {
+      "slug": "016-20",
+      "title": "Development Philosophy — Requests 2.18.1 文档",
+      "file": "chapters/016-20.md"
+    },
+    {
+      "slug": "017-1u",
+      "title": "How to Help — Requests 2.18.1 文档",
+      "file": "chapters/017-1u.md"
+    },
+    {
+      "slug": "018-1x",
+      "title": "贡献者 — Requests 2.18.1 文档",
+      "file": "chapters/018-1x.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "让 HTTP 服务人类 — Requests 2.18.1 文档"
+}

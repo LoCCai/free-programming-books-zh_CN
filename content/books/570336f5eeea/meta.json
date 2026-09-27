@@ -1,0 +1,15 @@
+{
+  "bookId": "570336f5eeea",
+  "title": "移动前端开发收藏夹",
+  "url": "https://github.com/hoosin/mobile-web-favorites",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:09:31.997Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    }
+  ],
+  "sourceType": "github"
+}

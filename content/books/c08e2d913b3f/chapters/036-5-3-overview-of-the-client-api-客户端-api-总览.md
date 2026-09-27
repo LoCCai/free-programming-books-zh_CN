@@ -1,0 +1,176 @@
+5.3. Overview of the Client API 客户端 API 总览
+========================
+
+##5.3.1. Getting started with the client API 开始
+
+当使用Jersey JAX-RS 客户端支持的依赖关系，请查看[依赖](https://jersey.java.net/documentation/latest/user-guide.html#dependencies)。
+
+您可能还希望使用一个自定义[连接器](https://jersey.java.net/apidocs/2.16/jersey/org/glassfish/jersey/client/spi/Connector.html)实现。在这种情况下,您将需要包含额外的依赖模块包含您想要使用的自定义客户端连接器。请参见“[配置自定义连接器](https://jersey.java.net/documentation/latest/user-guide.html#connectors)”关于如何使用和配置自定义 Jersey 客户端传输连接器。
+
+##5.3.2.  Creating and configuring a Client instance 创建和配置客户端实例
+
+JAX-RS 客户端 API 是一个设计为允许流利的编程模型。这意味着,建设一个客户端实例,从中创建一个 WebTarget,请求[调用](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/client/Invocation.html)是建立和调用可以调用的链接在一个“流”。流的各个步骤将以下部分所示。利用客户端 API 首先需要构建一个[客户端](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/client/Client.html)实例使用一个静态 [ClientBuilder](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/client/ClientBuilder.html) 工厂方法。这是最简单的例子:
+
+	Client client = ClientBuilder.newClient();
+
+ClientBuilder 是 JAX-RS  API用于创建新实例的客户端。在稍微高级的场景, ClientBuilder 可用于配置额外的客户端实例属性,如 SSL 传输设置
+
+客户端实例可以创建期间通过的[ClientConfig](https://jersey.java.net/apidocs/2.16/jersey/org/glassfish/jersey/client/ClientConfig.html)配置到 newClient(可配置)的 ClientBuilder工厂方法中。ClientConfig 实现[可配置](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/core/Configurable.html)的,因此它提供了方法来注册供应商(如功能或单独的实体供应商、过滤器或拦截器)和设置属性。下面的代码显示了一个注册自定义客户端过滤器:
+
+	ClientConfig clientConfig = new ClientConfig();
+	clientConfig.register(MyClientResponseFilter.class);
+	clientConfig.register(new AnotherClientFilter());
+	Client client = ClientBuilder.newClient(clientConfig);
+
+在这个例子中,过滤器是注册使用 ClientConfig.register(…) 方法。有多个方法的重载版本,支持注册功能和提供者类或实例。一旦 ClientConfig 实例配置,它可以传递到 ClientBuilder 创建预配置的客户端实例。
+
+注意,Jersey ClientConfig 支持[可配置](http://jax-rs-spec.java.net/nonav/$%7Bjaxrs.api.version%7D/apidocs/javax/ws/rs/core/Configurable.html)的流利的API模型。与配置一个新的客户端实例的代码也可以写使用更紧凑的样式如下所示。
+
+	Client client = ClientBuilder.newClient(new ClientConfig()
+	        .register(MyClientResponseFilter.class)
+	        .register(new AnotherClientFilter());
+
+利用这种紧凑模式的能力是内在所有 JAX-RS 和 Jersey 客户端 API 组件。
+
+自客户端实现可配置接口,它甚至可以进一步配置之后创建的。更重要的是,任何配置更改做一个客户端实例不会影响 ClientConfig 实例,用于提供初始客户端实例配置在实例创建的时间。下一段代码展示了一个配置现有的客户端实例。
+
+	client.register(ThirdClientFilter.class);
+
+类似于之前的例子,因为 Client.register(…) 方法支持流利的API,可以链接多个客户机实例配置调用:
+
+	client.register(FilterA.class)
+	      .register(new FilterB())
+	      .property("my-property", true);
+
+getConfiguration() 方法可以使用来获得当前配置的客户端实例。
+
+	ClientConfig clientConfig = new ClientConfig();
+	clientConfig.register(MyClientResponseFilter.class);
+	clientConfig.register(new AnotherClientFilter());
+	Client client = ClientBuilder.newClient(clientConfig);
+	client.register(ThirdClientFilter.class);
+	Configuration newConfiguration = client.getConfiguration();
+
+在代码中,一个额外的 MyClientResponseFilter 类和AnotherClientFilter 实例注册进 clientConfig。然后clientConfig被用来构造一个新的客户端实例。添加了 ThirdClientFilter 分别构造客户端实例。这并不影响原 clientConfig 所代表的配置。在最后一步newConfiguration 从客户端检索。该配置包含所有三个注册过滤器而原始clientConfig 实例仍然只包含两个过滤器。另外,创建与 clientConfig newConfiguration 从客户端实例检索代表现场客户端配置视图。任何额外的配置变化也反映在 newConfiguration 客户端实例。newConfiguration 是真正的客户端配置,而不是复制配置状态。这些原则是重要的客户端 API,也将在以下部分中使用。例如,您可以为所有客户建立一个公共基础配置(在我们的例子中是 clientConfig ),然后再利用这常见的配置实例配置多个客户机实例,可以进一步专业化。类似地,您可以使用现有的客户端实例配置配置另一个客户端实例,而不必担心任何副作用在原始客户端实例。
+
+##5.3.3. Targeting a web resource 针对网络资源
+
+客户端实例创建 WebTarget 
+
+	WebTarget webTarget = client.target("http://example.com/rest");
+
+客户端包含几个目标(…)方法,允许创建 WebTarget 实例。在本例中我们使用目标 uri (String)版本。 uri 作为字符串传递到方法有针对性的 web资源的 uri。在更复杂的场景,这可能是整个 RESTful 应用程序的上下文根 URI,WebTarget 实例代表个人资源的目标可以派生和单独配置。这是可能的,因为 JAX-RS WebTarget 还实现了可配置:
+
+	WebTarget webTarget = client.target("http://example.com/rest");
+	webTarget.register(FilterForExampleCom.class);
+
+JAX-RS 客户端 API 中使用的配置原则适用于 WebTarget 。每个WebTarget 实例配置都继承自它的父亲(客户端或另一个 web 目标),可以进一步都不影响父组件的配置。在这种情况下,FilterForExampleCom 将只在 webTarget 而不是在客户端注册。因此,客户仍然可以用来创建新的WebTarget 实例指向其他 uri 仅使用普通客户端配置,不属于FilterForExampleCom 过滤器。
+
+##5.3.4. Identifying resource on WebTarget 识别资源
+
+让我们假设我们有一个 webtarget 指向 "http://example.com/rest" 的 URI，代表着一个 RESTful 应用上下文根有资源暴露在 URI为 "http://example.com/rest/resource"。正如已经提到的，一个WebTarget 实例可以用来获得其他网站的目标。使用下面的代码定义一个路径的资源。
+
+	WebTarget resourceWebTarget = webTarget.path("resource");
+
+现在的 resourceWebTarget  指向 URI 的资源"http://example.com/rest/resource"。如果我们再次配置resourceWebTarget 对特定资源的过滤器，它不会影响原始 webTarget  实例。然而，过滤器 FilterForExampleCom 注册仍将继承的创建于 webTarget 的 resourceWebTarget。这种机制允许你共享有关资源的常见的配置（通常做法是保存在相同的 URI 根，在我们示例中是用 webTarget 实例表示），同时允许进一步配置基于每个资源的特定要求的特定配置。继承相同的配置原则（允许普通配置的传播）和解耦（允许个人配置定制）适用于下面讨论的所有 JAX-RS 客户端 API 组件。
+
+假设有个子资源  "http://example.com/rest/resource/helloworld" ，可以驱动一个 WebTarget 通过下面语句：
+
+	WebTarget helloworldWebTarget = resourceWebTarget.path("helloworld");
+
+让我们假设  helloworld 资源接受查询参数用于 GET 请求,定义了问候消息。下一个代码片段显示了一个代码，通过定义查询参数的创建一种新的 WebTarget 。
+
+	WebTarget helloworldWebTargetWithQueryParam =
+        helloworldWebTarget.queryParam("greeting", "Hi World!");
+
+请注意，除了方法可以推导出新的 基于URI的路径或查询参数 WebTarget 实例，JAX-RS webtarget API也包含矩阵参数的方法。
+
+##5.3.5. Invoking a HTTP request 调用一个 HTTP 请求
+
+现在要调用一个 GET HTTP 请求 到 一个已经创建的 web target 上。开始构建一个新的  HTTP 请求调用，首先要创建一个新的 [Invocation.Builder](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/client/Invocation.Builder.html)
+
+	Invocation.Builder invocationBuilder =
+	        helloworldWebTargetWithQueryParam.request(MediaType.TEXT_PLAIN_TYPE);
+	invocationBuilder.header("some-header", "true");
+
+通过 WebTarget 的其中一个请求方法来创建一个   invocation builder 实例。这些方法接收的参数可以让你定义返回资源的媒体类型。我们这里假设是 "text/plain" 类型，告诉 Jersey 添加一个 Accept: text/plain HTTP header 到我们的请求。
+
+invocationBuilder 是用来设置请求特定的参数，这里我们可以给请求的header 设置 cookie 参数，就是例子中的 "some-header" 。
+
+现在可以调用请求了。我们有2个选项。可以使用  Invocation.Builder  构建一个通用的 [Invocation](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/client/Invocation.html) 实例，迟点调用。使用 Invocation 可以如例子中所述的设置额外的请求属性，使用通用的  JAX-RS Invocation API 来调用批量请求而无需了解细节（ 比如 HTTP 方法, 配置等）。任何设置在调用实例的属性，都能在请求进程中都读到。举例，在自定义 [ClientRequestFilter](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/client/ClientRequestFilter.html)调用 getProperty() 方法提供 [ClientRequestContext](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/client/ClientRequestContext.html) 来读 请求属性。注意，请求属性和 Configurable 上的配置属性是不同的。正如之前提到的，Invocation  实例提供了通用的  invocation API 来调用 HTTP 请求，同步或异步。
+详见[Chapter 10. Asynchronous Services and Clients 异步服务器和客户端](https://raw.githubusercontent.com/waylau/Jersey-2.x-User-Guide/HEAD/Chapter 5. Client API 客户端 API/Chapter 10. Asynchronous Services and Clients 异步服务器和客户端/Chapter 10. Asynchronous Services and Clients 异步服务器和客户端.md)异步调用。
+
+如果你不想调用它们之前做任何批处理您的 HTTP 请求调用，还有一个更方便的方法，可以直接从一个调用生成器实例用来调用你的请求。这种方法如下：
+
+	Response response = invocationBuilder.get();
+
+示例中的代码很短，但执行多个动作。首先，从 invocationBuilder 构建了请求，可能是 http://example.com/rest/resource/helloworld?greeting="Hi%20World!"，包含了 some-header: true 和 Accept: text/plain 头文件，
+
+请求将通过所有配置请求过滤器（AnotherClientFilter, ThirdClientFilter 和 FilterForExampleCom）。一旦通过滤波器处理，请求将被发送到远程资源。假设资源然后返回一个 HTTP 200 消息的一个纯文本响应，内容包含在请求中发送问候查询参数的值。现在我们可以看到返回的响应：
+	
+	System.out.println(response.getStatus());
+	System.out.println(response.readEntity(String.class));
+
+控制台输出：
+
+	200
+	Hi World!
+
+正如所见，请求被成功执行返回了实体"Hi World!"。注意，因为我在资源目标配置了 MyClientResponseFilter ，当  response.readEntity(String.class)  调用时，返回的响应，从远程端点通过响应过滤器链（包括 MyClientResponseFilter）和实体拦截器链和最后一个适当的 [MessageBodyReader<T>](http://jax-rs-spec.java.net/nonav/2.0/apidocs/javax/ws/rs/ext/MessageBodyReader.html) 位于读取响应内容字节从响应流到一个 Java 字符串实例。详见[Chapter 9. Filters and Interceptors 过滤器和拦截器](https://raw.githubusercontent.com/waylau/Jersey-2.x-User-Guide/HEAD/Chapter 5. Client API 客户端 API/Chapter 9. Filters and Interceptors 过滤器和拦截器/Chapter 9. Filters and Interceptors 过滤器和拦截器.md)，请求和响应的过滤器和实体拦截器。
+
+想象下，你要调用 POST 请求，但不带任何参数，仅仅需要使用 helloworldWebTarget  实例，将 post() 替换 get()：
+
+	Response postResponse =
+	        helloworldWebTarget.request(MediaType.TEXT_PLAIN_TYPE)
+	                .post(Entity.entity("A string entity to be POSTed", MediaType.TEXT_PLAIN));
+
+##5.3.6. Example summary 实例摘要
+
+在之前例子的代码
+
+Example 5.2. Using JAX-RS Client API
+
+	ClientConfig clientConfig = new ClientConfig();
+	clientConfig.register(MyClientResponseFilter.class);
+	clientConfig.register(new AnotherClientFilter());
+	 
+	Client client = ClientBuilder.newClient(clientConfig);
+	client.register(ThirdClientFilter.class);
+	 
+	WebTarget webTarget = client.target("http://example.com/rest");
+	webTarget.register(FilterForExampleCom.class);
+	WebTarget resourceWebTarget = webTarget.path("resource");
+	WebTarget helloworldWebTarget = resourceWebTarget.path("helloworld");
+	WebTarget helloworldWebTargetWithQueryParam =
+	        helloworldWebTarget.queryParam("greeting", "Hi World!");
+	 
+	Invocation.Builder invocationBuilder =
+	        helloworldWebTargetWithQueryParam.request(MediaType.TEXT_PLAIN_TYPE);
+	invocationBuilder.header("some-header", "true");
+	 
+	Response response = invocationBuilder.get();
+	System.out.println(response.getStatus());
+	System.out.println(response.readEntity(String.class));
+
+现在我们可以尝试利用 fluent API 的风格，在一个更紧凑的方式写代码。
+
+Example 5.3. Using JAX-RS Client API fluently
+
+
+	Client client = ClientBuilder.newClient(new ClientConfig()
+	            .register(MyClientResponseFilter.class)
+	            .register(new AnotherClientFilter()));
+	 
+	String entity = client.target("http://example.com/rest")
+	            .register(FilterForExampleCom.class)
+	            .path("resource/helloworld")
+	            .queryParam("greeting", "Hi World!")
+	            .request(MediaType.TEXT_PLAIN_TYPE)
+	            .header("some-header", "true")
+	            .get(String.class);
+
+上面的代码做同样的事情。这种快捷的方法让你指定（如果成功返回一个HTTP 响应状态码响应实体 2XX ）应为 Java 字符串返回类型。这个紧凑的示例演示了 JAX-RS 客户端 API 另一个优点 。流畅的 JAX-RS 客户端 API 很方便，特别是简单的用法中。这是另一个非常简单的 GET 请求返回一个字符串表示形式（实体）：
+	
+	String responseEntity = ClientBuilder.newClient()
+	            .target("http://example.com").path("resource/rest")
+	                        .request().get(String.class)

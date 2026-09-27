@@ -1,0 +1,16 @@
+{
+  "bookId": "f87cff0f0e40",
+  "title": "Symfony2中文文档",
+  "url": "https://symfony-docs-chs.readthedocs.io/en/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:12:08.046Z",
+  "chapters": [
+    {
+      "slug": "001-1e",
+      "title": "SOON — symfony-docs-chs latest documentation",
+      "file": "chapters/001-1e.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "SOON — symfony-docs-chs latest documentation"
+}

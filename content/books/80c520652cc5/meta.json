@@ -1,0 +1,261 @@
+{
+  "bookId": "80c520652cc5",
+  "title": "Django 1.5 文档中文版",
+  "url": "https://django-chinese-docs.readthedocs.io/en/latest/",
+  "status": "ok",
+  "fetchedAt": "2026-09-27T06:14:05.244Z",
+  "chapters": [
+    {
+      "slug": "001-1h",
+      "title": "Django 中文文档 — Django 1.5 documentation",
+      "file": "chapters/001-1h.md"
+    },
+    {
+      "slug": "002-1x",
+      "title": "新手入门 — Django 1.5 documentation",
+      "file": "chapters/002-1x.md"
+    },
+    {
+      "slug": "003-20",
+      "title": "初探 Django — Django 1.5 documentation",
+      "file": "chapters/003-20.md"
+    },
+    {
+      "slug": "004-1z",
+      "title": "快速安装指南 — Django 1.5 documentation",
+      "file": "chapters/004-1z.md"
+    },
+    {
+      "slug": "005-22",
+      "title": "编写你的第一个 Django 程序 第1部分 — Django 1.5 documentation",
+      "file": "chapters/005-22.md"
+    },
+    {
+      "slug": "006-22",
+      "title": "编写你的第一个 Django 程序 第2部分 — Django 1.5 documentation",
+      "file": "chapters/006-22.md"
+    },
+    {
+      "slug": "007-22",
+      "title": "编写你的第一个 Django 程序 第3部分 — Django 1.5 documentation",
+      "file": "chapters/007-22.md"
+    },
+    {
+      "slug": "008-22",
+      "title": "编写你的第一个 Django 程序 第4部分 — Django 1.5 documentation",
+      "file": "chapters/008-22.md"
+    },
+    {
+      "slug": "009-22",
+      "title": "编写你的第一个 Django 程序 第5部分 — Django 1.5 documentation",
+      "file": "chapters/009-22.md"
+    },
+    {
+      "slug": "010-25",
+      "title": "进阶教程：如何编写可重用的应用程序 — Django 1.5 documentation",
+      "file": "chapters/010-25.md"
+    },
+    {
+      "slug": "011-21",
+      "title": "下一步阅读什么 — Django 1.5 documentation",
+      "file": "chapters/011-21.md"
+    },
+    {
+      "slug": "012-24",
+      "title": "为Django编写属于你的首个补丁 — Django 1.5 documentation",
+      "file": "chapters/012-24.md"
+    },
+    {
+      "slug": "013-1y",
+      "title": "使用 Django — Django 1.5 documentation",
+      "file": "chapters/013-1y.md"
+    },
+    {
+      "slug": "014-20",
+      "title": "如何安装 Django — Django 1.5 documentation",
+      "file": "chapters/014-20.md"
+    },
+    {
+      "slug": "015-21",
+      "title": "Models and databases — Django 1.5 documentation",
+      "file": "chapters/015-21.md"
+    },
+    {
+      "slug": "016-22",
+      "title": "Models — Django 1.5 documentation",
+      "file": "chapters/016-22.md"
+    },
+    {
+      "slug": "017-23",
+      "title": "Making queries — Django 1.5 documentation",
+      "file": "chapters/017-23.md"
+    },
+    {
+      "slug": "018-27",
+      "title": "Aggregation — Django 1.5 documentation",
+      "file": "chapters/018-27.md"
+    },
+    {
+      "slug": "019-24",
+      "title": "Managers — Django 1.5 documentation",
+      "file": "chapters/019-24.md"
+    },
+    {
+      "slug": "020-1z",
+      "title": "Performing raw SQL queries — Django 1.5 documentation",
+      "file": "chapters/020-1z.md"
+    },
+    {
+      "slug": "021-28",
+      "title": "Managing database transactions — Django 1.5 documentation",
+      "file": "chapters/021-28.md"
+    },
+    {
+      "slug": "022-24",
+      "title": "Multiple databases — Django 1.5 documentation",
+      "file": "chapters/022-24.md"
+    },
+    {
+      "slug": "023-27",
+      "title": "Tablespaces — Django 1.5 documentation",
+      "file": "chapters/023-27.md"
+    },
+    {
+      "slug": "024-28",
+      "title": "Database access optimization — Django 1.5 documentation",
+      "file": "chapters/024-28.md"
+    },
+    {
+      "slug": "025-2a",
+      "title": "Examples of model relationship API usage — Django 1.5 documentation",
+      "file": "chapters/025-2a.md"
+    },
+    {
+      "slug": "026-2h",
+      "title": "Many-to-many relationships — Django 1.5 documentation",
+      "file": "chapters/026-2h.md"
+    },
+    {
+      "slug": "027-2g",
+      "title": "Many-to-one relationships — Django 1.5 documentation",
+      "file": "chapters/027-2g.md"
+    },
+    {
+      "slug": "028-2f",
+      "title": "One-to-one relationships — Django 1.5 documentation",
+      "file": "chapters/028-2f.md"
+    },
+    {
+      "slug": "029-23",
+      "title": "Handling HTTP requests — Django 1.5 documentation",
+      "file": "chapters/029-23.md"
+    },
+    {
+      "slug": "030-22",
+      "title": "URL dispatcher — Django 1.5 documentation",
+      "file": "chapters/030-22.md"
+    },
+    {
+      "slug": "031-23",
+      "title": "Writing views — Django 1.5 documentation",
+      "file": "chapters/031-23.md"
+    },
+    {
+      "slug": "032-28",
+      "title": "View decorators — Django 1.5 documentation",
+      "file": "chapters/032-28.md"
+    },
+    {
+      "slug": "033-2a",
+      "title": "File Uploads — Django 1.5 documentation",
+      "file": "chapters/033-2a.md"
+    },
+    {
+      "slug": "034-27",
+      "title": "Django shortcut functions — Django 1.5 documentation",
+      "file": "chapters/034-27.md"
+    },
+    {
+      "slug": "035-2b",
+      "title": "Generic views — Django 1.5 documentation",
+      "file": "chapters/035-2b.md"
+    },
+    {
+      "slug": "036-28",
+      "title": "Middleware — Django 1.5 documentation",
+      "file": "chapters/036-28.md"
+    },
+    {
+      "slug": "037-26",
+      "title": "How to use sessions — Django 1.5 documentation",
+      "file": "chapters/037-26.md"
+    },
+    {
+      "slug": "038-24",
+      "title": "Working with forms — Django 1.5 documentation",
+      "file": "chapters/038-24.md"
+    },
+    {
+      "slug": "039-27",
+      "title": "Formsets — Django 1.5 documentation",
+      "file": "chapters/039-27.md"
+    },
+    {
+      "slug": "040-29",
+      "title": "Creating forms from models — Django 1.5 documentation",
+      "file": "chapters/040-29.md"
+    },
+    {
+      "slug": "041-24",
+      "title": "Form Media — Django 1.5 documentation",
+      "file": "chapters/041-24.md"
+    },
+    {
+      "slug": "042-22",
+      "title": "The Django template language — Django 1.5 documentation",
+      "file": "chapters/042-22.md"
+    },
+    {
+      "slug": "043-2g",
+      "title": "Class-based views — Django 1.5 documentation",
+      "file": "chapters/043-2g.md"
+    },
+    {
+      "slug": "044-2q",
+      "title": "Class-based generic views — Django 1.5 documentation",
+      "file": "chapters/044-2q.md"
+    },
+    {
+      "slug": "045-2q",
+      "title": "Form handling with class-based views — Django 1.5 documentation",
+      "file": "chapters/045-2q.md"
+    },
+    {
+      "slug": "046-2h",
+      "title": "Using mixins with class-based views — Django 1.5 documentation",
+      "file": "chapters/046-2h.md"
+    },
+    {
+      "slug": "047-1y",
+      "title": "Managing files — Django 1.5 documentation",
+      "file": "chapters/047-1y.md"
+    },
+    {
+      "slug": "048-26",
+      "title": "Testing in Django — Django 1.5 documentation",
+      "file": "chapters/048-26.md"
+    },
+    {
+      "slug": "049-29",
+      "title": "Testing Django applications — Django 1.5 documentation",
+      "file": "chapters/049-29.md"
+    },
+    {
+      "slug": "050-29",
+      "title": "Django and doctests — Django 1.5 documentation",
+      "file": "chapters/050-29.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Django 中文文档 — Django 1.5 documentation"
+}
