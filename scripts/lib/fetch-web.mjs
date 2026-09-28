@@ -1,7 +1,10 @@
 /**
  * 普通 URL 抓取:HTML → readability 正文抽取 → markdown。
  *
- * 章节发现(two-tier):
+ * 章节发现(three-tier):
+ * 0. 单文档门槛 —— 起始页正文 ≥ SINGLE_DOC_MIN_CHARS 视为单页文档(单页教程/
+ *    速查表),直接走链式收录:此类页面导航里的语言版本/站内推荐链接会污染
+ *    目录发现,把整站误抓成"章节";
  * 1. 目录优先 —— 教程站的侧栏/顶部目录(nav/aside/toc 容器,或与当前页共享
  *    路径前缀的同源链接聚类,成员 ≥3)即"本书目录",按 DOM 顺序整本抓取;
  * 2. 兜底 —— "下一页"链式跟随(rel=next / a[rel=next] / next 容器 / 文本匹配),
@@ -18,6 +21,9 @@ const MAX_PAGES = 200;
 const PAGE_TIMEOUT_MS = 20000;
 const FETCH_RETRIES = 2;
 const POLITENESS_DELAY_MS = 150;
+// 起始页抽取正文达到该字符数 → 视为单文档书籍(整本书就是这一页,如单页教程/
+// 速查表),跳过目录发现,避免把页面导航里的同源链接误当章节目录
+const SINGLE_DOC_MIN_CHARS = 6000;
 
 const turndown = new TurndownService({
   headingStyle: 'atx',
@@ -230,15 +236,22 @@ export function htmlToArticle(html, baseUrl) {
     } catch { /* 忽略非法链接 */ }
   }
 
+  // og:title/twitter:title 在整站共用品牌串的站点上是噪音(cb.vu 每页都是
+  // "CB.VU - Linux, Unix & Webmaster Resources"),而 Readability 会优先采信
+  // 它;移除后以 <title> 为准 —— 由站点逐页编写,更能代表本页内容
+  const docTitle = (document.title || '').trim();
+  for (const m of document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]')) m.remove();
   for (const el of document.querySelectorAll('script,style,noscript,nav,footer,header form')) el.remove();
   const article = new Readability(document.cloneNode(true)).parse();
   if (!article?.content) {
     // readability 失败 → 回退 body 直转
     const body = document.querySelector('body')?.innerHTML || html;
-    return { title: document.title || baseUrl, markdown: turndown.turndown(body), nextUrl };
+    return { title: docTitle || baseUrl, markdown: turndown.turndown(body), nextUrl };
   }
+  // <title> 足够具体(≥10 字符)时直接采信;否则保留 Readability 的推断
+  const title = docTitle.length >= 10 ? docTitle : article.title || docTitle || baseUrl;
   return {
-    title: article.title || document.title || baseUrl,
+    title,
     markdown: turndown.turndown(article.content),
     nextUrl,
   };
@@ -266,8 +279,8 @@ function slugifyText(s) {
 }
 
 /**
- * 抓取整本书:目录发现 → 按目录顺序逐页抓取;目录不可得时退回下一页链式。
- * 纯 JS 渲染站点(页面壳无链接)判定为不可静态抓取,抛错走外链降级。
+ * 抓取整本书:单文档门槛(正文够长直接链式) → 目录发现按序抓取;目录不可得时
+ * 退回下一页链式。纯 JS 渲染站点(页面壳无链接)判定为不可静态抓取,抛错走外链降级。
  * @returns {{ title?: string, chapters: { slug, title, body }[], viaToc: boolean }}
  */
 export async function fetchWebBook(startUrl) {
@@ -279,12 +292,32 @@ export async function fetchWebBook(startUrl) {
   if (linkCount < 3 && scriptCount >= 3) {
     throw new Error('JS 渲染站点,无静态可抓内容');
   }
+  // 单文档门槛:正文即整本书 → 链式收录(含 rel=next 翻页),跳过目录发现
+  const startBody = htmlToArticle(startHtml, finalUrl).markdown.trim();
+  if (startBody.length >= SINGLE_DOC_MIN_CHARS) {
+    const chained = await fetchByNextChain(startHtml, finalUrl);
+    assertDistinctChapters(chained.chapters);
+    return { ...chained, viaToc: false };
+  }
   const toc = discoverToc(startDoc, finalUrl);
   if (toc && toc.length >= 3) {
-    return fetchByToc(startUrl, finalUrl, toc);
+    const byToc = await fetchByToc(startUrl, finalUrl, toc);
+    assertDistinctChapters(byToc.chapters);
+    return byToc;
   }
   const chained = await fetchByNextChain(startHtml, finalUrl);
+  assertDistinctChapters(chained.chapters);
   return { ...chained, viaToc: false };
+}
+
+/** 防呆:多章标题完全相同几乎必然是整站导航被误当目录(语言版落地页/首页重复
+ * 收录)。宁可抛错降级为外链,不产出垃圾镜像 */
+function assertDistinctChapters(chapters) {
+  const counts = new Map();
+  for (const c of chapters) counts.set(c.title, (counts.get(c.title) || 0) + 1);
+  for (const [title, n] of counts) {
+    if (n >= 3) throw new Error(`疑似整站误抓:${n} 个章节标题完全相同「${title}」`);
+  }
 }
 
 /** 模式一:按目录顺序整本抓取 */
@@ -298,16 +331,22 @@ async function fetchByToc(startUrl, selfUrl, toc) {
     seen.add(item.key);
     try {
       const { html, finalUrl } = await fetchPageText(item.url);
-      const { title, markdown } = htmlToArticle(html, finalUrl);
-      const body = markdown.trim();
-      // 目录壳(几乎无正文)不收为章节
-      if (body.length <= 200 && toc.length > 3) continue;
-      if (!bookTitle && (item.url === startUrl || finalUrl === selfUrl)) bookTitle = title;
-      chapters.push({
-        slug: `${String(chapters.length + 1).padStart(3, '0')}-${slugifyText(item.text || title)}`,
-        title: title || item.text || `第 ${chapters.length + 1} 节`,
-        body,
-      });
+      // 同一页面经重定向/别名 URL 会在目录里出现多次,按最终 URL 二次去重
+      const finalKey = urlKey(finalUrl);
+      if (!seen.has(finalKey)) {
+        seen.add(finalKey);
+        const { title, markdown } = htmlToArticle(html, finalUrl);
+        const body = markdown.trim();
+        // 目录壳(几乎无正文)不收为章节
+        if (body.length > 200 || toc.length <= 3) {
+          if (!bookTitle && (item.url === startUrl || finalUrl === selfUrl)) bookTitle = title;
+          chapters.push({
+            slug: `${String(chapters.length + 1).padStart(3, '0')}-${slugifyText(item.text || title)}`,
+            title: title || item.text || `第 ${chapters.length + 1} 节`,
+            body,
+          });
+        }
+      }
     } catch {
       // 单页失败跳过,不中断整本
     }
@@ -324,7 +363,7 @@ async function fetchByNextChain(startHtml, startUrl) {
   let url = startUrl;
   let html = startHtml;
   let bookTitle;
-  while (url && chapters.length < MAX_PAGES && !seen.has(url)) {
+  while (url && chapters.length < MAX_PAGES && !seen.has(urlKey(url))) {
     seen.add(urlKey(url));
     const { title, markdown, nextUrl } = htmlToArticle(html, url);
     if (!bookTitle) bookTitle = title;

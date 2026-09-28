@@ -10,7 +10,7 @@
  */
 import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { fetchGithubBook, absolutizeMd } from './lib/fetch-github.mjs';
 import { fetchWebBook, absolutizeWebMd } from './lib/fetch-web.mjs';
 
@@ -129,6 +129,8 @@ async function main() {
   process.exit(meta.status === 'failed' ? 1 : 0);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// 直跑判定须用 pathToFileURL 归一:Windows 下 argv[1] 是盘符路径,
+// 与 import.meta.url 的 file:///C:/... 形态直接字符串比较永不相等
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main();
 }

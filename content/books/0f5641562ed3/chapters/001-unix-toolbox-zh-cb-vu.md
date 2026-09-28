@@ -1658,6 +1658,8 @@ C:/Documents and Settings/%USERNAME%/Application Data/gnupg/ 中。
 
 有(许多)其他替代方法来加密磁盘，我只呈现我所知道和使用的方法。请记住，安全只是系统还未经过实际考验而已。入侵者可以轻易通过键盘事件记录密码。此外，当已经加载了分区，其数据是可以自由访问的，并不会阻止入侵者去访问它。
 
+## Linux
+
 这部分我们使用可用于 2.6 内核的 Linux dm-crypt (device-mapper)。在这个实例中，让我们加密 `/dev/sdc1` 分区，它可为任何其他分区、磁盘、USB或者用 `losetup` 创建的基于文件的分区。对于基于文件的分区，我们使用 `/dev/loop0`。看 [镜像文件分区](#losetup)。Device mapper 利用标签来标识一个分区。我们使用 `sdc1` 作为此标签，但可以为任何字符串。
 
 ### dm-crypt with LUKS

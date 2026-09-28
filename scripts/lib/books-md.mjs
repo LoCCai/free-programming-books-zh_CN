@@ -30,7 +30,9 @@ const SKIP_SECTIONS = new Set(['参与交流', '目录']);
  * @returns {{ books: object[], sections: string[], skippedLines: number }}
  */
 export function parseBookListMd(content, sourceFile) {
-  const lines = content.split('\n');
+  // Windows 检出(autocrlf)下内容为 CRLF,而 matchListItem 的 `.` 不匹配 \r,
+  // 统一在此归一换行,行级正则不必各自兼容
+  const lines = content.split(/\r\n?|\n/);
   const books = [];
   const sections = [];
   let skippedLines = 0;
@@ -108,7 +110,7 @@ export function parseBookListMd(content, sourceFile) {
  * @returns {{ books: object[] }}
  */
 export function parseNonProgrammingMd(content, sourceFile) {
-  const lines = content.split('\n');
+  const lines = content.split(/\r\n?|\n/);
   const books = [];
   let current = null; // { titleLine, paragraphs: string[] }
 

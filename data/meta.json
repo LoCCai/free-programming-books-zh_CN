@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T12:21:51.551Z",
-  "sourceCommit": "9e207b4faf2d2d8a3d53a5710607927c529471ff",
+  "generatedAt": "2026-09-28T07:41:10.276Z",
+  "sourceCommit": "168629fcf870a2ae7188785e8965e8dfd142b6de",
   "sourceFiles": [
     "README.md",
     "what-non-programming-books-should-programmers-read.md"
@@ -9,7 +9,7 @@
     "totalBooks": 456,
     "totalNonProgramming": 8,
     "categories": 53,
-    "deprecated": 71,
+    "deprecated": 70,
     "duplicateUrls": 5,
     "skippedAnchorLines": 0,
     "sections": [
