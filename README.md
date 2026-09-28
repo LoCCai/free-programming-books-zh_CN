@@ -93,7 +93,7 @@
 * [开源世界旅行手册](http://i.linuxtoy.org/docs/guide/index.html)
 * [鸟哥的Linux私房菜](http://linux.vbird.org/)
 * [The Linux Command Line](http://billie66.github.io/TLCL/index.html) (中英文版)
-* [UNIX TOOLBOX](http://cb.vu/unixtoolbox_zh_CN.xhtml) :worried:
+* [UNIX TOOLBOX](http://cb.vu/unixtoolbox_zh_CN.xhtml)
 * [Docker中文指南](https://github.com/widuu/chinese_docker)
 * [Docker —— 从入门到实践](https://github.com/yeasy/docker_practice)
 * [Docker入门实战](http://yuedu.baidu.com/ebook/d817967416fc700abb68fca1) :worried:
