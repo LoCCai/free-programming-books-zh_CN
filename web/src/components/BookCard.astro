@@ -11,7 +11,9 @@ const readable = isReadable(book.id);
 
 <div class="book-card">
   <a class="t" href={withBase(bookPath(book))}>{book.title}</a>
-  {book.status === 'deprecated' && <span class="badge dep" title="上游标记疑似失效">疑似失效</span>}
+  {/* 上游 :worried: 标记仅对未抓到站内内容的书展示——已抓到全文的失效标记书
+      实际可读(如 cb.vu 恢复、--retry-deprecated 救回),不再吓退读者 */}
+  {book.status === 'deprecated' && !readable && <span class="badge dep" title="上游标记疑似失效">疑似失效</span>}
   {readable && <span class="badge read">可在线阅读</span>}
   {book.description && <div class="d">{book.description}</div>}
 </div>

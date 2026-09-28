@@ -2,8 +2,495 @@
   "bookId": "d93ca995aa49",
   "title": "《Kotlin for android developers》中文版",
   "url": "https://wangjiegulu.gitbooks.io/kotlin-for-android-developers-zh/content/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T12:11:52.138Z",
-  "chapters": [],
-  "error": "HTTP 401"
+  "status": "ok",
+  "fetchedAt": "2026-09-28T13:42:14.254Z",
+  "chapters": [
+    {
+      "slug": "001-introduction",
+      "title": "Introduction · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/001-introduction.md"
+    },
+    {
+      "slug": "002-关于本书",
+      "title": "关于本书 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/002-关于本书.md"
+    },
+    {
+      "slug": "003-这本书适合你吗",
+      "title": "这本书适合你吗？ · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/003-这本书适合你吗.md"
+    },
+    {
+      "slug": "004-关于作者",
+      "title": "关于作者 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/004-关于作者.md"
+    },
+    {
+      "slug": "005-介绍",
+      "title": "介绍 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/005-介绍.md"
+    },
+    {
+      "slug": "006-什么是kotlin",
+      "title": "什么是Kotlin？ · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/006-什么是kotlin.md"
+    },
+    {
+      "slug": "007-我们通过kotlin得到什么",
+      "title": "我们通过Kotlin得到什么 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/007-我们通过kotlin得到什么.md"
+    },
+    {
+      "slug": "008-android-studio",
+      "title": "Android Studio · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/008-android-studio.md"
+    },
+    {
+      "slug": "009-安装kotlin插件",
+      "title": "安装Kotlin插件 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/009-安装kotlin插件.md"
+    },
+    {
+      "slug": "010-创建一个新的项目",
+      "title": "创建一个新的项目 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/010-创建一个新的项目.md"
+    },
+    {
+      "slug": "011-在android-studio中创建一个项目",
+      "title": "在Android Studio中创建一个项目 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/011-在android-studio中创建一个项目.md"
+    },
+    {
+      "slug": "012-配置gradle",
+      "title": "配置Gradle · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/012-配置gradle.md"
+    },
+    {
+      "slug": "013-把mainactivity转换成kotlin代码",
+      "title": "把MainActivity转换成Kotlin代码 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/013-把mainactivity转换成kotlin代码.md"
+    },
+    {
+      "slug": "014-测试是否一切就绪",
+      "title": "测试是否一切就绪 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/014-测试是否一切就绪.md"
+    },
+    {
+      "slug": "015-怎么定义一个类",
+      "title": "怎么定义一个类 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/015-怎么定义一个类.md"
+    },
+    {
+      "slug": "016-类继承",
+      "title": "类继承 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/016-类继承.md"
+    },
+    {
+      "slug": "017-函数",
+      "title": "函数 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/017-函数.md"
+    },
+    {
+      "slug": "018-构造方法和函数参数",
+      "title": "构造方法和函数参数 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/018-构造方法和函数参数.md"
+    },
+    {
+      "slug": "019-创建一个layout",
+      "title": "创建一个layout · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/019-创建一个layout.md"
+    },
+    {
+      "slug": "020-the-recycler-adapter",
+      "title": "The Recycler Adapter · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/020-the-recycler-adapter.md"
+    },
+    {
+      "slug": "021-基本类型",
+      "title": "基本类型 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/021-基本类型.md"
+    },
+    {
+      "slug": "022-变量",
+      "title": "变量 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/022-变量.md"
+    },
+    {
+      "slug": "023-属性",
+      "title": "属性 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/023-属性.md"
+    },
+    {
+      "slug": "024-anko是什么",
+      "title": "Anko是什么？ · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/024-anko是什么.md"
+    },
+    {
+      "slug": "025-开始使用anko",
+      "title": "开始使用Anko · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/025-开始使用anko.md"
+    },
+    {
+      "slug": "026-扩展函数",
+      "title": "扩展函数 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/026-扩展函数.md"
+    },
+    {
+      "slug": "027-执行一个请求",
+      "title": "执行一个请求 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/027-执行一个请求.md"
+    },
+    {
+      "slug": "028-在主线程以外执行请求",
+      "title": "在主线程以外执行请求 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/028-在主线程以外执行请求.md"
+    },
+    {
+      "slug": "029-数据类",
+      "title": "数据类 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/029-数据类.md"
+    },
+    {
+      "slug": "030-额外的函数",
+      "title": "额外的函数 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/030-额外的函数.md"
+    },
+    {
+      "slug": "031-复制一个数据类",
+      "title": "复制一个数据类 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/031-复制一个数据类.md"
+    },
+    {
+      "slug": "032-映射对象到变量中",
+      "title": "映射对象到变量中 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/032-映射对象到变量中.md"
+    },
+    {
+      "slug": "033-转换json到数据类",
+      "title": "转换json到数据类 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/033-转换json到数据类.md"
+    },
+    {
+      "slug": "034-构建domain层",
+      "title": "构建domain层 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/034-构建domain层.md"
+    },
+    {
+      "slug": "035-在ui中绘制数据",
+      "title": "在UI中绘制数据 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/035-在ui中绘制数据.md"
+    },
+    {
+      "slug": "036-操作符表",
+      "title": "操作符表 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/036-操作符表.md"
+    },
+    {
+      "slug": "037-例子",
+      "title": "例子 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/037-例子.md"
+    },
+    {
+      "slug": "038-扩展函数中的操作符",
+      "title": "扩展函数中的操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/038-扩展函数中的操作符.md"
+    },
+    {
+      "slug": "039-使forecast-list可点击",
+      "title": "使Forecast list可点击 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/039-使forecast-list可点击.md"
+    },
+    {
+      "slug": "040-简化setonclicklistener",
+      "title": "简化setOnClickListener() · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/040-简化setonclicklistener.md"
+    },
+    {
+      "slug": "041-forecastlistadapter的click-listener",
+      "title": "ForecastListAdapter的click listener · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/041-forecastlistadapter的click-listener.md"
+    },
+    {
+      "slug": "042-扩展语言",
+      "title": "扩展语言 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/042-扩展语言.md"
+    },
+    {
+      "slug": "043-修饰符",
+      "title": "修饰符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/043-修饰符.md"
+    },
+    {
+      "slug": "044-润色我们的代码",
+      "title": "润色我们的代码 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/044-润色我们的代码.md"
+    },
+    {
+      "slug": "045-kotlin-android-extensions",
+      "title": "Kotlin Android Extensions · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/045-kotlin-android-extensions.md"
+    },
+    {
+      "slug": "046-怎么去使用kotlin-android-extensions",
+      "title": "怎么去使用Kotlin Android Extensions · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/046-怎么去使用kotlin-android-extensions.md"
+    },
+    {
+      "slug": "047-重构我们的代码",
+      "title": "重构我们的代码 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/047-重构我们的代码.md"
+    },
+    {
+      "slug": "048-applicaton单例化",
+      "title": "Applicaton单例化 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/048-applicaton单例化.md"
+    },
+    {
+      "slug": "049-委托属性",
+      "title": "委托属性 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/049-委托属性.md"
+    },
+    {
+      "slug": "050-标准委托",
+      "title": "标准委托 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/050-标准委托.md"
+    },
+    {
+      "slug": "051-怎么去创建一个自定义的委托",
+      "title": "怎么去创建一个自定义的委托 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/051-怎么去创建一个自定义的委托.md"
+    },
+    {
+      "slug": "052-重新实现application单例化",
+      "title": "重新实现Application单例化 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/052-重新实现application单例化.md"
+    },
+    {
+      "slug": "053-创建一个sqliteopenhelper",
+      "title": "创建一个SQLiteOpenHelper · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/053-创建一个sqliteopenhelper.md"
+    },
+    {
+      "slug": "054-managedsqliteopenhelper",
+      "title": "ManagedSqliteOpenHelper · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/054-managedsqliteopenhelper.md"
+    },
+    {
+      "slug": "055-定义表",
+      "title": "定义表 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/055-定义表.md"
+    },
+    {
+      "slug": "056-实现sqliteopenhelper",
+      "title": "实现SqliteOpenHelper · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/056-实现sqliteopenhelper.md"
+    },
+    {
+      "slug": "057-依赖注入",
+      "title": "依赖注入 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/057-依赖注入.md"
+    },
+    {
+      "slug": "058-集合和函数操作符",
+      "title": "集合和函数操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/058-集合和函数操作符.md"
+    },
+    {
+      "slug": "059-总数操作符",
+      "title": "总数操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/059-总数操作符.md"
+    },
+    {
+      "slug": "060-过滤操作符",
+      "title": "过滤操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/060-过滤操作符.md"
+    },
+    {
+      "slug": "061-映射操作符",
+      "title": "映射操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/061-映射操作符.md"
+    },
+    {
+      "slug": "062-元素操作符",
+      "title": "元素操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/062-元素操作符.md"
+    },
+    {
+      "slug": "063-生产操作符",
+      "title": "生产操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/063-生产操作符.md"
+    },
+    {
+      "slug": "064-顺序操作符",
+      "title": "顺序操作符 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/064-顺序操作符.md"
+    },
+    {
+      "slug": "065-创建数据库model类",
+      "title": "创建数据库model类 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/065-创建数据库model类.md"
+    },
+    {
+      "slug": "066-写入和查询数据库",
+      "title": "写入和查询数据库 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/066-写入和查询数据库.md"
+    },
+    {
+      "slug": "067-kotlin中的null安全",
+      "title": "Kotlin中的null安全 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/067-kotlin中的null安全.md"
+    },
+    {
+      "slug": "068-可null类型怎么工作",
+      "title": "可null类型怎么工作 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/068-可null类型怎么工作.md"
+    },
+    {
+      "slug": "069-可null性和java库",
+      "title": "可null性和Java库 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/069-可null性和java库.md"
+    },
+    {
+      "slug": "070-创建业务逻辑来访问数据",
+      "title": "创建业务逻辑来访问数据 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/070-创建业务逻辑来访问数据.md"
+    },
+    {
+      "slug": "071-if表达式",
+      "title": "If表达式 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/071-if表达式.md"
+    },
+    {
+      "slug": "072-when表达式",
+      "title": "When表达式 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/072-when表达式.md"
+    },
+    {
+      "slug": "073-for循环",
+      "title": "For循环 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/073-for循环.md"
+    },
+    {
+      "slug": "074-while和do-while循环",
+      "title": "While和do/while循环 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/074-while和do-while循环.md"
+    },
+    {
+      "slug": "075-ranges",
+      "title": "Ranges · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/075-ranges.md"
+    },
+    {
+      "slug": "076-准备请求",
+      "title": "准备请求 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/076-准备请求.md"
+    },
+    {
+      "slug": "077-提供一个新的activity",
+      "title": "提供一个新的activity · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/077-提供一个新的activity.md"
+    },
+    {
+      "slug": "078-启动一个activity-reified函数",
+      "title": "启动一个activity：reified函数 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/078-启动一个activity-reified函数.md"
+    },
+    {
+      "slug": "079-接口",
+      "title": "接口 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/079-接口.md"
+    },
+    {
+      "slug": "080-委托",
+      "title": "委托 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/080-委托.md"
+    },
+    {
+      "slug": "081-在我们的app中实现一个例子",
+      "title": "在我们的App中实现一个例子 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/081-在我们的app中实现一个例子.md"
+    },
+    {
+      "slug": "082-泛型",
+      "title": "泛型 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/082-泛型.md"
+    },
+    {
+      "slug": "083-基础",
+      "title": "基础 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/083-基础.md"
+    },
+    {
+      "slug": "084-变体",
+      "title": "变体 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/084-变体.md"
+    },
+    {
+      "slug": "085-泛型例子",
+      "title": "泛型例子 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/085-泛型例子.md"
+    },
+    {
+      "slug": "086-设置界面",
+      "title": "设置界面 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/086-设置界面.md"
+    },
+    {
+      "slug": "087-创建一个设置activity",
+      "title": "创建一个设置activity · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/087-创建一个设置activity.md"
+    },
+    {
+      "slug": "088-访问shared-preferences",
+      "title": "访问Shared Preferences · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/088-访问shared-preferences.md"
+    },
+    {
+      "slug": "089-泛型preference委托",
+      "title": "泛型preference委托 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/089-泛型preference委托.md"
+    },
+    {
+      "slug": "090-测试你的app",
+      "title": "测试你的App · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/090-测试你的app.md"
+    },
+    {
+      "slug": "091-unit-testing",
+      "title": "Unit testing · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/091-unit-testing.md"
+    },
+    {
+      "slug": "092-instrumentation-tests",
+      "title": "Instrumentation tests · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/092-instrumentation-tests.md"
+    },
+    {
+      "slug": "093-内部类",
+      "title": "内部类 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/093-内部类.md"
+    },
+    {
+      "slug": "094-枚举",
+      "title": "枚举 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/094-枚举.md"
+    },
+    {
+      "slug": "095-密封-sealed-类",
+      "title": "密封（Sealed）类 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/095-密封-sealed-类.md"
+    },
+    {
+      "slug": "096-异常-exceptions",
+      "title": "异常（Exceptions） · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/096-异常-exceptions.md"
+    },
+    {
+      "slug": "097-结尾",
+      "title": "结尾 · 《Kotlin for android Developers》中文翻译",
+      "file": "chapters/097-结尾.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "Introduction · 《Kotlin for android Developers》中文翻译"
 }

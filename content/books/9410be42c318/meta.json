@@ -3,7 +3,7 @@
   "title": "FreeBSD 使用手册",
   "url": "https://www.freebsd.org/doc/zh_CN/books/handbook/index.html",
   "status": "ok",
-  "fetchedAt": "2026-09-27T11:43:52.575Z",
+  "fetchedAt": "2026-09-28T13:25:34.710Z",
   "chapters": [
     {
       "slug": "001-freebsd-使用手册",
@@ -212,5 +212,7 @@
     }
   ],
   "sourceType": "web",
-  "sourceTitle": "FreeBSD 使用手册"
+  "sourceTitle": "FreeBSD 使用手册",
+  "keptAt": "2026-09-28T13:25:34.710Z",
+  "keptReason": "目录抓取未得到任何章节"
 }

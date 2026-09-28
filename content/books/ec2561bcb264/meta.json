@@ -2,8 +2,94 @@
   "bookId": "ec2561bcb264",
   "title": "Django 网站开发 Cookbook",
   "url": "https://github.com/cundi/Web.Development.with.Django.Cookbook",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T12:12:32.764Z",
-  "chapters": [],
-  "error": "URI malformed"
+  "status": "ok",
+  "fetchedAt": "2026-09-28T13:41:49.204Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Title",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-第二章-数据库结构",
+      "title": "Chapter 2. Database Structure 第二张数据库结构",
+      "file": "chapters/002-第二章-数据库结构.md"
+    },
+    {
+      "slug": "003-第三章-表单和视图",
+      "title": "Chapter 3. Forms and Views",
+      "file": "chapters/003-第三章-表单和视图.md"
+    },
+    {
+      "slug": "004-第四章-模板和javascript",
+      "title": "Chapter 4. Templates and JavaScript",
+      "file": "chapters/004-第四章-模板和javascript.md"
+    },
+    {
+      "slug": "005-第五章-自定义模板过滤器和标签",
+      "title": "Chapter 5. Custom Template Filters and Tags",
+      "file": "chapters/005-第五章-自定义模板过滤器和标签.md"
+    },
+    {
+      "slug": "006-第一章-django-1-8入门",
+      "title": "base.txt",
+      "file": "chapters/006-第一章-django-1-8入门.md"
+    },
+    {
+      "slug": "007-第八章-层次化结构",
+      "title": "第八章-层次化结构",
+      "file": "chapters/007-第八章-层次化结构.md"
+    },
+    {
+      "slug": "008-第二章-数据库结构",
+      "title": "-*- coding: UTF-8 -*-",
+      "file": "chapters/008-第二章-数据库结构.md"
+    },
+    {
+      "slug": "009-第九章-数据的导入与导出",
+      "title": "第九章-数据的导入与导出",
+      "file": "chapters/009-第九章-数据的导入与导出.md"
+    },
+    {
+      "slug": "010-第六章-模型管理",
+      "title": "第六章－ 模型管理",
+      "file": "chapters/010-第六章-模型管理.md"
+    },
+    {
+      "slug": "011-第七章-django-cms",
+      "title": "第七章-Django CMS",
+      "file": "chapters/011-第七章-django-cms.md"
+    },
+    {
+      "slug": "012-第三章-表单与视图",
+      "title": "第三章-表单和视图",
+      "file": "chapters/012-第三章-表单与视图.md"
+    },
+    {
+      "slug": "013-第十章-附加功能",
+      "title": "第十章-附加功能",
+      "file": "chapters/013-第十章-附加功能.md"
+    },
+    {
+      "slug": "014-第四章-模板与javascript",
+      "title": "第四章-模板与JavaScript",
+      "file": "chapters/014-第四章-模板与javascript.md"
+    },
+    {
+      "slug": "015-第五章-定制模板过滤器与标签",
+      "title": "-*- coding: UTF-8 -*-",
+      "file": "chapters/015-第五章-定制模板过滤器与标签.md"
+    },
+    {
+      "slug": "016-第一章-django1-6入门",
+      "title": "... 把这些代码放到文件的结尾 ...",
+      "file": "chapters/016-第一章-django1-6入门.md"
+    },
+    {
+      "slug": "017-目录",
+      "title": "目录",
+      "file": "chapters/017-目录.md"
+    }
+  ],
+  "sourceType": "github"
 }

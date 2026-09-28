@@ -9,6 +9,7 @@
  */
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname, basename, extname, relative, posix } from 'node:path';
+import { transformOutsideCode } from './fetch-web.mjs';
 
 const MAX_CHAPTERS = 200;
 const MAX_CHAPTER_BYTES = 2 * 1024 * 1024;
@@ -55,9 +56,9 @@ export function repoRawBase(owner, repo, ref) {
  * 下载仓库 tarball 并解压到 destDir。
  * @returns {{ rootDir: string, ref: string }} rootDir=解压出的仓库根
  */
-export async function downloadRepoTarball(owner, repo, destDir) {
+export async function downloadRepoTarball(owner, repo, destDir, signal) {
   const url = `https://codeload.github.com/${owner}/${repo}/tar.gz/HEAD`;
-  const res = await fetch(url, { redirect: 'follow' });
+  const res = await fetch(url, { redirect: 'follow', signal });
   if (!res.ok) throw new Error(`tarball 下载失败 HTTP ${res.status}`);
   const buf = Buffer.from(await res.arrayBuffer());
   const { execSync } = await import('node:child_process');
@@ -69,9 +70,10 @@ export async function downloadRepoTarball(owner, repo, destDir) {
   });
   const entries = readdirSync(destDir);
   if (!entries.length) throw new Error('tarball 解压为空');
-  const rootDir = join(destDir, entries[0]);
-  // 目录名形如 <repo>-<ref>,从中提取默认分支;无法识别时回退 HEAD
-  const suffix = entries[0].slice(repo.length + 1);
+  // 解压目录名形如 <repo>-<ref>;按前缀过滤,防止误选残留的其他目录/点文件
+  const rootName = entries.find((e) => e === repo || e.startsWith(`${repo}-`)) || entries[0];
+  const rootDir = join(destDir, rootName);
+  const suffix = rootName.slice(repo.length + 1);
   const ref = /^[0-9a-f]{7,}$/.test(suffix) || !suffix ? 'HEAD' : suffix;
   return { rootDir, ref };
 }
@@ -126,11 +128,12 @@ function stripFrontmatter(text) {
  * 抓取 GitHub 来源,返回章节列表。
  * @returns {{ license?: string, ref: string, chapters: { slug, title, file }[] }}
  */
-export async function fetchGithubBook(book, workDir) {
+export async function fetchGithubBook(book, workDir, signal) {
   const info = parseGithubUrl(book.url);
   if (!info) throw new Error('非 GitHub URL');
   const { owner, repo } = info;
-  const { rootDir, ref } = await downloadRepoTarball(owner, repo, workDir);
+  if (signal?.aborted) throw new Error('已取消');
+  const { rootDir, ref } = await downloadRepoTarball(owner, repo, workDir, signal);
   const rawBase = repoRawBase(owner, repo, ref);
   // API 查询更准(仓库 LICENSE 文件名任意时也能识别);无 token 限流易失败,静默回退 tarball 检测
   const license = (await fetchLicenseByApi(owner, repo)) || detectLicense(rootDir);
@@ -149,19 +152,24 @@ export async function fetchGithubBook(book, workDir) {
     if (summaryList) {
       const files = summaryList
         .map((s) => ({ title: s.title, rel: posix.join(baseDir, s.file).replace(/^\.\//, '') }))
-        .filter((s) => existsSync(join(rootDir, s.rel)) && !EXCLUDE.test(s.rel));
+        .filter((s) => {
+          // SUMMARY 的 part/group 条目可能是目录:必须 isFile,否则 readFileSync 抛 EISDIR
+          const p = join(rootDir, s.rel);
+          return existsSync(p) && statSync(p).isFile() && !EXCLUDE.test(s.rel);
+        });
       const chapters = files.slice(0, MAX_CHAPTERS).map((s, i) => toChapter(s.rel, s.title, i, rootDir));
       return { owner, repo, license, ref, rawBase, chapters };
     }
     // 目录收集模式
     const scope = info.kind === 'subdir' && baseDir ? join(rootDir, baseDir) : rootDir;
     if (!existsSync(scope)) throw new Error(`子目录不存在: ${baseDir}`);
-    relFiles = collectMd(scope, rootDir).filter((f) => !/README/i.test(basename(f)) || f.toLowerCase().includes('readme'));
-    // README 置顶,其余按路径排序
+    // 子目录 README 是模块说明而非章节,仅保留根目录的
+    relFiles = collectMd(scope, rootDir).filter((f) => !/README/i.test(basename(f)) || !f.includes('/'));
+    // README 置顶,其余按路径排序(显式 zh locale,避免跨环境排序漂移)
     relFiles.sort((a, b) => {
       const ra = /readme/i.test(basename(a)) ? 0 : 1;
       const rb = /readme/i.test(basename(b)) ? 0 : 1;
-      return ra - rb || a.localeCompare(b);
+      return ra - rb || a.localeCompare(b, 'zh');
     });
   }
 
@@ -190,27 +198,32 @@ function toChapter(rel, title, i, rootDir) {
 }
 
 /** 相对链接/图片 → raw.githubusercontent 绝对地址。
- * 覆盖:内联 `](rel)`、HTML `src="rel"`、引用式定义 `[id]: rel` */
+ * 覆盖:内联 `](rel)`、HTML `src="rel"`、引用式定义 `[id]: rel`。
+ * 目标保留原编码(不 decodeURI,防 %20 还原成裸空格);根相对 /x 直接挂 rawBase */
 export function absolutizeMd(md, rawBase, currentRelPath) {
   const baseDir = posix.dirname(currentRelPath);
   const toAbs = (target) => {
-    const abs = posix.normalize(posix.join(baseDir, decodeURI(target)));
+    if (target.startsWith('//')) return `https:${target}`; // 协议相对
+    if (target.startsWith('/')) return `${rawBase}${target}`; // 仓库根相对
+    const abs = posix.normalize(posix.join(baseDir, target));
     return `${rawBase}/${abs.replace(/^\.\//, '')}`;
   };
-  return (
-    md
+  const looksLikePath = (t) => /[./]/.test(t); // 排除 `[^note]: 术语` 等非路径引用
+  return transformOutsideCode(md, (segment) =>
+    segment
       .replace(
         /(\]\(|src="|src=')(?!https?:\/\/|#|data:|mailto:)([^)"'\s]+)/g,
         (full, prefix, target) => `${prefix}${toAbs(target)}`,
       )
       // 引用式定义:行首(或空白后) [label]: 相对路径
       .replace(/^(\s*\[[^\]\n]+\]:\s*)(?!https?:\/\/|#|data:|mailto:)(\S+)$/gm, (full, prefix, target) => {
+        if (!looksLikePath(target)) return full;
         try {
           return `${prefix}${toAbs(target)}`;
         } catch {
           return full;
         }
-      })
+      }),
   );
 }
 

@@ -2,8 +2,229 @@
   "bookId": "b75f0b19c6e6",
   "title": "Django 搭建个人博客教程",
   "url": "https://github.com/stacklens/django_blog_tutorial",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T12:12:32.220Z",
-  "chapters": [],
-  "error": "子目录不存在: "
+  "status": "ok",
+  "fetchedAt": "2026-09-28T13:41:47.368Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "Django搭建个人博客教程",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-01-前言",
+      "title": "01.前言",
+      "file": "chapters/002-01-前言.md"
+    },
+    {
+      "slug": "003-02-教程的开发环境",
+      "title": "02.教程的开发环境",
+      "file": "chapters/003-02-教程的开发环境.md"
+    },
+    {
+      "slug": "004-03-创建app",
+      "title": "记得引入include",
+      "file": "chapters/004-03-创建app.md"
+    },
+    {
+      "slug": "005-04-编写model",
+      "title": "导入内建的User模型。",
+      "file": "chapters/005-04-编写model.md"
+    },
+    {
+      "slug": "006-05-view视图初探",
+      "title": "导入 HttpResponse 模块",
+      "file": "chapters/006-05-view视图初探.md"
+    },
+    {
+      "slug": "007-06-view及template",
+      "title": "导入数据模型ArticlePost",
+      "file": "chapters/007-06-view及template.md"
+    },
+    {
+      "slug": "008-07-使用bootstrap改写模板",
+      "title": "07.使用Bootstrap改写模板",
+      "file": "chapters/008-07-使用bootstrap改写模板.md"
+    },
+    {
+      "slug": "009-08-编写文章详情页面",
+      "title": "文章详情",
+      "file": "chapters/009-08-编写文章详情页面.md"
+    },
+    {
+      "slug": "010-09-使用markdown书写文章",
+      "title": "引入markdown模块",
+      "file": "chapters/010-09-使用markdown书写文章.md"
+    },
+    {
+      "slug": "011-10-发布新的文章",
+      "title": "引入表单类",
+      "file": "chapters/011-10-发布新的文章.md"
+    },
+    {
+      "slug": "012-11-删除文章",
+      "title": "删文章",
+      "file": "chapters/012-11-删除文章.md"
+    },
+    {
+      "slug": "013-12-更新文章",
+      "title": "更新文章",
+      "file": "chapters/013-12-更新文章.md"
+    },
+    {
+      "slug": "014-13-用户的登录和退出",
+      "title": "引入表单类",
+      "file": "chapters/014-13-用户的登录和退出.md"
+    },
+    {
+      "slug": "015-14-用户的注册",
+      "title": "注册用户表单",
+      "file": "chapters/015-14-用户的注册.md"
+    },
+    {
+      "slug": "016-15-用户的删除",
+      "title": "引入验证登录的装饰器",
+      "file": "chapters/016-15-用户的删除.md"
+    },
+    {
+      "slug": "017-16-重置用户密码",
+      "title": "SMTP服务器，改为你的邮箱的smtp!",
+      "file": "chapters/017-16-重置用户密码.md"
+    },
+    {
+      "slug": "018-17-拓展用户信息",
+      "title": "引入内置信号",
+      "file": "chapters/018-17-拓展用户信息.md"
+    },
+    {
+      "slug": "019-18-上传头像",
+      "title": "媒体文件地址",
+      "file": "chapters/019-18-上传头像.md"
+    },
+    {
+      "slug": "020-19-文章分页",
+      "title": "引入分页模块",
+      "file": "chapters/020-19-文章分页.md"
+    },
+    {
+      "slug": "021-20-浏览量",
+      "title": "提醒用户登录",
+      "file": "chapters/021-20-浏览量.md"
+    },
+    {
+      "slug": "022-21-最热文章",
+      "title": "重写文章列表",
+      "file": "chapters/022-21-最热文章.md"
+    },
+    {
+      "slug": "023-22-搜索文章",
+      "title": "引入 Q 对象",
+      "file": "chapters/023-22-搜索文章.md"
+    },
+    {
+      "slug": "024-23-文章目录",
+      "title": "文章详情",
+      "file": "chapters/024-23-文章目录.md"
+    },
+    {
+      "slug": "025-24-评论",
+      "title": "博文的评论",
+      "file": "chapters/025-24-评论.md"
+    },
+    {
+      "slug": "026-25-课间休息",
+      "title": "25.课间休息",
+      "file": "chapters/026-25-课间休息.md"
+    },
+    {
+      "slug": "027-26-基于类的视图",
+      "title": "编辑",
+      "file": "chapters/027-26-基于类的视图.md"
+    },
+    {
+      "slug": "028-27-文章栏目",
+      "title": "注册文章栏目",
+      "file": "chapters/028-27-文章栏目.md"
+    },
+    {
+      "slug": "029-28-文章标签",
+      "title": "Django-taggit",
+      "file": "chapters/029-28-文章标签.md"
+    },
+    {
+      "slug": "030-29-文章标题图",
+      "title": "记得导入！",
+      "file": "chapters/030-29-文章标题图.md"
+    },
+    {
+      "slug": "031-30-富文本编辑器",
+      "title": "django-ckeditor",
+      "file": "chapters/031-30-富文本编辑器.md"
+    },
+    {
+      "slug": "032-31-四个重要的小功能",
+      "title": "31.四个重要的小功能",
+      "file": "chapters/032-31-四个重要的小功能.md"
+    },
+    {
+      "slug": "033-32-多级评论",
+      "title": "django-mptt",
+      "file": "chapters/033-32-多级评论.md"
+    },
+    {
+      "slug": "034-33-消息通知",
+      "title": "33.消息通知",
+      "file": "chapters/034-33-消息通知.md"
+    },
+    {
+      "slug": "035-34-锚点定位",
+      "title": "文章评论视图",
+      "file": "chapters/035-34-锚点定位.md"
+    },
+    {
+      "slug": "036-35-第三方登录",
+      "title": "设置站点",
+      "file": "chapters/036-35-第三方登录.md"
+    },
+    {
+      "slug": "037-36-自动化测试",
+      "title": "创建一篇\"未来\"的文章",
+      "file": "chapters/037-36-自动化测试.md"
+    },
+    {
+      "slug": "038-37-日志记录",
+      "title": "SMTP服务器",
+      "file": "chapters/038-37-日志记录.md"
+    },
+    {
+      "slug": "039-38-模板过滤器和标签",
+      "title": "任意模板文件中",
+      "file": "chapters/039-38-模板过滤器和标签.md"
+    },
+    {
+      "slug": "040-39-点赞功能",
+      "title": "文章模型",
+      "file": "chapters/040-39-点赞功能.md"
+    },
+    {
+      "slug": "041-40-将项目部署到云服务器",
+      "title": "关闭调试模式",
+      "file": "chapters/041-40-将项目部署到云服务器.md"
+    },
+    {
+      "slug": "042-41-期末总结",
+      "title": "41.期末总结",
+      "file": "chapters/042-41-期末总结.md"
+    },
+    {
+      "slug": "043-42-小功能集合贴",
+      "title": "文章详情",
+      "file": "chapters/043-42-小功能集合贴.md"
+    },
+    {
+      "slug": "044-43-读者常见问题",
+      "title": "43.读者常见问题",
+      "file": "chapters/044-43-读者常见问题.md"
+    }
+  ],
+  "sourceType": "github"
 }

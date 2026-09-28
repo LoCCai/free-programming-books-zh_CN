@@ -2,8 +2,149 @@
   "bookId": "38fea739e26a",
   "title": "使用 Express + MongoDB 搭建多人博客",
   "url": "https://github.com/nswbmw/N-blog",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T12:11:39.019Z",
-  "chapters": [],
-  "error": "URI malformed"
+  "status": "ok",
+  "fetchedAt": "2026-09-28T13:40:53.804Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-1-1-node-js-的安装与使用",
+      "title": "1.1 Node.js 的安装与使用",
+      "file": "chapters/002-1-1-node-js-的安装与使用.md"
+    },
+    {
+      "slug": "003-1-2-mongodb-的安装与使用",
+      "title": "1.2 MongoDB 的安装与使用",
+      "file": "chapters/003-1-2-mongodb-的安装与使用.md"
+    },
+    {
+      "slug": "004-2-1-require",
+      "title": "2.1 require",
+      "file": "chapters/004-2-1-require.md"
+    },
+    {
+      "slug": "005-2-2-exports-和-module-exports",
+      "title": "2.2 exports 和 module.exports",
+      "file": "chapters/005-2-2-exports-和-module-exports.md"
+    },
+    {
+      "slug": "006-2-3-promise",
+      "title": "2.3 Promise",
+      "file": "chapters/006-2-3-promise.md"
+    },
+    {
+      "slug": "007-2-4-环境变量",
+      "title": "2.4 环境变量",
+      "file": "chapters/007-2-4-环境变量.md"
+    },
+    {
+      "slug": "008-2-5-package-json",
+      "title": "2.5 package.json",
+      "file": "chapters/008-2-5-package-json.md"
+    },
+    {
+      "slug": "009-2-6-npm-使用注意事项",
+      "title": "2.6 npm 使用注意事项",
+      "file": "chapters/009-2-6-npm-使用注意事项.md"
+    },
+    {
+      "slug": "010-3-1-初始化一个-express-项目",
+      "title": "3.1 初始化一个 Express 项目",
+      "file": "chapters/010-3-1-初始化一个-express-项目.md"
+    },
+    {
+      "slug": "011-3-2-路由",
+      "title": "3.2 路由",
+      "file": "chapters/011-3-2-路由.md"
+    },
+    {
+      "slug": "012-3-3-模板引擎",
+      "title": "3.3 模板引擎",
+      "file": "chapters/012-3-3-模板引擎.md"
+    },
+    {
+      "slug": "013-3-4-express-浅析",
+      "title": "3.4 Express 浅析",
+      "file": "chapters/013-3-4-express-浅析.md"
+    },
+    {
+      "slug": "014-4-1-开发环境",
+      "title": "4.1 开发环境",
+      "file": "chapters/014-4-1-开发环境.md"
+    },
+    {
+      "slug": "015-4-10-留言",
+      "title": "4.10 留言",
+      "file": "chapters/015-4-10-留言.md"
+    },
+    {
+      "slug": "016-4-11-404-页面",
+      "title": "4.11 404 页面",
+      "file": "chapters/016-4-11-404-页面.md"
+    },
+    {
+      "slug": "017-4-12-错误页面",
+      "title": "4.12 错误页面",
+      "file": "chapters/017-4-12-错误页面.md"
+    },
+    {
+      "slug": "018-4-13-日志",
+      "title": "Ignore everything in this directory",
+      "file": "chapters/018-4-13-日志.md"
+    },
+    {
+      "slug": "019-4-14-测试",
+      "title": "4.14 测试",
+      "file": "chapters/019-4-14-测试.md"
+    },
+    {
+      "slug": "020-4-15-部署",
+      "title": "4.15 部署",
+      "file": "chapters/020-4-15-部署.md"
+    },
+    {
+      "slug": "021-4-2-准备工作",
+      "title": "editorconfig.org",
+      "file": "chapters/021-4-2-准备工作.md"
+    },
+    {
+      "slug": "022-4-3-配置文件",
+      "title": "4.3 配置文件",
+      "file": "chapters/022-4-3-配置文件.md"
+    },
+    {
+      "slug": "023-4-4-功能设计",
+      "title": "4.4 功能设计",
+      "file": "chapters/023-4-4-功能设计.md"
+    },
+    {
+      "slug": "024-4-5-页面设计",
+      "title": "4.5 页面设计",
+      "file": "chapters/024-4-5-页面设计.md"
+    },
+    {
+      "slug": "025-4-6-连接数据库",
+      "title": "4.6 连接数据库",
+      "file": "chapters/025-4-6-连接数据库.md"
+    },
+    {
+      "slug": "026-4-7-注册",
+      "title": "4.7 注册",
+      "file": "chapters/026-4-7-注册.md"
+    },
+    {
+      "slug": "027-4-8-登出与登录",
+      "title": "4.8 登出与登录",
+      "file": "chapters/027-4-8-登出与登录.md"
+    },
+    {
+      "slug": "028-4-9-文章",
+      "title": "4.9 文章",
+      "file": "chapters/028-4-9-文章.md"
+    }
+  ],
+  "sourceType": "github"
 }

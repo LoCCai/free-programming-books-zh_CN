@@ -1,9 +1,10 @@
 node_modules/
 dist/
 .astro/
-data/tmp/
+data/tmp*/
 data/books.prev.json
 data/meta.prev.json
 data/new-book-ids.txt
+data/refetch-ids.txt
 *.log
 .DS_Store

@@ -12,5 +12,7 @@
     }
   ],
   "sourceType": "web",
-  "sourceTitle": "Unix Toolbox (ZH) | CB.VU"
+  "sourceTitle": "Unix Toolbox (ZH) | CB.VU",
+  "pinned": true,
+  "pinnedReason": "人工核实:单文档书(cb.vu 误抓整站,2026-09-28 修复)"
 }

@@ -3,7 +3,7 @@
   "title": "Learn Git - complete book in Chinese",
   "url": "https://www.git-tower.com/learn/git/ebook/cn/command-line/",
   "status": "ok",
-  "fetchedAt": "2026-09-27T11:19:29.414Z",
+  "fetchedAt": "2026-09-28T13:37:42.367Z",
   "chapters": [
     {
       "slug": "001-前言",
@@ -217,5 +217,7 @@
     }
   ],
   "sourceType": "web",
-  "sourceTitle": "前言"
+  "sourceTitle": "前言",
+  "keptAt": "2026-09-28T13:37:42.367Z",
+  "keptReason": "新抓取 35 章少于既有 42 章,保留旧内容"
 }

@@ -53,11 +53,12 @@ export function extractLink(text) {
     title: text.slice(open + 1, close).trim(),
     url: text.slice(close + 2, pend).trim(),
     rest: text.slice(pend + 1, text.length).trim(),
+    before: text.slice(0, open).trim(),
   };
 }
 
 /** :word: 形式的 emoji 短代码(:worried: / :100: 等) */
-const EMOJI_RE = /:[a-zA-Z0-9_+-]+:/g;
+const EMOJI_RE = /:[a-zA-Z_+-][a-zA-Z0-9_+-]*:/g;
 
 /**
  * 清洗条目描述为纯文本:

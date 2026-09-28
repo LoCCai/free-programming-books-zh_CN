@@ -2,8 +2,50 @@
   "bookId": "07c70d518e24",
   "title": "编写Ruby的C拓展",
   "url": "https://wusuopu.gitbooks.io/write-ruby-extension-with-c/content/",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T12:12:37.095Z",
-  "chapters": [],
-  "error": "HTTP 401"
+  "status": "ok",
+  "fetchedAt": "2026-09-28T13:41:57.817Z",
+  "chapters": [
+    {
+      "slug": "001-前言",
+      "title": "前言 | write-ruby-extension-with-c",
+      "file": "chapters/001-前言.md"
+    },
+    {
+      "slug": "002-1-第1章-一个简单的例子",
+      "title": "第1章 一个简单的例子 | write-ruby-extension-with-c",
+      "file": "chapters/002-1-第1章-一个简单的例子.md"
+    },
+    {
+      "slug": "003-2-第2章-定义函数",
+      "title": "第2章 定义函数 | write-ruby-extension-with-c",
+      "file": "chapters/003-2-第2章-定义函数.md"
+    },
+    {
+      "slug": "004-3-第3章-对象类型",
+      "title": "第3章 对象类型 | write-ruby-extension-with-c",
+      "file": "chapters/004-3-第3章-对象类型.md"
+    },
+    {
+      "slug": "005-4-第4章-异常",
+      "title": "第4章 异常 | write-ruby-extension-with-c",
+      "file": "chapters/005-4-第4章-异常.md"
+    },
+    {
+      "slug": "006-5-第5章-结构体封装-内存管理",
+      "title": "第5章 结构体封装 && 内存管理 | write-ruby-extension-with-c",
+      "file": "chapters/006-5-第5章-结构体封装-内存管理.md"
+    },
+    {
+      "slug": "007-6-第6章-swig-cffi",
+      "title": "第6章 swig && cffi | write-ruby-extension-with-c",
+      "file": "chapters/007-6-第6章-swig-cffi.md"
+    },
+    {
+      "slug": "008-7-第7章-rdoc-gem",
+      "title": "第7章 RDoc && GEM | write-ruby-extension-with-c",
+      "file": "chapters/008-7-第7章-rdoc-gem.md"
+    }
+  ],
+  "sourceType": "web",
+  "sourceTitle": "前言 | write-ruby-extension-with-c"
 }

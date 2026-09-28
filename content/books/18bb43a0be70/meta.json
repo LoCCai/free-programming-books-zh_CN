@@ -2,8 +2,1009 @@
   "bookId": "18bb43a0be70",
   "title": "学习笔记: Vim、Python、memcached",
   "url": "https://github.com/lzjun567/note",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T12:12:40.101Z",
-  "chapters": [],
-  "error": "URI malformed"
+  "status": "ok",
+  "fetchedAt": "2026-09-28T13:42:00.006Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "README",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-add-action-bar",
+      "title": "add_action_bar",
+      "file": "chapters/002-add-action-bar.md"
+    },
+    {
+      "slug": "003-android-app-integrate-avos-push",
+      "title": "android_app_integrate_avos_push",
+      "file": "chapters/003-android-app-integrate-avos-push.md"
+    },
+    {
+      "slug": "004-android-component",
+      "title": "android_component",
+      "file": "chapters/004-android-component.md"
+    },
+    {
+      "slug": "005-android-l-recyclerview-and-cardview-tutorial",
+      "title": "android-l-recyclerview-and-cardview-tutorial",
+      "file": "chapters/005-android-l-recyclerview-and-cardview-tutorial.md"
+    },
+    {
+      "slug": "006-build-first-app",
+      "title": "build_first_app",
+      "file": "chapters/006-build-first-app.md"
+    },
+    {
+      "slug": "007-build-ui",
+      "title": "build_ui",
+      "file": "chapters/007-build-ui.md"
+    },
+    {
+      "slug": "008-command",
+      "title": "command",
+      "file": "chapters/008-command.md"
+    },
+    {
+      "slug": "009-component",
+      "title": "component",
+      "file": "chapters/009-component.md"
+    },
+    {
+      "slug": "010-layout",
+      "title": "layout",
+      "file": "chapters/010-layout.md"
+    },
+    {
+      "slug": "011-material-design",
+      "title": "material_design",
+      "file": "chapters/011-material-design.md"
+    },
+    {
+      "slug": "012-notification",
+      "title": "notification",
+      "file": "chapters/012-notification.md"
+    },
+    {
+      "slug": "013-start-anthor-activity",
+      "title": "start_anthor_activity",
+      "file": "chapters/013-start-anthor-activity.md"
+    },
+    {
+      "slug": "014-toast",
+      "title": "toast",
+      "file": "chapters/014-toast.md"
+    },
+    {
+      "slug": "015-xx",
+      "title": "xx",
+      "file": "chapters/015-xx.md"
+    },
+    {
+      "slug": "016-bst",
+      "title": "BST",
+      "file": "chapters/016-bst.md"
+    },
+    {
+      "slug": "017-fibonacci",
+      "title": "Fibonacci",
+      "file": "chapters/017-fibonacci.md"
+    },
+    {
+      "slug": "018-tag-cloud",
+      "title": "tag_cloud",
+      "file": "chapters/018-tag-cloud.md"
+    },
+    {
+      "slug": "019-adj",
+      "title": "adj",
+      "file": "chapters/019-adj.md"
+    },
+    {
+      "slug": "020-blog",
+      "title": "blog",
+      "file": "chapters/020-blog.md"
+    },
+    {
+      "slug": "021-bootstrap3",
+      "title": "bootstrap3",
+      "file": "chapters/021-bootstrap3.md"
+    },
+    {
+      "slug": "022-chrome-extension",
+      "title": "chrome_extension",
+      "file": "chapters/022-chrome-extension.md"
+    },
+    {
+      "slug": "023-how-to-startup",
+      "title": "how_to_startup",
+      "file": "chapters/023-how-to-startup.md"
+    },
+    {
+      "slug": "024-https-lets-encrypt",
+      "title": "https_lets_encrypt",
+      "file": "chapters/024-https-lets-encrypt.md"
+    },
+    {
+      "slug": "025-i-use-pycharm",
+      "title": "i_use_pycharm",
+      "file": "chapters/025-i-use-pycharm.md"
+    },
+    {
+      "slug": "026-importnew-app",
+      "title": "importnew_app",
+      "file": "chapters/026-importnew-app.md"
+    },
+    {
+      "slug": "027-interview-tips",
+      "title": "interview-tips",
+      "file": "chapters/027-interview-tips.md"
+    },
+    {
+      "slug": "028-mactalk",
+      "title": "mactalk",
+      "file": "chapters/028-mactalk.md"
+    },
+    {
+      "slug": "029-phabricator-install",
+      "title": "phabricator_install",
+      "file": "chapters/029-phabricator-install.md"
+    },
+    {
+      "slug": "030-pycharm-shortcut",
+      "title": "pycharm-shortcut",
+      "file": "chapters/030-pycharm-shortcut.md"
+    },
+    {
+      "slug": "031-shabi-lead",
+      "title": "遇到SB领导怎么办？",
+      "file": "chapters/031-shabi-lead.md"
+    },
+    {
+      "slug": "032-temp",
+      "title": "temp",
+      "file": "chapters/032-temp.md"
+    },
+    {
+      "slug": "033-git-common-command",
+      "title": "git-common-command",
+      "file": "chapters/033-git-common-command.md"
+    },
+    {
+      "slug": "034-git",
+      "title": "git",
+      "file": "chapters/034-git.md"
+    },
+    {
+      "slug": "035-hg",
+      "title": "hg",
+      "file": "chapters/035-hg.md"
+    },
+    {
+      "slug": "036-new",
+      "title": "new",
+      "file": "chapters/036-new.md"
+    },
+    {
+      "slug": "037-ir",
+      "title": "IR",
+      "file": "chapters/037-ir.md"
+    },
+    {
+      "slug": "038-batching-select-statements-in-jdbc",
+      "title": "Batching Select Statements in JDBC",
+      "file": "chapters/038-batching-select-statements-in-jdbc.md"
+    },
+    {
+      "slug": "039-busting-java-lang-string-intern-myth",
+      "title": "busting java.lang.String.intern myth",
+      "file": "chapters/039-busting-java-lang-string-intern-myth.md"
+    },
+    {
+      "slug": "040-classloading-and-initialization",
+      "title": "classloading and initialization",
+      "file": "chapters/040-classloading-and-initialization.md"
+    },
+    {
+      "slug": "041-finnaly",
+      "title": "finnaly",
+      "file": "chapters/041-finnaly.md"
+    },
+    {
+      "slug": "042-generic",
+      "title": "Generic",
+      "file": "chapters/042-generic.md"
+    },
+    {
+      "slug": "043-gradle",
+      "title": "gradle",
+      "file": "chapters/043-gradle.md"
+    },
+    {
+      "slug": "044-how-main-method-works-in-java",
+      "title": "How main Method works in Java",
+      "file": "chapters/044-how-main-method-works-in-java.md"
+    },
+    {
+      "slug": "045-java-最佳实践-vector-arraylist-hashset",
+      "title": "Java 最佳实践---Vector、ArrayList、HashSet",
+      "file": "chapters/045-java-最佳实践-vector-arraylist-hashset.md"
+    },
+    {
+      "slug": "046-java-object-memory-structure",
+      "title": "Java Object Memory Structure",
+      "file": "chapters/046-java-object-memory-structure.md"
+    },
+    {
+      "slug": "047-java-source",
+      "title": "java_source",
+      "file": "chapters/047-java-source.md"
+    },
+    {
+      "slug": "048-jdbc-performance-tips",
+      "title": "JDBC Performance Tips",
+      "file": "chapters/048-jdbc-performance-tips.md"
+    },
+    {
+      "slug": "049-oxs-env",
+      "title": "oxs-env",
+      "file": "chapters/049-oxs-env.md"
+    },
+    {
+      "slug": "050-shiro",
+      "title": "shiro",
+      "file": "chapters/050-shiro.md"
+    },
+    {
+      "slug": "051-singleton",
+      "title": "singleton",
+      "file": "chapters/051-singleton.md"
+    },
+    {
+      "slug": "052-solr-tutorial",
+      "title": "solr_tutorial",
+      "file": "chapters/052-solr-tutorial.md"
+    },
+    {
+      "slug": "053-solr10",
+      "title": "solr10",
+      "file": "chapters/053-solr10.md"
+    },
+    {
+      "slug": "054-solr11",
+      "title": "solr11",
+      "file": "chapters/054-solr11.md"
+    },
+    {
+      "slug": "055-solr12",
+      "title": "solr12",
+      "file": "chapters/055-solr12.md"
+    },
+    {
+      "slug": "056-solr13",
+      "title": "solr13",
+      "file": "chapters/056-solr13.md"
+    },
+    {
+      "slug": "057-solr14",
+      "title": "solr14",
+      "file": "chapters/057-solr14.md"
+    },
+    {
+      "slug": "058-solr15",
+      "title": "solr15",
+      "file": "chapters/058-solr15.md"
+    },
+    {
+      "slug": "059-solr16",
+      "title": "solr16",
+      "file": "chapters/059-solr16.md"
+    },
+    {
+      "slug": "060-solr17",
+      "title": "solr17",
+      "file": "chapters/060-solr17.md"
+    },
+    {
+      "slug": "061-solr18",
+      "title": "solr18",
+      "file": "chapters/061-solr18.md"
+    },
+    {
+      "slug": "062-solr19",
+      "title": "solr19",
+      "file": "chapters/062-solr19.md"
+    },
+    {
+      "slug": "063-solr2",
+      "title": "solr2",
+      "file": "chapters/063-solr2.md"
+    },
+    {
+      "slug": "064-solr20",
+      "title": "solr20",
+      "file": "chapters/064-solr20.md"
+    },
+    {
+      "slug": "065-solr21",
+      "title": "solr21",
+      "file": "chapters/065-solr21.md"
+    },
+    {
+      "slug": "066-solr22",
+      "title": "solr22",
+      "file": "chapters/066-solr22.md"
+    },
+    {
+      "slug": "067-solr23",
+      "title": "solr23",
+      "file": "chapters/067-solr23.md"
+    },
+    {
+      "slug": "068-solr25",
+      "title": "solr25",
+      "file": "chapters/068-solr25.md"
+    },
+    {
+      "slug": "069-solr26",
+      "title": "solr26",
+      "file": "chapters/069-solr26.md"
+    },
+    {
+      "slug": "070-solr27",
+      "title": "solr27",
+      "file": "chapters/070-solr27.md"
+    },
+    {
+      "slug": "071-solr28",
+      "title": "solr28",
+      "file": "chapters/071-solr28.md"
+    },
+    {
+      "slug": "072-solr29",
+      "title": "solr29",
+      "file": "chapters/072-solr29.md"
+    },
+    {
+      "slug": "073-solr3",
+      "title": "solr3",
+      "file": "chapters/073-solr3.md"
+    },
+    {
+      "slug": "074-solr30",
+      "title": "solr30",
+      "file": "chapters/074-solr30.md"
+    },
+    {
+      "slug": "075-solr31",
+      "title": "solr31",
+      "file": "chapters/075-solr31.md"
+    },
+    {
+      "slug": "076-solr32",
+      "title": "solr32",
+      "file": "chapters/076-solr32.md"
+    },
+    {
+      "slug": "077-solr33",
+      "title": "solr33",
+      "file": "chapters/077-solr33.md"
+    },
+    {
+      "slug": "078-solr34",
+      "title": "solr34",
+      "file": "chapters/078-solr34.md"
+    },
+    {
+      "slug": "079-solr35",
+      "title": "solr35",
+      "file": "chapters/079-solr35.md"
+    },
+    {
+      "slug": "080-solr36",
+      "title": "solr36",
+      "file": "chapters/080-solr36.md"
+    },
+    {
+      "slug": "081-solr4",
+      "title": "solr4",
+      "file": "chapters/081-solr4.md"
+    },
+    {
+      "slug": "082-solr5-0-instroduce",
+      "title": "solr5_0_instroduce",
+      "file": "chapters/082-solr5-0-instroduce.md"
+    },
+    {
+      "slug": "083-solr5",
+      "title": "solr5",
+      "file": "chapters/083-solr5.md"
+    },
+    {
+      "slug": "084-solr6",
+      "title": "solr6",
+      "file": "chapters/084-solr6.md"
+    },
+    {
+      "slug": "085-solr7",
+      "title": "solr7",
+      "file": "chapters/085-solr7.md"
+    },
+    {
+      "slug": "086-solr8",
+      "title": "solr8",
+      "file": "chapters/086-solr8.md"
+    },
+    {
+      "slug": "087-solr9",
+      "title": "solr9",
+      "file": "chapters/087-solr9.md"
+    },
+    {
+      "slug": "088-springmvc-mybatis-shiro",
+      "title": "springmvc_mybatis_shiro",
+      "file": "chapters/088-springmvc-mybatis-shiro.md"
+    },
+    {
+      "slug": "089-springmvc",
+      "title": "springmvc",
+      "file": "chapters/089-springmvc.md"
+    },
+    {
+      "slug": "090-test",
+      "title": "test",
+      "file": "chapters/090-test.md"
+    },
+    {
+      "slug": "091-why-use-preparedstatement-in-java-jdbc",
+      "title": "Why use PreparedStatement in Java JDBC ",
+      "file": "chapters/091-why-use-preparedstatement-in-java-jdbc.md"
+    },
+    {
+      "slug": "092-why-w-need-lambda-expressions-in-java-part2",
+      "title": "Why W Need Lambda Expressions in Java Part2",
+      "file": "chapters/092-why-w-need-lambda-expressions-in-java-part2.md"
+    },
+    {
+      "slug": "093-why-main-method-is-public-static",
+      "title": "why_main_method_is_public_static",
+      "file": "chapters/093-why-main-method-is-public-static.md"
+    },
+    {
+      "slug": "094-网络管理",
+      "title": "网络管理",
+      "file": "chapters/094-网络管理.md"
+    },
+    {
+      "slug": "095-du",
+      "title": "du",
+      "file": "chapters/095-du.md"
+    },
+    {
+      "slug": "096-filesystem",
+      "title": "filesystem",
+      "file": "chapters/096-filesystem.md"
+    },
+    {
+      "slug": "097-io",
+      "title": "io",
+      "file": "chapters/097-io.md"
+    },
+    {
+      "slug": "098-replace-str",
+      "title": "replace_str",
+      "file": "chapters/098-replace-str.md"
+    },
+    {
+      "slug": "099-urllib",
+      "title": "urllib",
+      "file": "chapters/099-urllib.md"
+    },
+    {
+      "slug": "100-vpn",
+      "title": "vpn",
+      "file": "chapters/100-vpn.md"
+    },
+    {
+      "slug": "101-four",
+      "title": "four",
+      "file": "chapters/101-four.md"
+    },
+    {
+      "slug": "102-introduce-install",
+      "title": "introduce_install",
+      "file": "chapters/102-introduce-install.md"
+    },
+    {
+      "slug": "103-memcached-memory-allocation",
+      "title": "memcached-memory-allocation",
+      "file": "chapters/103-memcached-memory-allocation.md"
+    },
+    {
+      "slug": "104-telnet-command",
+      "title": "telnet_command",
+      "file": "chapters/104-telnet-command.md"
+    },
+    {
+      "slug": "105-three",
+      "title": "three",
+      "file": "chapters/105-three.md"
+    },
+    {
+      "slug": "106-mongodb-practice",
+      "title": "mongodb_practice",
+      "file": "chapters/106-mongodb-practice.md"
+    },
+    {
+      "slug": "107-replset",
+      "title": "replset",
+      "file": "chapters/107-replset.md"
+    },
+    {
+      "slug": "108-index",
+      "title": "index",
+      "file": "chapters/108-index.md"
+    },
+    {
+      "slug": "109-mysql-start-error",
+      "title": "mysql_start_error",
+      "file": "chapters/109-mysql-start-error.md"
+    },
+    {
+      "slug": "110-mysqldump",
+      "title": "mysqldump",
+      "file": "chapters/110-mysqldump.md"
+    },
+    {
+      "slug": "111-slow-query",
+      "title": "slow_query",
+      "file": "chapters/111-slow-query.md"
+    },
+    {
+      "slug": "112-transation",
+      "title": "transation",
+      "file": "chapters/112-transation.md"
+    },
+    {
+      "slug": "113-tree",
+      "title": "tree",
+      "file": "chapters/113-tree.md"
+    },
+    {
+      "slug": "114-nginx",
+      "title": "Nginx",
+      "file": "chapters/114-nginx.md"
+    },
+    {
+      "slug": "115-nginx故障分析",
+      "title": "nginx故障分析",
+      "file": "chapters/115-nginx故障分析.md"
+    },
+    {
+      "slug": "116-try-file",
+      "title": "try_file",
+      "file": "chapters/116-try-file.md"
+    },
+    {
+      "slug": "117-try-files",
+      "title": "try_files",
+      "file": "chapters/117-try-files.md"
+    },
+    {
+      "slug": "118-安装virtualenvwrapper遇到一个坑",
+      "title": "安装virtualenvwrapper遇到一个坑",
+      "file": "chapters/118-安装virtualenvwrapper遇到一个坑.md"
+    },
+    {
+      "slug": "119-电子书",
+      "title": "电子书",
+      "file": "chapters/119-电子书.md"
+    },
+    {
+      "slug": "120-a-guide-to-testing-in-django",
+      "title": "a_guide_to_testing_in_django",
+      "file": "chapters/120-a-guide-to-testing-in-django.md"
+    },
+    {
+      "slug": "121-arch",
+      "title": "arch",
+      "file": "chapters/121-arch.md"
+    },
+    {
+      "slug": "122-captcha",
+      "title": "captcha",
+      "file": "chapters/122-captcha.md"
+    },
+    {
+      "slug": "123-celery",
+      "title": "celery",
+      "file": "chapters/123-celery.md"
+    },
+    {
+      "slug": "124-celery1",
+      "title": "celery1",
+      "file": "chapters/124-celery1.md"
+    },
+    {
+      "slug": "125-code-style",
+      "title": "code_style",
+      "file": "chapters/125-code-style.md"
+    },
+    {
+      "slug": "126-collections",
+      "title": "collections",
+      "file": "chapters/126-collections.md"
+    },
+    {
+      "slug": "127-coroutine",
+      "title": "coroutine",
+      "file": "chapters/127-coroutine.md"
+    },
+    {
+      "slug": "128-datetime-timestamp",
+      "title": "datetime-timestamp",
+      "file": "chapters/128-datetime-timestamp.md"
+    },
+    {
+      "slug": "129-decorators",
+      "title": "A decorator is a function that expects ANOTHER function as parameter",
+      "file": "chapters/129-decorators.md"
+    },
+    {
+      "slug": "130-deploy-django-with-nginx",
+      "title": "deploy_django_with_nginx",
+      "file": "chapters/130-deploy-django-with-nginx.md"
+    },
+    {
+      "slug": "131-descriptor",
+      "title": "descriptor",
+      "file": "chapters/131-descriptor.md"
+    },
+    {
+      "slug": "132-dir-vars",
+      "title": "dir_vars",
+      "file": "chapters/132-dir-vars.md"
+    },
+    {
+      "slug": "133-django-admin-site",
+      "title": "Django_admin_site",
+      "file": "chapters/133-django-admin-site.md"
+    },
+    {
+      "slug": "134-django-custom-user",
+      "title": "django_custom_user",
+      "file": "chapters/134-django-custom-user.md"
+    },
+    {
+      "slug": "135-django-form",
+      "title": "django_form",
+      "file": "chapters/135-django-form.md"
+    },
+    {
+      "slug": "136-django-many-to-many-optimizer",
+      "title": "django_many_to_many_optimizer",
+      "file": "chapters/136-django-many-to-many-optimizer.md"
+    },
+    {
+      "slug": "137-django-qa",
+      "title": "django_qa",
+      "file": "chapters/137-django-qa.md"
+    },
+    {
+      "slug": "138-django-static-resource",
+      "title": "django_static_resource",
+      "file": "chapters/138-django-static-resource.md"
+    },
+    {
+      "slug": "139-django-template",
+      "title": "django_template",
+      "file": "chapters/139-django-template.md"
+    },
+    {
+      "slug": "140-django-url",
+      "title": "django_url",
+      "file": "chapters/140-django-url.md"
+    },
+    {
+      "slug": "141-django-compressor",
+      "title": "django-compressor",
+      "file": "chapters/141-django-compressor.md"
+    },
+    {
+      "slug": "142-enum",
+      "title": "enum",
+      "file": "chapters/142-enum.md"
+    },
+    {
+      "slug": "143-exception",
+      "title": "exception",
+      "file": "chapters/143-exception.md"
+    },
+    {
+      "slug": "144-flask",
+      "title": "flask",
+      "file": "chapters/144-flask.md"
+    },
+    {
+      "slug": "145-function-programming-2",
+      "title": "function_programming_2",
+      "file": "chapters/145-function-programming-2.md"
+    },
+    {
+      "slug": "146-function-programming-of-function-processing-functions",
+      "title": "function_programming_of_function_processing_functions",
+      "file": "chapters/146-function-programming-of-function-processing-functions.md"
+    },
+    {
+      "slug": "147-generator",
+      "title": "generator",
+      "file": "chapters/147-generator.md"
+    },
+    {
+      "slug": "148-gevent",
+      "title": "gevent",
+      "file": "chapters/148-gevent.md"
+    },
+    {
+      "slug": "149-gevent0",
+      "title": "gevent0",
+      "file": "chapters/149-gevent0.md"
+    },
+    {
+      "slug": "150-gevent2",
+      "title": "gevent2",
+      "file": "chapters/150-gevent2.md"
+    },
+    {
+      "slug": "151-guide-python-static-class-abstract-methods",
+      "title": "guide-python-static-class-abstract-methods",
+      "file": "chapters/151-guide-python-static-class-abstract-methods.md"
+    },
+    {
+      "slug": "152-guide-python-static-class-abstract-methods2",
+      "title": "guide-python-static-class-abstract-methods2",
+      "file": "chapters/152-guide-python-static-class-abstract-methods2.md"
+    },
+    {
+      "slug": "153-iterator-generator",
+      "title": "iterator_generator",
+      "file": "chapters/153-iterator-generator.md"
+    },
+    {
+      "slug": "154-json",
+      "title": "json",
+      "file": "chapters/154-json.md"
+    },
+    {
+      "slug": "155-legb",
+      "title": "legb",
+      "file": "chapters/155-legb.md"
+    },
+    {
+      "slug": "156-log",
+      "title": "log",
+      "file": "chapters/156-log.md"
+    },
+    {
+      "slug": "157-mako",
+      "title": "mako",
+      "file": "chapters/157-mako.md"
+    },
+    {
+      "slug": "158-mock",
+      "title": "mock",
+      "file": "chapters/158-mock.md"
+    },
+    {
+      "slug": "159-module",
+      "title": "module",
+      "file": "chapters/159-module.md"
+    },
+    {
+      "slug": "160-mongo-connetor",
+      "title": "mongo-connetor",
+      "file": "chapters/160-mongo-connetor.md"
+    },
+    {
+      "slug": "161-paste",
+      "title": "paste",
+      "file": "chapters/161-paste.md"
+    },
+    {
+      "slug": "162-pillow",
+      "title": "pillow",
+      "file": "chapters/162-pillow.md"
+    },
+    {
+      "slug": "163-pip",
+      "title": "pip",
+      "file": "chapters/163-pip.md"
+    },
+    {
+      "slug": "164-pycharm",
+      "title": "pycharm",
+      "file": "chapters/164-pycharm.md"
+    },
+    {
+      "slug": "165-pyramid",
+      "title": "pyramid",
+      "file": "chapters/165-pyramid.md"
+    },
+    {
+      "slug": "166-python-decorators",
+      "title": "Python_Decorators",
+      "file": "chapters/166-python-decorators.md"
+    },
+    {
+      "slug": "167-python-dict-implement",
+      "title": "python_dict_implement",
+      "file": "chapters/167-python-dict-implement.md"
+    },
+    {
+      "slug": "168-python-int-implements",
+      "title": "python_int_implements",
+      "file": "chapters/168-python-int-implements.md"
+    },
+    {
+      "slug": "169-python-list-implements",
+      "title": "python_list_implements",
+      "file": "chapters/169-python-list-implements.md"
+    },
+    {
+      "slug": "170-python-mock",
+      "title": "python_mock",
+      "file": "chapters/170-python-mock.md"
+    },
+    {
+      "slug": "171-python-network0",
+      "title": "python_network0",
+      "file": "chapters/171-python-network0.md"
+    },
+    {
+      "slug": "172-python-singleton",
+      "title": "python_singleton",
+      "file": "chapters/172-python-singleton.md"
+    },
+    {
+      "slug": "173-python-str-implement",
+      "title": "Python_str_implement",
+      "file": "chapters/173-python-str-implement.md"
+    },
+    {
+      "slug": "174-python-tdd",
+      "title": "python_tdd",
+      "file": "chapters/174-python-tdd.md"
+    },
+    {
+      "slug": "175-python-ebook",
+      "title": "python-ebook",
+      "file": "chapters/175-python-ebook.md"
+    },
+    {
+      "slug": "176-python3",
+      "title": "python3",
+      "file": "chapters/176-python3.md"
+    },
+    {
+      "slug": "177-python面试指南",
+      "title": "Python语言特性",
+      "file": "chapters/177-python面试指南.md"
+    },
+    {
+      "slug": "178-resource",
+      "title": "resource",
+      "file": "chapters/178-resource.md"
+    },
+    {
+      "slug": "179-sentry",
+      "title": "sentry",
+      "file": "chapters/179-sentry.md"
+    },
+    {
+      "slug": "180-signals",
+      "title": "signals",
+      "file": "chapters/180-signals.md"
+    },
+    {
+      "slug": "181-sitemap",
+      "title": "sitemap",
+      "file": "chapters/181-sitemap.md"
+    },
+    {
+      "slug": "182-socket",
+      "title": "socket",
+      "file": "chapters/182-socket.md"
+    },
+    {
+      "slug": "183-introduce",
+      "title": "introduce",
+      "file": "chapters/183-introduce.md"
+    },
+    {
+      "slug": "184-sqlalchemy",
+      "title": "sqlalchemy",
+      "file": "chapters/184-sqlalchemy.md"
+    },
+    {
+      "slug": "185-stringio",
+      "title": "stringio",
+      "file": "chapters/185-stringio.md"
+    },
+    {
+      "slug": "186-testing",
+      "title": "testing",
+      "file": "chapters/186-testing.md"
+    },
+    {
+      "slug": "187-ioloop",
+      "title": "ioloop",
+      "file": "chapters/187-ioloop.md"
+    },
+    {
+      "slug": "188-unit-test",
+      "title": "unit_test",
+      "file": "chapters/188-unit-test.md"
+    },
+    {
+      "slug": "189-useful-features",
+      "title": "useful_features",
+      "file": "chapters/189-useful-features.md"
+    },
+    {
+      "slug": "190-virtualenv",
+      "title": "virtualenv",
+      "file": "chapters/190-virtualenv.md"
+    },
+    {
+      "slug": "191-what-does-the-yield-keyword-do-in-python",
+      "title": "what-does-the-yield-keyword-do-in-python",
+      "file": "chapters/191-what-does-the-yield-keyword-do-in-python.md"
+    },
+    {
+      "slug": "192-write-2x-3x-compatible-code",
+      "title": "write-2x-3x-compatible-code",
+      "file": "chapters/192-write-2x-3x-compatible-code.md"
+    },
+    {
+      "slug": "193-wsgi",
+      "title": "wsgi",
+      "file": "chapters/193-wsgi.md"
+    },
+    {
+      "slug": "194-0",
+      "title": "0",
+      "file": "chapters/194-0.md"
+    },
+    {
+      "slug": "195-codis",
+      "title": "codis",
+      "file": "chapters/195-codis.md"
+    },
+    {
+      "slug": "196-data-struct",
+      "title": "data-struct",
+      "file": "chapters/196-data-struct.md"
+    },
+    {
+      "slug": "197-introduce",
+      "title": "introduce",
+      "file": "chapters/197-introduce.md"
+    },
+    {
+      "slug": "198-memory",
+      "title": "memory",
+      "file": "chapters/198-memory.md"
+    },
+    {
+      "slug": "199-persistence",
+      "title": "persistence",
+      "file": "chapters/199-persistence.md"
+    },
+    {
+      "slug": "200-redis2",
+      "title": "redis2",
+      "file": "chapters/200-redis2.md"
+    }
+  ],
+  "sourceType": "github"
 }

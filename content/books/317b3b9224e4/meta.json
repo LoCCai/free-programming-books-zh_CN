@@ -3,7 +3,7 @@
   "title": "React Native 中文文档(含最新Android内容)",
   "url": "http://wiki.jikexueyuan.com/project/react-native/",
   "status": "failed",
-  "fetchedAt": "2026-09-27T12:11:42.344Z",
+  "fetchedAt": "2026-09-28T13:40:55.766Z",
   "chapters": [],
-  "error": "First argument to Readability constructor should be a document object."
+  "error": "Cannot destructure property 'firstElementChild' of 'documentElement' as it is null."
 }

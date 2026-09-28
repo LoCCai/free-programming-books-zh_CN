@@ -10,6 +10,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execSync } from 'node:child_process';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = join(ROOT, 'data');
@@ -40,14 +41,20 @@ if (books && meta) {
   if (totalBooks !== books.length) errors.push(`meta.stats.totalBooks(${totalBooks}) 与 books.json(${books.length}) 不一致`);
   if (totalBooks < MIN_TOTAL) errors.push(`条目总数 ${totalBooks} 低于阈值 ${MIN_TOTAL},疑似解析异常`);
 
-  const prevPath = join(DATA_DIR, 'meta.prev.json');
-  if (existsSync(prevPath)) {
-    const prev = JSON.parse(readFileSync(prevPath, 'utf8'));
-    if (prev.stats?.totalBooks) {
-      const drop = (prev.stats.totalBooks - totalBooks) / prev.stats.totalBooks;
-      if (drop > MAX_DROP_RATIO) {
-        errors.push(`条目较上次生成减少 ${Math.round(drop * 100)}%(上次 ${prev.stats.totalBooks} → 本次 ${totalBooks}),疑似上游格式变化`);
-      }
+  // 突变基线:优先 git HEAD 中的上次产物(CI 全新检出也有基线,删文件绕不过),
+  // 本地未提交时回退 meta.prev.json
+  let prevStats = null;
+  try {
+    const out = execSync('git show HEAD:data/meta.json', { cwd: ROOT, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] });
+    prevStats = JSON.parse(out).stats;
+  } catch {
+    const prevPath = join(DATA_DIR, 'meta.prev.json');
+    if (existsSync(prevPath)) prevStats = JSON.parse(readFileSync(prevPath, 'utf8')).stats;
+  }
+  if (prevStats?.totalBooks) {
+    const drop = (prevStats.totalBooks - totalBooks) / prevStats.totalBooks;
+    if (drop > MAX_DROP_RATIO) {
+      errors.push(`条目较上次生成减少 ${Math.round(drop * 100)}%(上次 ${prevStats.totalBooks} → 本次 ${totalBooks}),疑似上游格式变化`);
     }
   }
 

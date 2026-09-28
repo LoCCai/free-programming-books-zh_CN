@@ -24,7 +24,7 @@ const catHref = withBase(categoryPath(book.categoryPath[0]));
 
   <div class="detail-panel">
     <h1 class="page-title">{book.title}</h1>
-    {book.status === 'deprecated' && (
+    {book.status === 'deprecated' && !isReadable(book.id) && (
       <p style="color:var(--warn);font-size:14px">⚠ 上游标记此链接疑似失效,可能无法访问。</p>
     )}
     {book.description && <p>{book.description}</p>}

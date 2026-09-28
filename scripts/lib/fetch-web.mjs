@@ -33,14 +33,17 @@ const turndown = new TurndownService({
 turndown.use(gfm);
 turndown.remove(['script', 'style', 'noscript', 'nav', 'footer', 'form']);
 
-export async function fetchPageText(url) {
+export async function fetchPageText(url, signal) {
   let lastErr;
   for (let attempt = 1; attempt <= FETCH_RETRIES; attempt++) {
+    if (signal?.aborted) throw new Error('已取消');
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), PAGE_TIMEOUT_MS);
+    // 外部取消(整本书超时)与单页超时合并:任一触发都中止 fetch
+    const merged = signal ? AbortSignal.any([ctrl.signal, signal]) : ctrl.signal;
     try {
       const res = await fetch(url, {
-        signal: ctrl.signal,
+        signal: merged,
         redirect: 'follow',
         headers: {
           'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36 fpb-zh-bookbot/0.1',
@@ -53,6 +56,8 @@ export async function fetchPageText(url) {
       // 返回重定向后的最终 URL:目录发现的同源判定必须以它为基准
       return { html: await res.text(), finalUrl: res.url || url };
     } catch (e) {
+      // 外部取消不重试,直接上抛
+      if (signal?.aborted) throw new Error('已取消');
       lastErr = e;
       if (attempt < FETCH_RETRIES) await sleep(800 * attempt);
     } finally {
@@ -64,11 +69,12 @@ export async function fetchPageText(url) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** URL 比较键:去 fragment;路径尾 index.html 归一 */
+/** URL 比较键:去 fragment;路径尾 index.html 归一;尾斜杠归一(/a/b 与 /a/b/ 同页) */
 function urlKey(u) {
   const x = new URL(u);
   x.hash = '';
   let p = x.pathname.replace(/\/index\.html?$/i, '/') || '/';
+  if (p.length > 1) p = p.replace(/\/$/, '');
   return x.origin + p;
 }
 
@@ -79,7 +85,7 @@ function isPageLink(href) {
   try {
     const u = new URL(href, 'https://x.invalid');
     if (u.protocol !== 'http:' && u.protocol !== 'https:') return false;
-    if (/\.(pdf|png|jpe?g|gif|svg|webp|ico|zip|tar|gz|css|js|rss|xml|mp4|mp3)([?#]|$)/i.test(u.pathname)) return false;
+    if (/\.(pdf|png|jpe?g|gif|svg|webp|ico|zip|tar|gz|css|js|rss|xml|mp4|mp3|epub|mobi|azw3?|docx?|chm|djvu)([?#]|$)/i.test(u.pathname)) return false;
     return true;
   } catch {
     return false;
@@ -136,11 +142,13 @@ export function discoverToc(document, baseUrl) {
     const links = collectLinks(el, baseUrl);
     if (links.length >= 3) {
       // 目录与当前页"层级关联":含当前页本身,或存在目录项位于当前页之下/之上
-      // (FreeBSD 等手册的目录不含自身首页,故用双向前缀判断)
+      // (FreeBSD 等手册的目录不含自身首页,故用双向前缀判断;lp === '/' 是站点
+      // 根,任何页面都"在其下",必须排除——否则站点主导航恒真)
       const hasSelf = links.some((l) => {
         try {
           const lp = new URL(l.url).pathname;
-          return l.key === selfKey || (lp !== basePath && (lp.startsWith(basePath) || basePath.startsWith(lp)));
+          if (lp === '/' || lp === basePath) return l.key === selfKey;
+          return l.key === selfKey || lp.startsWith(basePath) || basePath.startsWith(lp);
         } catch {
           return false;
         }
@@ -215,7 +223,7 @@ export function htmlToArticle(html, baseUrl) {
   }
 
   // 下一页(兜底链式用):rel=next → next 容器 → 文本匹配
-  const isNextText = (t) => /^(下一页|下一章|下一篇|next\s*page|next\s*chapter|next\s*›?|›|»)$/i.test(t.trim());
+  const isNextText = (t) => /^(下一页|下一章|下一篇|下页|后一页|next\s*page|next\s*chapter|next\s*›?|›|»)$/i.test(t.trim());
   const nextLink =
     document.querySelector('link[rel="next"]') ||
     document.querySelector('a[rel="next"]') ||
@@ -257,15 +265,52 @@ export function htmlToArticle(html, baseUrl) {
   };
 }
 
-/** markdown 层兜底绝对化(HTML 层遗漏的 `](rel)` / src 形态) */
+/** markdown 层兜底绝对化(HTML 层遗漏的 `](rel)` / src 形态)。
+ * 跳过 fenced code block 与行内代码——教程书里的 markdown/HTML 示例不是真引用 */
 export function absolutizeWebMd(md, baseUrl) {
-  return md.replace(/(\]\(|src="|src=')((?!https?:\/\/|data:|mailto:|javascript:|#)[^)"'\s]+)/g, (full, prefix, target) => {
-    try {
-      return `${prefix}${new URL(target, baseUrl).href}`;
-    } catch {
-      return full;
+  return transformOutsideCode(md, (segment) =>
+    segment.replace(/(\]\(|src="|src=')((?!https?:\/\/|data:|mailto:|javascript:|#)[^)"'\s]+)/g, (full, prefix, target) => {
+      try {
+        return `${prefix}${new URL(target, baseUrl).href}`;
+      } catch {
+        return full;
+      }
+    }),
+  );
+}
+
+/**
+ * 跳过代码块执行文本变换:
+ * - ``` / ~~~ fenced block 整段保留
+ * - 行内 code span `...` 先抽出为占位符,变换后还原
+ */
+export function transformOutsideCode(md, transform) {
+  const lines = md.split('\n');
+  const out = [];
+  let fence = null; // 当前所处 fence 的标记字符(` 或 ~)
+  const spans = [];
+  for (const line of lines) {
+    const fenceMatch = /^\s*(`{3,}|~{3,})/.exec(line);
+    if (fence) {
+      out.push(line);
+      if (fenceMatch && line.trim().startsWith(fence)) fence = null; // 闭合
+      continue;
     }
-  });
+    if (fenceMatch) {
+      fence = fenceMatch[1][0];
+      out.push(line);
+      continue;
+    }
+    // 行内 code span 保护
+    const protectedLine = line.replace(/(`[^`]*`)/g, (m) => {
+      spans.push(m);
+      return `\u0000CODE${spans.length - 1}\u0000`;
+    });
+    out.push(transform(protectedLine));
+  }
+  let result = out.join('\n');
+  result = result.replace(/\u0000CODE(\d+)\u0000/g, (_, i) => spans[Number(i)]);
+  return result;
 }
 
 function slugifyText(s) {
@@ -281,10 +326,11 @@ function slugifyText(s) {
 /**
  * 抓取整本书:单文档门槛(正文够长直接链式) → 目录发现按序抓取;目录不可得时
  * 退回下一页链式。纯 JS 渲染站点(页面壳无链接)判定为不可静态抓取,抛错走外链降级。
- * @returns {{ title?: string, chapters: { slug, title, body }[], viaToc: boolean }}
+ * @param {AbortSignal} [signal] 整本书级别的取消信号(单本超时用)
+ * @returns {{ title?: string, chapters: { slug, title, body }[], viaToc: boolean, finalUrl: string }}
  */
-export async function fetchWebBook(startUrl) {
-  const { html: startHtml, finalUrl } = await fetchPageText(startUrl);
+export async function fetchWebBook(startUrl, signal) {
+  const { html: startHtml, finalUrl } = await fetchPageText(startUrl, signal);
   const startDoc = parseHTML(startHtml).document;
   // SPA 壳检测:几乎无链接且脚本密集 → 静态抓取无意义
   const linkCount = startDoc.querySelectorAll('a').length;
@@ -292,22 +338,24 @@ export async function fetchWebBook(startUrl) {
   if (linkCount < 3 && scriptCount >= 3) {
     throw new Error('JS 渲染站点,无静态可抓内容');
   }
-  // 单文档门槛:正文即整本书 → 链式收录(含 rel=next 翻页),跳过目录发现
+  // 单文档门槛:正文即整本书 → 链式收录(含 rel=next 翻页),跳过目录发现。
+  // 注意无条件适用:目录页即使正文很长也按单文档处理(目录发现对 cb.vu 这类
+  // 语言落地页站点会误抓整站,误判由 fetch-book 的 kept 保护兜底)
   const startBody = htmlToArticle(startHtml, finalUrl).markdown.trim();
   if (startBody.length >= SINGLE_DOC_MIN_CHARS) {
-    const chained = await fetchByNextChain(startHtml, finalUrl);
+    const chained = await fetchByNextChain(startHtml, finalUrl, signal);
     assertDistinctChapters(chained.chapters);
-    return { ...chained, viaToc: false };
+    return { ...chained, viaToc: false, finalUrl };
   }
   const toc = discoverToc(startDoc, finalUrl);
   if (toc && toc.length >= 3) {
-    const byToc = await fetchByToc(startUrl, finalUrl, toc);
+    const byToc = await fetchByToc(startUrl, finalUrl, toc, signal);
     assertDistinctChapters(byToc.chapters);
     return byToc;
   }
-  const chained = await fetchByNextChain(startHtml, finalUrl);
+  const chained = await fetchByNextChain(startHtml, finalUrl, signal);
   assertDistinctChapters(chained.chapters);
-  return { ...chained, viaToc: false };
+  return { ...chained, viaToc: false, finalUrl };
 }
 
 /** 防呆:多章标题完全相同几乎必然是整站导航被误当目录(语言版落地页/首页重复
@@ -321,25 +369,30 @@ function assertDistinctChapters(chapters) {
 }
 
 /** 模式一:按目录顺序整本抓取 */
-async function fetchByToc(startUrl, selfUrl, toc) {
+async function fetchByToc(startUrl, selfUrl, toc, signal) {
   const chapters = [];
   const seen = new Set();
   let bookTitle;
   for (const item of toc) {
     if (chapters.length >= MAX_PAGES) break;
+    if (signal?.aborted) throw new Error('已取消');
     if (seen.has(item.key)) continue;
     seen.add(item.key);
     try {
-      const { html, finalUrl } = await fetchPageText(item.url);
-      // 同一页面经重定向/别名 URL 会在目录里出现多次,按最终 URL 二次去重
+      const { html, finalUrl } = await fetchPageText(item.url, signal);
+      // 别名去重:仅当页面重定向到了另一个目录项(最终 URL 与自身不同)时才查重;
+      // finalUrl 与自身相同是常态,不能参与已见判断——否则每一项都会"撞上自己"
       const finalKey = urlKey(finalUrl);
-      if (!seen.has(finalKey)) {
+      if (finalKey === item.key || !seen.has(finalKey)) {
         seen.add(finalKey);
         const { title, markdown } = htmlToArticle(html, finalUrl);
         const body = markdown.trim();
+        // 书名优先取起始页/自页标题,即使它是薄目录壳而被跳过(M8)
+        if (!bookTitle && (item.url === startUrl || finalUrl === selfUrl || urlKey(item.url) === urlKey(selfUrl))) {
+          bookTitle = title;
+        }
         // 目录壳(几乎无正文)不收为章节
         if (body.length > 200 || toc.length <= 3) {
-          if (!bookTitle && (item.url === startUrl || finalUrl === selfUrl)) bookTitle = title;
           chapters.push({
             slug: `${String(chapters.length + 1).padStart(3, '0')}-${slugifyText(item.text || title)}`,
             title: title || item.text || `第 ${chapters.length + 1} 节`,
@@ -347,7 +400,8 @@ async function fetchByToc(startUrl, selfUrl, toc) {
           });
         }
       }
-    } catch {
+    } catch (e) {
+      if (signal?.aborted) throw e;
       // 单页失败跳过,不中断整本
     }
     await sleep(POLITENESS_DELAY_MS);
@@ -357,7 +411,7 @@ async function fetchByToc(startUrl, selfUrl, toc) {
 }
 
 /** 模式二(兜底):下一页链式 */
-async function fetchByNextChain(startHtml, startUrl) {
+async function fetchByNextChain(startHtml, startUrl, signal) {
   const chapters = [];
   const seen = new Set();
   let url = startUrl;
@@ -365,6 +419,7 @@ async function fetchByNextChain(startHtml, startUrl) {
   let bookTitle;
   while (url && chapters.length < MAX_PAGES && !seen.has(urlKey(url))) {
     seen.add(urlKey(url));
+    if (signal?.aborted) throw new Error('已取消');
     const { title, markdown, nextUrl } = htmlToArticle(html, url);
     if (!bookTitle) bookTitle = title;
     const body = markdown.trim();
@@ -376,7 +431,7 @@ async function fetchByNextChain(startHtml, startUrl) {
       });
     }
     if (!nextUrl) break;
-    const { html: nextHtml, finalUrl } = await fetchPageText(nextUrl);
+    const { html: nextHtml, finalUrl } = await fetchPageText(nextUrl, signal);
     url = finalUrl;
     html = nextHtml;
     await sleep(POLITENESS_DELAY_MS);

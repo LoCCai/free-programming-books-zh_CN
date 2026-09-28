@@ -2,8 +2,279 @@
   "bookId": "61f0fba0e7c8",
   "title": "Docker中文指南",
   "url": "https://github.com/widuu/chinese_docker",
-  "status": "failed",
-  "fetchedAt": "2026-09-27T12:09:57.968Z",
-  "chapters": [],
-  "error": "EISDIR: illegal operation on a directory, read"
+  "status": "ok",
+  "fetchedAt": "2026-09-28T13:39:49.107Z",
+  "chapters": [
+    {
+      "slug": "001-readme",
+      "title": "安装",
+      "file": "chapters/001-readme.md"
+    },
+    {
+      "slug": "002-mac",
+      "title": "Mac OS X 安装 Docker",
+      "file": "chapters/002-mac.md"
+    },
+    {
+      "slug": "003-windows",
+      "title": "Windows 安装 Docker",
+      "file": "chapters/003-windows.md"
+    },
+    {
+      "slug": "004-archlinux",
+      "title": "Arch Linux 安装 Docker",
+      "file": "chapters/004-archlinux.md"
+    },
+    {
+      "slug": "005-crux",
+      "title": "CRUX Linux 安装 Docker",
+      "file": "chapters/005-crux.md"
+    },
+    {
+      "slug": "006-centos",
+      "title": "CentOS 安装 Docker",
+      "file": "chapters/006-centos.md"
+    },
+    {
+      "slug": "007-debian",
+      "title": "Debian 安装 Docker",
+      "file": "chapters/007-debian.md"
+    },
+    {
+      "slug": "008-fedora",
+      "title": "Fedora 安装 Docker",
+      "file": "chapters/008-fedora.md"
+    },
+    {
+      "slug": "009-frugalware",
+      "title": "FrugalWare 安装 Docker",
+      "file": "chapters/009-frugalware.md"
+    },
+    {
+      "slug": "010-gentoo",
+      "title": "Gentoo 安装 Docker",
+      "file": "chapters/010-gentoo.md"
+    },
+    {
+      "slug": "011-redhat",
+      "title": "Red Hat Enterprise Linux 安装 Docker",
+      "file": "chapters/011-redhat.md"
+    },
+    {
+      "slug": "012-ubuntu",
+      "title": "Ubuntu 安装 Docker",
+      "file": "chapters/012-ubuntu.md"
+    },
+    {
+      "slug": "013-opensuse",
+      "title": "openSUSE and SUSE Linux Enterprise 安装 Docker",
+      "file": "chapters/013-opensuse.md"
+    },
+    {
+      "slug": "014-amazon",
+      "title": "Amazon EC2 安装",
+      "file": "chapters/014-amazon.md"
+    },
+    {
+      "slug": "015-joyent",
+      "title": "Joyent Public Cloud 安装 Docker",
+      "file": "chapters/015-joyent.md"
+    },
+    {
+      "slug": "016-google",
+      "title": "Google Cloud Platform 安装 Docker",
+      "file": "chapters/016-google.md"
+    },
+    {
+      "slug": "017-softlayer",
+      "title": "IBM SoftLayer 安装 Docker",
+      "file": "chapters/017-softlayer.md"
+    },
+    {
+      "slug": "018-azure",
+      "title": "Microsoft Azure platform 安装 Docker",
+      "file": "chapters/018-azure.md"
+    },
+    {
+      "slug": "019-rackspace",
+      "title": "Rackspace Cloud 安装 Docker",
+      "file": "chapters/019-rackspace.md"
+    },
+    {
+      "slug": "020-binaries",
+      "title": "二进制安装",
+      "file": "chapters/020-binaries.md"
+    },
+    {
+      "slug": "021-install-machine",
+      "title": "Docker Machine",
+      "file": "chapters/021-install-machine.md"
+    },
+    {
+      "slug": "022-install",
+      "title": "Docker Compose",
+      "file": "chapters/022-install.md"
+    },
+    {
+      "slug": "023-install-w-machine",
+      "title": "Docker Swarm",
+      "file": "chapters/023-install-w-machine.md"
+    },
+    {
+      "slug": "024-readme",
+      "title": "The Docker user guide",
+      "file": "chapters/024-readme.md"
+    },
+    {
+      "slug": "025-baseimages",
+      "title": "Create a base image",
+      "file": "chapters/025-baseimages.md"
+    },
+    {
+      "slug": "026-dockerimages",
+      "title": "Get started with images",
+      "file": "chapters/026-dockerimages.md"
+    },
+    {
+      "slug": "027-dockerrepos",
+      "title": "Get started with Docker Hub",
+      "file": "chapters/027-dockerrepos.md"
+    },
+    {
+      "slug": "028-basics",
+      "title": "Get started with containers",
+      "file": "chapters/028-basics.md"
+    },
+    {
+      "slug": "029-usingdocker",
+      "title": "Working with containers",
+      "file": "chapters/029-usingdocker.md"
+    },
+    {
+      "slug": "030-dockervolumes",
+      "title": "Managing data in containers",
+      "file": "chapters/030-dockervolumes.md"
+    },
+    {
+      "slug": "031-dockerlinks",
+      "title": "Linking containers together",
+      "file": "chapters/031-dockerlinks.md"
+    },
+    {
+      "slug": "032-dockerhub",
+      "title": "使用Docker Hub",
+      "file": "chapters/032-dockerhub.md"
+    },
+    {
+      "slug": "033-dockerizing",
+      "title": "在Docker中运行应用",
+      "file": "chapters/033-dockerizing.md"
+    },
+    {
+      "slug": "034-usingdocker",
+      "title": "使用容器",
+      "file": "chapters/034-usingdocker.md"
+    },
+    {
+      "slug": "035-dockerimages",
+      "title": "使用docker镜像",
+      "file": "chapters/035-dockerimages.md"
+    },
+    {
+      "slug": "036-dockerlinks",
+      "title": "连接容器",
+      "file": "chapters/036-dockerlinks.md"
+    },
+    {
+      "slug": "037-dockervolumes",
+      "title": "管理容器数据",
+      "file": "chapters/037-dockervolumes.md"
+    },
+    {
+      "slug": "038-dockerrepos",
+      "title": "使用Docker Hub",
+      "file": "chapters/038-dockerrepos.md"
+    },
+    {
+      "slug": "039-docker-hub",
+      "title": "Docker Hub",
+      "file": "chapters/039-docker-hub.md"
+    },
+    {
+      "slug": "040-docker-hub",
+      "title": "Docker Hub",
+      "file": "chapters/040-docker-hub.md"
+    },
+    {
+      "slug": "041-accounts",
+      "title": "账户",
+      "file": "chapters/041-accounts.md"
+    },
+    {
+      "slug": "042-repos",
+      "title": "存储库",
+      "file": "chapters/042-repos.md"
+    },
+    {
+      "slug": "043-builds",
+      "title": "自动构建",
+      "file": "chapters/043-builds.md"
+    },
+    {
+      "slug": "044-nodejs-web-app",
+      "title": "官方案例",
+      "file": "chapters/044-nodejs-web-app.md"
+    },
+    {
+      "slug": "045-mongodb",
+      "title": "Docker中运行MongoDB",
+      "file": "chapters/045-mongodb.md"
+    },
+    {
+      "slug": "046-running-redis-service",
+      "title": "Docker中运行Redis服务",
+      "file": "chapters/046-running-redis-service.md"
+    },
+    {
+      "slug": "047-postgresql-service",
+      "title": "Docker中运行PostgreSQL",
+      "file": "chapters/047-postgresql-service.md"
+    },
+    {
+      "slug": "048-running-riak-service",
+      "title": "Docker中运行Riak服务",
+      "file": "chapters/048-running-riak-service.md"
+    },
+    {
+      "slug": "049-running-ssh-service",
+      "title": "Docker中运行SSH进程服务",
+      "file": "chapters/049-running-ssh-service.md"
+    },
+    {
+      "slug": "050-couchdb-data-volumes",
+      "title": "Docker中运行CouchDB服务",
+      "file": "chapters/050-couchdb-data-volumes.md"
+    },
+    {
+      "slug": "051-apt-cacher-ng",
+      "title": "Docker中运行Apt-Cacher-ng服务",
+      "file": "chapters/051-apt-cacher-ng.md"
+    },
+    {
+      "slug": "052-basics",
+      "title": "文章",
+      "file": "chapters/052-basics.md"
+    },
+    {
+      "slug": "053-basics",
+      "title": "使用docker第一步",
+      "file": "chapters/053-basics.md"
+    },
+    {
+      "slug": "054-baseimages",
+      "title": "创建一个基本镜像",
+      "file": "chapters/054-baseimages.md"
+    }
+  ],
+  "sourceType": "github"
 }

@@ -31,6 +31,15 @@ for (const [from, to] of pairs) {
     }
     throw new Error(`缺少 ${src},请先运行 npm run parse`);
   }
-  cpSync(src, dest, { recursive: true });
+  if (from === 'data') {
+    // 白名单拷贝:data/ 里的临时目录(tmp*)与待抓清单不进构建输入
+    mkdirSync(dest, { recursive: true });
+    for (const f of ['books.json', 'categories.json', 'meta.json', 'non-programming-books.json', 'report.json']) {
+      const srcFile = join(src, f);
+      if (existsSync(srcFile)) cpSync(srcFile, join(dest, f));
+    }
+  } else {
+    cpSync(src, dest, { recursive: true });
+  }
   console.log(`sync ${from}/ → web/src/${to}/`);
 }

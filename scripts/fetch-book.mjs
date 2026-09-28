@@ -21,7 +21,7 @@ function loadBooks() {
   return JSON.parse(readFileSync(join(ROOT, 'data', 'books.json'), 'utf8'));
 }
 
-export async function fetchOne(book, { workDir }) {
+export async function fetchOne(book, { workDir, signal } = {}) {
   const outDir = join(CONTENT_DIR, book.id);
   const startedAt = new Date().toISOString();
   const meta = {
@@ -33,12 +33,29 @@ export async function fetchOne(book, { workDir }) {
     chapters: [],
   };
   // 重抓保护:已有 ok 内容时,新结果不劣于旧(章节数不少于)才覆盖;
-  // 抓取失败则完整保留旧内容,避免"目录发现退化"造成倒退
+  // 抓取失败/退化则保留旧内容并返回 kept 状态(磁盘不动,仅刷新校验时间戳)
   const prevMeta = readPrevMeta(outDir);
+  if (prevMeta?.pinned) {
+    // 人工核实过的书(如单文档误抓修复):完全跳过抓取,避免管道反复折腾
+    const meta = { ...prevMeta, status: 'kept', keptPrev: true, keptChapters: prevMeta.chapters.length, error: '人工锁定(pinned),跳过抓取', fetchedAt: new Date().toISOString() };
+    return meta;
+  }
+  const markKept = (reason) => {
+    meta.status = 'kept';
+    meta.keptPrev = true;
+    meta.keptChapters = prevMeta.chapters.length;
+    meta.error = reason;
+    meta.fetchedAt = new Date().toISOString();
+    // 刷新磁盘 meta 的校验时间戳(--refresh 依据),内容与章节保持不变
+    const refreshed = { ...prevMeta, fetchedAt: meta.fetchedAt, keptAt: meta.fetchedAt, keptReason: reason };
+    writeJson(join(outDir, 'meta.json'), refreshed);
+    return meta;
+  };
   try {
     let result;
+    let finalUrl = book.url;
     if (/github\.com/i.test(book.url)) {
-      result = await fetchGithubBook(book, workDir);
+      result = await fetchGithubBook(book, workDir, signal);
       // 相对链接/图片绝对化
       for (const ch of result.chapters) {
         ch.body = absolutizeMd(ch.body, result.rawBase, ch.file);
@@ -46,22 +63,20 @@ export async function fetchOne(book, { workDir }) {
       meta.license = result.license;
       meta.sourceType = 'github';
     } else {
-      result = await fetchWebBook(book.url);
-      // markdown 层兜底绝对化(基准 = 起始页 URL)
+      result = await fetchWebBook(book.url, signal);
+      finalUrl = result.finalUrl || book.url;
+      // markdown 层兜底绝对化(基准 = 重定向后的最终 URL)
       for (const ch of result.chapters) {
-        ch.body = absolutizeWebMd(ch.body, book.url);
+        ch.body = absolutizeWebMd(ch.body, finalUrl);
       }
       meta.sourceType = 'web';
     }
     if (!result.chapters.length) throw new Error('没有可用章节');
     if (prevMeta?.status === 'ok' && result.chapters.length < prevMeta.chapters.length) {
-      meta.status = 'failed';
-      meta.error = `新抓取 ${result.chapters.length} 章少于既有 ${prevMeta.chapters.length} 章,保留旧内容`;
-      meta.fetchedAt = new Date().toISOString();
-      meta.keptPrev = true;
-      return meta;
+      return markKept(`新抓取 ${result.chapters.length} 章少于既有 ${prevMeta.chapters.length} 章,保留旧内容`);
     }
 
+    if (signal?.aborted) throw new Error('已取消');
     rmSync(outDir, { recursive: true, force: true });
     mkdirSync(join(outDir, 'chapters'), { recursive: true });
     for (const ch of result.chapters) {
@@ -79,14 +94,12 @@ export async function fetchOne(book, { workDir }) {
     meta.error = String(e.message || e).slice(0, 200);
     meta.fetchedAt = new Date().toISOString();
     if (prevMeta?.status === 'ok' && prevMeta.chapters.length > 0) {
-      // 保留既有 ok 内容,不落盘 failed meta
-      meta.keptPrev = true;
-      return meta;
+      // 保留既有 ok 内容:磁盘不动,仅刷新校验时间戳
+      return markKept(meta.error);
     }
     // failed:清理半成品,详情页走外链降级
     rmSync(outDir, { recursive: true, force: true });
   }
-  if (!existsSync(join(CONTENT_DIR, book.id))) mkdirSync(CONTENT_DIR, { recursive: true });
   if (meta.status === 'failed') {
     // 失败也要留 meta,记录降级原因(阅读器/详情页提示),但不放 chapters
     mkdirSync(join(CONTENT_DIR, book.id), { recursive: true });

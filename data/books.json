@@ -3,7 +3,7 @@
     "id": "730c3ef54b34",
     "title": "[笔记]前端工程师的入门与进阶",
     "url": "https://shenbao.github.io/2017/04/22/justjavac-live/",
-    "description": "",
+    "description": ":100:",
     "categoryPath": [
       "置顶"
     ],
@@ -15,7 +15,7 @@
     "id": "b9d86efaea63",
     "title": "[全文]如何正确的学习 Node.js",
     "url": "https://github.com/i5ting/How-to-learn-node-correctly",
-    "description": "",
+    "description": ":100:",
     "categoryPath": [
       "置顶"
     ],
@@ -1765,7 +1765,7 @@
   },
   {
     "id": "7afa15be2b99",
-    "title": "译本一",
+    "title": "Google Material Design 正體中文版",
     "url": "https://wcc723.gitbooks.io/google_design_translate/content/style-icons.html",
     "description": "译本二)",
     "categoryPath": [
@@ -3740,8 +3740,7 @@
     "url": "http://www.ituring.com.cn/minibook/950",
     "description": "",
     "categoryPath": [
-      "JavaScript",
-      "VueJS"
+      "JavaScript"
     ],
     "status": "deprecated",
     "sourceFile": "README.md",
@@ -3971,7 +3970,7 @@
   },
   {
     "id": "90ab3d93fb8a",
-    "title": "@wulijun版",
+    "title": "PHP之道：php-the-right-way",
     "url": "http://wulijun.github.io/php-the-right-way/",
     "description": "PHPHub版)",
     "categoryPath": [

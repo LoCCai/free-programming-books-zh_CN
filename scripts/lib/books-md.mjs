@@ -88,10 +88,16 @@ export function parseBookListMd(content, sourceFile) {
 
     const { text: description, emojis } = cleanDescription(link.rest);
     const desc = decodeEntities(description);
+    // 链接条目按自身缩进裁剪父类目栈:与最后一个父类目同级的书不属于其下
+    // (如 JavaScript 下 `* jQuery`(无链接)之后出现的顶级书)
+    parents = parents.slice(0, indentLevel(item.indent));
     const path = [category, ...parents.filter(Boolean).map((p) => p.name)];
+    // `* 书名 ([译本一](u) [译本二](u))` 这类条目:书名取链接前的文本,
+    // 链接文本("译本一")不是书名
+    const prefixTitle = link.before.replace(/[([（【]\s*$/, '').trim();
     books.push({
       id: '', // 由调用方统一编号
-      title: decodeEntities(link.title),
+      title: decodeEntities(prefixTitle || link.title),
       url: link.url,
       description: desc,
       categoryPath: path,

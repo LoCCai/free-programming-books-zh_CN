@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-09-27T12:14:41.054Z",
+  "generatedAt": "2026-09-28T13:42:14.254Z",
   "total": 456,
-  "ok": 6,
-  "cached": 401,
+  "ok": 8,
+  "cached": 409,
+  "kept": 0,
   "partial": 0,
-  "failed": 49,
+  "failed": 39,
   "skippedDeprecated": 0,
   "results": [
     {
@@ -41,7 +42,7 @@
       "id": "0f5641562ed3",
       "title": "UNIX TOOLBOX",
       "status": "cached",
-      "chapters": 17
+      "chapters": 1
     },
     {
       "id": "76b17944b571",
@@ -445,7 +446,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "不支持的内容类型: application/pdf",
-      "ms": 1434
+      "ms": 1595
     },
     {
       "id": "664907c46294",
@@ -492,10 +493,9 @@
     {
       "id": "61f0fba0e7c8",
       "title": "Docker中文指南",
-      "status": "failed",
-      "chapters": 0,
-      "error": "EISDIR: illegal operation on a directory, read",
-      "ms": 1977
+      "status": "ok",
+      "chapters": 54,
+      "ms": 1870
     },
     {
       "id": "af0560afac3d",
@@ -551,7 +551,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 403",
-      "ms": 943
+      "ms": 948
     },
     {
       "id": "25b032b94a61",
@@ -559,7 +559,15 @@
       "status": "failed",
       "chapters": 0,
       "error": "不支持的内容类型: application/pdf",
-      "ms": 3125
+      "ms": 6797
+    },
+    {
+      "id": "bfbaffb5b78d",
+      "title": "Neo4j .rb 中文資源",
+      "status": "failed",
+      "chapters": 0,
+      "error": "fetch failed",
+      "ms": 21384
     },
     {
       "id": "2ae5135afb7c",
@@ -567,15 +575,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "fetch failed",
-      "ms": 1399
-    },
-    {
-      "id": "398336145a33",
-      "title": "追求代码质量",
-      "status": "failed",
-      "chapters": 0,
-      "error": "fetch failed",
-      "ms": 1409
+      "ms": 21223
     },
     {
       "id": "10232e0785be",
@@ -602,12 +602,12 @@
       "chapters": 1
     },
     {
-      "id": "bfbaffb5b78d",
-      "title": "Neo4j .rb 中文資源",
+      "id": "398336145a33",
+      "title": "追求代码质量",
       "status": "failed",
       "chapters": 0,
       "error": "fetch failed",
-      "ms": 11159
+      "ms": 21173
     },
     {
       "id": "5c04b95582f2",
@@ -633,7 +633,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 521",
-      "ms": 1181
+      "ms": 1197
     },
     {
       "id": "92c77815d0de",
@@ -642,12 +642,12 @@
       "chapters": 14
     },
     {
-      "id": "866ed4869537",
-      "title": "设计模式 Java 版",
+      "id": "898deebb7ba2",
+      "title": "Nginx教程从入门到精通",
       "status": "failed",
       "chapters": 0,
-      "error": "fetch failed",
-      "ms": 2210
+      "error": "目标文件不存在: Nginx%E6%95%99%E7%A8%8B%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E8%BF%90%E7%BB%B4%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4TTLSA%E5%87%BA%E5%93%81).pdf",
+      "ms": 33347
     },
     {
       "id": "8f9f575f7236",
@@ -656,12 +656,12 @@
       "chapters": 148
     },
     {
-      "id": "898deebb7ba2",
-      "title": "Nginx教程从入门到精通",
+      "id": "866ed4869537",
+      "title": "设计模式 Java 版",
       "status": "failed",
       "chapters": 0,
-      "error": "目标文件不存在: Nginx%E6%95%99%E7%A8%8B%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E8%BF%90%E7%BB%B4%E7%94%9F%E5%AD%98%E6%97%B6%E9%97%B4TTLSA%E5%87%BA%E5%93%81).pdf",
-      "ms": 34635
+      "error": "fetch failed",
+      "ms": 4782
     },
     {
       "id": "1c7e0796e96f",
@@ -802,12 +802,10 @@
       "chapters": 6
     },
     {
-      "id": "9edb4df0cda0",
-      "title": "关于浏览器和网络的 20 项须知",
-      "status": "failed",
-      "chapters": 0,
-      "error": "fetch failed",
-      "ms": 24078
+      "id": "10ec709f3b19",
+      "title": "Web安全学习笔记",
+      "status": "cached",
+      "chapters": 133
     },
     {
       "id": "ac57e602a8bf",
@@ -822,12 +820,10 @@
       "chapters": 1
     },
     {
-      "id": "5372c615ad36",
-      "title": "GNU make 指南",
-      "status": "failed",
-      "chapters": 0,
-      "error": "This operation was aborted",
-      "ms": 40810
+      "id": "da1ac58a26da",
+      "title": "Spark 编程指南简体中文版",
+      "status": "cached",
+      "chapters": 61
     },
     {
       "id": "70d87c12d230",
@@ -841,7 +837,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 403",
-      "ms": 2541
+      "ms": 2437
     },
     {
       "id": "162b9d5f2fe4",
@@ -908,8 +904,8 @@
       "title": "Material Design 中文版",
       "status": "failed",
       "chapters": 0,
-      "error": "First argument to Readability constructor should be a document object.",
-      "ms": 98
+      "error": "Cannot destructure property 'firstElementChild' of 'documentElement' as it is null.",
+      "ms": 107
     },
     {
       "id": "8f370bf138d1",
@@ -917,7 +913,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 403",
-      "ms": 1674
+      "ms": 2193
     },
     {
       "id": "f7d1cd27a75f",
@@ -949,7 +945,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "没有可用章节",
-      "ms": 2103
+      "ms": 2025
     },
     {
       "id": "bb34552140d9",
@@ -969,7 +965,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 403",
-      "ms": 2892
+      "ms": 6482
     },
     {
       "id": "8700333cff42",
@@ -995,7 +991,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "没有可用章节",
-      "ms": 862
+      "ms": 1743
     },
     {
       "id": "96203a1d9cd5",
@@ -1028,19 +1024,20 @@
       "chapters": 13
     },
     {
+      "id": "9edb4df0cda0",
+      "title": "关于浏览器和网络的 20 项须知",
+      "status": "failed",
+      "chapters": 0,
+      "error": "fetch failed",
+      "ms": 21240
+    },
+    {
       "id": "7051fb2df6c4",
       "title": "GNU make中文手册",
       "status": "failed",
       "chapters": 0,
       "error": "目标文件不存在: PL%20GNU%20make%20%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C.pdf",
-      "ms": 8685
-    },
-    {
-      "id": "da1ac58a26da",
-      "title": "Spark 编程指南简体中文版",
-      "status": "ok",
-      "chapters": 61,
-      "ms": 56119
+      "ms": 10186
     },
     {
       "id": "d954e300a54c",
@@ -1300,7 +1297,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 521",
-      "ms": 1197
+      "ms": 1189
     },
     {
       "id": "2d161ea679bf",
@@ -1590,7 +1587,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "目标文件不存在: %E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/javascript_the_good_parts.md",
-      "ms": 1635
+      "ms": 832
     },
     {
       "id": "24c9c7e893d0",
@@ -1604,7 +1601,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 403",
-      "ms": 2489
+      "ms": 2460
     },
     {
       "id": "d6b21fd3f8d9",
@@ -1703,12 +1700,12 @@
       "chapters": 42
     },
     {
-      "id": "38fea739e26a",
-      "title": "使用 Express + MongoDB 搭建多人博客",
+      "id": "5372c615ad36",
+      "title": "GNU make 指南",
       "status": "failed",
       "chapters": 0,
-      "error": "URI malformed",
-      "ms": 1448
+      "error": "This operation was aborted",
+      "ms": 40808
     },
     {
       "id": "a9bec8aeea2a",
@@ -1723,12 +1720,11 @@
       "chapters": 21
     },
     {
-      "id": "5372c615ad36-2",
-      "title": "GNU make 指南",
-      "status": "failed",
-      "chapters": 0,
-      "error": "This operation was aborted",
-      "ms": 40806
+      "id": "38fea739e26a",
+      "title": "使用 Express + MongoDB 搭建多人博客",
+      "status": "ok",
+      "chapters": 28,
+      "ms": 2840
     },
     {
       "id": "5b618ab8238e",
@@ -1749,12 +1745,11 @@
       "chapters": 16
     },
     {
-      "id": "38ae6adf3b87",
-      "title": "Learn You The Node.js For Much Win! (中文版)",
-      "status": "failed",
-      "chapters": 0,
-      "error": "HTTP 403",
-      "ms": 2305
+      "id": "38fea739e26a-2",
+      "title": "一起学 Node.js",
+      "status": "ok",
+      "chapters": 28,
+      "ms": 729
     },
     {
       "id": "16cda894a6da",
@@ -1769,12 +1764,12 @@
       "chapters": 18
     },
     {
-      "id": "38fea739e26a-2",
-      "title": "一起学 Node.js",
+      "id": "38ae6adf3b87",
+      "title": "Learn You The Node.js For Much Win! (中文版)",
       "status": "failed",
       "chapters": 0,
-      "error": "URI malformed",
-      "ms": 735
+      "error": "HTTP 403",
+      "ms": 2976
     },
     {
       "id": "e7490dd3244b",
@@ -1812,7 +1807,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 403",
-      "ms": 923
+      "ms": 1122
     },
     {
       "id": "0ce91db92f75",
@@ -1849,26 +1844,12 @@
       "title": "React Native 中文文档(含最新Android内容)",
       "status": "failed",
       "chapters": 0,
-      "error": "First argument to Readability constructor should be a document object.",
-      "ms": 97
+      "error": "Cannot destructure property 'firstElementChild' of 'documentElement' as it is null.",
+      "ms": 102
     },
     {
       "id": "8edfa318dc13",
       "title": "Learn React & Webpack by building the Hacker News front page",
-      "status": "cached",
-      "chapters": 1
-    },
-    {
-      "id": "be25633541e1",
-      "title": "impress.js的中文教程",
-      "status": "failed",
-      "chapters": 0,
-      "error": "没有可用章节",
-      "ms": 930
-    },
-    {
-      "id": "38e9d62f4fb3",
-      "title": "CoffeeScript 编码风格指南",
       "status": "cached",
       "chapters": 1
     },
@@ -1878,7 +1859,19 @@
       "status": "failed",
       "chapters": 0,
       "error": "fetch failed",
-      "ms": 1514
+      "ms": 1457
+    },
+    {
+      "id": "38e9d62f4fb3",
+      "title": "CoffeeScript 编码风格指南",
+      "status": "cached",
+      "chapters": 1
+    },
+    {
+      "id": "90fe27cdb777",
+      "title": "TypeScript Handbook",
+      "status": "cached",
+      "chapters": 27
     },
     {
       "id": "0fa4e103506c",
@@ -1911,11 +1904,10 @@
       "chapters": 135
     },
     {
-      "id": "10ec709f3b19",
-      "title": "Web安全学习笔记",
-      "status": "ok",
-      "chapters": 133,
-      "ms": 79281
+      "id": "a487162c2004",
+      "title": "Kotlin 中文文档",
+      "status": "cached",
+      "chapters": 39
     },
     {
       "id": "b2739f567e76",
@@ -1924,12 +1916,12 @@
       "chapters": 1
     },
     {
-      "id": "d93ca995aa49",
-      "title": "《Kotlin for android developers》中文版",
+      "id": "be25633541e1",
+      "title": "impress.js的中文教程",
       "status": "failed",
       "chapters": 0,
-      "error": "HTTP 401",
-      "ms": 2159
+      "error": "没有可用章节",
+      "ms": 1806
     },
     {
       "id": "337361675e32",
@@ -1943,7 +1935,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "不支持的内容类型: application/pdf",
-      "ms": 2363
+      "ms": 3156
     },
     {
       "id": "a0746216fccd",
@@ -2052,8 +2044,8 @@
       "title": "Symfony2 Cookbook 中文版",
       "status": "failed",
       "chapters": 0,
-      "error": "First argument to Readability constructor should be a document object.",
-      "ms": 96
+      "error": "Cannot destructure property 'firstElementChild' of 'documentElement' as it is null.",
+      "ms": 103
     },
     {
       "id": "f87cff0f0e40",
@@ -2182,10 +2174,12 @@
       "chapters": 2
     },
     {
-      "id": "3241e7ba0d82",
-      "title": "Selenium Webdriver 简易教程",
+      "id": "11ab9b484e75",
+      "title": "PEP8 Python代码风格规范",
       "status": "failed",
-      "error": "超时 120000ms"
+      "chapters": 0,
+      "error": "fetch failed",
+      "ms": 21096
     },
     {
       "id": "121e71fdd79d",
@@ -2248,11 +2242,12 @@
       "chapters": 19
     },
     {
-      "id": "a487162c2004",
-      "title": "Kotlin 中文文档",
-      "status": "ok",
-      "chapters": 39,
-      "ms": 20732
+      "id": "5372c615ad36-2",
+      "title": "GNU make 指南",
+      "status": "failed",
+      "chapters": 0,
+      "error": "This operation was aborted",
+      "ms": 40805
     },
     {
       "id": "a5717a6f97bb",
@@ -2285,12 +2280,10 @@
       "chapters": 52
     },
     {
-      "id": "11ab9b484e75",
-      "title": "PEP8 Python代码风格规范",
-      "status": "failed",
-      "chapters": 0,
-      "error": "fetch failed",
-      "ms": 31079
+      "id": "189343c5e2dc",
+      "title": "Fabric 中文文档",
+      "status": "cached",
+      "chapters": 25
     },
     {
       "id": "42bf7d06fbce",
@@ -2305,11 +2298,12 @@
       "chapters": 6
     },
     {
-      "id": "189343c5e2dc",
-      "title": "Fabric 中文文档",
-      "status": "ok",
-      "chapters": 25,
-      "ms": 24801
+      "id": "a3f5bbca13d8",
+      "title": "python初级教程：入门详解",
+      "status": "failed",
+      "chapters": 0,
+      "error": "fetch failed",
+      "ms": 21488
     },
     {
       "id": "51514054d9c4",
@@ -2377,7 +2371,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "fetch failed",
-      "ms": 957
+      "ms": 994
     },
     {
       "id": "2c3cb71df58e",
@@ -2410,12 +2404,11 @@
       "chapters": 2
     },
     {
-      "id": "a3f5bbca13d8",
-      "title": "python初级教程：入门详解",
-      "status": "failed",
-      "chapters": 0,
-      "error": "fetch failed",
-      "ms": 31265
+      "id": "b75f0b19c6e6",
+      "title": "Django 搭建个人博客教程",
+      "status": "ok",
+      "chapters": 44,
+      "ms": 2952
     },
     {
       "id": "32f2a34ce1fe",
@@ -2436,12 +2429,11 @@
       "chapters": 13
     },
     {
-      "id": "b75f0b19c6e6",
-      "title": "Django 搭建个人博客教程",
-      "status": "failed",
-      "chapters": 0,
-      "error": "子目录不存在: ",
-      "ms": 2406
+      "id": "ec2561bcb264",
+      "title": "Django 网站开发 Cookbook",
+      "status": "ok",
+      "chapters": 17,
+      "ms": 1827
     },
     {
       "id": "161ce818f1d8",
@@ -2450,20 +2442,12 @@
       "chapters": 6
     },
     {
-      "id": "ec2561bcb264",
-      "title": "Django 网站开发 Cookbook",
-      "status": "failed",
-      "chapters": 0,
-      "error": "URI malformed",
-      "ms": 1187
-    },
-    {
       "id": "7d0201284e01",
       "title": "Flask 文档中文版",
       "status": "failed",
       "chapters": 0,
       "error": "fetch failed",
-      "ms": 1314
+      "ms": 1437
     },
     {
       "id": "0fa83d6f9809",
@@ -2471,7 +2455,13 @@
       "status": "failed",
       "chapters": 0,
       "error": "fetch failed",
-      "ms": 1061
+      "ms": 1073
+    },
+    {
+      "id": "59d2eeee5108",
+      "title": "Werkzeug 文档中文版",
+      "status": "cached",
+      "chapters": 11
     },
     {
       "id": "df8410410524",
@@ -2491,7 +2481,7 @@
       "status": "failed",
       "chapters": 0,
       "error": "fetch failed",
-      "ms": 1065
+      "ms": 1055
     },
     {
       "id": "dcbc3332ab3f",
@@ -2580,10 +2570,9 @@
     {
       "id": "07c70d518e24",
       "title": "编写Ruby的C拓展",
-      "status": "failed",
-      "chapters": 0,
-      "error": "HTTP 401",
-      "ms": 2204
+      "status": "ok",
+      "chapters": 8,
+      "ms": 5047
     },
     {
       "id": "a4a4bc556974",
@@ -2638,8 +2627,8 @@
       "title": "Bash脚本15分钟进阶教程",
       "status": "failed",
       "chapters": 0,
-      "error": "HTTP 600",
-      "ms": 950
+      "error": "JS 渲染站点,无静态可抓内容",
+      "ms": 143
     },
     {
       "id": "2e0b9920dfce-2",
@@ -2710,10 +2699,9 @@
     {
       "id": "18bb43a0be70",
       "title": "学习笔记: Vim、Python、memcached",
-      "status": "failed",
-      "chapters": 0,
-      "error": "URI malformed",
-      "ms": 2053
+      "status": "ok",
+      "chapters": 200,
+      "ms": 2046
     },
     {
       "id": "f089d4934dee",
@@ -2727,14 +2715,13 @@
       "status": "failed",
       "chapters": 0,
       "error": "HTTP 403",
-      "ms": 951
+      "ms": 997
     },
     {
-      "id": "59d2eeee5108",
-      "title": "Werkzeug 文档中文版",
-      "status": "ok",
-      "chapters": 11,
-      "ms": 8339
+      "id": "0de3e7a599da",
+      "title": "SICP 解题集",
+      "status": "cached",
+      "chapters": 195
     },
     {
       "id": "aa9fa1439539",
@@ -2809,12 +2796,10 @@
       "chapters": 6
     },
     {
-      "id": "de00e9439c93",
-      "title": "用Python做科学计算",
-      "status": "failed",
-      "chapters": 0,
-      "error": "This operation was aborted",
-      "ms": 40807
+      "id": "df24c56b1a13",
+      "title": "LeetCode题解",
+      "status": "cached",
+      "chapters": 69
     },
     {
       "id": "a9b5cc43aeca",
@@ -2823,23 +2808,25 @@
       "chapters": 109
     },
     {
-      "id": "df24c56b1a13",
-      "title": "LeetCode题解",
+      "id": "de00e9439c93",
+      "title": "用Python做科学计算",
+      "status": "failed",
+      "chapters": 0,
+      "error": "This operation was aborted",
+      "ms": 49600
+    },
+    {
+      "id": "3241e7ba0d82",
+      "title": "Selenium Webdriver 简易教程",
+      "status": "failed",
+      "error": "超时 120000ms"
+    },
+    {
+      "id": "d93ca995aa49",
+      "title": "《Kotlin for android developers》中文版",
       "status": "ok",
-      "chapters": 69,
-      "ms": 44868
-    },
-    {
-      "id": "90fe27cdb777",
-      "title": "TypeScript Handbook",
-      "status": "failed",
-      "error": "超时 120000ms"
-    },
-    {
-      "id": "0de3e7a599da",
-      "title": "SICP 解题集",
-      "status": "failed",
-      "error": "超时 120000ms"
+      "chapters": 97,
+      "ms": 77725
     }
   ]
 }
